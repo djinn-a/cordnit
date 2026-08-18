@@ -1,0 +1,18 @@
+.megaMenuDesktop {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 0.75rem 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.mobileAccordion {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+}
