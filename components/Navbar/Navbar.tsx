@@ -2,134 +2,110 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { navigation } from '../../data/navigation';
-import styles from './Navbar.module.css';
-import MegaMenu from './MegaMenu';
+import { Menu, X, ArrowRight, Network } from 'lucide-react';
+
+const navLinks = [
+  { label: 'Solutions', href: '/solutions' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'Accelerators', href: '/accelerators' },
+  { label: 'Insights', href: '/insights' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMegaMenus, setOpenMegaMenus] = useState<Record<string, boolean>>({});
-
-  const toggleMegaMenu = (id: string, isOpen: boolean) => {
-    setOpenMegaMenus(prev => ({
-      ...prev,
-      [id]: isOpen
-    }));
-  };
-
-  const toggleMobileMegaMenu = (id: string) => {
-    setOpenMegaMenus(prev => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
-  };
 
   return (
-    <nav className={styles.navbar}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center">
-              <Image 
-                src="/images/logo-placeholder.png" 
-                alt="Company Logo" 
-                width={150} 
-                height={45} 
-                className="h-10 w-auto object-contain" 
-              />
-            </Link>
-          </div>
+    <nav className="w-full relative z-50 lg:bg-gradient-to-r lg:from-blue-500 lg:via-purple-500 lg:to-pink-500">
+      
+      {/* Mobile Navbar Island */}
+      <div className="lg:hidden p-4 sm:p-6 pb-0">
+        <div className="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-gray-100 p-2 flex items-center w-fit">
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="bg-gray-100/80 hover:bg-gray-200 transition-colors p-2.5 rounded-lg mr-4"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="h-5 w-5 text-black" /> : <Menu className="h-5 w-5 text-black stroke-[2.5]" />}
+          </button>
           
-          <div className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => {
-              if (item.megaMenu) {
-                return (
-                  <div 
-                    key={item.id}
-                    className="group h-full flex items-center"
-                    onMouseEnter={() => toggleMegaMenu(item.id, true)}
-                    onMouseLeave={() => toggleMegaMenu(item.id, false)}
-                  >
-                    <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium py-8">
-                      {item.label} <ChevronDown className="ml-1 h-4 w-4" />
-                    </button>
-                    {openMegaMenus[item.id] && (
-                      <div className="absolute top-full left-0 w-full pt-0">
-                        <MegaMenu isMobile={false} columns={item.megaMenu} />
-                      </div>
-                    )}
-                  </div>
-                );
-              }
+          <Link href="/" className="flex flex-col items-center justify-center text-black pr-3">
+            <div className="flex items-center relative">
+              <Network className="h-[18px] w-[18px] text-black" />
+              <div className="absolute top-0 right-0 w-[3px] h-[3px] bg-black rounded-full"></div>
+              <div className="absolute bottom-0 left-0 w-[3px] h-[3px] bg-black rounded-full"></div>
+            </div>
+            <span className="font-bold text-[10px] leading-none mt-1 tracking-wide">Cordinit</span>
+            <span className="text-[5px] font-medium leading-none mt-0.5 tracking-wider uppercase opacity-80">Your Cloud Creation</span>
+          </Link>
+        </div>
+      </div>
 
-              return (
-                <Link 
-                  key={item.id} 
-                  href={item.href || '#'} 
-                  className="text-gray-700 hover:text-blue-600 font-medium"
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            
-            <Link href="/get-started" className="ml-2 px-6 py-2.5 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors">
-              Get Started
+      {/* Desktop Navbar */}
+      <div className="hidden lg:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          
+          {/* Desktop Logo */}
+          <div className="flex-shrink-0 flex items-center">
+            <Link href="/" className="flex flex-col items-center justify-center text-white mt-1">
+              <div className="flex items-center relative">
+                <Network className="h-7 w-7 text-white" />
+                <div className="absolute top-1 right-0 w-1.5 h-1.5 bg-white rounded-full"></div>
+                <div className="absolute bottom-1 left-0 w-1.5 h-1.5 bg-white rounded-full"></div>
+              </div>
+              <span className="font-bold text-xl leading-none mt-1 tracking-wide">Cordinit</span>
+              <span className="text-section-subtitle-xs font-medium leading-none mt-1 tracking-wider opacity-90 uppercase">Your Cloud Creation</span>
             </Link>
           </div>
           
-          <div className="lg:hidden flex items-center">
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 p-2"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+          {/* Desktop Navigation */}
+          <div className="flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-white hover:text-white/80 font-medium text-sm transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
+          
+          {/* Get in Touch Button */}
+          <div className="flex items-center">
+            <Link 
+              href="/contact" 
+              className="flex items-center px-6 py-2 border border-white/80 rounded-md text-white font-medium text-sm hover:bg-white/10 transition-colors"
+            >
+              Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
+
         </div>
       </div>
       
-      {/* Mobile menu */}
+      {/* Mobile menu dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 max-h-[calc(100vh-5rem)] overflow-y-auto shadow-xl">
-          <div className="px-4 pt-2 pb-6 space-y-1">
-            {navigation.map((item) => {
-              if (item.megaMenu) {
-                const isOpen = openMegaMenus[item.id];
-                return (
-                  <div key={item.id}>
-                    <button 
-                      onClick={() => toggleMobileMegaMenu(item.id)}
-                      className="flex w-full items-center justify-between px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-                    >
-                      {item.label} <ChevronDown className={`ml-1 h-5 w-5 transform transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                    </button>
-                    {isOpen && (
-                      <div className="px-3">
-                        <MegaMenu isMobile={true} columns={item.megaMenu} />
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              return (
-                <Link 
-                  key={item.id} 
-                  href={item.href || '#'} 
-                  className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            
-            <div className="pt-4">
-              <Link href="/get-started" className="block w-full text-center px-4 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700">
-                Get Started
+        <div className="lg:hidden absolute top-[80px] left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-100 z-50 overflow-hidden">
+          <div className="px-4 py-4 space-y-1">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.label} 
+                href={link.href} 
+                className="block px-3 py-3 rounded-md text-sm font-medium text-gray-800 hover:bg-gray-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="pt-4 px-3">
+              <Link 
+                href="/contact" 
+                className="flex items-center justify-center w-full px-4 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </div>
