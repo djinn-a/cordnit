@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Mulish } from "next/font/google";
 import "./globals.css";
+import TopBar from "../components/TopBar/TopBar";
 
-const inter = Inter({
+const mulish = Mulish({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-mulish",
 });
 
 export const metadata: Metadata = {
@@ -16,9 +17,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} font-sans h-full antialiased`}
+      className={`${mulish.variable} font-sans h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <TopBar />
+        {children}
+      </body>
     </html>
   );
 }

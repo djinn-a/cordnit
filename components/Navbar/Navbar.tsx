@@ -9,15 +9,15 @@ const navLinks = [
   { label: 'Industries', href: '/industries' },
   { label: 'Accelerators', href: '/accelerators' },
   { label: 'Insights', href: '/insights' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'About', href: '/aboutus' },
+  { label: 'Contact', href: '/contactus' },
 ];
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full relative z-50 lg:bg-gradient-to-r lg:from-blue-500 lg:via-purple-500 lg:to-pink-500">
+    <nav className="w-full relative z-50 lg:bg-gradient-to-r lg:from-blue-600 lg:to-[#040A14]">
       
       {/* Mobile Navbar Island */}
       <div className="lg:hidden p-4 sm:p-6 pb-0">
@@ -75,7 +75,7 @@ export default function Navbar() {
           {/* Get in Touch Button */}
           <div className="flex items-center">
             <Link 
-              href="/contact" 
+              href="/contactus" 
               className="flex items-center px-6 py-2 border border-white/80 rounded-md text-white font-medium text-sm hover:bg-white/10 transition-colors"
             >
               Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
@@ -101,7 +101,7 @@ export default function Navbar() {
             ))}
             <div className="pt-4 px-3">
               <Link 
-                href="/contact" 
+                href="/contactus" 
                 className="flex items-center justify-center w-full px-4 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

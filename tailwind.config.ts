@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'tablet-only': { 'min': '768px', 'max': '820px' },
+      },
+      fontFamily: {
+        'sans': ['var(--font-mulish)', 'sans-serif'],
+        'mulish': ['var(--font-mulish)', 'sans-serif'],
+      },
       colors: {
         brand: {
           primary: "#0A82B5",
@@ -20,6 +27,11 @@ const config: Config = {
         },
       },
       fontSize: {
+        'hero-main': ['56px', {
+          lineHeight: '65px',
+          letterSpacing: '-2.88px',
+          fontWeight: '800'
+        }],
         'hero-title': '1.35rem',
         'section-subtitle': '0.65rem',
         'section-subtitle-sm': '0.6rem',

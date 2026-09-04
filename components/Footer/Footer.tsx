@@ -4,16 +4,12 @@ import { Network, Play } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full relative py-12 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=2000&auto=format&fit=crop"
-          alt="Colorful Background"
-          className="w-full h-full object-cover opacity-80"
-        />
-        <div className="absolute inset-0 bg-white/30 backdrop-blur-3xl"></div>
+    <footer className="w-full relative py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 w-full h-full z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/footer-bg.png')" }}
+      >
       </div>
 
       {/* Main Container */}
@@ -43,16 +39,8 @@ export default function Footer() {
             <div>
               <h4 className="text-black font-bold mb-5 uppercase tracking-widest text-section-subtitle">Company</h4>
               <ul className="space-y-4">
-                <li><Link href="#" className="text-gray-600 hover:text-black text-body-small font-medium">About</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-black text-body-small font-medium">Contact</Link></li>
-              </ul>
-            </div>
-            {/* Column 2 - Company (Duplicate in image) */}
-            <div>
-              <h4 className="text-black font-bold mb-5 uppercase tracking-widest text-section-subtitle">Company</h4>
-              <ul className="space-y-4">
-                <li><Link href="#" className="text-gray-600 hover:text-black text-body-small font-medium">About</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-black text-body-small font-medium">Contact</Link></li>
+                <li><Link href="/aboutus" className="text-gray-600 hover:text-black text-body-small font-medium">About</Link></li>
+                <li><Link href="/contactus" className="text-gray-600 hover:text-black text-body-small font-medium">Contact</Link></li>
               </ul>
             </div>
             {/* Column 3 - Capabilities */}
