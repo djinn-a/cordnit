@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
-import TopBar from "../components/TopBar/TopBar";
+import TopBar from "../components/layout/TopBar/TopBar";
+import Navbar from "../components/layout/Navbar/Navbar";
+import Footer from "../components/layout/Footer/Footer";
+import { ContactModalProvider } from "../components/features/contact/ContactModal/ContactModalProvider";
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -20,8 +23,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${mulish.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <TopBar />
-        {children}
+        <ContactModalProvider>
+          <TopBar />
+          <Navbar />
+          {children}
+          <Footer />
+        </ContactModalProvider>
       </body>
     </html>
   );

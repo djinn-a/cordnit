@@ -1,93 +1,23 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Mail, PhoneCall, MapPin, Clock } from 'lucide-react';
 import Link from 'next/link';
+import { useLeadForm } from '../../../../hooks/useLeadForm';
 
 export default function ContactFormSection() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    company: '',
-    jobTitle: '',
-    helpDetails: '',
-    introCall: false,
-    privacy: false
-  });
-
-  const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
-  const [errors, setErrors] = useState<Record<string, boolean>>({});
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    const checked = (e.target as HTMLInputElement).checked;
-    
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
-
-    // Clear error immediately on change
-    if (errors[name]) {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
-        
-        // Basic validation for clearing error
-        if (name === 'email') {
-          if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) delete newErrors[name];
-        } else if (type === 'checkbox') {
-          if (checked) delete newErrors[name];
-        } else {
-          if (value.trim() !== '') delete newErrors[name];
-        }
-        
-        return newErrors;
-      });
-    }
-  };
-
-  const toggleInterest = (interest: string) => {
-    setSelectedInterests((prev) => {
-      const isSelected = prev.includes(interest);
-      const newInterests = isSelected
-        ? prev.filter((i) => i !== interest)
-        : [...prev, interest];
-        
-      // Clear error if at least one selected
-      if (newInterests.length > 0 && errors.interests) {
-        setErrors((errs) => {
-          const newErrs = { ...errs };
-          delete newErrs.interests;
-          return newErrs;
-        });
-      }
-      
-      return newInterests;
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const newErrors: Record<string, boolean> = {};
-    
-    if (!formData.firstName.trim()) newErrors.firstName = true;
-    if (!formData.lastName.trim()) newErrors.lastName = true;
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = true;
-    if (!formData.company.trim()) newErrors.company = true;
-    if (!formData.helpDetails.trim()) newErrors.helpDetails = true;
-    if (!formData.introCall) newErrors.introCall = true;
-    if (!formData.privacy) newErrors.privacy = true;
-    if (selectedInterests.length === 0) newErrors.interests = true;
-    
-    setErrors(newErrors);
-    
-    if (Object.keys(newErrors).length === 0) {
-      setIsModalOpen(true);
-    }
-  };
+  const {
+    formData,
+    selectedInterests,
+    errors,
+    isSubmitting,
+    submitError,
+    isSuccess,
+    handleInputChange,
+    toggleInterest,
+    handleSubmit,
+    setIsSuccess
+  } = useLeadForm({ ctaLocation: 'Contact Page' });
 
   const interestsList = [
     'Cybersecurity', 'Managed Services', 'AI & Automation', 
@@ -183,10 +113,17 @@ export default function ContactFormSection() {
               </div>
             </div>
 
+            {/* Error Message */}
+            {submitError && (
+              <div className="p-3 text-[13px] md:text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg">
+                {submitError}
+              </div>
+            )}
+
             {/* Action Buttons */}
             <div className="grid grid-cols-2 gap-3 pt-4">
-              <button type="submit" className="w-full bg-[#2b5cff] hover:bg-blue-700 text-white py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors">
-                Submit
+              <button type="submit" disabled={isSubmitting} className={`w-full bg-[#2b5cff] hover:bg-blue-700 text-white py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+                {isSubmitting ? 'Submitting...' : 'Submit'}
               </button>
               <button type="button" className="w-full bg-white border border-[#2b5cff] text-[#2b5cff] hover:bg-blue-50 py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors">
                 Book a call
@@ -288,7 +225,7 @@ export default function ContactFormSection() {
       </div>
 
       {/* Thank you Modal */}
-      {isModalOpen && (
+      {isSuccess && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm">
           <div 
             className="w-full max-w-2xl rounded-[28px] p-10 md:p-14 text-center relative border border-[#DCE5FF]/50"
@@ -316,10 +253,10 @@ export default function ContactFormSection() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button onClick={() => setIsModalOpen(false)} className="px-6 py-2.5 bg-[#2b5cff] text-white rounded-[12px] text-[15px] font-medium hover:bg-blue-700 transition-colors flex items-center shadow-md shadow-blue-500/20">
+              <button onClick={() => setIsSuccess(false)} className="px-6 py-2.5 bg-[#2b5cff] text-white rounded-[12px] text-[15px] font-medium hover:bg-blue-700 transition-colors flex items-center shadow-md shadow-blue-500/20">
                 Explore solutions <span className="ml-2 font-bold text-lg leading-none">→</span>
               </button>
-              <button onClick={() => setIsModalOpen(false)} className="px-6 py-2.5 bg-transparent border border-[#2b5cff] text-[#2b5cff] rounded-[12px] text-[15px] font-medium hover:bg-blue-50 transition-colors flex items-center">
+              <button onClick={() => setIsSuccess(false)} className="px-6 py-2.5 bg-transparent border border-[#2b5cff] text-[#2b5cff] rounded-[12px] text-[15px] font-medium hover:bg-blue-50 transition-colors flex items-center">
                 View insights <span className="ml-2 font-bold text-lg leading-none">→</span>
               </button>
             </div>

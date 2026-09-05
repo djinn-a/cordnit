@@ -1,7 +1,10 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
+import { useContactModal } from '../../contact/ContactModal/ContactModalProvider';
 
 export default function CtaSection() {
+  const { openModal } = useContactModal();
   return (
     <section className="relative w-auto mx-4 md:mx-0 md:w-full pt-16 pb-16 md:pt-14 md:pb-28 lg:pt-16 lg:pb-32 bg-white mb-8 sm:mb-20 overflow-hidden rounded-[32px] md:rounded-none">
       {/* Background Image */}
@@ -47,7 +50,7 @@ export default function CtaSection() {
               </div>
             </div>
 
-            <button className="w-full py-4 md:py-2.5 px-4 bg-white text-gray-900 text-[17px] md:text-sm font-medium rounded-full hover:bg-gray-50 transition-colors shadow-sm">
+            <button onClick={openModal} className="w-full py-4 md:py-2.5 px-4 bg-white text-gray-900 text-[17px] md:text-sm font-medium rounded-full hover:bg-gray-50 transition-colors shadow-sm">
               Schedule a Call
             </button>
           </div>

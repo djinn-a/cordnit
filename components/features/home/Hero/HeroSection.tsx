@@ -1,7 +1,10 @@
+'use client';
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useContactModal } from '../../contact/ContactModal/ContactModalProvider';
 
 export default function HeroSection() {
+  const { openModal } = useContactModal();
   return (
     <section className="w-full flex flex-col items-center pt-16 pb-6 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Top Titles */}
@@ -46,7 +49,7 @@ export default function HeroSection() {
           </p>
           
           <div className="flex flex-row gap-3 sm:gap-4 w-full">
-            <button className="flex-1 flex items-center justify-center px-2 sm:px-6 py-3 sm:py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-[15px] sm:text-xs font-medium sm:font-normal rounded-xl sm:rounded-btn transition-colors shadow-sm whitespace-nowrap">
+            <button onClick={openModal} className="flex-1 flex items-center justify-center px-2 sm:px-6 py-3 sm:py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-[15px] sm:text-xs font-medium sm:font-normal rounded-xl sm:rounded-btn transition-colors shadow-sm whitespace-nowrap">
               Book a call <ArrowRight className="ml-1 sm:ml-2 h-4 w-4 sm:h-3.5 sm:w-3.5" />
             </button>
             <button className="flex-1 flex items-center justify-center px-2 sm:px-6 py-3 sm:py-2.5 bg-transparent border border-blue-500 hover:bg-white/10 text-blue-500 text-[15px] sm:text-xs font-medium sm:font-normal rounded-xl sm:rounded-btn transition-colors whitespace-nowrap">

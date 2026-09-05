@@ -3,7 +3,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import { heroData } from '../../data/hero';
+import { heroData } from '../../../../data/hero';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -25,7 +25,7 @@ export default function HeroSlider() {
         }}
         className={styles.swiperContainer}
       >
-        {heroData.map((slide) => (
+        {heroData.map((slide: any, index: number) => (
           <SwiperSlide key={slide.id}>
             <div 
               className={styles.slideBackground}

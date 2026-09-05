@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useContactModal } from '../../features/contact/ContactModal/ContactModalProvider';
 import Link from 'next/link';
 import { Menu, X, ArrowRight, Network } from 'lucide-react';
 
@@ -15,6 +16,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { openModal } = useContactModal();
 
   return (
     <nav className="w-full relative z-50 lg:bg-gradient-to-r lg:from-blue-600 lg:to-[#040A14]">
@@ -74,12 +76,12 @@ export default function Navbar() {
           
           {/* Get in Touch Button */}
           <div className="flex items-center">
-            <Link 
-              href="/contactus" 
+            <button 
+              onClick={openModal} 
               className="flex items-center px-6 py-2 border border-white/80 rounded-md text-white font-medium text-sm hover:bg-white/10 transition-colors"
             >
               Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </button>
           </div>
 
         </div>
@@ -100,13 +102,15 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-4 px-3">
-              <Link 
-                href="/contactus" 
+              <button 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  openModal();
+                }}
                 className="flex items-center justify-center w-full px-4 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>

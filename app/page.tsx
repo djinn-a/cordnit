@@ -1,17 +1,16 @@
-import Navbar from '../components/Navbar/Navbar';
-import HeroSection from '../components/Hero/HeroSection';
-import HelpSection from '../components/HelpSection/HelpSection';
-import InsightsSection from '../components/InsightsSection/InsightsSection';
-import MethodologySection from '../components/MethodologySection/MethodologySection';
-import RecognitionSection from '../components/RecognitionSection/RecognitionSection';
-import TestimonialsSection from '../components/TestimonialsSection/TestimonialsSection';
-import CtaSection from '../components/CtaSection/CtaSection';
-import Footer from '../components/Footer/Footer';
+import Navbar from '../components/layout/Navbar/Navbar';
+import HeroSection from '../components/features/home/Hero/HeroSection';
+import HelpSection from '../components/features/home/HelpSection/HelpSection';
+import InsightsSection from '../components/features/home/InsightsSection/InsightsSection';
+import MethodologySection from '../components/features/home/MethodologySection/MethodologySection';
+import RecognitionSection from '../components/features/home/RecognitionSection/RecognitionSection';
+import TestimonialsSection from '../components/features/home/TestimonialsSection/TestimonialsSection';
+import CtaSection from '../components/features/home/CtaSection/CtaSection';
+import Footer from '../components/layout/Footer/Footer';
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen font-sans bg-white">
-      <Navbar />
       <main className="flex-grow flex flex-col w-full bg-white">
         <HeroSection />
         <HelpSection />
@@ -21,7 +20,6 @@ export default function Home() {
         <TestimonialsSection />
         <CtaSection />
       </main>
-      <Footer />
     </div>
   );
 }

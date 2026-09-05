@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { MegaMenuColumn } from '../../data/navigation';
+import { navigation, MegaMenuColumn } from '../../../data/navigation';
 import styles from './MegaMenu.module.css';
 
 interface MegaMenuProps {
