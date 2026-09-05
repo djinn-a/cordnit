@@ -27,6 +27,7 @@ export async function appendLeadToSheet(lead: WebsiteLead) {
   const values = [
     [
       new Date().toISOString(), // Timestamp
+      lead.bookingDateTime || '', // Scheduled Call Time
       lead.firstName,
       lead.lastName,
       lead.email,

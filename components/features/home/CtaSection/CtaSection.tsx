@@ -18,7 +18,7 @@ export default function CtaSection() {
       </div>
 
       {/* Banner Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between">
+      <div className="relative z-10 w-full max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between">
 
         {/* Left Content */}
         <div className="relative z-10 w-full md:w-3/5 text-white mb-12 md:mb-0">

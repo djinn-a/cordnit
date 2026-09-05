@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="w-full py-8 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-container-xl mx-auto bg-white overflow-hidden">
+    <section className="w-full py-8 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide mx-auto bg-white overflow-hidden">
       {/* Header */}
       <div className="flex flex-col items-start sm:items-center text-left sm:text-center mb-10 sm:mb-16 max-w-3xl mx-auto">
         <h3 className="text-blue-500 font-bold text-section-subtitle-sm sm:text-section-subtitle tracking-[0.15em] uppercase mb-3 sm:mb-4">
@@ -118,7 +118,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Footer Navigation */}
-      <div className="flex items-center justify-between px-2 max-w-7xl mx-auto">
+      <div className="flex items-center justify-between px-2 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto">
         {/* Dots */}
         <div className="flex items-center space-x-1.5 sm:space-x-2">
           <div className="w-1.5 h-1.5 rounded-full bg-black"></div>

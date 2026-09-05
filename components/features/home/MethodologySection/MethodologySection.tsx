@@ -35,7 +35,7 @@ const steps = [
 
 export default function MethodologySection() {
   return (
-    <section className="w-full py-8 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <section className="w-full py-8 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white">
       {/* Header Area */}
       <div className="flex flex-col lg:flex-row lg:items-start justify-between mb-8 sm:mb-16 gap-4 sm:gap-8">
         <div className="lg:w-1/2">

@@ -51,7 +51,7 @@ export default function AboutTeam() {
   };
 
   return (
-    <section className="w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <section className="w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white">
       
       {/* Top Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-16 gap-4 md:gap-16">

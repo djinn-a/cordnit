@@ -79,10 +79,7 @@ export function useLeadForm(additionalContext: Record<string, any> = {}) {
     setIsSuccess(false);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (isSubmitting) return;
-
+  const validateForm = () => {
     const newErrors: Record<string, boolean> = {};
     
     if (!formData.firstName.trim()) newErrors.firstName = true;
@@ -95,14 +92,25 @@ export function useLeadForm(additionalContext: Record<string, any> = {}) {
     if (selectedInterests.length === 0) newErrors.interests = true;
     
     setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e?: React.FormEvent, scheduledTime?: string) => {
+    if (e) e.preventDefault();
+    if (isSubmitting) return;
+    
     setSubmitError(null);
     
-    if (Object.keys(newErrors).length === 0) {
+    if (validateForm()) {
       setIsSubmitting(true);
       try {
+        // Artificial 2-second delay to show the validation UI
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
         const payload = {
           ...formData,
           interests: selectedInterests,
+          bookingDateTime: scheduledTime || null,
           ...additionalContext
         };
         
@@ -136,8 +144,9 @@ export function useLeadForm(additionalContext: Record<string, any> = {}) {
     isSuccess,
     handleInputChange,
     toggleInterest,
+    validateForm,
     handleSubmit,
     resetForm,
-    setIsSuccess // allow manual override if needed
+    setIsSuccess
   };
 }

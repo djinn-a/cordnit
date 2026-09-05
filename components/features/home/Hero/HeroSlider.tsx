@@ -32,7 +32,7 @@ export default function HeroSlider() {
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className={styles.overlay}></div>
-              <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-center">
+              <div className="h-full max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-center">
                 <div className="w-full md:w-2/3 lg:w-1/2 py-20 md:py-32">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-sm">
                     {slide.title}

@@ -6,7 +6,7 @@ import { useContactModal } from '../../contact/ContactModal/ContactModalProvider
 export default function HeroSection() {
   const { openModal } = useContactModal();
   return (
-    <section className="w-full flex flex-col items-center pt-16 pb-6 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="w-full flex flex-col items-center pt-16 pb-6 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto">
       {/* Top Titles */}
       <div className="text-center mb-6 sm:mb-8">
         <h3 className="hidden sm:block text-blue-600 font-bold text-section-subtitle-sm sm:text-section-subtitle tracking-[0.15em] uppercase mb-3">

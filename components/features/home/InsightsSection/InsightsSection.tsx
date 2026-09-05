@@ -49,7 +49,7 @@ export default function InsightsSection() {
   };
 
   return (
-    <section className="w-full pt-8 pb-8 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white overflow-hidden">
+    <section className="w-full pt-8 pb-8 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white overflow-hidden">
       {/* Header */}
       <div className="mb-12">
         <h3 className="text-blue-600 font-bold text-section-subtitle tracking-[0.15em] uppercase mb-4">

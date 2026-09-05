@@ -25,7 +25,7 @@ const principles = [
 
 export default function AboutPrinciples() {
   return (
-    <section className="w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <section className="w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white">
       {/* Top Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-20 gap-4 md:gap-16">
         <div className="md:w-1/2">

@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function ContactHero() {
   return (
-    <section className="w-full pt-2 pb-16 lg:pt-4 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <section className="w-full pt-2 pb-16 lg:pt-4 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
 
         {/* Left Content Area */}

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function AboutHero() {
   return (
-    <section className="w-full py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <section className="w-full py-8 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white">
       {/* Mobile Title (Above image) */}
       <div className="sm:hidden text-center mb-6">
         <h2 className="text-3xl font-extrabold text-black leading-[1.2]">

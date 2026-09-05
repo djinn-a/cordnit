@@ -13,7 +13,7 @@ export default function Footer() {
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 bg-white rounded-3xl shadow-xl p-8 md:p-12 lg:p-16 max-w-container-xl mx-auto flex flex-col justify-between min-h-[400px]">
+      <div className="relative z-10 bg-white rounded-3xl shadow-xl p-8 md:p-12 lg:p-16 max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide mx-auto flex flex-col justify-between min-h-[400px]">
 
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16">
@@ -104,7 +104,7 @@ export default function Footer() {
       </div>
 
       {/* Latest from Cordinit Section */}
-      <div className="relative z-10 max-w-container-xl mx-auto mt-16 px-4 sm:px-6 lg:px-16 pb-6">
+      <div className="relative z-10 max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide mx-auto mt-16 px-4 sm:px-6 lg:px-16 pb-6">
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-16">
 
           {/* Video Thumbnail Area */}

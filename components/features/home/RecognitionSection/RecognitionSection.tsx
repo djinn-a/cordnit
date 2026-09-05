@@ -38,7 +38,7 @@ export default function RecognitionSection() {
   };
 
   return (
-    <section className="w-full py-8 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <section className="w-full py-8 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white">
       {/* Header Area */}
       <div className="flex flex-col items-start sm:items-center text-left sm:text-center mb-8 sm:mb-16">
         <h3 className="text-blue-500 font-bold text-section-subtitle-sm sm:text-section-subtitle tracking-[0.15em] uppercase mb-2 sm:mb-4">
