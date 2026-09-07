@@ -18,7 +18,7 @@ export default function MegaMenu({ isMobile, columns }: MegaMenuProps) {
             <ul className="space-y-3 text-gray-600 ml-2">
               {column.items.map((item) => (
                 <li key={item.id}>
-                  <Link href={item.href} className="block py-1 hover:text-blue-600">
+                  <Link href={item.href} className="block py-1 hover:text-[#2251ff]">
                     {item.label}
                   </Link>
                 </li>
@@ -44,7 +44,7 @@ export default function MegaMenu({ isMobile, columns }: MegaMenuProps) {
             <ul className="space-y-3 text-gray-600">
               {column.items.map((item) => (
                 <li key={item.id}>
-                  <Link href={item.href} className="hover:text-blue-600 transition-colors block">
+                  <Link href={item.href} className="hover:text-[#2251ff] transition-colors block">
                     {item.label}
                   </Link>
                 </li>
@@ -56,3 +56,4 @@ export default function MegaMenu({ isMobile, columns }: MegaMenuProps) {
     </div>
   );
 }
+

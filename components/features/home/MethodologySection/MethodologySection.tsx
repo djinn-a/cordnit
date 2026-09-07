@@ -4,31 +4,31 @@ const steps = [
   {
     num: '01',
     title: 'DISCOVER',
-    desc: 'Understand priorities, constraints and opportunities.',
+    desc: 'Thorough assessment of the company\'s current condition',
     color: 'blue',
   },
   {
     num: '02',
     title: 'DESIGN',
-    desc: 'Shape the right technology and operating model.',
+    desc: 'Create the right foundation for sustainable business growth',
     color: 'black',
   },
   {
     num: '03',
     title: 'IMPLEMENT',
-    desc: 'Build, integrate and modernise the solution.',
+    desc: 'Engineer, Integrate, and Evolve Your Technology Landscape',
     color: 'blue',
   },
   {
     num: '04',
     title: 'OPTIMISE',
-    desc: 'Continuously improve performance, security and value.',
+    desc: 'Reinforce security, improve efficiency and increase long-term value',
     color: 'black',
   },
   {
     num: '05',
     title: 'OPERATE',
-    desc: 'Keep technology resilient, scalable and ready for change.',
+    desc: 'Future-proof your technology with adaptability and resilience',
     color: 'blue',
   },
 ];
@@ -39,19 +39,19 @@ export default function MethodologySection() {
       {/* Header Area */}
       <div className="flex flex-col lg:flex-row lg:items-start justify-between mb-8 sm:mb-16 gap-4 sm:gap-8">
         <div className="lg:w-1/2">
-          <h3 className="text-blue-600 font-bold text-section-subtitle-sm sm:text-section-subtitle tracking-[0.15em] uppercase mb-3 sm:mb-4">
+          <h3 className="text-[#2251ff] font-bold text-section-subtitle-sm sm:text-section-subtitle tracking-[0.15em] uppercase mb-3 sm:mb-4">
             METHODOLOGY
           </h3>
           <h2 className="text-hero-title sm:text-4xl md:text-5xl font-bold sm:font-extrabold text-black leading-[1.3] sm:leading-[1.15]">
-            From transformation strategy to<br className="sm:hidden" />
-            <span className="hidden sm:inline"> </span>everyday operations.
+            Creating smarter foundations for how<br className="sm:hidden" />
+            <span className="hidden sm:inline"> </span>businesses operate
           </h2>
         </div>
         <div className="lg:w-1/2 lg:pt-8 mt-2 sm:mt-0">
           <p className="text-gray-600 text-body-small sm:text-lg leading-relaxed max-w-lg">
-            We orchestrate high-impact business evolution
-            through a highly communicative, cyclical blueprint
-            model built on collaboration and alignment.
+            We turn business ambition into lasting progress <br />
+            through clear communication, continuous <br />
+            collaboration and purposeful execution.
           </p>
         </div>
       </div>
@@ -60,9 +60,9 @@ export default function MethodologySection() {
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-1.5 sm:gap-4">
         {steps.map((step) => {
           const isBlue = step.color === 'blue';
-          
+
           return (
-            <div 
+            <div
               key={step.num}
               className={`
                 flex flex-col h-[240px] sm:h-panel p-4 sm:p-8 rounded-[2px] sm:rounded-sm
@@ -74,17 +74,17 @@ export default function MethodologySection() {
                 <span className="text-section-subtitle-xs sm:text-section-subtitle font-bold tracking-widest uppercase">
                   {step.title}
                 </span>
-                <div 
-                  className={`w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full ${isBlue ? 'bg-white' : 'bg-gray-500'}`} 
+                <div
+                  className={`w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full ${isBlue ? 'bg-white' : 'bg-white'}`}
                 ></div>
               </div>
-              
+
               {/* Bottom Area: Large Number and Description */}
               <div className="mt-auto">
                 <div className="text-4xl sm:text-6xl font-bold mb-2 sm:mb-4 leading-none">
                   {step.num}
                 </div>
-                <p className={`text-section-subtitle sm:text-sm leading-relaxed ${isBlue ? 'text-white/90' : 'text-gray-400'}`}>
+                <p className="text-section-subtitle sm:text-sm leading-relaxed text-white/90">
                   {step.desc}
                 </p>
               </div>
@@ -95,3 +95,5 @@ export default function MethodologySection() {
     </section>
   );
 }
+
+

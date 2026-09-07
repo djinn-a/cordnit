@@ -56,7 +56,7 @@ export default function AboutTeam() {
       {/* Top Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-16 gap-4 md:gap-16">
         <div className="md:w-3/5">
-          <h4 className="text-blue-600 md:text-blue-500 font-bold text-[10px] tracking-[0.15em] uppercase mb-2 md:mb-4">
+          <h4 className="text-[#2251ff] md:text-[#2251ff] font-bold text-[10px] tracking-[0.15em] uppercase mb-2 md:mb-4">
             THE PEOPLE BEHIND THE WORK
           </h4>
           <h2 className="text-[24px] md:text-4xl lg:text-5xl font-bold md:font-extrabold text-black leading-[1.2] md:leading-tight">
@@ -91,7 +91,7 @@ export default function AboutTeam() {
               <h3 className="text-[20px] md:text-lg font-medium md:font-bold text-black mb-1">
                 {member.name}
               </h3>
-              <p className="text-[10px] md:text-[9px] font-semibold md:font-extrabold text-blue-500 uppercase tracking-widest">
+              <p className="text-[10px] md:text-[9px] font-semibold md:font-extrabold text-[#2251ff] uppercase tracking-widest">
                 {member.role}
               </p>
               <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
@@ -140,3 +140,5 @@ export default function AboutTeam() {
     </section>
   );
 }
+
+

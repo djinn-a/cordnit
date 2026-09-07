@@ -50,7 +50,7 @@ export default function NewsletterForm() {
           <div className="animate-in fade-in zoom-in-95 duration-500">
             {/* Header */}
             <div className="mb-8">
-              <h3 className="text-[#3b82f6] text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
+              <h3 className="text-[#2251ff] text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
                 NEWSLETTER
               </h3>
               <h2 className="text-[32px] sm:text-[40px] font-bold text-white leading-[1.2] mb-4">
@@ -86,7 +86,7 @@ export default function NewsletterForm() {
                     id="consent"
                     type="checkbox"
                     required
-                    className="w-4 h-4 rounded border-white/20 bg-transparent text-[#3b82f6] focus:ring-[#3b82f6] focus:ring-offset-[#0a1122]"
+                    className="w-4 h-4 rounded border-white/20 bg-transparent text-[#2251ff] focus:ring-[#3b82f6] focus:ring-offset-[#0a1122]"
                   />
                 </div>
                 <label htmlFor="consent" className="text-[13px] text-[#a1a1aa] leading-snug cursor-pointer">
@@ -114,7 +114,7 @@ export default function NewsletterForm() {
               </svg>
             </div>
             
-            <h3 className="text-[#3b82f6] text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
+            <h3 className="text-[#2251ff] text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
               VALIDATION
             </h3>
             <h2 className="text-[32px] sm:text-[40px] font-bold text-white leading-[1.2] mb-3">
@@ -126,11 +126,11 @@ export default function NewsletterForm() {
 
             <div className="flex flex-col items-start space-y-3 mb-10 mx-auto">
               <div className="flex items-center text-sm text-gray-300">
-                <CheckCircle2 className="w-[18px] h-[18px] text-[#3b82f6] mr-3" />
+                <CheckCircle2 className="w-[18px] h-[18px] text-[#2251ff] mr-3" />
                 Email format looks good.
               </div>
               <div className="flex items-center text-sm text-gray-300">
-                <CheckCircle2 className="w-[18px] h-[18px] text-[#3b82f6] mr-3" />
+                <CheckCircle2 className="w-[18px] h-[18px] text-[#2251ff] mr-3" />
                 Consent confirmed
               </div>
             </div>
@@ -187,3 +187,4 @@ export default function NewsletterForm() {
     </div>
   );
 }
+

@@ -52,15 +52,14 @@ export default function TestimonialsSection() {
     <section className="w-full py-8 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide mx-auto bg-white overflow-hidden">
       {/* Header */}
       <div className="flex flex-col items-start sm:items-center text-left sm:text-center mb-10 sm:mb-16 max-w-3xl mx-auto">
-        <h3 className="text-blue-500 font-bold text-section-subtitle-sm sm:text-section-subtitle tracking-[0.15em] uppercase mb-3 sm:mb-4">
+        <h3 className="text-[#2251ff] font-bold text-section-subtitle-sm sm:text-section-subtitle tracking-[0.15em] uppercase mb-3 sm:mb-4">
           TESTIMONIALS
         </h3>
         <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold sm:font-extrabold text-black leading-tight sm:leading-[1.15] mb-4 sm:mb-6 pr-4 sm:pr-0">
-          Trusted by security teams all over the world
-        </h2>
+          The technology partner trusted by security teams worldwide        </h2>
         <p className="text-gray-600 sm:text-gray-500 text-sm sm:text-lg">
-          Hear from industry leaders who have transformed their enterprise<br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>security architecture with our strategic precision solutions.
+          Hear from industry leaders who have used our expertise to<br className="hidden sm:block" />
+          <span className="sm:hidden"> </span> strengthen their security architecture.
         </p>
       </div>
 
@@ -85,7 +84,7 @@ export default function TestimonialsSection() {
               />
               <div className="absolute bottom-4 left-4">
                 <button className="flex items-center justify-center w-12 h-10 bg-white rounded-lg shadow-sm hover:bg-gray-50 transition-colors">
-                  <Play className="h-4 w-4 text-blue-600 ml-0.5" fill="currentColor" />
+                  <Play className="h-4 w-4 text-[#2251ff] ml-0.5" fill="currentColor" />
                 </button>
               </div>
             </div>
@@ -108,7 +107,7 @@ export default function TestimonialsSection() {
 
               <a
                 href="#"
-                className="flex items-center text-blue-500 text-sm sm:text-xs font-normal sm:font-medium hover:text-blue-600 transition-colors mt-auto"
+                className="flex items-center text-[#2251ff] text-sm sm:text-xs font-normal sm:font-medium hover:text-[#2251ff] transition-colors mt-auto"
               >
                 Watch testimonial <ArrowRightSmall className="ml-1 h-3.5 w-3.5" />
               </a>
@@ -159,3 +158,5 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+
+

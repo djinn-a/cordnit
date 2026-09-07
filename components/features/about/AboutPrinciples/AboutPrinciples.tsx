@@ -29,7 +29,7 @@ export default function AboutPrinciples() {
       {/* Top Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-20 gap-4 md:gap-16">
         <div className="md:w-1/2">
-          <h4 className="text-blue-600 md:text-blue-500 font-bold text-[10px] tracking-[0.15em] uppercase mb-2 md:mb-4">
+          <h4 className="text-[#2251ff] md:text-[#2251ff] font-bold text-[10px] tracking-[0.15em] uppercase mb-2 md:mb-4">
             HOW WE WORK
           </h4>
           <h2 className="text-[24px] md:text-4xl lg:text-5xl font-bold md:font-extrabold text-black leading-[1.2] md:leading-tight">
@@ -51,7 +51,7 @@ export default function AboutPrinciples() {
         {principles.map((principle, index) => (
           <div key={index} className={`relative flex flex-row md:flex-col items-start py-8 md:py-0 md:pl-10 ${index !== principles.length - 1 ? 'border-b border-gray-200 md:border-b-0' : ''}`}>
             {/* Background Number */}
-            <div className="text-[75px] md:absolute md:top-[-28px] md:left-[-15px] md:text-[120px] font-bold text-gray-100 md:text-gray-50 leading-[0.8] md:leading-none select-none z-0 tracking-tighter mr-5 md:mr-0 shrink-0 mt-[-5px] md:mt-0">
+            <div className="text-[75px] md:absolute md:top-[-28px] md:left-[-15px] md:text-[120px] font-bold text-[#F0EEF5] leading-[0.8] md:leading-none select-none z-0 tracking-tighter mr-5 md:mr-0 shrink-0 mt-[-5px] md:mt-0">
               {principle.number}
             </div>
             
@@ -70,3 +70,5 @@ export default function AboutPrinciples() {
     </section>
   );
 }
+
+

@@ -4,8 +4,10 @@ import React from 'react';
 import { Mail, PhoneCall, MapPin, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { useLeadForm } from '../../../../hooks/useLeadForm';
+import { useContactModal } from '../ContactModal/ContactModalProvider';
 
 export default function ContactFormSection() {
+  const { openModal } = useContactModal();
   const {
     formData,
     selectedInterests,
@@ -73,10 +75,10 @@ export default function ContactFormSection() {
                       type="button"
                       onClick={() => toggleInterest(item)}
                       className={`px-3 md:px-4 py-1.5 md:py-2 border rounded-full text-[11px] md:text-xs transition-colors ${isSelected
-                          ? 'bg-blue-50 border-blue-500 text-blue-700'
+                          ? 'bg-blue-50 border-blue-500 text-[#2251ff]'
                           : errors.interests
                             ? 'bg-white border-red-300 text-gray-700 hover:border-red-500'
-                            : 'bg-white border-gray-200 text-gray-700 hover:border-blue-500 hover:text-blue-600'
+                            : 'bg-white border-gray-200 text-gray-700 hover:border-blue-500 hover:text-[#2251ff]'
                         }`}
                     >
                       {item}
@@ -95,7 +97,7 @@ export default function ContactFormSection() {
             {/* Checkboxes */}
             <div className="pt-2 space-y-4">
               <div className={`flex items-start p-2 -mx-2 rounded-lg transition-colors ${errors.introCall ? 'bg-red-50/50 border border-red-200' : 'border border-transparent'}`}>
-                <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="intro-call" className={`mt-0.5 w-5 h-5 text-blue-600 rounded focus:ring-blue-500 bg-white shrink-0 ${errors.introCall ? 'border-red-500' : 'border-gray-300'}`} />
+                <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="intro-call" className={`mt-0.5 w-5 h-5 text-[#2251ff] rounded focus:ring-blue-500 bg-white shrink-0 ${errors.introCall ? 'border-red-500' : 'border-gray-300'}`} />
                 <label htmlFor="intro-call" className={`ml-3 text-[13px] md:text-sm ${errors.introCall ? 'text-red-700' : 'text-gray-800'}`}>
                   I would like to book a brief introductory call to discuss this.
                 </label>
@@ -104,9 +106,9 @@ export default function ContactFormSection() {
               <hr className="border-gray-200" />
 
               <div className={`flex items-start p-2 -mx-2 rounded-lg transition-colors ${errors.privacy ? 'bg-red-50/50 border border-red-200' : 'border border-transparent'}`}>
-                <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="privacy" className={`mt-0.5 w-5 h-5 text-blue-600 rounded focus:ring-blue-500 bg-white shrink-0 ${errors.privacy ? 'border-red-500' : 'border-gray-300'}`} />
+                <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="privacy" className={`mt-0.5 w-5 h-5 text-[#2251ff] rounded focus:ring-blue-500 bg-white shrink-0 ${errors.privacy ? 'border-red-500' : 'border-gray-300'}`} />
                 <label htmlFor="privacy" className={`ml-3 text-[13px] md:text-sm leading-snug ${errors.privacy ? 'text-red-700' : 'text-gray-800'}`}>
-                  I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>.
+                  I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-[#2251ff] hover:underline">Privacy Policy</Link>.
                 </label>
               </div>
             </div>
@@ -123,8 +125,8 @@ export default function ContactFormSection() {
               <button type="submit" disabled={isSubmitting} className={`w-full bg-[#2b5cff] hover:bg-blue-700 text-white py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
                 {isSubmitting ? 'Submitting...' : 'Submit'}
               </button>
-              <button type="button" className="w-full bg-white border border-[#2b5cff] text-[#2b5cff] hover:bg-blue-50 py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors">
-                Book a call
+              <button type="button" onClick={openModal} className="w-full bg-white border border-[#2b5cff] text-[#2251ff] hover:bg-blue-50 py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors">
+                Schedule a Call
               </button>
             </div>
 
@@ -224,39 +226,38 @@ export default function ContactFormSection() {
 
       {/* Thank you Modal */}
       {isSuccess && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-[2px]">
           <div
-            className="w-full max-w-2xl rounded-[28px] p-10 md:p-14 text-center relative border border-[#DCE5FF]/50"
+            className="w-full max-w-[800px] rounded-[24px] p-10 md:p-14 text-center relative border border-white"
             style={{
               background: `
-                radial-gradient(circle at 0% 0%, rgba(220, 229, 255, 0.8) 0%, transparent 60%),
-                radial-gradient(circle at 100% 0%, rgba(232, 234, 245, 0.4) 0%, transparent 50%),
-                linear-gradient(145deg, #F8F9FC 0%, #ffffff 100%)
+                radial-gradient(circle at 0% 0%, rgba(220, 229, 255, 0.9) 0%, transparent 60%),
+                radial-gradient(circle at 100% 0%, rgba(232, 234, 245, 0.5) 0%, transparent 50%),
+                linear-gradient(145deg, #F4F6FB 0%, #ffffff 100%)
               `,
-              boxShadow: '0 20px 40px -10px rgba(0, 0, 10, 0.05)'
+              boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.1)'
             }}
           >
-            <div className="mx-auto w-[56px] h-[56px] bg-[#2b5cff] rounded-full flex items-center justify-center mb-6 shadow-md shadow-blue-500/10">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            <div className="mx-auto w-[44px] h-[44px] bg-[#2b5cff] rounded-full flex items-center justify-center mb-6 shadow-md shadow-blue-500/20">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.5} d="M5 13l4 4L19 7" />
               </svg>
             </div>
 
-            <h2 className="text-[26px] md:text-[32px] font-semibold text-gray-900 mb-4 tracking-tight flex flex-col">
-              <span>Thank you</span>
-              <span className="mt-1">We have received your enquiry</span>
+            <h2 className="text-[24px] md:text-[28px] font-bold text-[#111827] mb-3 tracking-tight">
+              Thank you — we have received your enquiry
             </h2>
-            <p className="text-gray-600/90 text-[15px] md:text-base mb-10 font-medium">
-              We will be in touch soon. A copy of your request has been sent<br className="hidden sm:block" /> to your email.
+            <p className="text-[#4b5563] text-[13px] md:text-[14px] mb-8 font-medium">
+              We will be in touch soon. A copy of your request has been sent to your email.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button onClick={() => setIsSuccess(false)} className="px-6 py-2.5 bg-[#2b5cff] text-white rounded-[12px] text-[15px] font-medium hover:bg-blue-700 transition-colors flex items-center shadow-md shadow-blue-500/20">
-                Explore solutions <span className="ml-2 font-bold text-lg leading-none">→</span>
-              </button>
-              <button onClick={() => setIsSuccess(false)} className="px-6 py-2.5 bg-transparent border border-[#2b5cff] text-[#2b5cff] rounded-[12px] text-[15px] font-medium hover:bg-blue-50 transition-colors flex items-center">
-                View insights <span className="ml-2 font-bold text-lg leading-none">→</span>
-              </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link href="/solutions" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-[#2b5cff] text-white rounded-lg text-[13px] font-medium hover:bg-blue-700 transition-colors flex items-center justify-center shadow-md shadow-blue-500/20">
+                Explore Solutions <span className="ml-1.5 font-bold">→</span>
+              </Link>
+              <Link href="/insights" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-[#f4f7ff] border border-[#d6e0ff] text-[#2251ff] rounded-lg text-[13px] font-medium hover:bg-[#e8edff] transition-colors flex items-center justify-center">
+                View Insights <span className="ml-1.5 font-bold">→</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -264,3 +265,5 @@ export default function ContactFormSection() {
     </section>
   );
 }
+
+
