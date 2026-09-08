@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       screens: {
         'tablet-only': { 'min': '768px', 'max': '820px' },
+        '3xl': '1920px',
       },
       fontFamily: {
         'sans': ['var(--font-mulish)', 'sans-serif'],
@@ -42,6 +43,8 @@ const config: Config = {
       },
       maxWidth: {
         'container-xl': '1400px',
+        'container-2xl': '1600px',
+        'container-wide': '1800px',
       },
       height: {
         'panel': '400px',
