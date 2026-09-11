@@ -3,12 +3,9 @@
 import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Container, Section, SectionHeader } from "@/components/ui";
-
 import { TestimonialsSectionProps } from './types';
 import TestimonialCard from './TestimonialCard';
-
 import { defaultItems } from './data';
-import RecognitionCard from "../RecognitionSection/RecognitionCard";
 
 export default function TestimonialsSection({
   eyebrow = "TESTIMONIALS",
@@ -33,6 +30,7 @@ export default function TestimonialsSection({
           eyebrow={eyebrow}
           title={title}
           subtitle={description}
+          subtitleClassName="text-body-lg"
           align="center"
           className="items-start sm:items-center text-left sm:text-center mb-10 sm:mb-16 max-w-3xl mx-auto"
         />

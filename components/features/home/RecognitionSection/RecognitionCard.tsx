@@ -16,14 +16,14 @@ export default function RecognitionCard({ item }: { item: RecognitionItem }) {
         />
       </div>
       <div className="flex flex-col flex-grow px-1 sm:px-2 pb-2">
-        <span className="text-eyebrow mb-2">{item.category}</span>
-        <h3 className="text-h3 font-normal sm:font-semibold mb-3">
+        <span className="text-eyebrow text-primary uppercase mb-2">{item.category}</span>
+        <h3 className="text-h3 mb-3">
           {item.title}
         </h3>
         <p className="text-body-sm mb-6 flex-grow">{item.desc}</p>
         <a
           href="#"
-          className="flex items-center text-primary text-body-sm font-medium hover:text-primary-hover transition-colors"
+          className="flex items-center text-primary text-caption hover:text-primary-hover transition-colors"
         >
           View recognition <ArrowRight className="ml-1 h-3.5 w-3.5" />
         </a>
