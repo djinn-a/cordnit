@@ -14,7 +14,7 @@ export type InsightsSectionProps = {
 
 export default function InsightsSection({
   eyebrow = "INSIGHTS & PERSPECTIVE",
-  title = "Ideas engineered for business progress",
+  title = "Ideas Built to Accelerate Sustainable Growth",
   insights = insightsData,
 }: InsightsSectionProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -32,10 +32,10 @@ export default function InsightsSection({
         <SectionHeader
           eyebrow={eyebrow}
           title={
-            title.includes("business progress") ? (
+            title.includes("Sustainable Growth") ? (
               <>
-                Ideas engineered for <br />
-                business progress
+                Ideas Built to Accelerate <br />
+                Sustainable Growth
               </>
             ) : (
               title
@@ -49,10 +49,10 @@ export default function InsightsSection({
           className="flex sm:grid overflow-x-auto sm:overflow-visible snap-x snap-mandatory hide-scrollbar grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 pb-4 sm:pb-0"
         >
           {insights.map((item) => (
-            <InsightCard 
-              key={item.id} 
-              item={item} 
-              className="flex-none w-[88%] sm:w-auto snap-start" 
+            <InsightCard
+              key={item.id}
+              item={item}
+              className="flex-none w-[88%] sm:w-auto snap-start"
             />
           ))}
         </div>
