@@ -25,15 +25,19 @@ export default function HeroOverlayCard({
         {cardEyebrow}
       </p>
       
-      <h2 className="text-h4 max-sm:text-mobile-heading-1 max-sm:text-[#FFF] text-white font-normal mb-3 sm:mb-4 leading-[1.3]">
-        {cardTitle}
+      <h2 className="font-mulish text-[32px] font-bold leading-[40px] text-white mb-3 sm:mb-4">
+        {cardTitle.split('. ').map((part, index, array) => (
+          <span key={index} className="block">
+            {part}{index < array.length - 1 ? '.' : ''}
+          </span>
+        ))}
       </h2>
       
       <p className="text-white/90 text-body max-sm:text-mobile-body-1 max-sm:text-[#FFF] font-medium sm:font-light mb-5 sm:mb-6">
         {cardBody}
       </p>
 
-      <div className="flex flex-row gap-3 sm:gap-4 w-full">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
         <Button
           onClick={openModal}
           className="flex-1"

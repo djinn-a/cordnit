@@ -12,7 +12,7 @@ export type HeroContent = {
 
 export const defaultHeroContent: HeroContent = {
   eyebrow: "WELCOME TO CORDINIT",
-  titleDesktop: "Secure Digital Transformation. Meaningful Progress.",
+  titleDesktop: "Simplifying Complexity. Enabling Real Transformation.",
   cardEyebrow: "SECURE DIGITAL TRANSFORMATION",
   cardTitle: "Where Strategy, Systems, and Execution Finally Align",
   cardBody:

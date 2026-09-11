@@ -1,7 +1,23 @@
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background-color: white;
-  border-bottom: 1px solid #e5e7eb;
+.megaMenuLeftPanel {
+  width: 30%;
+}
+
+.megaMenuRightPanel {
+  width: 70%;
+}
+
+.text11 {
+  font-size: 11px;
+}
+
+.text13 {
+  font-size: 13px;
+}
+
+.text15 {
+  font-size: 15px;
+}
+
+.mobileMenu {
+  top: 80px;
 }
