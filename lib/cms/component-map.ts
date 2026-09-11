@@ -1,6 +1,6 @@
 import type { SectionComponent, SectionType } from "./types";
 
-import HeroSection from "@/components/features/home/Hero/HeroSection";
+import HeroSection from "@/components/features/home/HeroSection/HeroSection";
 import HelpSection from "@/components/features/home/HelpSection/HelpSection";
 import InsightsSection from "@/components/features/home/InsightsSection/InsightsSection";
 import MethodologySection from "@/components/features/home/MethodologySection/MethodologySection";

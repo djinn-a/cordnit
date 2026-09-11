@@ -23,9 +23,9 @@ const variantClass: Record<ButtonVariant, string> = {
 };
 
 const sizeClass: Record<ButtonSize, string> = {
-  sm: "px-3 py-1.5 rounded-btn text-button",
-  md: "px-4 sm:px-6 py-2.5 sm:py-2.5 rounded-xl sm:rounded-btn text-button",
-  lg: "px-6 py-3 rounded-xl text-button",
+  sm: "px-3 py-1.5 rounded-btn text-sm font-semibold",
+  md: "px-4 sm:px-6 py-2.5 sm:py-2.5 rounded-xl sm:rounded-btn text-[16px] font-semibold leading-[24px]",
+  lg: "px-6 py-3 rounded-xl text-lg font-semibold leading-[28px]",
 };
 
 export default function Button({
