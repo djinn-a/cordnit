@@ -8,7 +8,6 @@ import { RecognitionSectionProps } from './types';
 import RecognitionCard from './RecognitionCard';
 
 import { defaultItems } from './data';
-import { validateRecognitionItems } from './validation';
 
 export default function RecognitionSection({
   eyebrow = "COMPLIANCE & PARTNERSHIPS",
@@ -22,7 +21,6 @@ export default function RecognitionSection({
   items = defaultItems,
 }: RecognitionSectionProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const validItems = validateRecognitionItems(items);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -46,8 +44,8 @@ export default function RecognitionSection({
           ref={scrollRef}
           className="flex sm:grid overflow-x-auto sm:overflow-visible snap-x snap-mandatory hide-scrollbar grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pb-4 sm:pb-0 mb-6 sm:mb-0"
         >
-          {validItems.map((item) => (
-            <RecognitionCard key={item.id} item={item} />
+          {items.map((item) => (
+           <RecognitionCard key={item.id} item={item} />
           ))}
         </div>
 

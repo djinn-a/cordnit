@@ -8,7 +8,7 @@ import { TestimonialsSectionProps } from './types';
 import TestimonialCard from './TestimonialCard';
 
 import { defaultItems } from './data';
-import { validateTestimonials } from './validation';
+import RecognitionCard from "../RecognitionSection/RecognitionCard";
 
 export default function TestimonialsSection({
   eyebrow = "TESTIMONIALS",
@@ -17,7 +17,7 @@ export default function TestimonialsSection({
   items = defaultItems,
   }: TestimonialsSectionProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const validItems = validateTestimonials(items);
+
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -41,8 +41,8 @@ export default function TestimonialsSection({
           ref={scrollRef}
           className="flex space-x-4 sm:space-x-6 overflow-x-auto pb-6 sm:pb-8 snap-x snap-mandatory hide-scrollbar mb-4 sm:mb-8"
         >
-          {validItems.map((item) => (
-            <TestimonialCard key={item.id} item={item} />
+          {items.map((item) => (
+           <TestimonialCard key={item.id} item={item} />
           ))}
         </div>
 
