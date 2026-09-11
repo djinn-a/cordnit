@@ -56,6 +56,15 @@ const config: Config = {
         footer: {
           icon: "var(--color-footer-icon)",
         },
+        "pure-black": "#000000",
+      },
+      fontSize: {
+        "mobile-tag": ["10px", { lineHeight: "14px", letterSpacing: "0.6px", fontWeight: "400" }],
+        "mobile-heading": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+        "mobile-body": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+        "mobile-cta": ["14px", { lineHeight: "22px", fontWeight: "600" }],
+        "mobile-subhead": ["10px", { lineHeight: "16px", letterSpacing: "1px", fontWeight: "800" }],
+        "mobile-section-heading": ["24px", { lineHeight: "32px", fontWeight: "800" }],
       },
       maxWidth: {
         container: "80rem",
