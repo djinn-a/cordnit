@@ -47,7 +47,7 @@ export default function NewsletterForm() {
                 NEWSLETTER
               </h3>
               <h2 className="text-[32px] sm:text-[40px] font-bold text-white leading-[1.2] mb-4">
-                Stay ahead of<br />what's next.
+                Stay ahead of<br />what&apos;s next.
               </h2>
               <p className="text-ink-subtle text-[15px] sm:text-base leading-relaxed">
                 Get occasional insights from Cordinit on technology,
@@ -114,7 +114,7 @@ export default function NewsletterForm() {
               Almost there...
             </h2>
             <p className="text-ink-subtle text-[15px] sm:text-base leading-relaxed mb-8">
-              We're just validating your details
+              We&apos;re just validating your details
             </p>
 
             <div className="flex flex-col items-start space-y-3 mb-10 mx-auto">
@@ -129,7 +129,7 @@ export default function NewsletterForm() {
             </div>
 
             <p className="text-ink-subtle text-[11px] sm:text-[13px] leading-relaxed">
-              This will only take a moment. Please don't<br className="hidden sm:block" />
+              This will only take a moment. Please don&apos;t<br className="hidden sm:block" />
               refresh or close this window
             </p>
           </div>
@@ -155,14 +155,14 @@ export default function NewsletterForm() {
               SUBSCRIPTION SUCCESSFUL
             </h3>
             <h2 className="text-[32px] sm:text-[40px] font-bold text-white leading-[1.2] mb-3">
-              You're subscribed
+              You&apos;re subscribed
             </h2>
             <p className="text-ink-subtle text-[15px] sm:text-base leading-relaxed mb-6">
               Thank you for subscribing to Cordinit newsletter.
             </p>
 
             <p className="text-ink-subtle text-[11px] sm:text-[12px] leading-relaxed mb-10 max-w-[280px] mx-auto">
-              You'll receive the latest insights and perspectives<br />straight to your inbox.
+              You&apos;ll receive the latest insights and perspectives<br />straight to your inbox.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
