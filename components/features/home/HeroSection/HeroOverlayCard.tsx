@@ -25,7 +25,7 @@ export default function HeroOverlayCard({
         {cardEyebrow}
       </p>
       
-      <h2 className="font-mulish text-[32px] font-bold leading-[40px] text-white mb-3 sm:mb-4">
+      <h2 className="font-mulish text-[24px] font-bold leading-[40px] text-white mb-3 sm:mb-4">
         {cardTitle.split('. ').map((part, index, array) => (
           <span key={index} className="block">
             {part}{index < array.length - 1 ? '.' : ''}

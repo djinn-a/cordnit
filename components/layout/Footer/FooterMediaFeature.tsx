@@ -42,7 +42,7 @@ export default function FooterMediaFeature() {
           <p className="text-white/80 text-body mb-3 lg:mb-8 lg:max-w-xl">
             Insights from Cordinit&apos;s technology and security experts on building secure, intelligent organisations.
           </p>
-          <a href="#" className="inline-flex items-center text-white text-button uppercase hover:text-white/80 transition-colors">
+          <a href="#" className="inline-flex items-center text-primary text-button uppercase hover:text-white/80 transition-colors">
             WATCH ON YOUTUBE <ArrowRight className="ml-1 h-3 w-3 lg:h-3.5 lg:w-3.5" />
           </a>
         </div>

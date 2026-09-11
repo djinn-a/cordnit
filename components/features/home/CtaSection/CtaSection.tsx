@@ -14,14 +14,16 @@ export type CtaSectionProps = {
   backgroundSrc?: string;
   portraitSrc?: string;
 };
+//Ready to Align Technology with Business Growth?
+//Talk to a Enterprise Technology Specialist
 
 export default function CtaSection({
-  titleMobile = "Let's find the right starting point",
-  bodyMobile = "Tell us what you are trying to achieve. We will help identify the most useful next step.",
-  titleDesktop = "Ready to move your technology forward?",
-  bodyDesktop = "Let's talk about your next milestone—and how to reach it",
-  expertLabel = "Talk to",
-  expertName = "Cordinit Expert",
+  titleMobile = "Ready to Align Technology with Business Growth?",
+  bodyMobile = "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution.",
+  titleDesktop = "Ready to Align Technology with Business Growth?",
+  bodyDesktop = "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution",
+  expertLabel = "Talk to Enterprise Technology Specialist",
+
   ctaLabel = "Schedule a Call",
   backgroundSrc = "/cta-bg.png",
   portraitSrc = "/expert-portrait.jpg",
@@ -52,11 +54,11 @@ export default function CtaSection({
 
           <div className="hidden md:flex flex-col justify-center w-full">
             <h2 className="text-h3 text-white font-medium mb-2 md:mb-3">
-              Ready to move your
-              <br />
-              technology forward?
+              {titleDesktop}
             </h2>
-            <p className="text-white/80 text-body font-light">{bodyDesktop}</p>
+            <p className="text-white text-[16px] font-normal leading-[24px]">
+              {bodyDesktop}
+            </p>
           </div>
         </div>
 
@@ -67,7 +69,7 @@ export default function CtaSection({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={portraitSrc}
-                  alt={expertName}
+                
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -76,7 +78,7 @@ export default function CtaSection({
                   {expertLabel}
                 </p>
                 <p className="text-h4 font-medium leading-snug text-white">
-                  {expertName}
+               
                 </p>
               </div>
             </div>
@@ -94,7 +96,7 @@ export default function CtaSection({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={portraitSrc}
-                  alt={expertName}
+               
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -102,9 +104,9 @@ export default function CtaSection({
                 <p className="text-caption font-normal leading-none text-white/90">
                   {expertLabel}
                 </p>
-                <p className="text-body-sm font-medium leading-tight text-white">
-                  {expertName}
-                </p>
+                {/* <p className="text-body-sm font-medium leading-tight text-white">
+              
+                </p> */}
               </div>
             </div>
             <Button
