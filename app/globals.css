@@ -1,5 +1,48 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
+@import "./styles/typography.css";
+
+:root {
+  /* Brand primary (#2251ff) */
+  --color-primary: #2251ff;
+  --color-primary-hover: #1a42e0;
+  --color-primary-muted: #c9ddf5;
+  --color-primary-pale: #e8f0f8;
+  --color-primary-border: #8bbdd6;
+
+  /* Surfaces & ink */
+  --color-surface: #ffffff;
+  --color-surface-dark: #0a1122;
+  --color-surface-darker: #050811;
+  --color-ink: #000000;
+  --color-ink-muted: #555555;
+  --color-ink-subtle: #a1a1aa;
+  --color-border-subtle: #e5e7eb;
+  --color-footer-icon: #1c1c1c;
+
+  /* Semantic */
+  --color-success: #00d95f;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #2251ff;
+
+  /* Radius */
+  --radius-btn: 0.4rem;
+  --radius-card: 1.5rem;
+  --radius-card-lg: 2rem;
+
+  /* Shadows */
+  --shadow-card: 0 8px 30px rgb(0 0 0 / 0.12);
+  --shadow-focus: 0 0 0 3px rgb(34 81 255 / 0.35);
+  --shadow-glow-primary: 0 0 20px rgb(34 81 255 / 0.4);
+
+  /* Gradients */
+  --gradient-contact: linear-gradient(160deg, #0a1122 0%, #111827 45%, #0a1628 100%);
+  --gradient-contact-soft: linear-gradient(166.84deg, rgba(164, 183, 255, 0.2) 0%, rgba(142, 163, 240, 0.2) 16.69%, rgba(20, 49, 153, 0) 100.03%);
+  --gradient-nav: linear-gradient(90deg, #2251ff 0%, #040a14 100%);
+  --gradient-newsletter: linear-gradient(90.96deg, #1645ff 0%, #0b1b55 38%, #05070d 100%);
+  --gradient-success-panel: linear-gradient(145deg, #f4f6fb 0%, #ffffff 100%);
+}
 
 *,
 *::before,
@@ -12,4 +55,37 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-mulish), Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+}
+
+@layer utilities {
+  .bg-gradient-contact {
+    background-image: var(--gradient-contact);
+  }
+
+  .bg-gradient-contact-soft {
+    background-image: var(--gradient-contact-soft);
+  }
+
+  .bg-gradient-nav {
+    background-image: var(--gradient-nav);
+  }
+
+  .bg-gradient-newsletter {
+    background-image: var(--gradient-newsletter);
+  }
+
+  .bg-gradient-success-panel {
+    background-image: var(--gradient-success-panel);
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

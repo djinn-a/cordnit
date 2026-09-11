@@ -65,7 +65,7 @@ export function NewsletterModalProvider({ children }: { children: React.ReactNod
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
           {/* Overlay */}
           <div
-            className="fixed inset-0 bg-[#050811]/70 transition-opacity"
+            className="fixed inset-0 bg-surface-darker/70 transition-opacity"
             onClick={closeModal}
           ></div>
 
@@ -86,18 +86,18 @@ export function NewsletterModalProvider({ children }: { children: React.ReactNod
             </button>
 
             {/* Inner Card */}
-            <div className="relative z-10 w-full max-w-[540px] p-8 sm:p-12 rounded-3xl bg-[#0a1122]/80 backdrop-blur-xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex flex-col my-12 mx-4">
+            <div className="relative z-10 w-full max-w-[540px] p-8 sm:p-12 rounded-3xl bg-surface-dark/80 backdrop-blur-xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex flex-col my-12 mx-4">
 
               {status === 'idle' && (
                 <div className="animate-in fade-in zoom-in-95 duration-500">
                   <div className="mb-8">
-                    <h3 className="text-[#2251ff] text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
+                    <h3 className="text-primary text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
                       NEWSLETTER
                     </h3>
                     <h2 className="text-[32px] sm:text-[40px] font-bold text-white leading-[1.2] mb-4">
                       Stay ahead of<br />what's next.
                     </h2>
-                    <p className="text-[#a1a1aa] text-[15px] sm:text-base leading-relaxed">
+                    <p className="text-ink-subtle text-[15px] sm:text-base leading-relaxed">
                       Get occasional insights from Cordinit on technology,
                       security and transformation.
                     </p>
@@ -105,7 +105,7 @@ export function NewsletterModalProvider({ children }: { children: React.ReactNod
 
                   <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="block text-[13px] text-[#a1a1aa]">
+                      <label htmlFor="email" className="block text-[13px] text-ink-subtle">
                         Work email address
                       </label>
                       <input
@@ -113,7 +113,7 @@ export function NewsletterModalProvider({ children }: { children: React.ReactNod
                         id="email"
                         required
                         placeholder="balamia@gmail.com"
-                        className="w-full px-4 py-3.5 bg-[#050811]/50 border border-white/5 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6] transition-colors"
+                        className="w-full px-4 py-3.5 bg-surface-darker/50 border border-white/5 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                       />
                     </div>
 
@@ -123,17 +123,17 @@ export function NewsletterModalProvider({ children }: { children: React.ReactNod
                           id="consent"
                           type="checkbox"
                           required
-                          className="w-4 h-4 rounded border-white/20 bg-transparent text-[#2251ff] focus:ring-[#3b82f6] focus:ring-offset-[#0a1122]"
+                          className="w-4 h-4 rounded border-white/20 bg-transparent text-primary focus:ring-primary focus:ring-offset-surface-dark"
                         />
                       </div>
-                      <label htmlFor="consent" className="text-[13px] text-[#a1a1aa] leading-snug cursor-pointer">
+                      <label htmlFor="consent" className="text-[13px] text-ink-subtle leading-snug cursor-pointer">
                         I agree to receive updated from cordinit.
                       </label>
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 px-4 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium text-[15px] rounded-xl transition-colors mt-2"
+                      className="w-full py-3.5 px-4 bg-primary hover:bg-primary-hover text-white font-medium text-[15px] rounded-xl transition-colors mt-2"
                     >
                       Subscribe
                     </button>
@@ -145,32 +145,32 @@ export function NewsletterModalProvider({ children }: { children: React.ReactNod
                 <div className="flex flex-col items-center text-center py-6 animate-in fade-in zoom-in-95 duration-500">
                   <div className="w-10 h-10 mb-6 animate-spin">
                     <svg viewBox="0 0 100 100" fill="none">
-                      <path d="M50 10 A 40 40 0 0 1 90 50" stroke="#3b82f6" strokeWidth="6" strokeLinecap="round" />
+                      <path d="M50 10 A 40 40 0 0 1 90 50" stroke="var(--color-primary)" strokeWidth="6" strokeLinecap="round" />
                     </svg>
                   </div>
 
-                  <h3 className="text-[#2251ff] text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
+                  <h3 className="text-primary text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
                     VALIDATION
                   </h3>
                   <h2 className="text-[32px] sm:text-[40px] font-bold text-white leading-[1.2] mb-3">
                     Almost there...
                   </h2>
-                  <p className="text-[#a1a1aa] text-[15px] sm:text-base leading-relaxed mb-8">
+                  <p className="text-ink-subtle text-[15px] sm:text-base leading-relaxed mb-8">
                     We're just validating your details
                   </p>
 
                   <div className="flex flex-col items-start space-y-3 mb-10 mx-auto">
                     <div className="flex items-center text-sm text-gray-300">
-                      <CheckCircle2 className="w-[18px] h-[18px] text-[#2251ff] mr-3" />
+                      <CheckCircle2 className="w-[18px] h-[18px] text-primary mr-3" />
                       Email format looks good.
                     </div>
                     <div className="flex items-center text-sm text-gray-300">
-                      <CheckCircle2 className="w-[18px] h-[18px] text-[#2251ff] mr-3" />
+                      <CheckCircle2 className="w-[18px] h-[18px] text-primary mr-3" />
                       Consent confirmed
                     </div>
                   </div>
 
-                  <p className="text-[#a1a1aa] text-[11px] sm:text-[13px] leading-relaxed">
+                  <p className="text-ink-subtle text-[11px] sm:text-[13px] leading-relaxed">
                     This will only take a moment. Please don't<br className="hidden sm:block" />
                     refresh or close this window
                   </p>
@@ -181,33 +181,33 @@ export function NewsletterModalProvider({ children }: { children: React.ReactNod
                 <div className="flex flex-col items-center text-center py-6 animate-in fade-in zoom-in-95 duration-500">
                   <div className="w-16 h-16 mb-6 relative flex items-center justify-center">
                     <svg width="60" height="60" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M40 14H8C5.8 14 4 15.8 4 18V34C4 36.2 5.8 38 8 38H40C42.2 38 44 36.2 44 34V18C44 15.8 42.2 14 40 14Z" stroke="#00e676" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M44 18L24 30L4 18" stroke="#00e676" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                      <circle cx="38" cy="10" r="11" fill="#0a1122" />
-                      <circle cx="38" cy="10" r="9" fill="#00e676" />
+                      <path d="M40 14H8C5.8 14 4 15.8 4 18V34C4 36.2 5.8 38 8 38H40C42.2 38 44 36.2 44 34V18C44 15.8 42.2 14 40 14Z" stroke="var(--color-success)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M44 18L24 30L4 18" stroke="var(--color-success)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="38" cy="10" r="11" fill="var(--color-surface-dark)" />
+                      <circle cx="38" cy="10" r="9" fill="var(--color-success)" />
                       <path d="M33 10.5L36 13.5L43 6.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
 
-                  <h3 className="text-[#00e676] text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
+                  <h3 className="text-success text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
                     SUBSCRIPTION SUCCESSFUL
                   </h3>
                   <h2 className="text-[32px] sm:text-[40px] font-bold text-white leading-[1.2] mb-3">
                     You're subscribed
                   </h2>
-                  <p className="text-[#a1a1aa] text-[15px] sm:text-base leading-relaxed mb-6">
+                  <p className="text-ink-subtle text-[15px] sm:text-base leading-relaxed mb-6">
                     Thank you for subscribing to Cordinit newsletter.
                   </p>
 
-                  <p className="text-[#a1a1aa] text-[11px] sm:text-[12px] leading-relaxed mb-10 max-w-[280px] mx-auto">
+                  <p className="text-ink-subtle text-[11px] sm:text-[12px] leading-relaxed mb-10 max-w-[280px] mx-auto">
                     You'll receive the latest insights and perspectives<br />straight to your inbox.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-                    <button onClick={closeModal} className="flex-1 py-3.5 px-4 bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-[13px] sm:text-[14px] font-medium rounded-xl transition-colors shadow-lg shadow-blue-500/20 flex items-center justify-center">
+                    <button onClick={closeModal} className="flex-1 py-3.5 px-4 bg-primary hover:bg-primary-hover text-white text-[13px] sm:text-[14px] font-medium rounded-xl transition-colors shadow-lg shadow-glow-primary flex items-center justify-center">
                       Explore solution <span className="ml-1.5 font-bold">→</span>
                     </button>
-                    <button onClick={closeModal} className="flex-1 py-3.5 px-4 bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-[13px] sm:text-[14px] font-medium rounded-xl transition-colors shadow-lg shadow-blue-500/20 flex items-center justify-center">
+                    <button onClick={closeModal} className="flex-1 py-3.5 px-4 bg-primary hover:bg-primary-hover text-white text-[13px] sm:text-[14px] font-medium rounded-xl transition-colors shadow-lg shadow-glow-primary flex items-center justify-center">
                       View latest insights <span className="ml-1.5 font-bold">→</span>
                     </button>
                   </div>

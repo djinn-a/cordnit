@@ -1,17 +1,21 @@
-import Navbar from '@/components/layout/Navbar/Navbar';
-import Footer from '@/components/layout/Footer/Footer';
-import ContactHero from '@/components/features/contact/ContactHero/ContactHero';
-import ContactFormSection from '@/components/features/contact/ContactFormSection/ContactFormSection';
-import CtaSection from '@/components/features/home/CtaSection/CtaSection';
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import LayoutRenderer from "@/components/renderers/LayoutRenderer";
+import { getPage } from "@/lib/cms/get-page";
 
-export default function ContactUs() {
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage("contactus");
+  return {
+    title: page?.seo?.title,
+    description: page?.seo?.description,
+  };
+}
+
+export default async function ContactUsPage() {
+  const page = await getPage("contactus");
+  if (!page) notFound();
+
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-white">
-      <main className="flex-grow flex flex-col w-full bg-white pt-[72px]">
-        <ContactHero />
-        <ContactFormSection />
-        <CtaSection />
-      </main>
-    </div>
+    <LayoutRenderer layout={page.layout} sections={page.sections} />
   );
 }

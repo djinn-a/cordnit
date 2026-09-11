@@ -154,7 +154,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
   ];
 
   const inputClasses = (fieldName: string) =>
-    `w-full px-4 py-3.5 rounded-lg border bg-white/[0.03] text-white text-[13px] placeholder:text-gray-400 transition-colors focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 ${errors[fieldName] ? 'border-red-500/80' : 'border-white/20'}`;
+    `w-full px-4 py-3.5 rounded-lg border bg-white/[0.03] text-white text-[13px] placeholder:text-gray-400 transition-colors focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 ${errors[fieldName] ? 'border-error/80' : 'border-white/20'}`;
 
   return (
     <ContactModalContext.Provider value={{ isOpen, openModal, closeModal }}>
@@ -164,7 +164,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
           {/* Overlay */}
           <div
-            className="fixed inset-0 bg-[#050811]/70 transition-opacity"
+            className="fixed inset-0 bg-surface-darker/70 transition-opacity"
             onClick={closeModal}
           ></div>
 
@@ -192,7 +192,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
 
                   {/* Step 1 */}
                   <div className="contact-step flex flex-col items-center z-10 w-24">
-                    <div className={`step-circle step-active w-10 h-10 rounded-full flex items-center justify-center font-bold text-base shadow-[0_0_20px_rgba(43,92,255,0.4)] ${step === 1 ? 'bg-[#2b5cff] text-white' : 'bg-[#2b5cff] text-white'}`}>
+                    <div className={`step-circle step-active w-10 h-10 rounded-full flex items-center justify-center font-bold text-base shadow-glow-primary ${step === 1 ? 'bg-primary text-white' : 'bg-primary text-white'}`}>
                       1
                     </div>
                     <span className="text-gray-200 text-[12px] font-medium tracking-wide whitespace-nowrap mt-2.5 text-center">
@@ -205,7 +205,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
 
                   {/* Step 2 */}
                   <div className="contact-step flex flex-col items-center z-10 w-24">
-                    <div className={`step-circle step-inactive w-10 h-10 rounded-full flex items-center justify-center font-bold text-base ${step === 2 ? 'bg-[#2b5cff] text-white shadow-[0_0_20px_rgba(43,92,255,0.4)]' : 'bg-white text-[#2251ff] shadow-[0_0_20px_rgba(255,255,255,0.1)]'}`}>
+                    <div className={`step-circle step-inactive w-10 h-10 rounded-full flex items-center justify-center font-bold text-base ${step === 2 ? 'bg-primary text-white shadow-glow-primary' : 'bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.1)]'}`}>
                       2
                     </div>
                     <span className="text-gray-200 text-[12px] font-medium tracking-wide whitespace-nowrap mt-2.5 text-center">
@@ -222,17 +222,17 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                   <div className="py-12 px-4 flex flex-col items-center text-center">
                     <div className="mx-auto mb-6 relative w-16 h-16">
                       <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-2">
-                        <path d="M4 8C4 5.79086 5.79086 4 8 4H16C18.2091 4 20 5.79086 20 8V10H4V8Z" stroke="#00d95f" strokeWidth="2" strokeLinecap="round" />
-                        <path d="M4 10V16C4 18.2091 5.79086 20 8 20H11" stroke="#00d95f" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M4 8C4 5.79086 5.79086 4 8 4H16C18.2091 4 20 5.79086 20 8V10H4V8Z" stroke="var(--color-success)" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M4 10V16C4 18.2091 5.79086 20 8 20H11" stroke="var(--color-success)" strokeWidth="2" strokeLinecap="round" />
                       </svg>
-                      <div className="absolute bottom-0 right-0 w-[26px] h-[26px] bg-[#00d95f] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,217,95,0.4)] ring-4 ring-[#0a1122]">
+                      <div className="absolute bottom-0 right-0 w-[26px] h-[26px] bg-success rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,217,95,0.4)] ring-4 ring-surface-dark">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 13L9 17L19 7" stroke="#0a1122" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M5 13L9 17L19 7" stroke="var(--color-surface-dark)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
                     </div>
 
-                    <div className="text-[#00d95f] text-[11px] font-bold tracking-widest uppercase mb-3">CALL IS BOOKED</div>
+                    <div className="text-success text-[11px] font-bold tracking-widest uppercase mb-3">CALL IS BOOKED</div>
                     <h3 className="text-[32px] font-semibold text-white mb-4">Call Scheduled</h3>
 
                     <p className="text-gray-300 text-[14px] mb-8">
@@ -244,27 +244,27 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto">
-                      <Link href="/solutions" onClick={closeModal} className="flex-1 bg-[#2b5cff] hover:bg-blue-600 text-white py-3 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center justify-center shadow-lg shadow-blue-500/20">
+                      <Link href="/solutions" onClick={closeModal} className="flex-1 bg-primary hover:bg-primary text-white py-3 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center justify-center shadow-lg shadow-glow-primary">
                         Explore solution <span className="ml-2 font-bold">→</span>
                       </Link>
-                      <Link href="/insights" onClick={closeModal} className="flex-1 bg-[#2b5cff] hover:bg-blue-600 text-white py-3 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center justify-center shadow-lg shadow-blue-500/20">
+                      <Link href="/insights" onClick={closeModal} className="flex-1 bg-primary hover:bg-primary text-white py-3 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center justify-center shadow-lg shadow-glow-primary">
                         View latest insights <span className="ml-2 font-bold">→</span>
                       </Link>
                     </div>
                   </div>
                 ) : isSubmitting ? (
                   <div className="py-16 px-4 flex flex-col items-center text-center">
-                    <div className="w-[46px] h-[46px] border-[3px] border-[#2b5cff]/20 border-t-[#2b5cff] rounded-full animate-spin mb-8"></div>
-                    <div className="text-[#2251ff] text-[11px] font-bold tracking-widest uppercase mb-3">SCHEDULING</div>
+                    <div className="w-[46px] h-[46px] border-[3px] border-primary/20 border-t-primary rounded-full animate-spin mb-8"></div>
+                    <div className="text-primary text-[11px] font-bold tracking-widest uppercase mb-3">SCHEDULING</div>
                     <h3 className="text-[28px] font-semibold text-white mb-2">Almost there...</h3>
                     <p className="text-gray-400 text-[13px] mb-10">We're just scheduling your meeting</p>
 
                     <div className="flex flex-col gap-3.5 mb-12 text-left">
                       <div className="flex items-center text-[13px] text-gray-300">
-                        <CheckCircle2 className="w-4 h-4 text-[#2251ff] mr-3" /> Email format looks good.
+                        <CheckCircle2 className="w-4 h-4 text-primary mr-3" /> Email format looks good.
                       </div>
                       <div className="flex items-center text-[13px] text-gray-300">
-                        <CheckCircle2 className="w-4 h-4 text-[#2251ff] mr-3" /> Consent confirmed
+                        <CheckCircle2 className="w-4 h-4 text-primary mr-3" /> Consent confirmed
                       </div>
                     </div>
 
@@ -277,21 +277,21 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7">
                       {/* Row 1 */}
                       <div>
-                        <label className="block text-[13px] text-white/80 mb-2">First Name<span className="text-red-500 ml-0.5">*</span></label>
+                        <label className="block text-[13px] text-white/80 mb-2">First Name<span className="text-error ml-0.5">*</span></label>
                         <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="Enter First Name" className={inputClasses('firstName')} />
                       </div>
                       <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Last Name<span className="text-red-500 ml-0.5">*</span></label>
+                        <label className="block text-[13px] text-white/80 mb-2">Last Name<span className="text-error ml-0.5">*</span></label>
                         <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Enter Last Name" className={inputClasses('lastName')} />
                       </div>
 
                       {/* Row 2 */}
                       <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Enter Email<span className="text-red-500 ml-0.5">*</span></label>
+                        <label className="block text-[13px] text-white/80 mb-2">Enter Email<span className="text-error ml-0.5">*</span></label>
                         <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Enter Email" className={inputClasses('email')} />
                       </div>
                       <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Company<span className="text-red-500 ml-0.5">*</span></label>
+                        <label className="block text-[13px] text-white/80 mb-2">Company<span className="text-error ml-0.5">*</span></label>
                         <input type="text" name="company" value={formData.company} onChange={handleInputChange} placeholder="Enter Company" className={inputClasses('company')} />
                       </div>
 
@@ -301,7 +301,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                         <input type="text" name="jobTitle" value={formData.jobTitle} onChange={handleInputChange} placeholder="Enter Job Title" className={inputClasses('jobTitle')} />
                       </div>
                       <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Area of Interest<span className="text-red-500 ml-0.5">*</span></label>
+                        <label className="block text-[13px] text-white/80 mb-2">Area of Interest<span className="text-error ml-0.5">*</span></label>
                         <div className="flex flex-wrap gap-2.5">
                           {interestsList.map((item) => {
                             const isSelected = selectedInterests.includes(item);
@@ -313,7 +313,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                                 className={`px-4 py-1.5 rounded-full text-[11px] transition-colors border ${isSelected
                                   ? 'bg-white/10 border-white/40 text-white'
                                   : errors.interests
-                                    ? 'bg-transparent border-red-500/50 text-gray-400 hover:border-red-500'
+                                    ? 'bg-transparent border-error/50 text-gray-400 hover:border-error'
                                     : 'bg-transparent border-white/20 text-gray-400 hover:border-white/40 hover:text-gray-300'
                                   }`}
                               >
@@ -326,14 +326,14 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     </div>
 
                     <div>
-                      <label className="block text-[13px] text-white/80 mb-2">What would you like help with? <span className="text-red-500 ml-0.5">*</span></label>
+                      <label className="block text-[13px] text-white/80 mb-2">What would you like help with? <span className="text-error ml-0.5">*</span></label>
                       <textarea name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
                     </div>
 
                     <div className="pt-2">
                       <div className="flex items-center gap-3">
                         <div className="flex items-center justify-center">
-                          <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="modal-intro-call" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-[#2251ff] focus:ring-0 focus:ring-offset-0 cursor-pointer" />
+                          <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="modal-intro-call" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
                         </div>
                         <label htmlFor="modal-intro-call" className="text-[12px] text-white/90 leading-snug cursor-pointer hover:text-white transition-colors">
                           I would like to book a brief introductory call to discuss this.
@@ -344,16 +344,16 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
 
                       <div className="flex items-center gap-3">
                         <div className="flex items-center justify-center">
-                          <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="modal-privacy" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-[#2251ff] focus:ring-0 focus:ring-offset-0 cursor-pointer" />
+                          <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="modal-privacy" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
                         </div>
                         <label htmlFor="modal-privacy" className="text-[12px] text-white/90 leading-snug cursor-pointer hover:text-white transition-colors">
-                          I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-[#2251ff] hover:underline">Privacy Policy</Link>.
+                          I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
                         </label>
                       </div>
                     </div>
 
                     <div className="flex justify-end pt-4">
-                      <button type="submit" className="bg-[#131b2c] border border-white/20 hover:bg-white/10 text-white py-2.5 px-12 rounded-lg text-[13px] font-medium transition-all">
+                      <button type="submit" className="bg-surface-dark border border-white/20 hover:bg-white/10 text-white py-2.5 px-12 rounded-lg text-[13px] font-medium transition-all">
                         Continue
                       </button>
                     </div>
@@ -362,7 +362,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                   <div className="flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
                       {/* Left: Calendar */}
-                      <div className="bg-[#111827]/50 rounded-xl border border-gray-700/50 p-5">
+                      <div className="bg-surface-dark/50 rounded-xl border border-gray-700/50 p-5">
                         <div className="flex justify-between items-center mb-6">
                           <div className="flex items-center gap-2">
                             <button onClick={handlePrevMonth} className="text-gray-400 hover:text-white transition-colors">
@@ -380,7 +380,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                               setCurrentMonth(new Date(today.getFullYear(), today.getMonth(), 1));
                               setSelectedDate(today);
                             }}
-                            className="text-[10px] px-2 py-0.5 rounded border border-blue-500/50 text-[#2251ff] hover:bg-blue-500/10 transition-colors"
+                            className="text-[10px] px-2 py-0.5 rounded border border-primary/50 text-primary hover:bg-primary-pale0/10 transition-colors"
                           >
                             Today
                           </button>
@@ -407,7 +407,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                                     }
                                   }}
                                   className={`w-7 h-7 mx-auto rounded-lg flex items-center justify-center transition-colors ${isSelected
-                                    ? 'bg-[#2b5cff] text-white shadow-[0_0_10px_rgba(43,92,255,0.4)] opacity-100'
+                                    ? 'bg-primary text-white shadow-[0_0_10px_rgba(43,92,255,0.4)] opacity-100'
                                     : isPast
                                       ? 'cursor-not-allowed text-gray-600'
                                       : 'hover:bg-white/5 cursor-pointer'
@@ -435,7 +435,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                               key={time}
                               onClick={() => setScheduledTime(time)}
                               className={`py-2 px-3 rounded-full text-[11px] font-medium border transition-colors ${scheduledTime === time
-                                ? 'bg-[#2b5cff] border-[#2b5cff] text-white shadow-[0_0_10px_rgba(43,92,255,0.3)]'
+                                ? 'bg-primary border-primary text-white shadow-glow-primary'
                                 : 'bg-transparent border-gray-700/80 text-gray-300 hover:border-gray-500'
                                 }`}
                             >
@@ -452,7 +452,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     </div>
 
                     {/* Bottom section */}
-                    <div className="bg-[#111827]/40 rounded-xl border border-gray-700/50 p-4 md:p-5 flex flex-col md:flex-row gap-6 mb-6">
+                    <div className="bg-surface-dark/40 rounded-xl border border-gray-700/50 p-4 md:p-5 flex flex-col md:flex-row gap-6 mb-6">
                       <div className="flex-1 flex gap-4">
                         <div className="mt-0.5">
                           <Calendar className="w-5 h-5 text-gray-300" />
@@ -465,19 +465,19 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
 
                       <div className="flex-1 flex flex-col justify-center gap-2 border-t md:border-t-0 md:border-l border-gray-700/50 pt-4 md:pt-0 md:pl-6">
                         <div className="flex items-center text-[11px] text-gray-400">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#2251ff] mr-2 shrink-0" /> Talk to a solution expert
+                          <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> Talk to a solution expert
                         </div>
                         <div className="flex items-center text-[11px] text-gray-400">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#2251ff] mr-2 shrink-0" /> Get tailored recommendations
+                          <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> Get tailored recommendations
                         </div>
                         <div className="flex items-center text-[11px] text-gray-400">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#2251ff] mr-2 shrink-0" /> No obligation
+                          <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> No obligation
                         </div>
                       </div>
                     </div>
 
                     {submitError && (
-                      <div className="p-3 text-[13px] text-red-400 bg-red-900/20 border border-red-500/50 rounded-lg mb-6">
+                      <div className="p-3 text-[13px] text-red-400 bg-red-900/20 border border-error/50 rounded-lg mb-6">
                         {submitError}
                       </div>
                     )}
@@ -486,7 +486,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                       <button onClick={handleBack} className="bg-transparent border border-gray-600 hover:bg-white/5 text-gray-300 py-2.5 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center">
                         <ChevronLeft className="w-4 h-4 mr-1" /> Back
                       </button>
-                      <button onClick={handleBookCall} disabled={isSubmitting} className={`bg-[#2b5cff] hover:bg-blue-600 text-white py-2.5 px-10 rounded-lg text-[13px] font-medium transition-colors shadow-[0_0_15px_rgba(43,92,255,0.4)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+                      <button onClick={handleBookCall} disabled={isSubmitting} className={`bg-primary hover:bg-primary text-white py-2.5 px-10 rounded-lg text-[13px] font-medium transition-colors shadow-[0_0_15px_rgba(43,92,255,0.4)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
                         {isSubmitting ? 'Booking...' : 'Book a call'}
                       </button>
                     </div>

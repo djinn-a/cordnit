@@ -22,43 +22,43 @@ const solutionsDropdown = [
     title: 'Cybersecurity',
     description: 'Comprehensive protection for digital assets and risk mitigation.',
     icon: Shield,
-    iconColor: 'text-[#2251ff]',
-    iconBg: 'bg-[#00000]',
+    iconColor: 'text-primary',
+    iconBg: 'bg-ink',
   },
   {
     title: 'Cloud & Infrastructure',
     description: 'Secure, scalable, high-performing architectures.',
     icon: Cloud,
     iconColor: 'text-orange-400',
-    iconBg: 'bg-[#00000]',
+    iconBg: 'bg-ink',
   },
   {
     title: 'AI & Automation',
     description: 'Optimize operations and make smarter, faster decisions.',
     icon: Brain,
     iconColor: 'text-purple-400',
-    iconBg: 'bg-[#00000]',
+    iconBg: 'bg-ink',
   },
   {
     title: 'Application Engineering',
     description: 'Design and modernize applications for business agility.',
     icon: Code,
     iconColor: 'text-cyan-400',
-    iconBg: 'bg-[#00000]',
+    iconBg: 'bg-ink',
   },
   {
     title: 'Data & Integration',
     description: 'Unify systems to drive actionable insights.',
     icon: Database,
     iconColor: 'text-green-400',
-    iconBg: 'bg-[#00000]',
+    iconBg: 'bg-ink',
   },
   {
     title: 'Salesforce Solutions',
     description: 'Transform customer experiences with the power of Salesforce.',
     icon: Briefcase,
     iconColor: 'text-indigo-400',
-    iconBg: 'bg-[#00000]',
+    iconBg: 'bg-ink',
   }
 ];
 
@@ -67,7 +67,7 @@ export default function Navbar() {
   const { openModal } = useContactModal();
 
   return (
-    <nav className="w-full relative z-50 bg-gradient-to-r from-blue-600 to-[#040A14]">
+    <nav className="w-full relative z-50 bg-gradient-to-r from-primary to-surface-darker">
 
       {/* Mobile Navbar */}
       <div className="lg:hidden flex items-center justify-between px-4 sm:px-6 py-3">
@@ -88,7 +88,7 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Navbar */}
-      <div className="hidden lg:block max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="hidden lg:block max-w-container 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
 
           {/* Desktop Logo */}
@@ -114,8 +114,8 @@ export default function Navbar() {
                     </Link>
 
                     {/* Mega Menu Dropdown */}
-                    <div className="absolute top-20 left-0 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out border-t border-white/5 shadow-2xl bg-gradient-to-r from-blue-600 to-[#040A14] pointer-events-none group-hover:pointer-events-auto">
-                      <div className="max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto px-4 sm:px-6 lg:px-8 flex">
+                    <div className="absolute top-20 left-0 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out border-t border-white/5 shadow-2xl bg-gradient-to-r from-primary to-surface-darker pointer-events-none group-hover:pointer-events-auto">
+                      <div className="max-w-container 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto px-4 sm:px-6 lg:px-8 flex">
 
                         {/* Left Panel */}
                         <div className="w-[30%] py-12 pr-12 flex flex-col items-start border-r border-white/10 relative">
@@ -194,7 +194,7 @@ export default function Navbar() {
                   setIsMobileMenuOpen(false);
                   openModal();
                 }}
-                className="flex items-center justify-center w-full px-4 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700"
+                className="flex items-center justify-center w-full px-4 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary-hover"
               >
                 Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
               </button>

@@ -5,53 +5,77 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "360px",
+      sm: "480px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1920px",
+    },
     extend: {
-      screens: {
-        'tablet-only': { 'min': '768px', 'max': '820px' },
-        '3xl': '1920px',
-      },
       fontFamily: {
-        'sans': ['var(--font-mulish)', 'sans-serif'],
-        'mulish': ['var(--font-mulish)', 'sans-serif'],
+        sans: ["var(--font-mulish)", "sans-serif"],
+        mulish: ["var(--font-mulish)", "sans-serif"],
       },
       colors: {
+        primary: {
+          DEFAULT: "var(--color-primary)",
+          hover: "var(--color-primary-hover)",
+          muted: "var(--color-primary-muted)",
+          pale: "var(--color-primary-pale)",
+          border: "var(--color-primary-border)",
+        },
         brand: {
-          primary: "#0A82B5",
-          border: "#8BBDD6",
-          light: "#C9DDF5",
-          pale: "#E8F0F8",
+          primary: "var(--color-primary)",
+          border: "var(--color-primary-border)",
+          light: "var(--color-primary-muted)",
+          pale: "var(--color-primary-pale)",
         },
+        surface: {
+          DEFAULT: "var(--color-surface)",
+          dark: "var(--color-surface-dark)",
+          darker: "var(--color-surface-darker)",
+        },
+        ink: {
+          DEFAULT: "var(--color-ink)",
+          muted: "var(--color-ink-muted)",
+          subtle: "var(--color-ink-subtle)",
+        },
+        border: {
+          subtle: "var(--color-border-subtle)",
+        },
+        success: "var(--color-success)",
+        error: "var(--color-error)",
+        warning: "var(--color-warning)",
+        info: "var(--color-info)",
         footer: {
-          icon: "#1c1c1c",
+          icon: "var(--color-footer-icon)",
         },
-      },
-      fontSize: {
-        'hero-main': ['56px', {
-          lineHeight: '65px',
-          letterSpacing: '-2.88px',
-          fontWeight: '800'
-        }],
-        'hero-title': '1.35rem',
-        'section-subtitle': '0.65rem',
-        'section-subtitle-sm': '0.6rem',
-        'section-subtitle-xs': '0.55rem',
-        'body-medium': '0.85rem',
-        'body-small': '0.8rem',
-        'body-xs': '0.7rem',
       },
       maxWidth: {
-        'container-xl': '1400px',
-        'container-2xl': '1600px',
-        'container-wide': '1800px',
+        container: "80rem",
+        "container-xl": "1400px",
+        "container-2xl": "1600px",
+        "container-wide": "1800px",
       },
       height: {
-        'panel': '400px',
+        panel: "400px",
       },
       borderRadius: {
-        'btn': '0.4rem',
-      }
+        btn: "var(--radius-btn)",
+        card: "var(--radius-card)",
+        "card-lg": "var(--radius-card-lg)",
+      },
+      boxShadow: {
+        card: "var(--shadow-card)",
+        focus: "var(--shadow-focus)",
+        "glow-primary": "var(--shadow-glow-primary)",
+      },
     },
   },
   plugins: [],

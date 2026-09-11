@@ -1,20 +1,21 @@
-import React from 'react';
-import Navbar from '@/components/layout/Navbar/Navbar';
-import Footer from '@/components/layout/Footer/Footer';
-import AboutHero from '@/components/features/about/AboutHero/AboutHero';
-import AboutContent from '@/components/features/about/AboutContent/AboutContent';
-import AboutPrinciples from '@/components/features/about/AboutPrinciples/AboutPrinciples';
-import AboutTeam from '@/components/features/about/AboutTeam/AboutTeam';
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import LayoutRenderer from "@/components/renderers/LayoutRenderer";
+import { getPage } from "@/lib/cms/get-page";
 
-export default function AboutUsPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage("aboutus");
+  return {
+    title: page?.seo?.title,
+    description: page?.seo?.description,
+  };
+}
+
+export default async function AboutUsPage() {
+  const page = await getPage("aboutus");
+  if (!page) notFound();
+
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-white">
-      <main className="flex-grow flex flex-col w-full bg-white">
-        <AboutHero />
-        <AboutContent />
-        <AboutPrinciples />
-        <AboutTeam />
-      </main>
-    </div>
+    <LayoutRenderer layout={page.layout} sections={page.sections} />
   );
 }

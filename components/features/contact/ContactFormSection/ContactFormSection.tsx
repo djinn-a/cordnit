@@ -28,33 +28,33 @@ export default function ContactFormSection() {
   ];
 
   const inputClasses = (fieldName: string) =>
-    `w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm transition-colors ${errors[fieldName] ? 'border-red-500' : 'border-gray-200'
+    `w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary bg-surface text-body-sm transition-colors ${errors[fieldName] ? 'border-error' : 'border-border-subtle'
     }`;
 
   return (
-    <section className="w-full py-16 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white mb-16">
+    <section className="w-full py-12 sm:py-16 px-4 xs:px-5 sm:px-6 lg:px-8 max-w-container 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-surface mb-16">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
 
         {/* Left Form Area */}
-        <div className="w-full lg:w-5/12 rounded-[24px] p-6 md:p-8 lg:p-10" style={{ background: 'linear-gradient(166.84deg, rgba(164, 183, 255, 0.2) 0%, rgba(142, 163, 240, 0.2) 16.69%, rgba(20, 49, 153, 0) 100.03%)', boxShadow: '0px 4px 2px 0px #00000014' }}>
+        <div className="w-full lg:w-5/12 rounded-card p-6 md:p-8 lg:p-10 bg-gradient-contact-soft shadow-sm">
           <form className="space-y-6" onSubmit={handleSubmit} noValidate>
 
             {/* Input Fields */}
             <div className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-800 mb-1.5">Full Name<span className="text-red-500">*</span></label>
+                <label className="block text-sm font-medium text-gray-800 mb-1.5">Full Name<span className="text-error">*</span></label>
                 <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="Enter Name" className={inputClasses('firstName')} />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-800 mb-1.5">Last Name<span className="text-red-500">*</span></label>
+                <label className="block text-sm font-medium text-gray-800 mb-1.5">Last Name<span className="text-error">*</span></label>
                 <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Enter Last Name" className={inputClasses('lastName')} />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-800 mb-1.5">Enter Email<span className="text-red-500">*</span></label>
+                <label className="block text-sm font-medium text-gray-800 mb-1.5">Enter Email<span className="text-error">*</span></label>
                 <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Enter Email" className={inputClasses('email')} />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-800 mb-1.5">Company<span className="text-red-500">*</span></label>
+                <label className="block text-sm font-medium text-gray-800 mb-1.5">Company<span className="text-error">*</span></label>
                 <input type="text" name="company" value={formData.company} onChange={handleInputChange} placeholder="Enter Company" className={inputClasses('company')} />
               </div>
               <div>
@@ -65,7 +65,7 @@ export default function ContactFormSection() {
 
             {/* Area of Interest */}
             <div className={`pt-2 rounded-lg transition-colors ${errors.interests ? 'bg-red-50/50 p-2 -mx-2' : ''}`}>
-              <label className="block text-[15px] md:text-sm font-medium text-gray-800 mb-3">Area of Interest<span className="text-red-500">*</span></label>
+              <label className="block text-[15px] md:text-sm font-medium text-gray-800 mb-3">Area of Interest<span className="text-error">*</span></label>
               <div className="flex flex-wrap gap-2">
                 {interestsList.map((item) => {
                   const isSelected = selectedInterests.includes(item);
@@ -75,10 +75,10 @@ export default function ContactFormSection() {
                       type="button"
                       onClick={() => toggleInterest(item)}
                       className={`px-3 md:px-4 py-1.5 md:py-2 border rounded-full text-[11px] md:text-xs transition-colors ${isSelected
-                          ? 'bg-blue-50 border-blue-500 text-[#2251ff]'
+                          ? 'bg-blue-50 border-primary text-primary'
                           : errors.interests
-                            ? 'bg-white border-red-300 text-gray-700 hover:border-red-500'
-                            : 'bg-white border-gray-200 text-gray-700 hover:border-blue-500 hover:text-[#2251ff]'
+                            ? 'bg-white border-red-300 text-gray-700 hover:border-error'
+                            : 'bg-white border-gray-200 text-gray-700 hover:border-primary hover:text-primary'
                         }`}
                     >
                       {item}
@@ -90,14 +90,14 @@ export default function ContactFormSection() {
 
             {/* Textarea */}
             <div className="pt-2">
-              <label className="block text-[15px] md:text-sm font-medium text-gray-800 mb-1.5">What would you like help with? <span className="text-red-500">*</span></label>
+              <label className="block text-[15px] md:text-sm font-medium text-gray-800 mb-1.5">What would you like help with? <span className="text-error">*</span></label>
               <textarea name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
             </div>
 
             {/* Checkboxes */}
             <div className="pt-2 space-y-4">
               <div className={`flex items-start p-2 -mx-2 rounded-lg transition-colors ${errors.introCall ? 'bg-red-50/50 border border-red-200' : 'border border-transparent'}`}>
-                <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="intro-call" className={`mt-0.5 w-5 h-5 text-[#2251ff] rounded focus:ring-blue-500 bg-white shrink-0 ${errors.introCall ? 'border-red-500' : 'border-gray-300'}`} />
+                <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="intro-call" className={`mt-0.5 w-5 h-5 text-primary rounded focus:ring-blue-500 bg-white shrink-0 ${errors.introCall ? 'border-error' : 'border-gray-300'}`} />
                 <label htmlFor="intro-call" className={`ml-3 text-[13px] md:text-sm ${errors.introCall ? 'text-red-700' : 'text-gray-800'}`}>
                   I would like to book a brief introductory call to discuss this.
                 </label>
@@ -106,9 +106,9 @@ export default function ContactFormSection() {
               <hr className="border-gray-200" />
 
               <div className={`flex items-start p-2 -mx-2 rounded-lg transition-colors ${errors.privacy ? 'bg-red-50/50 border border-red-200' : 'border border-transparent'}`}>
-                <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="privacy" className={`mt-0.5 w-5 h-5 text-[#2251ff] rounded focus:ring-blue-500 bg-white shrink-0 ${errors.privacy ? 'border-red-500' : 'border-gray-300'}`} />
+                <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="privacy" className={`mt-0.5 w-5 h-5 text-primary rounded focus:ring-blue-500 bg-white shrink-0 ${errors.privacy ? 'border-error' : 'border-gray-300'}`} />
                 <label htmlFor="privacy" className={`ml-3 text-[13px] md:text-sm leading-snug ${errors.privacy ? 'text-red-700' : 'text-gray-800'}`}>
-                  I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-[#2251ff] hover:underline">Privacy Policy</Link>.
+                  I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
                 </label>
               </div>
             </div>
@@ -122,10 +122,10 @@ export default function ContactFormSection() {
 
             {/* Action Buttons */}
             <div className="grid grid-cols-2 gap-3 pt-4">
-              <button type="submit" disabled={isSubmitting} className={`w-full bg-[#2b5cff] hover:bg-blue-700 text-white py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+              <button type="submit" disabled={isSubmitting} className={`w-full bg-primary hover:bg-primary-hover text-white py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
                 {isSubmitting ? 'Submitting...' : 'Submit'}
               </button>
-              <button type="button" onClick={openModal} className="w-full bg-white border border-[#2b5cff] text-[#2251ff] hover:bg-blue-50 py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors">
+              <button type="button" onClick={openModal} className="w-full bg-white border border-primary text-primary hover:bg-primary-pale py-3 px-2 md:px-6 rounded-xl text-[15px] md:text-sm font-medium transition-colors">
                 Schedule a Call
               </button>
             </div>
@@ -167,7 +167,7 @@ export default function ContactFormSection() {
           <div className="grid grid-cols-2 gap-3 md:gap-6">
 
             {/* Email Card */}
-            <div className="rounded-[16px] md:rounded-[24px] p-4 md:p-8" style={{ background: 'linear-gradient(166.84deg, rgba(164, 183, 255, 0.2) 0%, rgba(142, 163, 240, 0.2) 16.69%, rgba(20, 49, 153, 0) 100.03%)', boxShadow: '0px 4px 2px 0px #00000014' }}>
+            <div className="rounded-card p-4 md:p-8 bg-gradient-contact-soft shadow-sm">
               <div className="flex items-start gap-2 md:gap-3">
                 <Mail className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
@@ -178,7 +178,7 @@ export default function ContactFormSection() {
             </div>
 
             {/* Contact Numbers Card */}
-            <div className="rounded-[16px] md:rounded-[24px] p-4 md:p-8" style={{ background: 'linear-gradient(166.84deg, rgba(164, 183, 255, 0.2) 0%, rgba(142, 163, 240, 0.2) 16.69%, rgba(20, 49, 153, 0) 100.03%)', boxShadow: '0px 4px 2px 0px #00000014' }}>
+            <div className="rounded-card p-4 md:p-8 bg-gradient-contact-soft shadow-sm">
               <div className="flex items-start gap-2 md:gap-3">
                 <PhoneCall className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
@@ -192,7 +192,7 @@ export default function ContactFormSection() {
             </div>
 
             {/* Corporate Address Card */}
-            <div className="rounded-[16px] md:rounded-[24px] p-4 md:p-8" style={{ background: 'linear-gradient(166.84deg, rgba(164, 183, 255, 0.2) 0%, rgba(142, 163, 240, 0.2) 16.69%, rgba(20, 49, 153, 0) 100.03%)', boxShadow: '0px 4px 2px 0px #00000014' }}>
+            <div className="rounded-card p-4 md:p-8 bg-gradient-contact-soft shadow-sm">
               <div className="flex items-start gap-2 md:gap-3">
                 <MapPin className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
@@ -205,7 +205,7 @@ export default function ContactFormSection() {
             </div>
 
             {/* Hours Card */}
-            <div className="rounded-[16px] md:rounded-[24px] p-4 md:p-8" style={{ background: 'linear-gradient(166.84deg, rgba(164, 183, 255, 0.2) 0%, rgba(142, 163, 240, 0.2) 16.69%, rgba(20, 49, 153, 0) 100.03%)', boxShadow: '0px 4px 2px 0px #00000014' }}>
+            <div className="rounded-card p-4 md:p-8 bg-gradient-contact-soft shadow-sm">
               <div className="flex items-start gap-2 md:gap-3">
                 <Clock className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
@@ -227,35 +227,25 @@ export default function ContactFormSection() {
       {/* Thank you Modal */}
       {isSuccess && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-[2px]">
-          <div
-            className="w-full max-w-[800px] rounded-[24px] p-10 md:p-14 text-center relative border border-white"
-            style={{
-              background: `
-                radial-gradient(circle at 0% 0%, rgba(220, 229, 255, 0.9) 0%, transparent 60%),
-                radial-gradient(circle at 100% 0%, rgba(232, 234, 245, 0.5) 0%, transparent 50%),
-                linear-gradient(145deg, #F4F6FB 0%, #ffffff 100%)
-              `,
-              boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.1)'
-            }}
-          >
-            <div className="mx-auto w-[44px] h-[44px] bg-[#2b5cff] rounded-full flex items-center justify-center mb-6 shadow-md shadow-blue-500/20">
+          <div className="w-full max-w-[800px] rounded-card p-10 md:p-14 text-center relative border border-white bg-gradient-success-panel shadow-card">
+            <div className="mx-auto w-[44px] h-[44px] bg-primary rounded-full flex items-center justify-center mb-6 shadow-md shadow-glow-primary">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.5} d="M5 13l4 4L19 7" />
               </svg>
             </div>
 
-            <h2 className="text-[24px] md:text-[28px] font-bold text-[#111827] mb-3 tracking-tight">
+            <h2 className="text-[24px] md:text-[28px] font-bold text-ink mb-3 tracking-tight">
               Thank you — we have received your enquiry
             </h2>
-            <p className="text-[#4b5563] text-[13px] md:text-[14px] mb-8 font-medium">
+            <p className="text-ink-muted text-[13px] md:text-[14px] mb-8 font-medium">
               We will be in touch soon. A copy of your request has been sent to your email.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link href="/solutions" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-[#2b5cff] text-white rounded-lg text-[13px] font-medium hover:bg-blue-700 transition-colors flex items-center justify-center shadow-md shadow-blue-500/20">
+              <Link href="/solutions" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-primary text-white rounded-lg text-[13px] font-medium hover:bg-primary-hover transition-colors flex items-center justify-center shadow-md shadow-glow-primary">
                 Explore Solutions <span className="ml-1.5 font-bold">→</span>
               </Link>
-              <Link href="/insights" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-[#f4f7ff] border border-[#d6e0ff] text-[#2251ff] rounded-lg text-[13px] font-medium hover:bg-[#e8edff] transition-colors flex items-center justify-center">
+              <Link href="/insights" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-primary-pale border border-primary-muted text-primary rounded-lg text-[13px] font-medium hover:bg-primary-muted transition-colors flex items-center justify-center">
                 View Insights <span className="ml-1.5 font-bold">→</span>
               </Link>
             </div>

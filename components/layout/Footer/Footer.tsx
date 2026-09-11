@@ -118,7 +118,7 @@ export default function Footer() {
               {/* Play Button Overlay */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 group cursor-pointer transition-colors hover:bg-black/40">
                 <div className="w-16 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
-                  <Play className="h-5 w-5 text-[#2251ff] ml-1" fill="currentColor" />
+                  <Play className="h-5 w-5 text-primary ml-1" fill="currentColor" />
                 </div>
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function Footer() {
             <p className="text-white/80 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
               Insights from Cordinit's technology and security experts on building secure, intelligent organisations.
             </p>
-            <a href="#" className="inline-flex items-center text-[#2251ff] font-semibold text-xs tracking-wider uppercase hover:text-[#2251ff] transition-colors">
+            <a href="#" className="inline-flex items-center text-primary font-semibold text-xs tracking-wider uppercase hover:text-primary transition-colors">
               WATCH ON YOUTUBE <span className="ml-1 text-lg leading-none">→</span>
             </a>
           </div>

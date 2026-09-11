@@ -1,99 +1,100 @@
-import React from 'react';
+import { Container, Section, SectionHeader } from "@/components/ui";
+import { cn } from "@/lib/utils/cn";
 
-const steps = [
+export type MethodologyStep = {
+  num: string;
+  title: string;
+  desc: string;
+  tone: "primary" | "ink";
+};
+
+export type MethodologySectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  steps?: MethodologyStep[];
+};
+
+const defaultSteps: MethodologyStep[] = [
   {
-    num: '01',
-    title: 'DISCOVER',
-    desc: 'Thorough assessment of the company\'s current condition',
-    color: 'blue',
+    num: "01",
+    title: "DISCOVER",
+    desc: "Thorough assessment of the company's current condition",
+    tone: "primary",
   },
   {
-    num: '02',
-    title: 'DESIGN',
-    desc: 'Create the right foundation for sustainable business growth',
-    color: 'black',
+    num: "02",
+    title: "DESIGN",
+    desc: "Create the right foundation for sustainable business growth",
+    tone: "ink",
   },
   {
-    num: '03',
-    title: 'IMPLEMENT',
-    desc: 'Engineer, Integrate, and Evolve Your Technology Landscape',
-    color: 'blue',
+    num: "03",
+    title: "IMPLEMENT",
+    desc: "Engineer, Integrate, and Evolve Your Technology Landscape",
+    tone: "primary",
   },
   {
-    num: '04',
-    title: 'OPTIMISE',
-    desc: 'Reinforce security, improve efficiency and increase long-term value',
-    color: 'black',
+    num: "04",
+    title: "OPTIMISE",
+    desc: "Reinforce security, improve efficiency and increase long-term value",
+    tone: "ink",
   },
   {
-    num: '05',
-    title: 'OPERATE',
-    desc: 'Future-proof your technology with adaptability and resilience',
-    color: 'blue',
+    num: "05",
+    title: "OPERATE",
+    desc: "Future-proof your technology with adaptability and resilience",
+    tone: "primary",
   },
 ];
 
-export default function MethodologySection() {
+export default function MethodologySection({
+  eyebrow = "METHODOLOGY",
+  title = "Creating smarter foundations for how businesses operate",
+  description = "We turn business ambition into lasting progress through clear communication, continuous collaboration and purposeful execution.",
+  steps = defaultSteps,
+}: MethodologySectionProps = {}) {
   return (
-    <section className="w-full py-8 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto bg-white">
-      {/* Header Area */}
-      <div className="flex flex-col lg:flex-row lg:items-start justify-between mb-8 sm:mb-16 gap-4 sm:gap-8">
-        <div className="lg:w-1/2">
-          <h3 className="text-[#2251ff] font-bold text-section-subtitle-sm sm:text-section-subtitle tracking-[0.15em] uppercase mb-3 sm:mb-4">
-            METHODOLOGY
-          </h3>
-          <h2 className="text-hero-title sm:text-4xl md:text-5xl font-bold sm:font-extrabold text-black leading-[1.3] sm:leading-[1.15]">
-            Creating smarter foundations for how<br className="sm:hidden" />
-            <span className="hidden sm:inline"> </span>businesses operate
-          </h2>
+    <Section spacing="sm" className="py-8 sm:py-16 lg:py-20">
+      <Container>
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between mb-8 sm:mb-12 lg:mb-16 gap-4 sm:gap-8">
+          <SectionHeader
+            eyebrow={eyebrow}
+            title={title}
+            className="lg:w-1/2"
+          />
+          <div className="lg:w-1/2 lg:pt-8">
+            <p className="text-body-lg max-w-lg">{description}</p>
+          </div>
         </div>
-        <div className="lg:w-1/2 lg:pt-8 mt-2 sm:mt-0">
-          <p className="text-gray-600 text-body-small sm:text-lg leading-relaxed max-w-lg">
-            We turn business ambition into lasting progress <br />
-            through clear communication, continuous <br />
-            collaboration and purposeful execution.
-          </p>
-        </div>
-      </div>
 
-      {/* Cards Area */}
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-1.5 sm:gap-4">
-        {steps.map((step) => {
-          const isBlue = step.color === 'blue';
-
-          return (
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-1.5 sm:gap-4">
+          {steps.map((step) => (
             <div
               key={step.num}
-              className={`
-                flex flex-col h-[240px] sm:h-panel p-4 sm:p-8 rounded-[2px] sm:rounded-sm
-                ${isBlue ? 'bg-blue-600 text-white' : 'bg-black text-white'}
-              `}
+              className={cn(
+                "flex flex-col h-[220px] xs:h-[240px] sm:h-panel p-4 sm:p-6 md:p-8 rounded-sm text-white",
+                step.tone === "primary" ? "bg-primary" : "bg-ink"
+              )}
             >
-              {/* Top Row: Title and Dot */}
               <div className="flex justify-between items-start mb-auto">
-                <span className="text-section-subtitle-xs sm:text-section-subtitle font-bold tracking-widest uppercase">
+                <span className="text-caption font-bold tracking-widest uppercase text-white">
                   {step.title}
                 </span>
-                <div
-                  className={`w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full ${isBlue ? 'bg-white' : 'bg-white'}`}
-                ></div>
+                <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-white" />
               </div>
-
-              {/* Bottom Area: Large Number and Description */}
               <div className="mt-auto">
-                <div className="text-4xl sm:text-6xl font-bold mb-2 sm:mb-4 leading-none">
+                <div className="text-h1 text-white mb-2 sm:mb-4 leading-none">
                   {step.num}
                 </div>
-                <p className="text-section-subtitle sm:text-sm leading-relaxed text-white/90">
+                <p className="text-caption sm:text-body-sm leading-relaxed text-white/90">
                   {step.desc}
                 </p>
               </div>
             </div>
-          );
-        })}
-      </div>
-    </section>
+          ))}
+        </div>
+      </Container>
+    </Section>
   );
 }
-
-
