@@ -3,15 +3,8 @@
 import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Container, Section, SectionHeader } from "@/components/ui";
-
-export type InsightItem = {
-  id: string | number;
-  tag: string;
-  date: string;
-  type: string;
-  title: string;
-  image: string;
-};
+import { insightsData, InsightItem } from "./insightsData";
+import InsightCard from "./InsightCard";
 
 export type InsightsSectionProps = {
   eyebrow?: string;
@@ -19,49 +12,10 @@ export type InsightsSectionProps = {
   insights?: InsightItem[];
 };
 
-const defaultInsights: InsightItem[] = [
-  {
-    id: 1,
-    tag: "CYBERSECURITY",
-    date: "Aug 26, 2026",
-    type: "Article",
-    title: "Why Security Must Be the Foundation of Digital Transformation",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    id: 2,
-    tag: "SALESFORCE",
-    date: "Aug 26, 2026",
-    type: "Article",
-    title: "Why Security Must Be the Foundation of Digital Transformation",
-    image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    tag: "AI & AUTOMATION",
-    date: "Aug 26, 2026",
-    type: "Article",
-    title: "Why Security Must Be the Foundation of Digital Transformation",
-    image:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    id: 4,
-    tag: "CLOUD & INFRASTRUCTURE",
-    date: "Aug 26, 2026",
-    type: "Article",
-    title: "Why Security Must Be the Foundation of Digital Transformation",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop",
-  },
-];
-
 export default function InsightsSection({
   eyebrow = "INSIGHTS & PERSPECTIVE",
   title = "Ideas engineered for business progress",
-  insights = defaultInsights,
+  insights = insightsData,
 }: InsightsSectionProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -95,39 +49,11 @@ export default function InsightsSection({
           className="flex sm:grid overflow-x-auto sm:overflow-visible snap-x snap-mandatory hide-scrollbar grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 pb-4 sm:pb-0"
         >
           {insights.map((item) => (
-            <div
-              key={item.id}
-              className="group relative h-panel flex-none w-[88%] sm:w-auto snap-start overflow-hidden flex flex-col justify-between cursor-pointer"
-            >
-              <div className="absolute inset-0 w-full h-full">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-
-              <div className="relative z-10 p-4">
-                <span className="inline-block bg-ink text-white text-caption font-semibold tracking-wider px-3 py-1.5 uppercase">
-                  {item.tag}
-                </span>
-              </div>
-
-              <div className="relative z-10 p-6 bg-black/40 backdrop-blur-md border-t border-white/10">
-                <div className="flex items-center text-ink-subtle text-caption mb-2">
-                  <span>{item.type}</span>
-                  <span className="mx-2">•</span>
-                  <span>{item.date}</span>
-                </div>
-                <h3 className="text-white font-medium text-h4 mb-4 line-clamp-3">
-                  {item.title}
-                </h3>
-                <div className="flex items-center text-primary text-body-sm font-medium">
-                  Read more <ArrowRight className="ml-1.5 h-4 w-4" />
-                </div>
-              </div>
-            </div>
+            <InsightCard 
+              key={item.id} 
+              item={item} 
+              className="flex-none w-[88%] sm:w-auto snap-start" 
+            />
           ))}
         </div>
 
