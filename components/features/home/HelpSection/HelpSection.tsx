@@ -21,8 +21,8 @@ export default function HelpSection({
     <Section spacing="sm" className="pt-8 pb-4 sm:py-16 lg:py-20">
       <Container width="narrow">
         <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 sm:mb-12 lg:mb-16 gap-3 sm:gap-8">
-          <h2 className="text-h2 md:w-1/2">{title}</h2>
-          <p className="text-body-lg md:w-1/2 max-w-[95%]">{description}</p>
+          <h2 className="text-h2 font-800 md:w-1/2">{title}</h2>
+          <p className="text-body-lg lg:text-[20px] md:w-1/2 max-w-[95%]">{description}</p>
         </div>
 
         {safeServices.length > 0 && (

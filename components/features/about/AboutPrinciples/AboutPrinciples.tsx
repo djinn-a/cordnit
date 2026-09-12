@@ -20,19 +20,20 @@ export default function AboutPrinciples({
           <SectionHeader
             eyebrow={eyebrow}
             title={title}
+            titleClassName="text-20px font-800 md:text-48px"
             className="md:w-1/2"
           />
           <div className="md:w-1/2 md:pl-8">
-            <p className="text-body">{description}</p>
+            <p className="text-black text-14px font-400 md:text-20px md:font-normal">{description}</p>
           </div>
         </div>
 
         <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-16 lg:gap-y-20">
           {principlesData.map((principle, index) => (
-            <PrincipleItem 
-              key={principle.number} 
-              principle={principle} 
-              isLast={index === principlesData.length - 1} 
+            <PrincipleItem
+              key={principle.number}
+              principle={principle}
+              isLast={index === principlesData.length - 1}
             />
           ))}
         </div>

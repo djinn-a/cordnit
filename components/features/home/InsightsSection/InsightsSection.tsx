@@ -41,6 +41,7 @@ export default function InsightsSection({
               title
             )
           }
+          titleClassName="font-800"
           className="mb-8 sm:mb-12"
         />
 

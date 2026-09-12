@@ -331,9 +331,22 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     </div>
 
                     <div className="pt-2">
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center justify-center">
-                          <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="modal-intro-call" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
+                      <div className="flex items-start gap-3">
+                        <div
+                          onClick={() => handleInputChange({ target: { name: 'introCall', type: 'checkbox', checked: !formData.introCall } } as any)}
+                          className={`mt-0.5 w-4 h-4 rounded-sm border flex items-center justify-center shrink-0 cursor-pointer transition-all ${
+                            formData.introCall
+                              ? 'bg-primary border-primary'
+                              : errors.introCall
+                              ? 'bg-transparent border-error/80'
+                              : 'bg-transparent border-white/40 hover:border-white/70'
+                          }`}
+                        >
+                          {formData.introCall && (
+                            <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
                         </div>
                         <label htmlFor="modal-intro-call" className="text-[12px] text-white/90 leading-snug cursor-pointer hover:text-white transition-colors">
                           I would like to book a brief introductory call to discuss this.
@@ -342,9 +355,22 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
 
                       <div className="w-full h-px bg-white/20 my-5"></div>
 
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center justify-center">
-                          <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="modal-privacy" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
+                      <div className="flex items-start gap-3">
+                        <div
+                          onClick={() => handleInputChange({ target: { name: 'privacy', type: 'checkbox', checked: !formData.privacy } } as any)}
+                          className={`mt-0.5 w-4 h-4 rounded-sm border flex items-center justify-center shrink-0 cursor-pointer transition-all ${
+                            formData.privacy
+                              ? 'bg-primary border-primary'
+                              : errors.privacy
+                              ? 'bg-transparent border-error/80'
+                              : 'bg-transparent border-white/40 hover:border-white/70'
+                          }`}
+                        >
+                          {formData.privacy && (
+                            <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
                         </div>
                         <label htmlFor="modal-privacy" className="text-[12px] text-white/90 leading-snug cursor-pointer hover:text-white transition-colors">
                           I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
@@ -353,7 +379,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     </div>
 
                     <div className="flex justify-end pt-4">
-                      <button type="submit" className="bg-surface-dark border border-white/20 hover:bg-white/10 text-white py-2.5 px-12 rounded-lg text-[13px] font-medium transition-all">
+                      <button type="submit" className="bg-surface-dark border border-white/20 hover:bg-white/10 text-white py-2.5 px-12 rounded-lg text-[13px] font-medium transition-all cursor-pointer">
                         Continue
                       </button>
                     </div>

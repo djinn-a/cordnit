@@ -30,8 +30,9 @@ export default function TestimonialsSection({
           eyebrow={eyebrow}
           title={title}
           subtitle={description}
-          subtitleClassName="text-body-lg"
+          subtitleClassName="text-body-lg lg:text-[20px]"
           align="center"
+          titleClassName="font-800"
           className="items-start sm:items-center text-left sm:text-center mb-10 sm:mb-16 max-w-3xl mx-auto"
         />
 

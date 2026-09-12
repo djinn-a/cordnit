@@ -40,14 +40,14 @@ export default function HeroOverlayCard({
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
         <Button
           onClick={openModal}
-          className="flex-1"
+          className="flex-1 cursor-pointer"
           rightIcon={<ArrowRight className="h-4 w-4 sm:h-3.5 sm:w-3.5" />}
         >
           {primaryCta}
         </Button>
         <Button
           variant="secondary"
-          className="flex-1"
+          className="flex-1 cursor-pointer"
           rightIcon={
             <ArrowRight className="h-4 w-4 sm:h-3.5 sm:w-3.5 text-primary" />
           }

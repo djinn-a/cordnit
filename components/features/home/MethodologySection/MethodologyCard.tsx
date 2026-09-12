@@ -11,7 +11,10 @@ export default function MethodologyCard({ step, className }: MethodologyCardProp
     <div
       className={cn(
         "flex flex-col h-55 xs:h-60 sm:h-panel p-4 sm:p-6 md:p-8 rounded-sm text-surface",
-        step.tone === "primary" ? "bg-primary" : "bg-ink",
+        // Mobile bg (< lg)
+        step.mobileTone === "primary" ? "bg-primary lg:bg-inherit" : "bg-ink lg:bg-inherit",
+        // Desktop bg (lg+)
+        step.tone === "primary" ? "lg:bg-primary" : "lg:bg-ink",
         className
       )}
     >
@@ -22,10 +25,10 @@ export default function MethodologyCard({ step, className }: MethodologyCardProp
         <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-surface" />
       </div>
       <div className="mt-auto">
-        <div className="text-h1 text-surface mb-2 sm:mb-4 leading-none">
+        <div className="text-48px font-700 text-surface mb-2 sm:mb-4 leading-none">
           {step.num}
         </div>
-        <p className="text-caption sm:text-body-sm leading-relaxed text-surface/90">
+        <p className="text-caption sm:text-body-sm lg:text-16px leading-relaxed text-surface/90">
           {step.desc}
         </p>
       </div>

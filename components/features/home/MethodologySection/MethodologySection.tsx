@@ -22,10 +22,11 @@ export default function MethodologySection({
           <SectionHeader
             eyebrow={eyebrow}
             title={title}
+            titleClassName="font-800"
             className="lg:w-1/2"
           />
           <div className="lg:w-1/2 lg:pt-8">
-            <p className="text-body-lg max-w-lg">{description}</p>
+            <p className="text-body-lg lg:text-[20px] max-w-lg">{description}</p>
           </div>
         </div>
 

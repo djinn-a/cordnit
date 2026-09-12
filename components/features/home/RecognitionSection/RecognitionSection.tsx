@@ -36,7 +36,9 @@ export default function RecognitionSection({
           eyebrow={eyebrow}
           title={title}
           subtitle={description}
+          subtitleClassName="lg:text-[20px]"
           align="center"
+          titleClassName="font-800"
           className="items-start sm:items-center text-left sm:text-center mb-8 sm:mb-12 lg:mb-16"
         />
 

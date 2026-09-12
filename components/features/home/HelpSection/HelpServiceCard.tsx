@@ -20,8 +20,8 @@ export default function HelpServiceCard({
         // Base / Mobile wrapper
         "flex items-start py-4 border-b border-border-subtle group cursor-pointer hover:bg-primary-pale/50 transition-colors",
         // Desktop wrapper
-        "sm:block sm:relative sm:p-6 md:p-8 lg:p-12 sm:border-primary-border sm:border-b-2 sm:hover:bg-primary-pale sm:cursor-auto",
-        isLgRightBorder && "lg:border-r-2",
+        "sm:block sm:relative sm:p-6 md:p-8 lg:p-12 sm:border-primary sm:border-b sm:hover:bg-primary-pale sm:cursor-auto",
+        isLgRightBorder && "lg:border-r",
         !isLgBottomBorder && "lg:border-b-0"
       )}
     >
@@ -61,7 +61,7 @@ export default function HelpServiceCard({
             // Mobile specifics
             "font-medium group-hover:text-primary",
             // Desktop specifics
-            "sm:text-primary sm:mb-3 lg:mb-4 sm:font-inherit"
+            "sm:text-primary sm:mb-3 lg:mb-4 sm:font-700"
           )}
         >
           {service.title}

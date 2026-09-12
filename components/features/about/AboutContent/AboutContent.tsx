@@ -24,7 +24,7 @@ export default function AboutContent({
       <Container>
         <div className="flex flex-col lg:flex-row gap-10 md:gap-16 lg:gap-24 items-center">
           <div className="w-full lg:w-1/2 flex flex-col items-start min-h-[350px]">
-            <SectionHeader eyebrow={eyebrow} title={title} className="mb-5 md:mb-10" />
+            <SectionHeader eyebrow={eyebrow} title={title} titleClassName="text-20px font-800 md:text-48px" className="mb-5 md:mb-10" />
 
             <AboutContentTabs
               tabs={aboutContentData}
@@ -35,7 +35,7 @@ export default function AboutContent({
             <div className="flex-1 w-full animate-in fade-in duration-500">
               <h3 className="text-h3 mb-4 md:mb-5">{activeContent.title}</h3>
               {activeContent.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 24)} className="text-body mb-5 last:mb-0">
+                <p key={paragraph.slice(0, 24)} className="text-black text-body text-14px font-400 md:text-20px md:font-normal mb-5 last:mb-0">
                   {paragraph}
                 </p>
               ))}

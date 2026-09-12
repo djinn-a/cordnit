@@ -56,10 +56,11 @@ export default function AboutTeam({
           <SectionHeader
             eyebrow={eyebrow}
             title={title}
+            titleClassName="text-20px font-800 md:text-48px"
             className="md:w-3/5"
           />
           <div className="md:w-2/5">
-            <p className="text-body">{description}</p>
+            <p className="text-black text-14px font-400 md:text-20px md:font-normal">{description}</p>
           </div>
         </div>
 
@@ -69,10 +70,10 @@ export default function AboutTeam({
           className="flex md:grid flex-nowrap md:grid-cols-3 overflow-x-auto md:overflow-visible gap-4 md:gap-6 mb-8 md:mb-12 snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 hide-scrollbar scroll-smooth"
         >
           {members.map((member, index) => (
-            <TeamMemberCard 
-              key={`${member.name}-${member.role}-${index}`} 
-              member={member} 
-              className="w-[80%] md:w-full h-[400px] lg:h-[500px]" 
+            <TeamMemberCard
+              key={`${member.name}-${member.role}-${index}`}
+              member={member}
+              className="w-[80%] md:w-full h-[400px] lg:h-[500px]"
             />
           ))}
         </div>

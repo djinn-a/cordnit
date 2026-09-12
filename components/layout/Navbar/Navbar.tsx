@@ -10,6 +10,7 @@ import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const { openModal } = useContactModal();
 
   return (
@@ -84,7 +85,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <button
               onClick={openModal}
-              className="flex items-center px-6 py-2 border border-white/80 rounded-md text-white font-medium text-sm hover:bg-white/10 transition-colors"
+              className="flex items-center px-6 py-2 border border-white/80 rounded-md text-white font-medium text-sm hover:bg-white/10 transition-colors cursor-pointer"
             >
               {navbarContent.getInTouchLabel} <ArrowRight className="ml-2 h-4 w-4" />
             </button>
@@ -104,14 +105,56 @@ export default function Navbar() {
           <div className="px-6 py-6 pb-10 flex flex-col">
             {navbarContent.navLinks.map((link) => (
               <div key={link.label} className="border-b border-white/20">
-                <Link
-                  href={link.href}
-                  className="flex items-center justify-between py-4 text-white hover:text-white/80 font-medium text-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                  {link.label === 'Solutions' && <ChevronDown className="h-4 w-4" />}
-                </Link>
+                {link.label === 'Solutions' ? (
+                  <>
+                    {/* Solutions accordion header */}
+                    <button
+                      type="button"
+                      onClick={() => setIsSolutionsOpen((prev) => !prev)}
+                      className="w-full flex items-center justify-between py-4 text-white font-medium text-lg transition-colors"
+                    >
+                      {link.label}
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-200 ${isSolutionsOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+
+                    {/* Solutions sub-items */}
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        isSolutionsOpen ? 'max-h-[500px] opacity-100 pb-4' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <div className="flex flex-col gap-1 pl-1">
+                        {navbarContent.solutionsDropdown.map((solution) => (
+                          <Link
+                            key={solution.slug}
+                            href={`/solutions/${solution.slug}`}
+                            className="py-2 text-white hover:text-white/80 text-16px transition-colors"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {solution.title}
+                          </Link>
+                        ))}
+                        <Link
+                          href={navbarContent.megaMenu.exploreAllHref}
+                          className="mt-2 flex items-center gap-1.5 text-white font-semibold text-16px hover:text-white/80 transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Explore all services <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="flex items-center justify-between py-4 text-white hover:text-white/80 font-medium text-lg transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </div>
             ))}
             
@@ -121,7 +164,7 @@ export default function Navbar() {
                   setIsMobileMenuOpen(false);
                   openModal();
                 }}
-                className="inline-flex items-center justify-center px-6 py-3 border border-primary bg-primary/20 text-white rounded-lg font-medium hover:bg-primary/40 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 border border-primary bg-primary/20 text-white rounded-lg font-medium hover:bg-primary/40 transition-colors cursor-pointer"
               >
                 {navbarContent.getInTouchLabel} <ArrowRight className="ml-3 h-4 w-4" />
               </button>

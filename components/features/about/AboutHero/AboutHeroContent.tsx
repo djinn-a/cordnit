@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui";
+import { useContactModal } from "../../contact/ContactModal/ContactModalProvider";
 
 export type AboutHeroContentProps = {
   title: string;
@@ -12,11 +15,10 @@ export default function AboutHeroContent({
   bodyMobile,
   bodyDesktop,
 }: AboutHeroContentProps) {
-  // We explicitly split the title based on the exact visual layout from the data.
-  // Alternatively we could just use the title as is if it naturally wraps,
-  // but preserving the explicit break logic matching the previous hardcoded markup.
+  const { openModal } = useContactModal();
+
   return (
-    <div className="absolute bottom-4 sm:bottom-12 left-4 sm:left-12 w-[calc(100%-2rem)] sm:w-auto md:w-[480px] lg:w-[560px] bg-surface/30 sm:bg-surface/20 backdrop-blur-md p-6 sm:p-12 rounded-card border border-surface/20 shadow-2xl">
+    <div className="absolute bottom-4 sm:bottom-12 left-1/2 -translate-x-1/2 sm:left-12 sm:translate-x-0 w-[94%] max-w-[420px] sm:max-w-none sm:w-auto md:w-[480px] lg:w-[560px] bg-surface/30 sm:bg-surface/20 backdrop-blur-md p-6 sm:p-12 rounded-card border border-surface/20 shadow-2xl">
       <p className="hidden sm:block text-surface/90 text-caption tracking-wide mb-6">
         About Cordinit
       </p>
@@ -39,9 +41,10 @@ export default function AboutHeroContent({
         {bodyDesktop}
       </p>
 
-      <div className="flex flex-row gap-3 sm:gap-4 w-full">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
         <Button
-          className="flex-1 sm:flex-none"
+          onClick={openModal}
+          className="w-full sm:w-auto sm:flex-none cursor-pointer"
           rightIcon={<ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
         >
           <span className="sm:hidden">Book a call</span>
@@ -49,7 +52,7 @@ export default function AboutHeroContent({
         </Button>
         <Button
           variant="secondary"
-          className="flex-1 sm:flex-none"
+          className="w-full sm:w-auto sm:flex-none cursor-pointer"
           rightIcon={
             <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
           }
@@ -61,3 +64,4 @@ export default function AboutHeroContent({
     </div>
   );
 }
+

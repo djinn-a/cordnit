@@ -43,9 +43,10 @@ export default function InsightCard({ item, className = "" }: InsightCardProps) 
         <h3 className="text-surface font-medium text-solution-h4 mb-4 line-clamp-3">
           {item.title}
         </h3>
-        <div className="flex items-center text-surface text-body-sm font-medium">
-          Read more <ArrowRight className="ml-1.5 h-4 w-4 text-surface" />
+        <div className="flex items-center text-primary text-body-sm font-medium">
+          Read more <ArrowRight className="ml-1.5 h-4 w-4 text-primary" />
         </div>
+
       </div>
     </CardWrapper>
   );

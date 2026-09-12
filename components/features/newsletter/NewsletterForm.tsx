@@ -5,6 +5,9 @@ import { CheckCircle2 } from 'lucide-react';
 
 export default function NewsletterForm() {
   const [status, setStatus] = useState<'idle' | 'validating' | 'success'>('idle');
+  const [email, setEmail] = useState('');
+  const [consent, setConsent] = useState(false);
+  const [errors, setErrors] = useState<{ email?: boolean; consent?: boolean }>({});
 
   useEffect(() => {
     if (status === 'validating') {
@@ -17,12 +20,19 @@ export default function NewsletterForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('validating');
+    const newErrors: { email?: boolean; consent?: boolean } = {};
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    if (!email.trim() || !emailValid) newErrors.email = true;
+    if (!consent) newErrors.consent = true;
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length === 0) {
+      setStatus('validating');
+    }
   };
 
   return (
     <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-newsletter backdrop-blur-[100px]">
-      {/* Abstract Background Waves (SVG representation) */}
+      {/* Abstract Background Waves */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
           <path d="M0,50 Q25,25 50,50 T100,50 L100,100 L0,100 Z" fill="none" stroke="var(--color-primary)" strokeWidth="0.5" className="opacity-30" />
@@ -38,7 +48,7 @@ export default function NewsletterForm() {
 
       {/* Card Container */}
       <div className="relative z-10 w-full max-w-[540px] mx-4 p-8 sm:p-12 rounded-3xl bg-surface-dark/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] min-h-[460px] flex flex-col justify-center">
-        
+
         {status === 'idle' && (
           <div className="animate-in fade-in zoom-in-95 duration-500">
             {/* Header */}
@@ -56,41 +66,61 @@ export default function NewsletterForm() {
             </div>
 
             {/* Form */}
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              
+            <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+
               {/* Email Input */}
               <div className="space-y-2">
-                <label htmlFor="email" className="block text-[13px] text-ink-subtle">
+                <label htmlFor="nl-email" className="block text-[13px] text-ink-subtle">
                   Work email address
                 </label>
                 <input
                   type="email"
-                  id="email"
-                  required
+                  id="nl-email"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setErrors((prev) => ({ ...prev, email: false })); }}
                   placeholder="balamia@gmail.com"
-                  className="w-full px-4 py-3.5 bg-transparent border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  className={`w-full px-4 py-3.5 bg-transparent border rounded-xl text-white placeholder-gray-500 focus:outline-none transition-colors ${errors.email
+                    ? 'border-error/80 focus:border-error focus:ring-1 focus:ring-error/50'
+                    : 'border-white/10 focus:border-primary focus:ring-1 focus:ring-primary'
+                    }`}
                 />
+                {errors.email && (
+                  <p className="text-error text-[11px] mt-1">Please enter a valid work email.</p>
+                )}
               </div>
 
-              {/* Checkbox */}
+              {/* Custom Checkbox */}
               <div className="flex items-start gap-3">
-                <div className="flex items-center h-5 mt-0.5">
-                  <input
-                    id="consent"
-                    type="checkbox"
-                    required
-                    className="w-4 h-4 rounded border-white/20 bg-transparent text-primary focus:ring-primary focus:ring-offset-surface-dark"
-                  />
+                <div
+                  onClick={() => { setConsent((prev) => !prev); setErrors((prev) => ({ ...prev, consent: false })); }}
+                  className={`mt-0.5 w-4 h-4 rounded-sm border flex items-center justify-center shrink-0 cursor-pointer transition-all ${consent
+                    ? 'bg-primary border-primary'
+                    : errors.consent
+                      ? 'bg-transparent border-error/80'
+                      : 'bg-transparent border-white/40 hover:border-white/70'
+                    }`}
+                >
+                  {consent && (
+                    <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  )}
                 </div>
-                <label htmlFor="consent" className="text-[13px] text-ink-subtle leading-snug cursor-pointer">
+                <label
+                  onClick={() => { setConsent((prev) => !prev); setErrors((prev) => ({ ...prev, consent: false })); }}
+                  className={`text-[13px] leading-snug cursor-pointer transition-colors ${errors.consent ? 'text-error/90' : 'text-ink-subtle'}`}
+                >
                   I agree to receive updated from cordinit.
                 </label>
               </div>
+              {errors.consent && (
+                <p className="text-error text-[11px] -mt-3">You must agree to continue.</p>
+              )}
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-3.5 px-4 bg-primary hover:bg-primary-hover text-white font-medium text-[15px] rounded-xl transition-colors shadow-lg shadow-glow-primary mt-2"
+                className="w-full py-3.5 px-4 bg-primary hover:bg-primary-hover text-white font-medium text-[15px] rounded-xl transition-colors shadow-lg shadow-glow-primary mt-2 cursor-pointer"
               >
                 Subscribe
               </button>
@@ -100,13 +130,11 @@ export default function NewsletterForm() {
 
         {status === 'validating' && (
           <div className="flex flex-col items-center text-center py-6 animate-in fade-in zoom-in-95 duration-500">
-            {/* Spinning Arc */}
             <div className="w-10 h-10 mb-6 animate-spin">
               <svg viewBox="0 0 100 100" fill="none">
                 <path d="M50 10 A 40 40 0 0 1 90 50" stroke="var(--color-primary)" strokeWidth="6" strokeLinecap="round" />
               </svg>
             </div>
-            
             <h3 className="text-primary text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
               VALIDATION
             </h3>
@@ -116,7 +144,6 @@ export default function NewsletterForm() {
             <p className="text-ink-subtle text-[15px] sm:text-base leading-relaxed mb-8">
               We&apos;re just validating your details
             </p>
-
             <div className="flex flex-col items-start space-y-3 mb-10 mx-auto">
               <div className="flex items-center text-sm text-gray-300">
                 <CheckCircle2 className="w-[18px] h-[18px] text-primary mr-3" />
@@ -127,7 +154,6 @@ export default function NewsletterForm() {
                 Consent confirmed
               </div>
             </div>
-
             <p className="text-ink-subtle text-[11px] sm:text-[13px] leading-relaxed">
               This will only take a moment. Please don&apos;t<br className="hidden sm:block" />
               refresh or close this window
@@ -137,20 +163,15 @@ export default function NewsletterForm() {
 
         {status === 'success' && (
           <div className="flex flex-col items-center text-center py-6 animate-in fade-in zoom-in-95 duration-500">
-            {/* Custom Envelope & Check Icon */}
             <div className="w-16 h-16 mb-6 relative flex items-center justify-center">
               <svg width="60" height="60" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M40 14H8C5.8 14 4 15.8 4 18V34C4 36.2 5.8 38 8 38H40C42.2 38 44 36.2 44 34V18C44 15.8 42.2 14 40 14Z" stroke="var(--color-success)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M44 18L24 30L4 18" stroke="var(--color-success)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                
-                {/* Background mask for circle to cut through the envelope */}
+                <path d="M40 14H8C5.8 14 4 15.8 4 18V34C4 36.2 5.8 38 8 38H40C42.2 38 44 36.2 44 34V18C44 15.8 42.2 14 40 14Z" stroke="var(--color-success)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M44 18L24 30L4 18" stroke="var(--color-success)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 <circle cx="38" cy="10" r="11" fill="var(--color-surface-dark)" />
-                
-                <circle cx="38" cy="10" r="9" fill="var(--color-success)"/>
-                <path d="M33 10.5L36 13.5L43 6.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="38" cy="10" r="9" fill="var(--color-success)" />
+                <path d="M33 10.5L36 13.5L43 6.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            
             <h3 className="text-success text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">
               SUBSCRIPTION SUCCESSFUL
             </h3>
@@ -160,11 +181,9 @@ export default function NewsletterForm() {
             <p className="text-ink-subtle text-[15px] sm:text-base leading-relaxed mb-6">
               Thank you for subscribing to Cordinit newsletter.
             </p>
-
             <p className="text-ink-subtle text-[11px] sm:text-[12px] leading-relaxed mb-10 max-w-[280px] mx-auto">
               You&apos;ll receive the latest insights and perspectives<br />straight to your inbox.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
               <button className="flex-1 py-3.5 px-4 bg-primary hover:bg-primary-hover text-white text-[13px] sm:text-[14px] font-medium rounded-xl transition-colors shadow-lg shadow-glow-primary flex items-center justify-center">
                 Explore solution <span className="ml-1.5 font-bold">→</span>
@@ -180,4 +199,3 @@ export default function NewsletterForm() {
     </div>
   );
 }
-

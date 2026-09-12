@@ -12,6 +12,7 @@ export type CtaSectionProps = {
   expertName?: string;
   ctaLabel?: string;
   backgroundSrc?: string;
+  backgroundSrcMobile?: string;
   portraitSrc?: string;
 };
 //Ready to Align Technology with Business Growth?
@@ -26,6 +27,7 @@ export default function CtaSection({
 
   ctaLabel = "Schedule a Call",
   backgroundSrc = "/cta-bg.png",
+  backgroundSrcMobile = "/cta-bg-mobile.jpg",
   portraitSrc = "/expert-portrait.jpg",
 }: CtaSectionProps = {}) {
   const { openModal } = useContactModal();
@@ -33,11 +35,19 @@ export default function CtaSection({
   return (
     <section className="relative w-[calc(100%-2rem)] md:w-full mx-auto md:max-w-[1120px] md:h-[232px] pt-16 pb-20 md:py-8 px-6 md:px-[60px] bg-surface-dark mb-8 sm:mb-12 md:mb-24 overflow-hidden rounded-card-lg md:rounded-3xl shadow-lg">
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        {/* Mobile Background */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={backgroundSrcMobile}
+          alt=""
+          className="md:hidden w-full h-full object-cover"
+        />
+        {/* Desktop Background */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={backgroundSrc}
           alt=""
-          className="w-full h-full object-cover object-[60%_40%] md:object-center scale-[2.5] md:scale-100 -translate-y-[15%] md:translate-y-0 origin-[60%_40%] md:origin-center"
+          className="hidden md:block w-full h-full object-cover object-center"
         />
       </div>
 
@@ -56,7 +66,7 @@ export default function CtaSection({
             <h2 className="text-h3 text-white font-medium mb-2 md:mb-3">
               {titleDesktop}
             </h2>
-            <p className="text-white text-[16px] font-normal leading-[24px]">
+            <p className="text-white text-16px font-normal leading-[24px]">
               {bodyDesktop}
             </p>
           </div>
@@ -69,22 +79,22 @@ export default function CtaSection({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={portraitSrc}
-                
+
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="text-white flex flex-col justify-center">
-                <p className="text-body font-normal leading-snug mb-0.5 text-white/90">
+                <p className="text-16px font-normal leading-snug mb-0.5 text-white">
                   {expertLabel}
                 </p>
                 <p className="text-h4 font-medium leading-snug text-white">
-               
+
                 </p>
               </div>
             </div>
             <Button
               onClick={openModal}
-              className="w-full py-[18px] bg-surface text-ink hover:bg-primary-pale rounded-full text-body-lg"
+              className="w-full py-[18px] bg-surface text-ink hover:bg-primary-pale rounded-full text-body-lg cursor-pointer"
             >
               {ctaLabel}
             </Button>
@@ -96,12 +106,12 @@ export default function CtaSection({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={portraitSrc}
-               
+
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="text-white flex flex-col justify-center gap-1">
-                <p className="text-caption font-normal leading-none text-white/90">
+                <p className="text-16px font-normal leading-none text-white/90">
                   {expertLabel}
                 </p>
                 {/* <p className="text-body-sm font-medium leading-tight text-white">
@@ -111,7 +121,7 @@ export default function CtaSection({
             </div>
             <Button
               onClick={openModal}
-              className="w-full py-2.5 bg-surface text-ink hover:bg-primary-pale rounded-full mt-auto"
+              className="w-full py-2.5 bg-surface text-ink hover:bg-primary-pale !rounded-full mt-auto cursor-pointer"
             >
               {ctaLabel}
             </Button>

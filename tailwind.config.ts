@@ -19,6 +19,20 @@ const config: Config = {
       "3xl": "1920px",
     },
     extend: {
+      fontSize: {
+        "12px": "12px",
+        "14px": "14px",
+        "16px": "16px",
+        "20px": "20px",
+        "24px": "24px",
+        "48px": "48px",
+      },
+      fontWeight: {
+        "400": "400",
+        "600": "600",
+        "700": "700",
+        "800": "800",
+      },
       fontFamily: {
         sans: ["var(--font-mulish)", "sans-serif"],
         mulish: ["var(--font-mulish)", "sans-serif"],

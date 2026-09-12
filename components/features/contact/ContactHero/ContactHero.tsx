@@ -16,7 +16,7 @@ export default function ContactHero({
   imageAlt = "Cordinit Office Contact",
 }: ContactHeroProps = {}) {
   return (
-    <Section spacing="md" className="pt-2 pb-12 sm:pb-16 lg:pt-4 lg:pb-24">
+    <Section spacing="none" className="pb-12 sm:pb-16 lg:pb-24">
       <Container>
         <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-16 items-center">
           <div className="w-full lg:w-[42%] flex flex-col items-center md:items-start text-center md:text-left">

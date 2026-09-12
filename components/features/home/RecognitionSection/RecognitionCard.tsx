@@ -21,12 +21,7 @@ export default function RecognitionCard({ item }: { item: RecognitionItem }) {
           {item.title}
         </h3>
         <p className="text-body-sm mb-6 flex-grow">{item.desc}</p>
-        <a
-          href="#"
-          className="flex items-center text-primary text-caption hover:text-primary-hover transition-colors"
-        >
-          View recognition <ArrowRight className="ml-1 h-3.5 w-3.5" />
-        </a>
+
       </div>
     </div>
   );
