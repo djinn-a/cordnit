@@ -5,13 +5,13 @@ import { TestimonialItem } from './types';
 
 export default function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <div className="flex-none w-full sm:w-[320px] md:w-95 snap-start flex flex-col bg-surface border border-primary-muted rounded-card-lg overflow-hidden">
-      <div className="relative h-70 sm:h-95 w-full">
+    <div className="flex-none w-full lg:w-[calc((100%-4.5rem)/3.5)] snap-start flex flex-col bg-surface border border-primary-muted rounded-card-lg overflow-hidden">
+      <div className="relative h-48 sm:h-56 lg:h-64 w-full">
         <Image
           src={item.image}
           alt={item.name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 320px, 380px"
+          sizes="(max-width: 1023px) 100vw, 28vw"
           className="object-cover object-top"
         />
         <div className="absolute bottom-4 left-4">
@@ -28,13 +28,13 @@ export default function TestimonialCard({ item }: { item: TestimonialItem }) {
         </div>
       </div>
 
-      <div className="flex flex-col flex-grow p-6">
+      <div className="flex flex-col flex-grow p-4 sm:p-5">
         <h3 className="text-h4 font-normal sm:font-bold mb-1">
           {item.name}
         </h3>
         <p className="text-caption mb-0.5">{item.role}</p>
-        <p className="text-caption mb-4 sm:mb-5">{item.company}</p>
-        <p className="text-body-sm text-ink mb-6 flex-grow">
+        <p className="text-caption mb-3 sm:mb-4">{item.company}</p>
+        <p className="text-body-sm text-ink mb-4 flex-grow">
           {item.quote}
         </p>
         <a

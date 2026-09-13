@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui";
+import { useContactModal } from "@/components/features/contact/ContactModal/ContactModalProvider";
 
 export type AboutHeroContentProps = {
   title: string;
@@ -12,6 +15,8 @@ export default function AboutHeroContent({
   bodyMobile,
   bodyDesktop,
 }: AboutHeroContentProps) {
+  const { openModal } = useContactModal();
+
   // We explicitly split the title based on the exact visual layout from the data.
   // Alternatively we could just use the title as is if it naturally wraps,
   // but preserving the explicit break logic matching the previous hardcoded markup.
@@ -39,10 +44,11 @@ export default function AboutHeroContent({
         {bodyDesktop}
       </p>
 
-      <div className="flex flex-row gap-3 sm:gap-4 w-full">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
         <Button
           className="flex-1 sm:flex-none"
           rightIcon={<ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+          onClick={() => openModal({ ctaLocation: "about-hero" })}
         >
           <span className="sm:hidden">Book a call</span>
           <span className="hidden sm:inline">Talk to Us</span>

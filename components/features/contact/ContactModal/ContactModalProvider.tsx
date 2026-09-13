@@ -1,9 +1,12 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { X, Calendar, CheckCircle2, ChevronLeft, ChevronDown, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { useLeadForm } from '../../../../hooks/useLeadForm';
+
+const POPUP_BG = '/popup-bg.webp';
+const CLOSE_MS = 300;
 
 interface ModalContext {
   ctaLocation?: string;
@@ -31,7 +34,9 @@ export function useContactModal() {
 
 export function ContactModalProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isEntered, setIsEntered] = useState(false);
   const [modalContext, setModalContext] = useState<ModalContext>({});
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const {
     formData,
@@ -99,6 +104,10 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
   const daysArray = generateDays();
 
   const openModal = (context?: any) => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
     // Prevent React SyntheticEvents from being stored as context
     if (context && typeof context === 'object' && !('nativeEvent' in context) && !('preventDefault' in context)) {
       setModalContext(context);
@@ -106,18 +115,23 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       setModalContext({});
     }
     setIsOpen(true);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => setIsEntered(true));
+    });
   };
+
   const closeModal = () => {
-    setIsOpen(false);
-    // Reset form after closing animation (approx 300ms)
-    setTimeout(() => {
+    setIsEntered(false);
+    closeTimerRef.current = setTimeout(() => {
+      setIsOpen(false);
       resetForm();
       setModalContext({});
       setStep(1);
       setScheduledTime('02:00 PM');
       setCurrentMonth(new Date(today.getFullYear(), today.getMonth(), 1));
       setSelectedDate(today);
-    }, 300);
+      closeTimerRef.current = null;
+    }, CLOSE_MS);
   };
 
   const handleContinue = (e: React.FormEvent) => {
@@ -135,6 +149,20 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
     handleSubmit(undefined, `${formattedDate} at ${scheduledTime}`);
   };
 
+  // Preload popup background so first open is not transparent
+  useEffect(() => {
+    const preload = () => {
+      const img = new Image();
+      img.src = POPUP_BG;
+    };
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(preload);
+      return () => window.cancelIdleCallback(id);
+    }
+    const timer = setTimeout(preload, 1);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Prevent background scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -146,6 +174,12 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
+  }, []);
 
   const interestsList = [
     'Cybersecurity', 'Managed Services', 'AI & Automation',
@@ -164,14 +198,14 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
           {/* Overlay */}
           <div
-            className="fixed inset-0 bg-surface-darker/70 transition-opacity"
+            className={`fixed inset-0 bg-surface-darker/70 transition-opacity duration-300 ${isEntered ? 'opacity-100' : 'opacity-0'}`}
             onClick={closeModal}
           ></div>
 
           {/* Modal Container */}
           <div
-            className="relative w-full max-w-[1000px] bg-cover bg-center rounded-[2rem] overflow-hidden shadow-2xl flex flex-col items-center justify-center min-h-[600px] my-auto border border-white/5 py-12"
-            style={{ backgroundImage: 'url(/popup-bg.jpg)' }}
+            className={`relative w-full max-w-[1000px] bg-surface-dark bg-cover bg-center rounded-[2rem] shadow-2xl flex flex-col items-center my-auto border border-white/5 max-h-[min(900px,calc(100dvh-2rem))] overflow-y-auto transition-[opacity,transform] duration-300 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'}`}
+            style={{ backgroundImage: `url(${POPUP_BG})` }}
             onClick={(e) => e.stopPropagation()}
           >
 
@@ -184,7 +218,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
               <X className="w-5 h-5" />
             </button>
 
-            <div className="w-full max-w-[800px] relative z-20 flex flex-col">
+            <div className="w-full max-w-[800px] relative z-20 flex flex-col py-12 px-4 sm:px-6">
 
               {/* Stepper */}
               <div className="contact-stepper w-full flex justify-center mb-8 z-20 relative">

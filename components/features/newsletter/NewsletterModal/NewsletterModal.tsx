@@ -1,29 +1,48 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import { useNewsletterModal } from './NewsletterModalProvider';
 import NewsletterForm from './NewsletterForm';
 import NewsletterValidation from './NewsletterValidation';
 import NewsletterSuccess from './NewsletterSuccess';
 
+const POPUP_BG = '/popup-bg.webp';
+const CLOSE_MS = 300;
+
 export default function NewsletterModal() {
   const { isOpen, status, closeModal } = useNewsletterModal();
+  const [shouldRender, setShouldRender] = useState(false);
+  const [isEntered, setIsEntered] = useState(false);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRender(true);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setIsEntered(true));
+      });
+      return;
+    }
+
+    setIsEntered(false);
+    const timer = setTimeout(() => setShouldRender(false), CLOSE_MS);
+    return () => clearTimeout(timer);
+  }, [isOpen]);
+
+  if (!shouldRender) return null;
 
   return (
     <div className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-surface-darker/70 transition-opacity"
+        className={`fixed inset-0 bg-surface-darker/70 transition-opacity duration-300 ${isEntered ? 'opacity-100' : 'opacity-0'}`}
         onClick={closeModal}
       ></div>
 
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-250 bg-cover bg-center rounded-4xl overflow-hidden shadow-2xl flex items-center justify-center min-h-150 my-auto border border-white/5"
-        style={{ backgroundImage: 'url(/popup-bg.jpg)' }}
+        className={`relative w-full max-w-250 bg-surface-dark bg-cover bg-center rounded-4xl shadow-2xl flex items-center justify-center my-auto border border-white/5 max-h-[min(900px,calc(100dvh-2rem))] overflow-y-auto transition-[opacity,transform] duration-300 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'}`}
+        style={{ backgroundImage: `url(${POPUP_BG})` }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
