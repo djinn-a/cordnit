@@ -2,7 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
+import { NEWSLETTER_CAPTURE_ENABLED } from '@/lib/features/newsletter';
 import { useNewsletterModal } from './NewsletterModalProvider';
+import NewsletterComingSoon from './NewsletterComingSoon';
 import NewsletterForm from './NewsletterForm';
 import NewsletterValidation from './NewsletterValidation';
 import NewsletterSuccess from './NewsletterSuccess';
@@ -56,9 +58,15 @@ export default function NewsletterModal() {
 
         {/* Inner Card */}
         <div className="relative z-10 w-full max-w-135 p-8 sm:p-12 rounded-3xl bg-surface-dark/80 backdrop-blur-xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex flex-col my-12 mx-4">
-          {status === 'idle' && <NewsletterForm />}
-          {status === 'validating' && <NewsletterValidation />}
-          {status === 'success' && <NewsletterSuccess />}
+          {!NEWSLETTER_CAPTURE_ENABLED ? (
+            <NewsletterComingSoon />
+          ) : (
+            <>
+              {status === 'idle' && <NewsletterForm />}
+              {status === 'validating' && <NewsletterValidation />}
+              {status === 'success' && <NewsletterSuccess />}
+            </>
+          )}
         </div>
       </div>
     </div>

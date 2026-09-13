@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui";
 import { useContactModal } from "@/components/features/contact/ContactModal/ContactModalProvider";
 
@@ -16,6 +17,7 @@ export default function AboutHeroContent({
   bodyDesktop,
 }: AboutHeroContentProps) {
   const { openModal } = useContactModal();
+  const router = useRouter();
 
   // We explicitly split the title based on the exact visual layout from the data.
   // Alternatively we could just use the title as is if it naturally wraps,
@@ -56,6 +58,7 @@ export default function AboutHeroContent({
         <Button
           variant="secondary"
           className="flex-1 sm:flex-none"
+          onClick={() => router.push("/solutions")}
           rightIcon={
             <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
           }

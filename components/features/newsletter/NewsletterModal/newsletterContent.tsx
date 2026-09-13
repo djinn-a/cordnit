@@ -26,6 +26,15 @@ export interface NewsletterContent {
     button1: React.ReactNode;
     button2: React.ReactNode;
   };
+  comingSoon: {
+    eyebrow: string;
+    heading: React.ReactNode;
+    description: string;
+    primaryCta: string;
+    secondaryCta: string;
+    footerNote: string;
+    footerCta: string;
+  };
 }
 
 export const defaultNewsletterContent: NewsletterContent = {
@@ -35,7 +44,7 @@ export const defaultNewsletterContent: NewsletterContent = {
     description: "Get occasional insights from Cordinit on technology, security and transformation.",
     emailLabel: "Work email address",
     emailPlaceholder: "balamia@gmail.com",
-    consentText: "I agree to receive updated from cordinit.",
+    consentText: "I agree to receive updates from Cordinit.",
     buttonText: "Subscribe",
   },
   validation: {
@@ -53,5 +62,15 @@ export const defaultNewsletterContent: NewsletterContent = {
     description2: <>You&apos;ll receive the latest insights and perspectives<br />straight to your inbox.</>,
     button1: <>Explore solution <span className="ml-1.5 font-bold">→</span></>,
     button2: <>View latest insights <span className="ml-1.5 font-bold">→</span></>,
-  }
+  },
+  comingSoon: {
+    eyebrow: "COMING SOON",
+    heading: <>Stay ahead of<br />what&apos;s next.</>,
+    description:
+      "Our insights newsletter isn't live yet. If you'd like updates or a conversation with our team, get in touch — we're collecting enquiries now.",
+    primaryCta: "Get in touch",
+    secondaryCta: "Back to home",
+    footerNote: "Newsletter signup is coming soon.",
+    footerCta: "Get in touch",
+  },
 };
