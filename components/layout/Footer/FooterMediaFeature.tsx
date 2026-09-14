@@ -36,20 +36,20 @@ export default function FooterMediaFeature() {
 
         {/* Text Content Area */}
         <div className="w-[55%] lg:w-[55%] text-white flex flex-col justify-center">
-          <h3 className="text-h3 text-white mb-2 lg:mb-6 leading-snug">
+          <h3 className="text-h3 lg:text-footer-media-heading-desktop text-white mb-2 lg:mb-6 leading-snug">
             Technology, security & transformation — in conversation.
           </h3>
-          <p className="text-white/80 text-body mb-3 lg:mb-8 lg:max-w-xl">
+          <p className="text-white/80 text-body lg:text-card-desc mb-3 lg:mb-8 lg:max-w-xl">
             Insights from Cordinit&apos;s technology and security experts on building secure, intelligent organisations.
           </p>
-          <a href="#" className="inline-flex items-center text-white text-button uppercase hover:text-white/80 transition-colors">
+          <a href="#" className="inline-flex items-center text-white lg:text-primary text-button lg:text-footer-media-cta-desktop uppercase hover:text-white/80 lg:hover:text-primary-hover transition-colors">
             WATCH ON YOUTUBE <ArrowRight className="ml-1 h-3 w-3 lg:h-3.5 lg:w-3.5" />
           </a>
         </div>
       </div>
 
       {/* Very Bottom Footer Text */}
-      <div className="flex justify-between items-center text-white/50 text-caption border-t border-white/10 pt-5 lg:pt-6">
+      <div className="flex justify-between items-center text-white text-caption border-t border-white/10 pt-5 lg:pt-6">
         <p>© 2026 — Copyright</p>
         <p className="cursor-pointer hover:text-white transition-colors">Privacy</p>
       </div>

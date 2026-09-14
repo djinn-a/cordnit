@@ -12,18 +12,19 @@ export type CtaSectionProps = {
   expertName?: string;
   ctaLabel?: string;
   backgroundSrc?: string;
+  backgroundSrcMobile?: string;
   portraitSrc?: string;
 };
 
 export default function CtaSection({
-  titleMobile = "Let's find the right starting point",
-  bodyMobile = "Tell us what you are trying to achieve. We will help identify the most useful next step.",
-  titleDesktop = "Ready to move your technology forward?",
-  bodyDesktop = "Let's talk about your next milestone—and how to reach it",
-  expertLabel = "Talk to",
-  expertName = "Cordinit Expert",
+  titleMobile = "Ready to Align Technology with Business Growth?",
+  bodyMobile = "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution.",
+  titleDesktop = "Ready to Align Technology with Business Growth?",
+  bodyDesktop = "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution.",
+  expertName = "Talk to a Enterprise Technology Specialist",
   ctaLabel = "Schedule a Call",
   backgroundSrc = "/cta-bg.png",
+  backgroundSrcMobile = "/cta-bg-mobile.webp",
   portraitSrc = "/expert-portrait.jpg",
 }: CtaSectionProps = {}) {
   const { openModal } = useContactModal();
@@ -33,9 +34,15 @@ export default function CtaSection({
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
+          src={backgroundSrcMobile}
+          alt=""
+          className="md:hidden w-full h-full object-cover object-center"
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={backgroundSrc}
           alt=""
-          className="w-full h-full object-cover object-[60%_40%] md:object-center scale-[2.5] md:scale-100 -translate-y-[15%] md:translate-y-0 origin-[60%_40%] md:origin-center"
+          className="hidden md:block w-full h-full object-cover object-center"
         />
       </div>
 
@@ -51,10 +58,8 @@ export default function CtaSection({
           </div>
 
           <div className="hidden md:flex flex-col justify-center w-full">
-            <h2 className="text-h3 text-white font-medium mb-2 md:mb-3">
-              Ready to move your
-              <br />
-              technology forward?
+            <h2 className="text-cta-title-desktop text-white mb-2 md:mb-3">
+              Ready to Align Technology with <br /> Business Growth?
             </h2>
             <p className="text-white/80 text-body font-light">{bodyDesktop}</p>
           </div>
@@ -72,9 +77,6 @@ export default function CtaSection({
                 />
               </div>
               <div className="text-white flex flex-col justify-center">
-                <p className="text-body font-normal leading-snug mb-0.5 text-white/90">
-                  {expertLabel}
-                </p>
                 <p className="text-h4 font-medium leading-snug text-white">
                   {expertName}
                 </p>
@@ -89,7 +91,7 @@ export default function CtaSection({
           </div>
 
           <div className="hidden md:flex flex-col justify-between gap-2 bg-white/20 backdrop-blur-md border border-white/20 rounded-xl p-4 w-[260px] h-[156px] shadow-lg shrink-0">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -99,10 +101,7 @@ export default function CtaSection({
                 />
               </div>
               <div className="text-white flex flex-col justify-center gap-1">
-                <p className="text-caption font-normal leading-none text-white/90">
-                  {expertLabel}
-                </p>
-                <p className="text-body-sm font-medium leading-tight text-white">
+                <p className="text-cta-expert-desktop text-white">
                   {expertName}
                 </p>
               </div>

@@ -20,7 +20,7 @@ export default function HelpServiceCard({
         // Base / Mobile wrapper
         "flex items-start py-4 border-b border-border-subtle group cursor-pointer hover:bg-primary-pale/50 transition-colors",
         // Desktop wrapper
-        "sm:block sm:relative sm:p-6 md:p-8 lg:p-12 sm:border-primary-border sm:border-b-2 sm:hover:bg-primary-pale sm:cursor-auto",
+        "sm:block sm:relative sm:p-6 md:p-8 lg:p-12 sm:border-primary sm:border-b-2 sm:hover:bg-primary-pale sm:cursor-auto",
         isLgRightBorder && "lg:border-r-2",
         !isLgBottomBorder && "lg:border-b-0"
       )}
@@ -57,16 +57,16 @@ export default function HelpServiceCard({
       <div className={cn("flex-1 pr-3", "sm:pr-0 sm:w-full")}>
         <h3
           className={cn(
-            "text-h4 mb-1 transition-colors",
+            "text-h4 sm:text-help-card-title-desktop mb-1 transition-colors",
             // Mobile specifics
             "font-medium group-hover:text-primary",
             // Desktop specifics
-            "sm:text-primary sm:mb-3 lg:mb-4 sm:font-inherit"
+            "sm:text-primary sm:mb-3 lg:mb-4"
           )}
         >
           {service.title}
         </h3>
-        <p className="text-body-sm">{service.desc}</p>
+        <p className="text-body-sm sm:text-card-desc">{service.desc}</p>
       </div>
 
       {/* Mobile Arrow Area */}

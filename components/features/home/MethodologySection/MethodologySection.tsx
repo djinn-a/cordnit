@@ -21,11 +21,13 @@ export default function MethodologySection({
         <div className="flex flex-col lg:flex-row lg:items-start justify-between mb-8 sm:mb-12 lg:mb-16 gap-4 sm:gap-8">
           <SectionHeader
             eyebrow={eyebrow}
+            eyebrowClassName="lg:text-eyebrow-desktop"
             title={title}
+            titleClassName="text-section-title-mobile sm:text-section-title"
             className="lg:w-1/2"
           />
           <div className="lg:w-1/2 lg:pt-8">
-            <p className="text-body-lg max-w-lg">{description}</p>
+            <p className="text-section-subtitle-mobile sm:text-section-subtitle max-w-lg">{description}</p>
           </div>
         </div>
 

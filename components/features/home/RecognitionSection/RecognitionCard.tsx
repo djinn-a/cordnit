@@ -16,17 +16,11 @@ export default function RecognitionCard({ item }: { item: RecognitionItem }) {
         />
       </div>
       <div className="flex flex-col flex-grow px-1 sm:px-2 pb-2">
-        <span className="text-eyebrow text-primary uppercase mb-2">{item.category}</span>
-        <h3 className="text-h3 mb-3">
+        <span className="text-[12px] leading-[12px] font-normal tracking-[1.2px] text-primary uppercase mb-2 align-middle">{item.category}</span>
+        <h3 className="text-card-title-mobile sm:text-card-title mb-3">
           {item.title}
         </h3>
-        <p className="text-body-sm mb-6 flex-grow">{item.desc}</p>
-        <a
-          href="#"
-          className="flex items-center text-primary text-caption hover:text-primary-hover transition-colors"
-        >
-          View recognition <ArrowRight className="ml-1 h-3.5 w-3.5" />
-        </a>
+        <p className="text-card-desc-mobile sm:text-card-desc mb-6 flex-grow">{item.desc}</p>
       </div>
     </div>
   );

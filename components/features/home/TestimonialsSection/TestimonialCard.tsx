@@ -34,12 +34,12 @@ export default function TestimonialCard({ item }: { item: TestimonialItem }) {
         </h3>
         <p className="text-caption mb-0.5">{item.role}</p>
         <p className="text-caption mb-3 sm:mb-4">{item.company}</p>
-        <p className="text-body-sm text-ink mb-4 flex-grow">
+        <p className="text-card-desc text-ink mb-4 flex-grow">
           {item.quote}
         </p>
         <a
           href="#"
-          className="flex items-center text-primary text-body-sm font-medium hover:text-primary-hover transition-colors mt-auto"
+          className="flex items-center text-primary text-link-mobile sm:text-body-sm sm:font-medium hover:text-primary-hover transition-colors mt-auto"
         >
           Watch testimonial <ArrowRight className="ml-1 h-3.5 w-3.5" />
         </a>

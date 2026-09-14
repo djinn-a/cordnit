@@ -8,7 +8,7 @@ export default function HeroHeading({
 }: Readonly<HeroHeadingProps>) {
   return (
     <div className="text-center mb-6 sm:mb-8">
-      <p className="text-eyebrow mb-3">{eyebrow}</p>
+      <p className="text-eyebrow lg:text-eyebrow-desktop mb-3">{eyebrow}</p>
 
       <h1 className="text-display text-center px-2 sm:px-0 max-w-4xl mx-auto">
         {titleDesktop.split(". ").map((part, index, array) => (
