@@ -360,7 +360,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     </div>
 
                     <div>
-                      <label className="block text-[13px] text-white/80 mb-2">What would you like help with? <span className="text-error ml-0.5">*</span></label>
+                      <label className="block text-[13px] text-white/80 mb-2">Tell us about your requirement. <span className="text-error ml-0.5">*</span></label>
                       <textarea name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
                     </div>
 

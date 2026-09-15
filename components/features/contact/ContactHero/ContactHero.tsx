@@ -29,7 +29,7 @@ export default function ContactHero({
               align="left"
               className="items-center md:items-start text-center md:text-left"
               titleClassName="mb-6"
-              subtitleClassName="text-section-subtitle text-ink-muted"
+              subtitleClassName="text-section-subtitle-mobile md:text-section-subtitle text-ink-muted"
             />
           </div>
 
