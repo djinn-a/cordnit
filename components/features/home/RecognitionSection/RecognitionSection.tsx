@@ -36,8 +36,11 @@ export default function RecognitionSection({
       <Container>
         <SectionHeader
           eyebrow={eyebrow}
+          eyebrowClassName="text-primary text-eyebrow-mobile sm:text-eyebrow-desktop"
           title={title}
+          titleClassName="text-section-title-mobile sm:text-section-title"
           subtitle={description}
+          subtitleClassName="text-section-subtitle-mobile sm:text-section-subtitle"
           align="center"
           className="items-start sm:items-center text-left sm:text-center mb-8 sm:mb-12 lg:mb-16"
         />

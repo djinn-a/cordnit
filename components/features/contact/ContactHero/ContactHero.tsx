@@ -9,9 +9,9 @@ export type ContactHeroProps = {
 };
 
 export default function ContactHero({
-  eyebrow = "CONTACT US",
-  title = "Let's talk about what's next.",
-  description = "Whether you are exploring an idea, tackling a technology challenge or looking for a long-term delivery partner, we would like to hear from you.",
+  eyebrow = "LET'S TALK",
+  title = "Tell us what you’re building.",
+  description = "Whether you’re looking to modernise your technology, strengthen security, adopt AI orbuild a new digital solution, tell us what you’re working on. Our team will connect you with the right specialists.",
   imageSrc = "/contact-hero-bg.png",
   imageAlt = "Cordinit Office Contact",
 }: ContactHeroProps = {}) {
@@ -22,12 +22,14 @@ export default function ContactHero({
           <div className="w-full lg:w-[42%] flex flex-col items-center md:items-start text-center md:text-left">
             <SectionHeader
               eyebrow={eyebrow}
+              eyebrowClassName="lg:text-eyebrow-desktop"
               title={title}
               titleAs="h1"
               subtitle={description}
               align="left"
               className="items-center md:items-start text-center md:text-left"
               titleClassName="mb-6"
+              subtitleClassName="text-section-subtitle text-black"
             />
           </div>
 

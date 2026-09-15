@@ -39,7 +39,7 @@ export default function Footer() {
                   className="h-[60px] w-[72.844px] brightness-0"
                 />
               </Link>
-              <p className="text-ink-muted text-caption max-w-[200px]">
+              <p className="text-black text-caption max-w-[200px]">
                 Let&apos;s talk about your next milestone—and how to reach it
               </p>
             </div>
@@ -58,11 +58,11 @@ export default function Footer() {
           <div className="lg:w-3/4 grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8 lg:gap-8">
             {FOOTER_NAV_COLUMNS.map((col) => (
               <div key={col.id} className={col.orderClasses}>
-                <h4 className="text-ink text-eyebrow mb-4 lg:mb-5">{col.title}</h4>
+                <h4 className="text-ink text-eyebrow lg:text-footer-heading-desktop mb-4 lg:mb-5">{col.title}</h4>
                 <ul className="space-y-3">
                   {col.links.map((link, idx) => (
                     <li key={idx}>
-                      <Link href={link.href} className="text-ink-muted hover:text-ink text-body-sm">
+                      <Link href={link.href} className="text-black hover:text-ink text-card-desc">
                         {link.label}
                       </Link>
                     </li>

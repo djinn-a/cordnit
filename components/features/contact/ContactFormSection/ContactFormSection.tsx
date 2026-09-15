@@ -42,8 +42,8 @@ export default function ContactFormSection() {
             {/* Input Fields */}
             <div className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-800 mb-1.5">Full Name<span className="text-error">*</span></label>
-                <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="Enter Name" className={inputClasses('firstName')} />
+                <label className="block text-sm font-medium text-gray-800 mb-1.5">First Name<span className="text-error">*</span></label>
+                <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="Enter First Name" className={inputClasses('firstName')} />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-800 mb-1.5">Last Name<span className="text-error">*</span></label>
@@ -143,21 +143,28 @@ export default function ContactFormSection() {
 
             <div className="space-y-8">
               <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">1. Review</h4>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">1. We Review</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Our technical team reviews your submission to identify the right specialists.
+                  Our team reviews your enquiry to identifies the right people to involve.
                 </p>
               </div>
               <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">2. Connect</h4>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">2. We Connect</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  We reach out within 24 hours to schedule an initial consultation or provide information.
+                  We’ll get back to you within one business day to discuss your requirements and next steps. 
                 </p>
               </div>
               <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">3. Discover</h4>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">3. We understand</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  A detailed discovery session to map out solutions and timelines.
+                  We’ll discuss your objectives, challenges and priorities before recommending
+                  a way forward.
+                </p>
+              </div>
+                <div>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">3. We move forward</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  If there’s a fit, we’ll define the right scope, approach and next steps together.
                 </p>
               </div>
             </div>
@@ -171,7 +178,7 @@ export default function ContactFormSection() {
               <div className="flex items-start gap-2 md:gap-3">
                 <Mail className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
-                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Email</h4>
+                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Work Email</h4>
                   <p className="text-gray-600 text-[11px] md:text-sm leading-relaxed">hello@cordinit.com</p>
                 </div>
               </div>

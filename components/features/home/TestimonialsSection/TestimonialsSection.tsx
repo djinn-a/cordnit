@@ -30,9 +30,11 @@ export default function TestimonialsSection({
       <Container width="wide">
         <SectionHeader
           eyebrow={eyebrow}
+          eyebrowClassName="text-primary text-eyebrow-mobile sm:text-eyebrow-desktop"
           title={title}
+          titleClassName="text-section-title-mobile sm:text-section-title"
           subtitle={description}
-          subtitleClassName="text-body-lg"
+          subtitleClassName="text-section-subtitle-mobile sm:text-section-subtitle"
           align="center"
           className="items-start sm:items-center text-left sm:text-center mb-6 sm:mb-8 max-w-3xl mx-auto"
         />
