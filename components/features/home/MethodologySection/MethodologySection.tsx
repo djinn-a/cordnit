@@ -27,7 +27,7 @@ export default function MethodologySection({
             className="lg:w-1/2"
           />
           <div className="lg:w-1/2 lg:pt-8">
-            <p className="text-section-subtitle-mobile sm:text-section-subtitle max-w-lg">{description}</p>
+            <p className="text-ink-muted text-section-subtitle-mobile sm:text-section-subtitle max-w-lg">{description}</p>
           </div>
         </div>
 

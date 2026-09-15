@@ -8,7 +8,7 @@ export const defaultItems: TestimonialItem[] = [
     company: "Company Name",
     quote:
       '"Security isn\'t just about protection. It\'s about creating the confidence to move faster."',
-    image: "/images/testimonials/michelle.jpg",
+    image: "/images/testimonials/michelle.webp",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const defaultItems: TestimonialItem[] = [
     company: "Global Financial Services",
     quote:
       '"The architectural clarity Cordinit brings has transformed how our board understands risk posture."',
-    image: "/images/testimonials/nitin.jpg",
+    image: "/images/testimonials/nitin.webp",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const defaultItems: TestimonialItem[] = [
     company: "Enterprise Tech Solutions",
     quote:
       '"Scalability without compromise. It\'s rare to find a platform that delivers both operational rigor and agility."',
-    image: "/images/testimonials/rohit.jpg",
+    image: "/images/testimonials/rohit.webp",
   },
   {
     id: 4,
@@ -35,6 +35,6 @@ export const defaultItems: TestimonialItem[] = [
     company: "Innovate Data Corp",
     quote:
       '"We deployed their framework in weeks, not months. The precision is unmatched."',
-    image: "/images/testimonials/igor.jpg",
+    image: "/images/testimonials/igor.webp",
   },
 ];

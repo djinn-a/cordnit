@@ -19,11 +19,12 @@ export default function AboutPrinciples({
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-16 lg:mb-20 gap-4 md:gap-16">
           <SectionHeader
             eyebrow={eyebrow}
+            eyebrowClassName="text-eyebrow-desktop"
             title={title}
             className="md:w-1/2"
           />
           <div className="md:w-1/2 md:pl-8">
-            <p className="text-body">{description}</p>
+            <p className="text-section-subtitle-mobile md:text-section-subtitle text-ink-muted">{description}</p>
           </div>
         </div>
 

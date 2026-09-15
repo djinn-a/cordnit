@@ -20,7 +20,7 @@ export default function FooterMediaFeature() {
           {/* Video Thumbnail Area */}
           <div className="relative rounded-xl overflow-hidden shadow-2xl border-2 lg:border-4 border-gray-900/10 aspect-video">
             <Image
-              src="/images/footer/latest-video.jpg"
+              src="/images/footer/latest-video.webp"
               alt="Video Thumbnail"
               fill
               className="object-cover"

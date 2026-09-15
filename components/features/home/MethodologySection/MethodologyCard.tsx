@@ -15,16 +15,16 @@ export default function MethodologyCard({ step, className }: MethodologyCardProp
         className
       )}
     >
-      <div className="flex justify-between items-start mb-auto">
+      <div className="flex justify-between items-start mb-6 lg:mb-8">
         <span className="text-caption eyebrow-desktop font-bold tracking-widest uppercase text-surface">
           {step.title}
         </span>
         <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-surface" />
       </div>
-      <div className="mt-auto">
-        <div className="text-numbers text-surface mb-2 sm:mb-4 leading-none">
-          {step.num}
-        </div>
+      <div className="text-numbers text-surface mb-auto leading-none">
+        {step.num}
+      </div>
+      <div className="mt-6">
         <p className="text-card-desc sm:text-body-sm leading-relaxed text-surface/90">
           {step.desc}
         </p>

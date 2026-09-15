@@ -18,10 +18,10 @@ export default function PrincipleItem({ principle, isLast = false }: PrincipleIt
         {principle.number}
       </div>
       <div className="relative z-10 flex flex-col pt-1 md:pt-0">
-        <h3 className="text-body-sm md:text-body font-bold text-ink uppercase tracking-wide mb-2 md:mb-3 md:mt-6">
+        <h3 className="text-section-title-head-mobile md:text-section-title-head text-ink uppercase tracking-wide mb-2 md:mb-3 md:mt-6">
           {principle.title}
         </h3>
-        <p className="text-body-sm">{principle.description}</p>
+        <p className="text-body-sm card-desc text-ink-muted">{principle.description}</p>
       </div>
     </div>
   );

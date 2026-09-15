@@ -11,20 +11,20 @@ export const teamData: TeamMember[] = [
     role: "HEAD OF CLOUD ARCHITECTURE",
     description:
       "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation.",
-    image: "/img/team-member.jpg",
+    image: "/img/team-member.webp",
   },
   {
     name: "Elena Rostova",
     role: "LEAD AI STRATEGIST",
     description:
       "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation.",
-    image: "/img/team-member.jpg",
+    image: "/img/team-member.webp",
   },
   {
     name: "Elena Rostova",
     role: "LEAD AI STRATEGIST",
     description:
       "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation.",
-    image: "/img/team-member.jpg",
+    image: "/img/team-member.webp",
   },
 ];

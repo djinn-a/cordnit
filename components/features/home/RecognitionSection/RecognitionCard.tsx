@@ -15,12 +15,12 @@ export default function RecognitionCard({ item }: { item: RecognitionItem }) {
           className="object-cover"
         />
       </div>
-      <div className="flex flex-col flex-grow px-1 sm:px-2 pb-2">
+      <div className="flex flex-col grow px-1 sm:px-2 pb-2">
         <span className="text-[12px] leading-[12px] font-normal tracking-[1.2px] text-primary uppercase mb-2 align-middle">{item.category}</span>
         <h3 className="text-card-title-mobile sm:text-card-title mb-3">
           {item.title}
         </h3>
-        <p className="text-card-desc-mobile sm:text-card-desc mb-6 flex-grow">{item.desc}</p>
+        <p className="text-ink-muted text-card-desc-mobile sm:text-card-desc mb-6 flex-grow">{item.desc}</p>
       </div>
     </div>
   );

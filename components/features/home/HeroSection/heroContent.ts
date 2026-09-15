@@ -24,6 +24,6 @@ export const defaultHeroContent: HeroContent = {
    * This improves LCP (Largest Contentful Paint) performance, ensures the image is always available reliably, 
    * and eliminates external network latency during the critical page load path.
    */
-  imageSrc: "/hero-image.jpg",
+  imageSrc: "/hero-image.webp",
   imageAlt: "Corporate Digital Transformation",
 };

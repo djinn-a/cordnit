@@ -34,7 +34,7 @@ export default function TestimonialCard({ item }: { item: TestimonialItem }) {
         </h3>
         <p className="text-caption mb-0.5">{item.role}</p>
         <p className="text-caption mb-3 sm:mb-4">{item.company}</p>
-        <p className="text-card-desc text-ink mb-4 flex-grow">
+        <p className="text-card-desc text-ink-muted mb-4 flex-grow">
           {item.quote}
         </p>
         <a

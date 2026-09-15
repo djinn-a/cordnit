@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Mobile Logo */}
         <Link href="/" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt={navbarContent.logoAltText} className="h-12 w-auto" />
+          <img src="/logo.webp" alt={navbarContent.logoAltText} className="h-12 w-auto" />
         </Link>
 
         {/* Mobile Menu Button */}
@@ -41,7 +41,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt={navbarContent.logoAltText} className="h-16 w-auto" />
+              <img src="/logo.webp" alt={navbarContent.logoAltText} className="h-16 w-auto" />
             </Link>
           </div>
 

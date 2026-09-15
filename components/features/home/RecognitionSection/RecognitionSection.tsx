@@ -12,7 +12,7 @@ export default function RecognitionSection({
   eyebrow = "COMPLIANCE & PARTNERSHIPS",
   title = (
   <>
-    Verified Security Standards &<br />
+    Verified Security Standards & <br />
     Strategic Ecosystems
   </>
 ),

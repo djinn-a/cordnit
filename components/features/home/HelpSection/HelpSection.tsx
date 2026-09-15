@@ -22,7 +22,7 @@ export default function HelpSection({
       <Container width="narrow">
         <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 sm:mb-12 lg:mb-16 gap-3 sm:gap-8">
           <h2 className="text-section-title-mobile sm:text-section-title md:w-1/2">{title}</h2>
-          <p className="text-section-subtitle-mobile sm:text-section-subtitle md:w-1/2 max-w-[95%]">{description}</p>
+          <p className="text-ink-muted text-section-subtitle-mobile sm:text-section-subtitle md:w-1/2 max-w-[95%]">{description}</p>
         </div>
 
         {safeServices.length > 0 && (

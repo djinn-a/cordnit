@@ -19,7 +19,7 @@ export default function Footer() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 w-full h-full z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/footer-bg.png')" }}
+        style={{ backgroundImage: "url('/footer-bg.webp')" }}
       >
       </div>
 
@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="flex flex-col gap-[5px] lg:gap-[9px] mb-5 lg:mb-6">
               <Link href="/" className="shrink-0 w-max">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="Cordinit Logo"
                   width={73}
                   height={60}

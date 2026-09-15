@@ -23,9 +23,9 @@ export default function CtaSection({
   bodyDesktop = "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution.",
   expertName = "Talk to a Enterprise Technology Specialist",
   ctaLabel = "Schedule a Call",
-  backgroundSrc = "/cta-bg.png",
+  backgroundSrc = "/cta-bg.webp",
   backgroundSrcMobile = "/cta-bg-mobile.webp",
-  portraitSrc = "/expert-portrait.jpg",
+  portraitSrc = "/expert-portrait.webp",
 }: CtaSectionProps = {}) {
   const { openModal } = useContactModal();
 

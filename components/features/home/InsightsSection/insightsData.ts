@@ -15,7 +15,7 @@ export const insightsData: InsightItem[] = [
     date: "Aug 26, 2026",
     type: "Article",
     title: "Why Security Architecture Must Precede Digital",
-    image: "/InsightsSection/cybersecurity.jpg",
+    image: "/InsightsSection/cybersecurity.webp",
     readMoreUrl: "/insights/cybersecurity-digital-transformation",
   },
   {
@@ -24,7 +24,7 @@ export const insightsData: InsightItem[] = [
     date: "Aug 26, 2026",
     type: "Article",
     title: "Eliminating Platform Silos to Drive True CRM Adoption",
-    image: "/InsightsSection/salesforce.jpg",
+    image: "/InsightsSection/salesforce.webp",
     readMoreUrl: "/insights/salesforce-digital-transformation",
   },
   {
@@ -33,7 +33,7 @@ export const insightsData: InsightItem[] = [
     date: "Aug 26, 2026",
     type: "Article",
     title: "Embedding Guardrails into High-Impact Enterprise Workflows",
-    image: "/InsightsSection/ai-automation.jpg",
+    image: "/InsightsSection/ai-automation.webp",
     readMoreUrl: "/insights/ai-automation-digital-transformation",
   },
   {
@@ -42,7 +42,7 @@ export const insightsData: InsightItem[] = [
     date: "Aug 26, 2026",
     type: "Article",
     title: "Modernizing Foundations for Operational Resilience and Uptime",
-    image: "/InsightsSection/cloud-infrastructure.jpg",
+    image: "/InsightsSection/cloud-infrastructure.webp",
     readMoreUrl: "/insights/cloud-infrastructure-digital-transformation",
   },
 ];

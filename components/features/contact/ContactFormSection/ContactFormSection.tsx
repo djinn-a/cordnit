@@ -178,8 +178,10 @@ export default function ContactFormSection() {
               <div className="flex items-start gap-2 md:gap-3">
                 <Mail className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
-                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Work Email</h4>
-                  <p className="text-gray-600 text-[11px] md:text-sm leading-relaxed">hello@cordinit.com</p>
+                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">New Business</h4>
+                  <p className="text-gray-600 text-[11px] md:text-sm leading-relaxed">Mohd. Rashid Khan</p>
+                  <p className="text-gray-600 text-[11px] md:text-sm leading-relaxed">Chief Growth Officer</p>
+                  <p className="text-gray-600 text-[11px] md:text-sm leading-relaxed">business@cordinit.co.in</p>
                 </div>
               </div>
             </div>
@@ -189,10 +191,11 @@ export default function ContactFormSection() {
               <div className="flex items-start gap-2 md:gap-3">
                 <PhoneCall className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
-                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Contact Numbers</h4>
+                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Media & Press Inquiries</h4>
                   <div className="text-gray-600 text-[11px] md:text-sm leading-relaxed space-y-0.5">
-                    <p>+91 9996490061</p>
-                    <p>+91 7988951210</p>
+                    <p>Christina Adams</p>
+                    <p>EVP, Marketing & Communications</p>
+                    <p>media@cordinit.co.in</p>
                   </div>
                 </div>
               </div>
@@ -203,10 +206,11 @@ export default function ContactFormSection() {
               <div className="flex items-start gap-2 md:gap-3">
                 <MapPin className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
-                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Corporate Address</h4>
+                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Partnerships</h4>
                   <p className="text-gray-600 text-[11px] md:text-sm leading-relaxed">
-                    Corp. Off. : 10th Floor, Imperia Mindspace, Sec-62, Golf Course Ext Road, Gurgaon, Haryana - 122001
+                    For technology partners, strategic partners and business collaborations.
                   </p>
+                  <p>partnerships@cordinit.co.in</p>
                 </div>
               </div>
             </div>
@@ -216,10 +220,8 @@ export default function ContactFormSection() {
               <div className="flex items-start gap-2 md:gap-3">
                 <Clock className="w-4 h-4 md:w-5 md:h-5 text-gray-800 mt-0.5 shrink-0" />
                 <div>
-                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Hours</h4>
+                  <h4 className="font-medium text-gray-800 text-[13px] md:text-base mb-1">Careers</h4>
                   <div className="text-gray-600 text-[11px] md:text-sm leading-relaxed space-y-0.5">
-                    <p>Mon-Fri</p>
-                    <p>8 AM - 6 PM</p>
                   </div>
                 </div>
               </div>

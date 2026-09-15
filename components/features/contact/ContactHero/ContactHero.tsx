@@ -12,7 +12,7 @@ export default function ContactHero({
   eyebrow = "LET'S TALK",
   title = "Tell us what you’re building.",
   description = "Whether you’re looking to modernise your technology, strengthen security, adopt AI orbuild a new digital solution, tell us what you’re working on. Our team will connect you with the right specialists.",
-  imageSrc = "/contact-hero-bg.png",
+  imageSrc = "/contact-hero-bg.webp",
   imageAlt = "Cordinit Office Contact",
 }: ContactHeroProps = {}) {
   return (
@@ -29,7 +29,7 @@ export default function ContactHero({
               align="left"
               className="items-center md:items-start text-center md:text-left"
               titleClassName="mb-6"
-              subtitleClassName="text-section-subtitle text-black"
+              subtitleClassName="text-section-subtitle text-ink-muted"
             />
           </div>
 
