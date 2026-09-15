@@ -10,7 +10,7 @@ export default function MethodologyCard({ step, className }: MethodologyCardProp
   return (
     <div
       className={cn(
-        "flex flex-col h-55 xs:h-60 sm:h-panel p-4 sm:p-6 md:p-8 rounded-sm text-surface",
+        "flex flex-col h-[320px] xs:h-[340px] sm:h-panel p-4 sm:p-6 md:p-8 rounded-sm text-surface",
         step.tone === "primary" ? "bg-primary" : "bg-ink",
         className
       )}

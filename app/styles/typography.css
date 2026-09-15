@@ -3,6 +3,14 @@
     @apply text-[28px] xs:text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] font-extrabold leading-[1.15] tracking-tight text-ink;
   }
 
+  .text-hero-display {
+    @apply text-section-title-mobile xs:text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] xs:leading-[1.15] tracking-tight text-ink;
+  }
+
+  .text-hero-eyebrow {
+    @apply text-eyebrow-mobile sm:text-[11px] sm:font-bold lg:text-eyebrow-desktop uppercase tracking-[1px] text-primary;
+  }
+
   .text-h1 {
     @apply text-[26px] xs:text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] font-extrabold leading-[1.2] tracking-tight text-ink;
   }
