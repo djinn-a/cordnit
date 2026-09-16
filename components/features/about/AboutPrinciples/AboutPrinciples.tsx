@@ -31,10 +31,10 @@ export default function AboutPrinciples({
 
         <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-16 lg:gap-y-20">
           {principlesData.map((principle, index) => (
-            <PrincipleItem 
-              key={principle.number} 
-              principle={principle} 
-              isLast={index === principlesData.length - 1} 
+            <PrincipleItem
+              key={principle.number}
+              principle={principle}
+              isLast={index === principlesData.length - 1}
             />
           ))}
         </div>
