@@ -90,3 +90,40 @@ body {
     display: none;
   }
 }
+
+/*
+ * Suppress browser autofill background (Chrome / Safari inset box-shadow trick).
+ * Scoped by container so dark-modal and light-form each get the right fill.
+ */
+
+/* Dark-surface inputs inside the modal (bg-surface-dark container) */
+.bg-surface-dark input:-webkit-autofill,
+.bg-surface-dark input:-webkit-autofill:hover,
+.bg-surface-dark input:-webkit-autofill:focus,
+.bg-surface-dark input:-webkit-autofill:active,
+.bg-surface-dark textarea:-webkit-autofill,
+.bg-surface-dark textarea:-webkit-autofill:hover,
+.bg-surface-dark textarea:-webkit-autofill:focus,
+.bg-surface-dark textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 9999px var(--color-surface-dark) inset !important;
+  box-shadow: 0 0 0 9999px var(--color-surface-dark) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Light-surface inputs (contact form section) */
+.bg-gradient-contact-soft input:-webkit-autofill,
+.bg-gradient-contact-soft input:-webkit-autofill:hover,
+.bg-gradient-contact-soft input:-webkit-autofill:focus,
+.bg-gradient-contact-soft input:-webkit-autofill:active,
+.bg-gradient-contact-soft textarea:-webkit-autofill,
+.bg-gradient-contact-soft textarea:-webkit-autofill:hover,
+.bg-gradient-contact-soft textarea:-webkit-autofill:focus,
+.bg-gradient-contact-soft textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 9999px var(--color-surface) inset !important;
+  box-shadow: 0 0 0 9999px var(--color-surface) inset !important;
+  -webkit-text-fill-color: var(--color-ink) !important;
+  caret-color: var(--color-ink);
+  transition: background-color 9999s ease-in-out 0s;
+}

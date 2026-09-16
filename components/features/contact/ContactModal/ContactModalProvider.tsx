@@ -45,7 +45,9 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
     isSubmitting,
     submitError,
     isSuccess,
+    isFormValid,
     handleInputChange,
+    handleBlur,
     toggleInterest,
     validateForm,
     handleSubmit,
@@ -188,7 +190,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
   ];
 
   const inputClasses = (fieldName: string) =>
-    `w-full px-4 py-3.5 rounded-lg border bg-white/[0.03] text-white text-[13px] placeholder:text-gray-400 transition-colors focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 ${errors[fieldName] ? 'border-error/80' : 'border-white/20'}`;
+    `cmi w-full px-4 py-3.5 rounded-lg border bg-transparent text-white text-[13px] placeholder:text-gray-400 transition-colors focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 ${errors[fieldName] ? 'border-error/80' : 'border-white/20'}`;
 
   return (
     <ContactModalContext.Provider value={{ isOpen, openModal, closeModal }}>
@@ -312,27 +314,32 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                       {/* Row 1 */}
                       <div>
                         <label className="block text-[13px] text-white/80 mb-2">First Name<span className="text-error ml-0.5">*</span></label>
-                        <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="Enter First Name" className={inputClasses('firstName')} />
+                        <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter First Name" className={inputClasses('firstName')} />
+                        {errors.firstName && <p className="mt-1 text-[11px] text-error/90">{errors.firstName}</p>}
                       </div>
                       <div>
                         <label className="block text-[13px] text-white/80 mb-2">Last Name<span className="text-error ml-0.5">*</span></label>
-                        <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Enter Last Name" className={inputClasses('lastName')} />
+                        <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter Last Name" className={inputClasses('lastName')} />
+                        {errors.lastName && <p className="mt-1 text-[11px] text-error/90">{errors.lastName}</p>}
                       </div>
 
                       {/* Row 2 */}
                       <div>
                         <label className="block text-[13px] text-white/80 mb-2">Enter Email<span className="text-error ml-0.5">*</span></label>
-                        <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Enter Email" className={inputClasses('email')} />
+                        <input type="email" name="email" value={formData.email} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter Email" className={inputClasses('email')} />
+                        {errors.email && <p className="mt-1 text-[11px] text-error/90">{errors.email}</p>}
                       </div>
                       <div>
                         <label className="block text-[13px] text-white/80 mb-2">Company<span className="text-error ml-0.5">*</span></label>
-                        <input type="text" name="company" value={formData.company} onChange={handleInputChange} placeholder="Enter Company" className={inputClasses('company')} />
+                        <input type="text" name="company" value={formData.company} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter Company" className={inputClasses('company')} />
+                        {errors.company && <p className="mt-1 text-[11px] text-error/90">{errors.company}</p>}
                       </div>
 
                       {/* Row 3 */}
                       <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Job Title</label>
-                        <input type="text" name="jobTitle" value={formData.jobTitle} onChange={handleInputChange} placeholder="Enter Job Title" className={inputClasses('jobTitle')} />
+                        <label className="block text-[13px] text-white/80 mb-2">Job Title<span className="text-error ml-0.5">*</span></label>
+                        <input type="text" name="jobTitle" value={formData.jobTitle} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter Job Title" className={inputClasses('jobTitle')} />
+                        {errors.jobTitle && <p className="mt-1 text-[11px] text-error/90">{errors.jobTitle}</p>}
                       </div>
                       <div>
                         <label className="block text-[13px] text-white/80 mb-2">Area of Interest<span className="text-error ml-0.5">*</span></label>
@@ -345,10 +352,10 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                                 type="button"
                                 onClick={() => toggleInterest(item)}
                                 className={`px-4 py-1.5 rounded-full text-[11px] transition-colors border ${isSelected
-                                  ? 'bg-white/10 border-white/40 text-white'
+                                  ? 'bg-primary border-0 text-white'
                                   : errors.interests
-                                    ? 'bg-transparent border-error/50 text-gray-400 hover:border-error'
-                                    : 'bg-transparent border-white/20 text-gray-400 hover:border-white/40 hover:text-gray-300'
+                                    ? 'bg-transparent border-error/50 text-gray-400'
+                                    : 'bg-transparent border-white/20 text-gray-400'
                                   }`}
                               >
                                 {item}
@@ -356,12 +363,14 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                             );
                           })}
                         </div>
+                        {errors.interests && <p className="mt-1.5 text-[11px] text-error/90">{errors.interests}</p>}
                       </div>
                     </div>
 
                     <div>
                       <label className="block text-[13px] text-white/80 mb-2">Tell us about your requirement. <span className="text-error ml-0.5">*</span></label>
-                      <textarea name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
+                      <textarea name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
+                      {errors.helpDetails && <p className="mt-1 text-[11px] text-error/90">{errors.helpDetails}</p>}
                     </div>
 
                     <div className="pt-2">
@@ -387,11 +396,19 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     </div>
 
                     <div className="flex justify-end pt-4">
-                      <button type="submit" className="bg-surface-dark border border-white/20 hover:bg-white/10 text-white py-2.5 px-12 rounded-lg text-[13px] font-medium transition-all">
+                      <button
+                        type="submit"
+                        disabled={!isFormValid}
+                        className={`py-2.5 px-12 rounded-lg text-[13px] font-medium transition-all ${isFormValid
+                          ? 'bg-primary text-white cursor-pointer'
+                          : 'bg-surface-dark border border-white/20 text-white/40 cursor-not-allowed'
+                          }`}
+                      >
                         Continue
                       </button>
                     </div>
                   </form>
+
                 ) : (
                   <div className="flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
@@ -534,5 +551,3 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
     </ContactModalContext.Provider>
   );
 }
-
-
