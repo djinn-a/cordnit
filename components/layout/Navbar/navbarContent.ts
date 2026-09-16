@@ -33,10 +33,10 @@ export type NavbarContent = {
 export const navbarContent: NavbarContent = {
   navLinks: [
     { label: 'Solutions', href: '/solutions' },
-    { label: 'About', href: '/aboutus' },
     { label: 'Industries', href: '/industries' },
     { label: 'Accelerators', href: '/accelerators' },
     { label: 'Insights', href: '/insights' },
+    { label: 'About', href: '/aboutus' },
     { label: 'Contact', href: '/contactus' },
   ],
   solutionsDropdown: [
@@ -95,7 +95,7 @@ export const navbarContent: NavbarContent = {
     exploreAllLabel: 'Explore All Solutions',
     exploreAllHref: '/solutions',
   },
-  getInTouchLabel: 'Get in Touch',
+  getInTouchLabel: 'Book a call',
   logoAltText: 'Cordinit Logo',
   mobileMenuToggleAriaLabel: 'Toggle menu',
 };

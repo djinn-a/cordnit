@@ -18,6 +18,9 @@ const config: Config = {
       "3xl": "1920px",
     },
     extend: {
+      backgroundImage: {
+        "gradient-mobile-nav": "linear-gradient(56deg, #1645FF 0.2%, #0B1B55 39.43%, #05070D 62.49%)",
+      },
       fontFamily: {
         sans: ["var(--font-mulish)", "sans-serif"],
         mulish: ["var(--font-mulish)", "sans-serif"],
@@ -71,6 +74,7 @@ const config: Config = {
         btn: "var(--radius-btn)",
         card: "var(--radius-card)",
         "card-lg": "var(--radius-card-lg)",
+        "4xl": "32px",
       },
       boxShadow: {
         card: "var(--shadow-card)",
