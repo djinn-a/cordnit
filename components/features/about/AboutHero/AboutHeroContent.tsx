@@ -13,18 +13,16 @@ export type AboutHeroContentProps = {
 
 export default function AboutHeroContent({
   title,
-  bodyMobile,
   bodyDesktop,
-}: AboutHeroContentProps) {
+}: Readonly<AboutHeroContentProps>) {
   const { openModal } = useContactModal();
-  const router = useRouter();
 
   // We explicitly split the title based on the exact visual layout from the data.
   // Alternatively we could just use the title as is if it naturally wraps,
   // but preserving the explicit break logic matching the previous hardcoded markup.
   return (
     <div className="absolute bottom-4 sm:bottom-12 left-4 sm:left-12 w-[calc(100%-2rem)] sm:w-auto md:w-[480px] lg:w-[560px] bg-surface/30 sm:bg-surface/20 backdrop-blur-md p-6 sm:p-12 rounded-card border border-surface/20 shadow-2xl">
-      <p className="text-surface/90 text-about-eyebrow-desktop tracking-wide mb-6">
+      <p className="text-primary sm:text-surface/90 text-eyebrow-mobile sm:text-about-eyebrow-desktop uppercase sm:normal-case tracking-widest sm:tracking-wide mb-6">
         About Cordinit
       </p>
       <h2 className="text-h2 text-surface font-normal mb-3 sm:mb-4">
