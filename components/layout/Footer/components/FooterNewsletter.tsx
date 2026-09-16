@@ -14,8 +14,8 @@ export default function FooterNewsletter() {
   return (
     <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10 w-full lg:w-auto mx-auto lg:ml-auto lg:mr-0 max-w-3xl">
       <div className="flex flex-col max-w-70">
-        <h4 className="text-ink text-h4 mb-1">{FOOTER_NEWSLETTER.heading}</h4>
-        <p className="text-ink-muted text-caption">
+        <h4 className="text-ink text-h4 mb-1 max-lg:text-link-mobile">{FOOTER_NEWSLETTER.heading}</h4>
+        <p className="text-ink-muted text-card-desc max-lg:text-section-subtitle-mobile">
           {!NEWSLETTER_CAPTURE_ENABLED ? comingSoon.footerNote : FOOTER_NEWSLETTER.description}
         </p>
       </div>
@@ -24,6 +24,7 @@ export default function FooterNewsletter() {
           type="button"
           variant="primary"
           size="md"
+          className="max-lg:text-link-mobile"
           onClick={() => openModal({ ctaLocation: "Footer Newsletter" })}
         >
           {comingSoon.footerCta}
@@ -39,9 +40,9 @@ export default function FooterNewsletter() {
             placeholder={FOOTER_NEWSLETTER.placeholder}
             aria-label="Work email address"
             required
-            className="border border-border-subtle rounded-btn px-3 lg:px-4 py-2.5 text-body-sm flex-1 lg:flex-none lg:w-60 focus:outline-none focus:ring-1 focus:ring-primary shadow-sm min-w-0"
+            className="border border-border-subtle rounded-btn px-3 lg:px-4 py-2.5 text-body-sm max-lg:text-card-detail-mobile flex-1 lg:flex-none lg:w-60 focus:outline-none focus:ring-1 focus:ring-primary shadow-sm min-w-0"
           />
-          <Button type="submit" variant="primary" size="md">
+          <Button type="submit" variant="primary" size="md" className="max-lg:text-link-card-mobile">
             {form.buttonText}
           </Button>
         </form>

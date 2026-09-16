@@ -50,7 +50,7 @@ export default function FooterMediaFeature() {
       <div className="hidden lg:flex flex-row items-center gap-16 mb-16">
         {/* Video Column */}
         <div className="w-[45%] flex flex-col gap-6 shrink-0">
-          <h4 className="text-white/90 text-eyebrow">
+          <h4 className="text-white text-about-eyebrow-desktop tracking-[1px] uppercase">
             {FOOTER_MEDIA_FEATURE.eyebrow}
           </h4>
           {/* Video Thumbnail Area */}

@@ -92,7 +92,7 @@ export const FOOTER_MEDIA_FEATURE = {
   heading: "Technology, security & transformation — in conversation.",
   description: "Insights from Cordinit's technology and security experts on building secure, intelligent organisations.",
   ctaText: "WATCH ON YOUTUBE",
-  thumbnail: "/images/footer/latest-video.webp",
+  thumbnail: "/youtube.webp",
   href: "https://youtube.com"
 };
 

@@ -23,22 +23,22 @@ export default function Footer() {
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 bg-white rounded-card-lg shadow-card p-6 md:p-12 lg:p-16 max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide mx-auto flex flex-col min-h-[400px]">
+      <div className="relative z-10 bg-white rounded-card-lg shadow-card p-6 md:p-12 lg:p-16 max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide mx-auto flex flex-col min-h-100">
         
         <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-8">
           {/* Logo and Tagline (Left Side) */}
           <div className="lg:w-1/4 shrink-0 mb-4 lg:mb-0">
-            <div className="flex flex-col gap-[5px] lg:gap-[9px] mb-5 lg:mb-6">
+            <div className="flex flex-col gap-1.25 lg:gap-2.25 mb-5 lg:mb-6">
               <Link href="/" className="shrink-0 w-max">
                 <Image
                   src="/logo.webp"
                   alt={FOOTER_BRANDING.logoAlt}
                   width={73}
                   height={60}
-                  className="h-[60px] w-[72.844px] brightness-0"
+                  className="h-15 w-[72.844px] brightness-0"
                 />
               </Link>
-              <p className="text-black text-caption max-w-[200px]">
+              <p className="text-black text-caption max-lg:text-card-desc-mobile max-w-50">
                 {FOOTER_BRANDING.tagline}
               </p>
             </div>
@@ -46,7 +46,7 @@ export default function Footer() {
               variant="primary"
               size="md"
               onClick={openModal}
-              className="w-max"
+              className="w-max max-lg:text-link-mobile"
               rightIcon={<ArrowRight className="h-4 w-4" />}
             >
               {FOOTER_BRANDING.ctaText}
@@ -57,11 +57,11 @@ export default function Footer() {
           <div className="lg:w-3/4 grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8 lg:gap-8">
             {FOOTER_NAV_COLUMNS.map((col) => (
               <div key={col.id} className={col.orderClasses}>
-                <h4 className="text-ink text-eyebrow lg:text-footer-heading-desktop mb-4 lg:mb-5">{col.title}</h4>
+                <h4 className="text-ink text-eyebrow lg:text-footer-heading-desktop max-lg:text-card-detail-mobile max-lg:font-bold mb-4 lg:mb-5">{col.title}</h4>
                 <ul className="space-y-3">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href} className="text-black hover:text-ink text-card-desc">
+                      <Link href={link.href} className="text-black hover:text-ink text-card-desc max-lg:text-section-subtitle-mobile">
                         {link.label}
                       </Link>
                     </li>
