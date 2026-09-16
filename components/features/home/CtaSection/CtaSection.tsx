@@ -84,7 +84,7 @@ export default function CtaSection({
             </div>
             <Button
               onClick={openModal}
-              className="w-full py-[18px] bg-surface text-ink hover:bg-primary-pale rounded-full text-mobile-cta-1"
+              className="w-full py-4.5 bg-surface text-ink hover:bg-primary-pale rounded-full text-mobile-cta-1"
             >
               {ctaLabel}
             </Button>
