@@ -5,8 +5,8 @@ import { TestimonialItem } from './types';
 
 export default function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <div className="flex-none w-full lg:w-[calc((100%-4.5rem)/3.5)] snap-start flex flex-col bg-surface border border-primary-muted rounded-card-lg overflow-hidden">
-      <div className="relative h-48 sm:h-56 lg:h-64 w-full">
+    <div className="flex-none w-full sm:w-[calc((100%-1rem)/2)] md:w-[calc((100%-2rem)/2.5)] lg:w-[calc((100%-4.5rem)/3.5)] snap-start flex flex-col bg-surface border border-primary-muted rounded-card-lg overflow-hidden">
+      <div className="relative h-80 sm:h-96 lg:h-[400px] w-full">
         <Image
           src={item.image}
           alt={item.name}

@@ -96,7 +96,7 @@ const config: Config = {
         "footer-heading-desktop": ["12px", { fontWeight: "700", lineHeight: "1.5" }],
         "footer-media-heading-desktop": ["24px", { fontWeight: "400", lineHeight: "1.3" }],
         "footer-media-cta-desktop": ["14px", { fontWeight: "600", lineHeight: "1.5" }],
-        "help-card-title-desktop": ["20px", { fontWeight: "700", lineHeight: "1.2" }],
+        "help-card-title-desktop": ["20px", { fontWeight: "700", lineHeight: "1.2" }], 
         "numbers": ["80px", { fontWeight: "700", lineHeight: "1.5" }],
         "section-title-head-mobile": ["14px", { fontWeight: "700", lineHeight: "1.5" }],
         "section-title-head": ["24px", { fontWeight: "600", lineHeight: "1.5" }],

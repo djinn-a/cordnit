@@ -16,7 +16,7 @@ export default function AboutPrinciples({
   return (
     <Section spacing="lg">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-16 lg:mb-20 gap-4 md:gap-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 lg:mb-20 gap-4 md:gap-16">
           <SectionHeader
             eyebrow={eyebrow}
             eyebrowClassName="text-mobile-subhead sm:text-eyebrow-desktop"

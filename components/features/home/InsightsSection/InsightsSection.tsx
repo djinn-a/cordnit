@@ -33,7 +33,7 @@ export default function InsightsSection({
       <Container>
         <SectionHeader
           eyebrow={eyebrow}
-          eyebrowClassName="text-eyebrow-mobile sm:text-eyebrow-desktop"
+          eyebrowClassName="text-primary text-eyebrow-mobile font-extrabold sm:text-eyebrow-desktop sm:font-semibold"
           title={
             title.includes("Sustainable Growth") ? (
               <>

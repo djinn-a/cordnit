@@ -33,7 +33,7 @@ export default function AboutTeam({
   return (
     <Section spacing="lg" className="overflow-hidden">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-16 gap-4 md:gap-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-16 gap-4 md:gap-16">
           <SectionHeader
             eyebrow={eyebrow}
             eyebrowClassName="text-mobile-subhead sm:text-eyebrow-desktop"

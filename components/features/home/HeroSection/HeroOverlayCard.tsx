@@ -22,14 +22,14 @@ export default function HeroOverlayCard({
   const router = useRouter();
 
   return (
-    <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 max-w-105 sm:max-w-135 w-[94%] md:w-[90%] lg:w-full bg-white/30 backdrop-blur-xl border border-white/40 p-5 xs:p-6 sm:p-8 rounded-2xl shadow-card">
-      <p className="text-white/90 text-caption tracking-widest uppercase mb-2 sm:mb-3">
+    <div className="absolute bottom-4 sm:bottom-8 lg:bottom-[34px] left-1/2 -translate-x-1/2 lg:left-[30px] lg:translate-x-0 max-w-105 sm:max-w-135 w-[94%] md:w-[90%] lg:w-full bg-white/30 backdrop-blur-xl border border-white/40 px-8 py-6 rounded-lg shadow-card">
+      <p className="text-white/90 text-caption tracking-widest uppercase mb-6">
         {cardEyebrow}
       </p>
 
-      <h2 className="text-h3 sm:text-card-title text-white mb-3 sm:mb-4">{cardTitle}</h2>
+      <h2 className="text-mobile-heading-1 sm:text-card-title text-white mb-3 sm:mb-4">{cardTitle}</h2>
 
-      <p className="text-card-desc-mobile sm:text-card-desc text-white/90 font-light mb-5 sm:mb-6">
+      <p className="text-mobile-body-1 sm:text-card-desc text-white/90 font-light mb-10">
         {cardBody}
       </p>
 

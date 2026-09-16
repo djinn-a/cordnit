@@ -27,10 +27,10 @@ export default function TestimonialsSection({
 
   return (
     <Section spacing="none" className="py-6 sm:py-10 lg:py-12 overflow-hidden">
-      <Container width="wide">
+      <Container width="wide" className="lg:px-15">
         <SectionHeader
           eyebrow={eyebrow}
-          eyebrowClassName="text-primary text-eyebrow-mobile sm:text-eyebrow-desktop"
+          eyebrowClassName="text-primary text-eyebrow-mobile font-extrabold sm:text-eyebrow-desktop sm:font-semibold"
           title={title}
           titleClassName="text-section-title-mobile sm:text-section-title !font-extrabold"
           subtitle={description}

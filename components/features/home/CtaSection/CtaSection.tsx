@@ -30,7 +30,7 @@ export default function CtaSection({
   const { openModal } = useContactModal();
 
   return (
-    <section className="relative w-[calc(100%-2rem)] md:w-full mx-auto md:max-w-[1120px] md:h-[232px] pt-16 pb-20 md:py-8 px-6 md:px-[60px] bg-surface-dark mb-8 sm:mb-12 md:mb-24 overflow-hidden rounded-card-lg md:rounded-3xl shadow-lg">
+    <section className="relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-120px)] mx-auto max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide md:h-[232px] pt-16 pb-20 md:py-8 px-6 md:px-[60px] bg-surface-dark mb-8 sm:mb-12 md:mb-24 overflow-hidden rounded-2xl shadow-lg">
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -49,17 +49,17 @@ export default function CtaSection({
       <div className="relative z-10 w-full h-full flex flex-col md:flex-row items-start md:items-center justify-between">
         <div className="relative z-10 w-full md:w-[615px] text-white mb-12 md:mb-0">
           <div className="md:hidden flex flex-col w-full">
-            <h2 className="text-mobile-heading-4 text-white mb-5 tracking-tight whitespace-pre-line">
-              {titleMobile.replace(" starting point", "\nstarting point")}
+            <h2 className="text-mobile-heading-4 font-bold text-white mb-5 tracking-tight max-w-65">
+              {titleMobile}
             </h2>
-            <p className="text-white/90 text-mobile-body-1 font-light max-w-[340px]">
+            <p className="text-white/90 text-mobile-body-1 max-w-[320px]">
               {bodyMobile}
             </p>
           </div>
 
           <div className="hidden md:flex flex-col justify-center w-full">
             <h2 className="text-cta-title-desktop text-white mb-2 md:mb-3">
-              Ready to Align Technology with <br /> Business Growth?
+              Ready to Align Technology with Business Growth?
             </h2>
             <p className="text-white/80 text-body font-light">{bodyDesktop}</p>
           </div>
@@ -77,14 +77,14 @@ export default function CtaSection({
                 />
               </div>
               <div className="text-white flex flex-col justify-center">
-                <p className="text-card-desc leading-snug text-white">
+                <p className="text-cta-expert-desktop text-white w-min">
                   {expertName}
                 </p>
               </div>
             </div>
             <Button
               onClick={openModal}
-              className="w-full py-[18px] bg-surface text-ink hover:bg-primary-pale rounded-full text-mobile-cta-2"
+              className="w-full py-[18px] bg-surface text-ink hover:bg-primary-pale rounded-full text-mobile-cta-1"
             >
               {ctaLabel}
             </Button>
