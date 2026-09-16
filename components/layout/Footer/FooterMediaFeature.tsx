@@ -14,7 +14,7 @@ export default function FooterMediaFeature() {
 
         {/* Video Column */}
         <div className="w-[45%] lg:w-[45%] flex flex-col gap-6 shrink-0">
-          <h4 className="hidden lg:block text-white/90 text-eyebrow">
+          <h4 className="text-card-desc-mobile hidden lg:block text-white/90 text-eyebrow">
             LATEST FROM CORDINIT
           </h4>
           {/* Video Thumbnail Area */}
@@ -36,10 +36,10 @@ export default function FooterMediaFeature() {
 
         {/* Text Content Area */}
         <div className="w-[55%] lg:w-[55%] text-white flex flex-col justify-center">
-          <h3 className="text-h3 lg:text-footer-media-heading-desktop text-white mb-2 lg:mb-6 leading-snug">
+          <h3 className="text-card-desc sm:text-h3 lg:text-footer-media-heading-desktop text-white mb-2 lg:mb-6 leading-snug">
             Technology, security & transformation — in conversation.
           </h3>
-          <p className="text-white/80 text-body lg:text-card-desc mb-3 lg:mb-8 lg:max-w-xl">
+          <p className="text-white/80 text-mobile-body-4 sm:text-body lg:text-card-desc mb-3 lg:mb-8 lg:max-w-xl">
             Insights from Cordinit&apos;s technology and security experts on building secure, intelligent organisations.
           </p>
           <a href="#" className="inline-flex items-center text-white lg:text-primary text-button lg:text-footer-media-cta-desktop uppercase hover:text-white/80 lg:hover:text-primary-hover transition-colors">

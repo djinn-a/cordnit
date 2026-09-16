@@ -29,21 +29,21 @@ export default function InsightCard({ item, className = "" }: InsightCardProps) 
       </div>
 
       <div className="relative z-10 p-4 sm:p-6">
-        <span className="inline-block bg-ink text-surface text-caption font-semibold tracking-wider px-3 py-1.5 uppercase rounded-btn">
+        <span className="text-card-tag sm:text-caption sm:font-semibold inline-block bg-ink text-surface tracking-wider px-3 py-1.5 uppercase rounded-btn">
           {item.tag}
         </span>
       </div>
 
       <div className="relative z-10 p-5 sm:p-6 bg-ink/40 backdrop-blur-md border-t border-surface/10 mt-auto">
-        <div className="flex items-center text-surface/80 text-caption mb-2">
+        <div className="flex items-center text-surface/80 text-card-desc-mobile sm:text-caption mb-2">
           <span>{item.type}</span>
           <span className="mx-2">•</span>
           <span>{item.date}</span>
         </div>
-        <h3 className="text-surface font-medium text-solution-h4 mb-4 line-clamp-3">
+        <h3 className="text-surface text-mobile-heading-2 sm:text-solution-h4 sm:font-medium mb-4 line-clamp-3">
           {item.title}
         </h3>
-        <div className="flex items-center text-primary text-body-sm font-medium">
+        <div className="flex items-center text-primary text-link-mobile sm:text-body-sm sm:font-medium">
           Read more <ArrowRight className="ml-1.5 h-4 w-4 text-primary" />
         </div>
       </div>

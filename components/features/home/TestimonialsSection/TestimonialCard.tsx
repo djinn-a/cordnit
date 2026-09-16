@@ -29,11 +29,11 @@ export default function TestimonialCard({ item }: { item: TestimonialItem }) {
       </div>
 
       <div className="flex flex-col flex-grow p-4 sm:p-5">
-        <h3 className="text-h4 font-normal sm:font-bold mb-1">
+        <h3 className="text-card-desc sm:text-h4 sm:font-bold mb-1">
           {item.name}
         </h3>
-        <p className="text-caption mb-0.5">{item.role}</p>
-        <p className="text-caption mb-3 sm:mb-4">{item.company}</p>
+        <p className="text-card-desc-mobile sm:text-caption mb-0.5">{item.role}</p>
+        <p className="text-card-desc-mobile sm:text-caption mb-3 sm:mb-4">{item.company}</p>
         <p className="text-card-desc text-ink-muted mb-4 flex-grow">
           {item.quote}
         </p>

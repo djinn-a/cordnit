@@ -49,10 +49,10 @@ export default function CtaSection({
       <div className="relative z-10 w-full h-full flex flex-col md:flex-row items-start md:items-center justify-between">
         <div className="relative z-10 w-full md:w-[615px] text-white mb-12 md:mb-0">
           <div className="md:hidden flex flex-col w-full">
-            <h2 className="text-h2 text-white font-medium mb-5 tracking-tight whitespace-pre-line">
+            <h2 className="text-mobile-heading-4 text-white mb-5 tracking-tight whitespace-pre-line">
               {titleMobile.replace(" starting point", "\nstarting point")}
             </h2>
-            <p className="text-white/90 text-body-lg font-light max-w-[340px]">
+            <p className="text-white/90 text-mobile-body-1 font-light max-w-[340px]">
               {bodyMobile}
             </p>
           </div>
@@ -77,14 +77,14 @@ export default function CtaSection({
                 />
               </div>
               <div className="text-white flex flex-col justify-center">
-                <p className="text-h4 font-medium leading-snug text-white">
+                <p className="text-card-desc leading-snug text-white">
                   {expertName}
                 </p>
               </div>
             </div>
             <Button
               onClick={openModal}
-              className="w-full py-[18px] bg-surface text-ink hover:bg-primary-pale rounded-full text-body-lg"
+              className="w-full py-[18px] bg-surface text-ink hover:bg-primary-pale rounded-full text-mobile-cta-2"
             >
               {ctaLabel}
             </Button>

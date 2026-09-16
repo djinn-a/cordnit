@@ -44,7 +44,7 @@ export default function InsightsSection({
               title
             )
           }
-          titleClassName="text-section-title-mobile sm:text-section-title"
+          titleClassName="text-section-title-mobile sm:text-section-title !font-extrabold"
           className="mb-8 sm:mb-12"
         />
 

@@ -13,15 +13,16 @@ export default function FooterNewsletter() {
   if (!NEWSLETTER_CAPTURE_ENABLED) {
     return (
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10 w-full lg:w-auto mx-auto lg:ml-auto lg:mr-0 max-w-3xl">
-        <div className="flex flex-col max-w-[280px]">
-          <h4 className="text-ink text-h4 mb-1">Stay Ahead</h4>
-          <p className="text-ink-muted text-caption">{comingSoon.footerNote}</p>
+        <div className="flex flex-col max-w-70">
+          <h4 className="text-ink text-mobile-heading-2 sm:text-h4 mb-1">Stay Ahead</h4>
+          <p className="text-ink-muted text-mobile-body-4 sm:text-caption">{comingSoon.footerNote}</p>
         </div>
         <Button
           type="button"
           variant="primary"
           size="md"
           onClick={() => openModal({ ctaLocation: "Footer Newsletter" })}
+          className="text-mobile-cta-2 sm:text-button"
         >
           {comingSoon.footerCta}
         </Button>
@@ -31,9 +32,9 @@ export default function FooterNewsletter() {
 
   return (
     <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10 w-full lg:w-auto mx-auto lg:ml-auto lg:mr-0 max-w-3xl">
-      <div className="flex flex-col max-w-[280px]">
-        <h4 className="text-ink text-h4 mb-1">Stay Ahead</h4>
-        <p className="text-ink-muted text-caption">
+      <div className="flex flex-col max-w-70">
+        <h4 className="text-ink text-mobile-heading-2 sm:text-h4 mb-1">Stay Ahead</h4>
+        <p className="text-ink-muted text-mobile-body-4 sm:text-caption">
           Receive occasional perspectives on the technology topics that matter to you.
         </p>
       </div>
@@ -47,9 +48,9 @@ export default function FooterNewsletter() {
           placeholder="Work email"
           aria-label="Work email address"
           required
-          className="border border-border-subtle rounded-btn px-3 lg:px-4 py-2.5 text-body-sm flex-1 lg:flex-none lg:w-[240px] focus:outline-none focus:ring-1 focus:ring-primary shadow-sm min-w-0"
+          className="border border-border-subtle rounded-btn px-3 lg:px-4 py-2.5 text-card-tag sm:text-body-sm flex-1 lg:flex-none lg:w-[240px] focus:outline-none focus:ring-1 focus:ring-primary shadow-sm min-w-0"
         />
-        <Button type="submit" variant="primary" size="md">
+        <Button type="submit" variant="primary" size="md" className="text-mobile-cta-2 sm:text-button">
           {form.buttonText}
         </Button>
       </form>

@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Section } from "@/components/ui";
+import { Container, Section, Button } from "@/components/ui";
 import { HelpService, defaultHelpServices } from "./helpServices";
 import HelpServiceGrid from "./HelpServiceGrid";
+import { ArrowRight } from "lucide-react";
 
 export type HelpSectionProps = {
   title?: string;
@@ -28,6 +29,16 @@ export default function HelpSection({
         {safeServices.length > 0 && (
           <HelpServiceGrid services={safeServices} />
         )}
+
+        <div className="mt-10 sm:mt-12 flex justify-center">
+          <Button 
+            variant="primary" 
+            className="md:text-link-desktop bg-primary"
+            rightIcon={<ArrowRight className="h-4 w-4" />}
+          >
+            Explore all services
+          </Button>
+        </div>
       </Container>
     </Section>
   );

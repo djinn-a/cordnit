@@ -26,16 +26,16 @@ export default function MethodologyCard({ step, className }: MethodologyCardProp
         className
       )}
     >
-      <div className="flex justify-between items-start mb-6 lg:mb-8">
-        <span className="text-caption eyebrow-desktop font-bold tracking-widest uppercase text-surface">
+      <div className="flex justify-between items-start mb-[56px]">
+        <span className="text-eyebrow-mobile sm:text-caption sm:font-bold tracking-widest uppercase text-surface">
           {step.title}
         </span>
         <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-surface" />
       </div>
-      <div className="text-numbers text-surface mt-6 xs:mt-8 sm:mt-0 leading-none">
+      <div className="text-numbers text-surface leading-none">
         {step.num}
       </div>
-      <div className="mt-6">
+      <div className="mt-[24px]">
         <p className="text-about-eyebrow-desktop sm:text-card-desc lg:text-body-sm leading-relaxed text-surface/90">
           {step.desc}
         </p>

@@ -32,7 +32,7 @@ export default function TestimonialsSection({
           eyebrow={eyebrow}
           eyebrowClassName="text-primary text-eyebrow-mobile sm:text-eyebrow-desktop"
           title={title}
-          titleClassName="text-section-title-mobile sm:text-section-title"
+          titleClassName="text-section-title-mobile sm:text-section-title !font-extrabold"
           subtitle={description}
           subtitleClassName="text-section-subtitle-mobile sm:text-section-subtitle"
           align="center"

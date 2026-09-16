@@ -22,7 +22,7 @@ export default function AboutContentTabs({
             size="sm"
             variant={isActive ? "primary" : "outline"}
             onClick={() => onTabChange(tab.id)}
-            className={`rounded-full px-4 md:px-5 ${
+            className={`rounded-full px-4 md:px-5 md:text-cta-expert-desktop ${
               isActive
                 ? "text-surface"
                 : "text-ink-muted md:text-primary border-border-subtle md:border-primary"

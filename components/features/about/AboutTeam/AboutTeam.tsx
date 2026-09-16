@@ -36,12 +36,13 @@ export default function AboutTeam({
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-16 gap-4 md:gap-16">
           <SectionHeader
             eyebrow={eyebrow}
-            eyebrowClassName="text-eyebrow-desktop"
+            eyebrowClassName="text-mobile-subhead sm:text-eyebrow-desktop"
             title={title}
+            titleClassName="text-mobile-heading-1-eb font-extrabold sm:text-section-title"
             className="md:w-3/5"
           />
           <div className="md:w-2/5">
-            <p className="text-section-subtitle-mobile md:text-section-subtitle text-body">{description}</p>
+            <p className="text-mobile-body-1 md:text-section-subtitle text-body">{description}</p>
           </div>
         </div>
 

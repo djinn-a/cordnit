@@ -58,11 +58,11 @@ export default function Footer() {
           <div className="lg:w-3/4 grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8 lg:gap-8">
             {FOOTER_NAV_COLUMNS.map((col) => (
               <div key={col.id} className={col.orderClasses}>
-                <h4 className="text-ink text-eyebrow lg:text-footer-heading-desktop mb-4 lg:mb-5">{col.title}</h4>
+                <h4 className="text-ink text-mobile-footer-heading sm:text-eyebrow lg:text-footer-heading-desktop mb-4 lg:mb-5">{col.title}</h4>
                 <ul className="space-y-3">
                   {col.links.map((link, idx) => (
                     <li key={idx}>
-                      <Link href={link.href} className="text-black hover:text-ink text-card-desc">
+                      <Link href={link.href} className="text-black hover:text-ink text-mobile-body-1 sm:text-card-desc">
                         {link.label}
                       </Link>
                     </li>

@@ -25,8 +25,8 @@ export default function TeamMemberCard({ member, className = "" }: TeamMemberCar
         }`}
       />
       <div className="absolute bottom-4 left-4 right-4 bg-surface/70 backdrop-blur-md rounded-2xl p-4 md:p-6 shadow-sm border border-surface/40">
-        <h3 className="text-section-title-head mb-1">{member.name}</h3>
-        <p className="text-about-eyebrow-desktop text-primary">{member.role}</p>
+        <h3 className="text-mobile-heading-2 sm:text-section-title-head mb-1">{member.name}</h3>
+        <p className="text-mobile-subhead sm:text-about-eyebrow-desktop text-primary">{member.role}</p>
         <div
           className={`grid transition-[grid-template-rows] duration-500 ease-out ${
             isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr] lg:group-hover:grid-rows-[1fr]"

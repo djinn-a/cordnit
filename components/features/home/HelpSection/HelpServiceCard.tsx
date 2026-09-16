@@ -45,7 +45,7 @@ export default function HelpServiceCard({
         </div>
         <div
           className={cn(
-            "text-primary font-medium text-body-sm",
+            "text-primary text-link-mobile",
             "sm:text-caption sm:font-semibold sm:text-ink"
           )}
         >
@@ -57,16 +57,16 @@ export default function HelpServiceCard({
       <div className={cn("flex-1 pr-3", "sm:pr-0 sm:w-full")}>
         <h3
           className={cn(
-            "text-h4 sm:text-help-card-title-desktop mb-1 transition-colors",
+            "text-mobile-heading-2 sm:text-help-card-title-desktop mb-1 transition-colors",
             // Mobile specifics
-            "font-medium group-hover:text-primary",
+            "group-hover:text-primary",
             // Desktop specifics
             "sm:text-primary sm:mb-3 lg:mb-4"
           )}
         >
           {service.title}
         </h3>
-        <p className="text-body-sm sm:text-card-desc">{service.desc}</p>
+        <p className="text-ink-muted text-card-desc-mobile sm:text-card-desc">{service.desc}</p>
       </div>
 
       {/* Mobile Arrow Area */}
