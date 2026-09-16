@@ -25,10 +25,10 @@ export default function AboutContent({
         <div className="flex flex-col lg:flex-row gap-10 md:gap-16 lg:gap-24 items-center">
           <div className="w-full lg:w-1/2 flex flex-col items-start min-h-[350px]">
             <SectionHeader eyebrow={eyebrow}
-             eyebrowClassName="text-mobile-subhead sm:text-eyebrow-desktop"
-             title={title}
-             titleClassName="text-mobile-heading-1-eb font-extrabold sm:text-section-title"
-             className="mb-5 md:mb-10" />
+              eyebrowClassName="text-mobile-subhead sm:text-eyebrow-desktop"
+              title={title}
+              titleClassName="text-mobile-heading-1-eb font-extrabold sm:text-section-title"
+              className="mb-5 md:mb-10" />
 
             <AboutContentTabs
               tabs={aboutContentData}
