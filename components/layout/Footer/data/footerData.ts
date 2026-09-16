@@ -68,8 +68,35 @@ export const FOOTER_NAV_COLUMNS = [
   }
 ];
 
+
 export const SOCIAL_LINKS = [
   { id: 'x', label: 'X (Twitter)', icon: '/icons/x.svg', href: '#' },
   { id: 'whatsapp', label: 'WhatsApp', icon: '/icons/whatsapp.svg', href: '#' },
   { id: 'youtube', label: 'YouTube', icon: '/icons/youtube.svg', href: '#' }
 ];
+
+export const FOOTER_BRANDING = {
+  logoAlt: "Cordinit Logo",
+  tagline: "Let's talk about your next milestone—and how to reach it",
+  ctaText: "Book a call"
+};
+
+export const FOOTER_NEWSLETTER = {
+  heading: "Stay Ahead",
+  description: "Receive occasional perspectives on the technology topics that matter to you.",
+  placeholder: "Work email"
+};
+
+export const FOOTER_MEDIA_FEATURE = {
+  eyebrow: "LATEST FROM CORDINIT",
+  heading: "Technology, security & transformation — in conversation.",
+  description: "Insights from Cordinit's technology and security experts on building secure, intelligent organisations.",
+  ctaText: "WATCH ON YOUTUBE",
+  thumbnail: "/images/footer/latest-video.webp",
+  href: "https://youtube.com"
+};
+
+export const FOOTER_LEGAL = {
+  copyright: "© 2026 — Copyright",
+  privacy: "Privacy"
+};

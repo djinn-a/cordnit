@@ -1,15 +1,14 @@
 "use client";
 
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui';
-import { useContactModal } from '../../features/contact/ContactModal/ContactModalProvider';
+import { useContactModal } from '@/components/features/contact/ContactModal/ContactModalProvider';
 
 import FooterNewsletter from './FooterNewsletter';
 import FooterMediaFeature from './FooterMediaFeature';
-import { FOOTER_NAV_COLUMNS, SOCIAL_LINKS } from './footerData';
+import { FOOTER_NAV_COLUMNS, SOCIAL_LINKS, FOOTER_BRANDING } from '../data/footerData';
 
 export default function Footer() {
   const { openModal } = useContactModal();
@@ -33,14 +32,14 @@ export default function Footer() {
               <Link href="/" className="shrink-0 w-max">
                 <Image
                   src="/logo.webp"
-                  alt="Cordinit Logo"
+                  alt={FOOTER_BRANDING.logoAlt}
                   width={73}
                   height={60}
                   className="h-[60px] w-[72.844px] brightness-0"
                 />
               </Link>
               <p className="text-black text-caption max-w-[200px]">
-                Let&apos;s talk about your next milestone—and how to reach it
+                {FOOTER_BRANDING.tagline}
               </p>
             </div>
             <Button
@@ -50,7 +49,7 @@ export default function Footer() {
               className="w-max"
               rightIcon={<ArrowRight className="h-4 w-4" />}
             >
-              Book a call
+              {FOOTER_BRANDING.ctaText}
             </Button>
           </div>
 
@@ -60,8 +59,8 @@ export default function Footer() {
               <div key={col.id} className={col.orderClasses}>
                 <h4 className="text-ink text-eyebrow lg:text-footer-heading-desktop mb-4 lg:mb-5">{col.title}</h4>
                 <ul className="space-y-3">
-                  {col.links.map((link, idx) => (
-                    <li key={idx}>
+                  {col.links.map((link) => (
+                    <li key={link.label}>
                       <Link href={link.href} className="text-black hover:text-ink text-card-desc">
                         {link.label}
                       </Link>

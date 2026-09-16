@@ -3,7 +3,7 @@ import { Mulish } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/layout/TopBar/TopBar";
 import Navbar from "@/components/layout/Navbar/Navbar";
-import Footer from "@/components/layout/Footer/Footer";
+import Footer from "@/components/layout/Footer";
 import { ContactModalProvider } from "@/components/features/contact/ContactModal/ContactModalProvider";
 import { NewsletterModalProvider } from "@/components/features/newsletter/NewsletterModal/NewsletterModalProvider";
 
