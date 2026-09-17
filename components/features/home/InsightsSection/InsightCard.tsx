@@ -29,7 +29,7 @@ export default function InsightCard({ item, className = "" }: InsightCardProps) 
       </div>
 
       <div className="relative z-10 p-4 sm:p-6">
-        <span className="text-card-tag sm:text-caption sm:font-semibold inline-block bg-ink text-surface tracking-wider px-3 py-1.5 uppercase rounded-btn">
+        <span className="text-card-detail-mobile inline-block bg-ink text-surface tracking-wider px-3 py-1.5 uppercase rounded-btn">
           {item.tag}
         </span>
       </div>
