@@ -13,8 +13,8 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
   const { openModal } = useContactModal();
 
   return (
-    <Section spacing="none" className="pt-space-80 pb-0 px-space-60" background="white">
-      <Container className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+    <Section spacing="none" className="pt-space-80 pb-0 px-4 sm:px-6 lg:px-space-60" background="white">
+      <Container className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8 !px-0">
         {/* Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col items-start">
           <h4 className="text-hero-eyebrow mb-4 lg:mb-6">

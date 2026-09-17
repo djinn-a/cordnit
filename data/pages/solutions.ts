@@ -10,5 +10,6 @@ export const solutionsPage: PageDocument = {
   },
   sections: [
     { _type: "solutionsHero", _key: "solutions-hero" },
+    { _type: "solutionsCapabilities", _key: "solutions-capabilities" },
   ],
 };
