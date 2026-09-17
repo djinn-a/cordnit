@@ -1,8 +1,21 @@
-import UnderDevelopmentPage from "@/components/features/under-development/UnderDevelopmentPage";
-import { underDevelopmentMetadata } from "@/lib/seo/under-development-metadata";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import LayoutRenderer from "@/components/renderers/LayoutRenderer";
+import { getPage } from "@/lib/cms/get-page";
 
-export const metadata = underDevelopmentMetadata("Industries");
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage("industries");
+  return {
+    title: page?.seo?.title,
+    description: page?.seo?.description,
+  };
+}
 
-export default function IndustriesPage() {
-  return <UnderDevelopmentPage pageLabel="Industries" />;
+export default async function IndustriesPage() {
+  const page = await getPage("industries");
+  if (!page) notFound();
+
+  return (
+    <LayoutRenderer layout={page.layout} sections={page.sections} />
+  );
 }

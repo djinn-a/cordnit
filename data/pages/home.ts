@@ -16,6 +16,25 @@ export const homePage: PageDocument = {
     { _type: "methodology", _key: "home-methodology" },
     { _type: "recognition", _key: "home-recognition" },
     { _type: "testimonials", _key: "home-testimonials" },
+    { 
+      _type: "contentMedia", 
+      _key: "home-content-media",
+      eyebrow: "INDUSTRIES",
+      title: "Technology progress in your industry context",
+      description: "Every industry faces unique regulatory, competitive, and technological pressures. We tailor our digital transformation strategies to the specific realities of your sector, ensuring compliance while driving meaningful innovation.",
+      cta: {
+        label: "Explore industries",
+        href: "/industries"
+      },
+      mainImage: {
+        src: "/images/content-media/main.png",
+        alt: "People looking at a tablet in a modern office"
+      },
+      secondaryImage: {
+        src: "/images/content-media/secondary.png",
+        alt: "Data visualization on a tablet screen"
+      }
+    },
     { _type: "cta", _key: "home-cta" },
   ],
 };

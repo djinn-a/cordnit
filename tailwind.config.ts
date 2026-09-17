@@ -21,6 +21,10 @@ const config: Config = {
       backgroundImage: {
         "gradient-mobile-nav": "linear-gradient(56deg, #1645FF 0.2%, #0B1B55 39.43%, #05070D 62.49%)",
       },
+      spacing: {
+        "space-16": "16px",
+        "space-80": "80px",
+      },
       fontFamily: {
         sans: ["var(--font-mulish)", "sans-serif"],
         mulish: ["var(--font-mulish)", "sans-serif"],
@@ -67,6 +71,9 @@ const config: Config = {
         "container-2xl": "1600px",
         "container-wide": "1800px",
       },
+      width: {
+        "cta-button": "296px",
+      },
       height: {
         panel: "400px",
       },
@@ -83,6 +90,7 @@ const config: Config = {
         "glow-primary": "var(--shadow-glow-primary)",
       },
       fontSize: {
+        "hero-header-eb": ["56px", { fontWeight: "800", lineHeight: "70px" }],
         "section-title": ["48px", { fontWeight: "800", lineHeight: "1.2" }],
         "section-title-mobile": ["24px", { fontWeight: "800", lineHeight: "1.2" }],
         "section-subtitle": ["20px", { fontWeight: "400", lineHeight: "1.5" }],
