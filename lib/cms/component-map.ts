@@ -15,6 +15,7 @@ import ContactHero from "@/components/features/contact/ContactHero/ContactHero";
 import ContactFormSection from "@/components/features/contact/ContactFormSection/ContactFormSection";
 import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
 import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
+import SolutionsDelivery from "@/components/features/solutions/SolutionsDelivery/SolutionsDelivery";
 /**
  * Maps CMS / page-document `_type` values to presentational section components.
  * Add a new section type here when introducing a new block — never hard-wire in page.tsx.
@@ -35,4 +36,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   contactForm: ContactFormSection as SectionComponent,
   solutionsHero: SolutionsHero as SectionComponent,
   solutionsCapabilities: SolutionsCapabilities as SectionComponent,
+  solutionsDelivery: SolutionsDelivery as SectionComponent,
 };
