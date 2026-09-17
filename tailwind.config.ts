@@ -25,6 +25,7 @@ const config: Config = {
       spacing: {
         "space-16": "16px",
         "space-80": "80px",
+        "space-60": "60px",
       },
       fontFamily: {
         sans: ["var(--font-mulish)", "sans-serif"],

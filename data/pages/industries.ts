@@ -39,6 +39,17 @@ export const industriesPage: PageDocument = {
       eyebrow: "OUR APPROACH",
       title: "Start with the context, not the technology",
       description: "The same platform or security decision can have very different implications depending on your customers, operating model and risk profile. We take time to understand the forces shaping your industry, then help identify a practical response.",
-    }
+    },
+    {
+      _type: "perspective",
+      _key: "industries-perspective",
+      eyebrow: "OUR PERSPECTIVE",
+      title: "The challenges often connect",
+      description: "Improving a customer journey can require better data and integration. Modernising a service can call for cloud, application engineering and security. We help connect those disciplines so you can make progress without losing the wider context.",
+      image: {
+        src: "/images/content-media/main.png",
+        alt: "Challenges connect",
+      },
+    },
   ],
 };
