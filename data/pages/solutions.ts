@@ -10,7 +10,10 @@ export const solutionsPage: PageDocument = {
   },
   sections: [
     { _type: "solutionsHero", _key: "solutions-hero" },
+
     { _type: "solutionsCapabilities", _key: "solutions-capabilities" },
     { _type: "solutionsDelivery", _key: "solutions-delivery" },
+    { _type: "solutionsCombination", _key: "solutions-combination" },
+    { _type: "cta", _key: "solutions-cta" },
   ],
 };

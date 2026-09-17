@@ -17,7 +17,8 @@ export type SectionType =
   | "contactForm"
   | "solutionsHero"
   | "solutionsCapabilities"
-  | "solutionsDelivery";
+  | "solutionsDelivery"
+  | "solutionsCombination";
 
 export type LayoutType = "default" | "contact";
 
