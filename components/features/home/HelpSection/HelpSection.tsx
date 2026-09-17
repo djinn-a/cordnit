@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Container, Section, Button } from "@/components/ui";
 import { HelpService, defaultHelpServices } from "./helpServices";
 import HelpServiceGrid from "./HelpServiceGrid";
@@ -31,13 +32,15 @@ export default function HelpSection({
         )}
 
         <div className="mt-10 sm:mt-12 flex justify-center">
-          <Button 
-            variant="primary" 
-            className="md:text-link-desktop bg-primary"
-            rightIcon={<ArrowRight className="h-4 w-4" />}
-          >
-            Explore all services
-          </Button>
+          <Link href="/solutions">
+            <Button 
+              variant="primary" 
+              className="md:text-link-desktop bg-primary"
+              rightIcon={<ArrowRight className="h-4 w-4" />}
+            >
+              Explore all services
+            </Button>
+          </Link>
         </div>
       </Container>
     </Section>
