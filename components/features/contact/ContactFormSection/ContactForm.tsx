@@ -28,7 +28,7 @@ export default function ContactForm({
   openModal
 }: ContactFormProps) {
   const inputClasses = (fieldName: string) =>
-    `w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary bg-surface text-body-sm transition-colors ${
+    `w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary bg-surface text-body-sm placeholder-ink-muted transition-colors ${
       errors[fieldName] ? 'border-error' : 'border-border-subtle'
     }`;
 
@@ -55,7 +55,7 @@ export default function ContactForm({
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-800 mb-1.5">Job Title</label>
-            <input type="text" name="jobTitle" value={formData.jobTitle} onChange={handleInputChange} placeholder="Enter Job Title" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm" />
+            <input type="text" name="jobTitle" value={formData.jobTitle} onChange={handleInputChange} placeholder="Enter Job Title" className={inputClasses('jobTitle')} />
           </div>
         </div>
 

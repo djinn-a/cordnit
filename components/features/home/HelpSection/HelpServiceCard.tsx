@@ -45,11 +45,11 @@ export default function HelpServiceCard({
         </div>
         <div
           className={cn(
-            "text-primary text-link-mobile",
-            "sm:text-caption sm:font-semibold sm:text-ink"
+            "text-link-mobile",
+            "sm:text-caption sm:font-semibold"
           )}
         >
-          {service.num}
+          <span className="text-primary sm:text-ink">{service.num}</span>
         </div>
       </div>
 

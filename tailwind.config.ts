@@ -94,6 +94,7 @@ const config: Config = {
         "eyebrow-desktop": ["16px", { fontWeight: "600", lineHeight: "1.5" }],
         "link-mobile": ["14px", { fontWeight: "600", lineHeight: "1.5" }],
         "link-desktop": ["16px", { fontWeight: "600", lineHeight: "1.5" }],
+        "cta-title-mobile": ["24px", { fontWeight: "700", lineHeight: "1.2" }],
         "cta-title-desktop": ["32px", { fontWeight: "700", lineHeight: "1.2" }],
         "cta-expert-desktop": ["16px", { fontWeight: "400", lineHeight: "1.25" }],
         "footer-heading-desktop": ["12px", { fontWeight: "700", lineHeight: "1.5" }],

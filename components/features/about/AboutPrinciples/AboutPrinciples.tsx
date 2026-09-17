@@ -25,7 +25,7 @@ export default function AboutPrinciples({
             className="md:w-1/2"
           />
           <div className="md:w-1/2 md:pl-8">
-            <p className="text-mobile-body-1 md:text-section-subtitle text-ink-muted">{description}</p>
+            <p className="text-section-subtitle-mobile md:text-section-subtitle text-ink-muted">{description}</p>
           </div>
         </div>
 

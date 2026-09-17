@@ -30,7 +30,7 @@ export default function CtaSection({
   const { openModal } = useContactModal();
 
   return (
-    <section className="relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-120px)] mx-auto max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide md:h-[232px] pt-16 pb-20 md:py-8 px-6 md:px-[60px] bg-surface-dark mb-8 sm:mb-12 md:mb-24 overflow-hidden rounded-2xl shadow-lg">
+    <section className="relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-120px)] mx-auto max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide md:h-[232px] pt-10 pb-10 md:py-8 px-6 md:px-[60px] bg-surface-dark mb-8 sm:mb-12 md:mb-24 overflow-hidden rounded-2xl shadow-lg">
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -49,10 +49,10 @@ export default function CtaSection({
       <div className="relative z-10 w-full h-full flex flex-col md:flex-row items-start md:items-center justify-between">
         <div className="relative z-10 w-full md:w-[615px] text-white mb-12 md:mb-0">
           <div className="md:hidden flex flex-col w-full">
-            <h2 className="text-mobile-heading-4 font-bold text-white mb-5 tracking-tight max-w-65">
+            <h2 className="text-cta-title-mobile text-white mb-5 tracking-tight max-w-65">
               {titleMobile}
             </h2>
-            <p className="text-white/90 text-mobile-body-1 max-w-[320px]">
+            <p className="text-white/90 text-section-subtitle-mobile max-w-[320px]">
               {bodyMobile}
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function CtaSection({
             </div>
             <Button
               onClick={openModal}
-              className="w-full py-4.5 bg-surface text-ink hover:bg-primary-pale rounded-full text-mobile-cta-1"
+              className="w-full py-4.5 bg-surface text-ink hover:bg-primary-pale rounded-[8px] text-mobile-cta-1"
             >
               {ctaLabel}
             </Button>

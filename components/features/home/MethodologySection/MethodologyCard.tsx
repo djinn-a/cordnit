@@ -32,7 +32,7 @@ export default function MethodologyCard({ step, className }: MethodologyCardProp
         </span>
         <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-surface" />
       </div>
-      <div className="text-numbers text-surface leading-none">
+      <div className="text-[48px] font-bold sm:text-numbers text-surface leading-none">
         {step.num}
       </div>
       <div className="mt-[24px]">

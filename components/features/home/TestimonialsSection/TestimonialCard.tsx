@@ -29,7 +29,7 @@ export default function TestimonialCard({ item }: { item: TestimonialItem }) {
       </div>
 
       <div className="flex flex-col flex-grow p-4 sm:p-5">
-        <h3 className="text-card-desc sm:text-h4 sm:font-bold mb-1">
+        <h3 className="text-card-desc sm:text-section-subtitle sm:font-semibold mb-1">
           {item.name}
         </h3>
         <p className="text-card-desc-mobile sm:text-caption mb-0.5">{item.role}</p>

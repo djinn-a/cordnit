@@ -23,7 +23,7 @@ export default function HeroOverlayCard({
 
   return (
     <div className="absolute bottom-4 sm:bottom-8 lg:bottom-[34px] left-1/2 -translate-x-1/2 lg:left-[30px] lg:translate-x-0 max-w-105 sm:max-w-135 w-[94%] md:w-[90%] lg:w-full bg-white/30 backdrop-blur-xl border border-white/40 px-8 py-6 rounded-lg shadow-card">
-      <p className="text-white/90 text-caption tracking-widest uppercase mb-6">
+      <p className="text-white/90 text-caption max-sm:text-card-detail-mobile tracking-widest uppercase mb-6">
         {cardEyebrow}
       </p>
 
