@@ -36,7 +36,7 @@ export default function TestimonialsSection({
           subtitle={description}
           subtitleClassName="text-section-subtitle-mobile sm:text-section-subtitle"
           align="center"
-          className="items-start sm:items-center text-left sm:text-center mb-6 sm:mb-8 max-w-3xl mx-auto"
+          className="items-start sm:items-center text-left sm:text-center mb-6 sm:mb-8 max-w-4xl mx-auto"
         />
 
         <div
