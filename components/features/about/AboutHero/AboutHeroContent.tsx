@@ -23,7 +23,7 @@ export default function AboutHeroContent({
   // Alternatively we could just use the title as is if it naturally wraps,
   // but preserving the explicit break logic matching the previous hardcoded markup.
   return (
-    <div className="absolute bottom-4 sm:bottom-12 left-4 sm:left-12 w-[calc(100%-2rem)] sm:w-auto md:w-[480px] lg:w-[560px] bg-surface/30 sm:bg-surface/20 backdrop-blur-md p-6 sm:p-12 rounded-card border border-surface/20 shadow-2xl">
+    <div className="absolute bottom-4 sm:bottom-12 left-4 sm:left-12 w-[calc(100%-2rem)] sm:w-auto md:w-[480px] lg:w-[560px] bg-surface/30 sm:bg-surface/20 backdrop-blur-md p-6 sm:py-6 px-8 rounded-card border border-surface/20 shadow-2xl">
       <p className="text-surface/90 text-caption tracking-widest uppercase mb-6">
         About Cordinit
       </p>
