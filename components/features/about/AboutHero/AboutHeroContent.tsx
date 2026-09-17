@@ -39,7 +39,7 @@ export default function AboutHeroContent({
           )
         )}
       </h2>
-      <p className="text-surface/90 text-mobile-body-1 sm:text-card-desc font-light mb-10 pr-2">
+      <p className="text-surface/90 text-section-subtitle-mobile sm:text-card-desc font-normal sm:font-light mb-10 pr-2">
         {bodyDesktop}
       </p>
 
