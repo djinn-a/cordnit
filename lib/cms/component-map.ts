@@ -17,6 +17,8 @@ import ContentMediaSection from "@/components/ui/ContentMediaSection/ContentMedi
 import ContextApproachSection from "@/components/ui/ContextApproachSection/ContextApproachSection";
 import PerspectiveSection from "@/components/ui/PerspectiveSection/PerspectiveSection";
 
+import ContentInsights from "@/components/ui/ContentInsights/ContentInsights";
+
 /**
  * Maps CMS / page-document `_type` values to presentational section components.
  * Add a new section type here when introducing a new block — never hard-wire in page.tsx.
@@ -38,4 +40,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   contentMedia: ContentMediaSection as unknown as SectionComponent,
   contextApproach: ContextApproachSection as unknown as SectionComponent,
   perspective: PerspectiveSection as unknown as SectionComponent,
+  contentInsights: ContentInsights as unknown as SectionComponent,
 };

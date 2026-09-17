@@ -17,7 +17,8 @@ export type SectionType =
   | "contactForm"
   | "contentMedia"
   | "contextApproach"
-  | "perspective";
+  | "perspective"
+  | "contentInsights";
 
 export type LayoutType = "default" | "contact";
 

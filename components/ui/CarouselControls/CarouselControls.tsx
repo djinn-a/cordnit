@@ -29,7 +29,7 @@ export default function CarouselControls({
   className,
   prevLabel = "Previous slide",
   nextLabel = "Next slide",
-}: CarouselControlsProps) {
+}: Readonly<CarouselControlsProps>) {
   const isSm = size === "sm";
   const dotSize = isSm ? "w-1.5 h-1.5" : "w-2 h-2 sm:w-1.5 sm:h-1.5";
   const buttonSize = isSm
@@ -60,7 +60,7 @@ export default function CarouselControls({
               disabled={!onDotClick}
               className={cn(
                 "relative flex items-center justify-center rounded-full transition-colors",
-                "before:absolute before:inset-[-8px] before:content-['']",
+                "before:absolute before:-inset-2 before:content-['']",
                 dotSize,
                 isActive ? "bg-ink" : "bg-border-subtle",
                 onDotClick

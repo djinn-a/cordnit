@@ -29,7 +29,7 @@ export default function PerspectiveSection({
           </div>
           
           {/* Right Media */}
-          <div className="relative flex-[0_1_474px] h-66.75 shrink-0 overflow-hidden rounded-card">
+          <div className="relative flex-[0_1_474px] h-66.75 shrink-0 overflow-hidden rounded-card isolate">
             <Image 
               src={image.src} 
               alt={image.alt}

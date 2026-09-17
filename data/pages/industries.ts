@@ -51,5 +51,115 @@ export const industriesPage: PageDocument = {
         alt: "Challenges connect",
       },
     },
+    {
+      _type: "contentInsights",
+      _key: "industries-content-insights",
+      eyebrow: "FEATURED CONTENT",
+      featured: {
+        image: {
+          src: "/images/content-media/main.png",
+          alt: "Featured content image",
+        },
+        articleLabel: "ARTICLE",
+        category: "Cybersecurity",
+        title: "The evolving threat landscape in a connected world",
+        description: "A practical look at the threats organisations face today — and the actions that strengthen resilience.",
+        cta: {
+          label: "Read article",
+          href: "#",
+        },
+      },
+      exploreByTopic: {
+        eyebrow: "EXPLORE BY TOPIC",
+        topics: [
+          { id: "all", label: "All", isActive: true },
+          { id: "cybersecurity", label: "Cybersecurity" },
+          { id: "salesforce", label: "Salesforce" },
+          { id: "cloud", label: "Cloud" },
+          { id: "ai-automation", label: "AI & Automation" },
+          { id: "data-integration", label: "Data & Integration" },
+          { id: "industries", label: "Industries" },
+          { id: "case-studies", label: "Case Studies" },
+        ],
+      },
+      insightCards: [
+        {
+          id: "card-1",
+          topic: "cloud",
+          metadata: {
+            label: "ARTICLE",
+            pill: "Cloud",
+          },
+          title: "Building cloud foundations that scale with you",
+          description: "Key considerations for creating secure, resilient and future-ready cloud environments.",
+          dateInfo: "14 May 2025 · 6 min read",
+          image: {
+            src: "/images/content-media/main.png",
+            alt: "Cloud foundation",
+          },
+          cta: {
+            label: "Read article",
+            href: "#",
+          },
+        },
+        {
+          id: "card-2",
+          topic: "cybersecurity",
+          metadata: {
+            label: "ARTICLE",
+            pill: "Cybersecurity",
+          },
+          title: "Securing the enterprise in a hyperconnected era",
+          description: "Explore advanced strategies to protect critical assets against emerging cyber threats.",
+          dateInfo: "12 Apr 2025 · 5 min read",
+          image: {
+            src: "/images/content-media/secondary.png",
+            alt: "Cybersecurity landscape",
+          },
+          cta: {
+            label: "Read article",
+            href: "#",
+          },
+        },
+        {
+          id: "card-3",
+          topic: "cloud",
+          metadata: {
+            label: "CASE STUDY",
+            pill: "Cloud",
+          },
+          title: "Migrating legacy systems without downtime",
+          description: "How we helped a leading financial institution migrate securely to the public cloud.",
+          dateInfo: "03 Mar 2025 · 8 min read",
+          image: {
+            src: "/images/content-media/main.png",
+            alt: "Cloud migration",
+          },
+          cta: {
+            label: "Read case study",
+            href: "#",
+          },
+        },
+        {
+          id: "card-4",
+          topic: "salesforce",
+          metadata: {
+            label: "ARTICLE",
+            pill: "Salesforce",
+          },
+          title: "Maximizing ROI from your CRM investment",
+          description: "Practical steps to improve user adoption and drive value from Salesforce.",
+          dateInfo: "21 Feb 2025 · 4 min read",
+          image: {
+            src: "/images/content-media/secondary.png",
+            alt: "Salesforce CRM",
+          },
+          cta: {
+            label: "Read article",
+            href: "#",
+          },
+        },
+      ],
+    },
   ],
 };
