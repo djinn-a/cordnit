@@ -42,13 +42,13 @@ export default function TeamMemberCard({ member, className = "" }: TeamMemberCar
         <h3 className="text-mobile-heading-2 sm:text-section-title-head mb-1">{member.name}</h3>
         <p className="text-eyebrow-mobile sm:text-about-eyebrow-desktop text-primary">{member.role}</p>
         <div
-          className={`overflow-hidden transition-all duration-500 ease-out ${
-            isExpanded ? "max-h-[500px]" : "max-h-0"
+          className={`grid transition-all duration-500 md:duration-700 ease-out ${
+            isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
           }`}
         >
           <div className="overflow-hidden">
             <p
-              className={`text-section-subtitle-mobile text-ink-muted leading-relaxed font-medium pt-3 transition-opacity duration-500 delay-100 ${
+              className={`text-section-subtitle-mobile text-ink-muted leading-relaxed font-medium pt-3 transition-opacity duration-500 md:duration-700 delay-100 ${
                 isExpanded ? "opacity-100" : "opacity-0"
               }`}
             >
