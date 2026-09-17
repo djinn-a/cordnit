@@ -14,7 +14,8 @@ export type SectionType =
   | "aboutPrinciples"
   | "aboutTeam"
   | "contactHero"
-  | "contactForm";
+  | "contactForm"
+  | "solutionsHero";
 
 export type LayoutType = "default" | "contact";
 

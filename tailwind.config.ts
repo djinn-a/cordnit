@@ -18,6 +18,10 @@ const config: Config = {
       "3xl": "1920px",
     },
     extend: {
+      spacing: {
+        "space-80": "80px",
+        "space-60": "60px",
+      },
       backgroundImage: {
         "gradient-mobile-nav": "linear-gradient(56deg, #1645FF 0.2%, #0B1B55 39.43%, #05070D 62.49%)",
       },
