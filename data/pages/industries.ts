@@ -21,17 +21,24 @@ const industryContent: ContentMediaSectionProps = {
 
 export const industriesPage: PageDocument = {
   slug: "industries",
-  title: "Industries",
+  title: "Industry Hub - Cordinit",
   layout: "default",
   seo: {
     title: "Industries | Cordinit",
-    description: "Explore our industry-specific solutions and digital transformation strategies.",
+    description: "Explore Cordinit's industry-specific capabilities.",
   },
   sections: [
     {
       _type: "contentMedia",
-      _key: "industries-hero",
+      _key: "industries-content-media",
       ...industryContent,
     },
+    {
+      _type: "contextApproach",
+      _key: "industries-context-approach",
+      eyebrow: "OUR APPROACH",
+      title: "Start with the context, not the technology",
+      description: "The same platform or security decision can have very different implications depending on your customers, operating model and risk profile. We take time to understand the forces shaping your industry, then help identify a practical response.",
+    }
   ],
 };

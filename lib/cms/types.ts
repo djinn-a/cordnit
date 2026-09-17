@@ -15,7 +15,8 @@ export type SectionType =
   | "aboutTeam"
   | "contactHero"
   | "contactForm"
-  | "contentMedia";
+  | "contentMedia"
+  | "contextApproach";
 
 export type LayoutType = "default" | "contact";
 

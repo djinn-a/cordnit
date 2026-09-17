@@ -20,6 +20,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-mobile-nav": "linear-gradient(56deg, #1645FF 0.2%, #0B1B55 39.43%, #05070D 62.49%)",
+        "grad-3": "linear-gradient(102deg, rgba(164, 183, 255, 0.20) 0%, rgba(142, 163, 240, 0.20) 23.47%, rgba(20, 49, 153, 0) 109.89%)",
       },
       spacing: {
         "space-16": "16px",

@@ -14,6 +14,7 @@ import AboutTeam from "@/components/features/about/AboutTeam/AboutTeam";
 import ContactHero from "@/components/features/contact/ContactHero/ContactHero";
 import ContactFormSection from "@/components/features/contact/ContactFormSection/ContactFormSection";
 import ContentMediaSection from "@/components/ui/ContentMediaSection/ContentMediaSection";
+import ContextApproachSection from "@/components/ui/ContextApproachSection/ContextApproachSection";
 
 /**
  * Maps CMS / page-document `_type` values to presentational section components.
@@ -34,4 +35,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   contactHero: ContactHero as SectionComponent,
   contactForm: ContactFormSection as SectionComponent,
   contentMedia: ContentMediaSection as unknown as SectionComponent,
+  contextApproach: ContextApproachSection as unknown as SectionComponent,
 };
