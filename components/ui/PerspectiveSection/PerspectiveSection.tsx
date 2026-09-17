@@ -9,7 +9,7 @@ export default function PerspectiveSection({
 }: Readonly<PerspectiveSectionProps>) {
   return (
     <section className="w-full pt-space-80 px-space-60">
-      <div className="w-full mx-auto max-w-7xl h-[333px] px-10 py-8 bg-grad-3 border border-primary/20 rounded-4xl">
+      <div className="w-full mx-auto max-w-7xl h-83.25 px-10 py-8 bg-grad-3 border border-primary/20 rounded-4xl">
         <div className="flex items-center gap-8 h-full">
           {/* Left Content */}
           <div className="flex-[0_1_692px] flex flex-col justify-center">
@@ -23,7 +23,7 @@ export default function PerspectiveSection({
               {title}
             </h2>
             
-            <p className="text-section-subtitle text-ink-muted w-[627px]">
+            <p className="text-section-subtitle text-ink-muted w-156.75">
               {description}
             </p>
           </div>
