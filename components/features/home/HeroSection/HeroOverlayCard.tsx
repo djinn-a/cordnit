@@ -27,7 +27,7 @@ export default function HeroOverlayCard({
         {cardEyebrow}
       </p>
 
-      <h2 className="text-[20px] font-bold text-white mb-3 sm:mb-4">{cardTitle}</h2>
+      <h2 className="text-[20px] font-bold sm:text-card-title text-white mb-3 sm:mb-4">{cardTitle}</h2>
 
       <p className="text-mobile-body-1 sm:text-card-desc text-white/90 font-light mb-10">
         {cardBody}

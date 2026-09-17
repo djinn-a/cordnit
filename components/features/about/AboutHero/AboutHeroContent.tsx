@@ -27,7 +27,7 @@ export default function AboutHeroContent({
       <p className="text-surface/90 text-caption tracking-widest uppercase mb-6">
         About Cordinit
       </p>
-      <h2 className="text-[20px] font-bold text-surface mb-3 sm:mb-4">
+      <h2 className="text-[20px] font-bold sm:text-card-title text-surface mb-3 sm:mb-4">
         {title.split("made more").map((part, index) =>
           index === 0 ? (
             <span key={index}>
