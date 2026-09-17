@@ -14,7 +14,10 @@ export type SectionType =
   | "aboutPrinciples"
   | "aboutTeam"
   | "contactHero"
-  | "contactForm";
+  | "contactForm"
+  | "cybersecurityHero"
+  | "cybersecuritySplitContent"
+  | "cardGridSection";
 
 export type LayoutType = "default" | "contact";
 

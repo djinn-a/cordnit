@@ -9,8 +9,8 @@ type PageLayoutProps = {
 /** Page shell for main content. Site chrome (TopBar/Navbar/Footer) lives in root layout. */
 export default function PageLayout({ children, className }: PageLayoutProps) {
   return (
-    <div className={cn("flex flex-col min-h-screen font-sans bg-surface", className)}>
-      <main className="flex-grow flex flex-col w-full bg-surface">{children}</main>
+    <div className={cn("flex flex-col min-h-screen font-sans bg-surface items-center", className)}>
+      <main className="flex-grow flex flex-col w-full max-w-[1440px] px-space-60 py-space-80 gap-space-80 bg-surface">{children}</main>
     </div>
   );
 }

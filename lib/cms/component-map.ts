@@ -13,6 +13,9 @@ import AboutPrinciples from "@/components/features/about/AboutPrinciples/AboutPr
 import AboutTeam from "@/components/features/about/AboutTeam/AboutTeam";
 import ContactHero from "@/components/features/contact/ContactHero/ContactHero";
 import ContactFormSection from "@/components/features/contact/ContactFormSection/ContactFormSection";
+import { CybersecurityHero } from "@/components/features/cybersecurity/CybersecurityHero";
+import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
+import { CardGridSection } from "@/components/ui";
 
 /**
  * Maps CMS / page-document `_type` values to presentational section components.
@@ -32,4 +35,7 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   aboutTeam: AboutTeam as SectionComponent,
   contactHero: ContactHero as SectionComponent,
   contactForm: ContactFormSection as SectionComponent,
+  cybersecurityHero: CybersecurityHero as SectionComponent,
+  cybersecuritySplitContent: CybersecuritySplitContent as SectionComponent,
+  cardGridSection: CardGridSection as SectionComponent,
 };

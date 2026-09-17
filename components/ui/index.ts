@@ -5,3 +5,8 @@ export { default as Button } from "./Button/Button";
 export { default as PageLayout } from "./PageLayout/PageLayout";
 export { default as CarouselControls } from "./CarouselControls/CarouselControls";
 export type { CarouselControlsProps } from "./CarouselControls/CarouselControls";
+export { PageHero } from "./PageHero";
+export type { PageHeroData, PageHeroProps } from "./PageHero";
+export { SplitContentSection } from "./SplitContentSection";
+export type { SplitContentSectionData, SplitContentSectionProps } from "./SplitContentSection";
+export * from "./CardGridSection";

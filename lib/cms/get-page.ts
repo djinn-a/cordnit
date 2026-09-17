@@ -2,11 +2,13 @@ import type { PageDocument } from "./types";
 import { homePage } from "@/data/pages/home";
 import { aboutPage } from "@/data/pages/about";
 import { contactPage } from "@/data/pages/contact";
+import { cybersecurityPage } from "@/data/pages/cybersecurity";
 
 const pages: Record<string, PageDocument> = {
   home: homePage,
   aboutus: aboutPage,
   contactus: contactPage,
+  cybersecurity: cybersecurityPage,
 };
 
 /**
