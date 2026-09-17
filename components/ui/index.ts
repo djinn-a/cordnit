@@ -11,3 +11,5 @@ export { SplitContentSection } from "./SplitContentSection";
 export type { SplitContentSectionData, SplitContentSectionProps } from "./SplitContentSection";
 export * from "./CardGridSection";
 export * from "./CredentialsSection";
+export * from "./ProcessSection";
+export * from "./SplitActionCardsSection";

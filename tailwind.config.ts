@@ -100,6 +100,7 @@ const config: Config = {
         "space-32": "32px",
         "space-40": "40px",
         "space-48": "48px",
+        "space-56": "56px",
         "space-64": "64px",
         "space-80": "80px",
         "space-60": "60px"

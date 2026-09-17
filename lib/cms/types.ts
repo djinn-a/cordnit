@@ -18,7 +18,9 @@ export type SectionType =
   | "cybersecurityHero"
   | "cybersecuritySplitContent"
   | "cardGridSection"
-  | "credentialsSection";
+  | "credentialsSection"
+  | "processSection"
+  | "splitActionCards";
 
 export type LayoutType = "default" | "contact";
 

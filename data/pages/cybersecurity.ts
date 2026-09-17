@@ -3,7 +3,9 @@ import {
   cybersecurityHeroData, 
   cybersecuritySplitContentData,
   cybersecurityCapabilitiesData,
-  cybersecurityCredentialsData
+  cybersecurityCredentialsData,
+  cybersecurityApproachData,
+  cybersecuritySpecialistsData
 } from "@/components/features/cybersecurity/data";
 
 export const cybersecurityPage: PageDocument = {
@@ -34,6 +36,16 @@ export const cybersecurityPage: PageDocument = {
       _type: "credentialsSection",
       _key: "cybersecurity-credentials",
       data: cybersecurityCredentialsData
+    },
+    {
+      _type: "processSection",
+      _key: "cybersecurity-approach",
+      data: cybersecurityApproachData
+    },
+    {
+      _type: "splitActionCards",
+      _key: "cybersecurity-specialists",
+      data: cybersecuritySpecialistsData
     }
   ],
 };

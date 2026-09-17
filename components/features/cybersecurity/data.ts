@@ -156,3 +156,74 @@ export const cybersecurityCredentialsData: CredentialsSectionData = {
     },
   ],
 };
+
+import { ProcessSectionData } from "@/components/ui/ProcessSection/ProcessSection";
+
+export const cybersecurityApproachData: ProcessSectionData = {
+  eyebrow: "OUR APPROACH",
+  title: "A security program built for your context",
+  subtitle: "From cloud and application security to identity, data, AI and ongoing security operations, we help strengthen the capabilities that matter most.",
+  steps: [
+    {
+      id: "assess",
+      title: "Assess & Advise",
+      description: "Identify risks, assess maturity and define actionable strategies to protect your critical assets.",
+      iconSrc: "/cybersecurity/icons/Overlay.svg"
+    },
+    {
+      id: "design",
+      title: "Design & Architect",
+      description: "Build secure foundations with architectures designed for resilience, compliance and future growth.",
+      iconSrc: "/cybersecurity/icons/Overlay (1).svg"
+    },
+    {
+      id: "deploy",
+      title: "Deploy & Integrate",
+      description: "Implement security controls and integrate tools seamlessly without disrupting business operations.",
+      iconSrc: "/cybersecurity/icons/Overlay (2).svg"
+    },
+    {
+      id: "run",
+      title: "Run & Improve",
+      description: "Maintain continuous visibility, respond to threats and iteratively strengthen your security posture.",
+      iconSrc: "/cybersecurity/icons/Overlay (3).svg"
+    }
+  ]
+};
+
+import { SplitActionCardsSectionData } from "@/components/ui/SplitActionCardsSection";
+
+export const cybersecuritySpecialistsData: SplitActionCardsSectionData = {
+  eyebrow: "CYBERSECURITY",
+  title: "Talk to the right security specialist.",
+  subtitle: "Tell us where you need to strengthen security. Our specialists can help you understand the challenge, identify priorities and define the most useful next step.",
+  cta: {
+    label: "Start a security conversation",
+    href: "/contactus",
+  },
+  supportingText: "No obligation. Just a useful first conversation.",
+  listHeader: {
+    leftText: "SECURITY SPECIALISTS",
+    rightText: "DIRECT ARCHITECTURE ADVISORY",
+  },
+  cards: [
+    {
+      id: "specialist-1",
+      imageSrc: "/cybersecurity/specialist-2.webp",
+      category: "SECURITY SPECIALIST",
+      label: "ADVISORY // 01",
+      title: "James Harvey",
+      description: "Security strategy, risk & resilience",
+      metadata: "Governance • Posture • Board Risk",
+    },
+    {
+      id: "specialist-2",
+      imageSrc: "/cybersecurity/specialist-2.webp",
+      category: "SECURITY SPECIALIST",
+      label: "ADVISORY // 02",
+      title: "James Harvey",
+      description: "Security strategy, risk & resilience",
+      metadata: "Governance • Posture • Board Risk",
+    }
+  ],
+};
