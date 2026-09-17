@@ -110,3 +110,49 @@ export const cybersecurityCapabilitiesData: CardGridSectionData = {
     },
   ],
 };
+import { CredentialsSectionData } from "@/components/ui/CredentialsSection";
+
+export const cybersecurityCredentialsData: CredentialsSectionData = {
+  eyebrow: "OUR CREDENTIALS",
+  title: "Cybersecurity expertise built for confident change",
+  subtitle: "Cordinit brings together security expertise, practical experience and a risk-led approach to help organisations protect what matters most. We help strengthen security across cloud, applications, identity, data and emerging technologies.",
+  certificationHeading: "Company certification",
+  backgroundImage: {
+    src: "/cybersecurity/credentials-bg.webp",
+    alt: "Abstract blue background",
+  },
+  certifications: [
+    {
+      id: "crest",
+      src: "/cybersecurity/icons/CREST 1.svg",
+      alt: "CREST",
+      width: 140.609,
+      height: 149.306,
+      aspectRatio: "97/103",
+    },
+    {
+      id: "iso-9000",
+      src: "/cybersecurity/icons/ISO_9000 1.svg",
+      alt: "ISO 9000",
+      width: 142.058,
+      height: 153.655,
+      aspectRatio: "49/53",
+    },
+    {
+      id: "iso-27001",
+      src: "/cybersecurity/icons/ISO_27001 1.svg",
+      alt: "ISO 27001",
+      width: 163.802,
+      height: 153.655,
+      aspectRatio: "113/106",
+    },
+    {
+      id: "nis2",
+      src: "/cybersecurity/icons/NIS2_Accredited 1.svg",
+      alt: "NIS2 Accredited",
+      width: 223.234,
+      height: 147.856,
+      aspectRatio: "77/51",
+    },
+  ],
+};

@@ -17,7 +17,8 @@ export type SectionType =
   | "contactForm"
   | "cybersecurityHero"
   | "cybersecuritySplitContent"
-  | "cardGridSection";
+  | "cardGridSection"
+  | "credentialsSection";
 
 export type LayoutType = "default" | "contact";
 

@@ -10,3 +10,4 @@ export type { PageHeroData, PageHeroProps } from "./PageHero";
 export { SplitContentSection } from "./SplitContentSection";
 export type { SplitContentSectionData, SplitContentSectionProps } from "./SplitContentSection";
 export * from "./CardGridSection";
+export * from "./CredentialsSection";

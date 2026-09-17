@@ -2,7 +2,8 @@ import type { PageDocument } from "@/lib/cms/types";
 import { 
   cybersecurityHeroData, 
   cybersecuritySplitContentData,
-  cybersecurityCapabilitiesData
+  cybersecurityCapabilitiesData,
+  cybersecurityCredentialsData
 } from "@/components/features/cybersecurity/data";
 
 export const cybersecurityPage: PageDocument = {
@@ -28,6 +29,11 @@ export const cybersecurityPage: PageDocument = {
       _type: "cardGridSection",
       _key: "cybersecurity-capabilities",
       data: cybersecurityCapabilitiesData
+    },
+    {
+      _type: "credentialsSection",
+      _key: "cybersecurity-credentials",
+      data: cybersecurityCredentialsData
     }
   ],
 };
