@@ -73,6 +73,7 @@ const config: Config = {
       borderRadius: {
         btn: "var(--radius-btn)",
         card: "var(--radius-card)",
+        hero:"var(--radius-card-radius)",
         "card-lg": "var(--radius-card-lg)",
         "4xl": "32px",
       },

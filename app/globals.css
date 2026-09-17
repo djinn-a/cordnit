@@ -28,6 +28,7 @@
   --color-info: #2251ff;
 
   /* Radius */
+  --radius-card-radius: 0.5rem;
   --radius-btn: 0.4rem;
   --radius-card: 1.5rem;
   --radius-card-lg: 2rem;
