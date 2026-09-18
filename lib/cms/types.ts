@@ -21,7 +21,10 @@ export type SectionType =
   | "credentialsSection"
   | "processSection"
   | "splitActionCards"
-  | "whyChooseSection";
+  | "whyChooseSection"
+  | "salesforceHero"
+  | "salesforceSplitContent"
+  | "salesforceCredentials";
 
 export type LayoutType = "default" | "contact";
 

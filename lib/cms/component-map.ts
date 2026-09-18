@@ -22,6 +22,9 @@ import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSe
  * Add a new section type here when introducing a new block — never hard-wire in page.tsx.
  */
 import { CybersecurityWhyChoose } from "@/components/features/cybersecurity/CybersecurityWhyChoose";
+import { SalesforceHero } from "@/components/features/salesforce/SalesforceHero";
+import { SalesforceSplitContent } from "@/components/features/salesforce/SalesforceSplitContent";
+import { SalesforceCredentials } from "@/components/features/salesforce/SalesforceCredentials";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -44,4 +47,7 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   processSection: ProcessSection as SectionComponent,
   splitActionCards: SplitActionCardsSection as SectionComponent,
   whyChooseSection: CybersecurityWhyChoose as SectionComponent,
+  salesforceHero: SalesforceHero as SectionComponent,
+  salesforceSplitContent: SalesforceSplitContent as SectionComponent,
+  salesforceCredentials: SalesforceCredentials as SectionComponent,
 };

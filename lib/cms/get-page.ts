@@ -3,12 +3,14 @@ import { homePage } from "@/data/pages/home";
 import { aboutPage } from "@/data/pages/about";
 import { contactPage } from "@/data/pages/contact";
 import { cybersecurityPage } from "@/data/pages/cybersecurity";
+import { salesforcePage } from "@/data/pages/salesforce";
 
 const pages: Record<string, PageDocument> = {
   home: homePage,
   aboutus: aboutPage,
   contactus: contactPage,
   cybersecurity: cybersecurityPage,
+  salesforce: salesforcePage,
 };
 
 /**
