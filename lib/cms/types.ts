@@ -48,7 +48,12 @@ export type SectionType =
   | "cloudInfrastructureWhyChoose"
   | "cloudInfrastructureWhereWeHelp"
   | "applicationEngineeringHero"
-  | "applicationEngineeringSplitContent";
+  | "applicationEngineeringSplitContent"
+  | "applicationEngineeringCredentials"
+  | "applicationEngineeringWhereWeHelp"
+  | "applicationEngineeringApproach"
+  | "applicationEngineeringSpecialists"
+  | "applicationEngineeringWhyChoose";
 
 export type LayoutType = "default" | "contact";
 

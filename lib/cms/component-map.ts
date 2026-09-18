@@ -27,6 +27,11 @@ import { CloudInfrastructureWhereWeHelp } from "@/components/features/cloud-infr
 
 import { ApplicationEngineeringHero } from "@/components/features/application-engineering/ApplicationEngineeringHero";
 import { ApplicationEngineeringSplitContent } from "@/components/features/application-engineering/ApplicationEngineeringSplitContent";
+import { ApplicationEngineeringCredentials } from "@/components/features/application-engineering/ApplicationEngineeringCredentials";
+import { ApplicationEngineeringWhereWeHelp } from "@/components/features/application-engineering/ApplicationEngineeringWhereWeHelp";
+import { ApplicationEngineeringApproach } from "@/components/features/application-engineering/ApplicationEngineeringApproach";
+import { ApplicationEngineeringSpecialists } from "@/components/features/application-engineering/ApplicationEngineeringSpecialists";
+import { ApplicationEngineeringWhyChoose } from "@/components/features/application-engineering/ApplicationEngineeringWhyChoose";
 
 import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
 import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
@@ -101,4 +106,9 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   
   applicationEngineeringHero: ApplicationEngineeringHero as SectionComponent,
   applicationEngineeringSplitContent: ApplicationEngineeringSplitContent as SectionComponent,
+  applicationEngineeringCredentials: ApplicationEngineeringCredentials as SectionComponent,
+  applicationEngineeringWhereWeHelp: ApplicationEngineeringWhereWeHelp as SectionComponent,
+  applicationEngineeringApproach: ApplicationEngineeringApproach as SectionComponent,
+  applicationEngineeringSpecialists: ApplicationEngineeringSpecialists as SectionComponent,
+  applicationEngineeringWhyChoose: ApplicationEngineeringWhyChoose as SectionComponent,
 };
