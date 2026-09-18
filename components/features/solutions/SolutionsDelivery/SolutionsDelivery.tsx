@@ -36,14 +36,14 @@ const SolutionsDelivery: FC = () => {
                 fill
                 className="object-cover"
               />
-              <div className="hidden sm:flex absolute inset-0 p-4 sm:p-10 flex-col justify-center text-white w-full sm:w-3/4 pr-16 sm:pr-10">
-                <span className="text-[10px] sm:text-eyebrow-desktop text-[#FF7A00] uppercase tracking-widest mb-1 sm:mb-4">
+              <div className="flex absolute inset-0 p-4 sm:p-10 flex-col justify-center text-white w-full sm:w-3/4 pr-16 sm:pr-10 bg-black/30 sm:bg-transparent">
+                <span className="text-cta-text2-sb-mobile sm:text-eyebrow-desktop text-[#FE6E21] uppercase tracking-widest mb-1 sm:mb-4">
                   {deliveryData.mainImageEyebrow}
                 </span>
-                <h3 className="text-[18px] leading-tight sm:text-card-title mb-2 sm:mb-6 font-bold">
+                <h3 className="text-heading2-sb-mobile sm:text-card-title mb-2 sm:mb-6 text-white">
                   {deliveryData.mainImageTitle}
                 </h3>
-                <div className="text-[11px] leading-snug sm:text-link-mobile text-white max-w-[85%] sm:max-w-sm">
+                <div className="text-stat-desc-mobile sm:text-link-mobile text-white max-w-[85%] sm:max-w-sm">
                   {deliveryData.mainImageDesc.split(". ").map((line, i) => (
                     <span key={i} className="block">{line}{i !== deliveryData.mainImageDesc.split(". ").length - 1 ? "." : ""}</span>
                   ))}
@@ -60,9 +60,9 @@ const SolutionsDelivery: FC = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="hidden sm:block absolute bottom-0 left-0 p-2 sm:p-6 text-white max-w-[90%] sm:max-w-[80%]">
-                  <span className="text-[11px] sm:text-link-mobile leading-tight block">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-3 sm:p-6 text-white max-w-[90%] sm:max-w-[80%]">
+                  <span className="text-cta-text2-sb-mobile sm:text-link-mobile block">
                     {deliveryData.bottomLeftText.split(" ").map((word, i, arr) => (
                       <span key={i}>{word}{i === 0 ? <br /> : " "}</span>
                     ))}
@@ -76,9 +76,9 @@ const SolutionsDelivery: FC = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="hidden sm:block absolute bottom-0 left-0 p-2 sm:p-6 text-white max-w-[90%] sm:max-w-[80%]">
-                  <span className="text-[11px] sm:text-link-mobile leading-tight block">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-3 sm:p-6 text-white max-w-[90%] sm:max-w-[80%]">
+                  <span className="text-cta-text2-sb-mobile sm:text-link-mobile block">
                     {deliveryData.bottomRightText.split(" ").map((word, i, arr) => (
                       <span key={i}>{word}{i === 0 ? <br /> : " "}</span>
                     ))}
@@ -95,8 +95,8 @@ const SolutionsDelivery: FC = () => {
                     <Image src={stat.iconPath} alt="" fill className="object-contain" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[14px] sm:text-section-title-head text-primary leading-tight">{stat.value}</span>
-                    <span className="text-[9px] sm:text-card-desc text-ink-muted leading-tight">{stat.label}</span>
+                    <span className="text-section-title-head-mobile sm:text-section-title-head text-primary">{stat.value}</span>
+                    <span className="text-stat-desc-mobile sm:text-card-desc text-ink-muted">{stat.label}</span>
                   </div>
                 </div>
               ))}
