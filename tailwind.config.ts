@@ -74,6 +74,7 @@ const config: Config = {
         btn: "var(--radius-btn)",
         card: "var(--radius-card)",
         hero:"var(--radius-card-radius)",
+        "card-md": "20px",
         "card-lg": "var(--radius-card-lg)",
         "page-hero": "18px",
         "split-image": "23.56px",
@@ -98,12 +99,14 @@ const config: Config = {
         "space-20": "20px",
         "space-24": "24px",
         "space-32": "32px",
+        "space-36": "36px",
         "space-40": "40px",
         "space-48": "48px",
         "space-56": "56px",
+        "space-60": "60px",
         "space-64": "64px",
         "space-80": "80px",
-        "space-60": "60px"
+        "space-100": "100px",
       },
       fontSize: {
         "section-title": ["48px", { fontWeight: "800", lineHeight: "1.2" }],

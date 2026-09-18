@@ -12,11 +12,11 @@ export default function CredentialsSectionLogos({
   certifications,
 }: CredentialsSectionLogosProps) {
   return (
-    <div className="flex flex-col items-center w-full gap-space-64 mt-space-64">
-      <h3 className="text-card-title text-ink text-center">
+    <div className="flex flex-col items-center w-full gap-space-32 lg:gap-space-64 mt-space-40 lg:mt-space-64">
+      <h3 className="text-[16px] font-medium lg:text-card-title text-ink text-center">
         {certificationHeading}
       </h3>
-      <div className="flex flex-wrap justify-center items-center gap-space-64 w-full">
+      <div className="grid grid-cols-2 justify-items-center items-center gap-space-32 lg:flex lg:flex-wrap lg:justify-center lg:gap-space-64 w-full">
         {certifications.map((certification) => (
           <CredentialsSectionCertification
             key={certification.id}

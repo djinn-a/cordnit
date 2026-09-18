@@ -26,8 +26,8 @@ export default function TestimonialsSection({
   } = useScrollSnapCarousel({ itemCount: items.length });
 
   return (
-    <Section spacing="none" className="py-6 sm:py-10 lg:py-12 overflow-hidden">
-      <Container width="wide" className="lg:px-15">
+    <Section spacing="none" className="overflow-hidden">
+      <Container width="wide" className="">
         <SectionHeader
           eyebrow={eyebrow}
           eyebrowClassName="text-primary text-eyebrow-mobile font-extrabold sm:text-eyebrow-desktop sm:font-semibold"

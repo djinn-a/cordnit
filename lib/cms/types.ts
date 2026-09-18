@@ -20,7 +20,8 @@ export type SectionType =
   | "cardGridSection"
   | "credentialsSection"
   | "processSection"
-  | "splitActionCards";
+  | "splitActionCards"
+  | "whyChooseSection";
 
 export type LayoutType = "default" | "contact";
 

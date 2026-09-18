@@ -13,6 +13,5 @@ export const aboutPage: PageDocument = {
     { _type: "aboutContent", _key: "about-content" },
     { _type: "aboutPrinciples", _key: "about-principles" },
     { _type: "aboutTeam", _key: "about-team" },
-    { _type: "cta", _key: "about-cta" },
   ],
 };

@@ -13,3 +13,4 @@ export * from "./CardGridSection";
 export * from "./CredentialsSection";
 export * from "./ProcessSection";
 export * from "./SplitActionCardsSection";
+export * from "./WhyChooseSection";

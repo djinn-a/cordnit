@@ -13,13 +13,13 @@ export default function PageHeroContent({
 }: PageHeroContentProps) {
   return (
     <div className="flex flex-col items-start text-left">
-      <p className="text-page-hero-eyebrow uppercase text-primary mb-[16px]">{eyebrow}</p>
+      <p className="text-eyebrow-mobile md:text-page-hero-eyebrow uppercase text-primary mb-space-16">{eyebrow}</p>
       
-      <h1 className="text-page-hero-title text-black mb-[20px]">
+      <h1 className="text-section-title-mobile md:text-page-hero-title text-black mb-space-20">
         {title}
       </h1>
 
-      <p className="text-page-hero-subtitle max-w-[1024px] text-ink-muted mb-[20px]">
+      <p className="text-section-subtitle-mobile md:text-page-hero-subtitle max-w-[1024px] text-ink-muted mb-space-24">
         {description}
       </p>
 

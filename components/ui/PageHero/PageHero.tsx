@@ -13,6 +13,10 @@ export type PageHeroData = {
     src: string;
     alt: string;
   };
+  quoteOverlay?: {
+    quote: string;
+    author: string;
+  };
 };
 
 export type PageHeroProps = {
@@ -21,7 +25,7 @@ export type PageHeroProps = {
 
 export default function PageHero({ data }: PageHeroProps) {
   return (
-    <section className="w-full flex flex-col gap-space-80">
+    <section className="w-full flex flex-col gap-space-24 md:gap-space-80">
       {/* Content Section */}
       <div className="w-full">
         <PageHeroContent
@@ -34,7 +38,7 @@ export default function PageHero({ data }: PageHeroProps) {
 
       {/* Image Section */}
       <div className="w-full">
-        <PageHeroImage src={data.image.src} alt={data.image.alt} />
+        <PageHeroImage src={data.image.src} alt={data.image.alt} quoteOverlay={data.quoteOverlay} />
       </div>
     </section>
   );

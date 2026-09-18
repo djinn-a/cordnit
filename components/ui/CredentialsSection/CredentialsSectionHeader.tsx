@@ -11,13 +11,13 @@ export default function CredentialsSectionHeader({
 }: CredentialsSectionHeaderProps) {
   return (
     <div className="flex flex-col gap-space-16 lg:gap-space-24 w-full">
-      <p className="text-page-hero-eyebrow text-brand-primary uppercase">
+      <p className="text-eyebrow-mobile lg:text-page-hero-eyebrow text-brand-primary uppercase tracking-wider">
         {eyebrow}
       </p>
-      <h2 className="text-section-title text-ink w-full">
+      <h2 className="text-section-title-mobile lg:text-section-title text-ink w-full">
         {title}
       </h2>
-      <p className="text-section-subtitle text-ink-muted w-full">
+      <p className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted w-full">
         {subtitle}
       </p>
     </div>

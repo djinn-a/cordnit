@@ -11,6 +11,5 @@ export const contactPage: PageDocument = {
   sections: [
     { _type: "contactHero", _key: "contact-hero" },
     { _type: "contactForm", _key: "contact-form" },
-    { _type: "cta", _key: "contact-cta" },
   ],
 };

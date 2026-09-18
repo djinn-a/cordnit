@@ -46,6 +46,10 @@ export const cybersecurityPage: PageDocument = {
       _type: "splitActionCards",
       _key: "cybersecurity-specialists",
       data: cybersecuritySpecialistsData
+    },
+    {
+      _type: "whyChooseSection",
+      _key: "section-why-choose",
     }
   ],
 };

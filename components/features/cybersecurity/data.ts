@@ -13,6 +13,10 @@ export const cybersecurityHeroData: PageHeroData = {
     src: "/hero-image.webp",
     alt: "Cybersecurity Data Center",
   },
+  quoteOverlay: {
+    quote: "“Security should enable progress, not stand in its way.”",
+    author: "OUR APPROACH",
+  },
 };
 
 import { SplitContentSectionData } from "@/components/ui/SplitContentSection";
@@ -166,27 +170,21 @@ export const cybersecurityApproachData: ProcessSectionData = {
   steps: [
     {
       id: "assess",
-      title: "Assess & Advise",
-      description: "Identify risks, assess maturity and define actionable strategies to protect your critical assets.",
+      title: "Asses & Priorities",
+      description: "Understand your environment and identify what matters most.",
       iconSrc: "/cybersecurity/icons/Overlay.svg"
     },
     {
-      id: "design",
-      title: "Design & Architect",
-      description: "Build secure foundations with architectures designed for resilience, compliance and future growth.",
+      id: "strengthen",
+      title: "Strengthen",
+      description: "Improve the security capabilities that matter to your organisation.",
       iconSrc: "/cybersecurity/icons/Overlay (1).svg"
     },
     {
-      id: "deploy",
-      title: "Deploy & Integrate",
-      description: "Implement security controls and integrate tools seamlessly without disrupting business operations.",
+      id: "operate",
+      title: "Operate & Improve",
+      description: "Provide ongoing operational support, governance and continuous improvement.",
       iconSrc: "/cybersecurity/icons/Overlay (2).svg"
-    },
-    {
-      id: "run",
-      title: "Run & Improve",
-      description: "Maintain continuous visibility, respond to threats and iteratively strengthen your security posture.",
-      iconSrc: "/cybersecurity/icons/Overlay (3).svg"
     }
   ]
 };
@@ -226,4 +224,55 @@ export const cybersecuritySpecialistsData: SplitActionCardsSectionData = {
       metadata: "Governance • Posture • Board Risk",
     }
   ],
+};
+
+import { WhyChooseSectionData } from "@/components/ui/WhyChooseSection";
+
+export const cybersecurityWhyChooseData: WhyChooseSectionData = {
+  eyebrow: "WHY CHOOSE CORDINIT",
+  title: "Cybersecurity that creates lasting value.",
+  cards: [
+    {
+      id: "card-1",
+      title: "Meet industry and regulatory requirements",
+      description: "We help you navigate regulatory requirements with practical, right-sized cybersecurity solutions.",
+      image: "/cybersecurity/icons/SVG1.svg",
+      imageAlt: "Industry requirements illustration"
+    },
+    {
+      id: "card-2",
+      title: "Faster response to threats",
+      description: "Our monitoring, detection and response capabilities help minimise potential damage and speed up recovery.",
+      image: "/cybersecurity/icons/SVG 2.svg",
+      imageAlt: "Faster response illustration"
+    },
+    {
+      id: "card-3",
+      title: "Stop attacks before they happen",
+      description: "We identify vulnerabilities and proactively protect your business with advanced threat detection and real-time monitoring.",
+      image: "/cybersecurity/icons/SVG 3.svg",
+      imageAlt: "Stop attacks illustration"
+    },
+    {
+      id: "card-4",
+      title: "Certified expertise",
+      description: "Work with experienced security professionals who bring recognised certifications and deep industry knowledge.",
+      image: "/cybersecurity/icons/SVG 4.svg",
+      imageAlt: "Certified expertise illustration"
+    },
+    {
+      id: "card-5",
+      title: "Tailored solutions",
+      description: "We design security strategies around your specific industry, technology environment and business goals.",
+      image: "/cybersecurity/icons/SVG 5.svg",
+      imageAlt: "Tailored solutions illustration"
+    },
+    {
+      id: "card-6",
+      title: "Ongoing support and partnership",
+      description: "We work as an extension of your team, providing continuous support and guidance as your needs evolve.",
+      image: "/cybersecurity/icons/SVG 6.svg",
+      imageAlt: "Ongoing support illustration"
+    }
+  ]
 };

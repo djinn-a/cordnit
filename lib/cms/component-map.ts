@@ -21,6 +21,8 @@ import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSe
  * Maps CMS / page-document `_type` values to presentational section components.
  * Add a new section type here when introducing a new block — never hard-wire in page.tsx.
  */
+import { CybersecurityWhyChoose } from "@/components/features/cybersecurity/CybersecurityWhyChoose";
+
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
   help: HelpSection as SectionComponent,
@@ -41,4 +43,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   credentialsSection: CredentialsSection as SectionComponent,
   processSection: ProcessSection as SectionComponent,
   splitActionCards: SplitActionCardsSection as SectionComponent,
+  whyChooseSection: CybersecurityWhyChoose as SectionComponent,
 };

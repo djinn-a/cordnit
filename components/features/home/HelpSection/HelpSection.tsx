@@ -20,7 +20,7 @@ export default function HelpSection({
   const safeServices = Array.isArray(services) ? services : [];
 
   return (
-    <Section spacing="sm" className="pt-8 pb-4 sm:py-16 lg:py-20">
+    <Section spacing="none" className="">
       <Container width="narrow">
         <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 sm:mb-12 lg:mb-16 gap-3 sm:gap-8">
           <h2 className="text-section-title-mobile sm:text-section-title md:w-1/2">{title}</h2>

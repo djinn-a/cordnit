@@ -30,15 +30,15 @@ export default function SplitActionCardsSection({ data }: SplitActionCardsSectio
         {/* Left Content Block */}
         <div className="flex flex-col gap-space-24 w-full lg:max-w-[480px] xl:max-w-[540px] flex-shrink-0">
           <div className="flex flex-col gap-space-16">
-            <p className="text-page-hero-eyebrow text-brand-primary uppercase">
+            <p className="text-eyebrow-mobile lg:text-page-hero-eyebrow text-brand-primary uppercase tracking-wider">
               {data.eyebrow}
             </p>
-            <h2 className="text-section-title text-ink">
+            <h2 className="text-section-title-mobile lg:text-section-title text-ink">
               {data.title}
             </h2>
           </div>
           
-          <p className="text-section-subtitle text-ink-muted">
+          <p className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted">
             {data.subtitle}
           </p>
 

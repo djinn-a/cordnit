@@ -24,10 +24,10 @@ export default function ProcessStepCard({ step }: ProcessStepCardProps) {
         />
       </div>
       <div className="flex flex-col gap-space-8 w-full">
-        <h4 className="text-help-card-title-desktop text-ink">
+        <h4 className="text-[16px] lg:text-[20px] font-medium text-ink">
           {step.title}
         </h4>
-        <p className="text-card-desc text-ink-muted">
+        <p className="text-card-desc-mobile lg:text-card-desc text-ink-muted">
           {step.description}
         </p>
       </div>
