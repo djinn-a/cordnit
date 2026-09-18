@@ -12,9 +12,9 @@ export default function InsightCard({
   cta,
 }: Readonly<InsightCardData>) {
   return (
-    <div className="flex flex-col bg-surface border border-border-card rounded-xl overflow-hidden transition-shadow hover:shadow-card group h-[474px]">
+    <div className="flex flex-col bg-surface border border-border-card rounded-xl overflow-hidden transition-shadow hover:shadow-card group h-118.5">
       {/* Image */}
-      <div className="relative w-full h-[173px] shrink-0 overflow-hidden">
+      <div className="relative w-full h-43.25 shrink-0 overflow-hidden">
         <Image
           src={image.src}
           alt={image.alt}
@@ -52,7 +52,7 @@ export default function InsightCard({
         {/* Bottom Content (Date, CTA) */}
         <div className="flex flex-col gap-4 mt-auto">
           {/* Date Info */}
-          <span className="text-[12px] font-semibold leading-[18px] text-ink-muted">
+          <span className="text-[12px] font-semibold leading-4.5 text-ink-muted">
             {dateInfo}
           </span>
           

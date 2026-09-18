@@ -18,7 +18,8 @@ export type SectionType =
   | "contentMedia"
   | "contextApproach"
   | "perspective"
-  | "contentInsights";
+  | "contentInsights"
+  | "industryCards";
 
 export type LayoutType = "default" | "contact";
 
