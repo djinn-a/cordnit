@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import type { ContentInsightsProps } from "./ContentInsights.types";
 import ContentInsightsInteractive from "./ContentInsightsInteractive";
+import Container from "../Container/Container";
 
 export default function ContentInsights({
   eyebrow,
@@ -10,8 +11,8 @@ export default function ContentInsights({
   insightCards,
 }: Readonly<ContentInsightsProps>) {
   return (
-    <section className="w-full pt-6 px-4 md:pt-space-80 md:px-space-60">
-      <div className="w-full mx-auto max-w-7xl">
+    <section className="w-full pt-6 pb-20 md:pt-space-80">
+      <Container>
         {/* Section Eyebrow */}
         {eyebrow && (
           <h2 className="text-eyebrow-mobile leading-4 md:text-eyebrow-desktop uppercase tracking-[1px] text-primary mb-4 md:mb-6">
@@ -20,10 +21,10 @@ export default function ContentInsights({
         )}
 
         {/* Featured Card */}
-        <div className="w-full flex flex-col md:flex-row md:items-center bg-grad-3 border border-border-card md:border-primary/20 rounded-[20px] md:rounded-4xl p-6 md:p-10 gap-6 md:gap-36.5 mb-8 shadow-card md:shadow-none">
+        <div className="w-full flex flex-col md:flex-row md:items-center bg-grad-3 border border-border-card md:border-primary/20 rounded-[20px] md:rounded-4xl p-6 md:py-10 md:px-15 gap-6 md:gap-8 lg:gap-36.5 mb-8 shadow-card md:shadow-none">
           
           {/* Left Media (Order 2 on Mobile) */}
-          <div className="relative w-full aspect-16/10 md:aspect-auto md:w-[486.462px] md:h-70 shrink-0 overflow-hidden rounded-[7.6px] md:rounded-xl order-last md:order-0 bg-primary">
+          <div className="relative w-full aspect-16/10 md:w-1/2 lg:w-[486.462px] md:h-auto lg:h-70 lg:shrink-0 overflow-hidden rounded-[7.6px] md:rounded-xl order-last md:order-0 bg-primary">
             <Image 
               src={featured.image.src}
               alt={featured.image.alt}
@@ -35,7 +36,7 @@ export default function ContentInsights({
           </div>
 
           {/* Right Content Column */}
-          <div className="flex-1 w-full md:max-w-129.75 h-auto md:h-75.5 flex flex-col md:justify-between items-start py-0 md:py-9.75">
+          <div className="flex-1 w-full lg:max-w-129.75 h-auto lg:h-75.5 flex flex-col md:justify-center lg:justify-between items-start py-0 md:py-6 lg:py-9.75">
             {/* Metadata */}
             <div className="flex items-center gap-2 md:gap-3 mb-1.5 md:mb-0">
               {featured.articleLabel && (
@@ -78,7 +79,7 @@ export default function ContentInsights({
             insightCards={insightCards} 
           />
         )}
-      </div>
+      </Container>
     </section>
   );
 }

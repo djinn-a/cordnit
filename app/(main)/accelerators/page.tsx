@@ -1,8 +1,25 @@
-import UnderDevelopmentPage from "@/components/features/under-development/UnderDevelopmentPage";
-import { underDevelopmentMetadata } from "@/lib/seo/under-development-metadata";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import LayoutRenderer from "@/components/renderers/LayoutRenderer";
+import { getPage } from "@/lib/cms/get-page";
+import CtaSection from "@/components/features/home/CtaSection/CtaSection";
 
-export const metadata = underDevelopmentMetadata("Accelerators");
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage("accelerators");
+  return {
+    title: page?.seo?.title,
+    description: page?.seo?.description,
+  };
+}
 
-export default function AcceleratorsPage() {
-  return <UnderDevelopmentPage pageLabel="Accelerators" />;
+export default async function AcceleratorsPage() {
+  const page = await getPage("accelerators");
+  if (!page) notFound();
+
+  return (
+    <>
+      <LayoutRenderer layout={page.layout} sections={page.sections} />
+      <CtaSection />
+    </>
+  );
 }

@@ -1,4 +1,5 @@
 export type PerspectiveSectionProps = {
+  className?: string;
   eyebrow?: string;
   title: string;
   description: string;

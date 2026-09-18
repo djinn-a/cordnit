@@ -12,7 +12,7 @@ export default function IndustryCardsSection({
   cards,
 }: Readonly<IndustryCardsSectionProps>) {
   return (
-    <Section background="white" spacing="md">
+    <Section background="white" spacing="none" className="py-20 md:px-15">
       <Container>
         {(eyebrow || title || description) && (
           <SectionHeader
