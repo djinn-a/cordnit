@@ -39,7 +39,10 @@ export type SectionType =
   | "solutionsHero"
   | "solutionsCapabilities"
   | "solutionsDelivery"
-  | "solutionsCombination";
+  | "solutionsCombination"
+  | "cloudInfrastructureHero"
+  | "cloudInfrastructureSplitContent"
+  | "cloudInfrastructureCredentials";
 
 export type LayoutType = "default" | "contact";
 

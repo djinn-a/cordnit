@@ -17,6 +17,10 @@ import { CybersecurityHero } from "@/components/features/cybersecurity/Cybersecu
 import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
 import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection } from "@/components/ui";
 
+import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
+import { CloudInfrastructureSplitContent } from "@/components/features/cloud-infrastructure/CloudInfrastructureSplitContent";
+import { CloudInfrastructureCredentials } from "@/components/features/cloud-infrastructure/CloudInfrastructureCredentials";
+
 import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
 import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
 import SolutionsDelivery from "@/components/features/solutions/SolutionsDelivery/SolutionsDelivery";
@@ -80,4 +84,7 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   solutionsCapabilities: SolutionsCapabilities as SectionComponent,
   solutionsDelivery: SolutionsDelivery as SectionComponent,
   solutionsCombination: SolutionsCombination as SectionComponent,
+  cloudInfrastructureHero: CloudInfrastructureHero as SectionComponent,
+  cloudInfrastructureSplitContent: CloudInfrastructureSplitContent as SectionComponent,
+  cloudInfrastructureCredentials: CloudInfrastructureCredentials as SectionComponent,
 };
