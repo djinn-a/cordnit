@@ -190,52 +190,46 @@ export const applicationEngineeringWhyChooseData: WhyChooseSectionData = {
   title: "Application engineering that creates lasting value.",
   cards: [
     {
+      id: "scale-and-resilience",
       title: "Build for scale and resilience",
       description: "We design and build applications that can grow with your business and withstand unexpected challenges.",
-      icon: {
-        src: "/cybersecurity/icons/why-choose-1.svg",
-        alt: "Scale icon",
-      },
+      image: "/cybersecurity/icons/SVG1.svg",
+      imageAlt: "Scale icon",
     },
     {
+      id: "faster-time-to-market",
       title: "Faster time to market",
       description: "Our agile engineering practices help you launch products faster and iterate based on real user feedback.",
-      icon: {
-        src: "/cybersecurity/icons/why-choose-2.svg",
-        alt: "Speed icon",
-      },
+      image: "/cybersecurity/icons/SVG 2.svg",
+      imageAlt: "Speed icon",
     },
     {
+      id: "quality-and-maintainability",
       title: "Quality and maintainability",
       description: "We prioritize clean code, test coverage, and robust architecture to ensure long-term maintainability.",
-      icon: {
-        src: "/cybersecurity/icons/why-choose-3.svg",
-        alt: "Quality icon",
-      },
+      image: "/cybersecurity/icons/SVG 3.svg",
+      imageAlt: "Quality icon",
     },
     {
+      id: "engineering-excellence",
       title: "Engineering excellence",
       description: "Work with experienced software engineers who bring deep technical knowledge and a product mindset.",
-      icon: {
-        src: "/cybersecurity/icons/why-choose-4.svg",
-        alt: "Excellence icon",
-      },
+      image: "/cybersecurity/icons/SVG 4.svg",
+      imageAlt: "Excellence icon",
     },
     {
+      id: "tailored-applications",
       title: "Tailored applications",
       description: "We build custom software around your specific industry, technology environment and business goals.",
-      icon: {
-        src: "/cybersecurity/icons/why-choose-5.svg",
-        alt: "Tailored icon",
-      },
+      image: "/cybersecurity/icons/SVG 5.svg",
+      imageAlt: "Tailored icon",
     },
     {
+      id: "ongoing-support",
       title: "Ongoing support and partnership",
       description: "We work as an extension of your team, providing continuous support and guidance as your needs evolve.",
-      icon: {
-        src: "/cybersecurity/icons/why-choose-6.svg",
-        alt: "Partnership icon",
-      },
+      image: "/cybersecurity/icons/SVG 6.svg",
+      imageAlt: "Partnership icon",
     }
   ]
 };
