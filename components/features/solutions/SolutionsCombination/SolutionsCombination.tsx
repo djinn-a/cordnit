@@ -26,11 +26,11 @@ const SolutionsCombination: FC = () => {
                   {card.title}
                 </h3>
               </div>
-              <p className="text-section-subtitle-mobile sm:text-section-subtitle text-ink-muted relative z-10 w-full sm:w-[90%]">
+              <p className="text-section-subtitle-mobile sm:text-section-subtitle text-ink-muted relative z-10 w-full pr-12 sm:pr-14">
                 {card.description}
               </p>
 
-              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 sm:w-16 sm:h-16 opacity-20 pointer-events-none">
+              <div className="absolute top-1/2 -translate-y-1/2 right-4 sm:top-auto sm:translate-y-0 sm:bottom-6 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 pointer-events-none">
                 <Image
                   src={card.iconPath}
                   alt=""

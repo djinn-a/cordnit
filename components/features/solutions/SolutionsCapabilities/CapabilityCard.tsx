@@ -9,26 +9,34 @@ import type { CapabilityData } from "./solutionsCapabilitiesData";
 export type CapabilityCardProps = {
   capability: CapabilityData;
   className?: string;
+  index: number;
 };
 
 export default function CapabilityCard({
   capability,
   className,
+  index,
 }: CapabilityCardProps) {
-  const isBlue = capability.theme === "blue";
+  const isDesktopBlue = capability.theme === "blue";
+  // Create a checkerboard pattern (Blue, Black, Black, Blue, Blue, Black, Black) for a 2-column mobile grid
+  const isMobileBlue = [0, 3, 4, 7].includes(index);
+  
+  const mobileBg = isMobileBlue ? "bg-primary" : "bg-surface-dark";
+  const desktopBg = isDesktopBlue ? "lg:bg-primary" : "lg:bg-surface-dark";
 
   return (
     <div
       className={cn(
-        "relative flex flex-col justify-between w-full h-full min-h-56 lg:min-h-80 rounded-card-lg p-4 sm:p-6 lg:p-8 overflow-hidden",
-        isBlue ? "bg-primary text-white" : "bg-surface-dark text-white",
+        "relative flex flex-col justify-between w-full h-full min-h-44 sm:min-h-56 lg:min-h-80 rounded-[8px] lg:rounded-card p-4 sm:p-6 lg:p-8 overflow-hidden text-white",
+        mobileBg,
+        desktopBg,
         className
       )}
     >
       {/* Content Top */}
       <div className="flex flex-col gap-2 sm:gap-4">
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="relative w-8 h-8 flex-shrink-0">
+          <div className="relative w-3 h-3 lg:w-8 lg:h-8 flex-shrink-0">
             <Image
               src={capability.iconPath}
               alt={capability.title}
@@ -40,28 +48,33 @@ export default function CapabilityCard({
             {capability.title}
           </h3>
         </div>
-        <p className="text-card-desc-mobile lg:text-card-desc text-white pr-2 line-clamp-4">
+        <p className="text-card-detail-mobile lg:text-card-desc text-white pr-2 line-clamp-4">
           {capability.description}
         </p>
       </div>
 
       {/* Button Cutout Area */}
       {/* The main white cutout wrapper */}
-      <div className="absolute bottom-0 left-0 z-10 bg-surface rounded-tr-3xl p-2 pr-3 pt-3">
+      <div className="absolute bottom-0 left-0 z-10 bg-surface rounded-tr-[8px] rounded-bl-[8px] lg:rounded-tr-3xl lg:rounded-bl-[var(--radius-card)] p-2 lg:pr-3 lg:pt-3 shadow-[0_0_0_1px_#ffffff]">
         {/* Inner curve top-left */}
-        <div className="absolute bottom-full left-0 w-5 h-5 pointer-events-none bg-cutout-curve" />
+        <div className="absolute bottom-full left-0 w-2 h-2 lg:w-5 lg:h-5 pointer-events-none bg-[radial-gradient(circle_at_top_right,transparent_8px,var(--color-surface)_0)] lg:bg-cutout-curve" />
 
         {/* Inner curve bottom-right */}
-        <div className="absolute bottom-0 left-full w-5 h-5 pointer-events-none bg-cutout-curve" />
+        <div className="absolute bottom-0 left-full w-2 h-2 lg:w-5 lg:h-5 pointer-events-none bg-[radial-gradient(circle_at_top_right,transparent_8px,var(--color-surface)_0)] lg:bg-cutout-curve" />
 
         <Link
           href={capability.href}
           className={cn(
-            "w-full lg:w-auto whitespace-nowrap inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-link-mobile lg:text-link-desktop font-bold transition-transform hover:scale-105",
-            isBlue ? "bg-primary text-white" : "bg-surface-dark text-white"
+            "whitespace-nowrap inline-flex items-center justify-center font-bold transition-transform hover:scale-105 text-white",
+            // Mobile specific styles from Figma
+            "px-1.5 py-1 gap-1 rounded-[4px] text-link-card-mobile",
+            // Desktop specific styles
+            "lg:px-4 lg:py-2 lg:gap-2 lg:rounded-xl lg:border-none lg:text-link-desktop",
+            mobileBg,
+            desktopBg
           )}
         >
-          Explore Now <ArrowRight className="w-4 h-4" />
+          Explore Now <ArrowRight className="w-[16px] h-[20px] lg:w-4 lg:h-4" />
         </Link>
       </div>
     </div>

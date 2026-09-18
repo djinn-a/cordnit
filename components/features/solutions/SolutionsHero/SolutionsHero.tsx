@@ -36,7 +36,7 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
 
         {/* Image Content */}
         <div className="w-full lg:w-1/2 relative">
-          <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[552px] rounded-hero overflow-hidden shadow-2xl">
+          <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[420px] rounded-hero overflow-hidden shadow-2xl">
             <Image
               src={content.imageSrc}
               alt={content.imageAlt}

@@ -12,28 +12,28 @@ export const capabilitiesData: CapabilityData[] = [
   {
     title: "Cybersecurity",
     description: "Comprehensive security solutions to protect your digital assets, identify risks, and build resilience.",
-    iconPath: "/solutions/cybersecurity.svg",
+    iconPath: "/solutions/cybersecurity-icon.svg",
     theme: "blue",
     href: "/solutions/cybersecurity",
   },
   {
     title: "Salesforce Solutions",
     description: "Transform customer experiences and unlock growth with the power of Salesforce.",
-    iconPath: "/solutions/salesforce.svg",
+    iconPath: "/solutions/salesforce-Solutions.svg",
     theme: "black",
     href: "/solutions/salesforce",
   },
   {
     title: "AI & Automation",
     description: "Leverage AI and automation to optimize operations and make smarter, faster decisions.",
-    iconPath: "/solutions/ai-automation.svg",
+    iconPath: "/solutions/AI-Automat.svg",
     theme: "blue",
     href: "/solutions/ai-automation",
   },
   {
     title: "Application Engineering",
     description: "Design, build, and modernize applications that drive business agility and innovation.",
-    iconPath: "/solutions/application-engineering.svg",
+    iconPath: "/solutions/Data-Integrat.svg",
     theme: "black",
     href: "/solutions/application-engineering",
   },
@@ -54,8 +54,8 @@ export const capabilitiesData: CapabilityData[] = [
   {
     title: "Data & Integration",
     description: "Unify your data and systems to drive insights and power better outcomes.",
-    iconPath: "/solutions/data-integration.svg",
-    theme: "black",
+    iconPath: "/solutions/Data-Integrat.svg",
+    theme: "blue",
     href: "/solutions/data-integration",
   },
 ];

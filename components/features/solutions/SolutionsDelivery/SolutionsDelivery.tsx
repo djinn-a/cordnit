@@ -27,7 +27,7 @@ const SolutionsDelivery: FC = () => {
           </div>
 
           {/* Right Side: Visuals */}
-          <div className="relative flex flex-col gap-4 pr-16 sm:pr-8 lg:pr-12">
+          <div className="relative flex flex-col gap-4 pr-10 sm:pr-8 lg:pr-12">
             {/* Top Image */}
             <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[4/3] rounded-card overflow-hidden shadow-card">
               <Image 

@@ -27,6 +27,7 @@ export default function SolutionsCapabilities({
             <CapabilityCard
               key={capability.title}
               capability={capability}
+              index={index}
               className={cn(
                 "lg:col-span-2",
                 index === 4 && "lg:col-start-2"
