@@ -16,6 +16,5 @@ export const homePage: PageDocument = {
     { _type: "methodology", _key: "home-methodology" },
     { _type: "recognition", _key: "home-recognition" },
     { _type: "testimonials", _key: "home-testimonials" },
-    { _type: "cta", _key: "home-cta" },
   ],
 };

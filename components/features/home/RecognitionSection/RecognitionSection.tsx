@@ -32,7 +32,7 @@ export default function RecognitionSection({
   } = useScrollSnapCarousel({ itemCount: items.length });
 
   return (
-    <Section spacing="md" className="py-8 sm:py-20 lg:py-24">
+    <Section spacing="none" className="">
       <Container>
         <SectionHeader
           eyebrow={eyebrow}

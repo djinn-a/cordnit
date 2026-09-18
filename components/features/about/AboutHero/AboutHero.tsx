@@ -18,7 +18,7 @@ export default function AboutHero({
   imageAlt = aboutHeroData.imageAlt,
 }: AboutHeroProps = {}) {
   return (
-    <Section spacing="sm" className="py-8">
+    <Section spacing="none" className="">
       <Container>
 
         <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl h-[420px] xs:h-[480px] sm:h-[500px] md:h-[550px] lg:h-[650px]">

@@ -2,12 +2,18 @@ import type { PageDocument } from "./types";
 import { homePage } from "@/data/pages/home";
 import { aboutPage } from "@/data/pages/about";
 import { contactPage } from "@/data/pages/contact";
+import { cybersecurityPage } from "@/data/pages/cybersecurity";
+import { salesforcePage } from "@/data/pages/salesforce";
+import { aiAutomationPage } from "@/data/pages/ai-automation";
 import { solutionsPage } from "@/data/pages/solutions";
 
 const pages: Record<string, PageDocument> = {
   home: homePage,
   aboutus: aboutPage,
   contactus: contactPage,
+  cybersecurity: cybersecurityPage,
+  salesforce: salesforcePage,
+  "ai-automation": aiAutomationPage,
   solutions: solutionsPage,
 };
 

@@ -29,7 +29,7 @@ export default function InsightsSection({
   } = useScrollSnapCarousel({ itemCount: insights.length });
 
   return (
-    <Section spacing="sm" className="pt-8 pb-8 sm:py-16 lg:py-20 overflow-hidden">
+    <Section spacing="none" className="overflow-hidden">
       <Container>
         <SectionHeader
           eyebrow={eyebrow}
