@@ -31,6 +31,10 @@ import { SalesforceSpecialists } from "@/components/features/salesforce/Salesfor
 import { SalesforceWhyChoose } from "@/components/features/salesforce/SalesforceWhyChoose";
 import { AiAutomationHero } from "@/components/features/ai-automation/AiAutomationHero";
 import { AiAutomationSplitContent } from "@/components/features/ai-automation/AiAutomationSplitContent";
+import { AiAutomationCredentials } from "@/components/features/ai-automation/AiAutomationCredentials";
+import { AiAutomationApproach } from "@/components/features/ai-automation/AiAutomationApproach";
+import { AiAutomationSpecialists } from "@/components/features/ai-automation/AiAutomationSpecialists";
+import { AiAutomationWhyChoose } from "@/components/features/ai-automation/AiAutomationWhyChoose";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -62,4 +66,8 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   salesforceWhyChoose: SalesforceWhyChoose as SectionComponent,
   aiAutomationHero: AiAutomationHero as SectionComponent,
   aiAutomationSplitContent: AiAutomationSplitContent as SectionComponent,
+  aiAutomationCredentials: AiAutomationCredentials as SectionComponent,
+  aiAutomationApproach: AiAutomationApproach as SectionComponent,
+  aiAutomationSpecialists: AiAutomationSpecialists as SectionComponent,
+  aiAutomationWhyChoose: AiAutomationWhyChoose as SectionComponent,
 };

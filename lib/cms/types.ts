@@ -30,7 +30,11 @@ export type SectionType =
   | "salesforceSpecialists"
   | "salesforceWhyChoose"
   | "aiAutomationHero"
-  | "aiAutomationSplitContent";
+  | "aiAutomationSplitContent"
+  | "aiAutomationCredentials"
+  | "aiAutomationApproach"
+  | "aiAutomationSpecialists"
+  | "aiAutomationWhyChoose";
 
 export type LayoutType = "default" | "contact";
 
