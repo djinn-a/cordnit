@@ -20,6 +20,13 @@ import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSe
 import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
 import { CloudInfrastructureSplitContent } from "@/components/features/cloud-infrastructure/CloudInfrastructureSplitContent";
 import { CloudInfrastructureCredentials } from "@/components/features/cloud-infrastructure/CloudInfrastructureCredentials";
+import { CloudInfrastructureApproach } from "@/components/features/cloud-infrastructure/CloudInfrastructureApproach";
+import { CloudInfrastructureSpecialists } from "@/components/features/cloud-infrastructure/CloudInfrastructureSpecialists";
+import { CloudInfrastructureWhyChoose } from "@/components/features/cloud-infrastructure/CloudInfrastructureWhyChoose";
+import { CloudInfrastructureWhereWeHelp } from "@/components/features/cloud-infrastructure/CloudInfrastructureWhereWeHelp";
+
+import { ApplicationEngineeringHero } from "@/components/features/application-engineering/ApplicationEngineeringHero";
+import { ApplicationEngineeringSplitContent } from "@/components/features/application-engineering/ApplicationEngineeringSplitContent";
 
 import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
 import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
@@ -87,4 +94,11 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   cloudInfrastructureHero: CloudInfrastructureHero as SectionComponent,
   cloudInfrastructureSplitContent: CloudInfrastructureSplitContent as SectionComponent,
   cloudInfrastructureCredentials: CloudInfrastructureCredentials as SectionComponent,
+  cloudInfrastructureApproach: CloudInfrastructureApproach as SectionComponent,
+  cloudInfrastructureSpecialists: CloudInfrastructureSpecialists as SectionComponent,
+  cloudInfrastructureWhyChoose: CloudInfrastructureWhyChoose as SectionComponent,
+  cloudInfrastructureWhereWeHelp: CloudInfrastructureWhereWeHelp as SectionComponent,
+  
+  applicationEngineeringHero: ApplicationEngineeringHero as SectionComponent,
+  applicationEngineeringSplitContent: ApplicationEngineeringSplitContent as SectionComponent,
 };

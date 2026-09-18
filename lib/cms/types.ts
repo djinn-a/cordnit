@@ -42,7 +42,13 @@ export type SectionType =
   | "solutionsCombination"
   | "cloudInfrastructureHero"
   | "cloudInfrastructureSplitContent"
-  | "cloudInfrastructureCredentials";
+  | "cloudInfrastructureCredentials"
+  | "cloudInfrastructureApproach"
+  | "cloudInfrastructureSpecialists"
+  | "cloudInfrastructureWhyChoose"
+  | "cloudInfrastructureWhereWeHelp"
+  | "applicationEngineeringHero"
+  | "applicationEngineeringSplitContent";
 
 export type LayoutType = "default" | "contact";
 

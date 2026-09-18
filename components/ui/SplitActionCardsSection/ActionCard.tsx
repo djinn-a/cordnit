@@ -32,7 +32,7 @@ export default function ActionCard({ card }: ActionCardProps) {
         <div className="flex flex-col gap-space-4 sm:gap-space-8 w-full">
           {/* Header Row */}
           <div className="flex flex-row items-center justify-between w-full">
-            <p className="text-card-detail-mobile sm:text-about-eyebrow-desktop text-brand-primary uppercase leading-tight">
+            <p className="text-card-detail-mobile sm:text-about-eyebrow-desktop lg:text-link-card-mobile text-brand-primary uppercase leading-tight">
               {card.category}
             </p>
             {card.label && (
@@ -44,10 +44,10 @@ export default function ActionCard({ card }: ActionCardProps) {
           
           {/* Title and Description */}
           <div className="flex flex-col gap-[2px] sm:gap-space-4">
-            <h4 className="text-section-title-head-mobile sm:text-help-card-title-desktop text-ink leading-tight">
+            <h4 className="text-section-title-head-mobile sm:text-help-card-title-desktop lg:text-link-desktop text-ink leading-tight">
               {card.title}
             </h4>
-            <p className="text-[10px] sm:text-card-desc-mobile md:text-card-desc text-ink-muted leading-tight">
+            <p className="text-[10px] sm:text-card-desc-mobile md:text-card-desc lg:text-card-desc-mobile text-ink-muted leading-tight">
               {card.description}
             </p>
           </div>

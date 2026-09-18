@@ -2,7 +2,11 @@ import type { PageDocument } from "@/lib/cms/types";
 import { 
   cloudInfrastructureHeroData,
   cloudInfrastructureSplitContentData,
-  cloudInfrastructureCredentialsData
+  cloudInfrastructureCredentialsData,
+  cloudInfrastructureApproachData,
+  cloudInfrastructureWhyChooseData,
+  cloudInfrastructureSpecialistsData,
+  cloudInfrastructureWhereWeHelpData
 } from "@/components/features/cloud-infrastructure/data";
 
 export const cloudInfrastructurePage: PageDocument = {
@@ -28,6 +32,26 @@ export const cloudInfrastructurePage: PageDocument = {
       _type: "cloudInfrastructureCredentials",
       _key: "cloud-infrastructure-credentials",
       data: cloudInfrastructureCredentialsData
+    },
+    {
+      _type: "cloudInfrastructureWhereWeHelp",
+      _key: "cloud-infrastructure-where-we-help",
+      data: cloudInfrastructureWhereWeHelpData
+    },
+    {
+      _type: "cloudInfrastructureApproach",
+      _key: "cloud-infrastructure-approach",
+      data: cloudInfrastructureApproachData
+    },
+    {
+      _type: "cloudInfrastructureSpecialists",
+      _key: "cloud-infrastructure-specialists",
+      data: cloudInfrastructureSpecialistsData
+    },
+    {
+      _type: "cloudInfrastructureWhyChoose",
+      _key: "cloud-infrastructure-why-choose",
+      data: cloudInfrastructureWhyChooseData
     }
   ],
 };
