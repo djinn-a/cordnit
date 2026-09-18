@@ -12,4 +12,5 @@ export interface IndustryCardsSectionProps {
   title?: string;
   description?: string;
   cards: IndustryCardData[];
+  headerLayout?: "default" | "horizontal";
 }

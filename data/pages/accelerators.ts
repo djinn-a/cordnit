@@ -40,7 +40,8 @@ export const acceleratorsPage: PageDocument = {
     },
     {
       _type: "industryCards",
-      _key: "accelerators-explore",
+      _key: "accelerators-grid",
+      headerLayout: "horizontal",
       title: "Explore accelerators",
       description:
         "Browse accelerators by challenge, capability or platform fit. Each entry explains who it is for, what it helps achieve and what is involved.",
