@@ -25,9 +25,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html
       lang="en"
-      className={`${mulish.variable} font-sans h-full antialiased`}
+      className={`${mulish.variable} font-sans h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         <ContactModalProvider>
           <NewsletterModalProvider>
             <TopBar />

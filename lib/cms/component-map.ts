@@ -25,6 +25,12 @@ import { CybersecurityWhyChoose } from "@/components/features/cybersecurity/Cybe
 import { SalesforceHero } from "@/components/features/salesforce/SalesforceHero";
 import { SalesforceSplitContent } from "@/components/features/salesforce/SalesforceSplitContent";
 import { SalesforceCredentials } from "@/components/features/salesforce/SalesforceCredentials";
+import { SalesforceCapabilities } from "@/components/features/salesforce/SalesforceCapabilities";
+import { SalesforceApproach } from "@/components/features/salesforce/SalesforceApproach";
+import { SalesforceSpecialists } from "@/components/features/salesforce/SalesforceSpecialists";
+import { SalesforceWhyChoose } from "@/components/features/salesforce/SalesforceWhyChoose";
+import { AiAutomationHero } from "@/components/features/ai-automation/AiAutomationHero";
+import { AiAutomationSplitContent } from "@/components/features/ai-automation/AiAutomationSplitContent";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -50,4 +56,10 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   salesforceHero: SalesforceHero as SectionComponent,
   salesforceSplitContent: SalesforceSplitContent as SectionComponent,
   salesforceCredentials: SalesforceCredentials as SectionComponent,
+  salesforceCapabilities: SalesforceCapabilities as SectionComponent,
+  salesforceApproach: SalesforceApproach as SectionComponent,
+  salesforceSpecialists: SalesforceSpecialists as SectionComponent,
+  salesforceWhyChoose: SalesforceWhyChoose as SectionComponent,
+  aiAutomationHero: AiAutomationHero as SectionComponent,
+  aiAutomationSplitContent: AiAutomationSplitContent as SectionComponent,
 };

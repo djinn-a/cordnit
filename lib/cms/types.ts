@@ -24,7 +24,13 @@ export type SectionType =
   | "whyChooseSection"
   | "salesforceHero"
   | "salesforceSplitContent"
-  | "salesforceCredentials";
+  | "salesforceCredentials"
+  | "salesforceCapabilities"
+  | "salesforceApproach"
+  | "salesforceSpecialists"
+  | "salesforceWhyChoose"
+  | "aiAutomationHero"
+  | "aiAutomationSplitContent";
 
 export type LayoutType = "default" | "contact";
 

@@ -1,5 +1,5 @@
 import type { PageDocument } from "@/lib/cms/types";
-import { salesforceHeroData, salesforceSplitContentData, salesforceCredentialsData } from "@/components/features/salesforce/data";
+import { salesforceHeroData, salesforceSplitContentData, salesforceCredentialsData, salesforceCapabilitiesData, salesforceApproachData, salesforceSpecialistsData, salesforceWhyChooseData } from "@/components/features/salesforce/data";
 
 export const salesforcePage: PageDocument = {
   slug: "salesforce",
@@ -24,6 +24,26 @@ export const salesforcePage: PageDocument = {
       _type: "salesforceCredentials",
       _key: "salesforce-credentials",
       data: salesforceCredentialsData
+    },
+    {
+      _type: "salesforceCapabilities",
+      _key: "salesforce-capabilities",
+      data: salesforceCapabilitiesData
+    },
+    {
+      _type: "salesforceApproach",
+      _key: "salesforce-approach",
+      data: salesforceApproachData
+    },
+    {
+      _type: "salesforceSpecialists",
+      _key: "salesforce-specialists",
+      data: salesforceSpecialistsData
+    },
+    {
+      _type: "salesforceWhyChoose",
+      _key: "salesforce-why-choose",
+      data: salesforceWhyChooseData
     }
   ],
 };
