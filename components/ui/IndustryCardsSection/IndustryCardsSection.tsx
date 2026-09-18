@@ -20,7 +20,7 @@ export default function IndustryCardsSection({
             title={title}
             subtitle={description}
             className="mb-12"
-            titleClassName="text-[48px] font-extrabold leading-[68px] text-ink"
+            titleClassName="text-[24px] font-extrabold leading-[32px] md:text-[48px] md:leading-[68px] text-ink"
           />
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -6,4 +6,8 @@ export type PerspectiveSectionProps = {
     src: string;
     alt: string;
   };
+  cta?: {
+    label: string;
+    href: string;
+  };
 };

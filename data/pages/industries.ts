@@ -105,6 +105,10 @@ export const industriesPage: PageDocument = {
         src: "/images/content-media/main.png",
         alt: "Challenges connect",
       },
+      cta: {
+        label: "Book a call",
+        href: "/contact",
+      },
     },
     {
       _type: "contentInsights",
