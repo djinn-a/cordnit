@@ -10,7 +10,7 @@ export default function IndustryCardsSection({
   title,
   description,
   cards,
-}: IndustryCardsSectionProps) {
+}: Readonly<IndustryCardsSectionProps>) {
   return (
     <Section background="white" spacing="md">
       <Container>
@@ -23,9 +23,9 @@ export default function IndustryCardsSection({
             titleClassName="text-[24px] font-extrabold leading-[32px] md:text-[48px] md:leading-[68px] text-ink"
           />
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card) => {
-            const IconComponent = (LucideIcons as any)[card.iconName] || LucideIcons.Circle;
+            const IconComponent = (LucideIcons[card.iconName as keyof typeof LucideIcons] as LucideIcons.LucideIcon) || LucideIcons.Circle;
             return (
               <IndustryCard
                 key={card.id}

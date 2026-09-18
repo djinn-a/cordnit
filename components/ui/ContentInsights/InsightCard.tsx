@@ -12,9 +12,9 @@ export default function InsightCard({
   cta,
 }: Readonly<InsightCardData>) {
   return (
-    <div className="flex flex-col bg-surface border border-border-card rounded-xl overflow-hidden transition-shadow hover:shadow-card group h-118.5">
+    <div className="flex flex-col items-start self-stretch gap-4 md:gap-6 p-4 md:p-6 bg-surface border border-border-card rounded-xl transition-shadow hover:shadow-card group h-auto">
       {/* Image */}
-      <div className="relative w-full h-43.25 shrink-0 overflow-hidden">
+      <div className="relative w-full h-23.25 md:h-auto aspect-162/93 md:aspect-16/10 overflow-hidden rounded-md shrink-0">
         <Image
           src={image.src}
           alt={image.alt}
@@ -24,12 +24,12 @@ export default function InsightCard({
       </div>
 
       {/* Content Container */}
-      <div className="flex flex-col p-5 flex-1 justify-between">
+      <div className="flex flex-col flex-1 justify-between w-full">
         
         {/* Top Content (Meta, Title, Desc) */}
-        <div className="flex flex-col gap-[7.2px] pb-4">
+        <div className="flex flex-col">
           {/* Metadata Row */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <span className="uppercase text-insight-label text-primary">
               {metadata.label}
             </span>
@@ -39,30 +39,30 @@ export default function InsightCard({
           </div>
 
           {/* Title */}
-          <h4 className="text-[16px] font-bold leading-6 text-ink">
+          <h4 className="text-[14px] leading-5.5 md:text-[16px] md:leading-6 font-bold text-ink mb-2 md:mb-3">
             {title}
           </h4>
 
           {/* Description */}
-          <p className="text-[14px] leading-5 text-ink-muted line-clamp-2">
+          <p className="text-[10px] leading-3.5 md:text-[14px] md:leading-5 font-normal text-ink-muted line-clamp-2">
             {description}
           </p>
         </div>
 
         {/* Bottom Content (Date, CTA) */}
-        <div className="flex flex-col gap-4 mt-auto">
+        <div className="flex flex-col gap-3 md:gap-4 mt-3 md:mt-4">
           {/* Date Info */}
-          <span className="text-[12px] font-semibold leading-4.5 text-ink-muted">
+          <span className="text-[10px] leading-3.5 tracking-[0.6px] font-normal md:text-[12px] md:font-semibold md:leading-4.5 md:tracking-normal text-ink-muted">
             {dateInfo}
           </span>
           
           {/* CTA Link */}
           <Link
             href={cta.href}
-            className="flex items-center gap-1.5 text-[14px] font-semibold leading-5 text-primary hover:text-primary-hover transition-colors w-fit"
+            className="flex items-center gap-1 md:gap-1.5 text-[10px] leading-3.5 font-semibold md:text-[14px] md:leading-5 text-primary hover:text-primary-hover transition-colors w-fit"
           >
             {cta.label}
-            <ArrowRight size={14} />
+            <ArrowRight className="w-3 h-3 md:w-3.5 md:h-3.5" />
           </Link>
         </div>
       </div>
