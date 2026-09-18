@@ -17,7 +17,7 @@ export default function CardGridSection({ data }: CardGridSectionProps) {
       <div className="mx-auto w-full flex flex-col gap-space-24 lg:gap-space-64">
         {/* Header - Stacked on Mobile, Split on Desktop */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-space-24 lg:gap-space-40 w-full h-full">
-          <div className="flex flex-col w-full lg:max-w-[704px] gap-space-16 lg:gap-space-20">
+          <div className="flex flex-col w-full lg:max-w-176 gap-space-16 lg:gap-space-20">
             <p className="text-eyebrow-mobile lg:text-page-hero-eyebrow text-brand-primary uppercase tracking-wider">
               {data.eyebrow}
             </p>
@@ -33,9 +33,11 @@ export default function CardGridSection({ data }: CardGridSectionProps) {
         </div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-space-12 gap-y-space-32 lg:gap-space-24 justify-items-center w-full">
+        <div className="flex flex-wrap justify-center gap-x-space-12 gap-y-space-32 lg:gap-space-24 w-full">
           {data.cards.map((card) => (
-            <CardGridCard key={card.id} card={card} />
+            <div key={card.id} className="w-[calc(50%-6px)] lg:w-[calc(25%-18px)] flex justify-center">
+              <CardGridCard card={card} />
+            </div>
           ))}
         </div>
       </div>

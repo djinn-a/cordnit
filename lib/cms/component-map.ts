@@ -35,6 +35,7 @@ import { AiAutomationCredentials } from "@/components/features/ai-automation/AiA
 import { AiAutomationApproach } from "@/components/features/ai-automation/AiAutomationApproach";
 import { AiAutomationSpecialists } from "@/components/features/ai-automation/AiAutomationSpecialists";
 import { AiAutomationWhyChoose } from "@/components/features/ai-automation/AiAutomationWhyChoose";
+import { AiAutomationWhereWeHelp } from "@/components/features/ai-automation/AiAutomationWhereWeHelp";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -70,4 +71,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   aiAutomationApproach: AiAutomationApproach as SectionComponent,
   aiAutomationSpecialists: AiAutomationSpecialists as SectionComponent,
   aiAutomationWhyChoose: AiAutomationWhyChoose as SectionComponent,
+  aiAutomationWhereWeHelp: AiAutomationWhereWeHelp as SectionComponent,
 };

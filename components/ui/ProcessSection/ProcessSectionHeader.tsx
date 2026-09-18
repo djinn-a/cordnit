@@ -10,7 +10,7 @@ export default function ProcessSectionHeader({
   subtitle,
 }: ProcessSectionHeaderProps) {
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-end gap-space-24 lg:gap-[94px] w-full">
+    <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-space-24 lg:gap-[94px] w-full">
       <div className="flex flex-col gap-space-16 w-full lg:max-w-[700px]">
         <p className="text-eyebrow-mobile lg:text-page-hero-eyebrow text-brand-primary uppercase tracking-wider">
           {eyebrow}

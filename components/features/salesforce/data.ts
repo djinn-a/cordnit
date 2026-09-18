@@ -10,8 +10,12 @@ export const salesforceHeroData: PageHeroData = {
     href: "/contactus", // Assuming it goes to contactus, or we can just leave it as #
   },
   image: {
-    src: "/salesforce/hero-image.jpg",
+    src: "/salesforce/hero-image.webp",
     alt: "Salesforce Dashboard across multiple screens in a conference room",
+  },
+  quoteOverlay: {
+    quote: "“Technology creates value when it makes every interaction more useful.”",
+    author: "OUR APPROACH"
   },
 };
 
@@ -25,7 +29,7 @@ export const salesforceSplitContentData: SplitContentSectionData = {
     "We help bring together the strategy, experience design, implementation, integration and ongoing improvement needed to make Salesforce work across the customer lifecycle."
   ],
   image: {
-    src: "/salesforce/split-content.jpg",
+    src: "/salesforce/split-content.webp",
     alt: "Salesforce connecting Marketing, Sales, Service, Commerce, and AI to Customer Experience and Business Value",
   }
 };

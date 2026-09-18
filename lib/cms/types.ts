@@ -34,7 +34,8 @@ export type SectionType =
   | "aiAutomationCredentials"
   | "aiAutomationApproach"
   | "aiAutomationSpecialists"
-  | "aiAutomationWhyChoose";
+  | "aiAutomationWhyChoose"
+  | "aiAutomationWhereWeHelp";
 
 export type LayoutType = "default" | "contact";
 

@@ -66,11 +66,11 @@ export default function SplitActionCardsSection({ data }: SplitActionCardsSectio
           {/* List Header */}
           {data.listHeader && (
             <div className="flex items-center justify-between w-full border-l-2 border-brand-primary pl-space-8 py-1">
-              <p className="text-about-eyebrow-desktop text-brand-primary uppercase">
+              <p className="text-card-detail-mobile sm:text-about-eyebrow-desktop text-brand-primary uppercase">
                 {data.listHeader.leftText}
               </p>
               {data.listHeader.rightText && (
-                <p className="text-about-eyebrow-desktop text-ink-muted uppercase">
+                <p className="text-card-detail-mobile sm:text-about-eyebrow-desktop text-ink-muted uppercase">
                   {data.listHeader.rightText}
                 </p>
               )}

@@ -1,8 +1,9 @@
 import type { PageDocument } from "@/lib/cms/types";
-import { aiAutomationHeroData, aiAutomationSplitContentData, aiAutomationCredentialsData, aiAutomationApproachData, aiAutomationSpecialistsData, aiAutomationWhyChooseData } from "@/components/features/ai-automation/data";
+import { aiAutomationHeroData, aiAutomationSplitContentData, aiAutomationCredentialsData, aiAutomationApproachData, aiAutomationSpecialistsData, aiAutomationWhyChooseData, aiAutomationWhereWeHelpData } from "@/components/features/ai-automation/data";
 
 export const aiAutomationPage: PageDocument = {
   slug: "ai-automation",
+  title: "AI & Automation | Cordinit",
   layout: "default",
   seo: {
     title: "AI & Automation | Cordinit",
@@ -23,6 +24,11 @@ export const aiAutomationPage: PageDocument = {
       _type: "aiAutomationCredentials",
       _key: "ai-automation-credentials",
       data: aiAutomationCredentialsData
+    },
+    {
+      _type: "aiAutomationWhereWeHelp",
+      _key: "ai-automation-where-we-help",
+      data: aiAutomationWhereWeHelpData
     },
     {
       _type: "aiAutomationApproach",

@@ -10,8 +10,12 @@ export const aiAutomationHeroData: PageHeroData = {
     href: "/contactus",
   },
   image: {
-    src: "/ai-automation/hero.jpg",
+    src: "/ai-automation/hero.webp",
     alt: "AI and Automation Data Center",
+  },
+  quoteOverlay: {
+    quote: "“AI create value when it improves the way people work.”",
+    author: "OUR APPROACH"
   },
 };
 
@@ -25,7 +29,7 @@ export const aiAutomationSplitContentData: SplitContentSectionData = {
     "We help you focus on the opportunities worth pursuing, from practical automation of everyday work to AI-enabled experiences and decision support."
   ],
   image: {
-    src: "/ai-automation/ai-business-value-diagram.jpg",
+    src: "/ai-automation/ai-business-value-diagram.webp",
     alt: "AI Business Value Diagram",
   },
 };
@@ -189,6 +193,60 @@ export const aiAutomationWhyChooseData: WhyChooseSectionData = {
       description: "We work as an extension of your team, providing continuous support and guidance as your needs evolve.",
       image: "/cybersecurity/icons/SVG 6.svg",
       imageAlt: "Ongoing support illustration"
+    }
+  ]
+};
+
+export type AiAutomationWhereWeHelpData = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  cards: {
+    number: string;
+    code: string;
+    category: string;
+    title: string;
+    description: string;
+    icon: string;
+  }[];
+};
+
+export const aiAutomationWhereWeHelpData: AiAutomationWhereWeHelpData = {
+  eyebrow: "WHERE WE HELP",
+  title: "From AI opportunity to everyday value.",
+  subtitle: "We help turn promising ideas into useful, responsible solutions that work within the way your organisation operates.",
+  cards: [
+    {
+      number: "01",
+      code: "AI:01",
+      category: "OPPORTUNITY",
+      title: "Find the opportunities with real value",
+      description: "Prioritise use cases against business value, feasibility, risk and readiness.",
+      icon: "/ai-automation/icons/Icon.svg"
+    },
+    {
+      number: "02",
+      code: "AI:02",
+      category: "WORKFLOWS",
+      title: "Build into the flow of work",
+      description: "Design, develop and integrate AI and automation around how people actually work.",
+      icon: "/ai-automation/icons/Icon (1).svg"
+    },
+    {
+      number: "03",
+      code: "AI:03",
+      category: "SCALE",
+      title: "Create the condition to scale",
+      description: "Address data, integration, security, governance and oversight from the start.",
+      icon: "/ai-automation/icons/Icon (2).svg"
+    },
+    {
+      number: "04",
+      code: "AI:04",
+      category: "IMPROVEMENT",
+      title: "Keep learning and improving",
+      description: "Monitor outcomes, refine workflows and build the operating model for sustainable adoption.",
+      icon: "/ai-automation/icons/Icon (3).svg"
     }
   ]
 };

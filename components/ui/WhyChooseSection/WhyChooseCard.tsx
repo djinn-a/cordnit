@@ -16,10 +16,10 @@ export default function WhyChooseCard({ card }: WhyChooseCardProps) {
   return (
     <div className="relative flex flex-col items-center bg-surface w-full sm:w-[172px] lg:w-full lg:max-w-[380px] h-[217px] lg:h-[422px] overflow-hidden rounded-[16px] lg:rounded-[20px] shadow-sm hover:shadow-md transition-shadow duration-300 mx-auto">
       <div className="flex flex-col items-center p-[12px] lg:p-0 lg:pt-[48px] lg:px-space-24 gap-[8px] lg:gap-space-24 w-full relative z-10 h-full">
-        <h3 className="text-section-title-head-mobile lg:text-[28px] lg:leading-[1.2] font-bold text-ink text-center w-full max-w-[280px]">
+        <h3 className="text-base font-semibold lg:text-card-title lg:font-bold text-ink text-center w-full max-w-[280px]">
           {card.title}
         </h3>
-        <p className="text-[10px] lg:text-[18px] lg:leading-[1.5] text-[#555555] text-center w-full">
+        <p className="text-card-desc-mobile lg:text-section-subtitle text-[#555555] text-center w-full">
           {card.description}
         </p>
       </div>
