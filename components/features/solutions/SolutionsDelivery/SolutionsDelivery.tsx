@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils/cn";
 
 const SolutionsDelivery: FC = () => {
   return (
-    <Section spacing="none" className="pt-space-80 pb-space-80 px-4 sm:px-6 lg:px-space-60">
+    <Section spacing="none">
       <Container className="!px-0">
         {/* Main Card */}
         <div className="bg-brand-pale rounded-4xl p-6 sm:p-10 lg:p-16 flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-20">

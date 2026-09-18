@@ -6,7 +6,7 @@ import { combinationData } from "./solutionsCombinationData";
 
 const SolutionsCombination: FC = () => {
   return (
-    <Section spacing="none" className="pt-space-0 pb-space-80 px-4 sm:px-6 lg:px-space-60">
+    <Section spacing="none">
       <Container className="!px-0">
         <h2 className="text-section-title-mobile sm:text-section-title text-ink mb-8 sm:mb-12">
           {combinationData.heading}

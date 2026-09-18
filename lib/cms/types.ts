@@ -35,7 +35,7 @@ export type SectionType =
   | "aiAutomationApproach"
   | "aiAutomationSpecialists"
   | "aiAutomationWhyChoose"
-  | "aiAutomationWhereWeHelp";
+  | "aiAutomationWhereWeHelp"
   | "solutionsHero"
   | "solutionsCapabilities"
   | "solutionsDelivery"

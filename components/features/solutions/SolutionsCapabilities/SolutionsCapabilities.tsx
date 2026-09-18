@@ -12,7 +12,7 @@ export default function SolutionsCapabilities({
   title = "Find the capability you need",
 }: SolutionsCapabilitiesProps = {}) {
   return (
-    <Section spacing="none" className="pt-space-80 pb-space-0 px-4 sm:px-6 lg:px-space-60">
+    <Section spacing="none">
       <Container className="!px-0">
         <div className="mb-8 md:mb-12">
           <SectionHeader
