@@ -18,16 +18,16 @@ export default function CapabilityCard({
   index,
 }: CapabilityCardProps) {
   const isDesktopBlue = capability.theme === "blue";
-  // Create a checkerboard pattern (Blue, Black, Black, Blue, Blue, Black, Black) for a 2-column mobile grid
+
   const isMobileBlue = [0, 3, 4, 7].includes(index);
-  
+
   const mobileBg = isMobileBlue ? "bg-primary" : "bg-surface-dark";
   const desktopBg = isDesktopBlue ? "lg:bg-primary" : "lg:bg-surface-dark";
 
   return (
     <div
       className={cn(
-        "relative flex flex-col justify-between w-full h-full min-h-44 sm:min-h-56 lg:min-h-80 rounded-[8px] lg:rounded-card p-4 sm:p-6 lg:p-8 overflow-hidden text-white",
+        "relative flex flex-col justify-between w-full h-full min-h-44 sm:min-h-56 lg:min-h-72 rounded-lg p-4 sm:p-6 lg:p-8 overflow-hidden text-white",
         mobileBg,
         desktopBg,
         className
@@ -55,21 +55,21 @@ export default function CapabilityCard({
 
       {/* Button Cutout Area */}
       {/* The main white cutout wrapper */}
-      <div className="absolute bottom-0 left-0 z-10 bg-surface rounded-tr-[8px] rounded-bl-[8px] lg:rounded-tr-3xl lg:rounded-bl-[var(--radius-card)] p-2 lg:pr-3 lg:pt-3 shadow-[0_0_0_1px_#ffffff]">
+      <div className="absolute bottom-0 left-0 z-10 bg-surface rounded-tr-lg rounded-bl-lg p-2 shadow-[0_0_0_1px_#ffffff]">
         {/* Inner curve top-left */}
-        <div className="absolute bottom-full left-0 w-2 h-2 lg:w-5 lg:h-5 pointer-events-none bg-[radial-gradient(circle_at_top_right,transparent_8px,var(--color-surface)_0)] lg:bg-cutout-curve" />
+        <div className="absolute bottom-full left-0 w-2 h-2 pointer-events-none bg-[radial-gradient(circle_at_top_right,transparent_8px,var(--color-surface)_0)]" />
 
         {/* Inner curve bottom-right */}
-        <div className="absolute bottom-0 left-full w-2 h-2 lg:w-5 lg:h-5 pointer-events-none bg-[radial-gradient(circle_at_top_right,transparent_8px,var(--color-surface)_0)] lg:bg-cutout-curve" />
+        <div className="absolute bottom-0 left-full w-2 h-2 pointer-events-none bg-[radial-gradient(circle_at_top_right,transparent_8px,var(--color-surface)_0)]" />
 
         <Link
           href={capability.href}
           className={cn(
-            "whitespace-nowrap inline-flex items-center justify-center font-bold transition-transform hover:scale-105 text-white",
+            "whitespace-nowrap inline-flex items-center justify-center transition-transform hover:scale-105 text-white",
             // Mobile specific styles from Figma
             "px-1.5 py-1 gap-1 rounded-[4px] text-link-card-mobile",
             // Desktop specific styles
-            "lg:px-4 lg:py-2 lg:gap-2 lg:rounded-xl lg:border-none lg:text-link-desktop",
+            "lg:px-4 lg:py-2 lg:gap-2  lg:border-none lg:text-link-mobile",
             mobileBg,
             desktopBg
           )}

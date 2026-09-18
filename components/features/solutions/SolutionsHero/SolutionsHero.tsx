@@ -20,8 +20,9 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
           <h4 className="text-hero-eyebrow mb-4 lg:mb-6">
             {content.eyebrow}
           </h4>
-          <h1 className="text-hero-display mb-4 lg:mb-6 max-w-lg font-extrabold">
-            {content.titleDesktop}
+          <h1 className="mb-4 lg:mb-6 max-w-lg font-extrabold">
+            <span className="block lg:hidden text-section-title-mobile sm:text-card-title">{content.titleMobile}</span>
+            <span className="hidden lg:block text-hero-display">{content.titleDesktop}</span>
           </h1>
           <p className="text-ink-muted text-section-subtitle-mobile sm:text-section-subtitle mb-8 lg:mb-10 max-w-lg">
             {content.body}

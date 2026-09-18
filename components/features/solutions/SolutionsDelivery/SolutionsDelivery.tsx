@@ -14,7 +14,7 @@ const SolutionsDelivery: FC = () => {
           
           {/* Left Side: Text */}
           <div className="flex flex-col justify-center gap-6 lg:gap-8">
-            <h2 className="text-section-title-mobile lg:text-section-title text-ink">
+            <h2 className="text-card-title-mobile lg:text-section-title text-ink">
               {deliveryData.heading}
             </h2>
             <div className="flex flex-col gap-4 lg:gap-6">
@@ -37,13 +37,13 @@ const SolutionsDelivery: FC = () => {
                 className="object-cover"
               />
               <div className="hidden sm:flex absolute inset-0 p-4 sm:p-10 flex-col justify-center text-white w-full sm:w-3/4 pr-16 sm:pr-10">
-                <span className="text-[10px] sm:text-about-eyebrow-desktop text-[#FF7A00] uppercase tracking-widest mb-1 sm:mb-4">
+                <span className="text-[10px] sm:text-eyebrow-desktop text-[#FF7A00] uppercase tracking-widest mb-1 sm:mb-4">
                   {deliveryData.mainImageEyebrow}
                 </span>
                 <h3 className="text-[18px] leading-tight sm:text-card-title mb-2 sm:mb-6 font-bold">
                   {deliveryData.mainImageTitle}
                 </h3>
-                <div className="text-[11px] leading-snug sm:text-card-desc text-white max-w-[85%] sm:max-w-sm">
+                <div className="text-[11px] leading-snug sm:text-link-mobile text-white max-w-[85%] sm:max-w-sm">
                   {deliveryData.mainImageDesc.split(". ").map((line, i) => (
                     <span key={i} className="block">{line}{i !== deliveryData.mainImageDesc.split(". ").length - 1 ? "." : ""}</span>
                   ))}
@@ -62,7 +62,7 @@ const SolutionsDelivery: FC = () => {
                 />
                 <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="hidden sm:block absolute bottom-0 left-0 p-2 sm:p-6 text-white max-w-[90%] sm:max-w-[80%]">
-                  <span className="text-[11px] sm:text-card-desc leading-tight block">
+                  <span className="text-[11px] sm:text-link-mobile leading-tight block">
                     {deliveryData.bottomLeftText.split(" ").map((word, i, arr) => (
                       <span key={i}>{word}{i === 0 ? <br /> : " "}</span>
                     ))}
@@ -78,7 +78,7 @@ const SolutionsDelivery: FC = () => {
                 />
                 <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="hidden sm:block absolute bottom-0 left-0 p-2 sm:p-6 text-white max-w-[90%] sm:max-w-[80%]">
-                  <span className="text-[11px] sm:text-card-desc leading-tight block">
+                  <span className="text-[11px] sm:text-link-mobile leading-tight block">
                     {deliveryData.bottomRightText.split(" ").map((word, i, arr) => (
                       <span key={i}>{word}{i === 0 ? <br /> : " "}</span>
                     ))}
@@ -95,7 +95,7 @@ const SolutionsDelivery: FC = () => {
                     <Image src={stat.iconPath} alt="" fill className="object-contain" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[14px] sm:text-section-title-head text-primary font-bold leading-tight">{stat.value}</span>
+                    <span className="text-[14px] sm:text-section-title-head text-primary leading-tight">{stat.value}</span>
                     <span className="text-[9px] sm:text-card-desc text-ink-muted leading-tight">{stat.label}</span>
                   </div>
                 </div>

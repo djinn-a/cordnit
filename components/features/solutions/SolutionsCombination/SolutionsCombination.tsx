@@ -8,7 +8,7 @@ const SolutionsCombination: FC = () => {
   return (
     <Section spacing="none" className="pt-space-0 pb-space-80 px-4 sm:px-6 lg:px-space-60">
       <Container className="!px-0">
-        <h2 className="text-section-title-mobile sm:text-section-title text-ink font-bold mb-8 sm:mb-12">
+        <h2 className="text-section-title-mobile sm:text-section-title text-ink mb-8 sm:mb-12">
           {combinationData.heading}
         </h2>
 
@@ -22,7 +22,7 @@ const SolutionsCombination: FC = () => {
                 <div className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold text-lg">
                   {card.number}
                 </div>
-                <h3 className="text-section-title-head-mobile sm:text-section-title-head text-primary font-bold">
+                <h3 className="text-[16px] font-semibold sm:text-section-title-head text-primary">
                   {card.title}
                 </h3>
               </div>

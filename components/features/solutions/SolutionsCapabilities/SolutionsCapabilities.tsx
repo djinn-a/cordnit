@@ -18,7 +18,7 @@ export default function SolutionsCapabilities({
           <SectionHeader
             title={title}
             titleAs="h2"
-            titleClassName="text-mobile-heading-1-eb font-extrabold sm:text-section-title"
+            titleClassName="text-card-title-mobile font-extrabold sm:text-section-title"
           />
         </div>
 
