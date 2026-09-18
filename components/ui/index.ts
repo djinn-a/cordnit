@@ -14,3 +14,4 @@ export * from "./CredentialsSection";
 export * from "./ProcessSection";
 export * from "./SplitActionCardsSection";
 export * from "./WhyChooseSection";
+export * from "./Breadcrumb";

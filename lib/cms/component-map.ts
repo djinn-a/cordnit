@@ -17,6 +17,10 @@ import { CybersecurityHero } from "@/components/features/cybersecurity/Cybersecu
 import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
 import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection } from "@/components/ui";
 
+import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
+import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
+import SolutionsDelivery from "@/components/features/solutions/SolutionsDelivery/SolutionsDelivery";
+import SolutionsCombination from "@/components/features/solutions/SolutionsCombination/SolutionsCombination";
 /**
  * Maps CMS / page-document `_type` values to presentational section components.
  * Add a new section type here when introducing a new block — never hard-wire in page.tsx.
@@ -72,4 +76,8 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   aiAutomationSpecialists: AiAutomationSpecialists as SectionComponent,
   aiAutomationWhyChoose: AiAutomationWhyChoose as SectionComponent,
   aiAutomationWhereWeHelp: AiAutomationWhereWeHelp as SectionComponent,
+  solutionsHero: SolutionsHero as SectionComponent,
+  solutionsCapabilities: SolutionsCapabilities as SectionComponent,
+  solutionsDelivery: SolutionsDelivery as SectionComponent,
+  solutionsCombination: SolutionsCombination as SectionComponent,
 };

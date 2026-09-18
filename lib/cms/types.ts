@@ -36,6 +36,10 @@ export type SectionType =
   | "aiAutomationSpecialists"
   | "aiAutomationWhyChoose"
   | "aiAutomationWhereWeHelp";
+  | "solutionsHero"
+  | "solutionsCapabilities"
+  | "solutionsDelivery"
+  | "solutionsCombination";
 
 export type LayoutType = "default" | "contact";
 
