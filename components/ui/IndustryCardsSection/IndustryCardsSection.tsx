@@ -55,7 +55,7 @@ export default function IndustryCardsSection({
             return (
               <IndustryCard
                 key={card.id}
-                icon={<IconComponent size={32} className="text-primary" />}
+                icon={<IconComponent className="w-4 h-4 md:w-10 md:h-10 text-primary" />}
                 title={card.title}
                 description={card.description}
                 ctaLabel={card.ctaLabel}

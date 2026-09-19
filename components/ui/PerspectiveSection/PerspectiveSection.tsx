@@ -16,7 +16,7 @@ export default function PerspectiveSection({
   return (
     <section className={`w-full ${className || ""}`}>
       <Container>
-        <div className="w-full h-auto p-6 md:p-12 md:h-83.25 bg-grad-3 border border-border-card md:border-primary/20 rounded-[20px] md:rounded-4xl shadow-sm md:shadow-none">
+        <div className="w-full h-auto p-6 md:p-12 md:h-83.25 bg-grad-3 border border-border-card rounded-[20px] md:rounded-4xl shadow-sm md:shadow-none">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 h-auto md:h-full">
           {/* Left Content */}
           <div className="w-full md:flex-[0_1_692px] flex flex-col justify-center">
@@ -31,7 +31,7 @@ export default function PerspectiveSection({
             </h2>
             
             {/* Mobile Divider */}
-            <div className="w-35 h-px bg-primary/30 md:hidden shrink-0 mb-4"></div>
+            <div className="w-35 h-px bg-border-card md:hidden shrink-0 mb-4"></div>
 
             <p className="text-section-subtitle-mobile leading-5.5 md:text-section-subtitle md:leading-7 text-ink-muted w-full md:w-156.75">
               {description}

@@ -9,7 +9,7 @@ export default function ContextApproachSection({
   return (
     <section className="w-full pt-6 md:pt-space-80">
       <Container>
-        <div className="w-full h-auto p-6 md:py-12 md:px-15 bg-grad-3 border border-primary/20 rounded-[17px] md:rounded-4xl">
+        <div className="w-full h-auto p-6 md:py-12 md:px-15 bg-grad-3 border border-border-card rounded-[17px] md:rounded-4xl">
           <div className="flex flex-col md:flex-row w-full md:w-305.75 max-w-full items-start md:items-center gap-3 md:gap-6 shrink-0 mx-auto">
             {/* Left Content */}
             <div className="w-full md:flex-[0_1_541px] flex flex-col gap-2 md:gap-4">
@@ -22,7 +22,7 @@ export default function ContextApproachSection({
             </div>
 
             {/* Divider */}
-            <div className="w-35 h-px md:h-30 md:w-px bg-primary/30 md:bg-border-subtle shrink-0"></div>
+            <div className="w-35 h-px md:h-30 md:w-px bg-border-card shrink-0"></div>
 
             {/* Right Content */}
             <div className="w-full md:flex-[0_1_634px]">

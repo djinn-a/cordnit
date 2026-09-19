@@ -21,7 +21,7 @@ export default function ContentInsights({
         )}
 
         {/* Featured Card */}
-        <div className="w-full flex flex-col md:flex-row md:items-center bg-grad-3 border border-border-card md:border-primary/20 rounded-[20px] md:rounded-4xl p-6 md:py-10 md:px-15 gap-6 md:gap-8 lg:gap-36.5 mb-8 shadow-card md:shadow-none">
+        <div className="w-full flex flex-col md:flex-row md:items-center bg-grad-3 border border-border-card rounded-[20px] md:rounded-4xl p-6 md:py-10 md:px-15 gap-6 md:gap-8 lg:gap-36.5 mb-8 shadow-card md:shadow-none">
           
           {/* Left Media (Order 2 on Mobile) */}
           <div className="relative w-full aspect-16/10 md:w-1/2 lg:w-[486.462px] md:h-auto lg:h-70 lg:shrink-0 overflow-hidden rounded-[7.6px] md:rounded-xl order-last md:order-0 bg-primary">
