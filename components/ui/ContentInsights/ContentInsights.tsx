@@ -3,7 +3,6 @@ import Image from "next/image";
 import type { ContentInsightsProps } from "./ContentInsights.types";
 import ContentInsightsInteractive from "./ContentInsightsInteractive";
 import Container from "../Container/Container";
-import NewsletterSection from "../NewsletterSection/NewsletterSection";
 
 export default function ContentInsights({
   eyebrow,
@@ -81,8 +80,6 @@ export default function ContentInsights({
           />
         )}
 
-        {/* Newsletter Section */}
-        <NewsletterSection />
       </Container>
     </section>
   );

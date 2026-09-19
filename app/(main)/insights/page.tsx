@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import LayoutRenderer from "@/components/renderers/LayoutRenderer";
 import { getPage } from "@/lib/cms/get-page";
 import CtaSection from "@/components/features/home/CtaSection/CtaSection";
+import NewsletterSection from "@/components/ui/NewsletterSection/NewsletterSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getPage("insights");
@@ -19,6 +20,7 @@ export default async function InsightsPage() {
   return (
     <>
       <LayoutRenderer layout={page.layout} sections={page.sections} />
+      <NewsletterSection />
       <CtaSection />
     </>
   );

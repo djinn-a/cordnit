@@ -2,12 +2,14 @@
 
 import { Mail } from "lucide-react";
 import Button from "@/components/ui/Button/Button";
+import Container from "@/components/ui/Container/Container";
 
 export default function NewsletterSection() {
   return (
-    <div className="w-full mt-12 md:mt-16">
-      <div className="w-full bg-primary-pale border border-primary-border rounded-2xl p-5 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
-        {/* Left Side */}
+    <section className="w-full mt-12 md:mt-16 mb-12 md:mb-20">
+      <Container>
+        <div className="w-full bg-primary-pale md:bg-[#EEF4FF] border border-primary-border md:border-[#DCE6F5] rounded-2xl p-5 md:py-10 md:px-[60px] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+          {/* Left Side */}
         <div className="flex items-center gap-4 md:gap-8 w-full md:w-1/2">
           <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 bg-white border border-primary-border shadow-sm rounded-full flex items-center justify-center">
             <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary" />
@@ -51,7 +53,8 @@ export default function NewsletterSection() {
             </label>
           </div>
         </div>
-      </div>
-    </div>
+        </div>
+      </Container>
+    </section>
   );
 }

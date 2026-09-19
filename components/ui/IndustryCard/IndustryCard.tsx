@@ -10,7 +10,7 @@ export default function IndustryCard({
   ctaLink,
 }: Readonly<IndustryCardProps>) {
   return (
-    <div className="flex flex-col p-4 md:py-8 md:px-15 bg-grad-3 border border-border-card rounded-lg backdrop-blur-[20px]">
+    <div className="flex flex-col p-4 md:p-8 bg-grad-3 border border-border-card rounded-lg backdrop-blur-[20px]">
       <div className="flex flex-col gap-3">
         {icon}
         <h3 className="text-[14px] font-bold leading-5.5 md:text-2xl md:font-semibold md:leading-8 text-ink">{title}</h3>
