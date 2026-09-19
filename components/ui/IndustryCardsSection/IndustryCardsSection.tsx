@@ -46,8 +46,8 @@ export default function IndustryCardsSection({
   };
 
   return (
-    <Section background="white" spacing="none" className="py-20 md:px-15">
-      <Container>
+    <Section background="white" spacing="none" className="py-20">
+      <Container width="narrow" className="max-w-310">
         {renderHeader()}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card) => {

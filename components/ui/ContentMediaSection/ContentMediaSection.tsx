@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container/Container";
 import Button from "@/components/ui/Button/Button";
+import { ArrowRight } from "lucide-react";
 import { ContentMediaSectionProps } from "./ContentMediaSection.types";
 
 export default function ContentMediaSection({
@@ -37,8 +38,8 @@ export default function ContentMediaSection({
                 <Link href={cta.href}>
                   <Button 
                     variant="primary" 
-                    className="w-[260px] md:w-cta-button h-11 md:h-12 rounded-lg px-6 py-3 justify-between text-sm md:text-button"
-                    rightIcon={<Image src="/images/content-media/arrow.svg" alt="" width={9} height={9} className="ml-auto" />}
+                    className="w-fit h-12 rounded-lg px-6 py-3 text-[16px] font-semibold leading-[24px]"
+                    rightIcon={<ArrowRight size={16} />}
                   >
                     {cta.label}
                   </Button>

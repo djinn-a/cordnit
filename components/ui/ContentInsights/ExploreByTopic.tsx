@@ -19,7 +19,7 @@ export default function ExploreByTopic({
             className={
               topic.isActive
                 ? "shrink-0 px-3 md:px-5 py-2 bg-primary text-white rounded-3xl text-link-card-mobile md:text-[14px] md:font-semibold md:leading-5 shadow-sm md:shadow-none transition-colors"
-                : "shrink-0 px-3.25 md:px-5.25 py-2.25 md:py-2.25 bg-surface text-ink-muted border border-border-card rounded-3xl text-link-card-mobile md:text-[14px] md:font-semibold md:leading-5 hover:bg-surface-dark transition-colors"
+                : "shrink-0 px-3.25 md:px-5.25 py-2.25 md:py-2.25 bg-surface text-ink-muted border border-border-card rounded-3xl text-link-card-mobile md:text-[14px] md:font-semibold md:leading-5 hover:border-primary hover:text-primary transition-colors"
             }
           >
             {topic.label}

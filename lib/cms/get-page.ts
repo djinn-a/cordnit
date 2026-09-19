@@ -4,6 +4,7 @@ import { aboutPage } from "@/data/pages/about";
 import { contactPage } from "@/data/pages/contact";
 import { industriesPage } from "@/data/pages/industries";
 import { acceleratorsPage } from "@/data/pages/accelerators";
+import { insightsPage } from "@/data/pages/insights";
 
 const pages: Record<string, PageDocument> = {
   home: homePage,
@@ -11,6 +12,7 @@ const pages: Record<string, PageDocument> = {
   contactus: contactPage,
   industries: industriesPage,
   accelerators: acceleratorsPage,
+  insights: insightsPage,
 };
 
 /**

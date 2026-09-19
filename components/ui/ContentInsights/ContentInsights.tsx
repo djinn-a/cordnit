@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { ContentInsightsProps } from "./ContentInsights.types";
 import ContentInsightsInteractive from "./ContentInsightsInteractive";
 import Container from "../Container/Container";
+import NewsletterSection from "../NewsletterSection/NewsletterSection";
 
 export default function ContentInsights({
   eyebrow,
@@ -36,7 +37,7 @@ export default function ContentInsights({
           </div>
 
           {/* Right Content Column */}
-          <div className="flex-1 w-full lg:max-w-129.75 h-auto lg:h-75.5 flex flex-col md:justify-center lg:justify-between items-start py-0 md:py-6 lg:py-9.75">
+          <div className="flex-1 w-full lg:max-w-[599px] h-auto lg:h-[302px] flex flex-col justify-center items-start py-0 md:py-6 lg:p-[40px]">
             {/* Metadata */}
             <div className="flex items-center gap-2 md:gap-3 mb-1.5 md:mb-0">
               {featured.articleLabel && (
@@ -79,6 +80,9 @@ export default function ContentInsights({
             insightCards={insightCards} 
           />
         )}
+
+        {/* Newsletter Section */}
+        <NewsletterSection />
       </Container>
     </section>
   );

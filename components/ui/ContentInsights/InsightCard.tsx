@@ -12,9 +12,9 @@ export default function InsightCard({
   cta,
 }: Readonly<InsightCardData>) {
   return (
-    <div className="flex flex-col items-start self-stretch gap-4 md:gap-6 p-4 md:p-6 bg-surface border border-border-card rounded-xl transition-shadow hover:shadow-card group h-auto">
+    <div className="flex flex-col self-stretch bg-surface border border-border-card rounded-xl overflow-hidden transition-shadow hover:shadow-card group h-auto">
       {/* Image */}
-      <div className="relative w-full h-23.25 md:h-auto aspect-162/93 md:aspect-16/10 overflow-hidden rounded-md shrink-0">
+      <div className="relative w-full h-23.25 md:h-auto aspect-162/93 md:aspect-16/10 shrink-0 overflow-hidden">
         <Image
           src={image.src}
           alt={image.alt}
@@ -24,7 +24,7 @@ export default function InsightCard({
       </div>
 
       {/* Content Container */}
-      <div className="flex flex-col flex-1 justify-between w-full">
+      <div className="flex flex-col flex-1 justify-between w-full p-4 md:p-6">
         
         {/* Top Content (Meta, Title, Desc) */}
         <div className="flex flex-col">
