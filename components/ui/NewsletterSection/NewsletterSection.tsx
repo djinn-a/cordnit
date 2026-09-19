@@ -8,7 +8,7 @@ export default function NewsletterSection() {
   return (
     <section className="w-full mt-12 md:mt-16 mb-12 md:mb-20">
       <Container>
-        <div className="w-full bg-primary-pale md:bg-[#EEF4FF] border border-primary-border md:border-[#DCE6F5] rounded-2xl p-5 md:py-10 md:px-[60px] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+        <div className="w-full bg-[#EEF4FF] border border-[#DCE6F5] rounded-2xl p-5 md:py-10 md:px-[60px] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
           {/* Left Side */}
         <div className="flex items-center gap-4 md:gap-8 w-full md:w-1/2">
           <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 bg-white border border-primary-border shadow-sm rounded-full flex items-center justify-center">
