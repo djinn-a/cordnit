@@ -33,7 +33,7 @@ export default function PerspectiveSection({
             {/* Mobile Divider */}
             <div className="w-35 h-px bg-primary/30 md:hidden shrink-0 mb-4"></div>
 
-            <p className="text-section-subtitle-mobile leading-5.5 md:text-section-subtitle text-ink-muted w-full md:w-156.75">
+            <p className="text-section-subtitle-mobile leading-5.5 md:text-section-subtitle md:leading-7 text-ink-muted w-full md:w-156.75">
               {description}
             </p>
 
