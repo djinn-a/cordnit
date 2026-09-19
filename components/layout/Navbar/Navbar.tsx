@@ -222,7 +222,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <button
               onClick={openModal}
-              className="flex items-center px-6 py-2 border border-white rounded-lg opacity-80 hover:opacity-100 hover:bg-white/10 text-white font-semibold text-sm transition-all"
+              className="flex items-center px-6 py-2 border border-white rounded-lg opacity-80 hover:opacity-100 hover:bg-white/10 text-white font-semibold text-sm transition-all cursor-pointer"
             >
               {navbarContent.getInTouchLabel} <ArrowRight className="ml-2 h-4 w-4" />
             </button>
@@ -258,7 +258,7 @@ export default function Navbar() {
                   setIsMobileMenuOpen(false);
                   openModal();
                 }}
-                className="inline-flex items-center justify-center px-6 py-3 border border-white/80 rounded-md text-white font-medium hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 border border-white/80 rounded-md text-white font-medium hover:bg-white/10 transition-colors cursor-pointer"
               >
                 {navbarContent.getInTouchLabel} <ArrowRight className="ml-3 h-4 w-4" />
               </button>
