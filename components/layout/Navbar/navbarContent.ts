@@ -86,7 +86,7 @@ export const navbarContent: NavbarContent = {
       icon: Briefcase,
       iconColor: 'text-indigo-400',
       iconBg: 'bg-white/5',
-      slug: 'salesforce-solutions',
+      slug: 'salesforce',
     }
   ],
   megaMenu: {

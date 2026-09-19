@@ -18,12 +18,12 @@ export default function CredentialsSectionCertification({
 }: CredentialsSectionCertificationProps) {
   return (
     <div 
-      className="flex justify-center items-center flex-shrink-0"
+      className="flex justify-center items-center flex-shrink-0 w-[148.949px] h-[98.655px] lg:w-[var(--desktop-width)] lg:h-[var(--desktop-height)]"
       style={{ 
-        width: certification.width ? `${certification.width}px` : 'auto',
-        height: certification.height ? `${certification.height}px` : '80px',
+        '--desktop-width': certification.width ? `${certification.width}px` : 'auto',
+        '--desktop-height': certification.height ? `${certification.height}px` : '80px',
         aspectRatio: certification.aspectRatio
-      }}
+      } as React.CSSProperties}
     >
       <Image
         src={certification.src}

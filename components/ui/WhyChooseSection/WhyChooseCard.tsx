@@ -15,8 +15,8 @@ export type WhyChooseCardProps = {
 export default function WhyChooseCard({ card }: WhyChooseCardProps) {
   return (
     <div className="relative flex flex-col items-center bg-surface w-full sm:w-[172px] lg:w-full lg:max-w-[380px] h-[217px] lg:h-[422px] overflow-hidden rounded-[16px] lg:rounded-[20px] shadow-sm hover:shadow-md transition-shadow duration-300 mx-auto">
-      <div className="flex flex-col items-center p-[12px] lg:p-0 lg:pt-[48px] lg:px-space-24 gap-[8px] lg:gap-space-24 w-full relative z-10 h-full">
-        <h3 className="text-base font-semibold lg:text-card-title lg:font-bold text-ink text-center w-full max-w-[280px]">
+      <div className="flex flex-col items-center px-[8px] py-[12px] sm:p-[12px] lg:p-0 lg:pt-[48px] lg:px-space-24 gap-[8px] lg:gap-space-24 w-full relative z-10 h-full">
+        <h3 className="text-base tracking-tight sm:tracking-normal font-semibold lg:text-card-title lg:font-bold text-ink text-center w-full max-w-[280px]">
           {card.title}
         </h3>
         <p className="text-card-desc-mobile lg:text-section-subtitle text-[#555555] text-center w-full">

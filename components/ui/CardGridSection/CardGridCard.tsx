@@ -22,7 +22,7 @@ export default function CardGridCard({ card }: CardGridCardProps) {
     <Link
       href={card.href}
       className={cn(
-        "group relative flex flex-col h-[190px] lg:h-full w-full max-w-[286px] rounded-card-grid border px-space-16 pb-space-16 pt-space-20 lg:px-space-24 lg:pt-[31px] lg:pb-[31px] transition-all duration-300 mx-auto",
+        "group relative flex flex-col min-h-[190px] h-full w-full max-w-[286px] rounded-card-grid border p-[16px] transition-all duration-300 mx-auto",
         "bg-surface border-border-card",
         "hover:bg-primary-pale hover:border-transparent hover:shadow-card-active"
       )}

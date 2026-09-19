@@ -16,7 +16,7 @@ export type ActionCardProps = {
 
 export default function ActionCard({ card }: ActionCardProps) {
   return (
-    <div className="flex flex-row items-center gap-[12px] sm:gap-[20px] px-[12px] pb-[12px] pt-space-20 sm:p-[16px] w-full sm:h-[180px] bg-[#E9EFFF] rounded-[13px] border border-white overflow-hidden">
+    <div className="flex flex-row items-center gap-[12px] sm:gap-[20px] p-[16px] w-full sm:h-[180px] bg-[#E9EFFF] rounded-[13px] border border-white overflow-hidden">
       {/* Image Container */}
       <div className="w-[84px] h-[84px] sm:w-[220px] sm:h-[148px] relative rounded-[12px] overflow-hidden flex-shrink-0">
         <Image

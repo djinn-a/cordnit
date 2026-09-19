@@ -40,6 +40,7 @@ import { AiAutomationApproach } from "@/components/features/ai-automation/AiAuto
 import { AiAutomationSpecialists } from "@/components/features/ai-automation/AiAutomationSpecialists";
 import { AiAutomationWhyChoose } from "@/components/features/ai-automation/AiAutomationWhyChoose";
 import { AiAutomationWhereWeHelp } from "@/components/features/ai-automation/AiAutomationWhereWeHelp";
+import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -80,4 +81,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   solutionsCapabilities: SolutionsCapabilities as SectionComponent,
   solutionsDelivery: SolutionsDelivery as SectionComponent,
   solutionsCombination: SolutionsCombination as SectionComponent,
+  cloudInfrastructureHero: CloudInfrastructureHero as SectionComponent,
 };
