@@ -10,22 +10,24 @@ export interface ExploreByTopicProps {
   onSelectTopic?: (id: string) => void;
 }
 
+export interface FeaturedInsightProps {
+  image: {
+    src: string;
+    alt: string;
+  };
+  articleLabel?: string;
+  category?: string;
+  title: string;
+  description: string;
+  cta?: {
+    label: string;
+    href: string;
+  };
+}
+
 export interface ContentInsightsProps {
   eyebrow?: string;
-  featured: {
-    image: {
-      src: string;
-      alt: string;
-    };
-    articleLabel?: string;
-    category?: string;
-    title: string;
-    description: string;
-    cta?: {
-      label: string;
-      href: string;
-    };
-  };
+  featured: FeaturedInsightProps;
   exploreByTopic?: ExploreByTopicProps;
   insightCards?: InsightCardData[];
 }

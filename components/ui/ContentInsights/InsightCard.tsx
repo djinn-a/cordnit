@@ -39,12 +39,12 @@ export default function InsightCard({
           </div>
 
           {/* Title */}
-          <h4 className="text-[14px] leading-5.5 md:text-[16px] md:leading-6 font-bold text-ink mb-2 md:mb-3">
+          <h4 className="text-insight-title-mobile md:text-insight-title-desktop text-ink mb-2 md:mb-3">
             {title}
           </h4>
 
           {/* Description */}
-          <p className="text-[10px] leading-3.5 md:text-[14px] md:leading-5 font-normal text-ink-muted line-clamp-2">
+          <p className="text-insight-desc-mobile md:text-insight-desc-desktop text-ink-muted line-clamp-2">
             {description}
           </p>
         </div>
@@ -52,14 +52,14 @@ export default function InsightCard({
         {/* Bottom Content (Date, CTA) */}
         <div className="flex flex-col gap-3 md:gap-4 mt-3 md:mt-4">
           {/* Date Info */}
-          <span className="text-[10px] leading-3.5 tracking-[0.6px] font-normal md:text-[12px] md:font-semibold md:leading-4.5 md:tracking-normal text-ink-muted">
+          <span className="text-insight-date-mobile md:text-insight-date-desktop md:tracking-normal text-ink-muted">
             {dateInfo}
           </span>
           
           {/* CTA Link */}
           <Link
             href={cta.href}
-            className="flex items-center gap-1 md:gap-1.5 text-[10px] leading-3.5 font-semibold md:text-[14px] md:leading-5 text-primary hover:text-primary-hover transition-colors w-fit"
+            className="flex items-center gap-1 md:gap-1.5 text-insight-cta-mobile md:text-insight-cta-desktop text-primary hover:text-primary-hover transition-colors w-fit"
           >
             {cta.label}
             <ArrowRight className="w-3 h-3 md:w-3.5 md:h-3.5" />
