@@ -16,7 +16,7 @@ export default function CapabilityCard({
   capability,
   className,
   index,
-}: CapabilityCardProps) {
+}: Readonly<CapabilityCardProps>) {
   const isDesktopBlue = capability.theme === "blue";
 
   const isMobileBlue = [0, 3, 4, 7].includes(index);
