@@ -10,6 +10,7 @@ import MegaMenu from './MegaMenu';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [activeDesktopMenu, setActiveDesktopMenu] = useState<string | null>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { openModal } = useContactModal();
@@ -130,18 +131,58 @@ export default function Navbar() {
             }`}
         >
           <div className="px-6 py-6 pb-10 flex flex-col">
-            {navbarContent.navLinks.map((link) => (
-              <div key={link.label} className="border-b border-white/20">
-                <Link
-                  href={link.href}
-                  className="flex items-center justify-between py-4 text-white hover:text-white/80 font-medium text-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                  {link.label === 'Solutions' && <ChevronDown className="h-4 w-4" />}
-                </Link>
-              </div>
-            ))}
+            {navbarContent.navLinks.map((link) => {
+              if (link.label === 'Solutions') {
+                return (
+                  <div key={link.label} className="border-b border-white/20 flex flex-col">
+                    <button
+                      className="flex items-center justify-between py-4 text-white hover:text-white/80 font-medium text-lg transition-colors w-full text-left"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsMobileSolutionsOpen(!isMobileSolutionsOpen);
+                      }}
+                    >
+                      {link.label}
+                      <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {/* Expandable sub-menu */}
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileSolutionsOpen ? 'max-h-[500px] opacity-100 mb-4' : 'max-h-0 opacity-0'}`}>
+                      <div className="flex flex-col gap-4 pl-4 pt-2">
+                        {navbarContent.solutionsDropdown.map((solution) => (
+                          <Link
+                            key={solution.slug}
+                            href={`/${solution.slug}`}
+                            className="text-white/90 hover:text-white font-medium text-base transition-colors"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {solution.title}
+                          </Link>
+                        ))}
+                        <Link
+                          href={navbarContent.megaMenu.exploreAllHref}
+                          className="text-white font-bold text-base flex items-center mt-2 hover:opacity-80 transition-opacity"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {navbarContent.megaMenu.exploreAllLabel} <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <div key={link.label} className="border-b border-white/20">
+                  <Link
+                    href={link.href}
+                    className="flex items-center justify-between py-4 text-white hover:text-white/80 font-medium text-lg transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </div>
+              );
+            })}
 
             <div className="pt-8">
               <button

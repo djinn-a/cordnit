@@ -65,7 +65,7 @@ export default function CapabilityCard({
         <Link
           href={capability.href}
           className={cn(
-            "whitespace-nowrap inline-flex items-center justify-center transition-transform hover:scale-105 text-white",
+            "whitespace-nowrap inline-flex items-center justify-center transition-opacity hover:opacity-80 text-white",
             // Mobile specific styles from Figma
             "px-1.5 py-1 gap-1 rounded-[4px] text-link-card-mobile",
             // Desktop specific styles
