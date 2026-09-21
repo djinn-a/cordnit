@@ -19,7 +19,7 @@ export default function ContentMediaImages({
       
       {/* Secondary Image */}
       {secondaryImage && (
-        <div className="absolute left-[11px] bottom-[10px] w-[153px] h-[143px] rounded-[13px] border-[2px] md:left-0 md:bottom-0 md:w-[43%] md:h-auto md:aspect-[256/240] lg:w-[256px] lg:h-60 lg:aspect-auto md:rounded-[21px] md:border-[3.5px] border-surface overflow-hidden shadow-card">
+        <div className="absolute left-[11px] bottom-2.5 w-[153px] h-[143px] rounded-[13px] border-2 md:left-0 md:bottom-0 md:w-[43%] md:h-auto md:aspect-[256/240] lg:w-64 lg:h-60 lg:aspect-auto md:rounded-[21px] md:border-[3.5px] border-surface overflow-hidden shadow-card">
           <Image 
             src={secondaryImage.src} 
             alt={secondaryImage.alt}

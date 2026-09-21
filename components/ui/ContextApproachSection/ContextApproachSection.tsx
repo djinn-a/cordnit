@@ -18,7 +18,7 @@ export default function ContextApproachSection({
                   {eyebrow}
                 </span>
               )}
-              <h2 className="text-[20px] leading-[28px] md:text-section-title md:leading-[1.2] text-ink font-extrabold">{title}</h2>
+              <h2 className="text-[20px] leading-7 md:text-section-title md:leading-[1.2] text-ink font-extrabold">{title}</h2>
             </div>
 
             {/* Divider */}
