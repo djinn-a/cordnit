@@ -21,7 +21,6 @@ import IndustryCardsSection from "@/components/ui/IndustryCardsSection/IndustryC
 import { CybersecurityHero } from "@/components/features/cybersecurity/CybersecurityHero";
 import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
 import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection } from "@/components/ui";
-
 import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
 import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
 import SolutionsDelivery from "@/components/features/solutions/SolutionsDelivery/SolutionsDelivery";
