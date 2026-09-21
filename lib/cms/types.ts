@@ -45,7 +45,9 @@ export type SectionType =
   | "solutionsCapabilities"
   | "solutionsDelivery"
   | "solutionsCombination"
-  | "cloudInfrastructureHero";
+  | "cloudInfrastructureHero"
+  | "pageHero"
+  | "splitContent";
 
 export type LayoutType = "default" | "contact";
 
