@@ -35,6 +35,5 @@ export const homePage: PageDocument = {
         alt: "Data visualization on a tablet screen"
       }
     },
-    { _type: "cta", _key: "home-cta" },
   ],
 };

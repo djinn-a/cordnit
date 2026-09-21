@@ -18,11 +18,35 @@ import ContextApproachSection from "@/components/ui/ContextApproachSection/Conte
 import PerspectiveSection from "@/components/ui/PerspectiveSection/PerspectiveSection";
 import ContentInsights from "@/components/ui/ContentInsights/ContentInsights";
 import IndustryCardsSection from "@/components/ui/IndustryCardsSection/IndustryCardsSection";
+import { CybersecurityHero } from "@/components/features/cybersecurity/CybersecurityHero";
+import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
+import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection } from "@/components/ui";
 
+import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
+import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
+import SolutionsDelivery from "@/components/features/solutions/SolutionsDelivery/SolutionsDelivery";
+import SolutionsCombination from "@/components/features/solutions/SolutionsCombination/SolutionsCombination";
 /**
  * Maps CMS / page-document `_type` values to presentational section components.
  * Add a new section type here when introducing a new block — never hard-wire in page.tsx.
  */
+import { CybersecurityWhyChoose } from "@/components/features/cybersecurity/CybersecurityWhyChoose";
+import { SalesforceHero } from "@/components/features/salesforce/SalesforceHero";
+import { SalesforceSplitContent } from "@/components/features/salesforce/SalesforceSplitContent";
+import { SalesforceCredentials } from "@/components/features/salesforce/SalesforceCredentials";
+import { SalesforceCapabilities } from "@/components/features/salesforce/SalesforceCapabilities";
+import { SalesforceApproach } from "@/components/features/salesforce/SalesforceApproach";
+import { SalesforceSpecialists } from "@/components/features/salesforce/SalesforceSpecialists";
+import { SalesforceWhyChoose } from "@/components/features/salesforce/SalesforceWhyChoose";
+import { AiAutomationHero } from "@/components/features/ai-automation/AiAutomationHero";
+import { AiAutomationSplitContent } from "@/components/features/ai-automation/AiAutomationSplitContent";
+import { AiAutomationCredentials } from "@/components/features/ai-automation/AiAutomationCredentials";
+import { AiAutomationApproach } from "@/components/features/ai-automation/AiAutomationApproach";
+import { AiAutomationSpecialists } from "@/components/features/ai-automation/AiAutomationSpecialists";
+import { AiAutomationWhyChoose } from "@/components/features/ai-automation/AiAutomationWhyChoose";
+import { AiAutomationWhereWeHelp } from "@/components/features/ai-automation/AiAutomationWhereWeHelp";
+import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
+
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
   help: HelpSection as SectionComponent,
@@ -42,4 +66,30 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   perspective: PerspectiveSection as unknown as SectionComponent,
   contentInsights: ContentInsights as unknown as SectionComponent,
   industryCards: IndustryCardsSection as unknown as SectionComponent,
+  cybersecurityHero: CybersecurityHero as SectionComponent,
+  cybersecuritySplitContent: CybersecuritySplitContent as SectionComponent,
+  cardGridSection: CardGridSection as SectionComponent,
+  credentialsSection: CredentialsSection as SectionComponent,
+  processSection: ProcessSection as SectionComponent,
+  splitActionCards: SplitActionCardsSection as SectionComponent,
+  whyChooseSection: CybersecurityWhyChoose as SectionComponent,
+  salesforceHero: SalesforceHero as SectionComponent,
+  salesforceSplitContent: SalesforceSplitContent as SectionComponent,
+  salesforceCredentials: SalesforceCredentials as SectionComponent,
+  salesforceCapabilities: SalesforceCapabilities as SectionComponent,
+  salesforceApproach: SalesforceApproach as SectionComponent,
+  salesforceSpecialists: SalesforceSpecialists as SectionComponent,
+  salesforceWhyChoose: SalesforceWhyChoose as SectionComponent,
+  aiAutomationHero: AiAutomationHero as SectionComponent,
+  aiAutomationSplitContent: AiAutomationSplitContent as SectionComponent,
+  aiAutomationCredentials: AiAutomationCredentials as SectionComponent,
+  aiAutomationApproach: AiAutomationApproach as SectionComponent,
+  aiAutomationSpecialists: AiAutomationSpecialists as SectionComponent,
+  aiAutomationWhyChoose: AiAutomationWhyChoose as SectionComponent,
+  aiAutomationWhereWeHelp: AiAutomationWhereWeHelp as SectionComponent,
+  solutionsHero: SolutionsHero as SectionComponent,
+  solutionsCapabilities: SolutionsCapabilities as SectionComponent,
+  solutionsDelivery: SolutionsDelivery as SectionComponent,
+  solutionsCombination: SolutionsCombination as SectionComponent,
+  cloudInfrastructureHero: CloudInfrastructureHero as SectionComponent,
 };

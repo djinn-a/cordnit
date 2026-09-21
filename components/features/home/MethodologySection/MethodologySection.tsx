@@ -16,7 +16,7 @@ export default function MethodologySection({
   steps = methodologyData,
 }: MethodologySectionProps = {}) {
   return (
-    <Section spacing="sm" className="py-8 sm:py-16 lg:py-20">
+    <Section spacing="none" className="">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 lg:mb-16 gap-4 sm:gap-8">
           <SectionHeader

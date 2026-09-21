@@ -12,8 +12,8 @@ export default function HeroSection(props: HeroSectionProps = {}) {
   return (
     <Section 
       spacing="none" 
-      background="transparent" 
-      className="pt-12 xs:pt-14 sm:pt-16 pb-6 sm:pb-16 md:pb-20 lg:pb-24"
+      background="transparent"
+      className=""
     >
       <Container className="flex flex-col items-center">
         <HeroHeading 

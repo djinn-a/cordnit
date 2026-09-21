@@ -29,6 +29,7 @@ const config: Config = {
         "space-80": "80px",
         "space-60": "60px",
         
+        "cutout-curve": "radial-gradient(circle at top right, transparent 20px, var(--color-surface) 0)",
       },
       fontFamily: {
         sans: ["var(--font-mulish)", "sans-serif"],
@@ -163,6 +164,10 @@ const config: Config = {
         "cta-text2-sb-mobile": ["10px", { fontWeight: "600", lineHeight: "1.4" }],
         "heading2-sb-mobile": ["16px", { fontWeight: "600", lineHeight: "1.5" }],
         "about-eyebrow-desktop": ["12px", { fontWeight: "600", lineHeight: "1.5" }],
+        "page-hero-title": ["56px", { fontWeight: "800", lineHeight: "70px", letterSpacing: "0px" }],
+        "page-hero-subtitle": ["20px", { fontWeight: "400", lineHeight: "28px", letterSpacing: "0px" }],
+        "page-hero-eyebrow": ["16px", { fontWeight: "600", lineHeight: "16px", letterSpacing: "1px" }],
+        "split-section-title": ["48px", { fontWeight: "800", lineHeight: "68px", letterSpacing: "0px" }],
       },
     },
   },

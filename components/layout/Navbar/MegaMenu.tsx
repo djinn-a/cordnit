@@ -28,7 +28,7 @@ export default function MegaMenu({ content, solutions }: MegaMenuProps) {
         {/* Right Panel */}
         <div className={`py-12 pl-12 grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 ${styles.megaMenuRightPanel}`}>
           {solutions.map((item, idx) => (
-            <Link href={`/solutions#${item.slug}`} key={idx} className="group/item flex flex-col items-start hover:opacity-80 transition-opacity">
+            <Link href={`/${item.slug}`} key={idx} className="group/item flex flex-col items-start hover:opacity-80 transition-opacity">
               <div className={`w-10 h-10 rounded flex items-center justify-center mb-4 ${item.iconBg}`}>
                 <item.icon className={`h-5 w-5 ${item.iconColor}`} />
               </div>
