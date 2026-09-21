@@ -17,7 +17,7 @@ export default function LayoutRenderer({
   layout = "default",
   sections,
   className,
-}: LayoutRendererProps) {
+}: Readonly<LayoutRendererProps>) {
   return (
     <PageLayout
       className={cn(layout === "contact" && "[&>main]:pt-[72px]", className)}

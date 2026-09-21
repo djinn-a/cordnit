@@ -15,7 +15,7 @@ export default function IndustryCardsSection({
   headerLayout = "default",
 }: Readonly<IndustryCardsSectionProps>) {
   return (
-    <Section background="white" spacing="none" className="py-20">
+    <Section background="white" spacing="none" className="py-space-80">
       <Container width="narrow" className="max-w-310">
         <IndustryCardsHeader
           eyebrow={eyebrow}
@@ -30,7 +30,7 @@ export default function IndustryCardsSection({
             return (
               <IndustryCard
                 key={card.id}
-                icon={<IconComponent className="w-4 h-4 md:w-10 md:h-10 text-primary" />}
+                icon={<IconComponent className="w-space-16 h-space-16 md:w-10 md:h-10 text-primary" />}
                 title={card.title}
                 description={card.description}
                 ctaLabel={card.ctaLabel}

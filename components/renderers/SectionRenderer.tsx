@@ -5,7 +5,7 @@ type SectionRendererProps = {
   sections: PageSection[];
 };
 
-export default function SectionRenderer({ sections }: SectionRendererProps) {
+export default function SectionRenderer({ sections }: Readonly<SectionRendererProps>) {
   return (
     <>
       {sections.map((section) => {
