@@ -14,7 +14,7 @@ export type ActionCardProps = {
   card: ActionCardData;
 };
 
-export default function ActionCard({ card }: ActionCardProps) {
+export default function ActionCard({ card }: Readonly<ActionCardProps>) {
   return (
     <div className="flex flex-row items-center gap-[12px] sm:gap-[20px] px-[12px] pb-[12px] pt-space-20 sm:p-[16px] w-full sm:h-[180px] bg-[#E9EFFF] rounded-[13px] border border-white overflow-hidden">
       {/* Image Container */}
