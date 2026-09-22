@@ -46,8 +46,10 @@ export type SectionType =
   | "solutionsDelivery"
   | "solutionsCombination"
   | "cloudInfrastructureHero"
-  | "breadcrumb"
   | "pageHero"
+  | "splitContent"
+  | "whyChoose"
+  | "breadcrumb"
   | "splitContentSection";
 
 export type LayoutType = "default" | "contact";

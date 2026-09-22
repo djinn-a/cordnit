@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import type { BreadcrumbProps } from "./breadcrumb.types";
 
-export function Breadcrumb({ items, className }: BreadcrumbProps) {
+export function Breadcrumb({ items, className }: Readonly<BreadcrumbProps>) {
   if (!items || items.length === 0) return null;
 
   return (

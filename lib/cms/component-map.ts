@@ -1,4 +1,7 @@
 import type { SectionComponent, SectionType } from "./types";
+//import PageHero from "@/components/ui/PageHero/PageHero";
+//import SplitContentSection from "@/components/ui/SplitContentSection/SplitContentSection";
+import { WhyChooseSection } from "@/components/ui/WhyChooseSection";
 
 import HeroSection from "@/components/features/home/HeroSection/HeroSection";
 import HelpSection from "@/components/features/home/HelpSection/HelpSection";
@@ -91,7 +94,10 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   solutionsDelivery: SolutionsDelivery as SectionComponent,
   solutionsCombination: SolutionsCombination as SectionComponent,
   cloudInfrastructureHero: CloudInfrastructureHero as SectionComponent,
-  breadcrumb: Breadcrumb as SectionComponent,
   pageHero: PageHero as SectionComponent,
+  splitContent: SplitContentSection as SectionComponent,
+  whyChoose: WhyChooseSection as SectionComponent,
+  breadcrumb: Breadcrumb as SectionComponent,
+ // pageHero: PageHero as SectionComponent,
   splitContentSection: SplitContentSection as SectionComponent,
 };
