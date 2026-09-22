@@ -1,17 +1,32 @@
 import React from "react";
 import type { DataDiscoveryProps } from "./types";
-import { DataDiscoveryLeft } from "./DataDiscoveryLeft";
-import { DataDiscoveryRight } from "./DataDiscoveryRight";
+import { SplitFeatureBlock } from "@/components/blocks/SplitFeatureBlock";
 
-export function DataDiscovery({ data }: Readonly<DataDiscoveryProps>) {
+export function DataDiscovery({ data, variant = "default" }: Readonly<DataDiscoveryProps>) {
   if (!data) return null;
 
   return (
-    <section className="w-full pt-space-80 max-w-container-1440 mx-auto px-space-24 md:px-space-60">
-      <div className="flex flex-col md:flex-row gap-space-40 items-stretch justify-between w-full">
-        <DataDiscoveryLeft {...data.leftSection} />
-        <DataDiscoveryRight {...data.rightSection} />
-      </div>
-    </section>
+    <SplitFeatureBlock 
+      layout={variant === "alternate" ? "text-right" : "text-left"}
+      textFeatureStyle={variant === "alternate" ? "cards" : "checkmarks"}
+      mediaStyle={variant === "alternate" ? "numbered-steps" : "icon-cards"}
+      textSection={{
+        eyebrow: data.leftSection.eyebrow,
+        title: data.leftSection.title,
+        description: data.leftSection.description,
+        features: data.leftSection.features.map(f => ({ text: f.text, title: f.title }))
+      }}
+      mediaSection={{
+        eyebrow: data.rightSection.eyebrow,
+        statusText: data.rightSection.statusText,
+        cards: data.rightSection.cards.map(c => ({
+          title: c.title,
+          description: c.description,
+          icon: c.icon,
+          stepNumber: c.stepNumber
+        })),
+        footerBadges: data.rightSection.footerBadges || []
+      }}
+    />
   );
 }

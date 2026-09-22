@@ -168,6 +168,32 @@ export const dataSecurityPage: PageDocument = {
           }
         ]
       }
+    },
+    {
+      _type: "dataDiscovery",
+      _key: "data-access-architecture",
+      variant: "alternate",
+      data: {
+        leftSection: {
+          eyebrow: "DATA ACCESS",
+          title: "Control who can access sensitive information.",
+          description: "Strengthen access controls around sensitive data to limit exposure and contain potential incidents. Ensure that the right people and systems have appropriate access while actively removing unnecessary permissions.",
+          features: [
+            { title: "Contextual Guardrails & Output Sanitization", text: "Mask or redact sensitive fields before they reach the user based on clearance." },
+            { title: "Time-Bound Privileges & Session Management", text: "Enforce dynamic session timeouts and revoke access automatically post-task." }
+          ]
+        },
+        rightSection: {
+          eyebrow: "PRIVILEGED ACCESS ARCHITECTURE",
+          statusText: "ISO 27001 / SOC 2",
+          cards: [
+            { stepNumber: "01", title: "USER / IDENTITY", description: "Human, Service Account, or API Consumer" },
+            { stepNumber: "02", title: "ACCESS POLICY GATEWAY", description: "Evaluates intent, context, and standing privileges" },
+            { stepNumber: "03", title: "SENSITIVE DATA STORE", description: "Databases, Cloud buckets, and SaaS applications" }
+          ],
+          footerBadges: ["Role-Based Access", "Least Privilege Principle", "Just-In-Time Provisioning"]
+        }
+      }
     }
   ],
 };
