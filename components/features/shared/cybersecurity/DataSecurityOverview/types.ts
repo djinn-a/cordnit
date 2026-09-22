@@ -1,10 +1,18 @@
+export type ProcessCardData = {
+  stepNumber: string;
+  phase: string;
+  title: string;
+  description: string;
+  subDescription: string;
+};
+
 export type DataSecurityOverviewData = {
   header: {
     eyebrow: string;
     title: string;
     description: string;
   };
-  cardSection: {
+  cardSection?: {
     sectionTag: string;
     sectionTitle: string;
     footerText: string;
@@ -15,6 +23,7 @@ export type DataSecurityOverviewData = {
       description: string;
     }>;
   };
+  processCards?: Array<ProcessCardData>;
 };
 
 export type DataSecurityOverviewProps = {

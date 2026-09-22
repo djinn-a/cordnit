@@ -1,9 +1,9 @@
 import type { DataSecurityOverviewData } from "./types";
 import { DataSecurityCard } from "./DataSecurityCard";
 
-export type DataSecurityCardSectionProps = DataSecurityOverviewData["cardSection"];
+export type DataSecurityCardSectionProps = NonNullable<DataSecurityOverviewData["cardSection"]>;
 
-export function DataSecurityCardSection({ sectionTag, sectionTitle, footerText, footerHighlight, cards }: DataSecurityCardSectionProps) {
+export function DataSecurityCardSection({ sectionTag, sectionTitle, footerText, footerHighlight, cards }: Readonly<DataSecurityCardSectionProps>) {
   return (
     <div className="flex flex-col w-full bg-grad-3 border border-border-card rounded-card pt-space-24 pb-space-24 px-space-40">
       {/* Top Header Row */}
@@ -20,8 +20,8 @@ export function DataSecurityCardSection({ sectionTag, sectionTitle, footerText, 
 
       {/* Cards Grid */}
       <div className="flex flex-col md:flex-row gap-space-24 w-full">
-        {cards.map((card, idx) => (
-          <DataSecurityCard key={idx} {...card} />
+        {cards.map((card) => (
+          <DataSecurityCard key={card.title} {...card} />
         ))}
       </div>
 

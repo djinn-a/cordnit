@@ -128,5 +128,46 @@ export const dataSecurityPage: PageDocument = {
         }
       }
     },
+    {
+      _type: "dataSecurityOverview",
+      _key: "data-classification-protection",
+      data: {
+        header: {
+          eyebrow: "CLASSIFICATION & PROTECTION",
+          title: "Apply the right protection to the right data.",
+          description: "Not all information carries the same level of risk. We help establish practical classification and protection approaches so controls are aligned with the sensitivity and business value of the data."
+        },
+        processCards: [
+          {
+            stepNumber: "01",
+            phase: "PHASE I",
+            title: "IDENTIFY",
+            description: "Find sensitive and business-critical information across fragmented storage silos.",
+            subDescription: "Ingest telemetry across scanners, cloud configs, and code."
+          },
+          {
+            stepNumber: "02",
+            phase: "PHASE ii",
+            title: "CLASSIFY",
+            description: "Assign meaningful sensitivity and handling categories (Public, Internal, Confidential, Restricted).",
+            subDescription: "Overlay asset tags, data classifications, and blast radius."
+          },
+          {
+            stepNumber: "03",
+            phase: "PHASE iii",
+            title: "PROTECT",
+            description: "Continuously reassess protection tiers as data, user roles, and business requirements transform.",
+            subDescription: "Filter out noise; highlight true breach paths."
+          },
+          {
+            stepNumber: "04",
+            phase: "PHASE iv",
+            title: "REVIEW",
+            description: "Continuously reassess protection tiers as data, user roles, and business requirements transform.",
+            subDescription: "Dispatch validated tickets with actionable fix guidance."
+          }
+        ]
+      }
+    }
   ],
 };
