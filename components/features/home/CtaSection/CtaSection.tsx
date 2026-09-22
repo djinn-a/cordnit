@@ -30,7 +30,7 @@ export default function CtaSection({
   const { openModal } = useContactModal();
 
   return (
-    <section className="relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-120px)] mx-auto max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide md:h-[232px] pt-10 pb-10 md:py-8 px-6 md:px-[60px] bg-surface-dark mb-8 sm:mb-12 md:mb-24 overflow-hidden rounded-2xl shadow-lg">
+    <section className="relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-120px)] mx-auto max-w-[1320px] md:h-[232px] pt-10 pb-10 md:py-8 px-6 md:px-[60px] bg-surface-dark mb-8 sm:mb-12 md:mb-24 overflow-hidden rounded-2xl shadow-lg">
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

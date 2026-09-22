@@ -55,7 +55,7 @@ export default function CapabilityCard({
 
       {/* Button Cutout Area */}
       {/* The main white cutout wrapper */}
-      <div className="absolute bottom-0 left-0 z-10 bg-surface rounded-tr-lg rounded-bl-lg p-2 pl-0 shadow-[0_0_0_1px_#ffffff]">
+      <div className="absolute bottom-0 left-0 z-10 bg-surface rounded-tr-lg rounded-bl-lg pt-2 pr-2 shadow-[0_0_0_1px_#ffffff]">
         {/* Inner curve top-left */}
         <div className="absolute bottom-full left-0 w-2 h-2 pointer-events-none bg-[radial-gradient(circle_at_top_right,transparent_8px,var(--color-surface)_0)]" />
 

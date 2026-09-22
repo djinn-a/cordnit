@@ -15,12 +15,12 @@ export default function NewsletterForm({
           type="email"
           placeholder={placeholder}
           required
-          className="flex-1 h-[45px] px-3 md:px-4 bg-white border border-border-subtle rounded-lg text-[12px] md:text-[14px] text-ink focus:outline-none focus:border-primary"
+          className="flex-1 h-[40px] px-3 md:px-4 bg-white border border-border-subtle rounded-lg text-[14px] text-ink focus:outline-none focus:border-primary"
         />
         <Button
           type="submit"
           variant="primary"
-          className="h-[45px] px-4 md:px-6 text-[12px] md:text-[14px] font-semibold rounded-lg shadow-sm transition-colors"
+          className="h-[40px] px-6 text-[14px] font-semibold rounded-lg shadow-sm transition-colors shrink-0"
         >
           {buttonText}
         </Button>

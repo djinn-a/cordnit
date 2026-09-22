@@ -10,7 +10,7 @@ export default function ContentInsights({
   insightCards,
 }: Readonly<ContentInsightsProps>) {
   return (
-    <section className="w-full pt-6 pb-0 md:pt-space-80">
+    <section className="w-full">
       <Container>
         {/* Section Eyebrow */}
         {eyebrow && (
