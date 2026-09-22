@@ -13,11 +13,11 @@ import AboutPrinciples from "@/components/features/about/AboutPrinciples/AboutPr
 import AboutTeam from "@/components/features/about/AboutTeam/AboutTeam";
 import ContactHero from "@/components/features/contact/ContactHero/ContactHero";
 import ContactFormSection from "@/components/features/contact/ContactFormSection/ContactFormSection";
-import ContentMediaSection from "@/components/ui/ContentMediaSection/ContentMediaSection";
-import ContextApproachSection from "@/components/ui/ContextApproachSection/ContextApproachSection";
-import PerspectiveSection from "@/components/ui/PerspectiveSection/PerspectiveSection";
-import ContentInsights from "@/components/ui/ContentInsights/ContentInsights";
-import IndustryCardsSection from "@/components/ui/IndustryCardsSection/IndustryCardsSection";
+import ContentMediaSection from "@/components/features/shared/ContentMediaSection/ContentMediaSection";
+import ContextApproachSection from "@/components/features/shared/ContextApproachSection/ContextApproachSection";
+import PerspectiveSection from "@/components/features/shared/PerspectiveSection/PerspectiveSection";
+import ContentInsights from "@/components/features/shared/ContentInsights/ContentInsights";
+import IndustryCardsSection from "@/components/features/shared/IndustryCardsSection/IndustryCardsSection";
 import { CybersecurityHero } from "@/components/features/cybersecurity/CybersecurityHero";
 import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
 import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection } from "@/components/ui";

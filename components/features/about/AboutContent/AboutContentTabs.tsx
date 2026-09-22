@@ -11,7 +11,7 @@ export default function AboutContentTabs({
   tabs,
   activeTabId,
   onTabChange,
-}: AboutContentTabsProps) {
+}: Readonly<AboutContentTabsProps>) {
   return (
     <div className="flex flex-wrap gap-2 md:gap-3 mb-8 md:mb-10">
       {tabs.map((tab) => {

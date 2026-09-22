@@ -1,4 +1,4 @@
-import SectionHeader from "../SectionHeader/SectionHeader";
+import SectionHeader from "@/components/ui/SectionHeader/SectionHeader";
 import type { IndustryCardsSectionProps } from "./IndustryCardsSection.types";
 
 export default function IndustryCardsHeader({

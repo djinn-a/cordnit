@@ -1,10 +1,26 @@
-import * as LucideIcons from "lucide-react";
+import { Landmark, HeartPulse, ShoppingCart, Factory, GraduationCap, Users, Circle } from "lucide-react";
+
+export type CMSIconName = 
+  | "Landmark" 
+  | "HeartPulse" 
+  | "ShoppingCart" 
+  | "Factory" 
+  | "GraduationCap" 
+  | "Users";
+
+const iconMap: Record<CMSIconName, React.ElementType> = {
+  Landmark,
+  HeartPulse,
+  ShoppingCart,
+  Factory,
+  GraduationCap,
+  Users,
+};
 
 /**
- * Safely maps a string to a Lucide icon component.
- * Falls back to rendering a Circle icon if the requested icon is not found.
+ * Safely maps a string to a Lucide icon component using a strict allowed-list.
+ * Guarantees zero memory bloat and perfect tree-shaking on the server.
  */
 export const getLucideIcon = (iconName: string) => {
-  const iconMap = LucideIcons as unknown as Record<string, React.ElementType>;
-  return iconMap[iconName] ?? LucideIcons.Circle;
+  return iconMap[iconName as CMSIconName] ?? Circle;
 };

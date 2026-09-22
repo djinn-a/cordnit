@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { PerspectiveSectionProps } from "./PerspectiveSection.types";
 
-import Container from "../Container/Container";
+import Container from "@/components/ui/Container/Container";
 
 export default function PerspectiveSection({
   className,
