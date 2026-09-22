@@ -12,9 +12,9 @@ export default function ContentMediaSection({
   secondaryImage,
 }: Readonly<ContentMediaSectionProps>) {
   return (
-    <section className="w-full px-0 md:px-15">
-      <Container className="max-w-[1320px]">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+    <section className="w-full">
+      <Container className="px-6 xl:px-0">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-space-24 md:gap-space-50">
           <ContentMediaText 
             eyebrow={eyebrow}
             title={title}
