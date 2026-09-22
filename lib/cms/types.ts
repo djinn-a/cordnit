@@ -49,6 +49,9 @@ export type SectionType =
   | "pageHero"
   | "splitContent"
   | "whyChoose";
+  | "breadcrumb"
+  | "pageHero"
+  | "splitContentSection";
 
 export type LayoutType = "default" | "contact";
 

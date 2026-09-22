@@ -1,7 +1,7 @@
 import type { ContentInsightsProps } from "./ContentInsights.types";
 import ContentInsightsInteractive from "./ContentInsightsInteractive";
 import FeaturedInsightCard from "./FeaturedInsightCard";
-import Container from "../Container/Container";
+import Container from "@/components/ui/Container/Container";
 
 export default function ContentInsights({
   eyebrow,

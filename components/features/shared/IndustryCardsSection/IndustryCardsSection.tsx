@@ -1,9 +1,9 @@
-import Section from "../Section/Section";
-import Container from "../Container/Container";
+import Section from "@/components/ui/Section/Section";
+import Container from "@/components/ui/Container/Container";
 import IndustryCard from "../IndustryCard/IndustryCard";
 import IndustryCardsHeader from "./IndustryCardsHeader";
 import type { IndustryCardsSectionProps } from "./IndustryCardsSection.types";
-import { getLucideIcon } from "../../../lib/utils/icons";
+import { getLucideIcon } from "@/lib/utils/icons";
 
 
 
