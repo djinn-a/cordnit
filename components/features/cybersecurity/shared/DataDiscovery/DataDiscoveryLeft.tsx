@@ -20,9 +20,9 @@ export function DataDiscoveryLeft({ eyebrow, title, description, features }: Rea
       </p>
       
       <div className="flex flex-col gap-space-12 mt-space-12 w-full">
-        {features.map((feature, idx) => (
-          <div key={idx} className="flex items-start gap-space-12">
-            <div className="mt-[2px] min-w-[20px]">
+        {features.map((feature) => (
+          <div key={feature.text} className="flex items-start gap-space-12">
+            <div className="mt-space-2 min-w-5">
               <Check className="w-5 h-5 text-brand-primary" strokeWidth={3} />
             </div>
             <span className="text-card-desc text-ink font-mulish">

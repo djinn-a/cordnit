@@ -21,8 +21,8 @@ export function DataDiscoveryRight({ eyebrow, statusText, cards }: Readonly<Data
 
       {/* Cards List */}
       <div className="flex flex-col gap-space-12 w-full">
-        {cards.map((card, idx) => (
-          <DataDiscoveryCard key={idx} {...card} />
+        {cards.map((card) => (
+          <DataDiscoveryCard key={card.title} {...card} />
         ))}
       </div>
     </div>
