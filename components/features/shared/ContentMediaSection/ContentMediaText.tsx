@@ -17,7 +17,7 @@ export default function ContentMediaText({
         </span>
       )}
       
-      <h2 className="text-section-title-mobile leading-8 md:text-hero-header-eb md:leading-[70px] text-ink mb-3 md:mb-5">
+      <h2 className="text-section-title-mobile leading-8 md:text-hero-header-eb md:leading-[70px] text-ink mb-3 md:mb-5 text-balance md:max-w-[18ch] lg:max-w-[20ch]">
         {title}
       </h2>
       

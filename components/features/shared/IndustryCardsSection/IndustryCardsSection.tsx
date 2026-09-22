@@ -15,7 +15,7 @@ export default function IndustryCardsSection({
   headerLayout = "default",
 }: Readonly<IndustryCardsSectionProps>) {
   return (
-    <Section background="white" spacing="none" className="py-space-80">
+    <Section background="white" spacing="none">
       <Container width="narrow" className="max-w-310">
         <IndustryCardsHeader
           eyebrow={eyebrow}
