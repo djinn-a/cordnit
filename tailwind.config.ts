@@ -78,6 +78,11 @@ const config: Config = {
       height: {
         panel: "400px",
       },
+      aspectRatio: {
+        "media-wrap": "600 / 484",
+        "media-main": "454 / 420",
+        "media-sec": "256 / 240",
+      },
       borderRadius: {
         btn: "var(--radius-btn)",
         card: "var(--radius-card)",
@@ -118,6 +123,18 @@ const config: Config = {
         "space-64": "64px",
         "space-80": "80px",
         "space-100": "100px",
+        "cm-wrap-mob": "289px",
+        "cm-main-w-mob": "271px",
+        "cm-main-h-mob": "251px",
+        "cm-sec-w-mob": "153px",
+        "cm-sec-h-mob": "143px",
+        "cm-sec-left": "11px",
+        "cm-wrap-dt": "600px",
+        "cm-wrap-h-dt": "484px",
+        "cm-main-w-dt": "454px",
+        "cm-main-h-dt": "420px",
+        "cm-sec-w-dt": "256px",
+        "cm-sec-h-dt": "240px",
       },
       fontSize: {
         "hero-header-eb": ["56px", { fontWeight: "800", lineHeight: "70px" }],
