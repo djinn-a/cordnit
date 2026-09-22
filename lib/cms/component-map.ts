@@ -48,8 +48,8 @@ import { AiAutomationSpecialists } from "@/components/features/ai-automation/AiA
 import { AiAutomationWhyChoose } from "@/components/features/ai-automation/AiAutomationWhyChoose";
 import { AiAutomationWhereWeHelp } from "@/components/features/ai-automation/AiAutomationWhereWeHelp";
 import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
-
-import { DataSecurityOverview } from "@/components/features/shared/cybersecurity/DataSecurityOverview/DataSecurityOverview";
+import { DataSecurityOverview } from "@/components/features/shared/cybersecurity/DataSecurityOverview";
+import { DataDiscovery } from "@/components/features/shared/cybersecurity/DataDiscovery";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -103,4 +103,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
  // pageHero: PageHero as SectionComponent,
   splitContentSection: SplitContentSection as SectionComponent,
   dataSecurityOverview: DataSecurityOverview as SectionComponent,
+  dataDiscovery: DataDiscovery as SectionComponent,
 };

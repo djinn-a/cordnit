@@ -81,5 +81,52 @@ export const dataSecurityPage: PageDocument = {
         }
       }
     },
+    {
+      _type: "dataDiscovery",
+      _key: "data-security-discovery",
+      data: {
+        leftSection: {
+          eyebrow: "DATA DISCOVERY",
+          title: "Know where your sensitive data lives.",
+          description: "Gain a clearer view of sensitive information across cloud platforms, applications, databases and other environments. Identify critical data stores, understand exposure and establish the visibility needed to make better security decisions.",
+          features: [
+            { text: "Automated discovery across multi-cloud, SaaS, and on-premises stores" },
+            { text: "Real-time classification of PII, IP, financial, and regulated records" },
+            { text: "Continuous posture alignment with GDPR, HIPAA, SOC 2, and ISO 27001" }
+          ]
+        },
+        rightSection: {
+          eyebrow: "DATA LANDSCAPE TOPOLOGY",
+          statusText: "STATUS: SYNCED",
+          cards: [
+            {
+              icon: "Cloud",
+              title: "CLOUD REPOSITORIES",
+              description: "Cloud storage, S3 buckets, Azure Blobs & multi-cloud platforms"
+            },
+            {
+              icon: "LayoutGrid",
+              title: "APPLICATIONS & SAAS",
+              description: "Salesforce, Workday, ERP, CRM & internal microservices"
+            },
+            {
+              icon: "Database",
+              title: "DATABASES & PIPELINES",
+              description: "Structured SQL, NoSQL clusters, Snowflake & analytical lakes"
+            },
+            {
+              icon: "MonitorSmartphone",
+              title: "USER ENDPOINTS",
+              description: "Corporate laptops, BYOD devices & secure virtual desktop nodes"
+            },
+            {
+              icon: "Share2",
+              title: "SHARED WORKSPACES",
+              description: "Slack, Microsoft Teams, SharePoint & shared cloud drives"
+            }
+          ]
+        }
+      }
+    },
   ],
 };

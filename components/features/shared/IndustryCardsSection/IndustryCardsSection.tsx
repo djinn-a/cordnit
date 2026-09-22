@@ -1,3 +1,4 @@
+import React from "react";
 import Section from "@/components/ui/Section/Section";
 import Container from "@/components/ui/Container/Container";
 import IndustryCard from "../IndustryCard/IndustryCard";
@@ -25,12 +26,10 @@ export default function IndustryCardsSection({
         />
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-space-24">
           {cards.map((card) => {
-            const IconComponent = getLucideIcon(card.iconName);
-            
             return (
               <IndustryCard
                 key={card.id}
-                icon={<IconComponent className="w-space-16 h-space-16 md:w-10 md:h-10 text-primary" />}
+                icon={React.createElement(getLucideIcon(card.iconName), { className: "w-space-16 h-space-16 md:w-10 md:h-10 text-primary" })}
                 title={card.title}
                 description={card.description}
                 ctaLabel={card.ctaLabel}
