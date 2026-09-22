@@ -98,5 +98,6 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   splitContent: SplitContentSection as SectionComponent,
   whyChoose: WhyChooseSection as SectionComponent,
   breadcrumb: Breadcrumb as SectionComponent,
+ // pageHero: PageHero as SectionComponent,
   splitContentSection: SplitContentSection as SectionComponent,
 };
