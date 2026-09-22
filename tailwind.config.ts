@@ -24,13 +24,7 @@ const config: Config = {
         "grad-3": "linear-gradient(102deg, rgba(164, 183, 255, 0.20) 0%, rgba(142, 163, 240, 0.20) 23.47%, rgba(20, 49, 153, 0) 109.89%)",
         "cutout-curve": "radial-gradient(circle at top right, transparent 20px, var(--color-surface) 0)",
       },
-      spacing: {
-        "space-16": "16px",
-        "space-80": "80px",
-        "space-60": "60px",
-        
-        "cutout-curve": "radial-gradient(circle at top right, transparent 20px, var(--color-surface) 0)",
-      },
+      
       fontFamily: {
         sans: ["var(--font-mulish)", "sans-serif"],
         mulish: ["var(--font-mulish)", "sans-serif"],
