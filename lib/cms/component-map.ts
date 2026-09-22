@@ -49,6 +49,8 @@ import { AiAutomationWhyChoose } from "@/components/features/ai-automation/AiAut
 import { AiAutomationWhereWeHelp } from "@/components/features/ai-automation/AiAutomationWhereWeHelp";
 import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
 
+import { DataSecurityOverview } from "@/components/features/shared/cybersecurity/DataSecurityOverview/DataSecurityOverview";
+
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
   help: HelpSection as SectionComponent,
@@ -100,4 +102,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   breadcrumb: Breadcrumb as SectionComponent,
  // pageHero: PageHero as SectionComponent,
   splitContentSection: SplitContentSection as SectionComponent,
+  dataSecurityOverview: DataSecurityOverview as SectionComponent,
 };

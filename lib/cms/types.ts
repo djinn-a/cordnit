@@ -50,7 +50,8 @@ export type SectionType =
   | "splitContent"
   | "whyChoose"
   | "breadcrumb"
-  | "splitContentSection";
+  | "splitContentSection"
+  | "dataSecurityOverview";
 
 export type LayoutType = "default" | "contact";
 
