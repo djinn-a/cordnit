@@ -1,5 +1,5 @@
 import type { ContextApproachSectionProps } from "./ContextApproachSection.types";
-import Container from "../Container/Container";
+import Container from "@/components/ui/Container/Container";
 
 export default function ContextApproachSection({
   eyebrow,

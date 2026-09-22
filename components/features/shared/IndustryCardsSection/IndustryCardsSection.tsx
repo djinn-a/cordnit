@@ -1,9 +1,9 @@
-import Section from "../Section/Section";
-import Container from "../Container/Container";
+import Section from "@/components/ui/Section/Section";
+import Container from "@/components/ui/Container/Container";
 import IndustryCard from "../IndustryCard/IndustryCard";
 import IndustryCardsHeader from "./IndustryCardsHeader";
 import type { IndustryCardsSectionProps } from "./IndustryCardsSection.types";
-import { getLucideIcon } from "../../../lib/utils/icons";
+import { getLucideIcon } from "@/lib/utils/icons";
 
 
 
@@ -15,7 +15,7 @@ export default function IndustryCardsSection({
   headerLayout = "default",
 }: Readonly<IndustryCardsSectionProps>) {
   return (
-    <Section background="white" spacing="none" className="py-space-80">
+    <Section background="white" spacing="none">
       <Container width="narrow" className="max-w-310">
         <IndustryCardsHeader
           eyebrow={eyebrow}

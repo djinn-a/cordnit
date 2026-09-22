@@ -48,7 +48,9 @@ export type SectionType =
   | "cloudInfrastructureHero"
   | "pageHero"
   | "splitContent"
-  | "whyChoose";
+  | "whyChoose"
+  | "breadcrumb"
+  | "splitContentSection";
 
 export type LayoutType = "default" | "contact";
 
