@@ -5,6 +5,6 @@ export interface BreadcrumbItem {
 }
 
 export interface BreadcrumbProps {
-  items: BreadcrumbItem[];
+  items?: BreadcrumbItem[];
   className?: string;
 }

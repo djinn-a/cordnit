@@ -28,7 +28,8 @@ const config: Config = {
         "space-16": "16px",
         "space-80": "80px",
         "space-60": "60px",
-        
+        "space-24": "24px",
+
         "cutout-curve": "radial-gradient(circle at top right, transparent 20px, var(--color-surface) 0)",
       },
       fontFamily: {
@@ -88,7 +89,7 @@ const config: Config = {
         btn: "var(--radius-btn)",
         card: "var(--radius-card)",
         "card-sm": "var(--radius-card-sm)",
-        hero:"var(--radius-card-radius)",
+        hero: "var(--radius-card-radius)",
         "card-md": "20px",
         "card-lg": "var(--radius-card-lg)",
         "page-hero": "18px",
@@ -148,7 +149,7 @@ const config: Config = {
         "footer-media-cta-desktop": ["14px", { fontWeight: "600", lineHeight: "1.5" }],
         "help-card-title": ["24px", { fontWeight: "600", lineHeight: "32px" }],
         "help-card-title-mobile": ["20px", { fontWeight: "600", lineHeight: "28px" }],
-        "help-card-title-desktop": ["20px", { fontWeight: "700", lineHeight: "1.2" }], 
+        "help-card-title-desktop": ["20px", { fontWeight: "700", lineHeight: "1.2" }],
         "help-card-prefix": ["12px", { fontWeight: "600", lineHeight: "18px", letterSpacing: "1px" }],
         "help-card-prefix-mobile": ["12px", { fontWeight: "600", lineHeight: "18px", letterSpacing: "1px" }],
         "help-card-prefix-blue-mobile": ["12px", { fontWeight: "400", lineHeight: "18px", letterSpacing: "1px" }],

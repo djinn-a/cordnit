@@ -1,5 +1,5 @@
 import type { PageDocument } from "@/lib/cms/types";
-import { aiAutomationCredentialsData, aiAutomationApproachData } from "@/components/features/ai-automation/data";
+import { aiAutomationCredentialsData, aiAutomationApproachData, aiAutomationSpecialistsData, aiAutomationWhyChooseData, dataIntegrationWhereWeHelpData } from "@/components/features/ai-automation/data";
 
 export const dataIntegrationPage: PageDocument = {
   slug: "data-integration",
@@ -59,9 +59,24 @@ export const dataIntegrationPage: PageDocument = {
       data: aiAutomationCredentialsData
     },
     {
+      _type: "aiAutomationWhereWeHelp",
+      _key: "data-integration-where-we-help",
+      data: dataIntegrationWhereWeHelpData
+    },
+    {
       _type: "processSection",
       _key: "data-integration-approach",
       data: aiAutomationApproachData
+    },
+    {
+      _type: "splitActionCards",
+      _key: "data-integration-specialists",
+      data: aiAutomationSpecialistsData
+    },
+    {
+      _type: "aiAutomationWhyChoose",
+      _key: "data-integration-why-choose",
+      data: aiAutomationWhyChooseData
     }
   ],
 };

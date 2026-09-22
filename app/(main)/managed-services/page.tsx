@@ -4,15 +4,15 @@ import LayoutRenderer from "@/components/renderers/LayoutRenderer";
 import { getPage } from "@/lib/cms/get-page";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPage("data-integration");
+  const page = await getPage("managed-services");
   return {
     title: page?.seo?.title,
     description: page?.seo?.description,
   };
 }
 
-export default async function DataIntegrationPage() {
-  const page = await getPage("data-integration");
+export default async function ManagedServicesPage() {
+  const page = await getPage("managed-services");
   if (!page) notFound();
 
   return (

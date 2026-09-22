@@ -250,3 +250,83 @@ export const aiAutomationWhereWeHelpData: AiAutomationWhereWeHelpData = {
     }
   ]
 };
+
+export const dataIntegrationWhereWeHelpData: AiAutomationWhereWeHelpData = {
+  eyebrow: "WHERE WE HELP",
+  title: "From product thinking to dependable engineering.",
+  subtitle: "We help turn promising ideas into useful, responsible solutions that work within the way your organisation operates.",
+  cards: [
+    {
+      number: "01",
+      code: "AI:01",
+      category: "OPPORTUNITY",
+      title: "Define the foundation",
+      description: "Clarify the data, integration and platform capabilities needed to support your priorities.",
+      icon: "/ai-automation/icons/Icon.svg"
+    },
+    {
+      number: "02",
+      code: "AI:02",
+      category: "WORKFLOWS",
+      title: "Connect systems and processes",
+      description: "Design and deliver integrations that make important information available across the workflows that depend on it.",
+      icon: "/ai-automation/icons/Icon (1).svg"
+    },
+    {
+      number: "03",
+      code: "AI:03",
+      category: "SCALE",
+      title: "Improve trust in data",
+      description: "Address ownership, quality, governance and visibility so that people can use information with greater confidence.",
+      icon: "/ai-automation/icons/Icon (2).svg"
+    },
+    {
+      number: "04",
+      code: "AI:04",
+      category: "IMPROVEMENT",
+      title: "Turn information into action",
+      description: "Enable more useful analytics, automation and customer or employee experiences through connected, dependable data.",
+      icon: "/ai-automation/icons/Icon (3).svg"
+    }
+  ]
+};
+
+export const managedServicesWhereWeHelpData: AiAutomationWhereWeHelpData = {
+  eyebrow: "SERVICE FRAMEWORK",
+  title: "What strong managed service includes",
+  subtitle: "We help turn promising ideas into useful, responsible solutions that work within the way your organisation operates.",
+  cards: [
+    {
+      number: "01",
+      code: "AI:01",
+      category: "OPPORTUNITY",
+      title: "A clear service scope",
+      description: "Agree what is supported, how it is prioritised and where responsibilities sit across Cordinit and your team.",
+      icon: "/ai-automation/icons/Icon.svg"
+    },
+    {
+      number: "02",
+      code: "AI:02",
+      category: "WORKFLOWS",
+      title: "A smooth transition",
+      description: "Bring knowledge, access, documentation and ways of working together so support starts with context.",
+      icon: "/ai-automation/icons/Icon (1).svg"
+    },
+    {
+      number: "03",
+      code: "AI:03",
+      category: "SCALE",
+      title: "Responsive, transparent operation",
+      description: "Use clear service processes, escalation paths and reporting to keep work visible and decisions timely.",
+      icon: "/ai-automation/icons/Icon (2).svg"
+    },
+    {
+      number: "04",
+      code: "AI:04",
+      category: "IMPROVEMENT",
+      title: "Continuous improvement",
+      description: "Identify opportunities to improve reliability, security, performance, adoption and the platform roadmap over time.",
+      icon: "/ai-automation/icons/Icon (3).svg"
+    }
+  ]
+};
