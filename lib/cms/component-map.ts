@@ -20,7 +20,7 @@ import ContentInsights from "@/components/features/shared/ContentInsights/Conten
 import IndustryCardsSection from "@/components/features/shared/IndustryCardsSection/IndustryCardsSection";
 import { CybersecurityHero } from "@/components/features/cybersecurity/CybersecurityHero";
 import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
-import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection } from "@/components/ui";
+import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection, PageHero, Breadcrumb, SplitContentSection } from "@/components/ui";
 import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
 import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
 import SolutionsDelivery from "@/components/features/solutions/SolutionsDelivery/SolutionsDelivery";
@@ -91,4 +91,7 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   solutionsDelivery: SolutionsDelivery as SectionComponent,
   solutionsCombination: SolutionsCombination as SectionComponent,
   cloudInfrastructureHero: CloudInfrastructureHero as SectionComponent,
+  breadcrumb: Breadcrumb as SectionComponent,
+  pageHero: PageHero as SectionComponent,
+  splitContentSection: SplitContentSection as SectionComponent,
 };
