@@ -1,6 +1,6 @@
 import type { PageDocument } from "@/lib/cms/types";
-import { cloudInfrastructureHeroData, cloudInfrastructureWhereWeHelpData } from "@/components/features/cloud-infrastructure/data";
-import { cybersecurityCredentialsData } from "@/components/features/cybersecurity/data";
+import { cloudInfrastructureHeroData, cloudInfrastructureSplitContentData, cloudInfrastructureWhereWeHelpData, cloudInfrastructureApproachData, cloudInfrastructureSpecialistsData } from "@/components/features/cloud-infrastructure/data";
+import { cybersecurityCredentialsData, cybersecurityWhyChooseData } from "@/components/features/cybersecurity/data";
 
 export const cloudInfrastructurePage: PageDocument = {
   slug: "cloud-infrastructure",
@@ -17,6 +17,11 @@ export const cloudInfrastructurePage: PageDocument = {
       data: cloudInfrastructureHeroData,
     },
     {
+      _type: "splitContent",
+      _key: "cloud-infrastructure-split-content",
+      data: cloudInfrastructureSplitContentData
+    },
+    {
       _type: "credentialsSection",
       _key: "cloud-infrastructure-credentials",
       data: cybersecurityCredentialsData
@@ -25,6 +30,21 @@ export const cloudInfrastructurePage: PageDocument = {
       _type: "aiAutomationWhereWeHelp",
       _key: "cloud-infrastructure-where-we-help",
       data: cloudInfrastructureWhereWeHelpData,
+    },
+    {
+      _type: "processSection",
+      _key: "cloud-infrastructure-process",
+      data: cloudInfrastructureApproachData
+    },
+    {
+      _type: "splitActionCards",
+      _key: "cloud-infrastructure-specialists",
+      data: cloudInfrastructureSpecialistsData
+    },
+    {
+      _type: "whyChoose",
+      _key: "cloud-infrastructure-why-choose",
+      data: cybersecurityWhyChooseData
     }
   ],
 };

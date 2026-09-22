@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import LayoutRenderer from "@/components/renderers/LayoutRenderer";
 import { getPage } from "@/lib/cms/get-page";
-import CtaSection from "@/components/features/home/CtaSection/CtaSection";
 import NewsletterSection from "@/components/ui/NewsletterSection/NewsletterSection";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -21,7 +20,6 @@ export default async function InsightsPage() {
     <>
       <LayoutRenderer layout={page.layout} sections={page.sections} />
       <NewsletterSection />
-      <CtaSection />
     </>
   );
 }

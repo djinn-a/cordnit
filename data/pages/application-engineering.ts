@@ -49,49 +49,6 @@ export const applicationEngineeringPage: PageDocument = {
       data: cybersecurityCredentialsData
     },
     {
-      _type: "aiAutomationWhereWeHelp",
-      _key: "application-engineering-where-we-help",
-      data: {
-        eyebrow: "WHERE WE HELP",
-        title: "From product thinking to dependable engineering.",
-        subtitle: "We bring together product, design and engineering expertise to create applications that are useful today and ready to evolve tomorrow.",
-        cards: [
-          {
-            number: "01",
-            code: "AI:01",
-            category: "OPPORTUNITY",
-            title: "Shape the right product",
-            description: "Understand user needs, clarify the problem, test assumptions and define a roadmap that balances value with practical delivery.",
-            icon: "/ai-automation/icons/Icon.svg"
-          },
-          {
-            number: "02",
-            code: "AI:02",
-            category: "WORKFLOWS",
-            title: "Design experiences people can use",
-            description: "Create simple, accessible journeys and interfaces that support adoption from the start.",
-            icon: "/ai-automation/icons/Icon (1).svg"
-          },
-          {
-            number: "03",
-            code: "AI:03",
-            category: "SCALE",
-            title: "Engineer with confidence",
-            description: "Build and integrate applications with quality, security, performance and maintainability in mind.",
-            icon: "/ai-automation/icons/Icon (2).svg"
-          },
-          {
-            number: "04",
-            code: "AI:04",
-            category: "IMPROVEMENT",
-            title: "Modernise and improve",
-            description: "Reduce the friction and risk of legacy applications through deliberate, incremental improvement.",
-            icon: "/ai-automation/icons/Icon (3).svg"
-          }
-        ]
-      }
-    },
-    {
       _type: "processSection",
       _key: "application-engineering-process",
       data: {
