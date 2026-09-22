@@ -30,7 +30,7 @@ export default function InsightCard({
         <div className="flex flex-col">
           {/* Metadata Row */}
           <div className="flex items-center gap-2 mb-2">
-            <span className="uppercase text-insight-label text-primary">
+            <span className="uppercase text-link-card-mobile text-primary">
               {metadata.label}
             </span>
             <span className="px-2 py-0.5 bg-surface border border-border-card rounded-full text-card-detail-mobile text-ink-muted">
@@ -39,12 +39,12 @@ export default function InsightCard({
           </div>
 
           {/* Title */}
-          <h4 className="text-insight-title-mobile md:text-insight-title-desktop text-ink mb-2 md:mb-3">
+          <h4 className="text-base font-bold text-ink mb-2 md:mb-3">
             {title}
           </h4>
 
           {/* Description */}
-          <p className="text-insight-desc-mobile md:text-insight-desc-desktop text-ink-muted line-clamp-2">
+          <p className="text-sm font-normal text-ink-muted line-clamp-2">
             {description}
           </p>
         </div>
@@ -52,14 +52,14 @@ export default function InsightCard({
         {/* Bottom Content (Date, CTA) */}
         <div className="flex flex-col gap-3 md:gap-4 mt-3 md:mt-4">
           {/* Date Info */}
-          <span className="text-insight-date-mobile md:text-insight-date-desktop md:tracking-normal text-ink-muted">
+          <span className="text-card-desc-mobile font-semibold text-ink-muted">
             {dateInfo}
           </span>
           
           {/* CTA Link */}
           <Link
             href={cta.href}
-            className="flex items-center gap-1 md:gap-1.5 text-insight-cta-mobile md:text-insight-cta-desktop text-primary hover:text-primary-hover transition-colors w-fit"
+            className="flex items-center gap-1 md:gap-1.5 text-link-mobile md:text-link-desktop text-primary hover:text-primary-hover transition-colors w-fit"
           >
             {cta.label}
             <ArrowRight className="w-3 h-3 md:w-3.5 md:h-3.5" />
