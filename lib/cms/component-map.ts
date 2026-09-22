@@ -16,11 +16,11 @@ import AboutPrinciples from "@/components/features/about/AboutPrinciples/AboutPr
 import AboutTeam from "@/components/features/about/AboutTeam/AboutTeam";
 import ContactHero from "@/components/features/contact/ContactHero/ContactHero";
 import ContactFormSection from "@/components/features/contact/ContactFormSection/ContactFormSection";
-import ContentMediaSection from "@/components/features/shared/ContentMediaSection/ContentMediaSection";
-import ContextApproachSection from "@/components/features/shared/ContextApproachSection/ContextApproachSection";
-import PerspectiveSection from "@/components/features/shared/PerspectiveSection/PerspectiveSection";
-import ContentInsights from "@/components/features/shared/ContentInsights/ContentInsights";
-import IndustryCardsSection from "@/components/features/shared/IndustryCardsSection/IndustryCardsSection";
+import ContentMediaSection from "@/components/blocks/ContentMediaSection/ContentMediaSection";
+import ContextApproachSection from "@/components/blocks/ContextApproachSection/ContextApproachSection";
+import PerspectiveSection from "@/components/blocks/PerspectiveSection/PerspectiveSection";
+import ContentInsights from "@/components/blocks/ContentInsights/ContentInsights";
+import IndustryCardsSection from "@/components/blocks/IndustryCardsSection/IndustryCardsSection";
 import { CybersecurityHero } from "@/components/features/cybersecurity/CybersecurityHero";
 import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
 import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection, PageHero, Breadcrumb, SplitContentSection } from "@/components/ui";
@@ -48,8 +48,8 @@ import { AiAutomationSpecialists } from "@/components/features/ai-automation/AiA
 import { AiAutomationWhyChoose } from "@/components/features/ai-automation/AiAutomationWhyChoose";
 import { AiAutomationWhereWeHelp } from "@/components/features/ai-automation/AiAutomationWhereWeHelp";
 import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
-import { DataSecurityOverview } from "@/components/features/shared/cybersecurity/DataSecurityOverview";
-import { DataDiscovery } from "@/components/features/shared/cybersecurity/DataDiscovery";
+import { DataSecurityOverview } from "@/components/features/cybersecurity/shared/DataSecurityOverview";
+import { DataDiscovery } from "@/components/features/cybersecurity/shared/DataDiscovery";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,

@@ -1,5 +1,5 @@
 import type { PageDocument } from "@/lib/cms/types";
-import type { ContentMediaSectionProps } from "@/components/features/shared/ContentMediaSection/ContentMediaSection.types";
+import type { ContentMediaSectionProps } from "@/components/blocks/ContentMediaSection/ContentMediaSection.types";
 
 const industryContent: ContentMediaSectionProps = {
   eyebrow: "INDUSTRIES",
