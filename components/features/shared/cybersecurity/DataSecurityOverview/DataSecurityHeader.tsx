@@ -2,7 +2,7 @@ import type { DataSecurityOverviewData } from "./types";
 
 export type DataSecurityHeaderProps = DataSecurityOverviewData["header"];
 
-export function DataSecurityHeader({ eyebrow, title, description }: DataSecurityHeaderProps) {
+export function DataSecurityHeader({ eyebrow, title, description }: Readonly<DataSecurityHeaderProps>) {
   return (
     <div className="flex flex-col items-start w-full">
       <div className="w-fit flex items-center justify-center">
