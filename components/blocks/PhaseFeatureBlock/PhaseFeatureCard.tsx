@@ -1,40 +1,39 @@
-import { cn } from "@/lib/utils/cn";
 import type { PhaseFeatureCardData } from "./types";
 
 interface PhaseFeatureCardProps {
   card: PhaseFeatureCardData;
 }
 
-export default function PhaseFeatureCard({ card }: PhaseFeatureCardProps) {
+export default function PhaseFeatureCard({ card }: Readonly<PhaseFeatureCardProps>) {
   return (
-    <div className="flex flex-col h-full bg-white md:bg-surface border border-border-card rounded-[12px] p-[20px] md:p-[32px] hover:border-[#2251FF] md:hover:border-brand-primary/30 hover:shadow-sm transition-all duration-300">
+    <div className="flex flex-col h-full bg-white md:bg-surface border border-border-card rounded-xl p-space-20 md:p-space-32 hover:border-brand-primary md:hover:border-brand-primary/30 hover:shadow-sm transition-all duration-300">
       {/* Top Row: Number & Phase */}
       <div className="flex justify-between items-baseline">
-        <span className="text-[14px] md:text-[24px] text-[#2251FF] md:text-brand-primary font-[600] md:font-semibold leading-[22px] md:leading-normal font-mulish">
+        <span className="text-link-mobile md:text-section-title-head text-brand-primary font-semibold font-mulish">
           {card.numberStr}
         </span>
-        <span className="text-[10px] md:text-[12px] uppercase text-[#555] md:text-ink-muted tracking-[0.6px] md:tracking-[1px] font-[400] md:font-semibold leading-[14px] md:leading-normal font-mulish">
+        <span className="text-stat-desc-mobile md:text-help-card-prefix uppercase text-ink-muted tracking-wider md:tracking-widest font-normal md:font-semibold font-mulish">
           {card.phaseLabel}
         </span>
       </div>
 
       {/* Divider */}
-      <hr className="mt-[12px] mb-[12px] md:mt-[24px] md:mb-0 border-border-card" />
+      <hr className="mt-space-12 mb-space-12 md:mt-space-24 md:mb-0 border-border-card" />
 
       {/* Content Area (grows to push footer down) */}
-      <div className="flex flex-col flex-grow">
-        <h3 className="text-[14px] md:text-[20px] text-[#000] md:text-ink font-[700] md:font-semibold mt-[0] md:mt-[24px] mb-[4px] md:mb-[12px] leading-[22px] md:leading-normal font-mulish uppercase">
+      <div className="flex flex-col grow">
+        <h3 className="text-section-title-head-mobile md:text-help-card-title-mobile text-ink font-bold md:font-semibold mt-0 md:mt-space-24 mb-space-4 md:mb-space-12 font-mulish uppercase">
           {card.title}
         </h3>
-        <p className="text-[12px] md:text-[16px] text-[#555] md:text-ink-muted leading-[16px] md:leading-[24px] font-[400] font-mulish">
+        <p className="text-card-desc-mobile md:text-help-card-desc-mobile text-ink-muted font-normal font-mulish">
           {card.description}
         </p>
       </div>
 
       {/* Footer Text */}
       {card.footerText && (
-        <div className="mt-[12px] md:mt-auto pt-[12px] md:pt-[24px] border-t border-border-card">
-          <p className="text-[10px] md:text-[12px] font-[400] leading-[14px] md:leading-[16px] text-[#555] md:text-ink-muted tracking-[0.6px] md:tracking-normal font-mulish">
+        <div className="mt-space-12 md:mt-auto pt-space-12 md:pt-space-24 border-t border-border-card">
+          <p className="text-stat-desc-mobile md:text-card-desc-mobile font-normal text-ink-muted md:text-ink tracking-wider md:tracking-normal font-mulish">
             {card.footerText}
           </p>
         </div>

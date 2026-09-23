@@ -19,10 +19,10 @@ export function SplitFeatureText({
           {eyebrow}
         </span>
       </div>
-      <h2 className="text-section-title-mobile md:text-split-section-title md:font-bold md:leading-tight text-ink font-mulish mb-space-8 md:mb-space-20">
+      <h2 className="text-section-title-mobile md:text-split-section-title text-ink font-mulish mb-space-8 md:mb-space-20">
         {title}
       </h2>
-      <p className="text-section-subtitle-mobile md:text-page-hero-subtitle md:font-medium md:leading-relaxed text-ink-muted font-mulish mb-space-8 md:mb-space-20">
+      <p className="text-section-subtitle-mobile md:text-page-hero-subtitle text-ink-muted font-mulish mb-space-8 md:mb-space-20">
         {description}
       </p>
 
@@ -51,15 +51,15 @@ export function SplitFeatureText({
               )}
               <div className="flex flex-col w-full">
                 {feature.title && textFeatureStyle === "cards" && (
-                  <h3 className="text-section-title-head-mobile md:text-card-title-mobile md:font-bold md:leading-normal text-ink font-mulish">
+                  <h3 className="text-section-title-head-mobile md:text-help-card-title-mobile md:font-semibold text-ink font-mulish">
                     {feature.title}
                   </h3>
                 )}
                 <span
                   className={
                     textFeatureStyle === "cards"
-                      ? "text-stat-desc-mobile md:text-card-desc md:font-normal md:leading-normal text-ink-muted font-mulish"
-                      : "text-card-desc-mobile md:text-card-desc font-normal md:leading-normal text-ink font-mulish"
+                      ? "text-stat-desc-mobile md:text-help-card-desc-mobile md:font-normal text-ink-muted font-mulish"
+                      : "text-card-desc-mobile md:text-help-card-desc-mobile md:font-normal text-ink font-mulish"
                   }
                 >
                   {feature.text}

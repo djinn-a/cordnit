@@ -22,16 +22,16 @@ export function DataSecurityProcessCard({
         </span>
       </div>
       
-      <h3 className="text-ink text-section-title-head-mobile md:text-card-title-desktop md:font-bold md:leading-normal font-mulish mb-space-4 md:mb-space-12 uppercase">
+      <h3 className="text-ink text-section-title-head-mobile md:text-help-card-title-mobile md:font-semibold font-mulish mb-space-4 md:mb-space-12 uppercase">
         {title}
       </h3>
       
-      <p className="text-ink-muted text-card-desc-mobile md:text-card-desc md:font-normal md:leading-normal font-mulish mb-space-12 md:mb-space-24 grow">
+      <p className="text-ink-muted text-card-desc-mobile md:text-help-card-desc-mobile md:font-normal font-mulish mb-space-12 md:mb-space-24 grow">
         {description}
       </p>
       
       <div className="bg-transparent md:bg-surface rounded-none md:rounded-lg p-0 md:py-space-8 md:px-space-12 w-full mt-auto">
-        <p className="text-ink-muted md:text-ink text-stat-desc-mobile md:text-sm md:font-normal md:leading-5 tracking-widest md:tracking-normal font-mulish">
+        <p className="text-ink-muted md:text-ink text-stat-desc-mobile md:text-card-desc-mobile md:font-normal tracking-widest md:tracking-normal font-mulish">
           {subDescription}
         </p>
       </div>

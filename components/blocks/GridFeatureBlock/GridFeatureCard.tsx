@@ -12,34 +12,34 @@ export default function GridFeatureCard({ card, variant }: Readonly<GridFeatureC
   return (
     <div
       className={cn(
-        "relative flex flex-col h-full w-full p-[20px] md:p-space-32 rounded-[10px] md:rounded-card-grid transition-all duration-300",
+        "relative flex flex-col h-full w-full p-space-20 md:p-space-32 rounded-xl md:rounded-card-grid transition-all duration-300",
         variant === "solid" 
-          ? "bg-[#EEF4FF] md:bg-brand-pale border border-transparent"
-          : "bg-white md:bg-surface border border-border-card"
+          ? "bg-brand-pale border border-transparent"
+          : "bg-surface border border-border-card"
       )}
     >
       {/* Icon */}
       {React.createElement(getLucideIcon(card.iconName), {
-        className: "absolute top-[20px] md:top-space-32 right-[20px] md:right-space-32 w-[13.33px] h-[12px] md:w-space-24 md:h-space-24 text-[#2251FF] md:text-brand-primary"
+        className: "absolute top-space-20 md:top-space-32 right-space-20 md:right-space-32 w-4 h-4 md:w-space-24 md:h-space-24 text-brand-primary"
       })}
 
       {/* Number */}
       <div 
         className={cn(
-          "text-[#2251FF] md:text-brand-primary text-[10px] md:text-card-desc font-[600] md:font-semibold font-mulish leading-[14px] md:leading-normal",
-          "mb-[8px] md:mb-space-12"
+          "text-brand-primary text-link-card-mobile md:text-card-desc md:font-semibold font-mulish",
+          "mb-space-8 md:mb-space-12"
         )}
       >
         {card.numberStr}
       </div>
 
       {/* Title */}
-      <h3 className="text-[14px] md:text-card-title-desktop text-[#000] md:text-ink font-[700] md:font-semibold leading-[22px] md:leading-normal font-mulish mb-[8px] md:mb-space-12">
+      <h3 className="text-section-title-head-mobile md:text-help-card-title-mobile text-ink md:font-semibold font-mulish mb-space-8 md:mb-space-12">
         {card.title}
       </h3>
 
       {/* Description */}
-      <p className="text-[12px] md:text-card-desc text-[#555] md:text-ink-muted font-[400] md:font-normal leading-[16px] md:leading-normal font-mulish grow">
+      <p className="text-card-desc-mobile md:text-help-card-desc-mobile text-ink-muted md:font-normal font-mulish grow">
         {card.description}
       </p>
 
@@ -47,14 +47,14 @@ export default function GridFeatureCard({ card, variant }: Readonly<GridFeatureC
       {card.pills && card.pills.length > 0 && (
         <div 
           className={cn(
-            "flex flex-wrap gap-[5px] md:gap-space-8 mt-auto",
-            variant === "solid" ? "pt-[20px] md:pt-space-32" : "pt-[20px] md:pt-space-24"
+            "flex flex-wrap gap-space-4 md:gap-space-8 mt-auto",
+            variant === "solid" ? "pt-space-20 md:pt-space-32" : "pt-space-20 md:pt-space-24"
           )}
         >
           {card.pills.map((pill) => (
             <span 
               key={pill}
-              className="bg-[#2251FF]/10 md:bg-brand-primary/10 text-[#2251FF] md:text-brand-primary text-[10px] md:text-help-card-prefix font-[400] md:font-normal leading-[14px] md:leading-normal tracking-[0.6px] md:tracking-normal font-mulish px-[8px] py-[4px] md:px-space-16 md:py-space-8 rounded"
+              className="bg-brand-primary/10 text-brand-primary text-stat-desc-mobile md:text-help-card-prefix md:font-normal tracking-widest md:tracking-normal font-mulish px-space-8 py-space-4 md:px-space-16 md:py-space-8 rounded"
             >
               {pill}
             </span>
