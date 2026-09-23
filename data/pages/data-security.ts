@@ -48,9 +48,9 @@ export const dataSecurityPage: PageDocument = {
         },
         cardSection: {
           sectionTag: "SECURE APPS FASTER",
-          sectionTitle: "APPLICATION IDENTITY SECURITY",
+          sectionTitle: "APPLICATION LIFECYCLE SECURITY",
           footerText: "FROM CLOUD TO ENDPOINT, PROTECT DATA AT REST, IN TRANSIT AND IN USE.",
-          footerHighlight: "Continuous Lifecycle Engine Active",
+          footerHighlight: "SECURITY BUILT IN // BY DESIGN",
           cards: [
             {
               stepNumber: "01",
