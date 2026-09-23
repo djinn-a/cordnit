@@ -50,6 +50,9 @@ import { AiAutomationWhereWeHelp } from "@/components/features/ai-automation/AiA
 import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
 import { DataSecurityOverview } from "@/components/features/cybersecurity/shared/DataSecurityOverview";
 import { DataDiscovery } from "@/components/features/cybersecurity/shared/DataDiscovery";
+import AuthenticationGovernance from "@/components/features/cybersecurity/shared/AuthenticationGovernance/AuthenticationGovernance";
+import LifecycleManagement from "@/components/features/cybersecurity/shared/LifecycleManagement/LifecycleManagement";
+import SecureDataOperations from "@/components/features/cybersecurity/shared/SecureDataOperations/SecureDataOperations";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -100,8 +103,10 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   splitContent: SplitContentSection as SectionComponent,
   whyChoose: WhyChooseSection as SectionComponent,
   breadcrumb: Breadcrumb as SectionComponent,
- // pageHero: PageHero as SectionComponent,
   splitContentSection: SplitContentSection as SectionComponent,
   dataSecurityOverview: DataSecurityOverview as SectionComponent,
   dataDiscovery: DataDiscovery as SectionComponent,
+  authenticationGovernance: AuthenticationGovernance as SectionComponent,
+  lifecycleManagement: LifecycleManagement as SectionComponent,
+  secureDataOperations: SecureDataOperations as SectionComponent,
 };

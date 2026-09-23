@@ -52,7 +52,10 @@ export type SectionType =
   | "breadcrumb"
   | "splitContentSection"
   | "dataSecurityOverview"
-  | "dataDiscovery";
+  | "dataDiscovery"
+  | "authenticationGovernance"
+  | "lifecycleManagement"
+  | "secureDataOperations";
 
 export type LayoutType = "default" | "contact";
 

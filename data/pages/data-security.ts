@@ -194,6 +194,89 @@ export const dataSecurityPage: PageDocument = {
           footerBadges: ["Role-Based Access", "Least Privilege Principle", "Just-In-Time Provisioning"]
         }
       }
+    },
+    {
+      _type: "authenticationGovernance",
+      _key: "authentication-governance",
+      data: {
+        header: {
+          eyebrow: "AUTHENTICATION & GOVERNANCE",
+          title: "Build confidence into every access decision.",
+          description: "Bring stronger authentication, access policies and governance together to create secure experiences without adding unnecessary friction for users."
+        },
+        cards: [
+          {
+            numberStr: "01",
+            title: "Data Monitoring",
+            description: "Identify unusual access, exfiltration patterns, and potential exposure across hybrid environments. Stream DLP telemetry into enterprise SIEM platforms for rapid triage.",
+            iconName: "Activity",
+            pills: ["Threat Modeling", "Security Champions", "Policy as Code"]
+          },
+          {
+            numberStr: "02",
+            title: "Access Controls",
+            description: "Strengthen permissions and reduce unnecessary data access with dynamic policy enforcement. Implement fine-grained attribute based constraints mapped to organizational hierarchy.",
+            iconName: "Lock",
+            pills: ["Vector Store DLP", "PII Masking", "Synthetic Data"]
+          },
+          {
+            numberStr: "03",
+            title: "Data Protection",
+            description: "Apply appropriate safeguards including tokenization, field-level encryption, format-preserving encryption, and hardware-backed secure key management integration.",
+            iconName: "ShieldCheck",
+            pills: ["Red Teaming", "KMS Integration", "Hardware HSM"]
+          },
+          {
+            numberStr: "04",
+            title: "Governance",
+            description: "Establish clear data custodianship, lineage tracking, automated compliance auditing, and executive risk metrics to satisfy regulatory mandates with speed.",
+            iconName: "Scale",
+            pills: ["Lineage Mapping", "Compliance Audits", "Risk Scorecards"]
+          }
+        ]
+      }
+    },
+
+    {
+      _type: "secureDataOperations",
+      _key: "secure-data-operations",
+      data: {
+        header: {
+          eyebrow: "SECURE DATA OPERATIONS",
+          title: "From data visibility to continuous protection.",
+          description: "We help turn data security priorities into practical controls that work across your technology environment and everyday business processes."
+        },
+        cards: [
+          {
+            numberStr: "01",
+            phaseLabel: "PHASE 1",
+            title: "DISCOVER",
+            description: "Understand your current attack surface, assets, and exposure points across hybrid environments.",
+            footerText: "Attack Surface Inventory & Baseline"
+          },
+          {
+            numberStr: "02",
+            phaseLabel: "PHASE 2",
+            title: "ASSESS",
+            description: "Apply risk and business context to identify what matters most and filter out low-value alerts.",
+            footerText: "Contextual Risk Scoring Engine"
+          },
+          {
+            numberStr: "03",
+            phaseLabel: "PHASE 3",
+            title: "PROTECT",
+            description: "Coordinate focused remediation across the teams responsible for affected crown-jewel assets.",
+            footerText: "Orchestrated Remediation Playbooks"
+          },
+          {
+            numberStr: "04",
+            phaseLabel: "PHASE 4",
+            title: "MONITOR & IMPROVE",
+            description: "Track progress, report changes and continuously improve your long-term exposure defensibility.",
+            footerText: "Continuous Telemetry & Posture Audits"
+          }
+        ]
+      }
     }
   ],
 };

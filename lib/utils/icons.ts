@@ -1,4 +1,4 @@
-import { Landmark, HeartPulse, ShoppingCart, Factory, GraduationCap, Users, Circle, Shield, Server, Cloud, Bot, Code, UserCog, LayoutGrid, Database, MonitorSmartphone, Share2 } from "lucide-react";
+import { Landmark, HeartPulse, ShoppingCart, Factory, GraduationCap, Users, Circle, Shield, Server, Cloud, Bot, Code, UserCog, LayoutGrid, Database, MonitorSmartphone, Share2, Activity, Lock, ShieldCheck, Scale } from "lucide-react";
 
 export type CMSIconName = 
   | "Landmark" 
@@ -16,7 +16,11 @@ export type CMSIconName =
   | "LayoutGrid"
   | "Database"
   | "MonitorSmartphone"
-  | "Share2";
+  | "Share2"
+  | "Activity"
+  | "Lock"
+  | "ShieldCheck"
+  | "Scale";
 
 const iconMap: Record<CMSIconName, React.ElementType> = {
   Landmark,
@@ -35,6 +39,10 @@ const iconMap: Record<CMSIconName, React.ElementType> = {
   Database,
   MonitorSmartphone,
   Share2,
+  Activity,
+  Lock,
+  ShieldCheck,
+  Scale,
 };
 
 /**

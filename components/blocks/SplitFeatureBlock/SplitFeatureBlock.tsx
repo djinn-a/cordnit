@@ -11,7 +11,7 @@ export function SplitFeatureBlock({
   mediaSection,
 }: Readonly<SplitFeatureBlockProps>) {
   return (
-    <section className="w-full max-w-container-1440 mx-auto px-space-16 md:px-space-32 xl:px-0 py-space-64">
+    <section className="w-full">
       <div 
         className={`flex flex-col lg:flex-row gap-space-40 w-full ${
           layout === "text-right" ? "lg:flex-row-reverse" : ""

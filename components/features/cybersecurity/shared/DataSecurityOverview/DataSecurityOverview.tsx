@@ -10,7 +10,7 @@ export function DataSecurityOverview({ data }: Readonly<DataSecurityOverviewProp
   const gapClass = data.processCards ? "gap-space-64" : "gap-space-80";
   
   return (
-    <section className={`w-full flex flex-col ${gapClass} pt-space-80 max-w-container-1440 mx-auto px-space-24 md:px-space-60`}>
+    <section className={`w-full flex flex-col ${gapClass}`}>
       <DataSecurityHeader {...data.header} />
       {data.cardSection && <DataSecurityCardSection {...data.cardSection} />}
       {data.processCards && (
