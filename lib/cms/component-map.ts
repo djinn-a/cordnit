@@ -53,6 +53,7 @@ import { DataDiscovery } from "@/components/features/cybersecurity/shared/DataDi
 import AuthenticationGovernance from "@/components/features/cybersecurity/shared/AuthenticationGovernance/AuthenticationGovernance";
 import LifecycleManagement from "@/components/features/cybersecurity/shared/LifecycleManagement/LifecycleManagement";
 import SecureDataOperations from "@/components/features/cybersecurity/shared/SecureDataOperations/SecureDataOperations";
+import { JourneyStepsBlock } from "@/components/blocks/JourneyStepsBlock";
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -109,4 +110,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   authenticationGovernance: AuthenticationGovernance as SectionComponent,
   lifecycleManagement: LifecycleManagement as SectionComponent,
   secureDataOperations: SecureDataOperations as SectionComponent,
+  journeyStepsBlock: JourneyStepsBlock as SectionComponent,
 };

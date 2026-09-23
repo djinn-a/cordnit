@@ -13,6 +13,7 @@ import { cloudInfrastructurePage } from "@/data/pages/cloud-infrastructure";
 import { applicationEngineeringPage } from "@/data/pages/application-engineering";
 import { dataIntegrationPage } from "@/data/pages/data-integration";
 import { dataSecurityPage } from "@/data/pages/data-security";
+import { salesforceSalesPage } from "@/data/pages/salesforce-sales";
 
 const pages: Record<string, PageDocument> = {
   home: homePage,
@@ -29,6 +30,7 @@ const pages: Record<string, PageDocument> = {
   "application-engineering": applicationEngineeringPage,
   "data-integration": dataIntegrationPage,
   "data-security": dataSecurityPage,
+  "salesforce/sales": salesforceSalesPage,
 };
 
 /**

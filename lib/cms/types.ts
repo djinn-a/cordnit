@@ -55,7 +55,8 @@ export type SectionType =
   | "dataDiscovery"
   | "authenticationGovernance"
   | "lifecycleManagement"
-  | "secureDataOperations";
+  | "secureDataOperations"
+  | "journeyStepsBlock";
 
 export type LayoutType = "default" | "contact";
 
