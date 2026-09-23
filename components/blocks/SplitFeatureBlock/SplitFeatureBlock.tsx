@@ -13,7 +13,7 @@ export function SplitFeatureBlock({
   return (
     <section className="w-full">
       <div 
-        className={`flex flex-col lg:flex-row gap-[24px] lg:gap-space-40 justify-between items-start w-full ${
+        className={`flex flex-col lg:flex-row gap-space-24 lg:gap-space-40 justify-between items-start w-full ${
           layout === "text-right" ? "lg:flex-row-reverse" : ""
         }`}
       >
