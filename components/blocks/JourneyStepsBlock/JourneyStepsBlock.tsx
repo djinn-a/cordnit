@@ -4,8 +4,8 @@ import type { JourneyStepsBlockProps } from "./types";
 
 export default function JourneyStepsBlock({ header, cards, className }: Readonly<JourneyStepsBlockProps>) {
   return (
-    <section className={cn("w-full bg-surface", className)}>
-      <div className="w-full flex flex-col">
+    <section className={cn("w-screen relative left-1/2 -translate-x-1/2 bg-brand-pale py-space-40 md:py-space-60", className)}>
+      <div className="w-full max-w-container-1440 mx-auto px-space-16 md:px-space-32 lg:px-space-60 flex flex-col">
         {/* Split Header */}
         <div className="flex flex-col lg:flex-row justify-between w-full mb-space-24 md:mb-space-64 gap-space-16 md:gap-space-24 lg:gap-space-60">
           <div className="flex flex-col w-full lg:w-3/5 xl:w-2/3 gap-space-8 md:gap-space-16">
