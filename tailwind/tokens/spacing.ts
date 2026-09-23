@@ -17,6 +17,7 @@ export const spacing: SpacingConfig = {
   "space-21": "21px",
   "space-22": "22px",
   "space-24": "24px",
+  "space-26" : "26px",
   "space-32": "32px",
   "space-36": "36px",
   "space-40": "40px",
