@@ -8,6 +8,10 @@ export default function LeadQualificationBlock({
   flow,
   variant = "left",
 }: Readonly<LeadQualificationBlockProps>) {
+  const isWhiteStyle =
+    (header.highlightStyle || (variant === "right" ? "white" : "blue")) ===
+    "white";
+
   return (
     <section className="w-full">
       <Container className={cn(
@@ -30,9 +34,9 @@ export default function LeadQualificationBlock({
           {(header.highlightPrefix || header.highlightText) && (
             <div className={cn(
               "rounded-xl p-space-16 mt-space-20",
-              (header.highlightStyle || (variant === "right" ? "white" : "blue")) === "white" 
+              isWhiteStyle
                 ? "bg-white border border-border-card shadow-sm" 
-                : "bg-[var(--card-2,rgba(203,224,255,0.40))] border-l-4 border-brand-primary"
+                : "bg-(--card-2,rgba(203,224,255,0.40)) border-l-4 border-brand-primary"
             )}>
               <p className="text-base text-ink-muted font-mulish">
                 {header.highlightPrefix && (
