@@ -17,11 +17,11 @@ export default function ContentMediaText({
         </span>
       )}
       
-      <h2 className="text-section-title-mobile leading-[32px] md:text-hero-header-eb md:leading-[70px] text-ink mb-space-12 md:mb-space-20 text-balance md:max-w-[18ch] lg:max-w-[20ch]">
+      <h2 className="text-section-title-mobile leading-[32px] md:text-hero-header-eb md:leading-[70px] text-ink mb-space-8 md:mb-space-20 text-balance md:max-w-[18ch] lg:max-w-[20ch]">
         {title}
       </h2>
       
-      <p className="text-section-subtitle-mobile md:text-section-subtitle text-ink-muted mb-0 md:mb-space-20">
+      <p className="text-section-subtitle-mobile leading-[22px] md:text-section-subtitle text-ink-muted mb-0 md:mb-space-20">
         {description}
       </p>
       
@@ -30,7 +30,7 @@ export default function ContentMediaText({
           <Link href={cta.href}>
             <Button 
               variant="primary" 
-              className="w-fit h-space-48 rounded-lg px-space-24 py-space-12 text-[16px] font-semibold leading-[24px]"
+              className="w-fit h-[42px] md:h-space-48 rounded-lg px-[16px] py-[10px] md:px-space-24 md:py-space-12 text-[14px] md:text-[16px] font-semibold leading-[22px] md:leading-[24px]"
               rightIcon={<ArrowRight size={16} />}
             >
               {cta.label}

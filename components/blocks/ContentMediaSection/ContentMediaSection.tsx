@@ -13,7 +13,7 @@ export default function ContentMediaSection({
 }: Readonly<ContentMediaSectionProps>) {
   return (
     <section className="w-full">
-      <Container className="px-6 xl:px-0">
+      <Container className="px-0">
         <div className="flex flex-col md:flex-row items-center justify-between gap-space-24 md:gap-space-50">
           <ContentMediaText 
             eyebrow={eyebrow}

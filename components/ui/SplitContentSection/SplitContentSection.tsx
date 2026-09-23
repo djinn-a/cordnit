@@ -17,7 +17,7 @@ export type SplitContentSectionProps = {
 export default function SplitContentSection({ data }: SplitContentSectionProps) {
   return (
     <section className="w-full">
-      <div className="w-full max-w-container-xl px-space-16 md:px-space-32 lg:px-space-40 mx-auto flex flex-col md:grid md:grid-cols-2 xl:flex xl:flex-row items-start md:items-center xl:items-start justify-between gap-space-40 md:gap-space-48 lg:gap-space-64">
+      <div className="w-full max-w-container-xl px-0 md:px-space-32 lg:px-space-40 mx-auto flex flex-col md:grid md:grid-cols-2 xl:flex xl:flex-row items-start md:items-center xl:items-start justify-between gap-space-40 md:gap-space-48 lg:gap-space-64">
         {/* Image Column */}
         <div className="w-full xl:w-[500px] order-2 md:order-1 xl:order-1">
           <div className="relative w-full aspect-[500/429] mx-auto md:mx-0 lg:mx-0 rounded-split-image overflow-hidden">
