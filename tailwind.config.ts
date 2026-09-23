@@ -110,6 +110,7 @@ const config: Config = {
         "help-card": "var(--shadow-help-card)",
       },
       spacing: {
+        "space-1":"1px",
         "space-2": "2px",
         "space-4": "4px",
         "space-6": "6px",

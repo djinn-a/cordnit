@@ -6,7 +6,7 @@ type DataSecurityCardProps = {
 
 export function DataSecurityCard({ stepNumber, title, description }: Readonly<DataSecurityCardProps>) {
   return (
-    <div className="bg-white border border-border-card rounded-card-sm shadow-help-card w-full md:w-space-51 h-full md:min-h-space-59 p-space-16 md:p-space-21 flex flex-col justify-start items-start">
+    <div className="bg-white border border-border-card rounded-card-sm shadow-help-card w-[calc(50%-6px)] md:w-space-51 h-full md:min-h-space-59 p-space-12 md:p-space-21 flex flex-col justify-start items-start">
       <div className="flex flex-col gap-space-10 md:gap-space-12 w-full">
         {/* Step Number with Dot */}
         <div className="relative w-full h-space-14 md:h-space-22 flex items-center">

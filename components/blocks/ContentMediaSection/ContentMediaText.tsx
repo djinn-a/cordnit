@@ -10,18 +10,18 @@ export default function ContentMediaText({
   cta,
 }: Readonly<Pick<ContentMediaSectionProps, "eyebrow" | "title" | "description" | "cta">>) {
   return (
-    <div className="flex flex-col w-full lg:w-[48%]">
+    <div className="flex flex-col w-full lg:w-[40%]">
       {eyebrow && (
-        <span className="text-eyebrow-mobile leading-[16px] md:text-eyebrow-desktop md:leading-none uppercase tracking-[1px] text-primary mb-space-8 md:mb-space-16">
+        <span className="text-eyebrow-mobile leading-space-16 md:text-eyebrow-desktop md:leading-none uppercase tracking-space-1 text-primary mb-space-8 md:mb-space-16">
           {eyebrow}
         </span>
       )}
       
-      <h2 className="text-section-title-mobile leading-[32px] md:text-hero-header-eb md:leading-[70px] text-ink mb-space-8 md:mb-space-20 text-balance md:max-w-[18ch] lg:max-w-[20ch]">
+      <h2 className="text-section-title-mobile md:text-hero-header-eb text-ink mb-space-8 md:mb-space-20 text-balance">
         {title}
       </h2>
       
-      <p className="text-section-subtitle-mobile leading-[22px] md:text-section-subtitle text-ink-muted mb-0 md:mb-space-20">
+      <p className="text-section-subtitle-mobile leading-space-22 md:text-section-subtitle text-ink-muted mb-0 md:mb-space-20">
         {description}
       </p>
       
@@ -30,7 +30,7 @@ export default function ContentMediaText({
           <Link href={cta.href}>
             <Button 
               variant="primary" 
-              className="w-fit h-[42px] md:h-space-48 rounded-lg px-[16px] py-[10px] md:px-space-24 md:py-space-12 text-[14px] md:text-[16px] font-semibold leading-[22px] md:leading-[24px]"
+              className="w-fit h-10.5 md:h-space-48 rounded-lg px-space-16 py-space-10 md:px-space-24 md:py-space-12 text-[14px] md:text-[16px] font-semibold leading-space-22 md:leading-space-24"
               rightIcon={<ArrowRight size={16} />}
             >
               {cta.label}

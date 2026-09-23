@@ -19,7 +19,7 @@ export default async function DataSecurityPage() {
     <LayoutRenderer 
       layout={page.layout} 
       sections={page.sections} 
-      className="[&>main]:!gap-space-56 md:[&>main]:!gap-space-80 [&>main]:!pt-[24px] md:[&>main]:!pt-space-80 [&>main]:!pb-space-56 md:[&>main]:!pb-space-80"
+      className="[&>main]:gap-space-56! md:[&>main]:gap-space-80! [&>main]:pt-6! md:[&>main]:pt-space-80! [&>main]:pb-space-56! md:[&>main]:pb-space-80!"
     />
   );
 }

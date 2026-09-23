@@ -24,7 +24,7 @@ export default function PhaseFeatureBlock({ header, cards, className }: Readonly
         </div>
 
         {/* Horizontal Row / Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-24 w-full items-stretch">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-space-12 md:gap-space-24 w-full items-stretch">
           {cards.map((card, idx) => (
             <PhaseFeatureCard key={card.id || idx} card={card} />
           ))}
