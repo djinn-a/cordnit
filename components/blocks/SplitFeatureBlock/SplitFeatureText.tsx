@@ -14,7 +14,7 @@ export function SplitFeatureText({
   textFeatureStyle = "checkmarks",
 }: Readonly<SplitFeatureTextProps>) {
   return (
-    <div className="flex flex-col items-start w-full lg:w-1/2 justify-center">
+    <div className="flex flex-col items-start w-full lg:w-[650px] lg:flex-shrink-0 justify-center">
       <div className="w-fit flex items-center justify-center mb-[8px] md:mb-space-8">
         <span className="text-[10px] md:text-page-hero-eyebrow font-[800] md:font-bold leading-[16px] md:leading-normal tracking-[1px] md:tracking-widest uppercase text-[#2251FF] md:text-brand-primary font-mulish">
           {eyebrow}
@@ -30,7 +30,7 @@ export function SplitFeatureText({
       {features.length > 0 && (
         <div
           className={`flex flex-col w-full ${
-            textFeatureStyle === "cards" ? "gap-space-16" : "gap-[8px] md:gap-space-12 mt-0 md:mt-space-12"
+            textFeatureStyle === "cards" ? "gap-[12px] md:gap-space-16" : "gap-[8px] md:gap-space-12 mt-0 md:mt-space-12"
           }`}
         >
           {features.map((feature) => (
@@ -38,7 +38,7 @@ export function SplitFeatureText({
               key={feature.title || feature.text}
               className={
                 textFeatureStyle === "cards"
-                  ? "bg-brand-pale rounded-card p-space-24 flex flex-col gap-space-8 w-full"
+                  ? "bg-[#EEF4FF] md:bg-brand-pale rounded-[10px] md:rounded-card p-[20px] md:p-space-24 flex flex-col gap-[12px] md:gap-space-8 w-full"
                   : "flex items-start gap-[12px] md:gap-space-12 w-full"
               }
             >
@@ -52,14 +52,14 @@ export function SplitFeatureText({
               )}
               <div className="flex flex-col w-full">
                 {feature.title && textFeatureStyle === "cards" && (
-                  <h3 className="text-[20px] font-bold text-ink font-mulish">
+                  <h3 className="text-[14px] md:text-[20px] font-[700] md:font-bold leading-[22px] md:leading-normal text-[#000] md:text-ink font-mulish">
                     {feature.title}
                   </h3>
                 )}
                 <span
                   className={
                     textFeatureStyle === "cards"
-                      ? "text-card-desc text-ink-muted font-mulish"
+                      ? "text-[10px] md:text-card-desc font-[400] md:font-normal leading-[14px] md:leading-normal text-[#555] md:text-ink-muted font-mulish"
                       : "text-[12px] md:text-card-desc font-normal leading-[16px] md:leading-normal text-[#000] md:text-ink font-mulish"
                   }
                 >

@@ -1,5 +1,4 @@
 "use client";
-
 import Container from "@/components/ui/Container/Container";
 import NewsletterContent from "./NewsletterContent";
 import NewsletterForm from "./NewsletterForm";

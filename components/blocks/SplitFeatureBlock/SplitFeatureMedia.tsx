@@ -15,8 +15,14 @@ export function SplitFeatureMedia({
   mediaStyle = "icon-cards",
 }: Readonly<SplitFeatureMediaProps>) {
   return (
-    <div className="flex flex-col w-[calc(100%+32px)] -ml-4 px-[16px] py-[20px] md:w-full lg:w-1/2 md:ml-0 md:p-space-32 bg-[#EEF4FF] md:bg-brand-pale rounded-none md:rounded-4xl">
-      <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between mb-[12px] md:mb-space-24 gap-[8px] md:gap-0">
+    <div className={`flex flex-col md:w-full lg:flex-1 md:ml-0 md:p-space-32 bg-[#EEF4FF] md:bg-brand-pale md:rounded-4xl ${
+      mediaStyle === "numbered-steps" 
+        ? "w-full p-[20px] rounded-[10px]" 
+        : "w-[calc(100%+32px)] -ml-4 px-[16px] py-[20px] rounded-none"
+    }`}>
+      <div className={`flex flex-col md:flex-row items-start md:items-center md:justify-between gap-[8px] md:gap-0 ${
+        mediaStyle === "numbered-steps" ? "mb-[24px]" : "mb-[12px]"
+      } md:mb-space-24`}>
         <span className="text-[12px] md:text-footer-heading-desktop text-[#555] md:text-ink-muted font-[600] md:font-bold leading-[16px] md:leading-normal uppercase font-mulish">
           {eyebrow}
         </span>
@@ -35,7 +41,7 @@ export function SplitFeatureMedia({
             >
               <div className="shrink-0 w-[40px] h-[40px] md:w-space-40 md:h-space-40 rounded md:rounded bg-brand-pale flex items-center justify-center">
                 {mediaStyle === "numbered-steps" ? (
-                  <span className="text-link-desktop text-brand-primary font-mulish">
+                  <span className="text-[12px] md:text-link-desktop text-[#2251FF] md:text-brand-primary font-[600] md:font-normal font-mulish">
                     {card.stepNumber}
                   </span>
                 ) : (
@@ -53,8 +59,11 @@ export function SplitFeatureMedia({
             </div>
             
             {mediaStyle === "numbered-steps" && index < cards.length - 1 && (
-              <div className="flex justify-center w-full -my-space-8">
-                <ArrowDown className="w-5 h-5 text-brand-primary opacity-50" />
+              <div className="flex justify-center w-full -mt-[12px] md:-my-space-8 z-10 mb-0">
+                <ArrowDown className="hidden md:block w-5 h-5 text-brand-primary opacity-50" />
+                <svg className="block md:hidden w-[14px] h-[24px] text-[#2251FF] opacity-60" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 0L7 23M7 23L1 17M7 23L13 17" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
             )}
           </React.Fragment>
@@ -62,11 +71,11 @@ export function SplitFeatureMedia({
       </div>
 
       {footerBadges && footerBadges.length > 0 && (
-        <div className="flex flex-wrap items-center gap-space-12 mt-space-24">
+        <div className="flex flex-wrap items-center gap-[8px] md:gap-space-12 mt-[16px] md:mt-space-24">
           {footerBadges.map((badge) => (
             <span
               key={badge}
-              className="bg-surface rounded px-space-12 py-space-6 text-card-desc-mobile text-ink-muted font-mulish shadow-sm"
+              className="bg-white md:bg-surface rounded-[4px] md:rounded px-[10px] py-[6px] md:px-space-12 md:py-space-6 text-[10px] md:text-card-desc-mobile text-[#000] md:text-ink-muted font-[500] font-mulish shadow-sm"
             >
               {badge}
             </span>

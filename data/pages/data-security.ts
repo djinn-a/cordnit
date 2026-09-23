@@ -188,10 +188,11 @@ export const dataSecurityPage: PageDocument = {
           statusText: "ISO 27001 / SOC 2",
           cards: [
             { stepNumber: "01", title: "USER / IDENTITY", description: "Human, Service Account, or API Consumer" },
-            { stepNumber: "02", title: "ACCESS POLICY GATEWAY", description: "Evaluates intent, context, and standing privileges" },
-            { stepNumber: "03", title: "SENSITIVE DATA STORE", description: "Databases, Cloud buckets, and SaaS applications" }
+            { stepNumber: "02", title: "ACCESS POLICY GATEWAY", description: "Context-Aware RBAC/ABAC & Device Posture Check" },
+            { stepNumber: "03", title: "PROTECTED DATA STORE", description: "Column/Row Masked, Tokenized, Encrypted Data Engine" },
+            { stepNumber: "04", title: "MONITORING & AUDIT", description: "Immutable Access Ledger & SIEM/SOAR Ingestion" }
           ],
-          footerBadges: ["Role-Based Access", "Least Privilege Principle", "Just-In-Time Provisioning"]
+          footerBadges: ["Role-Based Access", "Tokenization"]
         }
       }
     },
