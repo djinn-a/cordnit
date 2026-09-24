@@ -4,6 +4,15 @@ export const INTERESTS_LIST = [
   'Salesforce', 'Cloud & Infrastructure', 'Something else'
 ];
 
+export const FORM_FIELDS = [
+  { name: 'firstName', label: 'First Name', type: 'text', placeholder: 'John', required: true },
+  { name: 'lastName', label: 'Last Name', type: 'text', placeholder: 'Doe', required: true },
+  { name: 'email', label: 'Business Email', type: 'email', placeholder: 'john@company.com', required: true },
+  { name: 'company', label: 'Company', type: 'text', placeholder: 'Company Inc.', required: true },
+  { name: 'jobTitle', label: 'Job Title', type: 'text', placeholder: 'CTO', required: true },
+  { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+1 234 567 8900', required: true }
+] as const;
+
 export const PROCESS_STEPS = [
   {
     id: 'review',
