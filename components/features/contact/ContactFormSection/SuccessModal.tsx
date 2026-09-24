@@ -13,8 +13,8 @@ export default function SuccessModal({ isSuccess, setIsSuccess }: Readonly<Succe
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-[2px]">
-      <div className="w-full max-w-[800px] rounded-card p-10 md:p-14 text-center relative border border-white bg-gradient-success-panel shadow-card">
-        <div className="mx-auto w-[44px] h-[44px] bg-primary rounded-full flex items-center justify-center mb-6 shadow-md shadow-glow-primary">
+      <div className="w-full max-w-200 rounded-card p-10 md:p-14 text-center relative border border-white bg-gradient-success-panel shadow-card">
+        <div className="mx-auto w-11 h-11 bg-primary rounded-full flex items-center justify-center mb-6 shadow-md">
           <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.5} d="M5 13l4 4L19 7" />
           </svg>
@@ -28,7 +28,7 @@ export default function SuccessModal({ isSuccess, setIsSuccess }: Readonly<Succe
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link href="/solutions" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-primary text-white rounded-lg text-section-subtitle-mobile hover:bg-primary-hover transition-colors flex items-center justify-center shadow-md shadow-glow-primary">
+          <Link href="/solutions" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-primary text-white rounded-lg text-section-subtitle-mobile hover:bg-primary-hover transition-colors flex items-center justify-center shadow-glow-primary">
             Explore Solutions <span className="ml-1.5 font-bold">→</span>
           </Link>
           <Link href="/insights" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-primary-pale border border-primary-muted text-white rounded-lg text-section-subtitle-mobile hover:bg-primary-muted transition-colors flex items-center justify-center">

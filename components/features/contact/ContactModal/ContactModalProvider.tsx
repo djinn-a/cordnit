@@ -87,7 +87,7 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
     }, CLOSE_MS);
   }, [resetForm]);
 
-  const handleContinue = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleContinue = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
       setStep(2);

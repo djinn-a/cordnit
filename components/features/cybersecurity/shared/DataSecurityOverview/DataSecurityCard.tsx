@@ -37,7 +37,7 @@ export function DataSecurityCard({ variant, stepNumber, title, description }: Re
   return (
     <div className={cn(
       "bg-white border border-border-card rounded-card-sm shadow-help-card p-space-12 md:p-space-21 flex flex-col justify-start items-start self-stretch",
-      "w-[calc(50%-theme(spacing.space-6))] md:w-[calc(25%-18px)] md:flex-none md:min-h-space-59"
+      "w-[calc(50%-(var(--spacing-space-6)))] md:w-[calc(25%-18px)] md:flex-none md:min-h-space-59"
     )}>
       <div className="flex flex-col gap-space-10 md:gap-space-12 w-full">
         {/* Step Number with Dot */}

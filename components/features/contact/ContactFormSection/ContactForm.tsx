@@ -49,11 +49,12 @@ export default function ContactForm({
         <div className="space-y-5">
           {FORM_FIELDS.map((field) => (
             <div key={field.name}>
-              <label className="block text-sm font-medium text-gray-800 mb-1.5">
+              <label htmlFor={field.name} className="block text-sm font-medium text-gray-800 mb-1.5">
                 {field.label}
                 {field.required && <span className="text-error">*</span>}
               </label>
               <input
+                id={field.name}
                 type={field.type}
                 name={field.name}
                 value={formData[field.name]}
@@ -95,8 +96,8 @@ export default function ContactForm({
 
         {/* Textarea */}
         <div className="pt-2">
-          <label className="block text-[15px] md:text-sm font-medium text-gray-800 mb-1.5">Tell us about your requirement. <span className="text-error">*</span></label>
-          <textarea name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} placeholder="Briefly describe what you're looking to achieve..." rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
+          <label htmlFor="helpDetails" className="block text-[15px] md:text-sm font-medium text-gray-800 mb-1.5">Tell us about your requirement. <span className="text-error">*</span></label>
+          <textarea id="helpDetails" name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} placeholder="Briefly describe what you're looking to achieve..." rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
         </div>
 
         {/* Checkboxes */}

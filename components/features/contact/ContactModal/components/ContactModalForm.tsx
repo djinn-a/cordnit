@@ -23,7 +23,7 @@ interface ContactModalFormProps {
   selectedInterests: string[];
   toggleInterest: (interest: string) => void;
   isFormValid: boolean;
-  handleContinue: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleContinue: (e: React.SubmitEvent<HTMLFormElement>) => void;
 }
 
 export function ContactModalForm({
@@ -53,8 +53,8 @@ export function ContactModalForm({
             required={field.required}
           />
         ))}
-        <div>
-          <label className="block text-[13px] text-white/80 mb-2">Area of Interest<span className="text-error ml-0.5">*</span></label>
+        <div role="group" aria-labelledby="area-of-interest-label">
+          <div id="area-of-interest-label" className="block text-[13px] text-white/80 mb-2">Area of Interest<span className="text-error ml-0.5">*</span></div>
           <div className="flex flex-wrap gap-2.5">
             {interestsList.map((item) => {
               const isSelected = selectedInterests.includes(item);
@@ -83,8 +83,8 @@ export function ContactModalForm({
       </div>
 
       <div>
-        <label className="block text-[13px] text-white/80 mb-2">Tell us about your requirement. <span className="text-error ml-0.5">*</span></label>
-        <textarea name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails', errors)} resize-none`}></textarea>
+        <label htmlFor="helpDetails" className="block text-[13px] text-white/80 mb-2">Tell us about your requirement. <span className="text-error ml-0.5">*</span></label>
+        <textarea id="helpDetails" name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails', errors)} resize-none`}></textarea>
         {errors.helpDetails && <p className="mt-1 text-[11px] text-error/90">{errors.helpDetails}</p>}
       </div>
 

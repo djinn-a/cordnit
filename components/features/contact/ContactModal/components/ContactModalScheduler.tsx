@@ -13,7 +13,7 @@ export function ContactModalScheduler({
   submitError,
   handleBack,
   onSubmit
-}: ContactModalSchedulerProps) {
+}: Readonly<ContactModalSchedulerProps>) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
