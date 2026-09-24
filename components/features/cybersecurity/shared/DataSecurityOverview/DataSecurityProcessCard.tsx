@@ -12,27 +12,27 @@ export function DataSecurityProcessCard({
 }: Readonly<ProcessCardData>) {
   if (variant === "cloud-configuration") {
     return (
-      <div className={`flex flex-col rounded-[theme(spacing.space-8)] md:rounded-[theme(spacing.space-12)] border border-[var(--border,#DCE6F5)] p-space-16 md:p-space-24 w-[calc(50%-theme(spacing.space-6))] md:w-full h-full ${
+      <div className={`flex flex-col rounded-(--spacing-space-8) md:rounded-(--spacing-space-12) border border-ink/30 p-space-16 md:p-space-24 w-[calc(50%-(var(--spacing-space-6)))] md:w-full h-full ${
         isSpecialCard ? "bg-[rgba(220,230,245,0.40)] shadow-[0_10px_12px_6px_rgba(0,0,0,0.05)]" : "bg-white"
       }`}>
         <div className="flex items-center justify-between w-full mb-space-12 md:mb-space-24">
-          <span className="text-brand-primary text-[10px] md:text-about-eyebrow-desktop leading-[14px] md:leading-normal font-semibold font-mulish">
+          <span className="text-brand-primary text-[10px] md:text-about-eyebrow-desktop leading-space-14 md:leading-normal font-semibold font-mulish">
             {stepNumber}
           </span>
-          <span className="text-brand-primary text-[10px] md:text-about-eyebrow-desktop leading-[14px] md:leading-normal uppercase font-mulish tracking-widest md:tracking-normal">
+          <span className="text-brand-primary text-[10px] md:text-about-eyebrow-desktop leading-space-14 md:leading-normal uppercase font-mulish tracking-widest md:tracking-normal">
             {phase}
           </span>
         </div>
         
-        <h3 className="text-ink text-[12px] md:text-help-card-title-desktop leading-[16px] md:leading-normal font-semibold font-mulish mb-space-8 md:mb-space-12 uppercase">
+        <h3 className="text-ink text-[12px] md:text-help-card-title-desktop leading-space-16 md:leading-normal font-semibold font-mulish mb-space-8 md:mb-space-12 uppercase">
           {title}
         </h3>
         
-        <p className="text-ink-muted text-[10px] md:text-card-desc leading-[14px] md:leading-normal font-normal font-mulish mb-space-16 md:mb-space-32 grow">
+        <p className="text-ink-muted text-[10px] md:text-card-desc leading-space-14 md:leading-normal font-normal font-mulish mb-space-16 md:mb-space-32 grow">
           {description}
         </p>
         
-        <div className="hidden md:block w-full mt-auto border-t border-[var(--border,#DCE6F5)] pt-space-16 md:pt-space-24">
+        <div className="hidden md:block w-full mt-auto border-t border-ink/30 pt-space-16 md:pt-space-24">
           <p className="text-ink-muted text-stat-desc-mobile md:text-card-desc-mobile md:font-normal font-mulish">
             {subDescription.split('-').map(s => s.trim()).join(' · ')}
           </p>
