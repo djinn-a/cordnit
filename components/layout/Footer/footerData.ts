@@ -78,6 +78,8 @@
 
 
 
+import { getLaunchRoute } from '@/lib/config/launch-routes';
+
 export const FOOTER_NAV_COLUMNS = [
   {
     id: "solution",
@@ -146,8 +148,13 @@ export const FOOTER_NAV_COLUMNS = [
       { label: "Cookies", href: "#" }
     ]
   }
-];
-
+].map(col => ({
+  ...col,
+  links: col.links.map(link => ({
+    ...link,
+    href: getLaunchRoute(link.href)
+  }))
+}));
 
 export const SOCIAL_LINKS = [
   { id: 'x', label: 'X (Twitter)', icon: '/icons/x.svg', href: '#' },

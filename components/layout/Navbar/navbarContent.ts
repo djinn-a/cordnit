@@ -1,4 +1,5 @@
 import { Shield, Cloud, Brain, Code, Database, Briefcase, LucideIcon } from 'lucide-react';
+import { getLaunchRoute } from '@/lib/config/launch-routes';
 
 export type NavLink = {
   label: string;
@@ -32,12 +33,12 @@ export type NavbarContent = {
 
 export const navbarContent: NavbarContent = {
   navLinks: [
-    { label: 'Solutions', href: '/solutions' },
-    { label: 'About', href: '/aboutus' },
-    { label: 'Industries', href: '/industries' },
-    { label: 'Accelerators', href: '/accelerators' },
-    { label: 'Insights', href: '/insights' },
-    { label: 'Contact', href: '/contactus' },
+    { label: 'Solutions', href: getLaunchRoute('/solutions') },
+    { label: 'About', href: getLaunchRoute('/aboutus') },
+    { label: 'Industries', href: getLaunchRoute('/industries') },
+    { label: 'Accelerators', href: getLaunchRoute('/accelerators') },
+    { label: 'Insights', href: getLaunchRoute('/insights') },
+    { label: 'Contact', href: getLaunchRoute('/contactus') },
   ],
   solutionsDropdown: [
     {
@@ -93,7 +94,7 @@ export const navbarContent: NavbarContent = {
     leftPanelTitle: 'Our Capabilities',
     leftPanelDescription: 'End-to-end digital transformation tailored to complex enterprise environments.',
     exploreAllLabel: 'Explore All Solutions',
-    exploreAllHref: '/solutions',
+    exploreAllHref: getLaunchRoute('/solutions'),
   },
   getInTouchLabel: 'Get in Touch',
   logoAltText: 'Cordinit Logo',
