@@ -16,19 +16,19 @@ export default function LeadQualificationBlock({
   return (
     <section className={cn("w-full", className)}>
       <Container className={cn(
-        "flex flex-col justify-between items-start gap-space-40 lg:gap-space-80",
+        "flex flex-col justify-between items-center gap-space-40 lg:gap-space-80",
         variant === "right" ? "lg:flex-row-reverse" : "lg:flex-row"
       )}>
         
         {/* Left Side: Text Content */}
         <div className="flex flex-col w-full lg:w-[45%] xl:w-1/2 shrink-0">
-          <p className="text-[10px] leading-[16px] font-extrabold md:text-eyebrow-desktop md:font-semibold tracking-[1px] text-[#2251FF] uppercase font-mulish mb-space-16">
+          <p className="text-eyebrow-mobile leading-space-16 font-extrabold md:text-eyebrow-desktop md:font-semibold tracking-space-1 text-brand-primary uppercase font-mulish mb-space-16">
             {header.eyebrow}
           </p>
-          <h2 className="text-[24px] leading-[32px] md:leading-[1.417] font-extrabold md:text-split-section-title text-black md:text-ink font-mulish mb-space-20">
+          <h2 className="text-section-title-mobile leading-space-32 md:text-split-section-title md:leading-[1.417] text-ink font-mulish mb-space-20">
             {header.title}
           </h2>
-          <p className="text-page-hero-subtitle text-ink-muted font-mulish mb-space-20">
+          <p className="text-section-subtitle-mobile leading-space-22 md:text-page-hero-subtitle md:leading-[1.4] text-ink-muted font-mulish mb-space-20">
             {header.description}
           </p>
           
@@ -66,7 +66,7 @@ export default function LeadQualificationBlock({
           <div className={cn(
             "w-full",
             flow.isGrid 
-              ? "grid grid-cols-2 gap-[12px] md:gap-space-16 items-stretch"
+              ? "grid grid-cols-2 gap-space-12 md:gap-space-16 items-stretch"
               : "flex flex-col items-center"
           )}>
             {flow.steps.map((step, idx) => {

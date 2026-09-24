@@ -4,7 +4,7 @@ import { useState } from 'react';
 const NAME_REGEX = /^[A-Za-z ]+$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function useLeadForm(additionalContext: Record<string, any> = {}) {
+export function useLeadForm(additionalContext: Record<string, string | boolean | undefined> = {}) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

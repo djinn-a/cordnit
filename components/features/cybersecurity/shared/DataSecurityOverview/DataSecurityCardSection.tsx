@@ -3,9 +3,9 @@ import { DataSecurityCard } from "./DataSecurityCard";
 
 export type DataSecurityCardSectionProps = NonNullable<DataSecurityOverviewData["cardSection"]>;
 
-export function DataSecurityCardSection({ sectionTag, sectionTitle, footerText, footerHighlight, cards }: Readonly<DataSecurityCardSectionProps>) {
+export function DataSecurityCardSection({ variant, sectionTag, sectionTitle, footerText, footerHighlight, cards }: Readonly<DataSecurityCardSectionProps>) {
   return (
-    <div className="flex flex-col -mx-4 px-4 md:w-full md:mx-0 md:px-space-40 bg-primary-pale md:bg-grad-3 md:border md:border-border-card md:rounded-card py-space-20 md:pt-space-24 md:pb-space-24 gap-space-24 md:gap-0">
+    <div className="flex flex-col -mx-space-16 px-space-16 md:w-full md:mx-0 md:px-space-40 bg-primary-pale md:bg-grad-3 md:border md:border-border-card md:rounded-card py-space-20 md:pt-space-24 md:pb-space-24 gap-space-24 md:gap-0">
       {/* Top Header Row */}
       {(sectionTitle || sectionTag) && (
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full md:mb-space-24 gap-space-12 md:gap-space-12 border-b border-border-subtle md:border-none pb-space-12 md:pb-0">
@@ -21,9 +21,9 @@ export function DataSecurityCardSection({ sectionTag, sectionTitle, footerText, 
       )}
 
       {/* Cards Grid */}
-      <div className="flex flex-row flex-wrap justify-center gap-x-space-12 gap-y-space-16 md:gap-space-24 w-full">
+      <div className={`flex flex-row flex-wrap justify-center ${variant === 'cloud-security' ? 'gap-2.75 md:gap-space-24' : 'gap-x-space-12 gap-y-space-16 md:gap-space-24'} w-full`}>
         {cards.map((card) => (
-          <DataSecurityCard key={card.title} {...card} />
+          <DataSecurityCard key={card.title} variant={variant} {...card} />
         ))}
       </div>
 

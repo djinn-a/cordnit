@@ -1,19 +1,22 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
-import { X, Calendar, CheckCircle2, ChevronLeft, ChevronDown, ChevronRight } from 'lucide-react';
-import Link from 'next/link';
+import { X} from 'lucide-react';
 import { useLeadForm } from '../../../../hooks/useLeadForm';
+import { ContactModalProgress } from './components/ContactModalProgress';
+import { ContactModalStatus } from './components/ContactModalStatus';
+import { ContactModalForm } from './components/ContactModalForm';
+import { ContactModalScheduler } from './components/ContactModalScheduler';
 
 const POPUP_BG = '/popup-bg.webp';
 const CLOSE_MS = 300;
 
 interface ModalContext {
+  [key: string]: string | boolean | undefined;
   ctaLocation?: string;
   source?: string;
   service?: string;
   solution?: string;
-  [key: string]: any;
 }
 
 interface ContactModalContextType {
@@ -32,7 +35,7 @@ export function useContactModal() {
   return context;
 }
 
-export function ContactModalProvider({ children }: { children: React.ReactNode }) {
+export function ContactModalProvider({ children }: Readonly<{ children: React.ReactNode }>) {
   const [isOpen, setIsOpen] = useState(false);
   const [isEntered, setIsEntered] = useState(false);
   const [modalContext, setModalContext] = useState<ModalContext>({});
@@ -55,64 +58,15 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
   } = useLeadForm(modalContext);
 
   const [step, setStep] = useState<1 | 2>(1);
-  const [scheduledTime, setScheduledTime] = useState<string>('02:00 PM');
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const [currentMonth, setCurrentMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
-  const [selectedDate, setSelectedDate] = useState<Date | null>(today);
-
-  const getDaysInMonth = (date: Date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-  const getFirstDayOfMonth = (date: Date) => new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-
-  const handlePrevMonth = () => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1));
-  const handleNextMonth = () => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1));
-
-  const generateDays = () => {
-    const daysInMonth = getDaysInMonth(currentMonth);
-    const firstDay = getFirstDayOfMonth(currentMonth);
-    const prevMonthDays = getDaysInMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1));
-    const daysArray = [];
-
-    for (let i = firstDay - 1; i >= 0; i--) {
-      daysArray.push({
-        day: prevMonthDays - i,
-        isCurrentMonth: false,
-        date: new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, prevMonthDays - i)
-      });
-    }
-
-    for (let i = 1; i <= daysInMonth; i++) {
-      daysArray.push({
-        day: i,
-        isCurrentMonth: true,
-        date: new Date(currentMonth.getFullYear(), currentMonth.getMonth(), i)
-      });
-    }
-
-    const remainingCells = 42 - daysArray.length;
-    for (let i = 1; i <= remainingCells; i++) {
-      daysArray.push({
-        day: i,
-        isCurrentMonth: false,
-        date: new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, i)
-      });
-    }
-
-    return daysArray;
-  };
-
-  const daysArray = generateDays();
-
-  const openModal = (context?: any) => {
+  const openModal = (context?: ModalContext | React.SyntheticEvent) => {
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current);
       closeTimerRef.current = null;
     }
     // Prevent React SyntheticEvents from being stored as context
     if (context && typeof context === 'object' && !('nativeEvent' in context) && !('preventDefault' in context)) {
-      setModalContext(context);
+      setModalContext(context as ModalContext);
     } else {
       setModalContext({});
     }
@@ -129,14 +83,11 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       resetForm();
       setModalContext({});
       setStep(1);
-      setScheduledTime('02:00 PM');
-      setCurrentMonth(new Date(today.getFullYear(), today.getMonth(), 1));
-      setSelectedDate(today);
       closeTimerRef.current = null;
     }, CLOSE_MS);
   };
 
-  const handleContinue = (e: React.FormEvent) => {
+  const handleContinue = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
       setStep(2);
@@ -145,10 +96,8 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
 
   const handleBack = () => setStep(1);
 
-  const handleBookCall = () => {
-    if (!selectedDate) return;
-    const formattedDate = selectedDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-    handleSubmit(undefined, `${formattedDate} at ${scheduledTime}`);
+  const handleBookCall = (formattedDate: string, time: string) => {
+    handleSubmit(undefined, `${formattedDate} at ${time}`);
   };
 
   // Preload popup background so first open is not transparent
@@ -183,32 +132,31 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
     };
   }, []);
 
-  const interestsList = [
-    'Cybersecurity', 'Managed Services', 'AI & Automation',
-    'Application Engineering', 'Data & Integration',
-    'Salesforce', 'Cloud & Infrastructure', 'Something else'
-  ];
-
-  const inputClasses = (fieldName: string) =>
-    `cmi w-full px-4 py-3.5 rounded-lg border bg-transparent text-white text-[13px] placeholder-ink-muted transition-colors focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 ${errors[fieldName] ? 'border-error/80' : 'border-white/20'}`;
+  const contextValue = React.useMemo(() => ({ isOpen, openModal, closeModal }), [isOpen]);
 
   return (
-    <ContactModalContext.Provider value={{ isOpen, openModal, closeModal }}>
+    <ContactModalContext.Provider value={contextValue}>
       {children}
 
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
           {/* Overlay */}
           <div
+            role="button"
+            tabIndex={-1}
+            aria-label="Close modal"
             className={`fixed inset-0 bg-surface-darker/70 transition-opacity duration-300 ${isEntered ? 'opacity-100' : 'opacity-0'}`}
             onClick={closeModal}
+            onKeyDown={(e) => e.key === 'Escape' && closeModal()}
           ></div>
 
           {/* Modal Container */}
           <div
-            className={`relative w-full max-w-[1000px] bg-surface-dark bg-cover bg-center rounded-[2rem] shadow-2xl flex flex-col items-center my-auto border border-white/5 max-h-[min(900px,calc(100dvh-2rem))] overflow-y-auto transition-[opacity,transform] duration-300 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'}`}
+            role="presentation"
+            className={`relative w-full max-w-250 bg-surface-dark bg-cover bg-center rounded-[2rem] shadow-2xl flex flex-col items-center my-auto border border-white/5 max-h-[min(900px,calc(100dvh-2rem))] overflow-y-auto transition-[opacity,transform] duration-300 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'}`}
             style={{ backgroundImage: `url(${POPUP_BG})` }}
             onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => e.stopPropagation()}
           >
 
             {/* Close button */}
@@ -220,329 +168,39 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
               <X className="w-5 h-5" />
             </button>
 
-            <div className="w-full max-w-[800px] relative z-20 flex flex-col py-12 px-4 sm:px-6">
+            <div className="w-full max-w-200 relative z-20 flex flex-col py-12 px-4 sm:px-6">
 
-              {/* Stepper */}
-              <div className="contact-stepper w-full flex justify-center mb-8 z-20 relative">
-                <div className="flex justify-between w-[260px] sm:w-[300px] relative">
-
-                  {/* Step 1 */}
-                  <div className="contact-step flex flex-col items-center z-10 w-24">
-                    <div className={`step-circle step-active w-10 h-10 rounded-full flex items-center justify-center font-bold text-base shadow-glow-primary ${step === 1 ? 'bg-primary text-white' : 'bg-primary text-white'}`}>
-                      1
-                    </div>
-                    <span className="text-gray-200 text-[12px] font-medium tracking-wide whitespace-nowrap mt-2.5 text-center">
-                      Enter Details
-                    </span>
-                  </div>
-
-                  {/* Connector */}
-                  <div className="step-connector flex-1 h-[2px] bg-white/20 mx-2 mt-5 z-0"></div>
-
-                  {/* Step 2 */}
-                  <div className="contact-step flex flex-col items-center z-10 w-24">
-                    <div className={`step-circle step-inactive w-10 h-10 rounded-full flex items-center justify-center font-bold text-base ${step === 2 ? 'bg-primary text-white shadow-glow-primary' : 'bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.1)]'}`}>
-                      2
-                    </div>
-                    <span className="text-gray-200 text-[12px] font-medium tracking-wide whitespace-nowrap mt-2.5 text-center">
-                      Schedule a call
-                    </span>
-                  </div>
-
-                </div>
-              </div>
+              <ContactModalProgress step={step} />
 
               {/* Form Card */}
-              <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-                {isSuccess ? (
-                  <div className="py-12 px-4 flex flex-col items-center text-center">
-                    <div className="mx-auto mb-6 relative w-16 h-16">
-                      <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-2">
-                        <path d="M4 8C4 5.79086 5.79086 4 8 4H16C18.2091 4 20 5.79086 20 8V10H4V8Z" stroke="var(--color-success)" strokeWidth="2" strokeLinecap="round" />
-                        <path d="M4 10V16C4 18.2091 5.79086 20 8 20H11" stroke="var(--color-success)" strokeWidth="2" strokeLinecap="round" />
-                      </svg>
-                      <div className="absolute bottom-0 right-0 w-[26px] h-[26px] bg-success rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,217,95,0.4)] ring-4 ring-surface-dark">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 13L9 17L19 7" stroke="var(--color-surface-dark)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="text-success text-[11px] font-bold tracking-widest uppercase mb-3">CALL IS BOOKED</div>
-                    <h3 className="text-[32px] font-semibold text-white mb-4">Call Scheduled</h3>
-
-                    <p className="text-gray-300 text-[14px] mb-8">
-                      Thank you for scheduling a call with us.
-                    </p>
-
-                    <p className="text-[11px] text-gray-500 leading-relaxed max-w-sm mx-auto mb-10">
-                      You'll receive the latest insights and perspectives<br />straight to your inbox.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto">
-                      <Link href="/solutions" onClick={closeModal} className="flex-1 bg-primary hover:bg-primary text-white py-3 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center justify-center shadow-lg shadow-glow-primary">
-                        Explore solution <span className="ml-2 font-bold">→</span>
-                      </Link>
-                      <Link href="/insights" onClick={closeModal} className="flex-1 bg-primary hover:bg-primary text-white py-3 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center justify-center shadow-lg shadow-glow-primary">
-                        View latest insights <span className="ml-2 font-bold">→</span>
-                      </Link>
-                    </div>
-                  </div>
-                ) : isSubmitting ? (
-                  <div className="py-16 px-4 flex flex-col items-center text-center">
-                    <div className="w-[46px] h-[46px] border-[3px] border-primary/20 border-t-primary rounded-full animate-spin mb-8"></div>
-                    <div className="text-primary text-[11px] font-bold tracking-widest uppercase mb-3">SCHEDULING</div>
-                    <h3 className="text-[28px] font-semibold text-white mb-2">Almost there...</h3>
-                    <p className="text-gray-400 text-[13px] mb-10">We're just scheduling your meeting</p>
-
-                    <div className="flex flex-col gap-3.5 mb-12 text-left">
-                      <div className="flex items-center text-[13px] text-gray-300">
-                        <CheckCircle2 className="w-4 h-4 text-primary mr-3" /> Email format looks good.
-                      </div>
-                      <div className="flex items-center text-[13px] text-gray-300">
-                        <CheckCircle2 className="w-4 h-4 text-primary mr-3" /> Consent confirmed
-                      </div>
-                    </div>
-
-                    <p className="text-[10px] text-gray-500 leading-relaxed">
-                      This will only take a moment. Please don't<br />refresh or close this window
-                    </p>
-                  </div>
-                ) : step === 1 ? (
-                  <form className="space-y-8" onSubmit={handleContinue} noValidate>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7">
-                      {/* Row 1 */}
-                      <div>
-                        <label className="block text-[13px] text-white/80 mb-2">First Name<span className="text-error ml-0.5">*</span></label>
-                        <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter First Name" className={inputClasses('firstName')} />
-                        {errors.firstName && <p className="mt-1 text-[11px] text-error/90">{errors.firstName}</p>}
-                      </div>
-                      <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Last Name<span className="text-error ml-0.5">*</span></label>
-                        <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter Last Name" className={inputClasses('lastName')} />
-                        {errors.lastName && <p className="mt-1 text-[11px] text-error/90">{errors.lastName}</p>}
-                      </div>
-
-                      {/* Row 2 */}
-                      <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Enter Email<span className="text-error ml-0.5">*</span></label>
-                        <input type="email" name="email" value={formData.email} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter Email" className={inputClasses('email')} />
-                        {errors.email && <p className="mt-1 text-[11px] text-error/90">{errors.email}</p>}
-                      </div>
-                      <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Company<span className="text-error ml-0.5">*</span></label>
-                        <input type="text" name="company" value={formData.company} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter Company" className={inputClasses('company')} />
-                        {errors.company && <p className="mt-1 text-[11px] text-error/90">{errors.company}</p>}
-                      </div>
-
-                      {/* Row 3 */}
-                      <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Job Title<span className="text-error ml-0.5">*</span></label>
-                        <input type="text" name="jobTitle" value={formData.jobTitle} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter Job Title" className={inputClasses('jobTitle')} />
-                        {errors.jobTitle && <p className="mt-1 text-[11px] text-error/90">{errors.jobTitle}</p>}
-                      </div>
-                      <div>
-                        <label className="block text-[13px] text-white/80 mb-2">Area of Interest<span className="text-error ml-0.5">*</span></label>
-                        <div className="flex flex-wrap gap-2.5">
-                          {interestsList.map((item) => {
-                            const isSelected = selectedInterests.includes(item);
-                            return (
-                              <button
-                                key={item}
-                                type="button"
-                                onClick={() => toggleInterest(item)}
-                                className={`px-4 py-1.5 rounded-full text-[11px] transition-colors border ${isSelected
-                                  ? 'bg-primary border-0 text-white'
-                                  : errors.interests
-                                    ? 'bg-transparent border-error/50 text-gray-400'
-                                    : 'bg-transparent border-white/20 text-gray-400'
-                                  }`}
-                              >
-                                {item}
-                              </button>
-                            );
-                          })}
-                        </div>
-                        {errors.interests && <p className="mt-1.5 text-[11px] text-error/90">{errors.interests}</p>}
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[13px] text-white/80 mb-2">Tell us about your requirement. <span className="text-error ml-0.5">*</span></label>
-                      <textarea name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
-                      {errors.helpDetails && <p className="mt-1 text-[11px] text-error/90">{errors.helpDetails}</p>}
-                    </div>
-
-                    <div className="pt-2">
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center justify-center">
-                          <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="modal-intro-call" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
-                        </div>
-                        <label htmlFor="modal-intro-call" className="text-[12px] text-white/90 leading-snug cursor-pointer hover:text-white transition-colors">
-                          I would like to book a brief introductory call to discuss this.
-                        </label>
-                      </div>
-
-                      <div className="w-full h-px bg-white/20 my-5"></div>
-
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center justify-center">
-                          <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="modal-privacy" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
-                        </div>
-                        <label htmlFor="modal-privacy" className="text-[12px] text-white/90 leading-snug cursor-pointer hover:text-white transition-colors">
-                          I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className="flex justify-end pt-4">
-                      <button
-                        type="submit"
-                        disabled={!isFormValid}
-                        className={`py-2.5 px-12 rounded-lg text-[13px] font-medium transition-all ${isFormValid
-                          ? 'bg-primary text-white cursor-pointer'
-                          : 'bg-surface-dark border border-white/20 text-white/40 cursor-not-allowed'
-                          }`}
-                      >
-                        Continue
-                      </button>
-                    </div>
-                  </form>
-
-                ) : (
-                  <div className="flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                      {/* Left: Calendar */}
-                      <div className="bg-surface-dark/50 rounded-xl border border-gray-700/50 p-5">
-                        <div className="flex justify-between items-center mb-6">
-                          <div className="flex items-center gap-2">
-                            <button onClick={handlePrevMonth} className="text-gray-400 hover:text-white transition-colors">
-                              <ChevronLeft className="w-4 h-4" />
-                            </button>
-                            <div className="text-sm text-gray-300 font-medium min-w-[100px] text-center">
-                              {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-                            </div>
-                            <button onClick={handleNextMonth} className="text-gray-400 hover:text-white transition-colors">
-                              <ChevronRight className="w-4 h-4" />
-                            </button>
-                          </div>
-                          <button
-                            onClick={() => {
-                              setCurrentMonth(new Date(today.getFullYear(), today.getMonth(), 1));
-                              setSelectedDate(today);
-                            }}
-                            className="text-[10px] px-2 py-0.5 rounded border border-primary/50 text-primary hover:bg-primary-pale0/10 transition-colors"
-                          >
-                            Today
-                          </button>
-                        </div>
-
-                        <div className="grid grid-cols-7 gap-y-4 mb-2 text-center text-[10px] text-gray-500 font-medium uppercase">
-                          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
-                        </div>
-
-                        <div className="grid grid-cols-7 gap-y-2 text-center text-xs text-gray-300">
-                          {daysArray.map((item, idx) => {
-                            const isPast = item.date < today;
-                            const isSelected = selectedDate && item.date.getTime() === selectedDate.getTime();
-                            return (
-                              <div key={idx} className={`py-1.5 relative ${!item.isCurrentMonth ? 'opacity-30' : ''}`}>
-                                <button
-                                  disabled={isPast}
-                                  onClick={() => {
-                                    if (!isPast) {
-                                      setSelectedDate(item.date);
-                                      if (!item.isCurrentMonth) {
-                                        setCurrentMonth(new Date(item.date.getFullYear(), item.date.getMonth(), 1));
-                                      }
-                                    }
-                                  }}
-                                  className={`w-7 h-7 mx-auto rounded-lg flex items-center justify-center transition-colors ${isSelected
-                                    ? 'bg-primary text-white shadow-[0_0_10px_rgba(43,92,255,0.4)] opacity-100'
-                                    : isPast
-                                      ? 'cursor-not-allowed text-gray-600'
-                                      : 'hover:bg-white/5 cursor-pointer'
-                                    }`}
-                                >
-                                  {item.day}
-                                </button>
-                                {isSelected && <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Right: Available times */}
-                      <div className="flex flex-col">
-                        <h4 className="text-gray-200 font-medium mb-1">Available times</h4>
-                        <p className="text-gray-500 text-[11px] mb-4">
-                          {selectedDate ? selectedDate.toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : 'Select a date'}
-                        </p>
-
-                        <div className="grid grid-cols-2 gap-3 mb-auto">
-                          {['09:00 AM', '10:00 AM', '11:00 AM', '11:30 AM', '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM'].map((time) => (
-                            <button
-                              key={time}
-                              onClick={() => setScheduledTime(time)}
-                              className={`py-2 px-3 rounded-full text-[11px] font-medium border transition-colors ${scheduledTime === time
-                                ? 'bg-primary border-primary text-white shadow-glow-primary'
-                                : 'bg-transparent border-gray-700/80 text-gray-300 hover:border-gray-500'
-                                }`}
-                            >
-                              {time}
-                            </button>
-                          ))}
-                        </div>
-
-                        <div className="text-gray-500 text-[10px] mt-4 flex items-center">
-                          <svg className="w-3 h-3 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                          All times are in India Standard Time (IST) <ChevronDown className="w-3 h-3 ml-1" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Bottom section */}
-                    <div className="bg-surface-dark/40 rounded-xl border border-gray-700/50 p-4 md:p-5 flex flex-col md:flex-row gap-6 mb-6">
-                      <div className="flex-1 flex gap-4">
-                        <div className="mt-0.5">
-                          <Calendar className="w-5 h-5 text-gray-300" />
-                        </div>
-                        <div>
-                          <h4 className="text-sm text-gray-200 font-medium mb-1">30-minute consultation</h4>
-                          <p className="text-xs text-gray-400 leading-relaxed pr-4">A focused discussion with our experts to understand your goals and explore how Cordinit can help.</p>
-                        </div>
-                      </div>
-
-                      <div className="flex-1 flex flex-col justify-center gap-2 border-t md:border-t-0 md:border-l border-gray-700/50 pt-4 md:pt-0 md:pl-6">
-                        <div className="flex items-center text-[11px] text-gray-400">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> Talk to a solution expert
-                        </div>
-                        <div className="flex items-center text-[11px] text-gray-400">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> Get tailored recommendations
-                        </div>
-                        <div className="flex items-center text-[11px] text-gray-400">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> No obligation
-                        </div>
-                      </div>
-                    </div>
-
-                    {submitError && (
-                      <div className="p-3 text-[13px] text-red-400 bg-red-900/20 border border-error/50 rounded-lg mb-6">
-                        {submitError}
-                      </div>
-                    )}
-
-                    <div className="flex justify-between items-center">
-                      <button onClick={handleBack} className="bg-transparent border border-gray-600 hover:bg-white/5 text-gray-300 py-2.5 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center">
-                        <ChevronLeft className="w-4 h-4 mr-1" /> Back
-                      </button>
-                      <button onClick={handleBookCall} disabled={isSubmitting} className={`bg-primary hover:bg-primary text-white py-2.5 px-10 rounded-lg text-[13px] font-medium transition-colors shadow-[0_0_15px_rgba(43,92,255,0.4)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
-                        {isSubmitting ? 'Booking...' : 'Book a call'}
-                      </button>
-                    </div>
-                  </div>
-                )}
+              <div className="bg-white/2 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                {(() => {
+                  if (isSuccess || isSubmitting) {
+                    return <ContactModalStatus isSuccess={isSuccess} isSubmitting={isSubmitting} closeModal={closeModal} />;
+                  }
+                  if (step === 1) {
+                    return (
+                      <ContactModalForm
+                        formData={formData}
+                        errors={errors}
+                        handleInputChange={handleInputChange}
+                        handleBlur={handleBlur}
+                        selectedInterests={selectedInterests}
+                        toggleInterest={toggleInterest}
+                        isFormValid={isFormValid}
+                        handleContinue={handleContinue}
+                      />
+                    );
+                  }
+                  return (
+                    <ContactModalScheduler
+                      isSubmitting={isSubmitting}
+                      submitError={submitError}
+                      handleBack={handleBack}
+                      onSubmit={handleBookCall}
+                    />
+                  );
+                })()}
               </div>
             </div>
           </div>

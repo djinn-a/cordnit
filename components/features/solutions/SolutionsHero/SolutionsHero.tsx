@@ -14,7 +14,7 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
 
   return (
     <Section spacing="none" background="white">
-      <Container className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8 !px-0">
+      <Container className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8 px-0!">
         {/* Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col items-start">
           <h4 className="text-hero-eyebrow mb-4 lg:mb-6">
@@ -28,7 +28,7 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
             {content.body}
           </p>
           <Button
-            onClick={openModal}
+            onClick={() => openModal()}
             className="bg-primary hover:bg-primary-hover text-white rounded-md px-6 py-3 flex items-center gap-2 transition-colors"
           >
             {content.ctaLabel} <ArrowRight className="w-4 h-4" />
@@ -37,7 +37,7 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
 
         {/* Image Content */}
         <div className="w-full lg:w-1/2 relative">
-          <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[420px] rounded-hero overflow-hidden shadow-2xl">
+          <div className="relative w-full h-80 sm:h-100 lg:h-105 rounded-hero overflow-hidden shadow-2xl">
             <Image
               src={content.imageSrc}
               alt={content.imageAlt}

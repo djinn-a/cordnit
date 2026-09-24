@@ -11,7 +11,7 @@ export type CardGridSectionProps = {
   data: CardGridSectionData;
 };
 
-export default function CardGridSection({ data }: CardGridSectionProps) {
+export default function CardGridSection({ data }: Readonly<CardGridSectionProps>) {
   return (
     <section className="w-full">
       <div className="mx-auto w-full flex flex-col gap-space-24 lg:gap-space-64">
@@ -25,17 +25,16 @@ export default function CardGridSection({ data }: CardGridSectionProps) {
               {data.title}
             </h2>
           </div>
-          <div className="w-full lg:max-w-[500px] lg:mt-auto flex flex-col justify-end">
+          <div className="w-full lg:max-w-125 lg:mt-auto flex flex-col justify-end">
             <p className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted">
               {data.subtitle}
             </p>
           </div>
         </div>
 
-        {/* Card Grid */}
         <div className="flex flex-wrap justify-center gap-x-space-12 gap-y-space-32 lg:gap-space-24 w-full">
           {data.cards.map((card) => (
-            <div key={card.id} className="w-[calc(50%-6px)] lg:w-[calc(25%-18px)] flex justify-center">
+            <div key={card.id} className="w-43.25 lg:w-[calc(25%-18px)] flex justify-center">
               <CardGridCard card={card} />
             </div>
           ))}

@@ -113,7 +113,7 @@ export default function Navbar() {
           {/* Right CTA Button */}
           <div className="flex items-center">
             <button
-              onClick={openModal}
+              onClick={() => openModal()}
               className="flex items-center px-6 py-2 border border-white rounded-lg opacity-80 hover:opacity-100 hover:bg-white/10 text-white font-semibold text-sm transition-all cursor-pointer"
             >
               {navbarContent.getInTouchLabel} <ArrowRight className="ml-2 h-4 w-4" />
@@ -127,7 +127,7 @@ export default function Navbar() {
       <div className="lg:hidden absolute top-full left-0 right-0 overflow-hidden pointer-events-none">
         {/* Animated Drawer */}
         <div
-          className={`bg-gradient-mobile-nav rounded-b-4xl shadow-2xl transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'
+          className={`bg-gradient-mobile-nav shadow-2xl transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'
             }`}
         >
           <div className="px-6 py-6 pb-10 flex flex-col">
@@ -146,7 +146,7 @@ export default function Navbar() {
                       <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileSolutionsOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {/* Expandable sub-menu */}
-                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileSolutionsOpen ? 'max-h-[500px] opacity-100 mb-4' : 'max-h-0 opacity-0'}`}>
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileSolutionsOpen ? 'max-h-125 opacity-100 mb-4' : 'max-h-0 opacity-0'}`}>
                       <div className="flex flex-col gap-4 pl-4 pt-2">
                         {navbarContent.solutionsDropdown.map((solution) => (
                           <Link

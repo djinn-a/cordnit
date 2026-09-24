@@ -14,6 +14,9 @@ import { applicationEngineeringPage } from "@/data/pages/application-engineering
 import { dataIntegrationPage } from "@/data/pages/data-integration";
 import { dataSecurityPage } from "@/data/pages/data-security";
 import { salesforceSalesPage } from "@/data/pages/salesforce-sales";
+import { salesforceMarketingPage } from "@/data/pages/salesforce-marketing";
+import { salesforceCommercePage } from "@/data/pages/salesforce-commerce";
+import { salesforceAIPage } from "@/data/pages/salesforce-ai";
 import { applicationSecurityPage } from "@/data/pages/application-security";
 import { cloudSecurityPage } from "@/data/pages/cloud-security";
 import { identitySecurityPage } from "@/data/pages/identity-security";
@@ -21,6 +24,7 @@ import { aiSecurityPage } from "@/data/pages/ai-security";
 import { exposureManagementPage } from "@/data/pages/exposure-management";
 import { vulnerabilityManagementPage } from "@/data/pages/vulnerability-management";
 import { managedSecurityPage } from "@/data/pages/managed-security";
+import { salesforceManagedServicesPage } from "@/data/pages/salesforce-managed-services";
 import { salesforceServicePage } from "@/data/pages/salesforce-service";
 import { salesforceIntegrationPage } from "@/data/pages/salesforce-integration";
 
@@ -40,6 +44,9 @@ const pages: Record<string, PageDocument> = {
   "data-integration": dataIntegrationPage,
   "data-security": dataSecurityPage,
   "salesforce/sales": salesforceSalesPage,
+  "salesforce/marketing": salesforceMarketingPage,
+  "salesforce/commerce": salesforceCommercePage,
+  "salesforce/ai": salesforceAIPage,
   "application-security": applicationSecurityPage,
   "cloud-security": cloudSecurityPage,
   "identity-security": identitySecurityPage,
@@ -47,6 +54,7 @@ const pages: Record<string, PageDocument> = {
   "exposure-management": exposureManagementPage,
   "vulnerability-management": vulnerabilityManagementPage,
   "managed-security": managedSecurityPage,
+  "salesforce/managed-services": salesforceManagedServicesPage,
   "salesforce/service": salesforceServicePage,
   "salesforce/integration": salesforceIntegrationPage,
 };

@@ -8,7 +8,6 @@ export type CtaSectionProps = {
   bodyMobile?: string;
   titleDesktop?: string;
   bodyDesktop?: string;
-  expertLabel?: string;
   expertName?: string;
   ctaLabel?: string;
   backgroundSrc?: string;
@@ -83,7 +82,7 @@ export default function CtaSection({
               </div>
             </div>
             <Button
-              onClick={openModal}
+              onClick={() => openModal()}
               className="w-full py-4.5 bg-surface text-ink hover:bg-primary-pale rounded-[8px] text-mobile-cta-1"
             >
               {ctaLabel}
@@ -107,7 +106,7 @@ export default function CtaSection({
               </div>
             </div>
             <Button
-              onClick={openModal}
+              onClick={() => openModal()}
               className="w-full py-2.5 bg-surface text-ink hover:bg-primary-pale rounded-full mt-auto"
             >
               {ctaLabel}
