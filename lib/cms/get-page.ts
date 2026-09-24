@@ -15,6 +15,7 @@ import { dataIntegrationPage } from "@/data/pages/data-integration";
 import { dataSecurityPage } from "@/data/pages/data-security";
 import { salesforceSalesPage } from "@/data/pages/salesforce-sales";
 import { salesforceMarketingPage } from "@/data/pages/salesforce-marketing";
+import { salesforceCommercePage } from "@/data/pages/salesforce-commerce";
 import { applicationSecurityPage } from "@/data/pages/application-security";
 import { cloudSecurityPage } from "@/data/pages/cloud-security";
 import { identitySecurityPage } from "@/data/pages/identity-security";
@@ -40,6 +41,7 @@ const pages: Record<string, PageDocument> = {
   "data-security": dataSecurityPage,
   "salesforce/sales": salesforceSalesPage,
   "salesforce/marketing": salesforceMarketingPage,
+  "salesforce/commerce": salesforceCommercePage,
   "application-security": applicationSecurityPage,
   "cloud-security": cloudSecurityPage,
   "identity-security": identitySecurityPage,
