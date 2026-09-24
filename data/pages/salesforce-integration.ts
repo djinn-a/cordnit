@@ -16,7 +16,7 @@ export const salesforceIntegrationPage: PageDocument = {
         { label: "Home", href: "/" },
         { label: "Solutions", href: "/solutions" },
         { label: "Salesforce", href: "/salesforce" },
-        { label: "AI", href: "/salesforce/integration" },
+        { label: "Integration", href: "/salesforce/integration" },
       ],
     },
     {

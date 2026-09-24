@@ -34,7 +34,7 @@ export default function CardGridSection({ data }: Readonly<CardGridSectionProps>
 
         <div className="flex flex-wrap justify-center gap-x-space-12 gap-y-space-32 lg:gap-space-24 w-full">
           {data.cards.map((card) => (
-            <div key={card.id} className="w-43.25 lg:w-[calc(25%-18px)] flex justify-center">
+            <div key={card.id} className="w-[calc(50%-6px)] lg:w-[calc(25%-18px)] flex justify-center">
               <CardGridCard card={card} />
             </div>
           ))}

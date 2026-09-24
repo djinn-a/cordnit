@@ -111,10 +111,10 @@ export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readon
       {/* Content Area */}
       <div className="flex flex-col">
         <h3 className={cn(
-          "font-bold md:font-semibold mt-0 mb-space-4 md:mb-space-12 font-mulish",
+          "font-mulish mt-0 mb-space-4 md:mb-space-12",
           isPaleBlue 
-            ? "text-black text-[20px] leading-7 md:text-help-card-title-mobile md:text-ink" 
-            : "text-section-title-head-mobile md:text-help-card-title-mobile text-ink"
+            ? "font-bold md:font-semibold text-black text-[20px] leading-7 md:text-help-card-title-mobile md:text-ink" 
+            : "font-bold md:font-semibold text-[#000] text-[14px] leading-[22px] md:text-help-card-title-mobile md:text-ink"
         )}>
           {card.title}
         </h3>
@@ -122,7 +122,7 @@ export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readon
           "font-normal font-mulish m-0",
           isPaleBlue 
             ? "text-[#555] text-[14px] leading-[21px] md:text-help-card-desc-mobile md:text-ink-muted" 
-            : "text-card-desc-mobile md:text-help-card-desc-mobile text-ink-muted"
+            : "text-[#555] text-[12px] leading-[16px] md:text-help-card-desc-mobile md:text-ink-muted"
         )}>
           {card.description}
         </p>

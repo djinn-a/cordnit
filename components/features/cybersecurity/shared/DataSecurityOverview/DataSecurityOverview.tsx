@@ -27,7 +27,7 @@ export function DataSecurityOverview({ data }: Readonly<DataSecurityOverviewProp
               </div>
             </div>
             
-            <div className="flex flex-row flex-wrap justify-center md:grid md:grid-cols-3 gap-2.75 md:gap-space-16 w-full mb-space-24">
+            <div className="flex flex-row flex-wrap justify-center md:grid md:grid-cols-3 gap-space-12 md:gap-space-16 w-full mb-space-24">
               {data.processCards.map((card, idx) => (
                 <DataSecurityProcessCard key={card.title} {...card} variant={data.variant} isSpecialCard={idx === 2} />
               ))}

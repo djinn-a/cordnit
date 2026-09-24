@@ -12,8 +12,8 @@ export function DataSecurityProcessCard({
 }: Readonly<ProcessCardData>) {
   if (variant === "cloud-configuration") {
     return (
-      <div className={`flex flex-col rounded-(--spacing-space-8) md:rounded-(--spacing-space-12) border border-ink/30 p-space-16 md:p-space-24 w-[calc(50%-(var(--spacing-space-6)))] md:w-full h-full ${
-        isSpecialCard ? "bg-[rgba(220,230,245,0.40)] shadow-[0_10px_12px_6px_rgba(0,0,0,0.05)]" : "bg-white"
+      <div className={`flex flex-col rounded-[10.176px] border-[0.848px] border-[#DCE6F5] p-space-16 md:p-space-24 w-[calc(50%-6px)] md:w-full h-full ${
+        isSpecialCard ? "bg-[rgba(220,230,245,0.40)] shadow-[0_10px_12px_6px_rgba(0,0,0,0.05)]" : "bg-white shadow-[0_0.848px_1.696px_0_rgba(0,0,0,0.05)]"
       }`}>
         <div className="flex items-center justify-between w-full mb-space-12 md:mb-space-24">
           <span className="text-brand-primary text-[10px] md:text-about-eyebrow-desktop leading-space-14 md:leading-normal font-semibold font-mulish">

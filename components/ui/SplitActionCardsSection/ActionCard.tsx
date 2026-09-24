@@ -14,11 +14,11 @@ export type ActionCardProps = {
   card: ActionCardData;
 };
 
-export default function ActionCard({ card }: ActionCardProps) {
+export default function ActionCard({ card }: Readonly<ActionCardProps>) {
   return (
-    <div className="flex flex-row items-center gap-[12px] sm:gap-[20px] p-[16px] w-full sm:h-[180px] bg-[#E9EFFF] rounded-[13px] border border-white overflow-hidden">
+    <div className="flex flex-row items-center gap-space-12 sm:gap-space-20 p-space-16 w-full sm:h-45 bg-[#E9EFFF] rounded-[13px] border border-white overflow-hidden">
       {/* Image Container */}
-      <div className="w-[84px] h-[84px] sm:w-[220px] sm:h-[148px] relative rounded-[12px] overflow-hidden flex-shrink-0">
+      <div className="w-21 h-21 sm:w-55 sm:h-37 relative rounded-space-12 overflow-hidden shrink-0">
         <Image
           src={card.imageSrc}
           alt={card.title}
@@ -28,7 +28,7 @@ export default function ActionCard({ card }: ActionCardProps) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col justify-center sm:justify-between flex-grow w-full h-full self-stretch sm:py-1">
+      <div className="flex flex-col justify-center sm:justify-between grow w-full h-full self-stretch sm:py-1">
         <div className="flex flex-col gap-space-4 sm:gap-space-8 w-full">
           {/* Header Row */}
           <div className="flex flex-row items-center justify-between w-full">
@@ -43,7 +43,7 @@ export default function ActionCard({ card }: ActionCardProps) {
           </div>
           
           {/* Title and Description */}
-          <div className="flex flex-col gap-[2px] sm:gap-space-4">
+          <div className="flex flex-col gap-space-2 sm:gap-space-4">
             <h4 className="text-section-title-head-mobile sm:text-help-card-title-desktop text-ink leading-tight">
               {card.title}
             </h4>
@@ -55,7 +55,7 @@ export default function ActionCard({ card }: ActionCardProps) {
 
         {/* Metadata */}
         {card.metadata && (
-          <div className="mt-[4px] sm:mt-auto sm:pt-space-8">
+          <div className="mt-2.75 sm:mt-auto sm:pt-space-8">
             <p className="text-[8px] sm:text-card-desc-mobile text-ink-muted leading-tight">
               {card.metadata}
             </p>
