@@ -10,7 +10,7 @@ type DataSecurityCardProps = {
 export function DataSecurityCard({ variant, stepNumber, title, description }: Readonly<DataSecurityCardProps>) {
   if (variant === "cloud-security") {
     return (
-      <div className="bg-white border border-border-card rounded-(--spacing-space-8) md:rounded-(--spacing-space-12) shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] w-[calc(50%-(var(--spacing-space-6)))] md:w-space-51 min-h-35 md:h-54 flex-none p-space-16 md:p-space-21 flex flex-col justify-start items-start">
+      <div className="bg-white border-[0.848px] border-[#DCE6F5] rounded-[10.176px] shadow-[0_0.848px_1.696px_0_rgba(0,0,0,0.05)] w-[calc(50%-6px)] md:w-space-51 min-h-35 md:h-54 flex-none p-space-16 md:p-space-21 flex flex-col justify-start items-start">
         <div className="flex flex-col gap-space-8 md:gap-space-12 w-full h-full justify-between">
           {/* Step Number with Dot */}
           <div className="relative w-full h-4.5 md:h-space-22 flex items-center">
@@ -36,8 +36,8 @@ export function DataSecurityCard({ variant, stepNumber, title, description }: Re
 
   return (
     <div className={cn(
-      "bg-white border border-border-card rounded-card-sm shadow-help-card p-space-12 md:p-space-21 flex flex-col justify-start items-start self-stretch",
-      "w-[calc(50%-(var(--spacing-space-6)))] md:w-[calc(25%-18px)] md:flex-none md:min-h-space-59"
+      "bg-white border-[0.848px] border-[#DCE6F5] rounded-[10.176px] shadow-[0_0.848px_1.696px_0_rgba(0,0,0,0.05)] p-space-12 md:p-space-21 flex flex-col justify-start items-start self-stretch",
+      "w-[calc(50%-6px)] md:w-[calc(25%-18px)] md:flex-none md:min-h-space-59"
     )}>
       <div className="flex flex-col gap-space-10 md:gap-space-12 w-full">
         {/* Step Number with Dot */}

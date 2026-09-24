@@ -39,7 +39,7 @@ export default function LeadQualificationBlock({
                 ? "bg-white border border-border-card shadow-sm" 
                 : "bg-(--card-2,rgba(203,224,255,0.40)) border-l-4 border-brand-primary"
             )}>
-              <p className="text-base text-ink-muted font-mulish">
+              <p className="text-[10px] font-semibold leading-[14px] text-ink md:text-base md:font-normal md:text-ink-muted font-mulish">
                 {header.highlightPrefix && (
                   <span className="text-brand-primary font-semibold mr-1">{header.highlightPrefix}</span>
                 )}

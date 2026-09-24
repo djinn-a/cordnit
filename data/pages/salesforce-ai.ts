@@ -47,11 +47,11 @@ const journeyStepsData: JourneyStepsBlockProps = {
 };
 
 export const salesforceAIPage: PageDocument = {
-  slug: "salesforce/sales",
-  title: "Salesforce - Sales",
+  slug: "salesforce/ai",
+  title: "Salesforce - AI",
   layout: "default",
   seo: {
-    title: "Salesforce Sales | Cordinit",
+    title: "Salesforce AI | Cordinit",
     description: "Make selling more focused and predictable.",
   },
   sections: [
@@ -62,13 +62,13 @@ export const salesforceAIPage: PageDocument = {
         { label: "Home", href: "/" },
         { label: "Solutions", href: "/solutions" },
         { label: "Salesforce", href: "/salesforce" },
-        { label: "Sales", href: "/salesforce/sales" },
+        { label: "AI", href: "/salesforce/ai" },
       ],
     },
     {
       _type: "contentMedia",
-      _key: "sales-hero",
-      eyebrow: "SALES",
+      _key: "ai-hero",
+      eyebrow: "AI",
       title: "Make selling more focused and predictable",
       description: "Create a clearer sales journey from lead to opportunity, improve pipeline visibility, and help revenue leaders forecast and sell with absolute institutional confidence.",
       cta: {
