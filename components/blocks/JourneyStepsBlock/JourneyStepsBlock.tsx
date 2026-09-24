@@ -17,7 +17,7 @@ export default function JourneyStepsBlock({
   
   if (variant === "pipeline") {
     return (
-      <section className={cn("w-full pt-space-80 pb-space-60 lg:pb-[100px]", className)}>
+      <section className={cn("w-full pt-space-80 pb-space-60 lg:pb-25", className)}>
         <Container className="flex flex-col">
           {/* Top Header - Pipeline Variant */}
           <div className="flex flex-col lg:flex-row justify-between w-full mt-space-64 mb-space-64 gap-space-24">

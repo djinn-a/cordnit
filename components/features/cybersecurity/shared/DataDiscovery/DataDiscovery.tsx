@@ -9,7 +9,7 @@ export function DataDiscovery({ data, variant = "default" }: Readonly<DataDiscov
     <SplitFeatureBlock 
       layout={variant === "alternate" ? "text-right" : "text-left"}
       textFeatureStyle={variant === "alternate" ? "cards" : "checkmarks"}
-      mediaStyle={variant === "alternate" ? "numbered-steps" : "icon-cards"}
+      mediaStyle={variant === "alternate" || variant === "steps" ? "numbered-steps" : "icon-cards"}
       textSection={{
         eyebrow: data.leftSection.eyebrow,
         title: data.leftSection.title,

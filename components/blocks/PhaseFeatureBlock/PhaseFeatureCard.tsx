@@ -18,11 +18,11 @@ export default function PhaseFeatureCard({ card }: Readonly<PhaseFeatureCardProp
       </div>
 
       {/* Divider */}
-      <hr className="mt-space-12 mb-space-12 md:mt-space-24 md:mb-0 border-border-card" />
+      <hr className="my-space-24 border-border-card" />
 
-      {/* Content Area (grows to push footer down) */}
-      <div className="flex flex-col grow">
-        <h3 className="text-section-title-head-mobile md:text-help-card-title-mobile text-ink font-bold md:font-semibold mt-0 md:mt-space-24 mb-space-4 md:mb-space-12 font-mulish uppercase">
+      {/* Content Area */}
+      <div className="flex flex-col">
+        <h3 className="text-section-title-head-mobile md:text-help-card-title-mobile text-ink font-bold md:font-semibold mt-0 mb-space-4 md:mb-space-12 font-mulish uppercase">
           {card.title}
         </h3>
         <p className="text-card-desc-mobile md:text-help-card-desc-mobile text-ink-muted font-normal font-mulish">
@@ -32,8 +32,8 @@ export default function PhaseFeatureCard({ card }: Readonly<PhaseFeatureCardProp
 
       {/* Footer Text */}
       {card.footerText && (
-        <div className="mt-space-12 md:mt-auto pt-space-12 md:pt-space-24 border-t border-border-card">
-          <p className="text-stat-desc-mobile md:text-card-desc-mobile font-normal text-ink-muted md:text-ink tracking-wider md:tracking-normal font-mulish">
+        <div className="flex flex-col grow mt-space-12 md:mt-space-24 border-t border-border-card pt-space-12 md:pt-space-24">
+          <p className="text-stat-desc-mobile md:text-card-desc-mobile font-normal text-ink-muted md:text-ink tracking-wider md:tracking-normal font-mulish mt-auto">
             {card.footerText}
           </p>
         </div>

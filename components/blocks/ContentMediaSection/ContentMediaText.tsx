@@ -10,14 +10,14 @@ export default function ContentMediaText({
   cta,
 }: Readonly<Pick<ContentMediaSectionProps, "eyebrow" | "title" | "description" | "cta">>) {
   return (
-    <div className="flex flex-col w-full lg:w-[40%]">
+    <div className="flex flex-col w-full lg:w-[45%]">
       {eyebrow && (
         <span className="text-eyebrow-mobile leading-space-16 md:text-eyebrow-desktop md:leading-none uppercase tracking-space-1 text-primary mb-space-8 md:mb-space-16">
           {eyebrow}
         </span>
       )}
       
-      <h2 className="text-section-title-mobile md:text-hero-header-eb text-ink mb-space-8 md:mb-space-20 text-balance">
+      <h2 className="text-section-title-mobile md:text-hero-header-eb text-ink mb-space-8 md:mb-space-20 text-balance whitespace-pre-line">
         {title}
       </h2>
       

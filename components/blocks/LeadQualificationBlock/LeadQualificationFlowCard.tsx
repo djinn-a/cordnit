@@ -17,7 +17,7 @@ export default function LeadQualificationFlowCard({ step, isGrid }: Readonly<Lea
       )}>
         <div className="flex flex-col gap-space-4">
           <span className={cn(
-            "text-[12px] font-normal leading-[16px] uppercase font-mulish",
+            "text-[12px] font-normal leading-space-16 uppercase font-mulish",
             step.theme === "blue" ? "text-white/80" : "text-brand-primary"
           )}>
             {step.numberStr}

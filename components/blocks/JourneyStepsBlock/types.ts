@@ -3,6 +3,7 @@ export interface JourneyStepCardData {
   numberStr: string;
   title: string;
   description: string;
+  subDescription?: string;
   footerText?: string;
   dots?: ("blue" | "gray")[];
 }

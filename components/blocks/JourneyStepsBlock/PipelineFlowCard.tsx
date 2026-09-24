@@ -10,21 +10,28 @@ export function PipelineFlowCard({ card }: Readonly<PipelineFlowCardProps>) {
   return (
     <div
       className={cn(
-        "bg-brand-pale rounded-xl px-space-20 py-space-16",
-        "w-full h-full min-h-[140px]",
-        "flex flex-col justify-between"
+        "bg-white border border-border-card rounded-xl px-space-20 py-space-20",
+        "w-full h-full min-h-[180px]",
+        "flex flex-col shadow-sm"
       )}
     >
-      <div>
-        <div className="text-[12px] font-normal leading-space-16 text-ink-muted uppercase mb-space-8">
-          {card.numberStr}
-        </div>
-        <h3 className="text-base font-bold uppercase text-ink">
-          {card.title}
-        </h3>
+      <div className="flex justify-between items-center text-[12px] font-bold tracking-wider text-brand-primary uppercase mb-space-16">
+        <span>{card.numberStr}</span>
+        <span>{card.title}</span>
       </div>
       
-      <div className="mt-auto flex items-center gap-space-8 pt-space-32">
+      <div className="flex flex-col gap-space-12 mb-space-24">
+        <h3 className="text-[18px] font-bold uppercase text-ink">
+          {card.description}
+        </h3>
+        {card.subDescription && (
+          <p className="text-sm font-normal text-ink-muted">
+            {card.subDescription}
+          </p>
+        )}
+      </div>
+      
+      <div className="mt-auto pt-space-16 border-t border-border-subtle flex items-center gap-space-8">
         {card.dots && card.dots.length > 0 && (
           <div className="flex gap-1 items-center">
             {card.dots.map((dot, idx) => (
@@ -39,9 +46,9 @@ export function PipelineFlowCard({ card }: Readonly<PipelineFlowCardProps>) {
             ))}
           </div>
         )}
-        {(card.footerText || card.description) && (
-          <span className="text-sm font-normal text-ink-muted">
-            {card.footerText || card.description}
+        {card.footerText && (
+          <span className="text-sm font-normal text-ink-watermark">
+            {card.footerText}
           </span>
         )}
       </div>
