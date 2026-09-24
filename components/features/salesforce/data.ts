@@ -139,7 +139,7 @@ export const salesforceCapabilitiesData: CardGridSectionData = {
       category: "integration",
       title: "Integrations",
       description: "Connect Salesforce to the systems, processes and information your teams rely on.",
-      href: "/salesforce/integrations",
+      href: "/salesforce/integration",
       ctaLabel: "Explore",
     },
     {
