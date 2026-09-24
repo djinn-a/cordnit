@@ -1,12 +1,23 @@
 import type { PhaseFeatureCardData } from "./types";
+import { cn } from "@/lib/utils/cn";
 
 interface PhaseFeatureCardProps {
   card: PhaseFeatureCardData;
+  cardStyle?: "default" | "pale-blue";
 }
 
-export default function PhaseFeatureCard({ card }: Readonly<PhaseFeatureCardProps>) {
+export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readonly<PhaseFeatureCardProps>) {
+  const isPaleBlue = cardStyle === "pale-blue";
+  
   return (
-    <div className="flex flex-col h-full bg-white md:bg-surface border border-border-card rounded-xl p-space-20 md:p-space-32 hover:border-brand-primary md:hover:border-brand-primary/30 hover:shadow-sm transition-all duration-300">
+    <div 
+      className={cn(
+        "flex flex-col h-full border border-border-card p-space-20 md:p-space-32 hover:border-brand-primary md:hover:border-brand-primary/30 transition-all duration-300",
+        isPaleBlue 
+          ? "bg-[rgba(203,224,255,0.40)] rounded-2xl shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]" 
+          : "bg-white md:bg-surface rounded-xl hover:shadow-sm"
+      )}
+    >
       {/* Top Row: Number & Phase */}
       <div className="flex justify-between items-baseline">
         <span className="text-link-mobile md:text-section-title-head text-brand-primary font-semibold font-mulish">

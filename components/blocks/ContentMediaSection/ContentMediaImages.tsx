@@ -6,7 +6,7 @@ export default function ContentMediaImages({
   secondaryImage,
 }: Readonly<Pick<ContentMediaSectionProps, "mainImage" | "secondaryImage">>) {
   return (
-    <div className="relative w-full md:w-1/2 max-w-media-wrap aspect-media-wrap shrink-0 mx-auto md:mx-0">
+    <div className="relative w-full md:w-1/2 lg:w-[45%] max-w-media-wrap aspect-media-wrap shrink-0 mx-auto md:mx-0">
       {/* Main Image Container */}
       <div className="absolute right-0 top-0 w-media-main md:w-3/4 aspect-media-main rounded-card overflow-hidden">
         <Image 
