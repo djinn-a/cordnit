@@ -3,7 +3,7 @@ import { PhaseFeatureBlock, PhaseFeatureCardData } from "@/components/blocks/Pha
 export type SecureDataOperationsProps = {
   data: {
     headerLayout?: "split" | "stacked";
-    cardStyle?: "default" | "pale-blue";
+    cardStyle?: "default" | "pale-blue" | "pale-blue-compact";
     header: {
       eyebrow: string;
       title: string;

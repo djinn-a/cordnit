@@ -10,7 +10,7 @@ export interface PhaseFeatureCardData {
 export interface PhaseFeatureBlockProps {
   className?: string;
   headerLayout?: "split" | "stacked";
-  cardStyle?: "default" | "pale-blue";
+  cardStyle?: "default" | "pale-blue" | "pale-blue-compact";
   header: {
     eyebrow: string;
     title: string;

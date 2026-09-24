@@ -19,6 +19,7 @@ import { cloudSecurityPage } from "@/data/pages/cloud-security";
 import { identitySecurityPage } from "@/data/pages/identity-security";
 import { aiSecurityPage } from "@/data/pages/ai-security";
 import { exposureManagementPage } from "@/data/pages/exposure-management";
+import { vulnerabilityManagementPage } from "@/data/pages/vulnerability-management";
 
 const pages: Record<string, PageDocument> = {
   home: homePage,
@@ -41,6 +42,7 @@ const pages: Record<string, PageDocument> = {
   "identity-security": identitySecurityPage,
   "ai-security": aiSecurityPage,
   "exposure-management": exposureManagementPage,
+  "vulnerability-management": vulnerabilityManagementPage,
 };
 
 /**

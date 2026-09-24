@@ -12,7 +12,7 @@ export default function PhaseFeatureBlock({ header, cards, className, headerLayo
         <div className={cn(
           "flex w-full mb-space-24 md:mb-space-64",
           isStacked 
-            ? "flex-col gap-space-16 md:gap-space-24 max-w-[800px]" 
+            ? "flex-col gap-space-16 md:gap-space-24 max-w-200" 
             : "flex-col lg:flex-row justify-between gap-space-8 md:gap-space-24 lg:gap-space-32"
         )}>
           <div className={cn("flex flex-col w-full gap-space-8 md:gap-space-16", !isStacked && "lg:w-3/5 xl:w-2/3")}>
@@ -31,7 +31,12 @@ export default function PhaseFeatureBlock({ header, cards, className, headerLayo
         </div>
 
         {/* Horizontal Row / Grid */}
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-space-12 md:gap-space-24 w-full items-stretch">
+        <div className={cn(
+          "grid w-full items-stretch",
+          cardStyle === "pale-blue-compact" 
+            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center lg:justify-items-start" 
+            : "grid-cols-2 xl:grid-cols-4 gap-space-12 md:gap-space-24"
+        )}>
           {cards.map((card, idx) => (
             <PhaseFeatureCard key={card.id || idx} card={card} cardStyle={cardStyle} />
           ))}

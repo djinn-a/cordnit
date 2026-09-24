@@ -3,10 +3,43 @@ import { cn } from "@/lib/utils/cn";
 
 interface PhaseFeatureCardProps {
   card: PhaseFeatureCardData;
-  cardStyle?: "default" | "pale-blue";
+  cardStyle?: "default" | "pale-blue" | "pale-blue-compact";
 }
 
 export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readonly<PhaseFeatureCardProps>) {
+  const isPaleBlueCompact = cardStyle === "pale-blue-compact";
+
+  if (isPaleBlueCompact) {
+    return (
+      <div className="flex flex-col h-full bg-[rgba(220,230,245,0.40)] border border-[#DCE6F5] rounded-xl p-6 shadow-[0_10px_12px_6px_rgba(0,0,0,0.05)] transition-all duration-300 w-full max-w-95 items-start gap-2">
+        <div className="flex justify-between items-baseline w-full">
+          <span className="text-[#2251FF] font-bold text-[12px] leading-4 font-mulish">
+            {card.numberStr}
+          </span>
+          <span className="text-[#2251FF] uppercase font-bold text-[12px] leading-4 font-mulish">
+            {card.phaseLabel}
+          </span>
+        </div>
+        
+        <h3 className="text-black font-bold text-[20px] leading-7 font-mulish mt-0 mb-0">
+          {card.title}
+        </h3>
+        
+        <p className="text-[#555] font-normal text-[14px] leading-snug font-mulish m-0">
+          {card.description}
+        </p>
+
+        {card.footerText && (
+          <div className="flex flex-col mt-auto w-full pt-2">
+            <p className="text-[#555] font-normal text-[12px] leading-4 font-mulish m-0">
+              {card.footerText}
+            </p>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   const isPaleBlue = cardStyle === "pale-blue";
   
   return (
@@ -43,8 +76,18 @@ export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readon
 
       {/* Footer Text */}
       {card.footerText && (
-        <div className="flex flex-col grow mt-space-12 md:mt-space-24 border-t border-border-card pt-space-12 md:pt-space-24">
-          <p className="text-stat-desc-mobile md:text-card-desc-mobile font-normal text-ink-muted md:text-ink tracking-wider md:tracking-normal font-mulish mt-auto">
+        <div className={cn(
+          "flex flex-col mt-auto",
+          isPaleBlue
+            ? "bg-white rounded-lg p-space-12 md:p-space-16 mt-space-16 md:mt-space-24"
+            : "grow mt-space-12 md:mt-space-24 border-t border-border-card pt-space-12 md:pt-space-24"
+        )}>
+          <p className={cn(
+            "text-stat-desc-mobile md:text-card-desc-mobile font-normal font-mulish",
+            isPaleBlue 
+              ? "text-ink" 
+              : "text-ink-muted md:text-ink tracking-wider md:tracking-normal mt-auto"
+          )}>
             {card.footerText}
           </p>
         </div>
