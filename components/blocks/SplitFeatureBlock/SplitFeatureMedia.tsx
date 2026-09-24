@@ -4,7 +4,7 @@ import { ArrowDown } from "lucide-react";
 import type { SplitFeatureBlockProps } from "./types";
 
 type SplitFeatureMediaProps = SplitFeatureBlockProps["mediaSection"] & {
-  mediaStyle?: SplitFeatureBlockProps["mediaStyle"];
+  mediaStyle?: NonNullable<SplitFeatureBlockProps["mediaStyle"]>;
 };
 
 export function SplitFeatureMedia({
@@ -69,7 +69,7 @@ export function SplitFeatureMedia({
               </div>
             </div>
             
-            {mediaStyle === "icon-cards" && index < cards.length - 1 && (
+            {(mediaStyle === "icon-cards" || (mediaStyle === "numbered-steps" && card.stepNumber && card.stepNumber.length <= 3)) && index < cards.length - 1 && (
               <div className="flex justify-center w-full -mt-space-12 md:-my-space-8 z-10 mb-0">
                 <ArrowDown className="hidden md:block w-5 h-5 text-brand-primary opacity-50" />
                 <svg className="block md:hidden w-space-14 h-space-24 text-brand-primary opacity-60" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -8,10 +8,10 @@ export function DataSecurityCardSection({ sectionTag, sectionTitle, footerText, 
     <div className="flex flex-col -mx-4 px-4 md:w-full md:mx-0 md:px-space-40 bg-primary-pale md:bg-grad-3 md:border md:border-border-card md:rounded-card py-space-20 md:pt-space-24 md:pb-space-24 gap-space-24 md:gap-0">
       {/* Top Header Row */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full md:mb-space-24 gap-space-12 md:gap-space-12 border-b border-border-subtle md:border-none pb-space-12 md:pb-0">
-        <span className="text-ink-muted text-help-card-prefix md:text-footer-heading-desktop font-mulish uppercase tracking-wider md:order-2">
+        <span className="text-ink-muted text-help-card-prefix md:text-footer-heading-desktop font-mulish uppercase tracking-wider">
           {sectionTitle}
         </span>
-        <div className="w-fit bg-primary/10 md:bg-surface border-none md:border md:border-border-card rounded-md md:rounded-full px-space-10 py-space-4 flex items-center justify-center md:order-1">
+        <div className="w-fit bg-primary/10 md:bg-surface border-none md:border md:border-border-card rounded-md md:rounded-full px-space-10 py-space-4 flex items-center justify-center">
           <span className="text-brand-primary text-help-card-prefix md:text-link-card-mobile font-mulish uppercase tracking-widest">
             {sectionTag}
           </span>

@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import type { SplitFeatureBlockProps } from "./types";
 
 type SplitFeatureTextProps = SplitFeatureBlockProps["textSection"] & {
-  textFeatureStyle?: SplitFeatureBlockProps["textFeatureStyle"];
+  textFeatureStyle?: NonNullable<SplitFeatureBlockProps["textFeatureStyle"]>;
 };
 
 export function SplitFeatureText({
@@ -42,10 +42,10 @@ export function SplitFeatureText({
               }
             >
               {textFeatureStyle === "checkmarks" && (
-                <div className="mt-space-2 w-5 shrink-0">
-                  {/* Mobile Checkbox / Desktop Check */}
-                  <div className="w-space-16 h-space-16 md:w-auto md:h-auto bg-brand-pale md:bg-transparent rounded md:rounded-none flex items-center justify-center">
-                    <Check className="w-space-10 h-space-10 md:w-5 md:h-5 text-brand-primary" strokeWidth={3} />
+                <div className="mt-space-2 w-space-16 md:w-space-24 shrink-0 flex items-start justify-center">
+                  {/* Mobile & Desktop Checkbox */}
+                  <div className="w-space-16 h-space-16 md:w-6 md:h-6 bg-brand-pale rounded flex items-center justify-center shrink-0">
+                    <Check className="w-space-10 h-space-10 md:w-4 md:h-4 text-brand-primary" strokeWidth={3} />
                   </div>
                 </div>
               )}
