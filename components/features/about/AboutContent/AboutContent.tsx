@@ -39,7 +39,7 @@ export default function AboutContent({
             <div className="flex-1 w-full animate-in fade-in duration-500">
               <h3 className="text-card-title-mobile md:text-card-title mb-4 md:mb-5">{activeContent.title}</h3>
               {activeContent.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 24)} className="text-mobile-body-1 md:text-section-subtitle text-ink-muted mb-5 last:mb-0">
+                <p key={paragraph.slice(0, 24)} className="text-[14px] md:text-section-subtitle text-ink-muted mb-5 last:mb-0">
                   {paragraph}
                 </p>
               ))}

@@ -28,13 +28,13 @@ export default function ContactHero({
               subtitle={description}
               align="left"
               className="items-center md:items-start text-center md:text-left"
-              titleClassName="mb-6"
-              subtitleClassName="text-section-subtitle-mobile md:text-section-subtitle text-ink-muted"
+              titleClassName="mb-6 max-md:!text-[24px]"
+              subtitleClassName="text-section-subtitle-mobile md:text-section-subtitle text-ink-muted max-md:!text-[14px]"
             />
           </div>
 
           <div className="w-full lg:w-[55%] relative flex justify-end mt-2 lg:mt-0">
-            <div className="relative w-full h-[400px] xs:h-[450px] md:h-[500px] lg:h-[420px] xl:h-[460px] rounded-card-lg overflow-hidden shadow-xl">
+            <div className="relative w-full h-[238px] md:h-[500px] lg:h-[420px] xl:h-[460px] rounded-card-lg overflow-hidden shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={imageSrc}

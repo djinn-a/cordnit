@@ -24,7 +24,7 @@ export default function ContactFormSection() {
 
   return (
     <section className="w-full mx-auto bg-surface">
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-6">
         <ContactForm 
           formData={formData}
           selectedInterests={selectedInterests}

@@ -85,7 +85,7 @@ export default function ContactForm({
                   key={item}
                   type="button"
                   onClick={() => toggleInterest(item)}
-                  className={`px-3 md:px-4 py-1.5 md:py-2 border rounded-full text-[11px] md:text-xs transition-colors ${buttonStyle}`}
+                  className={`px-3 md:px-4 py-1.5 md:py-2 border rounded-full text-[10px] md:text-xs transition-colors ${buttonStyle}`}
                 >
                   {item}
                 </button>
@@ -104,7 +104,7 @@ export default function ContactForm({
         <div className="pt-2 space-y-4">
           <div className={`flex items-start p-2 -mx-2 rounded-lg transition-colors ${errors.introCall ? 'bg-red-50/50 border border-red-200' : 'border border-transparent'}`}>
             <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="intro-call" className={`mt-0.5 w-5 h-5 text-primary rounded focus:ring-blue-500 bg-white shrink-0 ${errors.introCall ? 'border-error' : 'border-gray-300'}`} />
-            <label htmlFor="intro-call" className={`ml-3 text-[13px] md:text-sm ${errors.introCall ? 'text-red-700' : 'text-gray-800'}`}>
+            <label htmlFor="intro-call" className={`ml-3 text-[10px] md:text-sm ${errors.introCall ? 'text-red-700' : 'text-gray-800'}`}>
               I would like to book a brief introductory call to discuss this.
             </label>
           </div>
@@ -113,7 +113,7 @@ export default function ContactForm({
 
           <div className={`flex items-start p-2 -mx-2 rounded-lg transition-colors ${errors.privacy ? 'bg-red-50/50 border border-red-200' : 'border border-transparent'}`}>
             <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="privacy" className={`mt-0.5 w-5 h-5 text-primary rounded focus:ring-blue-500 bg-white shrink-0 ${errors.privacy ? 'border-error' : 'border-gray-300'}`} />
-            <label htmlFor="privacy" className={`ml-3 text-[13px] md:text-sm leading-snug ${errors.privacy ? 'text-red-700' : 'text-gray-800'}`}>
+            <label htmlFor="privacy" className={`ml-3 text-[10px] md:text-sm leading-snug ${errors.privacy ? 'text-red-700' : 'text-gray-800'}`}>
               I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
             </label>
           </div>
