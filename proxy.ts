@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { PUBLIC_ROUTES, ALWAYS_ALLOW_PREFIXES } from '@/lib/config/launch-routes';
 
-export function middleware(req: NextRequest) {
+export default function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   const isAlwaysAllowed = ALWAYS_ALLOW_PREFIXES.some(p => pathname.startsWith(p));
