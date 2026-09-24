@@ -21,7 +21,7 @@ export function DataSecurityCardSection({ variant, sectionTag, sectionTitle, foo
       )}
 
       {/* Cards Grid */}
-      <div className={`flex flex-row flex-wrap justify-center ${variant === 'cloud-security' ? 'gap-[11px] md:gap-space-24' : 'gap-x-space-12 gap-y-space-16 md:gap-space-24'} w-full`}>
+      <div className={`flex flex-row flex-wrap justify-center ${variant === 'cloud-security' ? 'gap-2.75 md:gap-space-24' : 'gap-x-space-12 gap-y-space-16 md:gap-space-24'} w-full`}>
         {cards.map((card) => (
           <DataSecurityCard key={card.title} variant={variant} {...card} />
         ))}

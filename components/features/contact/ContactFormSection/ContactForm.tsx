@@ -68,7 +68,7 @@ export default function ContactForm({
 
         {/* Area of Interest */}
         <div className={`pt-2 rounded-lg transition-colors ${errors.interests ? 'bg-red-50/50 p-2 -mx-2' : ''}`}>
-          <label className="block text-[15px] md:text-sm font-medium text-gray-800 mb-3">What can we help you with?<span className="text-error">*</span></label>
+          <p className="block text-[15px] md:text-sm font-medium text-gray-800 mb-3">What can we help you with?<span className="text-error">*</span></p>
           <div className="flex flex-wrap gap-2">
             {INTERESTS_LIST.map((item) => {
               const isSelected = selectedInterests.includes(item);
