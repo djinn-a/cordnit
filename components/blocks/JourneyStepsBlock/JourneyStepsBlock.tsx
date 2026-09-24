@@ -37,7 +37,7 @@ export default function JourneyStepsBlock({
           </div>
 
           {/* White Container */}
-          <div className="bg-[#FFF] border border-solid border-[#DCE6F5] rounded-[16px] w-full px-space-24 lg:px-space-32 py-space-32 lg:py-[48px] shadow-[0_1px_2px_0_rgba(34,81,255,0.20),0_2px_6px_2px_rgba(34,81,255,0.18)]">
+          <div className="bg-[#FFF] border border-solid border-[#DCE6F5] rounded-[16px] w-full px-space-24 lg:px-space-32 py-space-32 lg:py-space-48 shadow-[0_1px_2px_0_rgba(34,81,255,0.20),0_2px_6px_2px_rgba(34,81,255,0.18)]">
             {/* Inner Header */}
             {(flowHeaderLeft || flowHeaderRight) && (
               <div className="flex justify-between w-full mb-space-32 uppercase text-[10px] md:text-about-eyebrow-desktop font-extrabold tracking-wider">
@@ -47,7 +47,7 @@ export default function JourneyStepsBlock({
             )}
             
             {/* Cards Row */}
-            <div className="grid grid-cols-2 lg:flex lg:flex-row w-full gap-[12px] lg:gap-space-16 items-stretch mb-space-32">
+            <div className="grid grid-cols-2 lg:flex lg:flex-row w-full gap-space-12 lg:gap-space-16 items-stretch mb-space-32">
               {cards.map((card, idx) => (
                 <div key={card.id || `pipeline-card-${idx}`} className="flex-1 lg:min-w-[200px]">
                   <PipelineFlowCard card={card} />

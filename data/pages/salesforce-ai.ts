@@ -46,33 +46,33 @@ const journeyStepsData: JourneyStepsBlockProps = {
   ],
 };
 
-export const salesforceCommercePage: PageDocument = {
-  slug: "salesforce/commerce",
-  title: "Salesforce - Commerce Cloud",
+export const salesforceAIPage: PageDocument = {
+  slug: "salesforce/sales",
+  title: "Salesforce - Sales",
   layout: "default",
   seo: {
-    title: "Salesforce Commerce Cloud | Cordinit",
-    description: "Drive sales and improve efficiency with Salesforce Commerce Cloud.",
+    title: "Salesforce Sales | Cordinit",
+    description: "Make selling more focused and predictable.",
   },
   sections: [
     {
       _type: "breadcrumb",
-      _key: "commerce-breadcrumb",
+      _key: "sales-breadcrumb",
       items: [
         { label: "Home", href: "/" },
         { label: "Solutions", href: "/solutions" },
         { label: "Salesforce", href: "/salesforce" },
-        { label: "Commerce Cloud", href: "/salesforce/commerce" },
+        { label: "Sales", href: "/salesforce/sales" },
       ],
     },
     {
       _type: "contentMedia",
-      _key: "commerce-hero",
-      eyebrow: "COMMERCE",
-      title: "Drive sales and improve efficiency",
-      description: "Connect Salesforce with the systems, data and processes your teams rely on.",
+      _key: "sales-hero",
+      eyebrow: "SALES",
+      title: "Make selling more focused and predictable",
+      description: "Create a clearer sales journey from lead to opportunity, improve pipeline visibility, and help revenue leaders forecast and sell with absolute institutional confidence.",
       cta: {
-        label: "Discuss your commerce priority",
+        label: "Discuss your sales priority",
         href: "/contact",
       },
       mainImage: {

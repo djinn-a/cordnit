@@ -16,7 +16,7 @@ export default function LeadQualificationBlock({
   return (
     <section className={cn("w-full", className)}>
       <Container className={cn(
-        "flex flex-col justify-between items-start gap-space-40 lg:gap-space-80",
+        "flex flex-col justify-between items-center gap-space-40 lg:gap-space-80",
         variant === "right" ? "lg:flex-row-reverse" : "lg:flex-row"
       )}>
         
@@ -25,10 +25,10 @@ export default function LeadQualificationBlock({
           <p className="text-[10px] leading-[16px] font-extrabold md:text-eyebrow-desktop md:font-semibold tracking-[1px] text-[#2251FF] uppercase font-mulish mb-space-16">
             {header.eyebrow}
           </p>
-          <h2 className="text-[24px] leading-[32px] md:leading-[1.417] font-extrabold md:text-split-section-title text-black md:text-ink font-mulish mb-space-20">
+          <h2 className="text-section-title-mobile leading-[32px] md:text-split-section-title md:leading-[1.417] text-ink font-mulish mb-space-20">
             {header.title}
           </h2>
-          <p className="text-page-hero-subtitle text-ink-muted font-mulish mb-space-20">
+          <p className="text-section-subtitle-mobile leading-[22px] md:text-page-hero-subtitle md:leading-[1.4] text-ink-muted font-mulish mb-space-20">
             {header.description}
           </p>
           

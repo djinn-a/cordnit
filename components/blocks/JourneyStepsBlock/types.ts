@@ -10,7 +10,7 @@ export interface JourneyStepCardData {
 
 export interface JourneyStepsBlockProps {
   className?: string;
-  variant?: "default" | "pipeline";
+  variant?: "default" | "pipeline" | "ai-cards";
   header: {
     eyebrow: string;
     title: string;

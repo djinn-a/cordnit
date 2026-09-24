@@ -46,42 +46,42 @@ const journeyStepsData: JourneyStepsBlockProps = {
   ],
 };
 
-export const salesforceCommercePage: PageDocument = {
-  slug: "salesforce/commerce",
-  title: "Salesforce - Commerce Cloud",
+export const salesforceManagedServicesPage: PageDocument = {
+  slug: "salesforce/managed-services",
+  title: "Salesforce - Managed Services",
   layout: "default",
   seo: {
-    title: "Salesforce Commerce Cloud | Cordinit",
-    description: "Drive sales and improve efficiency with Salesforce Commerce Cloud.",
+    title: "Salesforce Managed Services | Cordinit",
+    description: "Keep Salesforce improving after go-live.",
   },
   sections: [
     {
       _type: "breadcrumb",
-      _key: "commerce-breadcrumb",
+      _key: "sales-breadcrumb",
       items: [
         { label: "Home", href: "/" },
         { label: "Solutions", href: "/solutions" },
         { label: "Salesforce", href: "/salesforce" },
-        { label: "Commerce Cloud", href: "/salesforce/commerce" },
+        { label: "Managed Services", href: "/salesforce/managed-services" },
       ],
     },
     {
       _type: "contentMedia",
-      _key: "commerce-hero",
-      eyebrow: "COMMERCE",
-      title: "Drive sales and improve efficiency",
-      description: "Connect Salesforce with the systems, data and processes your teams rely on.",
+      _key: "managed-services-hero",
+      eyebrow: "MANAGED SERVICES",
+      title: "Keep Salesforce improving after go-live.",
+      description: "Connect Salesforce with the systems, data and processes your teams rely on — creating a more consistent flow of information across the business.",
       cta: {
-        label: "Discuss your commerce priority",
-        href: "/contact",
+        label: "Discuss your managed services priority",
+        href: "/contactus",
       },
       mainImage: {
         src: "/images/content-media/main.png",
-        alt: "Data Security Infrastructure",
+        alt: "Team reviewing Salesforce dashboards",
       },
       secondaryImage: {
         src: "/images/content-media/secondary.png",
-        alt: "Technology abstract visualization",
+        alt: "Data integration and flows",
       },
     },
     {

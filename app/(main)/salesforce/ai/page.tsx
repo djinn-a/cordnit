@@ -4,15 +4,15 @@ import LayoutRenderer from "@/components/renderers/LayoutRenderer";
 import { getPage } from "@/lib/cms/get-page";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPage("salesforce/commerce");
+  const page = await getPage("salesforce/ai");
   return {
     title: page?.seo?.title,
     description: page?.seo?.description,
   };
 }
 
-export default async function salesforceCommercePage() {
-  const page = await getPage("salesforce/commerce");
+export default async function SalesforceAIPage() {
+  const page = await getPage("salesforce/ai");
   if (!page) notFound();
 
   return (
