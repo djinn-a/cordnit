@@ -89,14 +89,14 @@ export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readon
   return (
     <div 
       className={cn(
-        "flex flex-col h-full border border-border-card p-space-20 md:p-space-32 hover:border-brand-primary md:hover:border-brand-primary/30 transition-all duration-300",
+        "flex flex-col h-full border border-border-card p-space-12 md:p-space-32 hover:border-brand-primary md:hover:border-brand-primary/30 transition-all duration-300 w-full items-start",
         isPaleBlue 
           ? "bg-[rgba(203,224,255,0.40)] rounded-2xl shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]" 
           : "bg-white md:bg-surface rounded-xl hover:shadow-sm"
       )}
     >
       {/* Top Row: Number & Phase */}
-      <div className="flex justify-between items-baseline">
+      <div className="flex justify-between items-baseline w-full">
         <span className="text-link-mobile md:text-section-title-head text-brand-primary font-semibold font-mulish">
           {card.numberStr}
         </span>
@@ -131,7 +131,7 @@ export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readon
       {/* Footer Text */}
       {card.footerText && (
         <div className={cn(
-          "flex flex-col mt-auto",
+          "flex flex-col mt-auto w-full",
           isPaleBlue
             ? "bg-white rounded-lg p-space-12 md:p-space-16 mt-space-16 md:mt-space-24"
             : "grow mt-space-12 md:mt-space-24 border-t border-border-card pt-space-12 md:pt-space-24"
@@ -140,7 +140,7 @@ export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readon
             "font-normal font-mulish m-0",
             isPaleBlue 
               ? "text-[#555] text-[12px] leading-[16px] md:text-card-desc-mobile md:text-ink" 
-              : "text-stat-desc-mobile md:text-card-desc-mobile text-ink-muted md:text-ink tracking-wider md:tracking-normal mt-auto"
+              : "text-[#555] text-[10px] leading-[14px] tracking-[0.6px] md:text-card-desc-mobile md:text-ink md:tracking-normal mt-auto"
           )}>
             {card.footerText}
           </p>

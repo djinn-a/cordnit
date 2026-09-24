@@ -190,7 +190,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
   ];
 
   const inputClasses = (fieldName: string) =>
-    `cmi w-full px-4 py-3.5 rounded-lg border bg-transparent text-white text-[13px] placeholder-ink-muted transition-colors focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 ${errors[fieldName] ? 'border-error/80' : 'border-white/20'}`;
+    `cmi w-full px-4 py-3.5 rounded-lg border bg-transparent text-white text-[13px] placeholder-white transition-colors focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 ${errors[fieldName] ? 'border-error/80' : 'border-white/20'}`;
 
   return (
     <ContactModalContext.Provider value={{ isOpen, openModal, closeModal }}>

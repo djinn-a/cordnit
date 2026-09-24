@@ -84,14 +84,13 @@ export const FOOTER_NAV_COLUMNS = [
     title: "SOLUTION",
     orderClasses: "order-1 lg:order-1",
     links: [
-      { label: "All Solution", href: "#" },
-      { label: "Cybersecurity", href: "#" },
-      { label: "Salesforce", href: "#" },
-      { label: "AI & Automation", href: "#" },
-      { label: "Cloud & Infrastructure", href: "#" },
-      { label: "Application Engineering", href: "#" },
-      { label: "Data & Integration", href: "#" },
-      { label: "Managed Services", href: "#" }
+      { label: "All Solution", href: "/solutions" },
+      { label: "Cybersecurity", href: "/cybersecurity" },
+      { label: "Salesforce", href: "/salesforce" },
+      { label: "AI & Automation", href: "/ai-automation" },
+      { label: "Cloud & Infrastructure", href: "/cloud-infrastructure" },
+      { label: "Application Engineering", href: "/application-engineering" },
+      { label: "Data & Integration", href: "/data-integration" }
     ]
   },
   {
@@ -99,13 +98,14 @@ export const FOOTER_NAV_COLUMNS = [
     title: "CYBERSECURITY",
     orderClasses: "order-3 lg:order-2",
     links: [
-      { label: "Cloud Security", href: "#" },
-      { label: "Application Security", href: "#" },
-      { label: "Identity Security", href: "#" },
-      { label: "Data Security", href: "#" },
-      { label: "Exposure Management", href: "#" },
-      { label: "Vulnerability Management", href: "#" },
-      { label: "Managed Security", href: "#" }
+      { label: "Cloud Security", href: "/cybersecurity/cloud-security" },
+      { label: "Application Security", href: "/cybersecurity/application-security" },
+      { label: "Identity Security", href: "/cybersecurity/identity-security" },
+      { label: "Data Security", href: "/cybersecurity/data-security" },
+      { label: "Exposure Management", href: "/cybersecurity/exposure-management" },
+      { label: "Vulnerability Management", href: "/cybersecurity/vulnerability-management" },
+      { label: "Managed Security", href: "/cybersecurity/managed-security" },
+      { label: "AI Security", href: "/cybersecurity/ai-security" }
     ]
   },
   {
@@ -113,13 +113,13 @@ export const FOOTER_NAV_COLUMNS = [
     title: "SALESFORCE",
     orderClasses: "order-2 lg:order-3",
     links: [
-      { label: "Sales", href: "#" },
-      { label: "Service", href: "#" },
-      { label: "Marketing", href: "#" },
-      { label: "Commerce", href: "#" },
-      { label: "AI", href: "#" },
-      { label: "Integrations", href: "#" },
-      { label: "Managed Services", href: "#" }
+      { label: "Sales", href: "/salesforce/sales" },
+      { label: "Service", href: "/salesforce/service" },
+      { label: "Marketing", href: "/salesforce/marketing" },
+      { label: "Commerce", href: "/salesforce/commerce" },
+      { label: "AI", href: "/salesforce/ai" },
+      { label: "Integrations", href: "/salesforce/integration" },
+      { label: "Managed Services", href: "/salesforce/managed-services" }
     ]
   },
   {
@@ -127,9 +127,9 @@ export const FOOTER_NAV_COLUMNS = [
     title: "EXPLORE",
     orderClasses: "order-4 lg:order-4",
     links: [
-      { label: "Industries", href: "#" },
-      { label: "Accelerators", href: "#" },
-      { label: "Insights", href: "#" },
+      { label: "Industries", href: "/industries" },
+      { label: "Accelerators", href: "/accelerators" },
+      { label: "Insights", href: "/insights" },
       { label: "About", href: "/aboutus" },
       { label: "Contact", href: "/contactus" }
     ]
@@ -139,7 +139,7 @@ export const FOOTER_NAV_COLUMNS = [
     title: "LEGAL",
     orderClasses: "order-5 lg:order-5",
     links: [
-      { label: "Privacy Policy", href: "#" },
+      { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of use", href: "#" },
       { label: "Sitemap", href: "#" },
       { label: "Responsible Disclosure", href: "#" },

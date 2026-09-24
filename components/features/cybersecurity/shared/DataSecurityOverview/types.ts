@@ -4,6 +4,8 @@ export type ProcessCardData = {
   title: string;
   description: string;
   subDescription: string;
+  variant?: string;
+  isSpecialCard?: boolean;
 };
 
 export type DataSecurityOverviewData = {
@@ -12,7 +14,15 @@ export type DataSecurityOverviewData = {
     title: string;
     description: string;
   };
+  variant?: string;
+  processSectionInfo?: {
+    headerLeft?: string;
+    headerRight?: string;
+    footerText?: string;
+    footerHighlight?: string;
+  };
   cardSection?: {
+    variant?: string;
     sectionTag: string;
     sectionTitle: string;
     footerText: string;

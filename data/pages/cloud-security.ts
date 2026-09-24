@@ -48,8 +48,9 @@ export const cloudSecurityPage: PageDocument = {
           description: "Cordinit helps organisations secure cloud environments across posture, configuration, identities, workloads, data and ongoing monitoring \u2014 supporting secure adoption and confident operation."
         },
         cardSection: {
-          sectionTag: "OPERATIONAL LIFECYCLE PIPELINE",
-          sectionTitle: "END-TO-END ASSURANCE",
+          variant: "cloud-security",
+          sectionTitle: "OPERATIONAL LIFECYCLE PIPELINE",
+          sectionTag: "END-TO-END ASSURANCE",
           footerText: "FROM EXTERNAL ATTACK SURFACE TO CORE INFRASTRUCTURE, PRIORITISE WHAT MATTERS",
           footerHighlight: "SECURE_ADOPTION // FULL_COVERAGE",
           cards: [
@@ -115,61 +116,22 @@ export const cloudSecurityPage: PageDocument = {
               stepNumber: "BASELINE",
               title: "SECURITY POSTURE",
               description: "Configuration drift against hardened policy"
-            },
-            {
-              stepNumber: "OUTCOME",
-              title: "EXPOSURE & RISK REDUCTION",
-              description: "Prioritised remediation roadmap with context"
             }
           ]
         }
       }
     },
     {
-      _type: "authenticationGovernance",
-      _key: "core-capabilities",
-      data: {
-        header: {
-          eyebrow: "CORE CAPABILITIES",
-          title: "Build stronger, more secure cloud environments.",
-          description: "We combine people, processes and technology to help embed security across your cloud lifecycle and reduce risk."
-        },
-        cards: [
-          {
-            numberStr: "01",
-            title: "SECURE POSTURE",
-            description: "Unified executive dashboards showing defensibility and asset hygiene over time.",
-            iconName: "Activity",
-            pills: ["Threat Modeling", "Security Champions", "Policy as Code"]
-          },
-          {
-            numberStr: "02",
-            title: "TESTING & ASSESSMENT",
-            description: "Team-level velocity metrics and SLA compliance tracking across engineering teams.",
-            iconName: "Lock",
-            pills: ["Vector Store DLP", "PII Masking", "Synthetic Data"]
-          },
-          {
-            numberStr: "03",
-            title: "CLOUD & WORKLOAD RISK",
-            description: "Historical exposure trajectories across subsidiaries and enterprise business units.",
-            iconName: "ShieldCheck",
-            pills: ["Red Teaming", "KMS Integration", "Hardware HSM"]
-          },
-          {
-            numberStr: "04",
-            title: "REMEDIATION & GUIDANCE",
-            description: "Real-time board-level summaries of high-impact attack paths needing intervention.",
-            iconName: "Scale",
-            pills: ["Lineage Mapping", "Compliance Audits", "Risk Scorecards"]
-          }
-        ]
-      }
-    },
-    {
       _type: "dataSecurityOverview",
       _key: "cloud-configuration",
       data: {
+        variant: "cloud-configuration",
+        processSectionInfo: {
+          headerLeft: "CONTINUOUS CONFIGURATION CYCLE",
+          headerRight: "PREVENTATIVE_GUARDRAILS",
+          footerText: "Preventative configuration ensures cloud agility does not introduce uncontrolled attack surfaces.",
+          footerHighlight: "INFRASTRUCTURE_AS_CODE // ALIGNED"
+        },
         header: {
           eyebrow: "CONFIGURATION",
           title: "Build stronger cloud foundations.",
@@ -202,23 +164,58 @@ export const cloudSecurityPage: PageDocument = {
     },
     {
       _type: "dataDiscovery",
+      _key: "identities-access",
+      variant: "flowchart",
+      data: {
+        leftSection: {
+          eyebrow: "IDENTITIES",
+          title: "Control who and what has access.",
+          description: "Strengthen access controls and help ensure people, applications and services have the right permissions at the right time across all cloud resources without friction.",
+          features: []
+        },
+        rightSection: {
+          eyebrow: "ENTITLEMENT & ACCESS MAPPING",
+          statusText: "CIEM // ZERO TRUST",
+          cards: [
+            {
+              stepNumber: "HUMAN",
+              title: "PEOPLE",
+              description: "Engineers & Admins",
+            },
+            {
+              stepNumber: "WORKLOAD",
+              title: "APPLICATIONS",
+              description: "APIs & Microservices",
+            },
+            {
+              stepNumber: "SYSTEM",
+              title: "SERVICES",
+              description: "Pipelines & Automation",
+            },
+            {
+              stepNumber: "CENTRAL GOVERNANCE",
+              title: "IDENTITY & ENTITLEMENTS",
+              description: "Role baselines \u00b7 Token expiry \u00b7 Multi-factor",
+            },
+            {
+              stepNumber: "ENFORCED OUTCOME",
+              title: "APPROPRIATE & JUST-IN-TIME ACCESS",
+              description: "Ephemeral permissions with complete audit trails",
+            },
+          ],
+        }
+      }
+    },
+    {
+      _type: "dataDiscovery",
       _key: "workload-and-data",
-      variant: "alternate",
+      variant: "stacked",
       data: {
         leftSection: {
           eyebrow: "WORKLOAD & DATA",
           title: "Protect workloads and data.",
           description: "Protect cloud workloads and sensitive data across the environments where they are created, stored, processed and used ensuring end-to-end operational resilience.",
-          features: [
-            {
-              title: "Cloud Workload Protection",
-              text: "Continuously monitor and secure your containers, virtual machines, and serverless functions against runtime threats and unauthorized access."
-            },
-            {
-              title: "Data Security Posture Management",
-              text: "Automatically discover, classify, and protect sensitive data across your cloud storage, databases, and managed services."
-            }
-          ]
+          features: []
         },
         rightSection: {
           eyebrow: "RESILIENCE ARCHITECTURE",
@@ -234,42 +231,45 @@ export const cloudSecurityPage: PageDocument = {
     },
     {
       _type: "dataDiscovery",
-      _key: "protect-what-you-build",
+      _key: "continuous-assurance",
+      variant: "loop",
       data: {
         leftSection: {
-          eyebrow: "PROTECT WHAT YOU BUILD",
-          title: "Identify and fix risks before they become threats.",
-          description: "From cloud vulnerabilities and misconfigurations to insecure libraries and APIs, we help you find and address risks early — reducing the chance of costly breaches later.",
+          eyebrow: "CONTINUOUS MONITORING",
+          title: "Maintain continuous visibility.",
+          description: "Continuously monitor your cloud environments to detect anomalous behaviors, contain threats instantly, and feed insights back to improve your security posture.",
           features: []
         },
         rightSection: {
-          eyebrow: "",
-          statusText: "",
+          eyebrow: "CONTINUOUS ASSURANCE LOOP",
+          statusText: "REACTIVE ➔ PREVENTATIVE",
           cards: [
             {
-              icon: "Code",
-              title: "Application Code",
-              description: "Identify security flaws in custom code."
+              stepNumber: "01",
+              title: "MONITOR",
+              description: "Continuous telemetry from cloud audit logs and API events."
             },
             {
-              icon: "Server",
-              title: "Open Source Dependencies",
-              description: "Detect and manage third-party and open-source risks."
+              stepNumber: "02",
+              title: "DETECT",
+              description: "Isolate anomalous behaviors and exploit paths instantly."
             },
             {
-              icon: "LayoutGrid",
-              title: "APIs & Integrations",
-              description: "Secure APIs and connected services."
+              stepNumber: "03",
+              title: "RESPOND",
+              description: "Decisive containment and verified playbook steps."
             },
             {
-              icon: "Shield",
-              title: "Runtime Protection",
-              description: "Monitor and protect workloads in production."
+              stepNumber: "04",
+              title: "IMPROVE",
+              description: "Feed insights back into configuration baselines."
             }
-          ]
+          ],
+          footerBadges: ["CLOSED-LOOP CLOUD TELEMETRY CYCLE"]
         }
       }
     },
+
     {
       _type: "secureDataOperations",
       _key: "secure-cloud-operation",

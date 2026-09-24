@@ -3,7 +3,7 @@ import { CMSIconName } from "@/lib/utils/icons";
 export interface SplitFeatureBlockProps {
   layout?: "text-left" | "text-right";
   textFeatureStyle?: "checkmarks" | "cards";
-  mediaStyle?: "icon-cards" | "numbered-steps";
+  mediaStyle?: "icon-cards" | "numbered-steps" | "stacked-cards" | "flowchart-cards" | "loop-cards";
   textSection: {
     eyebrow: string;
     title: string;

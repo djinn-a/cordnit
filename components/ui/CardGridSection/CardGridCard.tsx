@@ -43,7 +43,7 @@ export default function CardGridCard({ card }: CardGridCardProps) {
         </p>
 
         {/* CTA */}
-        <div className="hidden lg:flex items-center gap-space-8 text-link-mobile text-brand-primary group-hover:text-primary-hover transition-colors mt-auto">
+        <div className="flex items-center gap-space-8 text-card-desc-mobile lg:text-link-mobile text-brand-primary group-hover:text-primary-hover transition-colors mt-auto">
           {card.ctaLabel}
           <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
         </div>
