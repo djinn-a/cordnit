@@ -7,7 +7,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Director & Chief Executive Officer",
     company: "Cordinit Group",
     quote: '"Security isn\'t just about protection. It\'s about creating the confidence to move faster."',
-    image: "/testimonial/image.png",
+    image: "/testimonial/image.webp",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Global Chief Communications Officer",
     company: "Cordinit Media",
     quote: '"The architectural clarity Cordinit brings has transformed how our board understands risk posture."',
-    image: "/testimonial/image copy.png",
+    image: "/testimonial/image copy.webp",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Global Brand President",
     company: "Cordinit Media",
     quote: '"Scalability without compromise. It\'s rare to find a platform that delivers both operational rigor and agility."',
-    image: "/testimonial/image copy 2.png",
+    image: "/testimonial/image copy 2.webp",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Chief Financial Officer",
     company: "Cordint Group",
     quote: '"We deployed their framework in weeks, not months. The precision is unmatched."',
-    image: "/testimonial/image copy 3.png",
+    image: "/testimonial/image copy 3.webp",
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Co-President and Co-Chief Operating Officer",
     company: "Cordinit Group",
     quote: '"Security isn\'t just about protection. It\'s about creating the confidence to move faster."',
-    image: "/testimonial/image copy 4.png",
+    image: "/testimonial/image copy 4.webp",
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Executive Vice President",
     company: "Cordinit Group",
     quote: '"The architectural clarity Cordinit brings has transformed how our board understands risk posture."',
-    image: "/testimonial/image copy 5.png",
+    image: "/testimonial/image copy 5.webp",
   },
   {
     id: 7,
@@ -55,7 +55,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Chief Talent Officer",
     company: "Cordinit Technologies & Media",
     quote: '"Scalability without compromise. It\'s rare to find a platform that delivers both operational rigor and agility."',
-    image: "/testimonial/image.png",
+    image: "/testimonial/image.webp",
   },
   {
     id: 8,
@@ -63,7 +63,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Member of the Governance and Finance Committees",
     company: "Cordinit Group",
     quote: '"We deployed their framework in weeks, not months. The precision is unmatched."',
-    image: "/testimonial/image copy.png",
+    image: "/testimonial/image copy.webp",
   },
   {
     id: 9,
@@ -71,7 +71,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Member of the Audit and Finance Committees",
     company: "Cordinit Group",
     quote: '"Security isn\'t just about protection. It\'s about creating the confidence to move faster."',
-    image: "/testimonial/image copy 2.png",
+    image: "/testimonial/image copy 2.webp",
   },
   {
     id: 10,
@@ -79,7 +79,7 @@ export const defaultItems: TestimonialItem[] = [
     role: "Member of the Compensation Committee",
     company: "Cordinit Group",
     quote: '"The architectural clarity Cordinit brings has transformed how our board understands risk posture."',
-    image: "/testimonial/image copy 3.png",
+    image: "/testimonial/image copy 3.webp",
   },
   {
     id: 11,
@@ -87,6 +87,6 @@ export const defaultItems: TestimonialItem[] = [
     role: "Chief Client and Business Officer",
     company: "Cordinit Media",
     quote: '"Scalability without compromise. It\'s rare to find a platform that delivers both operational rigor and agility."',
-    image: "/testimonial/image copy 4.png",
+    image: "/testimonial/image copy 4.webp",
   }
 ];

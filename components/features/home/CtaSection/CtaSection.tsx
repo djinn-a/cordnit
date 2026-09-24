@@ -8,7 +8,6 @@ export type CtaSectionProps = {
   bodyMobile?: string;
   titleDesktop?: string;
   bodyDesktop?: string;
-  expertLabel?: string;
   expertName?: string;
   ctaLabel?: string;
   backgroundSrc?: string;

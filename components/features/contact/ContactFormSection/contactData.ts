@@ -37,17 +37,3 @@ export const CONTACT_CARDS = [
   { id: 'partnerships', title: 'Partnerships', email: 'partnerships@cordinit.co.in' },
   { id: 'careers', title: 'Careers' }
 ];
-
-export const FORM_FIELDS: {
-  label: string;
-  name: 'firstName' | 'lastName' | 'email' | 'company' | 'jobTitle';
-  type: string;
-  placeholder: string;
-  required: boolean;
-}[] = [
-  { label: 'First Name', name: 'firstName', type: 'text', placeholder: 'Enter First Name', required: true },
-  { label: 'Last Name', name: 'lastName', type: 'text', placeholder: 'Enter Last Name', required: true },
-  { label: 'Enter Work Email', name: 'email', type: 'email', placeholder: 'Enter Work Email', required: true },
-  { label: 'Company', name: 'company', type: 'text', placeholder: 'Enter Company', required: true },
-  { label: 'Job Title', name: 'jobTitle', type: 'text', placeholder: 'Enter Job Title', required: false },
-];

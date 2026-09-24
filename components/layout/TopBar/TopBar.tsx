@@ -17,7 +17,7 @@ export default function TopBar() {
         </Link>
         <span className="mx-3 text-white/50">|</span>
         <button 
-          onClick={() => openModal()}
+          onClick={openModal}
           className="hover:text-white/80 transition-colors bg-transparent border-none p-0 cursor-pointer text-xs font-medium tracking-wide text-white"
         >
           Newsletter

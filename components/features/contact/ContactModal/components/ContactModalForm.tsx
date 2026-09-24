@@ -23,7 +23,7 @@ interface ContactModalFormProps {
   selectedInterests: string[];
   toggleInterest: (interest: string) => void;
   isFormValid: boolean;
-  handleContinue: (e: React.SubmitEvent<HTMLFormElement>) => void;
+  handleContinue: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 export function ContactModalForm({

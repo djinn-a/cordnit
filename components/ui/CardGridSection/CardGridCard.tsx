@@ -37,8 +37,8 @@ export default function CardGridCard({ card }: Readonly<CardGridCardProps>) {
 
       {/* Content */}
       <div className="flex flex-col grow">
-        <h3 className="text-heading2-sb-mobile lg:text-card-title-desktop text-ink mb-space-8">{card.title}</h3>
-        <p className="text-card-desc-mobile lg:text-card-desc text-ink-muted mb-space-16 lg:mb-space-24 grow">
+        <h3 className="text-[16px] font-semibold lg:text-card-title-desktop text-ink mb-space-8">{card.title}</h3>
+        <p className="text-card-desc-mobile lg:text-card-desc text-ink-muted mb-space-16 lg:mb-space-24 grow leading-relaxed">
           {card.description}
         </p>
 
