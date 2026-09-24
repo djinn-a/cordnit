@@ -35,7 +35,7 @@ export default function HeroOverlayCard({
 
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
         <Button
-          onClick={openModal}
+          onClick={() => openModal()}
           className="flex-1 sm:flex-none"
           rightIcon={<ArrowRight className="h-4 w-4 sm:h-3.5 sm:w-3.5" />}
         >

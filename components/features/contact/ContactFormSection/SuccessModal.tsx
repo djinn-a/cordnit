@@ -8,7 +8,7 @@ type SuccessModalProps = {
   setIsSuccess: (value: boolean) => void;
 };
 
-export default function SuccessModal({ isSuccess, setIsSuccess }: SuccessModalProps) {
+export default function SuccessModal({ isSuccess, setIsSuccess }: Readonly<SuccessModalProps>) {
   if (!isSuccess) return null;
 
   return (

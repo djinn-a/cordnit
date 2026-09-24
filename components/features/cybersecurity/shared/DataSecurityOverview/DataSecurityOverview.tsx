@@ -35,7 +35,7 @@ export function DataSecurityOverview({ data }: Readonly<DataSecurityOverviewProp
 
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full border-t border-border-subtle md:border-[var(--border,#DCE6F5)] pt-space-16 md:pt-space-24 gap-space-16 md:gap-0">
               <div className="flex items-center gap-space-8">
-                <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-brand-primary"></div>
+                <div className="hidden md:block w-space-6 h-space-6 rounded-full bg-brand-primary"></div>
                 <p className="text-[10px] md:text-card-desc-mobile text-ink-muted font-mulish">
                   {data.processSectionInfo?.footerText}
                 </p>

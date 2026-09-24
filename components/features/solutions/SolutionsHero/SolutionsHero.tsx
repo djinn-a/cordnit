@@ -28,7 +28,7 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
             {content.body}
           </p>
           <Button
-            onClick={openModal}
+            onClick={() => openModal()}
             className="bg-primary hover:bg-primary-hover text-white rounded-md px-6 py-3 flex items-center gap-2 transition-colors"
           >
             {content.ctaLabel} <ArrowRight className="w-4 h-4" />

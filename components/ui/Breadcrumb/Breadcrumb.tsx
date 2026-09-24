@@ -7,7 +7,7 @@ export function Breadcrumb({ items, className }: Readonly<BreadcrumbProps>) {
   if (!items || items.length === 0) return null;
 
   return (
-    <nav aria-label="Breadcrumb" className={cn("w-full pb-0 pt-[56px] md:pt-0", className)}>
+    <nav aria-label="Breadcrumb" className={cn("w-full pb-0 pt-space-56 md:pt-0", className)}>
       <ol className="flex items-center flex-wrap gap-2 sm:gap-3">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
@@ -18,14 +18,14 @@ export function Breadcrumb({ items, className }: Readonly<BreadcrumbProps>) {
               {item.href && !isCurrent ? (
                 <Link
                   href={item.href}
-                  className="text-black text-[14px] leading-[22px] lg:text-link-desktop font-mulish font-normal"
+                  className="text-black text-[14px] leading-space-22 lg:text-link-desktop font-mulish font-normal"
                 >
                   {item.label}
                 </Link>
               ) : (
                 <span
                   aria-current={isCurrent ? "page" : undefined}
-                  className="text-[#2251FF] font-semibold text-[14px] leading-[22px] lg:text-link-desktop font-mulish"
+                  className="text-[#2251FF] font-semibold text-[14px] leading-space-22 lg:text-link-desktop font-mulish"
                 >
                   {item.label}
                 </span>
