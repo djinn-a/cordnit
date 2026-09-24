@@ -12,7 +12,7 @@ export default function HeroHeading({
 
       <h1 className="text-hero-display text-center px-2 sm:px-0 max-w-4xl mx-auto">
         {titleDesktop.split(". ").map((part, index, array) => (
-          <span key={index} className="sm:whitespace-nowrap">
+          <span key={index} className="whitespace-nowrap">
             {part}
             {index < array.length - 1 ? "." : ""}
             {index < array.length - 1 && <br />}

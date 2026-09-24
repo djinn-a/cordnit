@@ -21,7 +21,7 @@ export default function AboutHero({
     <Section spacing="none" className="">
       <Container>
 
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl h-[420px] xs:h-[480px] sm:h-[500px] md:h-[550px] lg:h-[650px]">
+        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl h-[520px] xs:h-[560px] sm:h-[500px] md:h-[550px] lg:h-[650px]">
           <div className="absolute inset-0 w-full h-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

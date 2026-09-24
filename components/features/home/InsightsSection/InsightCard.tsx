@@ -35,12 +35,12 @@ export default function InsightCard({ item, className = "" }: InsightCardProps) 
       </div>
 
       <div className="relative z-10 p-5 sm:p-6 bg-ink/40 backdrop-blur-md border-t border-surface/10 mt-auto">
-        <div className="flex items-center text-surface/80 text-card-desc-mobile sm:text-caption mb-2">
+        <div className="flex items-center text-surface/80 text-[10px] sm:text-[10px] mb-2">
           <span>{item.type}</span>
           <span className="mx-2">•</span>
           <span>{item.date}</span>
         </div>
-        <h3 className="text-surface text-mobile-heading-2 sm:text-solution-h4 sm:font-medium mb-4 line-clamp-3">
+        <h3 className="text-surface text-mobile-heading-2 sm:text-[18px] sm:font-medium mb-4 line-clamp-3">
           {item.title}
         </h3>
         <div className="flex items-center text-primary text-link-mobile sm:text-body-sm sm:font-medium">

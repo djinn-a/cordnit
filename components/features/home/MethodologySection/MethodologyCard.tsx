@@ -21,13 +21,13 @@ export default function MethodologyCard({ step, className }: MethodologyCardProp
   return (
     <div
       className={cn(
-        "flex flex-col h-[320px] xs:h-[340px] sm:h-panel p-4 sm:p-6 md:p-8 rounded-sm text-surface",
+        "flex flex-col h-[264px] sm:h-panel p-4 sm:p-6 md:p-8 rounded-sm text-surface",
         getBgClass(step.num),
         className
       )}
     >
       <div className="flex justify-between items-start mb-[56px]">
-        <span className="text-eyebrow-mobile sm:text-caption sm:font-bold tracking-widest uppercase text-surface">
+        <span className="text-eyebrow-mobile sm:text-[16px] sm:font-bold tracking-widest uppercase text-surface">
           {step.title}
         </span>
         <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-surface" />
