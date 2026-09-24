@@ -21,6 +21,8 @@ import { aiSecurityPage } from "@/data/pages/ai-security";
 import { exposureManagementPage } from "@/data/pages/exposure-management";
 import { vulnerabilityManagementPage } from "@/data/pages/vulnerability-management";
 import { managedSecurityPage } from "@/data/pages/managed-security";
+import { salesforceServicePage } from "@/data/pages/salesforce-service";
+import { salesforceIntegrationPage } from "@/data/pages/salesforce-integration";
 
 const pages: Record<string, PageDocument> = {
   home: homePage,
@@ -45,6 +47,8 @@ const pages: Record<string, PageDocument> = {
   "exposure-management": exposureManagementPage,
   "vulnerability-management": vulnerabilityManagementPage,
   "managed-security": managedSecurityPage,
+  "salesforce/service": salesforceServicePage,
+  "salesforce/integration": salesforceIntegrationPage,
 };
 
 /**
