@@ -7,7 +7,7 @@ export function Breadcrumb({ items, className }: Readonly<BreadcrumbProps>) {
   if (!items || items.length === 0) return null;
 
   return (
-    <nav aria-label="Breadcrumb" className={cn("w-full pt-space-24 pb-0 lg:pt-0 -mb-space-32 md:-mb-space-40", className)}>
+    <nav aria-label="Breadcrumb" className={cn("w-full pb-0 -mb-space-32 md:-mb-space-40", className)}>
       <ol className="flex items-center flex-wrap gap-2 sm:gap-3">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
@@ -18,17 +18,14 @@ export function Breadcrumb({ items, className }: Readonly<BreadcrumbProps>) {
               {item.href && !isCurrent ? (
                 <Link
                   href={item.href}
-                  className="text-ink-muted hover:text-primary transition-colors text-link-mobile lg:text-link-desktop"
+                  className="text-black lg:text-ink-muted hover:text-[#2251FF] lg:hover:text-primary transition-colors text-[14px] leading-[22px] lg:text-link-desktop font-mulish font-normal"
                 >
                   {item.label}
                 </Link>
               ) : (
                 <span
                   aria-current={isCurrent ? "page" : undefined}
-                  className={cn(
-                    "text-link-mobile lg:text-link-desktop",
-                    isCurrent ? "text-primary" : "text-ink-muted"
-                  )}
+                  className="text-[#2251FF] lg:text-primary text-[14px] leading-[22px] lg:text-link-desktop font-mulish font-normal"
                 >
                   {item.label}
                 </span>
@@ -36,7 +33,7 @@ export function Breadcrumb({ items, className }: Readonly<BreadcrumbProps>) {
               
               {!isLast && (
                 <ChevronRight
-                  className="w-3 h-3 lg:w-4 lg:h-4 text-ink-subtle shrink-0"
+                  className="w-3 h-3 lg:w-4 lg:h-4 text-black lg:text-ink-subtle shrink-0"
                   aria-hidden="true"
                 />
               )}

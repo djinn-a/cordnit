@@ -33,7 +33,7 @@ export default function PhaseFeatureBlock({ header, cards, className, headerLayo
         {/* Horizontal Row / Grid */}
         <div className={cn(
           "grid w-full items-stretch",
-          cardStyle === "pale-blue-compact" 
+          (cardStyle === "pale-blue-compact" || cardStyle === "clean")
             ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center lg:justify-items-start" 
             : "grid-cols-2 xl:grid-cols-4 gap-space-12 md:gap-space-24"
         )}>
