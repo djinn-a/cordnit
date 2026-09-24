@@ -31,5 +31,5 @@ export interface DataDiscoveryProps {
   _type: "dataDiscovery";
   _key: string;
   data: DataDiscoveryData;
-  variant?: "default" | "alternate";
+  variant?: "default" | "alternate" | "steps";
 }

@@ -13,6 +13,14 @@ import { cloudInfrastructurePage } from "@/data/pages/cloud-infrastructure";
 import { applicationEngineeringPage } from "@/data/pages/application-engineering";
 import { dataIntegrationPage } from "@/data/pages/data-integration";
 import { dataSecurityPage } from "@/data/pages/data-security";
+import { salesforceSalesPage } from "@/data/pages/salesforce-sales";
+import { applicationSecurityPage } from "@/data/pages/application-security";
+import { cloudSecurityPage } from "@/data/pages/cloud-security";
+import { identitySecurityPage } from "@/data/pages/identity-security";
+import { aiSecurityPage } from "@/data/pages/ai-security";
+import { exposureManagementPage } from "@/data/pages/exposure-management";
+import { vulnerabilityManagementPage } from "@/data/pages/vulnerability-management";
+import { managedSecurityPage } from "@/data/pages/managed-security";
 
 const pages: Record<string, PageDocument> = {
   home: homePage,
@@ -29,6 +37,14 @@ const pages: Record<string, PageDocument> = {
   "application-engineering": applicationEngineeringPage,
   "data-integration": dataIntegrationPage,
   "data-security": dataSecurityPage,
+  "salesforce/sales": salesforceSalesPage,
+  "application-security": applicationSecurityPage,
+  "cloud-security": cloudSecurityPage,
+  "identity-security": identitySecurityPage,
+  "ai-security": aiSecurityPage,
+  "exposure-management": exposureManagementPage,
+  "vulnerability-management": vulnerabilityManagementPage,
+  "managed-security": managedSecurityPage,
 };
 
 /**
