@@ -216,6 +216,7 @@ export const salesforceSalesPage: PageDocument = {
       _type: "leadQualificationBlock",
       _key: "sales-forecast",
       variant: "left",
+      className: "md:-mt-space-80",
       header: {
         eyebrow: "FORECAST",
         title: "Plan ahead with greater confidence.",

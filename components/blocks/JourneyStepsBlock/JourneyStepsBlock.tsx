@@ -17,15 +17,15 @@ export default function JourneyStepsBlock({
   
   if (variant === "pipeline") {
     return (
-      <section className={cn("w-full pt-space-80 pb-space-60 lg:pb-25", className)}>
+      <section className={cn("w-full pt-[56px] md:pt-0 pb-space-60 lg:pb-25", className)}>
         <Container className="flex flex-col">
           {/* Top Header - Pipeline Variant */}
           <div className="flex flex-col lg:flex-row justify-between w-full mt-space-64 mb-space-64 gap-space-24">
             <div className="flex flex-col w-full lg:w-1/2 gap-space-8 md:gap-space-16">
-              <p className="text-eyebrow-desktop text-brand-primary uppercase font-mulish">
+              <p className="text-[10px] leading-[16px] font-extrabold tracking-[1px] md:text-eyebrow-desktop md:font-semibold md:tracking-normal text-[#2251FF] uppercase font-mulish">
                 {header.eyebrow}
               </p>
-              <h2 className="text-split-section-title text-ink font-mulish pr-8">
+              <h2 className="text-[24px] leading-[32px] md:leading-[1.417] font-extrabold md:text-split-section-title text-black md:text-ink font-mulish pr-8">
                 {header.title}
               </h2>
             </div>
@@ -37,19 +37,19 @@ export default function JourneyStepsBlock({
           </div>
 
           {/* White Container */}
-          <div className="bg-white border border-border-card rounded-2xl w-full px-space-24 lg:px-space-32 py-space-32 lg:py-[48px] shadow-sm">
+          <div className="bg-[#FFF] border border-solid border-[#DCE6F5] rounded-[16px] w-full px-space-24 lg:px-space-32 py-space-32 lg:py-[48px] shadow-[0_1px_2px_0_rgba(34,81,255,0.20),0_2px_6px_2px_rgba(34,81,255,0.18)]">
             {/* Inner Header */}
             {(flowHeaderLeft || flowHeaderRight) && (
-              <div className="flex justify-between w-full mb-space-32 uppercase text-about-eyebrow-desktop text-ink-muted">
-                <span>{flowHeaderLeft}</span>
-                <span>{flowHeaderRight}</span>
+              <div className="flex justify-between w-full mb-space-32 uppercase text-[10px] md:text-about-eyebrow-desktop font-extrabold tracking-wider">
+                <span className="text-[#666666]">{flowHeaderLeft}</span>
+                <span className="text-[#2251FF]">{flowHeaderRight}</span>
               </div>
             )}
             
             {/* Cards Row */}
-            <div className="flex flex-col lg:flex-row w-full gap-space-16 items-stretch mb-space-32">
+            <div className="grid grid-cols-2 lg:flex lg:flex-row w-full gap-[12px] lg:gap-space-16 items-stretch mb-space-32">
               {cards.map((card, idx) => (
-                <div key={card.id || `pipeline-card-${idx}`} className="flex-1 min-w-[200px]">
+                <div key={card.id || `pipeline-card-${idx}`} className="flex-1 lg:min-w-[200px]">
                   <PipelineFlowCard card={card} />
                 </div>
               ))}
@@ -57,11 +57,11 @@ export default function JourneyStepsBlock({
 
             {/* Legend Row */}
             {(footerLeft || footerRight) && (
-              <div className="flex flex-col md:flex-row justify-between md:items-center text-sm font-normal text-ink-muted gap-4">
+              <div className="flex flex-col md:flex-row justify-between md:items-center text-[10px] md:text-[12px] font-normal text-[#666666] gap-4 mt-space-32">
                 <div className="flex items-center gap-2">
                   {footerLeft && (
                     <>
-                      <span className="block w-2 h-2 rounded-full bg-brand-primary" />
+                      <span className="block w-2 h-2 rounded-full bg-[#2251FF]" />
                       <span>{footerLeft}</span>
                     </>
                   )}
