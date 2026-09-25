@@ -11,7 +11,7 @@ export default function HeroMedia({
   children,
 }: HeroMediaProps) {
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl h-[460px] xs:h-[480px] sm:h-[550px] lg:h-[600px] mb-0 sm:mb-8">
+    <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl h-[460px] xs:h-[480px] sm:h-[550px] lg:h-[600px] mb-0 sm:mb-space-32">
       <div className="absolute inset-0 w-full h-full">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
