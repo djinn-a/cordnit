@@ -5,13 +5,13 @@ type AiAutomationWhereWeHelpCardProps = {
   card: AiAutomationWhereWeHelpData["cards"][0];
 };
 
-export default function AiAutomationWhereWeHelpCard({ card }: AiAutomationWhereWeHelpCardProps) {
+export default function AiAutomationWhereWeHelpCard({ card }: Readonly<AiAutomationWhereWeHelpCardProps>) {
   return (
     <div className="bg-surface border border-border-card rounded-card-sm shadow-help-card p-space-16 md:p-space-24 lg:p-space-32 relative overflow-hidden flex flex-col h-full min-h-[201px]">
       <div className="flex justify-between items-start mb-space-16">
         <div className="flex items-center gap-space-4">
           <span className="text-help-card-prefix-blue-mobile lg:text-help-card-prefix text-primary">{card.code}</span>
-          <span className="text-[12px] lg:text-[16px] leading-[24px] text-border-card">/</span>
+          <span className="text-[12px] lg:text-[16px] leading-space-24 text-border-card">/</span>
           <span className="text-help-card-prefix-mobile lg:text-help-card-prefix text-ink-muted uppercase">{card.category}</span>
         </div>
         <Image 
