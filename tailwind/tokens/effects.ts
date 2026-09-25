@@ -23,6 +23,7 @@ export const borderRadius: BorderRadiusConfig = {
   "split-image": "23.56px",
   "card-grid": "15px",
   "4xl": "32px",
+  "card-border-radius":"9px"
 };
 
 export const backgroundImage: BackgroundImageConfig = {
