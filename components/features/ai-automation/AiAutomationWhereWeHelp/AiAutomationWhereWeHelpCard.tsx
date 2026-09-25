@@ -7,7 +7,7 @@ type AiAutomationWhereWeHelpCardProps = {
 
 export default function AiAutomationWhereWeHelpCard({ card }: Readonly<AiAutomationWhereWeHelpCardProps>) {
   return (
-    <div className="bg-surface border border-border-card rounded-card-sm shadow-help-card p-space-16 md:p-space-24 lg:p-space-32 relative overflow-hidden flex flex-col h-full min-h-[201px]">
+    <div className="bg-surface border border-border-card rounded-card-sm shadow-help-card p-space-16 md:p-space-24 lg:p-space-32 relative overflow-hidden flex flex-col h-full min-h-50.25">
       <div className="flex justify-between items-start mb-space-16">
         <div className="flex items-center gap-space-4">
           <span className="text-help-card-prefix-blue-mobile lg:text-help-card-prefix text-primary">{card.code}</span>
