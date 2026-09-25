@@ -85,6 +85,7 @@ export default function FooterMediaFeature() {
               width={112}
               height={91}
               className="w-full h-auto object-cover rounded-sm"
+              style={{ width: '100%', height: 'auto' }}
             />
             {/* Overlay 30% black */}
             <div className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer rounded-sm">

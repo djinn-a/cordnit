@@ -20,6 +20,7 @@ export default function AiAutomationWhereWeHelpCard({ card }: AiAutomationWhereW
           width={24} 
           height={24} 
           className="object-contain shrink-0"
+          style={{ width: "auto", height: "auto" }}
         />
       </div>
       

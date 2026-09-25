@@ -23,6 +23,7 @@ export default function ActionCard({ card }: Readonly<ActionCardProps>) {
           src={card.imageSrc}
           alt={card.title}
           fill
+          sizes="(max-width: 640px) 84px, 220px"
           className="object-cover"
         />
       </div>
