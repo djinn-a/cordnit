@@ -14,7 +14,7 @@ export default function ContentMediaSection({
   return (
     <section className="w-full">
       <Container className="px-0">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-space-24 md:gap-space-50">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-space-24 lg:gap-space-50">
           <ContentMediaText 
             eyebrow={eyebrow}
             title={title}

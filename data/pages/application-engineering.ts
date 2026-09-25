@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 import type { PageDocument } from "@/lib/cms/types";
 import { cybersecurityCredentialsData, cybersecurityWhyChooseData } from "@/components/features/cybersecurity/data";
 
@@ -19,7 +20,7 @@ export const applicationEngineeringPage: PageDocument = {
         description: "Create digital products and applications that are useful for the people who rely on them, robust for the teams who run them and ready to evolve as needs change.",
         cta: {
           label: "Discuss your application challenge",
-          href: "/contact",
+          href: ROUTES.contact,
         },
         image: {
           src: "/Image-v2.webp",

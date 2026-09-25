@@ -30,12 +30,8 @@ export const applicationSecurityPage: PageDocument = {
         href: "/contactus",
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Application Security Infrastructure",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Technology abstract visualization",
       },
     },
     {

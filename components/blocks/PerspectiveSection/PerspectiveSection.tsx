@@ -16,10 +16,10 @@ export default function PerspectiveSection({
   return (
     <section className={`w-full ${className || ""}`}>
       <Container>
-        <div className="w-full h-auto p-6 md:p-12 md:h-83.25 bg-grad-3 border border-border-card rounded-[20px] md:rounded-4xl shadow-sm md:shadow-none">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 h-auto md:h-full">
+        <div className="w-full h-auto p-6 md:p-12 lg:h-83.25 bg-grad-3 border border-border-card rounded-[20px] md:rounded-4xl shadow-sm md:shadow-none">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-0 h-auto lg:h-full">
           {/* Left Content */}
-          <div className="w-full md:flex-[0_1_692px] flex flex-col justify-center">
+          <div className="w-full lg:flex-[0_1_692px] flex flex-col justify-center">
             {eyebrow && (
               <span className="text-eyebrow-mobile leading-4 md:text-eyebrow-desktop text-primary uppercase tracking-[1px] mb-2 md:mb-4">
                 {eyebrow}
@@ -50,7 +50,7 @@ export default function PerspectiveSection({
           </div>
           
           {/* Right Media */}
-          <div className="relative w-full md:flex-[0_1_474px] max-w-77 h-43.25 md:max-w-none md:h-66.75 shrink-0 overflow-hidden rounded-[14px] md:rounded-card isolate mx-auto md:mx-0">
+          <div className="relative w-full lg:flex-[0_1_474px] max-w-77 md:max-w-none h-43.25 md:h-66.75 shrink-0 overflow-hidden rounded-[14px] md:rounded-card isolate mx-auto lg:mx-0">
             <Image 
               src={image.src} 
               alt={image.alt}

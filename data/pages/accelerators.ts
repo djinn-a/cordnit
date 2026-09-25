@@ -1,4 +1,5 @@
 import type { PageDocument } from "@/lib/cms/types";
+import { ROUTES } from "@/lib/config/routes";
 
 export const acceleratorsPage: PageDocument = {
   slug: "accelerators",
@@ -19,15 +20,11 @@ export const acceleratorsPage: PageDocument = {
         "Cordinit accelerators are repeatable, outcome-focused offers designed to help you make progress faster without starting every initiative from a blank page.",
       cta: {
         label: "Find the right accelerator",
-        href: "#",
+        href: ROUTES.contact,
       },
       mainImage: {
-        src: "/images/content-media/main.png",
-        alt: "People looking at accelerators screen",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Hand interacting with digital interface",
+        src: "/images/content-media/frame_1984077885.webp",
+        alt: "Accelerators overview",
       },
     },
     {
@@ -111,8 +108,8 @@ export const acceleratorsPage: PageDocument = {
       description:
         "An accelerator is not a one-size-fits-all product. It is a focused starting point: a way to clarify the opportunity, reduce time spent on repeatable work and get to an informed next decision sooner.",
       image: {
-        src: "/images/content-media/main.png",
-        alt: "Abstract digital network lines over a city",
+        src: "/InsightsSection/salesforce.webp",
+        alt: "Salesforce representation",
       },
     },
   ],

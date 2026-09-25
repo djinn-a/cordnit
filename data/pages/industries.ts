@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 import type { PageDocument } from "@/lib/cms/types";
 import type { ContentMediaSectionProps } from "@/components/blocks/ContentMediaSection/ContentMediaSection.types";
 
@@ -7,15 +8,11 @@ const industryContent: ContentMediaSectionProps = {
   description: "Every industry faces a different combination of customer expectations, operating pressures, regulation and technology change. Cordinit brings relevant capabilities together around the challenges that matter in your world.",
   cta: {
     label: "Discuss your industry priorities",
-    href: "/contact",
+    href: ROUTES.contact,
   },
   mainImage: {
-    src: "/images/content-media/main.png",
+    src: "/images/content-media/frame_1984077885.webp",
     alt: "Industry main image",
-  },
-  secondaryImage: {
-    src: "/images/content-media/secondary.png",
-    alt: "Industry secondary image",
   },
 };
 
@@ -102,12 +99,12 @@ export const industriesPage: PageDocument = {
       title: "The challenges often connect",
       description: "Improving a customer journey can require better data and integration. Modernising a service can call for cloud, application engineering and security. We help connect those disciplines so you can make progress without losing the wider context.",
       image: {
-        src: "/images/content-media/main.png",
+        src: "/InsightsSection/salesforce.webp",
         alt: "Challenges connect",
       },
       cta: {
         label: "Book a call",
-        href: "/contact",
+        href: ROUTES.contact,
       },
     },
     {
@@ -116,7 +113,7 @@ export const industriesPage: PageDocument = {
       eyebrow: "FEATURED CONTENT",
       featured: {
         image: {
-          src: "/images/content-media/main.png",
+          src: "/InsightsSection/salesforce.webp",
           alt: "Featured content image",
         },
         articleLabel: "ARTICLE",
@@ -153,7 +150,7 @@ export const industriesPage: PageDocument = {
           description: "Key considerations for creating secure, resilient and future-ready cloud environments.",
           dateInfo: "14 May 2025 · 6 min read",
           image: {
-            src: "/images/content-media/main.png",
+            src: "/InsightsSection/salesforce.webp",
             alt: "Cloud foundation",
           },
           cta: {
@@ -172,7 +169,7 @@ export const industriesPage: PageDocument = {
           description: "Explore advanced strategies to protect critical assets against emerging cyber threats.",
           dateInfo: "12 Apr 2025 · 5 min read",
           image: {
-            src: "/images/content-media/secondary.png",
+            src: "/InsightsSection/salesforce.webp",
             alt: "Cybersecurity landscape",
           },
           cta: {
@@ -191,7 +188,7 @@ export const industriesPage: PageDocument = {
           description: "How we helped a leading financial institution migrate securely to the public cloud.",
           dateInfo: "03 Mar 2025 · 8 min read",
           image: {
-            src: "/images/content-media/main.png",
+            src: "/InsightsSection/salesforce.webp",
             alt: "Cloud migration",
           },
           cta: {
@@ -210,7 +207,7 @@ export const industriesPage: PageDocument = {
           description: "Practical steps to improve user adoption and drive value from Salesforce.",
           dateInfo: "21 Feb 2025 · 4 min read",
           image: {
-            src: "/images/content-media/secondary.png",
+            src: "/InsightsSection/salesforce.webp",
             alt: "Salesforce CRM",
           },
           cta: {

@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 import type { PageDocument } from "@/lib/cms/types";
 import { JourneyStepsBlockProps } from "@/components/blocks/JourneyStepsBlock/types";
 
@@ -73,15 +74,11 @@ export const salesforceAIPage: PageDocument = {
       description: "Create a clearer sales journey from lead to opportunity, improve pipeline visibility, and help revenue leaders forecast and sell with absolute institutional confidence.",
       cta: {
         label: "Discuss your sales priority",
-        href: "/contact",
+        href: ROUTES.contact,
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Data Security Infrastructure",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Technology abstract visualization",
       },
     },
     {

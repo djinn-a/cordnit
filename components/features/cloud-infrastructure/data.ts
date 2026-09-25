@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 import { PageHeroData } from "@/components/ui/PageHero/PageHero";
 
 export const cloudInfrastructureHeroData: PageHeroData = {
@@ -6,7 +7,7 @@ export const cloudInfrastructureHeroData: PageHeroData = {
   description: "Create a cloud foundation that helps you move faster without losing sight of security, resilience and cost.\nCordinit helps you modernise with a clear path from strategy to everyday operation.",
   cta: {
     label: "Discuss your cloud priorities",
-    href: "/contact",
+    href: ROUTES.contact,
   },
   image: {
     src: "/Image-v2.webp",

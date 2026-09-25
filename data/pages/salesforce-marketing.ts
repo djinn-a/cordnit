@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 import type { PageDocument } from "@/lib/cms/types";
 import { JourneyStepsBlockProps } from "@/components/blocks/JourneyStepsBlock/types";
 
@@ -73,15 +74,11 @@ export const salesforceMarketingPage: PageDocument = {
       description: "Help customers get the right support, while giving service teams the tools, information, and visibility they need to resolve issues effectively.",
       cta: {
         label: "Discuss your marketing priority",
-        href: "/contact",
+        href: ROUTES.contact,
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Professionals looking at a digital dashboard",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Abstract digital network data visualization",
       },
     },
     {

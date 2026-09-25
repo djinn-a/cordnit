@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 export interface NavigationItem {
   id: string;
   label: string;
@@ -150,6 +151,6 @@ export const navigation: NavigationItem[] = [
   {
     id: "contact",
     label: "Contact Us",
-    href: "/contact",
+    href: ROUTES.contact,
   },
 ];

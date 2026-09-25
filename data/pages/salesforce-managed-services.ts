@@ -76,12 +76,8 @@ export const salesforceManagedServicesPage: PageDocument = {
         href: "/contactus",
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Team reviewing Salesforce dashboards",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Data integration and flows",
       },
     },
     {

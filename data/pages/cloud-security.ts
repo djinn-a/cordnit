@@ -30,12 +30,8 @@ export const cloudSecurityPage: PageDocument = {
         href: "/contactus",
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Cloud Security Infrastructure",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Cloud Data visualization",
       },
     },
     {

@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 import type { PageDocument } from "@/lib/cms/types";
 
 export const salesforceIntegrationPage: PageDocument = {
@@ -27,15 +28,11 @@ export const salesforceIntegrationPage: PageDocument = {
       description: "Connect Salesforce with the systems, data and processes your teams rely on — creating a more consistent flow of information across the business.",
       cta: {
         label: "Discuss your integration priority",
-        href: "/contact",
+        href: ROUTES.contact,
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Integration Visualization",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Integration metrics abstract visualization",
       },
     },
     {

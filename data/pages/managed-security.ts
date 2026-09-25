@@ -30,12 +30,8 @@ export const managedSecurityPage: PageDocument = {
         href: "/contactus",
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Business professionals reviewing data visualizations on large screens",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Abstract digital data and market metrics",
       },
     },
     {

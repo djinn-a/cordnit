@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 import type { PageDocument } from "@/lib/cms/types";
 
 export const insightsPage: PageDocument = {
@@ -19,15 +20,11 @@ export const insightsPage: PageDocument = {
         "Explore practical perspectives on cybersecurity, Salesforce, cloud, AI, data and the challenges shaping technology change.",
       cta: {
         label: "Talk to an expert",
-        href: "/contact",
+        href: ROUTES.contact,
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Professional working on technology decisions",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Technology abstract visualization",
       },
     },
     {
@@ -43,7 +40,7 @@ export const insightsPage: PageDocument = {
       eyebrow: "FEATURED CONTENT",
       featured: {
         image: {
-          src: "/images/content-media/main.png",
+          src: "/InsightsSection/salesforce.webp",
           alt: "The evolving threat landscape in a connected world",
         },
         articleLabel: "ARTICLE",
@@ -80,7 +77,7 @@ export const insightsPage: PageDocument = {
           description: "Key considerations for creating secure, resilient and future-ready cloud environments.",
           dateInfo: "14 May 2025 · 6 min read",
           image: {
-            src: "/images/content-media/main.png",
+            src: "/InsightsSection/salesforce.webp",
             alt: "Cloud foundation",
           },
           cta: {
@@ -99,7 +96,7 @@ export const insightsPage: PageDocument = {
           description: "See how a leading organisation connected sales, service and marketing to deliver measurable outcomes.",
           dateInfo: "8 May 2025 · 8 min read",
           image: {
-            src: "/images/content-media/secondary.png",
+            src: "/InsightsSection/salesforce.webp",
             alt: "Salesforce experience",
           },
           cta: {
@@ -118,7 +115,7 @@ export const insightsPage: PageDocument = {
           description: "Turning ideas into governed, scalable AI solutions that improve the way work gets done.",
           dateInfo: "2 May 2025 · 7 min read",
           image: {
-            src: "/images/content-media/main.png",
+            src: "/InsightsSection/salesforce.webp",
             alt: "AI potential",
           },
           cta: {
@@ -137,7 +134,7 @@ export const insightsPage: PageDocument = {
           description: "New trends and practical steps for creating trusted data that drives better decisions.",
           dateInfo: "24 Apr 2025 · 10 min read",
           image: {
-            src: "/images/content-media/secondary.png",
+            src: "/InsightsSection/salesforce.webp",
             alt: "Data advantage",
           },
           cta: {

@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/config/routes";
 import type { PageDocument } from "@/lib/cms/types";
 
 export const salesforceServicePage: PageDocument = {
@@ -27,15 +28,11 @@ export const salesforceServicePage: PageDocument = {
       description: "Help customers get the right support, while giving service teams the tools, information, and visibility they need to resolve issues effectively.",
       cta: {
         label: "Discuss your service priority",
-        href: "/contact",
+        href: ROUTES.contact,
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "Customer Service Visualization",
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "Service metrics abstract visualization",
       },
     },
     {

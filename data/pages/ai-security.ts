@@ -30,16 +30,10 @@ export const aiSecurityPage: PageDocument = {
         href: "/contactus",
       },
       mainImage: {
-        src: "/images/content-media/main.png",
+        src: "/images/content-media/frame_1984077885.webp",
         alt: "AI Security Professionals",
         width: 600,
         height: 600,
-      },
-      secondaryImage: {
-        src: "/images/content-media/secondary.png",
-        alt: "AI Data Visualization",
-        width: 300,
-        height: 300,
       },
     },
     {
