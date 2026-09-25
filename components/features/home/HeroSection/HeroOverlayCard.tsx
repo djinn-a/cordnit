@@ -33,7 +33,7 @@ export default function HeroOverlayCard({
         {cardBody}
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+      <div className="flex flex-col sm:flex-row gap-space-12 sm:gap-space-16 w-full">
         <Button
           onClick={() => openModal()}
           className="flex-1 sm:flex-none"
