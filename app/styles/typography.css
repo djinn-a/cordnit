@@ -4,7 +4,7 @@
   }
 
   .text-hero-display {
-    @apply text-section-title-mobile xs:text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] xs:leading-[1.15] tracking-tight text-ink;
+    @apply text-section-title-mobile sm:text-[40px] md:text-[48px] lg:text-[52px] xl:text-[56px] sm:leading-[1.15] tracking-tight text-ink;
   }
 
   .text-hero-eyebrow {
