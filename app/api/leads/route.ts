@@ -13,11 +13,11 @@ export async function POST(req: NextRequest) {
     await sendLeadNotification(data);
     
     return NextResponse.json({ success: true, message: 'Lead received successfully.' });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error processing lead:', error);
     
     // Return safe configuration error if env vars are missing
-    if (error.message && error.message.includes('configuration is missing')) {
+    if (error instanceof Error && error.message.includes('configuration is missing')) {
        return NextResponse.json(
         { success: false, error: 'Server configuration error.' },
         { status: 500 }
