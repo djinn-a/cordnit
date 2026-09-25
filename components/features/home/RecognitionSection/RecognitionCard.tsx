@@ -12,7 +12,7 @@ export default function RecognitionCard({ item }: { item: RecognitionItem }) {
           alt={item.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 400px"
-          className="object-cover"
+          className="object-cover rounded-lg"
         />
       </div>
       <div className="flex flex-col grow px-1 sm:px-2 pb-2">

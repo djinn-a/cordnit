@@ -6,7 +6,8 @@ import Navbar from "@/components/layout/Navbar/Navbar";
 import Footer from "@/components/layout/Footer/Footer";
 import { ContactModalProvider } from "@/components/features/contact/ContactModal/ContactModalProvider";
 import { NewsletterModalProvider } from "@/components/features/newsletter/NewsletterModal/NewsletterModalProvider";
-import CtaSection from "@/components/features/home/CtaSection/CtaSection";
+import { CtaSection } from "@/components/layout/CtaSection";
+import { ctaData } from "@/data/cta";
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <TopBar />
             <Navbar />
             {children}
-            <CtaSection />
+            <CtaSection {...ctaData} />
             <Footer />
           </NewsletterModalProvider>
         </ContactModalProvider>

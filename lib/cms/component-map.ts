@@ -9,7 +9,7 @@ import InsightsSection from "@/components/features/home/InsightsSection/Insights
 import MethodologySection from "@/components/features/home/MethodologySection/MethodologySection";
 import RecognitionSection from "@/components/features/home/RecognitionSection/RecognitionSection";
 import TestimonialsSection from "@/components/features/home/TestimonialsSection/TestimonialsSection";
-import CtaSection from "@/components/features/home/CtaSection/CtaSection";
+import { CtaSection } from "@/components/layout/CtaSection";
 import AboutHero from "@/components/features/about/AboutHero/AboutHero";
 import AboutContent from "@/components/features/about/AboutContent/AboutContent";
 import AboutPrinciples from "@/components/features/about/AboutPrinciples/AboutPrinciples";
