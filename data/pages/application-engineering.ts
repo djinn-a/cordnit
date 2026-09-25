@@ -10,6 +10,11 @@ export const applicationEngineeringPage: PageDocument = {
     title: "Application Engineering | Cordinit",
     description: "Create digital products and applications that are useful for the people who rely on them, robust for the teams who run them and ready to evolve as needs change.",
   },
+  breadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Application Engineering", href: "/application-engineering" },
+  ],
   sections: [
     {
       _type: "pageHero",

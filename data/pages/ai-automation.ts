@@ -9,6 +9,11 @@ export const aiAutomationPage: PageDocument = {
     title: "AI & Automation | Cordinit",
     description: "Make AI and automation useful where it matters most.",
   },
+  breadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "AI & Automation", href: "/ai-automation" },
+  ],
   sections: [
     { 
       _type: "aiAutomationHero", 

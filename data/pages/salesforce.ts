@@ -9,16 +9,12 @@ export const salesforcePage: PageDocument = {
     title: "Salesforce | Cordinit",
     description: "Salesforce experience that connects your business.",
   },
+  breadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Salesforce", href: "/salesforce" },
+  ],
   sections: [
-    {
-      _type: "breadcrumb",
-      _key: "salesforce-breadcrumb",
-      items: [
-        { label: "Home", href: "/" },
-        { label: "Solutions", href: "/solutions" },
-        { label: "Salesforce", href: "/salesforce" },
-      ],
-    },
     { 
       _type: "salesforceHero", 
       _key: "salesforce-hero",

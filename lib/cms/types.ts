@@ -72,6 +72,7 @@ export type PageDocument = {
   slug: string;
   title: string;
   layout: LayoutType;
+  breadcrumbs?: { label: string; href?: string; isCurrent?: boolean }[];
   sections: PageSection[];
   seo?: {
     title?: string;

@@ -10,6 +10,11 @@ export const cloudInfrastructurePage: PageDocument = {
     title: "Cloud Infrastructure | Cordinit",
     description: "Cloud and infrastructure built for change.",
   },
+  breadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Cloud & Infrastructure", href: "/cloud-infrastructure" },
+  ],
   sections: [
     {
       _type: "cloudInfrastructureHero",

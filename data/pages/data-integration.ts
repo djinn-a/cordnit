@@ -9,16 +9,12 @@ export const dataIntegrationPage: PageDocument = {
     title: "Data Integration | Cordinit",
     description: "Connected data. Better decisions. Stronger operations.",
   },
+  breadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Data Integration", href: "/data-integration" },
+  ],
   sections: [
-    {
-      _type: "breadcrumb",
-      _key: "data-integration-breadcrumb",
-      items: [
-        { label: "Home", href: "/" },
-        { label: "Solutions", href: "/solutions" },
-        { label: "Data Integration" },
-      ],
-    },
     {
       _type: "pageHero",
       _key: "data-integration-hero",

@@ -12,6 +12,11 @@ export const cybersecurityPage: PageDocument = {
   slug: "cybersecurity",
   title: "Cybersecurity",
   layout: "default",
+  breadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Cybersecurity", href: "/cybersecurity" },
+  ],
   seo: {
     title: "Cybersecurity | Cordinit",
     description: "Cybersecurity that enables confident change.",

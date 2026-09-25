@@ -16,10 +16,6 @@ export default async function SalesforcePage() {
   if (!page) notFound();
 
   return (
-    <LayoutRenderer 
-      layout={page.layout} 
-      sections={page.sections} 
-      className="[&>main]:!gap-space-56 md:[&>main]:!gap-space-80 [&>main]:!pb-space-56 md:[&>main]:!pb-space-80"
-    />
+    <LayoutRenderer page={page} />
   );
 }

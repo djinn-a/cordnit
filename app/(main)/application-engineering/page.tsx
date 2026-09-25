@@ -18,21 +18,6 @@ export default async function ApplicationEngineeringPage() {
   if (!page) notFound();
 
   return (
-    <div className="flex flex-col gap-[40px] w-full">
-      <Container className="pt-[80px] pb-0">
-        <Breadcrumb 
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Solutions", href: "/solutions" },
-            { label: "Application Engineering" }
-          ]} 
-        />
-      </Container>
-      <LayoutRenderer 
-        layout={page.layout} 
-        sections={page.sections} 
-        className="[&>main]:!pt-0 [&>main]:!gap-space-56 md:[&>main]:!gap-space-80 [&>main]:!pb-space-56 md:[&>main]:!pb-space-80"
-      />
-    </div>
+    <LayoutRenderer page={page} />
   );
 }
