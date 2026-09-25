@@ -22,7 +22,7 @@ export default function HelpSection({
   return (
     <Section spacing="none" className="">
       <Container width="narrow">
-        <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 sm:mb-12 lg:mb-16 gap-3 sm:gap-8">
+        <div className="flex flex-col md:flex-row md:items-start justify-between mb-space-24 sm:mb-space-48 lg:mb-space-64 gap-space-12 sm:gap-space-32">
           <h2 className="text-section-title-mobile sm:text-section-title md:w-1/2">{title}</h2>
           <p className="text-ink-muted text-section-subtitle-mobile sm:text-section-subtitle md:w-1/2 max-w-[95%]">{description}</p>
         </div>
@@ -31,12 +31,12 @@ export default function HelpSection({
           <HelpServiceGrid services={safeServices} />
         )}
 
-        <div className="mt-10 sm:mt-12 flex justify-center">
+        <div className="mt-space-40 sm:mt-space-48 flex justify-center">
           <Link href="/solutions">
             <Button 
               variant="primary" 
               className="md:text-link-desktop bg-primary"
-              rightIcon={<ArrowRight className="h-4 w-4" />}
+              rightIcon={<ArrowRight className="h-space-16 w-space-16" />}
             >
               Explore all services
             </Button>

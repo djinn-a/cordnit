@@ -11,13 +11,13 @@ export default function ContactInfoGrid() {
 
       {/* What happens next Card */}
       <div className="bg-white border border-border-card rounded-3xl p-6 md:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-6">What happens next</h3>
+        <h3 className="text-[16px] md:text-2xl font-semibold text-gray-800 mb-6">What happens next</h3>
         <hr className="border-border-card mb-8" />
 
         <div className="space-y-8">
           {PROCESS_STEPS.map((step) => (
             <div key={step.id}>
-              <h4 className="text-eyebrow-desktop md:text-help-card-title-desktop font-semibold text-gray-900 mb-2">{step.number}. {step.title}</h4>
+              <h4 className="text-[14px] md:text-help-card-title-desktop font-semibold text-gray-900 mb-2">{step.number}. {step.title}</h4>
               <p className="text-gray-600 text-card-desc-mobile md:text-section-title-h leading-relaxed">
                 {step.description}
               </p>
@@ -40,7 +40,7 @@ export default function ContactInfoGrid() {
       <div className="grid grid-cols-2 gap-3 md:gap-6">
 
         {/* Email Card */}
-        <div className="rounded-card p-4 md:p-8 bg-gradient-contact-soft shadow-sm">
+        <div className="rounded-card py-4 px-2 md:p-8 bg-gradient-contact-soft shadow-sm">
           <div className="flex items-start gap-2 md:gap-3">
             <Image src="/icons/contactus/business.svg" alt="New Business" width={20} height={20} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 shrink-0" />
             <div>
@@ -56,7 +56,7 @@ export default function ContactInfoGrid() {
         </div>
 
         {/* Contact Numbers Card */}
-        <div className="rounded-card p-4 md:p-8 bg-gradient-contact-soft shadow-sm">
+        <div className="rounded-card py-4 px-2 md:p-8 bg-gradient-contact-soft shadow-sm">
           <div className="flex items-start gap-2 md:gap-3">
             <Image src="/icons/contactus/outline.svg" alt="Media & Press Inquiries" width={20} height={20} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 shrink-0" />
             <div>
@@ -74,7 +74,7 @@ export default function ContactInfoGrid() {
         </div>
 
         {/* Corporate Address Card */}
-        <div className="rounded-card p-4 md:p-8 bg-gradient-contact-soft shadow-sm">
+        <div className="rounded-card py-4 px-2 md:p-8 bg-gradient-contact-soft shadow-sm">
           <div className="flex items-start gap-2 md:gap-3">
             <Image src="/icons/contactus/handshake.svg" alt="Partnerships" width={20} height={20} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 shrink-0" />
             <div>
@@ -91,7 +91,7 @@ export default function ContactInfoGrid() {
         </div>
 
         {/* Hours Card */}
-        <div className="rounded-card p-4 md:p-8 bg-gradient-contact-soft shadow-sm">
+        <div className="rounded-card py-4 px-2 md:p-8 bg-gradient-contact-soft shadow-sm">
           <div className="flex items-start gap-2 md:gap-3">
             <Image src="/icons/contactus/paper-plane.svg" alt="Careers" width={20} height={20} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 shrink-0" />
             <div className="w-full">
