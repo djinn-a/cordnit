@@ -57,7 +57,7 @@ export default function HelpServiceCard({
       <div className={cn("flex-1 pr-space-12", "sm:pr-0 sm:w-full")}>
         <h3
           className={cn(
-            "text-link-desktop sm:text-help-card-title-desktop mb-space-4 transition-colors",
+            "text-link-desktop sm:text-[20px] sm:font-bold sm:leading-space-32 mb-space-4 transition-colors",
             // Mobile specifics
             "group-hover:text-primary",
             // Desktop specifics
