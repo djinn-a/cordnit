@@ -1,16 +1,19 @@
 import { Container, Section, SectionHeader } from "@/components/ui";
-import { capabilitiesData } from "./solutionsCapabilitiesData";
+import { capabilitiesData, type CapabilityData } from "./solutionsCapabilitiesData";
 import CapabilityCard from "./CapabilityCard";
 
 import { cn } from "@/lib/utils/cn";
 
 export type SolutionsCapabilitiesProps = {
   title?: string;
+  capabilities?: CapabilityData[];
 };
 
 export default function SolutionsCapabilities({
   title = "Find the capability you need",
+  capabilities = capabilitiesData,
 }: SolutionsCapabilitiesProps = {}) {
+  const items = Array.isArray(capabilities) ? capabilities : [];
   return (
     <Section spacing="none">
       <Container className="!px-0">
@@ -23,7 +26,7 @@ export default function SolutionsCapabilities({
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:gap-6">
-          {capabilitiesData.map((capability, index) => (
+          {items.map((capability, index) => (
             <CapabilityCard
               key={capability.title}
               capability={capability}

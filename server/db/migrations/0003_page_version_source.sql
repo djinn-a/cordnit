@@ -1,0 +1,1 @@
+ALTER TABLE "cms"."page_versions" ADD COLUMN "source" jsonb;

@@ -2,22 +2,24 @@
 
 import { useState } from "react";
 import { Container, Section, SectionHeader } from "@/components/ui";
-import { aboutContentData } from "./aboutContentData";
+import { aboutContentData, type AboutTabContent } from "./aboutContentData";
 import AboutContentTabs from "./AboutContentTabs";
 
 export type AboutContentProps = {
   eyebrow?: string;
   title?: string;
+  tabs?: AboutTabContent[];
 };
 
 export default function AboutContent({
   eyebrow = "ABOUT CORDINIT",
   title = "Making technology work for what matters.",
+  tabs: tabsProp,
 }: AboutContentProps = {}) {
-  const [activeTabId, setActiveTabId] = useState(aboutContentData[0].id);
+  const tabs = Array.isArray(tabsProp) && tabsProp.length > 0 ? tabsProp : aboutContentData;
+  const [activeTabId, setActiveTabId] = useState(tabs[0].id);
 
-  const activeContent =
-    aboutContentData.find((tab) => tab.id === activeTabId) || aboutContentData[0];
+  const activeContent = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
 
   return (
     <Section spacing="lg">
@@ -31,7 +33,7 @@ export default function AboutContent({
               className="mb-5 md:mb-10" />
 
             <AboutContentTabs
-              tabs={aboutContentData}
+              tabs={tabs}
               activeTabId={activeTabId}
               onTabChange={setActiveTabId}
             />

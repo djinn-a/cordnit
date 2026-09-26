@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 /** Regex: only letters and spaces (no digits, symbols, underscores) */
 const NAME_REGEX = /^[A-Za-z ]+$/;
@@ -85,7 +85,7 @@ export function useLeadForm(additionalContext: Record<string, string | boolean |
     });
   };
 
-  const resetForm = () => {
+  const resetForm = useCallback(() => {
     setFormData({
       firstName: '',
       lastName: '',
@@ -103,7 +103,7 @@ export function useLeadForm(additionalContext: Record<string, string | boolean |
     setIsSubmitting(false);
     setSubmitError(null);
     setIsSuccess(false);
-  };
+  }, []);
 
   /**
    * Validates a single field by name and sets/clears its error.
@@ -265,7 +265,7 @@ export function useLeadForm(additionalContext: Record<string, string | boolean |
         } else {
           setSubmitError("Something went wrong while submitting your enquiry. Please try again.");
         }
-      } catch (error) {
+      } catch {
         setSubmitError("Something went wrong while submitting your enquiry. Please try again.");
       } finally {
         setIsSubmitting(false);

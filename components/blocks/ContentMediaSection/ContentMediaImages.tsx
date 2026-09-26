@@ -13,6 +13,7 @@ export default function ContentMediaImages({
           src={mainImage.src} 
           alt={mainImage.alt}
           fill
+          sizes={secondaryImage ? "(min-width: 768px) 450px, 236px" : "(min-width: 640px) 600px, 100vw"}
           className={secondaryImage ? "object-cover" : "object-contain"}
         />
       </div>
@@ -24,6 +25,7 @@ export default function ContentMediaImages({
             src={secondaryImage.src} 
             alt={secondaryImage.alt}
             fill
+            sizes="(min-width: 768px) 250px, 153px"
             className="object-cover"
           />
         </div>

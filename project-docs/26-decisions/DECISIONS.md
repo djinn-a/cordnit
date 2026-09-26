@@ -46,6 +46,9 @@ List any unresolved queries or topics.
 | 2026-08-26 | Google Analytics 4 with consent support | Standard analytics + legal flexibility | Accepted |
 | 2026-08-26 | Dark mode out of scope for v1 | Explicit brief guidance | Accepted until design overrides |
 | 2026-08-26 | Restructure into modular `/specs` folders | Better agent context loading | Accepted |
+| 2026-09-26 | In-house CMS on Supabase Postgres + Drizzle + Ant Design admin | One editor, text-only edits, CRM on the same DB, AWS portability | Accepted (supersedes Sanity; see ADR-001) |
+| 2026-09-26 | Published read model + static pages invalidated by tag | Static-site speed with instant publish | Accepted (ADR-003, ADR-007) |
+| 2026-09-26 | Single super admin, username + password | No email/SMS providers needed | Accepted (ADR-009) |
 
 Add new rows whenever a significant technical or product decision is made.
 

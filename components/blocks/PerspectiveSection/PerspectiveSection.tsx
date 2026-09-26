@@ -55,6 +55,7 @@ export default function PerspectiveSection({
               src={image.src} 
               alt={image.alt}
               fill
+              sizes="(min-width: 1024px) 474px, (min-width: 768px) 100vw, 308px"
               className="object-cover"
             />
             </div>

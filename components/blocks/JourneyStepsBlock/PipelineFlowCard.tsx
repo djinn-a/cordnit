@@ -35,7 +35,6 @@ export function PipelineFlowCard({ card }: Readonly<PipelineFlowCardProps>) {
         {card.dots && card.dots.length > 0 && (
           <div className="flex gap-1 items-center">
             {card.dots.map((dot, idx) => (
-              // eslint-disable-next-line react/no-array-index-key
               <span
                 key={`dot-${idx}`}
                 className={cn(

@@ -1,18 +1,22 @@
 import { Container, Section, SectionHeader } from "@/components/ui";
-import { principlesData } from "./principlesData";
+import { principlesData, type PrincipleItemType } from "./principlesData";
 import PrincipleItem from "./PrincipleItem";
 
 export type AboutPrinciplesProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
+  principles?: PrincipleItemType[];
 };
 
 export default function AboutPrinciples({
   eyebrow = "HOW WE WORK",
   title = "Four Principles. One way of working",
   description = "We combine clear thinking, practical delivery and long-term partnership to make technology change work in the real world.",
+  principles = principlesData,
 }: AboutPrinciplesProps = {}) {
+  const items = Array.isArray(principles) ? principles : [];
+
   return (
     <Section spacing="lg">
       <Container>
@@ -30,11 +34,11 @@ export default function AboutPrinciples({
         </div>
 
         <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-16 lg:gap-y-20">
-          {principlesData.map((principle, index) => (
+          {items.map((principle, index) => (
             <PrincipleItem
               key={principle.number}
               principle={principle}
-              isLast={index === principlesData.length - 1}
+              isLast={index === items.length - 1}
             />
           ))}
         </div>

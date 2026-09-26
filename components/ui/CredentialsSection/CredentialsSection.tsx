@@ -30,6 +30,7 @@ export default function CredentialsSection({ data }: CredentialsSectionProps) {
               src={data.backgroundImage.src}
               alt={data.backgroundImage.alt}
               fill
+              sizes="(min-width: 1240px) 1240px, 100vw"
               className="object-cover object-center"
               priority
             />

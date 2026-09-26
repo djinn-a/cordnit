@@ -1,24 +1,25 @@
 import { componentMap } from "@/lib/cms/component-map";
-import type { PageSection } from "@/lib/cms/types";
+import type { InlineSectionNode } from "@/lib/cms/document";
 
 type SectionRendererProps = {
-  sections: PageSection[];
+  sections: readonly InlineSectionNode[];
 };
 
 export default function SectionRenderer({ sections }: Readonly<SectionRendererProps>) {
+  if (!sections?.length) return null;
+
   return (
     <>
       {sections.map((section) => {
-        const Component = componentMap[section._type];
+        const Component = section?._type ? componentMap[section._type] : undefined;
         if (!Component) {
           if (process.env.NODE_ENV === "development") {
-            console.warn(`[SectionRenderer] Unknown section type: ${section._type}`);
+            console.warn(`[SectionRenderer] Unknown section type: ${String(section?._type)}`);
           }
           return null;
         }
-
-        const { _type, _key, ...props } = section;
-        return <Component key={_key || _type} {...props} />;
+        const props = section.props && typeof section.props === "object" ? section.props : {};
+        return <Component key={section._key || section._type} {...props} />;
       })}
     </>
   );

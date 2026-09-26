@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AiAutomationWhereWeHelpData } from "../data";
+import { AiAutomationWhereWeHelpData } from "./AiAutomationWhereWeHelp";
 
 type AiAutomationWhereWeHelpCardProps = {
   card: AiAutomationWhereWeHelpData["cards"][0];

@@ -2,10 +2,14 @@ import { FC } from "react";
 import Image from "next/image";
 import Section from "@/components/ui/Section/Section";
 import Container from "@/components/ui/Container/Container";
-import { deliveryData } from "./solutionsDeliveryData";
-import { cn } from "@/lib/utils/cn";
+import { deliveryData as defaultDeliveryData, type SolutionsDeliveryData } from "./solutionsDeliveryData";
 
-const SolutionsDelivery: FC = () => {
+export type SolutionsDeliveryProps = { data?: SolutionsDeliveryData };
+
+const SolutionsDelivery: FC<SolutionsDeliveryProps> = ({ data }) => {
+  const deliveryData = { ...defaultDeliveryData, ...data };
+  const paragraphs = Array.isArray(deliveryData.paragraphs) ? deliveryData.paragraphs : [];
+  const stats = Array.isArray(deliveryData.stats) ? deliveryData.stats : [];
   return (
     <Section spacing="none">
       <Container className="!px-0">
@@ -18,7 +22,7 @@ const SolutionsDelivery: FC = () => {
               {deliveryData.heading}
             </h2>
             <div className="flex flex-col gap-4 lg:gap-6">
-              {deliveryData.paragraphs.map((paragraph, index) => (
+              {paragraphs.map((paragraph, index) => (
                 <p key={index} className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted">
                   {paragraph}
                 </p>
@@ -34,6 +38,7 @@ const SolutionsDelivery: FC = () => {
                 src={deliveryData.mainImage}
                 alt="Our Vision"
                 fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
               <div className="flex absolute inset-0 p-4 sm:p-10 flex-col justify-center text-white w-full sm:w-3/4 pr-16 sm:pr-10 bg-black/30 sm:bg-transparent">
@@ -58,12 +63,13 @@ const SolutionsDelivery: FC = () => {
                   src={deliveryData.bottomLeftImage}
                   alt="Secure"
                   fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-3 sm:p-6 text-white max-w-[90%] sm:max-w-[80%]">
                   <span className="text-cta-text2-sb-mobile sm:text-link-mobile block">
-                    {deliveryData.bottomLeftText.split(" ").map((word, i, arr) => (
+                    {deliveryData.bottomLeftText.split(" ").map((word, i) => (
                       <span key={i}>{word}{i === 0 ? <br /> : " "}</span>
                     ))}
                   </span>
@@ -74,12 +80,13 @@ const SolutionsDelivery: FC = () => {
                   src={deliveryData.bottomRightImage}
                   alt="Modernise"
                   fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-3 sm:p-6 text-white max-w-[90%] sm:max-w-[80%]">
                   <span className="text-cta-text2-sb-mobile sm:text-link-mobile block">
-                    {deliveryData.bottomRightText.split(" ").map((word, i, arr) => (
+                    {deliveryData.bottomRightText.split(" ").map((word, i) => (
                       <span key={i}>{word}{i === 0 ? <br /> : " "}</span>
                     ))}
                   </span>
@@ -89,10 +96,10 @@ const SolutionsDelivery: FC = () => {
 
             {/* Floating Stats */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-2 sm:gap-4 z-10 w-max pr-2 sm:pr-0">
-              {deliveryData.stats.map((stat, i) => (
+              {stats.map((stat, i) => (
                 <div key={i} className="bg-surface rounded-xl sm:rounded-2xl shadow-card p-2 sm:p-4 flex items-center gap-2 sm:gap-3">
                   <div className="w-4 h-4 sm:w-6 sm:h-6 relative flex-shrink-0">
-                    <Image src={stat.iconPath} alt="" fill className="object-contain" />
+                    <Image src={stat.iconPath} alt="" fill sizes="24px" className="object-contain" />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-section-title-head-mobile sm:text-section-title-head text-primary">{stat.value}</span>

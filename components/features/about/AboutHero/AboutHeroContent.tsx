@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui";
 import { useContactModal } from "@/components/features/contact/ContactModal/ContactModalProvider";
 
@@ -13,11 +12,9 @@ export type AboutHeroContentProps = {
 
 export default function AboutHeroContent({
   title,
-  bodyMobile,
   bodyDesktop,
 }: AboutHeroContentProps) {
   const { openModal } = useContactModal();
-  const router = useRouter();
 
   // We explicitly split the title based on the exact visual layout from the data.
   // Alternatively we could just use the title as is if it naturally wraps,

@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils/cn";
 import type { JourneyStepCardData } from "./types";
 
 interface JourneyStepsCardProps {

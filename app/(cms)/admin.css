@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #f5f7fb;
+  font-family: var(--font-mulish), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.cms-skel {
+  border-radius: 6px;
+  background: linear-gradient(90deg, #eef1f6 25%, #e3e8f0 37%, #eef1f6 63%);
+  background-size: 400% 100%;
+  animation: cms-skel 1.4s ease infinite;
+}
+
+@keyframes cms-skel {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.cms-item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cms-item-list > li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eef1f6;
+}
+
+.cms-item-list[data-compact] > li {
+  align-items: center;
+  padding: 8px 0;
+}
+
+.cms-item-list > li:last-child {
+  border-bottom: 0;
+}
+
+.cms-sortable-handle {
+  cursor: grab;
+  touch-action: none;
+}
+
+.cms-sortable-handle:active {
+  cursor: grabbing;
+}
+
+.cms-preview-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

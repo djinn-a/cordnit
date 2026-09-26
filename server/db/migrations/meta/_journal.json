@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790429995694,
+      "tag": "0000_init_cms",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790430000680,
+      "tag": "0001_lockdown_and_constraints",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790430306145,
+      "tag": "0002_spacing_compact_top",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790430331350,
+      "tag": "0003_page_version_source",
+      "breakpoints": true
+    }
+  ]
+}

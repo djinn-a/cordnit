@@ -1,0 +1,3123 @@
+{
+  "hero": {
+    "content": {
+      "eyebrow": "WELCOME TO CORDINIT",
+      "titleDesktop": "Simplifying Complexity. Enabling Real Transformation.",
+      "cardEyebrow": "SECURE DIGITAL TRANSFORMATION",
+      "cardTitle": "Turning Technology Complexity Into Meaningful Progress",
+      "cardBody": "With Cordinit as your partner, digital initiatives move faster, operations run smoother, and technology becomes an asset not a blocker to growth.",
+      "primaryCta": "Book a call",
+      "secondaryCta": "Explore Solution"
+    },
+    "systemProps": {
+      "imageSrc": "/hero-image.webp",
+      "imageAlt": "Corporate Digital Transformation"
+    }
+  },
+  "help": {
+    "content": {
+      "title": "Where we can help",
+      "description": "Structured methodologies applied to complex technological challenges. We architect solutions designed for scalability, security, and operational endurance.",
+      "services": [
+        {
+          "_id": "i0",
+          "num": "01",
+          "title": "Cybersecurity",
+          "desc": "Build a clearer view of risk, protect what matters and strengthen your ability to respond. From cloud, application, identity and data security to managed security, we help make security an enabler of progress."
+        },
+        {
+          "_id": "i1",
+          "num": "02",
+          "title": "Cloud & Infrastructure",
+          "desc": "Create a cloud foundation that is secure, resilient and ready to change with you. From strategy and modernisation to platform engineering and operations, we help make the cloud work harder for the business."
+        },
+        {
+          "_id": "i2",
+          "num": "03",
+          "title": "AI & Automation",
+          "desc": "We embed AI and automation into real workflows—removing manual friction, enforcing guardrails, and accelerating how work gets done across the organization."
+        },
+        {
+          "_id": "i3",
+          "num": "04",
+          "title": "Data & Integration",
+          "desc": "We connect fragmented systems into a dependable data backbone—standardizing definitions and flows so teams finally operate from a single, trusted picture."
+        },
+        {
+          "_id": "i4",
+          "num": "05",
+          "title": "Salesforce",
+          "desc": "We align Salesforce with surrounding systems and processes—cleaning data, refining workflows, and turning CRM into a source of truth that people actually use."
+        },
+        {
+          "_id": "i5",
+          "num": "06",
+          "title": "Application Engineering",
+          "desc": "We build modern, integrated applications and portals that fit your enterprise ecosystem—improving adoption, reducing manual work, and strengthening operations."
+        }
+      ]
+    },
+    "systemProps": {
+      "services": [
+        {
+          "_id": "i0",
+          "iconPath": "/icons/cybersecurity.svg"
+        },
+        {
+          "_id": "i1",
+          "iconPath": "/icons/cloud.svg"
+        },
+        {
+          "_id": "i2",
+          "iconPath": "/icons/ai.svg"
+        },
+        {
+          "_id": "i3",
+          "iconPath": "/icons/data.svg"
+        },
+        {
+          "_id": "i4",
+          "iconPath": "/icons/salesforce.svg"
+        },
+        {
+          "_id": "i5",
+          "iconPath": "/icons/engineering.svg"
+        }
+      ]
+    }
+  },
+  "insights": {
+    "content": {
+      "eyebrow": "INSIGHTS & PERSPECTIVE",
+      "title": "Ideas Built to Accelerate\nSustainable Growth",
+      "insights": [
+        {
+          "_id": "1",
+          "tag": "CYBERSECURITY",
+          "date": "Aug 26, 2026",
+          "title": "Why Security Architecture Must Precede Digital",
+          "readMoreUrl": "/insights/cybersecurity-digital-transformation"
+        },
+        {
+          "_id": "2",
+          "tag": "Growth SALESFORCE",
+          "date": "Aug 26, 2026",
+          "title": "Eliminating Platform Silos to Drive True CRM Adoption",
+          "readMoreUrl": "/insights/salesforce-digital-transformation"
+        },
+        {
+          "_id": "3",
+          "tag": "AI & AUTOMATION",
+          "date": "Aug 26, 2026",
+          "title": "Embedding Guardrails into High-Impact Enterprise Workflows",
+          "readMoreUrl": "/insights/ai-automation-digital-transformation"
+        },
+        {
+          "_id": "4",
+          "tag": "CLOUD & INFRASTRUCTURE",
+          "date": "Aug 26, 2026",
+          "title": "Modernizing Foundations for Operational Resilience and Uptime",
+          "readMoreUrl": "/insights/cloud-infrastructure-digital-transformation"
+        }
+      ]
+    },
+    "systemProps": {
+      "insights": [
+        {
+          "_id": "1",
+          "id": 1,
+          "type": "Article",
+          "image": "/InsightsSection/cybersecurity.webp"
+        },
+        {
+          "_id": "2",
+          "id": 2,
+          "type": "Article",
+          "image": "/InsightsSection/salesforce.webp"
+        },
+        {
+          "_id": "3",
+          "id": 3,
+          "type": "Article",
+          "image": "/InsightsSection/ai-automation.webp"
+        },
+        {
+          "_id": "4",
+          "id": 4,
+          "type": "Article",
+          "image": "/InsightsSection/cloud-infrastructure.webp"
+        }
+      ]
+    }
+  },
+  "methodology": {
+    "content": {
+      "eyebrow": "METHODOLOGY",
+      "title": "Building Resilient Foundations for Modern Enterprise Operations",
+      "description": "Bridging strategic vision and technical execution through structured governance, seamless integration, and continuous operational improvement.",
+      "steps": [
+        {
+          "_id": "i0",
+          "num": "01",
+          "title": "DISCOVER",
+          "desc": "Comprehensive assessment of enterprise architecture, risk profiles, and operational bottlenecks."
+        },
+        {
+          "_id": "i1",
+          "num": "02",
+          "title": "DESIGN",
+          "desc": "Architecting scalable blueprints and strategic roadmaps tailored for long-term business growth."
+        },
+        {
+          "_id": "i2",
+          "num": "03",
+          "title": "IMPLEMENT",
+          "desc": "Hands-on engineering, tool integration, and seamless deployment across your technology estate."
+        },
+        {
+          "_id": "i3",
+          "num": "04",
+          "title": "OPTIMISE",
+          "desc": "System hardening, performance tuning, and continuous refinement to maximize platform value."
+        },
+        {
+          "_id": "i4",
+          "num": "05",
+          "title": "OPERATE",
+          "desc": "Managed operational support and proactive governance to ensure continuous uptime and adaptability."
+        }
+      ]
+    },
+    "systemProps": {
+      "steps": [
+        {
+          "_id": "i0",
+          "tone": "primary"
+        },
+        {
+          "_id": "i1",
+          "tone": "ink"
+        },
+        {
+          "_id": "i2",
+          "tone": "primary"
+        },
+        {
+          "_id": "i3",
+          "tone": "ink"
+        },
+        {
+          "_id": "i4",
+          "tone": "primary"
+        }
+      ]
+    }
+  },
+  "recognition": {
+    "content": {
+      "eyebrow": "COMPLIANCE & PARTNERSHIPS",
+      "title": "Verified Security Standards &\nStrategic Ecosystems",
+      "description": "We align our engineering and operational delivery with internationally recognized compliance frameworks and enterprise partner networks.",
+      "items": [
+        {
+          "_id": "1",
+          "category": "01 — CERTIFICATION",
+          "title": "ISO 9001:2026 Quality management systems",
+          "desc": "Structured operational frameworks designed for consistent service quality, risk control, and continuous process optimization."
+        },
+        {
+          "_id": "2",
+          "category": "02 — COMPLIANCE",
+          "title": "ISO/IEC 27001 Information security, cybersecurity and privacy protection",
+          "desc": "Adhering to rigorous information security management standards and data protection controls to safeguard enterprise infrastructure."
+        },
+        {
+          "_id": "3",
+          "category": "03 — PARTNER ECOSYSTEM",
+          "title": "Strategic partnership with Microsoft and its startup-focused programme",
+          "desc": "Deep integration across leading platform ecosystems—including AWS Partner Network, Google Cloud, Salesforce, and Microsoft AI Cloud."
+        }
+      ]
+    },
+    "systemProps": {
+      "items": [
+        {
+          "_id": "1",
+          "id": 1,
+          "image": "/award/image.webp"
+        },
+        {
+          "_id": "2",
+          "id": 2,
+          "image": "/award/image copy.webp"
+        },
+        {
+          "_id": "3",
+          "id": 3,
+          "image": "/award/image copy 2.webp"
+        }
+      ]
+    }
+  },
+  "testimonials": {
+    "content": {
+      "eyebrow": "TESTIMONIALS",
+      "title": "Proven Results. Trusted by Security and Technology Leaders.",
+      "description": "Hear from enterprise executives on how Cordinit strengthens digital resilience and accelerates transformation.",
+      "items": [
+        {
+          "_id": "1",
+          "name": "Michelle Pieszko",
+          "role": "Director & Chief Executive Officer",
+          "company": "Cordinit Group",
+          "quote": "\"Security isn't just about protection. It's about creating the confidence to move faster.\""
+        },
+        {
+          "_id": "2",
+          "name": "Nitin Raina",
+          "role": "Global Chief Communications Officer",
+          "company": "Cordinit Media",
+          "quote": "\"The architectural clarity Cordinit brings has transformed how our board understands risk posture.\""
+        },
+        {
+          "_id": "3",
+          "name": "Rohit Kohli",
+          "role": "Global Brand President",
+          "company": "Cordinit Media",
+          "quote": "\"Scalability without compromise. It's rare to find a platform that delivers both operational rigor and agility.\""
+        },
+        {
+          "_id": "4",
+          "name": "Igor Tsyganskiy",
+          "role": "Chief Financial Officer",
+          "company": "Cordint Group",
+          "quote": "\"We deployed their framework in weeks, not months. The precision is unmatched.\""
+        },
+        {
+          "_id": "5",
+          "name": "Michelle Pieszko",
+          "role": "Co-President and Co-Chief Operating Officer",
+          "company": "Cordinit Group",
+          "quote": "\"Security isn't just about protection. It's about creating the confidence to move faster.\""
+        },
+        {
+          "_id": "6",
+          "name": "Nitin Raina",
+          "role": "Executive Vice President",
+          "company": "Cordinit Group",
+          "quote": "\"The architectural clarity Cordinit brings has transformed how our board understands risk posture.\""
+        }
+      ]
+    },
+    "systemProps": {
+      "items": [
+        {
+          "_id": "1",
+          "id": 1,
+          "image": "/images/testimonials/michelle.webp"
+        },
+        {
+          "_id": "2",
+          "id": 2,
+          "image": "/images/testimonials/nitin.webp"
+        },
+        {
+          "_id": "3",
+          "id": 3,
+          "image": "/images/testimonials/rohit.webp"
+        },
+        {
+          "_id": "4",
+          "id": 4,
+          "image": "/images/testimonials/igor.webp"
+        },
+        {
+          "_id": "5",
+          "id": 5,
+          "image": "/images/testimonials/michelle.webp"
+        },
+        {
+          "_id": "6",
+          "id": 6,
+          "image": "/images/testimonials/nitin.webp"
+        }
+      ]
+    }
+  },
+  "cta": {
+    "content": {
+      "title": "Ready to Align Technology with Business Growth?",
+      "body": "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution.",
+      "expertName": "Talk to a Enterprise Technology Specialist",
+      "ctaLabel": "Schedule a Call"
+    },
+    "systemProps": {
+      "backgroundSrc": "/cta-bg.webp",
+      "backgroundSrcMobile": "/cta-bg-mobile.webp",
+      "portraitSrc": "/expert-portrait.webp"
+    }
+  },
+  "aboutHero": {
+    "content": {
+      "title": "Technology change made more useful.",
+      "bodyMobile": "From secure foundations to connected experiences and smarter operations, we help organisations turn technology change into.",
+      "bodyDesktop": "We help organisations make confident progress through technology securely, thoughtfully and with a focus on what will make a real difference."
+    },
+    "systemProps": {
+      "imageSrc": "/AboutHero/about-hero.webp",
+      "imageAlt": "Cordinit Office"
+    }
+  },
+  "aboutContent": {
+    "content": {
+      "eyebrow": "ABOUT CORDINIT",
+      "title": "Making technology work for what matters.",
+      "tabs": [
+        {
+          "_id": "story",
+          "label": "Our Story",
+          "title": "Our Story",
+          "paragraphs": [
+            "Technology change can be full of promise and friction in equal measure. Cordinit exists to make that change more useful: connecting clear thinking, capable delivery and long-term operational support around the outcomes our clients need.",
+            "We believe successful transformation is not just about introducing new tools. It is about creating the conditions for people, processes and technology to work better together."
+          ]
+        },
+        {
+          "_id": "mission",
+          "label": "Our Mission",
+          "title": "Our Mission",
+          "paragraphs": [
+            "To help organisations use technology with more confidence — creating better experiences, stronger operations and a more secure future."
+          ]
+        },
+        {
+          "_id": "vision",
+          "label": "Our Vision",
+          "title": "Our Vision",
+          "paragraphs": [
+            "A world where complex technology change feels achievable, valuable and built to last."
+          ]
+        }
+      ]
+    },
+    "systemProps": {
+      "tabs": [
+        {
+          "_id": "story",
+          "id": "story",
+          "imageSrc": "/img/team-member.webp",
+          "imageAlt": "Cordinit team working in modern office"
+        },
+        {
+          "_id": "mission",
+          "id": "mission",
+          "imageSrc": "/img/team-member.webp",
+          "imageAlt": "Cordinit team working in modern office"
+        },
+        {
+          "_id": "vision",
+          "id": "vision",
+          "imageSrc": "/img/team-member.webp",
+          "imageAlt": "Cordinit team working in modern office"
+        }
+      ]
+    }
+  },
+  "aboutPrinciples": {
+    "content": {
+      "eyebrow": "HOW WE WORK",
+      "title": "Four Principles. One way of working",
+      "description": "We combine clear thinking, practical delivery and long-term partnership to make technology change work in the real world.",
+      "principles": [
+        {
+          "_id": "i0",
+          "number": "01",
+          "title": "STAY CLOSE TO THE REAL PROBLEM",
+          "description": "We avoid getting lost in technical abstraction. Every decision is anchored to the practical outcomes our clients need to achieve."
+        },
+        {
+          "_id": "i1",
+          "number": "02",
+          "title": "MAKE COMPLEXITY USABLE",
+          "description": "Enterprise technology is inherently complex. Our job is to abstract that complexity so teams can focus on their work, not their tools."
+        },
+        {
+          "_id": "i2",
+          "number": "03",
+          "title": "BUILD FOR THE LONG TERM",
+          "description": "We design solutions that can adapt and scale. Short-term fixes often create long-term debt; we architect for endurance."
+        },
+        {
+          "_id": "i3",
+          "number": "04",
+          "title": "WORK AS ONE TEAM",
+          "description": "Transformation happens when internal knowledge meets external expertise. We integrate seamlessly with your people to drive change together."
+        }
+      ]
+    },
+    "systemProps": {}
+  },
+  "aboutTeam": {
+    "content": {
+      "eyebrow": "THE PEOPLE BEHIND THE WORK",
+      "title": "Specialists brought together around the problem.",
+      "description": "Cordinit brings together specialists across security, cloud, engineering, data, Salesforce, AI and managed services.",
+      "members": [
+        {
+          "_id": "i0",
+          "name": "Mohommed Rashid Khan",
+          "role": "Director & Chief Executive Officer, Cordinit Group",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i1",
+          "name": "TBA",
+          "role": "Chief Technology Officer, Cordinit Technologies & Media",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i2",
+          "name": "Christina Adams",
+          "role": "Global Chief Communications Officer, Cordinit Media",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i3",
+          "name": "TBA",
+          "role": "Chief Talent Officer, Cordinit Technologies & Media",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i4",
+          "name": "TBA",
+          "role": "Global Brand President, Cordinit Media",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i5",
+          "name": "TBA",
+          "role": "Chief Financial Officer, Cordint Group",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i6",
+          "name": "TBA",
+          "role": "Co-President and Co-Chief Operating Officer, Cordinit Group",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i7",
+          "name": "TBA",
+          "role": "Executive Vice President, Cordinit Group",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i8",
+          "name": "TBA",
+          "role": "Member of the Governance and Finance Committees, Cordinit Group",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i9",
+          "name": "TBA",
+          "role": "Member of the Audit and Finance Committees, Cordinit Group",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i10",
+          "name": "TBA",
+          "role": "Member of the Compensation Committee, Cordinit Group",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        },
+        {
+          "_id": "i11",
+          "name": "TBA",
+          "role": "Chief Client and Business Officer, Cordinit Media",
+          "description": "Guiding organizations through pragmatic AI adoption, focusing on tangible operational improvements and ethical implementation."
+        }
+      ]
+    },
+    "systemProps": {
+      "members": [
+        {
+          "_id": "i0",
+          "image": "/testimonial/image.webp"
+        },
+        {
+          "_id": "i1",
+          "image": "/testimonial/image copy.webp"
+        },
+        {
+          "_id": "i2",
+          "image": "/testimonial/image copy 2.webp"
+        },
+        {
+          "_id": "i3",
+          "image": "/testimonial/image copy 3.webp"
+        },
+        {
+          "_id": "i4",
+          "image": "/testimonial/image copy 4.webp"
+        },
+        {
+          "_id": "i5",
+          "image": "/testimonial/image copy 5.webp"
+        },
+        {
+          "_id": "i6",
+          "image": "/testimonial/image.webp"
+        },
+        {
+          "_id": "i7",
+          "image": "/testimonial/image copy.webp"
+        },
+        {
+          "_id": "i8",
+          "image": "/testimonial/image copy 2.webp"
+        },
+        {
+          "_id": "i9",
+          "image": "/testimonial/image copy 3.webp"
+        },
+        {
+          "_id": "i10",
+          "image": "/testimonial/image copy 4.webp"
+        },
+        {
+          "_id": "i11",
+          "image": "/testimonial/image copy 5.webp"
+        }
+      ]
+    }
+  },
+  "contactHero": {
+    "content": {
+      "eyebrow": "LET'S TALK",
+      "title": "Tell us what you’re building.",
+      "description": "Whether you’re looking to modernise your technology, strengthen security, adopt AI orbuild a new digital solution, tell us what you’re working on. Our team will connect you with the right specialists."
+    },
+    "systemProps": {
+      "imageSrc": "/contact-hero-bg.webp",
+      "imageAlt": "Cordinit Office Contact"
+    }
+  },
+  "contactForm": {
+    "content": {
+      "formContent": {
+        "interestTitle": "What can we help you with?",
+        "requirementLabel": "Tell us about your requirement.",
+        "requirementPlaceholder": "Briefly describe what you're looking to achieve...",
+        "introCallLabel": "I would like to book a brief introductory call to discuss this.",
+        "privacyLabelPart1": "I agree that Cordinit may use my details to process my enquiry in accordance with the ",
+        "privacyLabelLink": "Privacy Policy",
+        "privacyLabelPart2": ".",
+        "submitButtonIdle": "Submit",
+        "submitButtonSubmitting": "Submitting...",
+        "scheduleCallButton": "Schedule a Call",
+        "interestsList": [
+          "Cybersecurity",
+          "Managed Services",
+          "AI & Automation",
+          "Application Engineering",
+          "Data & Integration",
+          "Salesforce",
+          "Cloud & Infrastructure",
+          "Something else"
+        ]
+      },
+      "processSteps": {
+        "sectionTitle": "What happens next",
+        "steps": [
+          {
+            "_id": "review",
+            "number": "1",
+            "title": "We Review",
+            "description": "Our team reviews your enquiry to identifies the right people to involve."
+          },
+          {
+            "_id": "connect",
+            "number": "2",
+            "title": "We Connect",
+            "description": "We’ll get back to you within one business day to discuss your requirements and next steps."
+          },
+          {
+            "_id": "understand",
+            "number": "3",
+            "title": "We understand",
+            "description": "We’ll discuss your objectives, challenges and priorities before recommending a way forward."
+          },
+          {
+            "_id": "forward",
+            "number": "4",
+            "title": "We move forward",
+            "description": "If there’s a fit, we’ll define the right scope, approach and next steps together."
+          }
+        ]
+      },
+      "contactInfo": {
+        "headerTitle": "Work With Cordinit",
+        "headerSubtitle": "We work with organisations to build, secure and transform their digital future.",
+        "cards": [
+          {
+            "_id": "new-business",
+            "title": "New Business",
+            "name": "Mohd. Rashid Khan",
+            "role": "Chief Growth Officer",
+            "email": "business@cordinit.co.in",
+            "ctaText": "Book a Call"
+          },
+          {
+            "_id": "media",
+            "title": "Media & Press Inquiries",
+            "name": "Christina Adams",
+            "role": "EVP, Marketing & Communications",
+            "email": "media@cordinit.co.in",
+            "ctaText": "Book a Call"
+          },
+          {
+            "_id": "partnerships",
+            "title": "Partnerships",
+            "description": "For technology partners, strategic partners and business collaborations.",
+            "email": "partnerships@cordinit.co.in",
+            "ctaText": "Book a Call"
+          },
+          {
+            "_id": "careers",
+            "title": "Careers",
+            "links": [
+              {
+                "_id": "i0",
+                "text": "View Open Roles",
+                "href": "#"
+              },
+              {
+                "_id": "i1",
+                "text": "View Internships",
+                "href": "#"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "processSteps": {
+        "steps": [
+          {
+            "_id": "review",
+            "id": "review"
+          },
+          {
+            "_id": "connect",
+            "id": "connect"
+          },
+          {
+            "_id": "understand",
+            "id": "understand"
+          },
+          {
+            "_id": "forward",
+            "id": "forward"
+          }
+        ]
+      },
+      "contactInfo": {
+        "cards": [
+          {
+            "_id": "new-business",
+            "id": "new-business",
+            "type": "person",
+            "iconPath": "/icons/contactus/business.svg"
+          },
+          {
+            "_id": "media",
+            "id": "media",
+            "type": "person",
+            "iconPath": "/icons/contactus/outline.svg"
+          },
+          {
+            "_id": "partnerships",
+            "id": "partnerships",
+            "type": "info",
+            "iconPath": "/icons/contactus/handshake.svg"
+          },
+          {
+            "_id": "careers",
+            "id": "careers",
+            "type": "links",
+            "iconPath": "/icons/contactus/paper-plane.svg"
+          }
+        ]
+      }
+    }
+  },
+  "contentMedia": {
+    "content": {
+      "eyebrow": "INDUSTRIES",
+      "title": "Technology progress in your industry context",
+      "description": "Every industry faces a different combination of customer expectations, operating pressures, regulation and technology change. Cordinit brings relevant capabilities together around the challenges that matter in your world.",
+      "cta": {
+        "label": "Discuss your industry priorities",
+        "href": "/contactus"
+      }
+    },
+    "systemProps": {
+      "mainImage": {
+        "src": "/images/content-media/frame_1984077885.webp",
+        "alt": "Industry main image"
+      }
+    }
+  },
+  "contextApproach": {
+    "content": {
+      "eyebrow": "OUR APPROACH",
+      "title": "Start with the context, not the technology",
+      "description": "The same platform or security decision can have very different implications depending on your customers, operating model and risk profile. We take time to understand the forces shaping your industry, then help identify a practical response."
+    },
+    "systemProps": {}
+  },
+  "perspective": {
+    "content": {
+      "eyebrow": "OUR PERSPECTIVE",
+      "title": "The challenges often connect",
+      "description": "Improving a customer journey can require better data and integration. Modernising a service can call for cloud, application engineering and security. We help connect those disciplines so you can make progress without losing the wider context.",
+      "cta": {
+        "label": "Book a call",
+        "href": "/contactus"
+      }
+    },
+    "systemProps": {
+      "image": {
+        "src": "/InsightsSection/salesforce.webp",
+        "alt": "Challenges connect"
+      }
+    }
+  },
+  "contentInsights": {
+    "content": {
+      "eyebrow": "FEATURED CONTENT",
+      "featured": {
+        "articleLabel": "ARTICLE",
+        "category": "Cybersecurity",
+        "title": "The evolving threat landscape in a connected world",
+        "description": "A practical look at the threats organisations face today — and the actions that strengthen resilience.",
+        "cta": {
+          "label": "Read article",
+          "href": "#"
+        }
+      },
+      "exploreByTopic": {
+        "eyebrow": "EXPLORE BY TOPIC",
+        "topics": [
+          {
+            "_id": "all",
+            "label": "All"
+          },
+          {
+            "_id": "cybersecurity",
+            "label": "Cybersecurity"
+          },
+          {
+            "_id": "salesforce",
+            "label": "Salesforce"
+          },
+          {
+            "_id": "cloud",
+            "label": "Cloud"
+          },
+          {
+            "_id": "ai-automation",
+            "label": "AI & Automation"
+          },
+          {
+            "_id": "data-integration",
+            "label": "Data & Integration"
+          },
+          {
+            "_id": "industries",
+            "label": "Industries"
+          },
+          {
+            "_id": "case-studies",
+            "label": "Case Studies"
+          }
+        ]
+      },
+      "insightCards": [
+        {
+          "_id": "card-1",
+          "topic": "cloud",
+          "metadata": {
+            "label": "ARTICLE",
+            "pill": "Cloud"
+          },
+          "title": "Building cloud foundations that scale with you",
+          "description": "Key considerations for creating secure, resilient and future-ready cloud environments.",
+          "dateInfo": "14 May 2025 · 6 min read",
+          "cta": {
+            "label": "Read article",
+            "href": "#"
+          }
+        },
+        {
+          "_id": "card-2",
+          "topic": "cybersecurity",
+          "metadata": {
+            "label": "ARTICLE",
+            "pill": "Cybersecurity"
+          },
+          "title": "Securing the enterprise in a hyperconnected era",
+          "description": "Explore advanced strategies to protect critical assets against emerging cyber threats.",
+          "dateInfo": "12 Apr 2025 · 5 min read",
+          "cta": {
+            "label": "Read article",
+            "href": "#"
+          }
+        },
+        {
+          "_id": "card-3",
+          "topic": "cloud",
+          "metadata": {
+            "label": "CASE STUDY",
+            "pill": "Cloud"
+          },
+          "title": "Migrating legacy systems without downtime",
+          "description": "How we helped a leading financial institution migrate securely to the public cloud.",
+          "dateInfo": "03 Mar 2025 · 8 min read",
+          "cta": {
+            "label": "Read case study",
+            "href": "#"
+          }
+        },
+        {
+          "_id": "card-4",
+          "topic": "salesforce",
+          "metadata": {
+            "label": "ARTICLE",
+            "pill": "Salesforce"
+          },
+          "title": "Maximizing ROI from your CRM investment",
+          "description": "Practical steps to improve user adoption and drive value from Salesforce.",
+          "dateInfo": "21 Feb 2025 · 4 min read",
+          "cta": {
+            "label": "Read article",
+            "href": "#"
+          }
+        }
+      ]
+    },
+    "systemProps": {
+      "featured": {
+        "image": {
+          "src": "/InsightsSection/salesforce.webp",
+          "alt": "Featured content image"
+        }
+      },
+      "exploreByTopic": {
+        "topics": [
+          {
+            "_id": "all",
+            "id": "all",
+            "isActive": true
+          },
+          {
+            "_id": "cybersecurity",
+            "id": "cybersecurity"
+          },
+          {
+            "_id": "salesforce",
+            "id": "salesforce"
+          },
+          {
+            "_id": "cloud",
+            "id": "cloud"
+          },
+          {
+            "_id": "ai-automation",
+            "id": "ai-automation"
+          },
+          {
+            "_id": "data-integration",
+            "id": "data-integration"
+          },
+          {
+            "_id": "industries",
+            "id": "industries"
+          },
+          {
+            "_id": "case-studies",
+            "id": "case-studies"
+          }
+        ]
+      },
+      "insightCards": [
+        {
+          "_id": "card-1",
+          "id": "card-1",
+          "image": {
+            "src": "/InsightsSection/salesforce.webp",
+            "alt": "Cloud foundation"
+          }
+        },
+        {
+          "_id": "card-2",
+          "id": "card-2",
+          "image": {
+            "src": "/InsightsSection/salesforce.webp",
+            "alt": "Cybersecurity landscape"
+          }
+        },
+        {
+          "_id": "card-3",
+          "id": "card-3",
+          "image": {
+            "src": "/InsightsSection/salesforce.webp",
+            "alt": "Cloud migration"
+          }
+        },
+        {
+          "_id": "card-4",
+          "id": "card-4",
+          "image": {
+            "src": "/InsightsSection/salesforce.webp",
+            "alt": "Salesforce CRM"
+          }
+        }
+      ]
+    }
+  },
+  "industryCards": {
+    "content": {
+      "title": "From direction to durable delivery",
+      "cards": [
+        {
+          "_id": "ind-finance",
+          "title": "Financial Services",
+          "description": "Strengthen trust, manage risk and deliver secure, modern experiences at scale.",
+          "ctaLabel": "Explore",
+          "ctaLink": "#"
+        },
+        {
+          "_id": "ind-health",
+          "title": "Healthcare",
+          "description": "Improve outcomes and experiences while navigating regulation and operational complexity.",
+          "ctaLabel": "Explore",
+          "ctaLink": "#"
+        },
+        {
+          "_id": "ind-retail",
+          "title": "Retail & Consumer",
+          "description": "Meet rising expectations with connected customer experiences and agile operations.",
+          "ctaLabel": "Explore",
+          "ctaLink": "#"
+        },
+        {
+          "_id": "ind-manufacturing",
+          "title": "Manufacturing",
+          "description": "Modernise operations, strengthen resilience and build a smarter, more connected future.",
+          "ctaLabel": "Explore",
+          "ctaLink": "#"
+        },
+        {
+          "_id": "ind-education",
+          "title": "Education",
+          "description": "Enable better learning and administrative experiences through smart technology.",
+          "ctaLabel": "Explore",
+          "ctaLink": "#"
+        },
+        {
+          "_id": "ind-public",
+          "title": "Public Sector",
+          "description": "Deliver better citizen services with secure, efficient and transparent digital solutions.",
+          "ctaLabel": "Explore",
+          "ctaLink": "#"
+        }
+      ]
+    },
+    "systemProps": {
+      "cards": [
+        {
+          "_id": "ind-finance",
+          "id": "ind-finance",
+          "iconName": "Landmark"
+        },
+        {
+          "_id": "ind-health",
+          "id": "ind-health",
+          "iconName": "HeartPulse"
+        },
+        {
+          "_id": "ind-retail",
+          "id": "ind-retail",
+          "iconName": "ShoppingCart"
+        },
+        {
+          "_id": "ind-manufacturing",
+          "id": "ind-manufacturing",
+          "iconName": "Factory"
+        },
+        {
+          "_id": "ind-education",
+          "id": "ind-education",
+          "iconName": "GraduationCap"
+        },
+        {
+          "_id": "ind-public",
+          "id": "ind-public",
+          "iconName": "Users"
+        }
+      ]
+    }
+  },
+  "cybersecurityHero": {
+    "content": {
+      "data": {
+        "eyebrow": "CYBERSECURITY",
+        "title": "Cybersecurity that enables confident change.",
+        "description": "Security should help your organisation move with confidence. Cordinit helps you understand your exposure, protect critical assets and build the resilience to adapt in a changing threat landscape.",
+        "cta": {
+          "label": "Discuss your security priorities",
+          "href": "/contactus"
+        },
+        "quoteOverlay": {
+          "quote": "“Security should enable progress, not stand in its way.”",
+          "author": "OUR APPROACH"
+        }
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/hero-image.webp",
+          "alt": "Cybersecurity Data Center"
+        }
+      }
+    }
+  },
+  "cybersecuritySplitContent": {
+    "content": {
+      "data": {
+        "eyebrow": "ABOUT CYBERSECURITY",
+        "title": "Turn security complexity into practical progress",
+        "paragraphs": [
+          "As digital estates expand, the attack surface grows exponentially. Organizations struggle to maintain visibility across fragmented environments, leading to accumulated technical debt and unchecked risk.",
+          "We bridge the gap between technical vulnerability and business risk, translating complex threat landscapes into actionable, prioritized roadmaps that defend what matters most."
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/InsightsSection/dummy.webp",
+          "alt": "Cybersecurity Business Risk"
+        }
+      }
+    }
+  },
+  "cardGridSection": {
+    "content": {
+      "data": {
+        "eyebrow": "OUR CYBERSECURITY CAPABILITIES",
+        "title": "From transformation strategy to everyday operations.",
+        "subtitle": "From cloud and application security to identity, data, AI and ongoing security operations, we help strengthen the capabilities that matter most.",
+        "cards": [
+          {
+            "_id": "cyb-01",
+            "code": "CYB:01",
+            "category": "CLOUD",
+            "title": "Cloud Security",
+            "description": "Stronger controls, visibility and confidence across your cloud environment.",
+            "href": "/cybersecurity/cloud-security",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "cyb-02",
+            "code": "CYB:02",
+            "category": "APPLICATION",
+            "title": "Application Security",
+            "description": "Build security into applications from design and development through to deployment.",
+            "href": "/cybersecurity/application-security",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "cyb-03",
+            "code": "CYB:03",
+            "category": "IDENTITY",
+            "title": "Identity Security",
+            "description": "Give the right people the right access while maintaining control as needs change.",
+            "href": "/cybersecurity/identity-security",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "cyb-04",
+            "code": "CYB:04",
+            "category": "DATA",
+            "title": "Data Security",
+            "description": "Protect sensitive data wherever it is created, used and stored.",
+            "href": "/cybersecurity/data-security",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "cyb-05",
+            "code": "CYB:05",
+            "category": "AI",
+            "title": "AI Security",
+            "description": "Adopt AI with practical guardrails for data, models, people and processes.",
+            "href": "/cybersecurity/ai-security",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "cyb-06",
+            "code": "CYB:06",
+            "category": "EXPOSURE",
+            "title": "Exposure Management",
+            "description": "Identify and prioritise the exposures creating the greatest business risk.",
+            "href": "/cybersecurity/exposure-management",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "cyb-07",
+            "code": "CYB:07",
+            "category": "VULNERABILITY",
+            "title": "Vulnerability Management",
+            "description": "Discover, prioritise and reduce vulnerability risk with greater consistency.",
+            "href": "/cybersecurity/vulnerability-management",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "cyb-08",
+            "code": "CYB:07",
+            "category": "OPERATIONS",
+            "title": "Managed Security",
+            "description": "Extend your security capacity with ongoing operations, governance and improvement.",
+            "href": "/cybersecurity/managed-security",
+            "ctaLabel": "Explore"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "cyb-01",
+            "id": "cyb-01"
+          },
+          {
+            "_id": "cyb-02",
+            "id": "cyb-02"
+          },
+          {
+            "_id": "cyb-03",
+            "id": "cyb-03"
+          },
+          {
+            "_id": "cyb-04",
+            "id": "cyb-04"
+          },
+          {
+            "_id": "cyb-05",
+            "id": "cyb-05"
+          },
+          {
+            "_id": "cyb-06",
+            "id": "cyb-06"
+          },
+          {
+            "_id": "cyb-07",
+            "id": "cyb-07"
+          },
+          {
+            "_id": "cyb-08",
+            "id": "cyb-08"
+          }
+        ]
+      }
+    }
+  },
+  "credentialsSection": {
+    "content": {
+      "data": {
+        "eyebrow": "OUR CREDENTIALS",
+        "title": "Cybersecurity expertise built for confident change",
+        "subtitle": "Cordinit brings together security expertise, practical experience and a risk-led approach to help organisations protect what matters most. We help strengthen security across cloud, applications, identity, data and emerging technologies.",
+        "certificationHeading": "Company certification",
+        "certifications": [
+          {
+            "_id": "crest",
+            "aspectRatio": "97/103"
+          },
+          {
+            "_id": "iso-9000",
+            "aspectRatio": "49/53"
+          },
+          {
+            "_id": "iso-27001",
+            "aspectRatio": "113/106"
+          },
+          {
+            "_id": "nis2",
+            "aspectRatio": "77/51"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "backgroundImage": {
+          "src": "/cybersecurity/credentials-bg.webp",
+          "alt": "Abstract blue background"
+        },
+        "certifications": [
+          {
+            "_id": "crest",
+            "id": "crest",
+            "src": "/cybersecurity/icons/CREST 1.svg",
+            "alt": "CREST",
+            "width": 140.609,
+            "height": 149.306
+          },
+          {
+            "_id": "iso-9000",
+            "id": "iso-9000",
+            "src": "/cybersecurity/icons/ISO_9000 1.svg",
+            "alt": "ISO 9000",
+            "width": 142.058,
+            "height": 153.655
+          },
+          {
+            "_id": "iso-27001",
+            "id": "iso-27001",
+            "src": "/cybersecurity/icons/ISO_27001 1.svg",
+            "alt": "ISO 27001",
+            "width": 163.802,
+            "height": 153.655
+          },
+          {
+            "_id": "nis2",
+            "id": "nis2",
+            "src": "/cybersecurity/icons/NIS2_Accredited 1.svg",
+            "alt": "NIS2 Accredited",
+            "width": 223.234,
+            "height": 147.856
+          }
+        ]
+      }
+    }
+  },
+  "processSection": {
+    "content": {
+      "data": {
+        "eyebrow": "OUR APPROACH",
+        "title": "A security program built for your context",
+        "subtitle": "From cloud and application security to identity, data, AI and ongoing security operations, we help strengthen the capabilities that matter most.",
+        "steps": [
+          {
+            "_id": "assess",
+            "title": "Asses & Priorities",
+            "description": "Understand your environment and identify what matters most."
+          },
+          {
+            "_id": "strengthen",
+            "title": "Strengthen",
+            "description": "Improve the security capabilities that matter to your organisation."
+          },
+          {
+            "_id": "operate",
+            "title": "Operate & Improve",
+            "description": "Provide ongoing operational support, governance and continuous improvement."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "steps": [
+          {
+            "_id": "assess",
+            "id": "assess",
+            "iconSrc": "/cybersecurity/icons/Overlay.svg"
+          },
+          {
+            "_id": "strengthen",
+            "id": "strengthen",
+            "iconSrc": "/cybersecurity/icons/Overlay (1).svg"
+          },
+          {
+            "_id": "operate",
+            "id": "operate",
+            "iconSrc": "/cybersecurity/icons/Overlay (2).svg"
+          }
+        ]
+      }
+    }
+  },
+  "splitActionCards": {
+    "content": {
+      "data": {
+        "eyebrow": "CYBERSECURITY",
+        "title": "Talk to the right security specialist.",
+        "subtitle": "Tell us where you need to strengthen security. Our specialists can help you understand the challenge, identify priorities and define the most useful next step.",
+        "cta": {
+          "label": "Start a security conversation",
+          "href": "/contactus"
+        },
+        "supportingText": "No obligation. Just a useful first conversation.",
+        "listHeader": {
+          "leftText": "SECURITY SPECIALISTS",
+          "rightText": "DIRECT ARCHITECTURE ADVISORY"
+        },
+        "cards": [
+          {
+            "_id": "specialist-1",
+            "category": "SECURITY SPECIALIST",
+            "label": "ADVISORY // 01",
+            "title": "James Harvey",
+            "description": "Security strategy, risk & resilience",
+            "metadata": "Governance • Posture • Board Risk"
+          },
+          {
+            "_id": "specialist-2",
+            "category": "SECURITY SPECIALIST",
+            "label": "ADVISORY // 02",
+            "title": "James Harvey",
+            "description": "Security strategy, risk & resilience",
+            "metadata": "Governance • Posture • Board Risk"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "specialist-1",
+            "id": "specialist-1",
+            "imageSrc": "/cybersecurity/specialist-2.webp"
+          },
+          {
+            "_id": "specialist-2",
+            "id": "specialist-2",
+            "imageSrc": "/cybersecurity/specialist-2.webp"
+          }
+        ]
+      }
+    }
+  },
+  "whyChooseSection": {
+    "content": {
+      "data": {
+        "eyebrow": "WHY CHOOSE CORDINIT",
+        "title": "Cybersecurity that creates lasting value.",
+        "cards": [
+          {
+            "_id": "card-1",
+            "title": "Meet industry and regulatory requirements",
+            "description": "We help you navigate regulatory requirements with practical, right-sized cybersecurity solutions."
+          },
+          {
+            "_id": "card-2",
+            "title": "Faster response to threats",
+            "description": "Our monitoring, detection and response capabilities help minimise potential damage and speed up recovery."
+          },
+          {
+            "_id": "card-3",
+            "title": "Stop attacks before they happen",
+            "description": "We identify vulnerabilities and proactively protect your business with advanced threat detection and real-time monitoring."
+          },
+          {
+            "_id": "card-4",
+            "title": "Certified expertise",
+            "description": "Work with experienced security professionals who bring recognised certifications and deep industry knowledge."
+          },
+          {
+            "_id": "card-5",
+            "title": "Tailored solutions",
+            "description": "We design security strategies around your specific industry, technology environment and business goals."
+          },
+          {
+            "_id": "card-6",
+            "title": "Ongoing support and partnership",
+            "description": "We work as an extension of your team, providing continuous support and guidance as your needs evolve."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "card-1",
+            "id": "card-1",
+            "image": "/cybersecurity/icons/SVG1.svg",
+            "imageAlt": "Industry requirements illustration"
+          },
+          {
+            "_id": "card-2",
+            "id": "card-2",
+            "image": "/cybersecurity/icons/SVG 2.svg",
+            "imageAlt": "Faster response illustration"
+          },
+          {
+            "_id": "card-3",
+            "id": "card-3",
+            "image": "/cybersecurity/icons/SVG 3.svg",
+            "imageAlt": "Stop attacks illustration"
+          },
+          {
+            "_id": "card-4",
+            "id": "card-4",
+            "image": "/cybersecurity/icons/SVG 4.svg",
+            "imageAlt": "Certified expertise illustration"
+          },
+          {
+            "_id": "card-5",
+            "id": "card-5",
+            "image": "/cybersecurity/icons/SVG 5.svg",
+            "imageAlt": "Tailored solutions illustration"
+          },
+          {
+            "_id": "card-6",
+            "id": "card-6",
+            "image": "/cybersecurity/icons/SVG 6.svg",
+            "imageAlt": "Ongoing support illustration"
+          }
+        ]
+      }
+    }
+  },
+  "salesforceHero": {
+    "content": {
+      "data": {
+        "eyebrow": "SALESFORCE",
+        "title": "Salesforce experience that connects your business.",
+        "description": "Create more useful, connected experiences for customers and the teams who serve them. Cordinit helps you turn Salesforce into a platform for better relationships, better decisions and measurable progress.",
+        "cta": {
+          "label": "Discuss your salesforce roadmap",
+          "href": "/contactus"
+        },
+        "quoteOverlay": {
+          "quote": "“Technology creates value when it makes every interaction more useful.”",
+          "author": "OUR APPROACH"
+        }
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/salesforce/hero-image.webp",
+          "alt": "Salesforce Dashboard across multiple screens in a conference room"
+        }
+      }
+    }
+  },
+  "salesforceSplitContent": {
+    "content": {
+      "data": {
+        "eyebrow": "ABOUT SALESFORCE",
+        "title": "Make every interaction work harder.",
+        "paragraphs": [
+          "Customers expect continuity. Teams need the context and workflows to respond well. Leaders need a clear view of performance and the confidence that their investment is creating value.",
+          "We help bring together the strategy, experience design, implementation, integration and ongoing improvement needed to make Salesforce work across the customer lifecycle."
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/salesforce/split-content.webp",
+          "alt": "Salesforce connecting Marketing, Sales, Service, Commerce, and AI to Customer Experience and Business Value"
+        }
+      }
+    }
+  },
+  "salesforceCredentials": {
+    "content": {
+      "data": {
+        "eyebrow": "OUR CREDENTIALS",
+        "title": "Salesforce expertise built for better customer experiences",
+        "subtitle": "Cordinit brings together Salesforce expertise, practical delivery and business-focused thinking to help organisations connect customers, teams and data — and get more value from their Salesforce platform.",
+        "certificationHeading": "Company certification",
+        "certifications": [
+          {
+            "_id": "crest",
+            "aspectRatio": "97/103"
+          },
+          {
+            "_id": "iso-9000",
+            "aspectRatio": "49/53"
+          },
+          {
+            "_id": "iso-27001",
+            "aspectRatio": "113/106"
+          },
+          {
+            "_id": "nis2",
+            "aspectRatio": "77/51"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "backgroundImage": {
+          "src": "/cybersecurity/credentials-bg.webp",
+          "alt": "Abstract blue background"
+        },
+        "certifications": [
+          {
+            "_id": "crest",
+            "id": "crest",
+            "src": "/cybersecurity/icons/CREST 1.svg",
+            "alt": "CREST",
+            "width": 140.609,
+            "height": 149.306
+          },
+          {
+            "_id": "iso-9000",
+            "id": "iso-9000",
+            "src": "/cybersecurity/icons/ISO_9000 1.svg",
+            "alt": "ISO 9000",
+            "width": 142.058,
+            "height": 153.655
+          },
+          {
+            "_id": "iso-27001",
+            "id": "iso-27001",
+            "src": "/cybersecurity/icons/ISO_27001 1.svg",
+            "alt": "ISO 27001",
+            "width": 163.802,
+            "height": 153.655
+          },
+          {
+            "_id": "nis2",
+            "id": "nis2",
+            "src": "/cybersecurity/icons/NIS2_Accredited 1.svg",
+            "alt": "NIS2 Accredited",
+            "width": 223.234,
+            "height": 147.856
+          }
+        ]
+      }
+    }
+  },
+  "salesforceCapabilities": {
+    "content": {
+      "data": {
+        "eyebrow": "OUR SALESFORCE CAPABILITIES",
+        "title": "From customer strategy to everyday experiences.",
+        "subtitle": "We bring together strategy, experience, implementation, integration and ongoing improvement to make Salesforce work across your business.",
+        "cards": [
+          {
+            "_id": "sfdc-01",
+            "code": "SFDC::01",
+            "category": "SALES",
+            "title": "Sales",
+            "description": "Help sellers focus on the right opportunities with clearer processes and better pipeline visibility.",
+            "href": "/salesforce/sales",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "sfdc-02",
+            "code": "SFDC::02",
+            "category": "SERVICE",
+            "title": "Service",
+            "description": "Equip service teams to resolve issues efficiently and create better customer experiences across every channel.",
+            "href": "/salesforce/service",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "sfdc-03",
+            "code": "SFDC::03",
+            "category": "MARKETING",
+            "title": "Marketing",
+            "description": "Create relevant engagement through connected data and effective customer journeys.",
+            "href": "/salesforce/marketing",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "sfdc-04",
+            "code": "SFDC::04",
+            "category": "COMMERCE",
+            "title": "Commerce",
+            "description": "Build digital commerce experiences that connect products, orders and customer relationships.",
+            "href": "/salesforce/commerce",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "sfdc-05",
+            "code": "SFDC::05",
+            "category": "AI",
+            "title": "AI",
+            "description": "Apply AI to high-value customer and employee workflows with the right data, oversight and measurement.",
+            "href": "/salesforce/ai",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "sfdc-06",
+            "code": "SFDC::06",
+            "category": "integration",
+            "title": "Integrations",
+            "description": "Connect Salesforce to the systems, processes and information your teams rely on.",
+            "href": "/salesforce/integration",
+            "ctaLabel": "Explore"
+          },
+          {
+            "_id": "sfdc-07",
+            "code": "SFDC::07",
+            "category": "managed service",
+            "title": "Managed Services",
+            "description": "Keep your platform moving after go-live through support, releases, optimisation and governance.",
+            "href": "/salesforce/managed-services",
+            "ctaLabel": "Explore"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "sfdc-01",
+            "id": "sfdc-01"
+          },
+          {
+            "_id": "sfdc-02",
+            "id": "sfdc-02"
+          },
+          {
+            "_id": "sfdc-03",
+            "id": "sfdc-03"
+          },
+          {
+            "_id": "sfdc-04",
+            "id": "sfdc-04"
+          },
+          {
+            "_id": "sfdc-05",
+            "id": "sfdc-05"
+          },
+          {
+            "_id": "sfdc-06",
+            "id": "sfdc-06"
+          },
+          {
+            "_id": "sfdc-07",
+            "id": "sfdc-07"
+          }
+        ]
+      }
+    }
+  },
+  "salesforceApproach": {
+    "content": {
+      "data": {
+        "eyebrow": "OUR APPROACH",
+        "title": "From roadmap to adoption",
+        "subtitle": "We start with the experience and outcomes you want to improve, then shape the platform, data and processes to deliver them. Our focus is on making Salesforce useful in everyday work.",
+        "steps": [
+          {
+            "_id": "assess-align",
+            "title": "Assess & Align",
+            "description": "Understand your goals, customer journeys and current Salesforce environment."
+          },
+          {
+            "_id": "build-connect",
+            "title": "Build & Connect",
+            "description": "Understand your goals, customer journeys and current Salesforce environment."
+          },
+          {
+            "_id": "adopt-improve",
+            "title": "Adopt & Improve",
+            "description": "Drive adoption, measure value and continuously improve the experience."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "steps": [
+          {
+            "_id": "assess-align",
+            "id": "assess-align",
+            "iconSrc": "/cybersecurity/icons/Overlay.svg"
+          },
+          {
+            "_id": "build-connect",
+            "id": "build-connect",
+            "iconSrc": "/cybersecurity/icons/Overlay (1).svg"
+          },
+          {
+            "_id": "adopt-improve",
+            "id": "adopt-improve",
+            "iconSrc": "/cybersecurity/icons/Overlay (2).svg"
+          }
+        ]
+      }
+    }
+  },
+  "salesforceSpecialists": {
+    "content": {
+      "data": {
+        "eyebrow": "SALESFORCE",
+        "title": "Make Salesforce work harder for your business.",
+        "subtitle": "Bring customer data, processes and teams together on Salesforce. We help you simplify complexity, improve adoption and build a platform that supports better experiences and sustainable growth.",
+        "cta": {
+          "label": "Start a salesforce conversation",
+          "href": "/contactus"
+        },
+        "supportingText": "No obligation. Just a useful first conversation.",
+        "listHeader": {
+          "leftText": "SECURITY SPECIALISTS",
+          "rightText": "DIRECT ARCHITECTURE ADVISORY"
+        },
+        "cards": [
+          {
+            "_id": "specialist-1",
+            "category": "SECURITY SPECIALIST",
+            "label": "ADVISORY // 01",
+            "title": "James Harvey",
+            "description": "Security strategy, risk & resilience",
+            "metadata": "Governance • Posture • Board Risk"
+          },
+          {
+            "_id": "specialist-2",
+            "category": "SECURITY SPECIALIST",
+            "label": "ADVISORY // 02",
+            "title": "James Harvey",
+            "description": "Security strategy, risk & resilience",
+            "metadata": "Governance • Posture • Board Risk"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "specialist-1",
+            "id": "specialist-1",
+            "imageSrc": "/cybersecurity/specialist-2.webp"
+          },
+          {
+            "_id": "specialist-2",
+            "id": "specialist-2",
+            "imageSrc": "/cybersecurity/specialist-2.webp"
+          }
+        ]
+      }
+    }
+  },
+  "salesforceWhyChoose": {
+    "content": {
+      "data": {
+        "eyebrow": "WHY CHOOSE CORDINIT",
+        "title": "Salesforce that creates lasting value.",
+        "cards": [
+          {
+            "_id": "card-1",
+            "title": "Meet industry and regulatory requirements",
+            "description": "We help you navigate regulatory requirements with practical, right-sized Salesforce solutions."
+          },
+          {
+            "_id": "card-2",
+            "title": "Faster response to market changes",
+            "description": "Our implementation and response capabilities help minimise disruption and speed up adoption."
+          },
+          {
+            "_id": "card-3",
+            "title": "Connect data before problems happen",
+            "description": "We identify silos and proactively protect your business with advanced workflows and real-time monitoring."
+          },
+          {
+            "_id": "card-4",
+            "title": "Certified expertise",
+            "description": "Work with experienced Salesforce professionals who bring recognised certifications and deep industry knowledge."
+          },
+          {
+            "_id": "card-5",
+            "title": "Tailored solutions",
+            "description": "We design Salesforce strategies around your specific industry, technology environment and business goals."
+          },
+          {
+            "_id": "card-6",
+            "title": "Ongoing support and partnership",
+            "description": "We work as an extension of your team, providing continuous support and guidance as your needs evolve."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "card-1",
+            "id": "card-1",
+            "image": "/cybersecurity/icons/SVG1.svg",
+            "imageAlt": "Industry requirements illustration"
+          },
+          {
+            "_id": "card-2",
+            "id": "card-2",
+            "image": "/cybersecurity/icons/SVG 2.svg",
+            "imageAlt": "Faster response illustration"
+          },
+          {
+            "_id": "card-3",
+            "id": "card-3",
+            "image": "/cybersecurity/icons/SVG 3.svg",
+            "imageAlt": "Stop attacks illustration"
+          },
+          {
+            "_id": "card-4",
+            "id": "card-4",
+            "image": "/cybersecurity/icons/SVG 4.svg",
+            "imageAlt": "Certified expertise illustration"
+          },
+          {
+            "_id": "card-5",
+            "id": "card-5",
+            "image": "/cybersecurity/icons/SVG 5.svg",
+            "imageAlt": "Tailored solutions illustration"
+          },
+          {
+            "_id": "card-6",
+            "id": "card-6",
+            "image": "/cybersecurity/icons/SVG 6.svg",
+            "imageAlt": "Ongoing support illustration"
+          }
+        ]
+      }
+    }
+  },
+  "aiAutomationHero": {
+    "content": {
+      "data": {
+        "eyebrow": "AI & AUTOMATION",
+        "title": "AI and automation with clear purpose",
+        "description": "Make AI and automation useful where it matters most. Cordinit helps you identify the right opportunities, build them into real workflows and apply the governance needed to scale with confidence.",
+        "cta": {
+          "label": "Explore your AI opportunity",
+          "href": "/contactus"
+        },
+        "quoteOverlay": {
+          "quote": "“AI create value when it improves the way people work.”",
+          "author": "OUR APPROACH"
+        }
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/ai-automation/hero.webp",
+          "alt": "AI and Automation Data Center"
+        }
+      }
+    }
+  },
+  "aiAutomationSplitContent": {
+    "content": {
+      "data": {
+        "eyebrow": "ABOUT AI & AUTOMATION",
+        "title": "Move beyond experimentation",
+        "paragraphs": [
+          "The question is not whether AI can do something. It is whether it can improve a meaningful outcome — for your customers, colleagues or operations — in a way that is responsible, reliable and ready to use.",
+          "We help you focus on the opportunities worth pursuing, from practical automation of everyday work to AI-enabled experiences and decision support."
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/ai-automation/ai-business-value-diagram.webp",
+          "alt": "AI Business Value Diagram"
+        }
+      }
+    }
+  },
+  "aiAutomationCredentials": {
+    "content": {
+      "data": {
+        "eyebrow": "OUR CREDENTIALS",
+        "title": "AI and automation built for smarter, faster progress",
+        "subtitle": "Cordinit combines AI, automation and practical delivery expertise to help organisations simplify work, improve decisions and create more efficient ways of operating.",
+        "certificationHeading": "Company certification",
+        "certifications": [
+          {
+            "_id": "crest",
+            "aspectRatio": "97/103"
+          },
+          {
+            "_id": "iso-9000",
+            "aspectRatio": "49/53"
+          },
+          {
+            "_id": "iso-27001",
+            "aspectRatio": "113/106"
+          },
+          {
+            "_id": "nis2",
+            "aspectRatio": "77/51"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "backgroundImage": {
+          "src": "/cybersecurity/credentials-bg.webp",
+          "alt": "Abstract blue background"
+        },
+        "certifications": [
+          {
+            "_id": "crest",
+            "id": "crest",
+            "src": "/cybersecurity/icons/CREST 1.svg",
+            "alt": "CREST",
+            "width": 140.609,
+            "height": 149.306
+          },
+          {
+            "_id": "iso-9000",
+            "id": "iso-9000",
+            "src": "/cybersecurity/icons/ISO_9000 1.svg",
+            "alt": "ISO 9000",
+            "width": 142.058,
+            "height": 153.655
+          },
+          {
+            "_id": "iso-27001",
+            "id": "iso-27001",
+            "src": "/cybersecurity/icons/ISO_27001 1.svg",
+            "alt": "ISO 27001",
+            "width": 163.802,
+            "height": 153.655
+          },
+          {
+            "_id": "nis2",
+            "id": "nis2",
+            "src": "/cybersecurity/icons/NIS2_Accredited 1.svg",
+            "alt": "NIS2 Accredited",
+            "width": 223.234,
+            "height": 147.856
+          }
+        ]
+      }
+    }
+  },
+  "aiAutomationApproach": {
+    "content": {
+      "data": {
+        "eyebrow": "OUR APPROACH",
+        "title": "A practical way forward",
+        "subtitle": "Start with the process, customer moment or decision you want to improve. We will help turn it into a focused, testable path to value.",
+        "steps": [
+          {
+            "_id": "identify",
+            "title": "Identify",
+            "description": "Find the process, customer moment or decision worth improving."
+          },
+          {
+            "_id": "test-build",
+            "title": "Test & Build",
+            "description": "Turn the opportunity into a focused, useful solution."
+          },
+          {
+            "_id": "scale-improve",
+            "title": "Scale & Improve",
+            "description": "Measure outcomes, strengthen governance and continuously improve."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "steps": [
+          {
+            "_id": "identify",
+            "id": "identify",
+            "iconSrc": "/cybersecurity/icons/Overlay.svg"
+          },
+          {
+            "_id": "test-build",
+            "id": "test-build",
+            "iconSrc": "/cybersecurity/icons/Overlay (1).svg"
+          },
+          {
+            "_id": "scale-improve",
+            "id": "scale-improve",
+            "iconSrc": "/cybersecurity/icons/Overlay (2).svg"
+          }
+        ]
+      }
+    }
+  },
+  "aiAutomationSpecialists": {
+    "content": {
+      "data": {
+        "eyebrow": "AI & AUTOMATION",
+        "title": "Direct AI & Automation Advisory",
+        "subtitle": "Bring AI and automation into your everyday operations. We help you identify practical opportunities, streamline repetitive work and build intelligent solutions that create measurable business value.",
+        "cta": {
+          "label": "Start a AI conversation",
+          "href": "/contactus"
+        },
+        "supportingText": "No obligation. Just a useful first conversation.",
+        "listHeader": {
+          "leftText": "SECURITY SPECIALISTS",
+          "rightText": "DIRECT ARCHITECTURE ADVISORY"
+        },
+        "cards": [
+          {
+            "_id": "specialist-1",
+            "category": "SECURITY SPECIALIST",
+            "label": "ADVISORY // 01",
+            "title": "James Harvey",
+            "description": "Security strategy, risk & resilience",
+            "metadata": "Governance • Posture • Board Risk"
+          },
+          {
+            "_id": "specialist-2",
+            "category": "SECURITY SPECIALIST",
+            "label": "ADVISORY // 02",
+            "title": "James Harvey",
+            "description": "Security strategy, risk & resilience",
+            "metadata": "Governance • Posture • Board Risk"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "specialist-1",
+            "id": "specialist-1",
+            "imageSrc": "/cybersecurity/specialist-2.webp"
+          },
+          {
+            "_id": "specialist-2",
+            "id": "specialist-2",
+            "imageSrc": "/cybersecurity/specialist-2.webp"
+          }
+        ]
+      }
+    }
+  },
+  "aiAutomationWhyChoose": {
+    "content": {
+      "data": {
+        "eyebrow": "WHY CHOOSE CORDINIT",
+        "title": "Salesforce solutions that create lasting value.",
+        "cards": [
+          {
+            "_id": "card-1",
+            "title": "Meet industry and regulatory requirements",
+            "description": "We help you navigate regulatory requirements with practical, right-sized cybersecurity solutions."
+          },
+          {
+            "_id": "card-2",
+            "title": "Faster response to threats",
+            "description": "Our monitoring, detection and response capabilities help minimise potential damage and speed up recovery."
+          },
+          {
+            "_id": "card-3",
+            "title": "Stop attacks before they happen",
+            "description": "We identify vulnerabilities and proactively protect your business with advanced threat detection and real-time monitoring."
+          },
+          {
+            "_id": "card-4",
+            "title": "Certified expertise",
+            "description": "Work with experienced security professionals who bring recognised certifications and deep industry knowledge."
+          },
+          {
+            "_id": "card-5",
+            "title": "Tailored solutions",
+            "description": "We design security strategies around your specific industry, technology environment and business goals."
+          },
+          {
+            "_id": "card-6",
+            "title": "Ongoing support and partnership",
+            "description": "We work as an extension of your team, providing continuous support and guidance as your needs evolve."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "card-1",
+            "id": "card-1",
+            "image": "/cybersecurity/icons/SVG1.svg",
+            "imageAlt": "Industry requirements illustration"
+          },
+          {
+            "_id": "card-2",
+            "id": "card-2",
+            "image": "/cybersecurity/icons/SVG 2.svg",
+            "imageAlt": "Faster response illustration"
+          },
+          {
+            "_id": "card-3",
+            "id": "card-3",
+            "image": "/cybersecurity/icons/SVG 3.svg",
+            "imageAlt": "Stop attacks illustration"
+          },
+          {
+            "_id": "card-4",
+            "id": "card-4",
+            "image": "/cybersecurity/icons/SVG 4.svg",
+            "imageAlt": "Certified expertise illustration"
+          },
+          {
+            "_id": "card-5",
+            "id": "card-5",
+            "image": "/cybersecurity/icons/SVG 5.svg",
+            "imageAlt": "Tailored solutions illustration"
+          },
+          {
+            "_id": "card-6",
+            "id": "card-6",
+            "image": "/cybersecurity/icons/SVG 6.svg",
+            "imageAlt": "Ongoing support illustration"
+          }
+        ]
+      }
+    }
+  },
+  "aiAutomationWhereWeHelp": {
+    "content": {
+      "data": {
+        "eyebrow": "WHERE WE HELP",
+        "title": "From AI opportunity to everyday value.",
+        "subtitle": "We help turn promising ideas into useful, responsible solutions that work within the way your organisation operates.",
+        "cards": [
+          {
+            "_id": "i0",
+            "number": "01",
+            "code": "AI:01",
+            "category": "OPPORTUNITY",
+            "title": "Find the opportunities with real value",
+            "description": "Prioritise use cases against business value, feasibility, risk and readiness."
+          },
+          {
+            "_id": "i1",
+            "number": "02",
+            "code": "AI:02",
+            "category": "WORKFLOWS",
+            "title": "Build into the flow of work",
+            "description": "Design, develop and integrate AI and automation around how people actually work."
+          },
+          {
+            "_id": "i2",
+            "number": "03",
+            "code": "AI:03",
+            "category": "SCALE",
+            "title": "Create the condition to scale",
+            "description": "Address data, integration, security, governance and oversight from the start."
+          },
+          {
+            "_id": "i3",
+            "number": "04",
+            "code": "AI:04",
+            "category": "IMPROVEMENT",
+            "title": "Keep learning and improving",
+            "description": "Monitor outcomes, refine workflows and build the operating model for sustainable adoption."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "i0",
+            "icon": "/ai-automation/icons/Icon.svg"
+          },
+          {
+            "_id": "i1",
+            "icon": "/ai-automation/icons/Icon (1).svg"
+          },
+          {
+            "_id": "i2",
+            "icon": "/ai-automation/icons/Icon (2).svg"
+          },
+          {
+            "_id": "i3",
+            "icon": "/ai-automation/icons/Icon (3).svg"
+          }
+        ]
+      }
+    }
+  },
+  "solutionsHero": {
+    "content": {
+      "eyebrow": "SOLUTIONS",
+      "titleDesktop": "Solutions for progress that lasts",
+      "titleMobile": "Solutions for progress that lasts",
+      "body": "From securing the foundations of your business to creating better customer experiences and running critical platforms with confidence, Cordinit brings the expertise to move complex technology initiatives forward.",
+      "ctaLabel": "Book a call"
+    },
+    "systemProps": {
+      "imageSrc": "/solutions/enterprise-technology.webp",
+      "imageAlt": "Enterprise Technology Solutions"
+    }
+  },
+  "solutionsCapabilities": {
+    "content": {
+      "title": "Find the capability you need",
+      "capabilities": [
+        {
+          "_id": "i0",
+          "title": "Cybersecurity",
+          "description": "Comprehensive security solutions to protect your digital assets, identify risks, and build resilience.",
+          "href": "/cybersecurity"
+        },
+        {
+          "_id": "i1",
+          "title": "Salesforce Solutions",
+          "description": "Transform customer experiences and unlock growth with the power of Salesforce.",
+          "href": "/salesforce"
+        },
+        {
+          "_id": "i2",
+          "title": "AI & Automation",
+          "description": "Leverage AI and automation to optimize operations and make smarter, faster decisions.",
+          "href": "/ai-automation"
+        },
+        {
+          "_id": "i3",
+          "title": "Application Engineering",
+          "description": "Design, build, and modernize applications that drive business agility and innovation.",
+          "href": "/application-engineering"
+        },
+        {
+          "_id": "i4",
+          "title": "Cloud & Infrastructure",
+          "description": "Build secure, scalable, and high-performing cloud infrastructures.",
+          "href": "/cloud-infrastructure"
+        },
+        {
+          "_id": "i5",
+          "title": "Managed Services",
+          "description": "Design, build, and modernize applications that drive business agility and innovation.",
+          "href": "/managed-services"
+        },
+        {
+          "_id": "i6",
+          "title": "Data & Integration",
+          "description": "Unify your data and systems to drive insights and power better outcomes.",
+          "href": "/data-integration"
+        }
+      ]
+    },
+    "systemProps": {
+      "capabilities": [
+        {
+          "_id": "i0",
+          "iconPath": "/solutions/cybersecurity.svg",
+          "theme": "blue"
+        },
+        {
+          "_id": "i1",
+          "iconPath": "/solutions/salesforce.svg",
+          "theme": "black"
+        },
+        {
+          "_id": "i2",
+          "iconPath": "/solutions/ai-automation.svg",
+          "theme": "blue"
+        },
+        {
+          "_id": "i3",
+          "iconPath": "/solutions/application-engineering.svg",
+          "theme": "black"
+        },
+        {
+          "_id": "i4",
+          "iconPath": "/solutions/cloud-infrastructure.svg",
+          "theme": "blue"
+        },
+        {
+          "_id": "i5",
+          "iconPath": "/solutions/managed-services.svg",
+          "theme": "black"
+        },
+        {
+          "_id": "i6",
+          "iconPath": "/solutions/data-integration.svg",
+          "theme": "blue"
+        }
+      ]
+    }
+  },
+  "solutionsDelivery": {
+    "content": {
+      "data": {
+        "heading": "One challenge. The right combination of expertise.",
+        "paragraphs": [
+          "Your priorities rarely sit in one technology category. A customer-experience programme may need Salesforce, integration, data and application engineering. A cloud modernisation may need security, platform expertise and managed support from day one.",
+          "We bring the disciplines together around the outcome — with a delivery approach that stays focused and grows as the opportunity develops."
+        ],
+        "bottomLeftText": "Secure what matters",
+        "bottomRightText": "Modernise with confidence",
+        "stats": [
+          {
+            "_id": "i0",
+            "value": "98%",
+            "label": "Client satisfaction"
+          },
+          {
+            "_id": "i1",
+            "value": "25+",
+            "label": "Industries served"
+          },
+          {
+            "_id": "i2",
+            "value": "10+",
+            "label": "Years of experience"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "mainImage": "/solutions/our-vision.webp",
+        "mainImageEyebrow": "OUR VISION",
+        "mainImageTitle": "Upscale your technology.",
+        "mainImageDesc": "Unlock potential. Accelerate growth. Lead what's next.",
+        "bottomLeftImage": "/solutions/secure.webp",
+        "bottomRightImage": "/solutions/Modernise.webp",
+        "stats": [
+          {
+            "_id": "i0",
+            "iconPath": "/solutions/bi_shield-fill-check (1).svg"
+          },
+          {
+            "_id": "i1",
+            "iconPath": "/solutions/fluent_people-community-32-filled (1).svg"
+          },
+          {
+            "_id": "i2",
+            "iconPath": "/solutions/boxicons_rocket-filled (1).svg"
+          }
+        ]
+      }
+    }
+  },
+  "solutionsCombination": {
+    "content": {
+      "data": {
+        "heading": "From direction to durable delivery",
+        "cards": [
+          {
+            "_id": "i0",
+            "number": "01",
+            "title": "Clarify",
+            "description": "What success looks like and where to focus first."
+          },
+          {
+            "_id": "i1",
+            "number": "02",
+            "title": "Deliver",
+            "description": "The capabilities, integrations and experiences that create progress."
+          },
+          {
+            "_id": "i2",
+            "number": "03",
+            "title": "Embed and improve",
+            "description": "Through adoption, governance and managed support."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "i0",
+            "iconPath": "/solutions/ant-design_search-outlined (1).svg"
+          },
+          {
+            "_id": "i1",
+            "iconPath": "/solutions/akar-icons_shipping-box-01 (1).svg"
+          },
+          {
+            "_id": "i2",
+            "iconPath": "/solutions/streamline_graph-bar-increase (1).svg"
+          }
+        ]
+      }
+    }
+  },
+  "cloudInfrastructureHero": {
+    "content": {
+      "data": {
+        "eyebrow": "CLOUD INFRASTRUCTURE",
+        "title": "Cloud and infrastructure built for change",
+        "description": "Create a cloud foundation that helps you move faster without losing sight of security, resilience and cost.\nCordinit helps you modernise with a clear path from strategy to everyday operation.",
+        "cta": {
+          "label": "Discuss your cloud priorities",
+          "href": "/contactus"
+        }
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/Image-v2.webp",
+          "alt": "Cloud Infrastructure"
+        }
+      }
+    }
+  },
+  "pageHero": {
+    "content": {
+      "data": {
+        "eyebrow": "APPLICATION ENGINEERING",
+        "title": "Applications built around people and progress",
+        "description": "Create digital products and applications that are useful for the people who rely on them, robust for the teams who run them and ready to evolve as needs change.",
+        "cta": {
+          "label": "Discuss your application challenge",
+          "href": "/contactus"
+        }
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/Image-v2.webp",
+          "alt": "Server racks"
+        }
+      }
+    }
+  },
+  "splitContent": {
+    "content": {
+      "data": {
+        "eyebrow": "ABOUT CLOUD INFRASTRUCTURE",
+        "title": "Make the cloud a platform for progress",
+        "paragraphs": [
+          "Cloud transformation is more than moving workloads. It is an opportunity to improve how technology is designed, delivered, secured and managed while making sure the foundations are ready for what comes next.",
+          "We help you make deliberate choices about architecture, platforms, operations and governance so that cloud investment supports real business change."
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/ai-automation/ai-business-value-diagram.webp",
+          "alt": "Cloud Infrastructure Business Value Diagram"
+        }
+      }
+    }
+  },
+  "whyChoose": {
+    "content": {
+      "data": {
+        "eyebrow": "WHY CHOOSE CORDINIT",
+        "title": "Cybersecurity that creates lasting value.",
+        "cards": [
+          {
+            "_id": "card-1",
+            "title": "Meet industry and regulatory requirements",
+            "description": "We help you navigate regulatory requirements with practical, right-sized cybersecurity solutions."
+          },
+          {
+            "_id": "card-2",
+            "title": "Faster response to threats",
+            "description": "Our monitoring, detection and response capabilities help minimise potential damage and speed up recovery."
+          },
+          {
+            "_id": "card-3",
+            "title": "Stop attacks before they happen",
+            "description": "We identify vulnerabilities and proactively protect your business with advanced threat detection and real-time monitoring."
+          },
+          {
+            "_id": "card-4",
+            "title": "Certified expertise",
+            "description": "Work with experienced security professionals who bring recognised certifications and deep industry knowledge."
+          },
+          {
+            "_id": "card-5",
+            "title": "Tailored solutions",
+            "description": "We design security strategies around your specific industry, technology environment and business goals."
+          },
+          {
+            "_id": "card-6",
+            "title": "Ongoing support and partnership",
+            "description": "We work as an extension of your team, providing continuous support and guidance as your needs evolve."
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "card-1",
+            "id": "card-1",
+            "image": "/cybersecurity/icons/SVG1.svg",
+            "imageAlt": "Industry requirements illustration"
+          },
+          {
+            "_id": "card-2",
+            "id": "card-2",
+            "image": "/cybersecurity/icons/SVG 2.svg",
+            "imageAlt": "Faster response illustration"
+          },
+          {
+            "_id": "card-3",
+            "id": "card-3",
+            "image": "/cybersecurity/icons/SVG 3.svg",
+            "imageAlt": "Stop attacks illustration"
+          },
+          {
+            "_id": "card-4",
+            "id": "card-4",
+            "image": "/cybersecurity/icons/SVG 4.svg",
+            "imageAlt": "Certified expertise illustration"
+          },
+          {
+            "_id": "card-5",
+            "id": "card-5",
+            "image": "/cybersecurity/icons/SVG 5.svg",
+            "imageAlt": "Tailored solutions illustration"
+          },
+          {
+            "_id": "card-6",
+            "id": "card-6",
+            "image": "/cybersecurity/icons/SVG 6.svg",
+            "imageAlt": "Ongoing support illustration"
+          }
+        ]
+      }
+    }
+  },
+  "breadcrumb": {
+    "content": {
+      "items": [
+        {
+          "_id": "i0",
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "_id": "i1",
+          "label": "Cybersecurity",
+          "href": "/cybersecurity"
+        },
+        {
+          "_id": "i2",
+          "label": "Data Security"
+        }
+      ]
+    },
+    "systemProps": {
+      "items": [
+        {
+          "_id": "i0"
+        },
+        {
+          "_id": "i1"
+        },
+        {
+          "_id": "i2",
+          "isCurrent": true
+        }
+      ]
+    }
+  },
+  "splitContentSection": {
+    "content": {
+      "data": {
+        "eyebrow": "ABOUT DATA INTEGRATION",
+        "title": "Make information work across the business",
+        "paragraphs": [
+          "Organisations rarely lack data. The challenge is making it trustworthy, accessible and connected to the moments where it can improve a decision, experience or process.",
+          "We help bring together data strategy, integration architecture, delivery and governance so that your technology ecosystem works as a whole."
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "image": {
+          "src": "/ai-automation/ai-business-value-diagram.webp",
+          "alt": "Data Integration Business Value Diagram"
+        }
+      }
+    }
+  },
+  "dataSecurityOverview": {
+    "content": {
+      "data": {
+        "header": {
+          "eyebrow": "DATA SECURITY OVERVIEW",
+          "title": "Protect data from discovery to everyday use.",
+          "description": "Effective data security starts with knowing what information you have, where it resides and how it is being used. We bring discovery, classification, access controls, protection and governance together to help keep sensitive information secure wherever it moves."
+        },
+        "cardSection": {
+          "sectionTag": "SECURE APPS FASTER",
+          "sectionTitle": "APPLICATION LIFECYCLE SECURITY",
+          "footerText": "FROM CLOUD TO ENDPOINT, PROTECT DATA AT REST, IN TRANSIT AND IN USE.",
+          "footerHighlight": "SECURITY BUILT IN // BY DESIGN",
+          "cards": [
+            {
+              "_id": "i0",
+              "stepNumber": "01",
+              "title": "Discover",
+              "description": "Understand users, identities, applications and access across hybrid estates."
+            },
+            {
+              "_id": "i1",
+              "stepNumber": "02",
+              "title": "Classify",
+              "description": "Strengthen how users and systems prove who they are with phishing- resistant MFA."
+            },
+            {
+              "_id": "i2",
+              "stepNumber": "03",
+              "title": "Protect",
+              "description": "Give the right level of access based on role, real-time context and dynamic risk."
+            },
+            {
+              "_id": "i3",
+              "stepNumber": "04",
+              "title": "Monitor",
+              "description": "Review, monitor and manage access throughout its complete operational lifecycle."
+            },
+            {
+              "_id": "i4",
+              "stepNumber": "05",
+              "title": "Govern",
+              "description": "Continuously reduce unnecessary privilege and strengthen posture over time."
+            }
+          ]
+        }
+      }
+    },
+    "systemProps": {}
+  },
+  "dataDiscovery": {
+    "content": {
+      "data": {
+        "leftSection": {
+          "eyebrow": "DATA DISCOVERY",
+          "title": "Know where your sensitive data lives.",
+          "description": "Gain a clearer view of sensitive information across cloud platforms, applications, databases and other environments. Identify critical data stores, understand exposure and establish the visibility needed to make better security decisions.",
+          "features": [
+            {
+              "_id": "i0",
+              "text": "Automated discovery across multi-cloud, SaaS, and on-premises stores"
+            },
+            {
+              "_id": "i1",
+              "text": "Real-time classification of PII, IP, financial, and regulated records"
+            },
+            {
+              "_id": "i2",
+              "text": "Continuous posture alignment with GDPR, HIPAA, SOC 2, and ISO 27001"
+            }
+          ]
+        },
+        "rightSection": {
+          "eyebrow": "DATA LANDSCAPE TOPOLOGY",
+          "statusText": "STATUS: SYNCED",
+          "cards": [
+            {
+              "_id": "i0",
+              "title": "CLOUD REPOSITORIES",
+              "description": "Cloud storage, S3 buckets, Azure Blobs & multi-cloud platforms"
+            },
+            {
+              "_id": "i1",
+              "title": "APPLICATIONS & SAAS",
+              "description": "Salesforce, Workday, ERP, CRM & internal microservices"
+            },
+            {
+              "_id": "i2",
+              "title": "DATABASES & PIPELINES",
+              "description": "Structured SQL, NoSQL clusters, Snowflake & analytical lakes"
+            },
+            {
+              "_id": "i3",
+              "title": "USER ENDPOINTS",
+              "description": "Corporate laptops, BYOD devices & secure virtual desktop nodes"
+            },
+            {
+              "_id": "i4",
+              "title": "SHARED WORKSPACES",
+              "description": "Slack, Microsoft Teams, SharePoint & shared cloud drives"
+            }
+          ]
+        }
+      }
+    },
+    "systemProps": {
+      "data": {
+        "rightSection": {
+          "cards": [
+            {
+              "_id": "i0",
+              "icon": "Cloud"
+            },
+            {
+              "_id": "i1",
+              "icon": "LayoutGrid"
+            },
+            {
+              "_id": "i2",
+              "icon": "Database"
+            },
+            {
+              "_id": "i3",
+              "icon": "MonitorSmartphone"
+            },
+            {
+              "_id": "i4",
+              "icon": "Share2"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "authenticationGovernance": {
+    "content": {
+      "data": {
+        "header": {
+          "eyebrow": "AUTHENTICATION & GOVERNANCE",
+          "title": "Build confidence into every access decision.",
+          "description": "Bring stronger authentication, access policies and governance together to create secure experiences without adding unnecessary friction for users."
+        },
+        "cards": [
+          {
+            "_id": "i0",
+            "numberStr": "01",
+            "title": "Data Monitoring",
+            "description": "Identify unusual access, exfiltration patterns, and potential exposure across hybrid environments. Stream DLP telemetry into enterprise SIEM platforms for rapid triage.",
+            "pills": [
+              "Threat Modeling",
+              "Security Champions",
+              "Policy as Code"
+            ]
+          },
+          {
+            "_id": "i1",
+            "numberStr": "02",
+            "title": "Access Controls",
+            "description": "Strengthen permissions and reduce unnecessary data access with dynamic policy enforcement. Implement fine-grained attribute based constraints mapped to organizational hierarchy.",
+            "pills": [
+              "Vector Store DLP",
+              "PII Masking",
+              "Synthetic Data"
+            ]
+          },
+          {
+            "_id": "i2",
+            "numberStr": "03",
+            "title": "Data Protection",
+            "description": "Apply appropriate safeguards including tokenization, field-level encryption, format-preserving encryption, and hardware-backed secure key management integration.",
+            "pills": [
+              "Red Teaming",
+              "KMS Integration",
+              "Hardware HSM"
+            ]
+          },
+          {
+            "_id": "i3",
+            "numberStr": "04",
+            "title": "Governance",
+            "description": "Establish clear data custodianship, lineage tracking, automated compliance auditing, and executive risk metrics to satisfy regulatory mandates with speed.",
+            "pills": [
+              "Lineage Mapping",
+              "Compliance Audits",
+              "Risk Scorecards"
+            ]
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "i0",
+            "iconName": "Activity"
+          },
+          {
+            "_id": "i1",
+            "iconName": "Lock"
+          },
+          {
+            "_id": "i2",
+            "iconName": "ShieldCheck"
+          },
+          {
+            "_id": "i3",
+            "iconName": "Scale"
+          }
+        ]
+      }
+    }
+  },
+  "lifecycleManagement": {
+    "content": {
+      "data": {
+        "header": {
+          "eyebrow": "AUTHENTICATION & GOVERNANCE",
+          "title": "Build confidence into every access decision.",
+          "description": "Bring stronger authentication, access policies and governance together to create secure experiences without adding unnecessary friction for users."
+        },
+        "cards": [
+          {
+            "_id": "i0",
+            "numberStr": "01",
+            "title": "Data Monitoring",
+            "description": "Identify unusual access, exfiltration patterns, and potential exposure across hybrid environments. Stream DLP telemetry into enterprise SIEM platforms for rapid triage.",
+            "pills": [
+              "Threat Modeling",
+              "Security Champions",
+              "Policy as Code"
+            ]
+          },
+          {
+            "_id": "i1",
+            "numberStr": "02",
+            "title": "Access Controls",
+            "description": "Strengthen permissions and reduce unnecessary data access with dynamic policy enforcement. Implement fine-grained attribute based constraints mapped to organizational hierarchy.",
+            "pills": [
+              "Vector Store DLP",
+              "PII Masking",
+              "Synthetic Data"
+            ]
+          },
+          {
+            "_id": "i2",
+            "numberStr": "03",
+            "title": "Data Protection",
+            "description": "Apply appropriate safeguards including tokenization, field-level encryption, format-preserving encryption, and hardware-backed secure key management integration.",
+            "pills": [
+              "Red Teaming",
+              "KMS Integration",
+              "Hardware HSM"
+            ]
+          },
+          {
+            "_id": "i3",
+            "numberStr": "04",
+            "title": "Governance",
+            "description": "Establish clear data custodianship, lineage tracking, automated compliance auditing, and executive risk metrics to satisfy regulatory mandates with speed.",
+            "pills": [
+              "Lineage Mapping",
+              "Compliance Audits",
+              "Risk Scorecards"
+            ]
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "data": {
+        "cards": [
+          {
+            "_id": "i0",
+            "iconName": "Activity"
+          },
+          {
+            "_id": "i1",
+            "iconName": "Lock"
+          },
+          {
+            "_id": "i2",
+            "iconName": "ShieldCheck"
+          },
+          {
+            "_id": "i3",
+            "iconName": "Scale"
+          }
+        ]
+      }
+    }
+  },
+  "secureDataOperations": {
+    "content": {
+      "data": {
+        "header": {
+          "eyebrow": "SECURE DATA OPERATIONS",
+          "title": "From data visibility to continuous protection.",
+          "description": "We help turn data security priorities into practical controls that work across your technology environment and everyday business processes."
+        },
+        "cards": [
+          {
+            "_id": "i0",
+            "numberStr": "01",
+            "phaseLabel": "PHASE 1",
+            "title": "DISCOVER",
+            "description": "Understand your current attack surface, assets, and exposure points across hybrid environments.",
+            "footerText": "Attack Surface Inventory & Baseline"
+          },
+          {
+            "_id": "i1",
+            "numberStr": "02",
+            "phaseLabel": "PHASE 2",
+            "title": "ASSESS",
+            "description": "Apply risk and business context to identify what matters most and filter out low-value alerts.",
+            "footerText": "Contextual Risk Scoring Engine"
+          },
+          {
+            "_id": "i2",
+            "numberStr": "03",
+            "phaseLabel": "PHASE 3",
+            "title": "PROTECT",
+            "description": "Coordinate focused remediation across the teams responsible for affected crown-jewel assets.",
+            "footerText": "Orchestrated Remediation Playbooks"
+          },
+          {
+            "_id": "i3",
+            "numberStr": "04",
+            "phaseLabel": "PHASE 4",
+            "title": "MONITOR & IMPROVE",
+            "description": "Track progress, report changes and continuously improve your long-term exposure defensibility.",
+            "footerText": "Continuous Telemetry & Posture Audits"
+          }
+        ]
+      }
+    },
+    "systemProps": {}
+  },
+  "journeyStepsBlock": {
+    "content": {
+      "header": {
+        "eyebrow": "OUR CAPABILITIES",
+        "title": "From customer strategy to everyday experiences.",
+        "description": "We bring together strategy, experience, implementation, integration and ongoing improvement to make Salesforce work across your business."
+      },
+      "cards": [
+        {
+          "_id": "lead",
+          "numberStr": "01",
+          "title": "LEAD",
+          "description": "A potential customer shows interest.",
+          "footerText": "STEP 01 // STARTING POINT"
+        },
+        {
+          "_id": "opportunity",
+          "numberStr": "02",
+          "title": "OPPORTUNITY",
+          "description": "A qualified lead becomes a real sales possibility.",
+          "footerText": "STEP 02 // QUALIFIED DEAL"
+        },
+        {
+          "_id": "pipeline",
+          "numberStr": "03",
+          "title": "PIPELINE",
+          "description": "Active opportunities are organised and tracked.",
+          "footerText": "STEP 03 // ACTIVE VELOCITY"
+        },
+        {
+          "_id": "forecast",
+          "numberStr": "04",
+          "title": "FORECAST",
+          "description": "The team gets a clearer view of what may come next.",
+          "footerText": "STEP 04 // PREDICTABILITY"
+        },
+        {
+          "_id": "growth",
+          "numberStr": "05",
+          "title": "GROWTH",
+          "description": "Better visibility helps teams make better decisions.",
+          "footerText": "OUTCOME // COMPOUNDING"
+        }
+      ]
+    },
+    "systemProps": {
+      "cards": [
+        {
+          "_id": "lead",
+          "id": "lead"
+        },
+        {
+          "_id": "opportunity",
+          "id": "opportunity"
+        },
+        {
+          "_id": "pipeline",
+          "id": "pipeline"
+        },
+        {
+          "_id": "forecast",
+          "id": "forecast"
+        },
+        {
+          "_id": "growth",
+          "id": "growth"
+        }
+      ]
+    }
+  },
+  "leadQualificationBlock": {
+    "content": {
+      "header": {
+        "eyebrow": "LEAD",
+        "title": "Start with the right prospects.",
+        "description": "A lead is a person or company that could become a customer. Salesforce helps teams capture and organize potential customers so they can understand who to follow up with and where to focus.",
+        "highlightPrefix": "The goal is simple:",
+        "highlightText": "help your team spend time on the prospects that matter."
+      },
+      "flow": {
+        "eyebrowLeft": "LEAD QUALIFICATION FLOW",
+        "eyebrowRight": "3 SIMPLE STEPS",
+        "steps": [
+          {
+            "_id": "capture",
+            "numberStr": "01",
+            "title": "CAPTURE",
+            "description": "Collect information"
+          },
+          {
+            "_id": "qualify",
+            "numberStr": "02",
+            "title": "QUALIFY",
+            "description": "Understand the potential"
+          },
+          {
+            "_id": "focus",
+            "numberStr": "03",
+            "title": "FOCUS",
+            "description": "Know who to follow up with"
+          }
+        ]
+      }
+    },
+    "systemProps": {
+      "flow": {
+        "steps": [
+          {
+            "_id": "capture",
+            "id": "capture"
+          },
+          {
+            "_id": "qualify",
+            "id": "qualify"
+          },
+          {
+            "_id": "focus",
+            "id": "focus"
+          }
+        ]
+      }
+    }
+  },
+  "newsletter": {
+    "content": {
+      "title": "Keep the conversation going.",
+      "description": "Receive occasional perspectives on the technology topics that matter to you.",
+      "placeholder": "Work email",
+      "buttonText": "Subscribe",
+      "consentText": "I would like to receive Cordinit insights. I understand I can unsubscribe at any time. Read our Privacy Policy."
+    },
+    "systemProps": {}
+  }
+}

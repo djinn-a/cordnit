@@ -1,14 +1,13 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cordinit.com";
+import { absoluteUrl } from "@/lib/seo/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/"],
+      disallow: ["/api/", "/admin", "/preview/"],
     },
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: absoluteUrl("/sitemap.xml"),
   };
 }

@@ -7,15 +7,11 @@ import { RecognitionSectionProps } from './types';
 import RecognitionCard from './RecognitionCard';
 
 import { defaultItems } from './data';
+import MultilineText from "@/components/ui/MultilineText/MultilineText";
 
 export default function RecognitionSection({
   eyebrow = "COMPLIANCE & PARTNERSHIPS",
-  title = (
-  <>
-    Verified Security Standards & <br />
-    Strategic Ecosystems
-  </>
-),
+  title = "Verified Security Standards &\nStrategic Ecosystems",
   description = "We align our engineering and operational delivery with internationally recognized compliance frameworks and enterprise partner networks.",
   items = defaultItems,
 }: RecognitionSectionProps = {}) {
@@ -37,7 +33,7 @@ export default function RecognitionSection({
         <SectionHeader
           eyebrow={eyebrow}
           eyebrowClassName="text-primary text-eyebrow-mobile font-extrabold sm:text-eyebrow-desktop sm:font-semibold"
-          title={title}
+          title={<MultilineText text={title} />}
           titleClassName="text-section-title-mobile sm:text-section-title !font-extrabold"
           subtitle={description}
           subtitleClassName="text-section-subtitle-mobile sm:text-section-subtitle"

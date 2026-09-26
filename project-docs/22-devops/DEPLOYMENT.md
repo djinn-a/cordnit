@@ -1,32 +1,38 @@
 # DEPLOYMENT
 
 ## Purpose
-Describe the purpose of this document.
-
-## Scope
-Defines the boundaries and applicability of this document.
+How the site and CMS are built and deployed today (Vercel), and where the AWS path is documented.
 
 ## Current Status
-Draft / In Progress / Approved
+Approved. Host: Vercel, function region `hnd1` (Tokyo, next to the Supabase database in ap-northeast-1), set in `vercel.json`.
 
-## Rules / Requirements
-List all core rules and requirements here.
+## Requirements
+- Node 22 (`.nvmrc`, `engines.node >= 22`).
+- All variables from [ENVIRONMENT-VARIABLES.md](./ENVIRONMENT-VARIABLES.md) set for Production and Preview.
+- Supabase Auth: public sign-ups disabled.
 
-## Implementation Details
-Provide technical or process implementation details.
+## Pre-deploy checks
+```bash
+npm run typecheck && npm run lint && npm test && npm run build
+```
+Schema changes: apply migrations (`npm run db:migrate`) **before** deploying code that depends on them.
 
-## Dependencies
-List related documents, systems, or processes.
+## Deploy
+```bash
+npm run deploy        # vercel --prod
+```
+The build prerenders every published CMS page (`generateStaticParams` reads `published_pages`), so `DATABASE_URL` must be reachable from the build environment.
 
-## Decisions
-Record any key decisions made within the scope of this document.
+## After deploy
+- `GET /api/health` returns `{ ok: true, data: { db: "up" } }`.
+- Sign in at `/admin`, open a page, and check the preview loads.
 
-## Risks
-Document any identified risks.
+## Rollback
+- Code: promote the previous deployment in Vercel.
+- Content: use the Versions drawer in the page editor (independent of code deploys).
 
-## Open Questions
-List any unresolved queries or topics.
+## AWS
+See [AWS-MIGRATION.md](./AWS-MIGRATION.md).
 
 ## Last Updated
-2026-09-01
-
+2026-09-26

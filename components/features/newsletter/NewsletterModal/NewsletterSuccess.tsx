@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import Image from 'next/image';
 import { useNewsletterModal } from './NewsletterModalProvider';
 import { defaultNewsletterContent } from './newsletterContent';
 
@@ -11,7 +11,7 @@ export default function NewsletterSuccess() {
   return (
     <div className="flex flex-col items-center text-center py-6 animate-in fade-in zoom-in-95 duration-500">
       <div className="w-16 h-16 mb-6 relative flex items-center justify-center">
-        <img src="/success-icon.svg" alt="Success" width={60} height={60} />
+        <Image src="/success-icon.svg" alt="Success" width={60} height={60} />
       </div>
 
       <h3 className="text-success text-[11px] font-semibold tracking-[0.15em] uppercase mb-4">

@@ -2,9 +2,13 @@ import { FC } from "react";
 import Image from "next/image";
 import Section from "@/components/ui/Section/Section";
 import Container from "@/components/ui/Container/Container";
-import { combinationData } from "./solutionsCombinationData";
+import { combinationData as defaultCombinationData, type SolutionsCombinationData } from "./solutionsCombinationData";
 
-const SolutionsCombination: FC = () => {
+export type SolutionsCombinationProps = { data?: SolutionsCombinationData };
+
+const SolutionsCombination: FC<SolutionsCombinationProps> = ({ data }) => {
+  const combinationData = { ...defaultCombinationData, ...data };
+  const cards = Array.isArray(combinationData.cards) ? combinationData.cards : [];
   return (
     <Section spacing="none">
       <Container className="!px-0">
@@ -13,7 +17,7 @@ const SolutionsCombination: FC = () => {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
-          {combinationData.cards.map((card, index) => (
+          {cards.map((card, index) => (
             <div
               key={index}
               className="bg-gradient-contact-soft border border-border-card rounded-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col items-start h-full"
@@ -35,6 +39,7 @@ const SolutionsCombination: FC = () => {
                   src={card.iconPath}
                   alt=""
                   fill
+                  sizes="48px"
                   className="object-contain"
                 />
               </div>

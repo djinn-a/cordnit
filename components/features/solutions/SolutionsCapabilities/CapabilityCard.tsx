@@ -41,6 +41,7 @@ export default function CapabilityCard({
               src={capability.iconPath}
               alt={capability.title}
               fill
+              sizes="32px"
               className="object-contain"
             />
           </div>

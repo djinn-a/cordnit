@@ -32,6 +32,7 @@ export default function WhyChooseCard({ card }: WhyChooseCardProps) {
               src={card.image}
               alt={card.imageAlt}
               fill
+              sizes="90px"
               className="object-contain"
             />
           </div>

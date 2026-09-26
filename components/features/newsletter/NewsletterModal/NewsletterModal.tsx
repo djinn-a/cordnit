@@ -14,19 +14,23 @@ const CLOSE_MS = 300;
 
 export default function NewsletterModal() {
   const { isOpen, status, closeModal } = useNewsletterModal();
-  const [shouldRender, setShouldRender] = useState(false);
+  const [shouldRender, setShouldRender] = useState(isOpen);
   const [isEntered, setIsEntered] = useState(false);
+  // Mount immediately on open and start the exit transition immediately on close.
+  if (isOpen && !shouldRender) setShouldRender(true);
+  if (!isOpen && isEntered) setIsEntered(false);
 
   useEffect(() => {
     if (isOpen) {
-      setShouldRender(true);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => setIsEntered(true));
+      let inner = 0;
+      const outer = requestAnimationFrame(() => {
+        inner = requestAnimationFrame(() => setIsEntered(true));
       });
-      return;
+      return () => {
+        cancelAnimationFrame(outer);
+        cancelAnimationFrame(inner);
+      };
     }
-
-    setIsEntered(false);
     const timer = setTimeout(() => setShouldRender(false), CLOSE_MS);
     return () => clearTimeout(timer);
   }, [isOpen]);

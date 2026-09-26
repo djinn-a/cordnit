@@ -19,6 +19,7 @@ export default function InsightCard({
           src={image.src}
           alt={image.alt}
           fill
+          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 162px"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>

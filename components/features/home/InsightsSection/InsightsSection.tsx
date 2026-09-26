@@ -4,6 +4,7 @@ import { Container, Section, SectionHeader, CarouselControls } from "@/component
 import { useScrollSnapCarousel } from "@/hooks/useScrollSnapCarousel";
 import { insightsData, InsightItem } from "./insightsData";
 import InsightCard from "./InsightCard";
+import MultilineText from "@/components/ui/MultilineText/MultilineText";
 
 export type InsightsSectionProps = {
   eyebrow?: string;
@@ -13,7 +14,7 @@ export type InsightsSectionProps = {
 
 export default function InsightsSection({
   eyebrow = "INSIGHTS & PERSPECTIVE",
-  title = "Ideas Built to Accelerate Sustainable Growth",
+  title = "Ideas Built to Accelerate\nSustainable Growth",
   insights = insightsData,
 }: InsightsSectionProps = {}) {
   const {
@@ -34,16 +35,7 @@ export default function InsightsSection({
         <SectionHeader
           eyebrow={eyebrow}
           eyebrowClassName="text-primary text-eyebrow-mobile font-extrabold sm:text-eyebrow-desktop sm:font-semibold"
-          title={
-            title.includes("Sustainable Growth") ? (
-              <>
-                Ideas Built to Accelerate <br />
-                Sustainable Growth
-              </>
-            ) : (
-              title
-            )
-          }
+          title={<MultilineText text={title} />}
           titleClassName="text-section-title-mobile sm:text-section-title !font-extrabold"
           className="mb-8 sm:mb-12"
         />

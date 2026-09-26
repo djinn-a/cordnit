@@ -1,4 +1,16 @@
-import { AiAutomationWhereWeHelpData } from "../data";
+export type AiAutomationWhereWeHelpData = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  cards: {
+    number: string;
+    code: string;
+    category: string;
+    title: string;
+    description: string;
+    icon: string;
+  }[];
+};
 import AiAutomationWhereWeHelpCard from "./AiAutomationWhereWeHelpCard";
 
 type AiAutomationWhereWeHelpProps = {

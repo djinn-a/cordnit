@@ -1,6 +1,4 @@
 import type { SectionComponent, SectionType } from "./types";
-//import PageHero from "@/components/ui/PageHero/PageHero";
-//import SplitContentSection from "@/components/ui/SplitContentSection/SplitContentSection";
 import { WhyChooseSection } from "@/components/ui/WhyChooseSection";
 
 import HeroSection from "@/components/features/home/HeroSection/HeroSection";
@@ -21,33 +19,15 @@ import ContextApproachSection from "@/components/blocks/ContextApproachSection/C
 import PerspectiveSection from "@/components/blocks/PerspectiveSection/PerspectiveSection";
 import ContentInsights from "@/components/blocks/ContentInsights/ContentInsights";
 import IndustryCardsSection from "@/components/blocks/IndustryCardsSection/IndustryCardsSection";
-import { CybersecurityHero } from "@/components/features/cybersecurity/CybersecurityHero";
-import { CybersecuritySplitContent } from "@/components/features/cybersecurity/CybersecuritySplitContent";
+
 import { CardGridSection, CredentialsSection, ProcessSection, SplitActionCardsSection, PageHero, Breadcrumb, SplitContentSection } from "@/components/ui";
 import SolutionsHero from "@/components/features/solutions/SolutionsHero/SolutionsHero";
 import SolutionsCapabilities from "@/components/features/solutions/SolutionsCapabilities/SolutionsCapabilities";
 import SolutionsDelivery from "@/components/features/solutions/SolutionsDelivery/SolutionsDelivery";
 import SolutionsCombination from "@/components/features/solutions/SolutionsCombination/SolutionsCombination";
-/**
- * Maps CMS / page-document `_type` values to presentational section components.
- * Add a new section type here when introducing a new block — never hard-wire in page.tsx.
- */
-import { CybersecurityWhyChoose } from "@/components/features/cybersecurity/CybersecurityWhyChoose";
-import { SalesforceHero } from "@/components/features/salesforce/SalesforceHero";
-import { SalesforceSplitContent } from "@/components/features/salesforce/SalesforceSplitContent";
-import { SalesforceCredentials } from "@/components/features/salesforce/SalesforceCredentials";
-import { SalesforceCapabilities } from "@/components/features/salesforce/SalesforceCapabilities";
-import { SalesforceApproach } from "@/components/features/salesforce/SalesforceApproach";
-import { SalesforceSpecialists } from "@/components/features/salesforce/SalesforceSpecialists";
-import { SalesforceWhyChoose } from "@/components/features/salesforce/SalesforceWhyChoose";
-import { AiAutomationHero } from "@/components/features/ai-automation/AiAutomationHero";
-import { AiAutomationSplitContent } from "@/components/features/ai-automation/AiAutomationSplitContent";
-import { AiAutomationCredentials } from "@/components/features/ai-automation/AiAutomationCredentials";
-import { AiAutomationApproach } from "@/components/features/ai-automation/AiAutomationApproach";
-import { AiAutomationSpecialists } from "@/components/features/ai-automation/AiAutomationSpecialists";
-import { AiAutomationWhyChoose } from "@/components/features/ai-automation/AiAutomationWhyChoose";
+
 import { AiAutomationWhereWeHelp } from "@/components/features/ai-automation/AiAutomationWhereWeHelp";
-import { CloudInfrastructureHero } from "@/components/features/cloud-infrastructure/CloudInfrastructureHero";
+
 import { DataSecurityOverview } from "@/components/features/cybersecurity/shared/DataSecurityOverview";
 import { DataDiscovery } from "@/components/features/cybersecurity/shared/DataDiscovery";
 import AuthenticationGovernance from "@/components/features/cybersecurity/shared/AuthenticationGovernance/AuthenticationGovernance";
@@ -55,7 +35,9 @@ import LifecycleManagement from "@/components/features/cybersecurity/shared/Life
 import SecureDataOperations from "@/components/features/cybersecurity/shared/SecureDataOperations/SecureDataOperations";
 import { JourneyStepsBlock } from "@/components/blocks/JourneyStepsBlock";
 import LeadQualificationBlock from "@/components/blocks/LeadQualificationBlock/LeadQualificationBlock";
-// Force rebuild
+import NewsletterSection from "@/components/ui/NewsletterSection/NewsletterSection";
+
+/** Section type -> component. Adding a type: extend SECTION_TYPES, this map and the catalog. */
 
 export const componentMap: Record<SectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
@@ -76,32 +58,32 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   perspective: PerspectiveSection as unknown as SectionComponent,
   contentInsights: ContentInsights as unknown as SectionComponent,
   industryCards: IndustryCardsSection as unknown as SectionComponent,
-  cybersecurityHero: CybersecurityHero as SectionComponent,
-  cybersecuritySplitContent: CybersecuritySplitContent as SectionComponent,
+  cybersecurityHero: PageHero as SectionComponent,
+  cybersecuritySplitContent: SplitContentSection as SectionComponent,
   cardGridSection: CardGridSection as SectionComponent,
   credentialsSection: CredentialsSection as SectionComponent,
   processSection: ProcessSection as SectionComponent,
   splitActionCards: SplitActionCardsSection as SectionComponent,
-  whyChooseSection: CybersecurityWhyChoose as SectionComponent,
-  salesforceHero: SalesforceHero as SectionComponent,
-  salesforceSplitContent: SalesforceSplitContent as SectionComponent,
-  salesforceCredentials: SalesforceCredentials as SectionComponent,
-  salesforceCapabilities: SalesforceCapabilities as SectionComponent,
-  salesforceApproach: SalesforceApproach as SectionComponent,
-  salesforceSpecialists: SalesforceSpecialists as SectionComponent,
-  salesforceWhyChoose: SalesforceWhyChoose as SectionComponent,
-  aiAutomationHero: AiAutomationHero as SectionComponent,
-  aiAutomationSplitContent: AiAutomationSplitContent as SectionComponent,
-  aiAutomationCredentials: AiAutomationCredentials as SectionComponent,
-  aiAutomationApproach: AiAutomationApproach as SectionComponent,
-  aiAutomationSpecialists: AiAutomationSpecialists as SectionComponent,
-  aiAutomationWhyChoose: AiAutomationWhyChoose as SectionComponent,
+  whyChooseSection: WhyChooseSection as SectionComponent,
+  salesforceHero: PageHero as SectionComponent,
+  salesforceSplitContent: SplitContentSection as SectionComponent,
+  salesforceCredentials: CredentialsSection as SectionComponent,
+  salesforceCapabilities: CardGridSection as SectionComponent,
+  salesforceApproach: ProcessSection as SectionComponent,
+  salesforceSpecialists: SplitActionCardsSection as SectionComponent,
+  salesforceWhyChoose: WhyChooseSection as SectionComponent,
+  aiAutomationHero: PageHero as SectionComponent,
+  aiAutomationSplitContent: SplitContentSection as SectionComponent,
+  aiAutomationCredentials: CredentialsSection as SectionComponent,
+  aiAutomationApproach: ProcessSection as SectionComponent,
+  aiAutomationSpecialists: SplitActionCardsSection as SectionComponent,
+  aiAutomationWhyChoose: WhyChooseSection as SectionComponent,
   aiAutomationWhereWeHelp: AiAutomationWhereWeHelp as SectionComponent,
   solutionsHero: SolutionsHero as SectionComponent,
   solutionsCapabilities: SolutionsCapabilities as SectionComponent,
   solutionsDelivery: SolutionsDelivery as SectionComponent,
   solutionsCombination: SolutionsCombination as SectionComponent,
-  cloudInfrastructureHero: CloudInfrastructureHero as SectionComponent,
+  cloudInfrastructureHero: PageHero as SectionComponent,
   pageHero: PageHero as SectionComponent,
   splitContent: SplitContentSection as SectionComponent,
   whyChoose: WhyChooseSection as SectionComponent,
@@ -114,4 +96,5 @@ export const componentMap: Record<SectionType, SectionComponent> = {
   secureDataOperations: SecureDataOperations as SectionComponent,
   journeyStepsBlock: JourneyStepsBlock as SectionComponent,
   leadQualificationBlock: LeadQualificationBlock as unknown as SectionComponent,
+  newsletter: NewsletterSection as SectionComponent,
 };

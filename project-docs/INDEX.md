@@ -2,6 +2,8 @@
 
 Canonical Documentation Root for the Cordinit Project.
 
+- [build-next-bucket.md](./build-next-bucket.md): prioritised backlog (CRM, media library, RBAC, globals, and more)
+
 ## 00-governance
 - [README.md](./00-governance/README.md)
 - [DOCUMENTATION-GOVERNANCE.md](./00-governance/DOCUMENTATION-GOVERNANCE.md)
@@ -339,6 +341,7 @@ Canonical Documentation Root for the Cordinit Project.
 - [CI-CD.md](./22-devops/CI-CD.md)
 - [BUILD.md](./22-devops/BUILD.md)
 - [DEPLOYMENT.md](./22-devops/DEPLOYMENT.md)
+- [AWS-MIGRATION.md](./22-devops/AWS-MIGRATION.md)
 - [RELEASES.md](./22-devops/RELEASES.md)
 - [ROLLBACK.md](./22-devops/ROLLBACK.md)
 - [MONITORING.md](./22-devops/MONITORING.md)

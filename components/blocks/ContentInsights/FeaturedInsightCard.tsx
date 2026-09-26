@@ -14,6 +14,7 @@ export default function FeaturedInsightCard({
           src={featured.image.src}
           alt={featured.image.alt}
           fill
+          sizes="(min-width: 1024px) 487px, (min-width: 768px) 50vw, 100vw"
           className="object-cover scale-[1.147] md:scale-100"
         />
         {/* Mobile Image Gradient Overlay */}

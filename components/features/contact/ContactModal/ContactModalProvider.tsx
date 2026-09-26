@@ -59,7 +59,7 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
 
   const [step, setStep] = useState<1 | 2>(1);
 
-  const openModal = (context?: ModalContext | React.SyntheticEvent) => {
+  const openModal = React.useCallback((context?: ModalContext | React.SyntheticEvent) => {
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current);
       closeTimerRef.current = null;
@@ -74,9 +74,9 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
     requestAnimationFrame(() => {
       requestAnimationFrame(() => setIsEntered(true));
     });
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = React.useCallback(() => {
     setIsEntered(false);
     closeTimerRef.current = setTimeout(() => {
       setIsOpen(false);
@@ -85,7 +85,7 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
       setStep(1);
       closeTimerRef.current = null;
     }, CLOSE_MS);
-  };
+  }, [resetForm]);
 
   const handleContinue = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -132,7 +132,7 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
     };
   }, []);
 
-  const contextValue = React.useMemo(() => ({ isOpen, openModal, closeModal }), [isOpen]);
+  const contextValue = React.useMemo(() => ({ isOpen, openModal, closeModal }), [isOpen, openModal, closeModal]);
 
   return (
     <ContactModalContext.Provider value={contextValue}>
