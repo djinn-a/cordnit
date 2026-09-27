@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react';
 import Link from 'next/link';
 
 type SuccessModalProps = {
@@ -31,7 +30,7 @@ export default function SuccessModal({ isSuccess, setIsSuccess }: Readonly<Succe
           <Link href="/solutions" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-primary text-white rounded-lg text-section-subtitle-mobile hover:bg-primary-hover transition-colors flex items-center justify-center shadow-glow-primary">
             Explore Solutions <span className="ml-1.5 font-bold">→</span>
           </Link>
-          <Link href="/insights" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-primary-pale border border-primary-muted text-white rounded-lg text-section-subtitle-mobile hover:bg-primary-muted transition-colors flex items-center justify-center">
+          <Link href="/insights" onClick={() => setIsSuccess(false)} className="w-full sm:w-auto px-6 py-2.5 bg-primary border border-primary-muted text-white rounded-lg text-section-subtitle-mobile hover:bg-primary-hover hover:text-white transition-colors flex items-center justify-center">
             View Insights <span className="ml-1.5 font-bold">→</span>
           </Link>
         </div>
