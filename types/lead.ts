@@ -5,6 +5,7 @@ export interface WebsiteLead {
   email: string;
   company: string;
   jobTitle?: string;
+  phone?: string;
 
   // Enquiry Details
   interests: string[];
@@ -18,12 +19,6 @@ export interface WebsiteLead {
   source?: string | null;
   landingPage?: string | null;
   ctaLocation?: string | null;
-  solution?: string | null;
-  service?: string | null;
-  industry?: string | null;
-  accelerator?: string | null;
-  insight?: string | null;
-  content?: string | null;
   
   // UTM Parameters (Optional)
   utmSource?: string | null;
@@ -35,4 +30,7 @@ export interface WebsiteLead {
   // Timestamps (Optional)
   submissionDateTime?: string | null;
   bookingDateTime?: string | null;
+
+  // Tracking / Idempotency
+  submissionId?: string | null;
 }

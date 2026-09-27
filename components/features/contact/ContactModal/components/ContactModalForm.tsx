@@ -23,7 +23,7 @@ interface ContactModalFormProps {
   selectedInterests: string[];
   toggleInterest: (interest: string) => void;
   isFormValid: boolean;
-  handleContinue: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleContinue: (e: React.SubmitEvent<HTMLFormElement>) => void;
 }
 
 export function ContactModalForm({
@@ -53,7 +53,7 @@ export function ContactModalForm({
             required={field.required}
           />
         ))}
-        <div role="group" aria-labelledby="area-of-interest-label">
+        <div role="group" aria-labelledby="area-of-interest-label" className="md:col-span-2">
           <div id="area-of-interest-label" className="block text-[13px] text-white/80 mb-2">Area of Interest<span className="text-error ml-0.5">*</span></div>
           <div className="flex flex-wrap gap-2.5">
             {interestsList.map((item) => {

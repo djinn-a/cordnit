@@ -22,7 +22,7 @@ type ContactFormProps = {
   submitError: string | null;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   toggleInterest: (interest: string) => void;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleSubmit: (e: React.SubmitEvent<HTMLFormElement>) => void;
   openModal: () => void;
 };
 
