@@ -5,7 +5,7 @@ export type ProcessStepsProps = {
   steps: ProcessStepItem[];
 };
 
-export default function ProcessSteps({ steps }: ProcessStepsProps) {
+export default function ProcessSteps({ steps }: Readonly<ProcessStepsProps>) {
   return (
     <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between w-full gap-space-40 lg:gap-0 relative mt-[64px]">
       {steps.map((step, index) => (

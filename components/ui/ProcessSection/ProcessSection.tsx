@@ -13,7 +13,7 @@ export type ProcessSectionProps = {
   data: ProcessSectionData;
 };
 
-export default function ProcessSection({ data }: ProcessSectionProps) {
+export default function ProcessSection({ data }: Readonly<ProcessSectionProps>) {
   return (
     <section className="w-full bg-surface">
       <div className="mx-auto w-full max-w-[1240px]">
