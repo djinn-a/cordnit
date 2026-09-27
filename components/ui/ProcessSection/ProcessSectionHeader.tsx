@@ -8,7 +8,7 @@ export default function ProcessSectionHeader({
   eyebrow,
   title,
   subtitle,
-}: ProcessSectionHeaderProps) {
+}: Readonly<ProcessSectionHeaderProps>) {
   return (
     <div className="flex flex-col w-full gap-space-16">
       {eyebrow && (
