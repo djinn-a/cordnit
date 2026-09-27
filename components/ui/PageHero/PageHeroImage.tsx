@@ -13,7 +13,7 @@ export default function PageHeroImage({
   src,
   alt,
   quoteOverlay,
-}: PageHeroImageProps) {
+}: Readonly<PageHeroImageProps>) {
   return (
     <div className="relative w-full h-[300px] md:h-[393px] mb-[60px] md:mb-0">
       <div className="relative w-[90%] md:w-full h-full rounded-page-hero overflow-hidden shadow-lg">

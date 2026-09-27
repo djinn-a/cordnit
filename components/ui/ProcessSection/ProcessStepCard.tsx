@@ -11,7 +11,7 @@ export type ProcessStepCardProps = {
   step: ProcessStepItem;
 };
 
-export default function ProcessStepCard({ step }: ProcessStepCardProps) {
+export default function ProcessStepCard({ step }: Readonly<ProcessStepCardProps>) {
   return (
     <div className="flex flex-col items-center text-center gap-space-24 w-full max-w-[280px]">
       <div className="flex items-center justify-center w-[64px] h-[64px] flex-shrink-0 z-10 relative bg-surface">
