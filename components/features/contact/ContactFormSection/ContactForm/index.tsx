@@ -33,7 +33,7 @@ export default function ContactFormWrapper({ cmsData }: Readonly<ContactFormWrap
     toggleInterest,
     handleSubmit,
     setIsSuccess
-  } = useLeadForm({ ctaLocation: 'Contact Page' });
+  } = useLeadForm({ ctaLocation: 'Contact Page' }, { requiresPhone: true });
 
   return (
     <>
