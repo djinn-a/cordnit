@@ -18,6 +18,7 @@ const customTwMerge = extendTailwindMerge({
             "caption",
             "eyebrow",
             "button",
+            "mobile-cta-1",
           ],
         },
       ],
