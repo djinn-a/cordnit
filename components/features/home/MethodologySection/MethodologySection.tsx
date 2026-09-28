@@ -31,7 +31,7 @@ export default function MethodologySection({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-1.5 sm:gap-4">
+        <div className="grid grid-cols-2 xl:grid-cols-5 gap-1.5 sm:gap-4">
           {steps.map((step) => (
             <MethodologyCard key={step.num} step={step} />
           ))}
