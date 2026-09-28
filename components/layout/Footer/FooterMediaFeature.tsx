@@ -44,8 +44,7 @@ export default function FooterMediaFeature() {
             <Button
               variant="primary"
               href={FOOTER_MEDIA_FEATURE.href}
-              className="w-fit bg-primary hover:bg-primary/90 px-4 py-3 text-[14px] font-semibold leading-[20px] uppercase mt-1 group flex items-center gap-2 border-0"
-              style={{ borderRadius: '24px' }}
+              className="w-fit bg-primary hover:bg-primary/90 rounded-[24px] sm:rounded-[24px] px-4 py-3 text-[14px] font-semibold leading-5 uppercase mt-1 group flex items-center gap-2 border-0"
             >
               {FOOTER_MEDIA_FEATURE.ctaText}
               <span className="flex items-center justify-center bg-white text-primary rounded-full w-6 h-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:rotate-12">
@@ -92,7 +91,7 @@ export default function FooterMediaFeature() {
           <Button
             variant="primary"
             href={FOOTER_MEDIA_FEATURE.href}
-            className="w-fit rounded-[24px] px-4 py-3 text-[14px] font-semibold leading-[20px] uppercase mt-2 group flex items-center gap-2"
+            className="w-fit rounded-[24px] sm:rounded-[24px] px-4 py-3 text-[14px] font-semibold leading-5 uppercase mt-2 group flex items-center gap-2"
           >
             {FOOTER_MEDIA_FEATURE.ctaText}
             <span className="flex items-center justify-center bg-white text-primary rounded-full w-7 h-7 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:rotate-12">
@@ -104,10 +103,10 @@ export default function FooterMediaFeature() {
 
       {/* Very Bottom Footer Text */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center text-white border-t border-white/10 pt-5 lg:pt-6 gap-6">
-        <p className="text-[10px] font-normal leading-[14px]">
+        <p className="text-[10px] font-normal leading-3.5">
           {FOOTER_LEGAL.copyright}
         </p>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] font-normal leading-[14px]">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] font-normal leading-3.5">
           {FOOTER_LEGAL.links.map(link => (
             <Link key={link.label} href={link.href} className="hover:text-white/80 transition-colors">
               {link.label}

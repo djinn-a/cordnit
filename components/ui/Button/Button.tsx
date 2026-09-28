@@ -54,12 +54,14 @@ export default function Button(props: ButtonProps) {
     const { href, ...anchorProps } = rest as ButtonAsLinkProps;
     if (isInternalPath(href) && anchorProps.target !== "_blank") {
       return (
+        console.log("i come here "),
         <Link href={href} className={classes} {...anchorProps}>
           {body}
         </Link>
       );
     }
     return (
+      console.log("i come here 2 "),
       <a href={href} className={classes} {...anchorProps}>
         {body}
       </a>
@@ -68,6 +70,7 @@ export default function Button(props: ButtonProps) {
 
   const { type = "button", ...buttonProps } = rest as ButtonAsButtonProps;
   return (
+    console.log("i come here m 3"),
     <button type={type} className={classes} {...buttonProps}>
       {body}
     </button>

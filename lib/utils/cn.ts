@@ -22,6 +22,35 @@ const customTwMerge = extendTailwindMerge({
           ],
         },
       ],
+      rounded: [
+        {
+          rounded: [
+            "btn",
+            "card",
+            "card-sm",
+            "hero",
+            "card-md",
+            "card-lg",
+            "page-hero",
+            "split-image",
+            "card-grid",
+            "4xl",
+            "card-border-radius",
+            "card-radius",
+          ],
+        },
+      ],
+      shadow: [
+        {
+          shadow: [
+            "card",
+            "card-active",
+            "focus",
+            "glow-primary",
+            "help-card",
+          ],
+        },
+      ],
     },
   },
 });
