@@ -32,18 +32,19 @@
 
 @keyframes textShiftRight {
   0% { transform: translateX(0); }
-  20% { transform: translateX(14px); } /* Center when right arrow leaves */
+  35% { transform: translateX(14px); } /* Center when right arrow leaves */
   100% { transform: translateX(14px); } /* Stay centered */
 }
 
 @keyframes flyOutRight {
   0% { transform: translateX(0); opacity: 1; }
-  20% { transform: translateX(40px); opacity: 0; }
+  35% { transform: translateX(40px); opacity: 0; }
   100% { transform: translateX(40px); opacity: 0; }
 }
 
 @keyframes flyInLeft {
   0% { transform: translateX(-40px); opacity: 0; }
-  30% { transform: translateX(-40px); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; } /* Slide in to rest exactly next to text */
+  25% { transform: translateX(-40px); opacity: 0; }
+  55% { transform: translateX(0); opacity: 1; } /* Slide in faster */
+  100% { transform: translateX(0); opacity: 1; } /* Rest exactly next to text */
 }
