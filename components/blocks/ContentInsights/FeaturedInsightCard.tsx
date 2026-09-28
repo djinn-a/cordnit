@@ -52,10 +52,11 @@ export default function FeaturedInsightCard({
           {featured.cta && (
             <div className="flex items-center">
               <CtaButton
-                cta={{ ...featured.cta, action: "link", variant: "ghost" }}
-                className="text-link-card-mobile md:text-link-desktop text-primary cursor-pointer p-0 hover:bg-transparent h-auto"
+                cta={featured.cta}
+                variant="link"
+                className="gap-1 md:gap-2 text-link-card-mobile md:text-link-desktop"
                 rightIcon={<ArrowRight className="w-3 h-3 md:w-4 md:h-4" />}
-                analyticsContext="Featured Insight Card"
+                ctaLocation="featured-insight"
               />
             </div>
           )}

@@ -12,16 +12,24 @@ export type Cta = {
   variant?: CtaVariant;
 };
 
-export const CTA_ACTION_OPTIONS: Array<{ value: CtaAction; label: string; help?: string }> = [
-  { value: "link", label: "External / Page Link" },
-  { value: "contactModal", label: "Open Contact Modal" },
-  { value: "newsletterModal", label: "Open Newsletter Modal" },
-  { value: "scrollTo", label: "Scroll to Section (anchor)", help: "Must start with #" },
+/** Actions whose behaviour depends on `href`. */
+export const HREF_ACTIONS: ReadonlySet<CtaAction> = new Set(["link", "scrollTo"]);
+
+export const CTA_ACTION_OPTIONS: ReadonlyArray<{ value: CtaAction; label: string }> = [
+  { value: "link", label: "Go to link" },
+  { value: "contactModal", label: "Open contact form" },
+  { value: "newsletterModal", label: "Open newsletter signup" },
+  { value: "scrollTo", label: "Scroll to section" },
 ];
 
-export const CTA_VARIANT_OPTIONS: Array<{ value: CtaVariant; label: string }> = [
-  { value: "primary", label: "Primary (Solid)" },
-  { value: "secondary", label: "Secondary (Light)" },
-  { value: "outline", label: "Outline" },
-  { value: "ghost", label: "Ghost (No border)" },
+export const CTA_VARIANT_OPTIONS: ReadonlyArray<{ value: CtaVariant; label: string }> = [
+  { value: "primary", label: "Primary (solid)" },
+  { value: "secondary", label: "Secondary (bordered)" },
+  { value: "outline", label: "Outline (light)" },
+  { value: "ghost", label: "Ghost (text only)" },
 ];
+
+export const LINK_PATTERN = /^(\/|#|https?:\/\/|mailto:|tel:)/;
+export const ANCHOR_PATTERN = /^#[A-Za-z][\w-]*$/;
+export const CTA_LABEL_MAX = 300;
+export const CTA_HREF_MAX = 2048;

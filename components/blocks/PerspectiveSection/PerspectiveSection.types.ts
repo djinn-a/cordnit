@@ -1,3 +1,5 @@
+import type { Cta } from "@/lib/cta";
+
 export type PerspectiveSectionProps = {
   className?: string;
   eyebrow?: string;
@@ -7,8 +9,5 @@ export type PerspectiveSectionProps = {
     src: string;
     alt: string;
   };
-  cta?: {
-    label: string;
-    href: string;
-  };
+  cta?: Cta;
 };

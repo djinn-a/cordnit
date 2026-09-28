@@ -41,10 +41,10 @@ export default function PerspectiveSection({
             {cta && (
               <div className="md:hidden mt-4">
                 <CtaButton
-                  cta={{ ...cta, action: "link" }}
-                  className="flex items-center justify-between w-33 h-11 bg-primary rounded-btn px-5 text-white text-link-mobile shadow-sm"
+                  cta={cta}
+                  className="justify-between min-w-33 h-11 rounded-btn px-5 text-link-mobile"
                   rightIcon={<ArrowRight size={12} strokeWidth={3} />}
-                  analyticsContext="Perspective Section"
+                  ctaLocation="perspective"
                 />
               </div>
             )}

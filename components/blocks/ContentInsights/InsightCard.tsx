@@ -59,10 +59,11 @@ export default function InsightCard({
           
           {/* CTA Link */}
           <CtaButton
-            cta={{ ...cta, action: "link", variant: "ghost" }}
-            className="text-link-mobile md:text-link-desktop text-primary hover:text-primary-hover transition-colors w-fit p-0 hover:bg-transparent h-auto gap-1 md:gap-1.5"
+            cta={cta}
+            variant="link"
+            className="text-link-mobile md:text-link-desktop w-fit gap-1 md:gap-1.5"
             rightIcon={<ArrowRight className="w-3 h-3 md:w-3.5 md:h-3.5" />}
-            analyticsContext="Insight Card"
+            ctaLocation="insight-card"
           />
         </div>
       </div>

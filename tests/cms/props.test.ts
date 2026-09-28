@@ -6,6 +6,7 @@ import {
   splitSectionProps,
   stripItemIds,
 } from "@/lib/cms/registry/props";
+import { cta, list, section, text } from "@/lib/cms/registry/fields";
 
 describe("isSystemKey", () => {
   it.each(["imageSrc", "icon", "logoUrl", "variant", "className", "alt", "id", "backgroundTone"])(
@@ -89,5 +90,38 @@ describe("splitSectionProps / mergeSectionProps", () => {
 
   it("tolerates null inputs", () => {
     expect(mergeSectionProps(null, undefined)).toEqual({});
+  });
+});
+
+describe("schema-guided split", () => {
+  const schema = section({
+    title: text("Title"),
+    primaryCta: cta("Primary"),
+    extraCta: cta("Extra").optional(),
+    cards: list("Cards", "Card", { title: text("Title"), cta: cta("CTA") }),
+  });
+  const props = {
+    title: "Hi",
+    backgroundImage: "/bg.webp",
+    primaryCta: { label: "Talk", action: "contactModal", variant: "outline" },
+    extraCta: { label: "Docs", action: "link", href: "https://x.com", newTab: true, variant: "ghost" },
+    cards: [{ id: "a", title: "One", icon: "cloud", cta: { label: "Go", action: "link", href: "/a", variant: "secondary" } }],
+  };
+
+  it("keeps declared keys editable even when their names look presentational", () => {
+    const { content, systemProps } = splitSectionProps(props, schema);
+    expect(content.primaryCta).toEqual(props.primaryCta);
+    expect(content.extraCta).toEqual(props.extraCta);
+    expect((content.cards as Record<string, unknown>[])[0].cta).toEqual(props.cards[0].cta);
+    expect(systemProps).toEqual({ backgroundImage: "/bg.webp", cards: [{ [ITEM_ID_KEY]: "a", id: "a", icon: "cloud" }] });
+  });
+
+  it("round-trips through parse and merge", () => {
+    const { content, systemProps } = splitSectionProps(props, schema);
+    expect(stripItemIds(mergeSectionProps(systemProps, schema.parse(content)))).toEqual(props);
+  });
+
+  it("falls back to the heuristic without a schema", () => {
+    expect(splitSectionProps(props).systemProps.primaryCta).toEqual({ variant: "outline" });
   });
 });

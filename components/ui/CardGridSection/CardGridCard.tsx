@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import type { Cta } from "@/lib/cta";
-import { useCtaAction } from "@/hooks/useCtaAction";
+import CtaButton from "@/components/ui/Button/CtaButton";
 
 export type CardGridItem = {
   id: string;
@@ -18,16 +18,12 @@ type CardGridCardProps = {
 };
 
 export default function CardGridCard({ card }: Readonly<CardGridCardProps>) {
-  const binding = useCtaAction(card.cta, "Card Grid");
-  const Component = binding.href ? "a" : "button";
-
   return (
-    <Component
-      {...binding}
+    <article
       className={cn(
         "group relative flex flex-col min-h-47.5 h-full w-full max-w-71.5 rounded-card-grid border p-space-12 lg:p-space-16 transition-all duration-300 mx-auto",
-        "bg-surface border-border-card text-left",
-        "hover:bg-primary-pale hover:border-transparent hover:shadow-card-active"
+        "bg-surface border-border-card",
+        "hover:bg-primary-pale hover:border-transparent hover:shadow-card-active focus-within:shadow-card-active"
       )}
     >
       {/* Metadata Row */}
@@ -45,12 +41,15 @@ export default function CardGridCard({ card }: Readonly<CardGridCardProps>) {
           {card.description}
         </p>
 
-        {/* CTA */}
-        <div className="flex items-center gap-space-8 text-card-desc-mobile lg:text-link-mobile text-brand-primary group-hover:text-primary-hover transition-colors mt-auto">
-          {card.cta.label}
-          <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-        </div>
+        {/* Stretched CTA: its ::after covers the card so the whole card is clickable. */}
+        <CtaButton
+          cta={card.cta}
+          variant="link"
+          ctaLocation="card-grid"
+          className="mt-auto gap-space-8 font-normal text-card-desc-mobile lg:text-link-mobile text-brand-primary group-hover:text-primary-hover after:absolute after:inset-0 after:rounded-card-grid after:content-['']"
+          rightIcon={<ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />}
+        />
       </div>
-    </Component>
+    </article>
   );
 }

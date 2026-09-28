@@ -73,7 +73,7 @@ export const sectionContentSchemas = {
     title: text("Title", 300),
     body: textarea("Body", 2000),
     expertName: text("Expert name", 300),
-    cta: cta("CTA"),
+    cta: cta("CTA", { variant: false }),
   }),
   aboutHero: section({
     title: text("Title", 300),
@@ -178,7 +178,7 @@ export const sectionContentSchemas = {
       category: text("Category", 300),
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      cta: cta("CTA"),
+      cta: cta("CTA", { variant: false }),
     }),
     exploreByTopic: group("Explore by topic", {
       eyebrow: text("Eyebrow", 300),
@@ -195,7 +195,7 @@ export const sectionContentSchemas = {
       title: text("Title", 300),
       description: textarea("Description", 2000),
       dateInfo: text("Date info", 300),
-      cta: cta("CTA"),
+      cta: cta("CTA", { variant: false }),
     }),
   }),
   industryCards: section({
@@ -203,7 +203,7 @@ export const sectionContentSchemas = {
     cards: list("Cards", "Card", {
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      cta: cta("CTA"),
+      cta: cta("CTA", { variant: false }),
     }),
     description: textarea("Description", 2000).optional(),
   }),
@@ -236,7 +236,7 @@ export const sectionContentSchemas = {
         category: text("Category", 300),
         title: text("Title", 300),
         description: textarea("Description", 2000),
-        cta: cta("CTA"),
+        cta: cta("CTA", { variant: false }),
       }),
     }),
   }),
@@ -332,7 +332,7 @@ export const sectionContentSchemas = {
         category: text("Category", 300),
         title: text("Title", 300),
         description: textarea("Description", 2000),
-        cta: cta("CTA"),
+        cta: cta("CTA", { variant: false }),
       }),
     }),
   }),

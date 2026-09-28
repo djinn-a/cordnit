@@ -33,13 +33,13 @@ export default function HeroOverlayCard({
           cta={primaryCta}
           className="flex-1 sm:flex-none"
           rightIcon={<ArrowRight className="h-space-16 w-space-16 sm:h-space-14 sm:w-space-14" />}
-          analyticsContext="Hero Overlay Primary"
+          ctaLocation="home-hero-primary"
         />
         <CtaButton
           cta={secondaryCta}
           className="flex-1 sm:flex-none"
           rightIcon={<ArrowRight className="h-space-16 w-space-16 sm:h-space-14 sm:w-space-14" />}
-          analyticsContext="Hero Overlay Secondary"
+          ctaLocation="home-hero-secondary"
         />
       </div>
     </div>

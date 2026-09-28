@@ -83,7 +83,7 @@
               "label": "Explore all services",
               "action": "link",
               "href": "/solutions",
-              "variant": "secondary"
+              "variant": "primary"
             }
           }
         },
@@ -8261,9 +8261,7 @@
       "portraitSrc": "/expert-portrait.webp",
       "cta": {
         "label": "Schedule a Call",
-        "action": "link",
-        "variant": "primary",
-        "href": "#"
+        "action": "contactModal"
       }
     },
     "newsletter": {
@@ -8279,14 +8277,29 @@
       "cardEyebrow": "SECURE DIGITAL TRANSFORMATION",
       "cardTitle": "Turning Technology Complexity Into Meaningful Progress",
       "cardBody": "With Cordinit as your partner, digital initiatives move faster, operations run smoother, and technology becomes an asset not a blocker to growth.",
-      "primaryCta": "Book a call",
-      "secondaryCta": "Explore Solution",
+      "primaryCta": {
+        "label": "Book a call",
+        "action": "contactModal",
+        "variant": "primary"
+      },
+      "secondaryCta": {
+        "label": "Explore Solution",
+        "action": "link",
+        "href": "/solutions",
+        "variant": "secondary"
+      },
       "imageSrc": "/hero-image.webp",
       "imageAlt": "Corporate Digital Transformation"
     },
     "help": {
       "title": "Where we can help",
       "description": "Structured methodologies applied to complex technological challenges. We architect solutions designed for scalability, security, and operational endurance.",
+      "cta": {
+        "label": "Explore all services",
+        "action": "link",
+        "href": "/solutions",
+        "variant": "primary"
+      },
       "services": [
         {
           "num": "01",
@@ -8492,6 +8505,11 @@
       "title": "Technology change made more useful.",
       "bodyMobile": "From secure foundations to connected experiences and smarter operations, we help organisations turn technology change into.",
       "bodyDesktop": "We help organisations make confident progress through technology securely, thoughtfully and with a focus on what will make a real difference.",
+      "cta": {
+        "label": "Talk to Us",
+        "action": "contactModal",
+        "variant": "primary"
+      },
       "imageSrc": "/AboutHero/about-hero.webp",
       "imageAlt": "Cordinit Office"
     },

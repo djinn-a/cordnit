@@ -1,67 +1,57 @@
-import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
 import { buttonVariants, type ButtonVariantProps } from "./button.variants";
 
-type BaseProps = {
+type CommonProps = ButtonVariantProps & {
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-  href?: string;
-} & ButtonVariantProps;
+  className?: string;
+  children?: ReactNode;
+};
 
-type NativeButtonProps = BaseProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">;
-type NativeAnchorProps = BaseProps & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "color">;
+export type ButtonAsButtonProps = CommonProps &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof CommonProps> & { href?: undefined };
 
-export type PolymorphicButtonProps = NativeButtonProps | NativeAnchorProps;
+export type ButtonAsLinkProps = CommonProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof CommonProps> & { href: string };
 
-export default function Button(props: PolymorphicButtonProps) {
-  const {
-    variant,
-    size,
-    fullWidth,
-    leftIcon,
-    rightIcon,
-    className,
-    children,
-    href,
-    ...rest
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } = props as any;
+export type ButtonProps = ButtonAsButtonProps | ButtonAsLinkProps;
 
-  const classes = cn(buttonVariants({ variant, size, fullWidth, className }));
+const isInternalPath = (href: string) => href.startsWith("/") && !href.startsWith("//");
 
-  if (href) {
-    const isExternal = href.startsWith("http") || href.startsWith("mailto:");
-    const isScrollTo = href.startsWith("#");
-    
-    if (isExternal || isScrollTo || rest.target === "_blank") {
-      return (
-        <a href={href} className={classes} {...rest}>
-          {leftIcon}
-          {children}
-          {rightIcon}
-        </a>
-      );
-    }
-    
-    return (
-      <Link href={href} className={classes} {...rest}>
-        {leftIcon}
-        {children}
-        {rightIcon}
-      </Link>
-    );
-  }
-
-  return (
-    <button
-      type={rest.type || "button"}
-      className={classes}
-      {...rest}
-    >
+/** Renders a Next `Link` for internal paths, `<a>` for other hrefs, and `<button>` otherwise. */
+export default function Button(props: ButtonProps) {
+  const { variant, size, fullWidth, leftIcon, rightIcon, className, children, ...rest } = props;
+  const classes = cn(buttonVariants({ variant, size, fullWidth }), className);
+  const body = (
+    <>
       {leftIcon}
       {children}
       {rightIcon}
+    </>
+  );
+
+  if (rest.href !== undefined) {
+    const { href, ...anchorProps } = rest as ButtonAsLinkProps;
+    if (isInternalPath(href) && anchorProps.target !== "_blank") {
+      return (
+        <Link href={href} className={classes} {...anchorProps}>
+          {body}
+        </Link>
+      );
+    }
+    return (
+      <a href={href} className={classes} {...anchorProps}>
+        {body}
+      </a>
+    );
+  }
+
+  const { type = "button", ...buttonProps } = rest as ButtonAsButtonProps;
+  return (
+    <button type={type} className={classes} {...buttonProps}>
+      {body}
     </button>
   );
 }

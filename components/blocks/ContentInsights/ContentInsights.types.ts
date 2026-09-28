@@ -1,3 +1,5 @@
+import type { Cta } from "@/lib/cta";
+
 export interface ContentInsightTopic {
   id: string;
   label: string;
@@ -19,10 +21,7 @@ export interface FeaturedInsightProps {
   category?: string;
   title: string;
   description: string;
-  cta?: {
-    label: string;
-    href: string;
-  };
+  cta?: Cta;
 }
 
 export interface ContentInsightsProps {
@@ -46,8 +45,5 @@ export interface InsightCardData {
     src: string;
     alt: string;
   };
-  cta: {
-    label: string;
-    href: string;
-  };
+  cta: Cta;
 }

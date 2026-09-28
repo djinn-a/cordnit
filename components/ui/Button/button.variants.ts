@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-1.5 sm:gap-2 font-medium transition-colors whitespace-nowrap disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center gap-1.5 sm:gap-2 font-medium transition-colors whitespace-nowrap disabled:opacity-50 disabled:pointer-events-none aria-disabled:opacity-50 aria-disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
   {
     variants: {
       variant: {
@@ -9,6 +9,7 @@ export const buttonVariants = cva(
         secondary: "bg-transparent border border-primary text-primary hover:bg-white/10",
         ghost: "bg-transparent text-primary hover:bg-primary-pale border border-transparent",
         outline: "bg-white border border-border-subtle text-ink hover:border-primary hover:text-primary",
+        link: "bg-transparent border-0 shadow-none text-primary hover:text-primary-hover",
       },
       size: {
         sm: "px-3 py-1.5 rounded-btn text-sm font-semibold",
@@ -19,11 +20,13 @@ export const buttonVariants = cva(
         true: "w-full",
       },
     },
+    compoundVariants: [{ variant: "link", className: "p-0 rounded-none justify-start" }],
     defaultVariants: {
       variant: "primary",
       size: "md",
     },
-  }
+  },
 );
 
 export type ButtonVariantProps = VariantProps<typeof buttonVariants>;
+export type ButtonVariant = NonNullable<ButtonVariantProps["variant"]>;

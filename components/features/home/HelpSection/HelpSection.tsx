@@ -38,9 +38,9 @@ export default function HelpSection({
           {cta && (
             <CtaButton
               cta={cta}
-              className="md:text-link-desktop bg-primary"
+              className="md:text-link-desktop"
               rightIcon={<ArrowRight className="h-space-16 w-space-16" />}
-              analyticsContext="Help Section"
+              ctaLocation="help-section"
             />
           )}
         </div>

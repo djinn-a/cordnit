@@ -16,9 +16,10 @@ export default function IndustryCard({
         <p className="text-[10px] font-normal leading-[14px] md:text-base md:leading-6 text-ink line-clamp-3">{description}</p>
         <CtaButton
           cta={cta}
-          className="inline-flex items-center gap-1 text-primary text-[10px] font-semibold leading-relaxed md:text-sm md:leading-5 hover:text-primary-hover hover:bg-transparent transition-colors mt-1 p-0 h-auto justify-start"
+          variant="link"
+          className="gap-1 text-[10px] font-semibold leading-relaxed md:text-sm md:leading-5 mt-1"
           rightIcon={<ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />}
-          analyticsContext="Industry Card"
+          ctaLocation="industry-card"
         />
       </div>
     </div>

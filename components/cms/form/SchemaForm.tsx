@@ -9,7 +9,15 @@ import {
   PlusOutlined,
 } from "@ant-design/icons";
 import { Button, Card, Collapse, Empty, Flex, Form, Input, InputNumber, Tooltip, Typography, Select, Switch, type FormInstance, type FormRule } from "antd";
-import { useMemo, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useMemo, type ReactNode } from "react";
+import {
+  ANCHOR_PATTERN,
+  CTA_ACTION_OPTIONS,
+  CTA_HREF_MAX,
+  CTA_LABEL_MAX,
+  CTA_VARIANT_OPTIONS,
+  type CtaAction,
+} from "@/lib/cta/types";
 
 /** The subset of JSON Schema (plus our field meta) emitted by z.toJSONSchema for section content. */
 export type JsonSchemaNode = {
@@ -24,9 +32,12 @@ export type JsonSchemaNode = {
   help?: string;
   itemLabel?: string;
   options?: Array<{ value: string; label: string; help?: string }>;
+  ctaVariant?: boolean;
 };
 
 const ITEM_ID = "_id";
+/** Programmatic value changes (setFieldValue) skip onValuesChange, so they report dirtiness here. */
+const DirtyContext = createContext<() => void>(() => {});
 const LINK_RE = /^(\/|#|https?:\/\/|mailto:|tel:)/;
 
 export function newItemId(): string {
@@ -44,7 +55,7 @@ function typeOf(node: JsonSchemaNode): string | undefined {
 
 /** Builds an empty value that satisfies the item schema (used by "Add item"). */
 export function emptyValue(node: JsonSchemaNode): unknown {
-  if (node.widget === "cta") return { label: "", action: "link", variant: "primary" };
+  if (node.widget === "cta") return { label: "", action: "link", href: "" };
   switch (typeOf(node)) {
     case "string":
       return "";
@@ -95,6 +106,7 @@ type FieldProps = {
   node: JsonSchemaNode;
   fieldKey: string;
   form: FormInstance;
+  optional?: boolean;
 };
 
 function stringRules(node: JsonSchemaNode, label: string): FormRule[] {
@@ -263,49 +275,90 @@ function ObjectFields({ name, fullPath, node, form }: Omit<FieldProps, "fieldKey
         if (key === ITEM_ID) {
           return <Form.Item key={key} name={childName} hidden noStyle><Input type="hidden" /></Form.Item>;
         }
-        return <SchemaField key={key} name={childName} fullPath={childPath} node={child} fieldKey={key} form={form} />;
+        const optional = !(node.required ?? []).includes(key);
+        return <SchemaField key={key} name={childName} fullPath={childPath} node={child} fieldKey={key} form={form} optional={optional} />;
       })}
     </>
   );
 }
 
-function CtaField({ name, fullPath, node, fieldKey, form }: FieldProps) {
+const CTA_LABEL_RULES: FormRule[] = [
+  { required: true, whitespace: true, message: "Button label is required." },
+  { max: CTA_LABEL_MAX, message: `Button label must be at most ${CTA_LABEL_MAX} characters.` },
+];
+const CTA_LINK_RULES: FormRule[] = [
+  { required: true, message: "A link button needs a URL." },
+  { max: CTA_HREF_MAX },
+  ...stringRules({ widget: "url" }, "URL"),
+];
+const CTA_ANCHOR_RULES: FormRule[] = [
+  { required: true, message: "Enter the section anchor to scroll to." },
+  { pattern: ANCHOR_PATTERN, message: "Use a section anchor like #contact." },
+];
+
+function CtaField({ name, fullPath, node, fieldKey, form, optional }: FieldProps) {
   const label = node.label ?? humanize(fieldKey);
-  
+  const markDirty = useContext(DirtyContext);
+  const value = Form.useWatch(fullPath, { form, preserve: true }) as { action?: CtaAction } | undefined;
+  const action = value?.action ?? "link";
+
+  const setPresent = (present: boolean) => {
+    form.setFieldValue(fullPath, present ? emptyValue(node) : undefined);
+    markDirty();
+  };
+
+  if (optional && !value) {
+    return (
+      <Form.Item label={label} style={{ marginBottom: 16 }}>
+        <Button type="dashed" icon={<PlusOutlined />} onClick={() => setPresent(true)} block>
+          Add button
+        </Button>
+      </Form.Item>
+    );
+  }
+
   return (
-    <Card size="small" title={label} style={{ marginBottom: 16 }} styles={{ body: { paddingBottom: 0 } }}>
-       <Form.Item label="Label" name={[...name, "label"]} rules={[{ required: true, max: 100 }]}>
-         <Input />
-       </Form.Item>
-       <Flex gap={16}>
-         <Form.Item label="Action" name={[...name, "action"]} style={{ flex: 1 }}>
-           <Select options={[
-             { value: 'link', label: 'Go to URL' },
-             { value: 'contactModal', label: 'Open Contact Modal' }
-           ]} />
-         </Form.Item>
-         <Form.Item label="Variant" name={[...name, "variant"]} style={{ flex: 1 }}>
-           <Select options={[
-             { value: 'primary', label: 'Primary' },
-             { value: 'secondary', label: 'Secondary' },
-             { value: 'ghost', label: 'Ghost' },
-             { value: 'outline', label: 'Outline' }
-           ]} />
-         </Form.Item>
-       </Flex>
-       <Form.Item noStyle shouldUpdate>
-         {() => {
-           const action = form.getFieldValue([...fullPath, "action"]);
-           if (action === 'link') {
-             return (
-               <Form.Item label="URL" name={[...name, "href"]} rules={[{ required: true }, ...stringRules({ widget: "url" }, "URL")]}>
-                 <Input prefix={<LinkOutlined style={{ color: "rgba(0,0,0,0.35)" }} />} placeholder="/path, #anchor or https://" spellCheck={false} />
-               </Form.Item>
-             );
-           }
-           return null;
-         }}
-       </Form.Item>
+    <Card
+      size="small"
+      title={label}
+      extra={
+        optional ? (
+          <Button size="small" type="text" danger icon={<DeleteOutlined />} onClick={() => setPresent(false)}>
+            Remove
+          </Button>
+        ) : undefined
+      }
+      style={{ marginBottom: 16 }}
+      styles={{ body: { paddingBottom: 0 } }}
+    >
+      <Form.Item label="Label" name={[...name, "label"]} rules={CTA_LABEL_RULES}>
+        <Input />
+      </Form.Item>
+      <Flex gap={16} wrap>
+        <Form.Item label="When clicked" name={[...name, "action"]} style={{ flex: 1, minWidth: 200 }}>
+          <Select options={[...CTA_ACTION_OPTIONS]} />
+        </Form.Item>
+        {node.ctaVariant !== false && (
+          <Form.Item label="Style" name={[...name, "variant"]} style={{ flex: 1, minWidth: 200 }}>
+            <Select options={[...CTA_VARIANT_OPTIONS]} placeholder="Primary (solid)" allowClear />
+          </Form.Item>
+        )}
+      </Flex>
+      {action === "link" && (
+        <Flex gap={16} align="flex-end" wrap>
+          <Form.Item label="URL" name={[...name, "href"]} rules={CTA_LINK_RULES} style={{ flex: 1, minWidth: 240 }}>
+            <Input prefix={<LinkOutlined style={{ color: "rgba(0,0,0,0.35)" }} />} placeholder="/path, #anchor or https://" spellCheck={false} />
+          </Form.Item>
+          <Form.Item label="Open in new tab" name={[...name, "newTab"]} valuePropName="checked">
+            <Switch size="small" />
+          </Form.Item>
+        </Flex>
+      )}
+      {action === "scrollTo" && (
+        <Form.Item label="Section anchor" name={[...name, "href"]} rules={CTA_ANCHOR_RULES} tooltip="The id of a section on this page, prefixed with #.">
+          <Input placeholder="#contact" spellCheck={false} />
+        </Form.Item>
+      )}
     </Card>
   );
 }
@@ -351,6 +404,7 @@ export default function SchemaForm<T extends Record<string, unknown>>({
   header,
 }: Readonly<SchemaFormProps<T>>) {
   const hasFields = useMemo(() => Object.keys(schema?.properties ?? {}).some((k) => k !== ITEM_ID), [schema]);
+  const markDirty = useCallback(() => onDirtyChange?.(true), [onDirtyChange]);
   if (!schema || typeOf(schema) !== "object") {
     return <Empty description="This section type has no editable schema." />;
   }
@@ -368,7 +422,9 @@ export default function SchemaForm<T extends Record<string, unknown>>({
       scrollToFirstError={{ behavior: "smooth", block: "center" }}
     >
       {header}
-      <ObjectFields name={[]} fullPath={[]} node={schema} form={form as FormInstance} />
+      <DirtyContext.Provider value={markDirty}>
+        <ObjectFields name={[]} fullPath={[]} node={schema} form={form as FormInstance} />
+      </DirtyContext.Provider>
     </Form>
   );
 }

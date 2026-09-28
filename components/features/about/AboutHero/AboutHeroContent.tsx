@@ -47,7 +47,7 @@ export default function AboutHeroContent({
             cta={cta}
             className="flex-1 sm:flex-none text-mobile-cta-1 sm:text-button"
             rightIcon={<ArrowRight className="text-white h-3.5 w-3.5 sm:h-4 sm:w-4" />}
-            analyticsContext="About Hero"
+            ctaLocation="about-hero"
           />
         )}
       </div>

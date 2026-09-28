@@ -33,6 +33,28 @@ describe("section registry", () => {
     }
   });
 
+  it("keeps every CTA field in editable content", () => {
+    const isCta = (v: unknown): v is Record<string, unknown> =>
+      !!v && typeof v === "object" && "label" in v && "action" in v;
+    const leaks: string[] = [];
+    const walk = (props: unknown, system: unknown, path: string) => {
+      if (isCta(props)) {
+        const hidden = Object.keys(system && typeof system === "object" ? system : {});
+        if (hidden.length) leaks.push(`${path}: ${hidden.join(",")}`);
+        return;
+      }
+      if (Array.isArray(props)) props.forEach((v, i) => walk(v, Array.isArray(system) ? system[i] : undefined, `${path}[${i}]`));
+      else if (props && typeof props === "object") {
+        const sys = (system ?? {}) as Record<string, unknown>;
+        for (const [k, v] of Object.entries(props)) walk(v, sys[k], `${path}.${k}`);
+      }
+    };
+    for (const { label, type, props } of sections) {
+      if (isSectionType(type)) walk(props, splitSectionProps(props, getContentSchema(type)).systemProps, label);
+    }
+    expect(leaks).toEqual([]);
+  });
+
   it("gives every type defaults that pass its own schema", () => {
     for (const type of SECTION_TYPES) {
       const { content } = getSectionDefaults(type);
@@ -50,14 +72,14 @@ describe("seed snapshot", () => {
 
   it.each(sections)("$label content passes its schema", ({ type, props }) => {
     if (!isSectionType(type)) throw new Error(`unknown type ${type}`);
-    const { content } = splitSectionProps(props);
+    const { content } = splitSectionProps(props, getContentSchema(type));
     const result = getContentSchema(type).safeParse(content);
     expect(result.success, result.error?.message).toBe(true);
   });
 
   it.each(sections)("$label split + parse + merge is lossless", ({ type, props }) => {
     if (!isSectionType(type)) throw new Error(`unknown type ${type}`);
-    const { content, systemProps } = splitSectionProps(props);
+    const { content, systemProps } = splitSectionProps(props, getContentSchema(type));
     const parsed = getContentSchema(type).parse(content) as Record<string, unknown>;
     const merged = stripItemIds(mergeSectionProps(systemProps, parsed));
     expect(isDeepStrictEqual(merged, props), JSON.stringify(merged).slice(0, 300)).toBe(true);

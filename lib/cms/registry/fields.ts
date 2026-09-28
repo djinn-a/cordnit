@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ctaSchema } from "@/lib/cta";
+import { LINK_PATTERN, ctaSchema } from "@/lib/cta";
 import { ITEM_ID_KEY } from "./props";
 
 /**
@@ -14,9 +14,9 @@ export type FieldMeta = {
   help?: string;
   itemLabel?: string;
   options?: Array<{ value: string; label: string; help?: string }>;
+  /** `cta` widget only: false when the placement's design fixes the button style. */
+  ctaVariant?: boolean;
 };
-
-const LINK_PATTERN = /^(\/|#|https?:\/\/|mailto:|tel:)/;
 
 export const text = (label: string, max = 500) =>
   z.string().max(max, `${label} must be at most ${max} characters.`).meta({ label, widget: "text" });
@@ -40,7 +40,8 @@ export const select = (label: string, options: Array<{ value: string; label: str
 
 export const bool = (label: string) => z.boolean().meta({ label, widget: "checkbox" });
 
-export const cta = (label: string) => ctaSchema.meta({ label, widget: "cta" });
+export const cta = (label: string, options: { variant?: boolean } = {}) =>
+  ctaSchema.meta({ label, widget: "cta", ctaVariant: options.variant ?? true } satisfies FieldMeta);
 
 export const itemId = () => z.string().min(1).max(100);
 

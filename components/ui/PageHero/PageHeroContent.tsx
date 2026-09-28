@@ -27,7 +27,7 @@ export default function PageHeroContent({
           cta={cta}
           size="md" 
           rightIcon={<ArrowRight className="w-4 h-4 ml-2" />}
-          analyticsContext="Page Hero"
+          ctaLocation="page-hero"
         />
       )}
     </div>

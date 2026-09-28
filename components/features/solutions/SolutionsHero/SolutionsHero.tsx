@@ -30,7 +30,7 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
               cta={content.cta}
               className="px-6 py-3"
               rightIcon={<ArrowRight className="w-4 h-4" />}
-              analyticsContext="Solutions Hero"
+              ctaLocation="solutions-hero"
             />
           )}
         </div>

@@ -43,7 +43,7 @@ export default function SplitActionCardsSection({ data }: SplitActionCardsSectio
           <div className="flex flex-col gap-space-16 mt-space-8">
             <div className="w-fit">
               {/* Reuse existing Button */}
-              <CtaButton cta={data.cta} rightIcon={<ArrowRight className="w-4 h-4" />} analyticsContext="Split Action Cards" />
+              <CtaButton cta={data.cta} rightIcon={<ArrowRight className="w-4 h-4" />} ctaLocation="split-action-cards" />
             </div>
             
             {data.supportingText && (

@@ -30,7 +30,7 @@ export default function ContentMediaText({
             cta={cta}
             className="w-fit h-10.5 md:h-space-48 rounded-lg px-space-16 py-space-10 md:px-space-24 md:py-space-12 text-[14px] md:text-[16px] font-semibold leading-space-22 md:leading-space-24"
             rightIcon={<ArrowRight size={16} />}
-            analyticsContext="Content Media"
+            ctaLocation="content-media"
           />
         </div>
       )}

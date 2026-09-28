@@ -8,15 +8,14 @@
       "cardBody": "With Cordinit as your partner, digital initiatives move faster, operations run smoother, and technology becomes an asset not a blocker to growth.",
       "primaryCta": {
         "label": "Book a call",
-        "action": "link",
-        "href": "#",
+        "action": "contactModal",
         "variant": "primary"
       },
       "secondaryCta": {
         "label": "Explore Solution",
         "action": "link",
-        "href": "#",
-        "variant": "primary"
+        "href": "/solutions",
+        "variant": "secondary"
       }
     },
     "systemProps": {
@@ -28,6 +27,12 @@
     "content": {
       "title": "Where we can help",
       "description": "Structured methodologies applied to complex technological challenges. We architect solutions designed for scalability, security, and operational endurance.",
+      "cta": {
+        "label": "Explore all services",
+        "action": "link",
+        "href": "/solutions",
+        "variant": "primary"
+      },
       "services": [
         {
           "_id": "i0",
@@ -65,13 +70,7 @@
           "title": "Application Engineering",
           "desc": "We build modern, integrated applications and portals that fit your enterprise ecosystem—improving adoption, reducing manual work, and strengthening operations."
         }
-      ],
-      "cta": {
-        "label": "Find out more",
-        "action": "link",
-        "href": "#",
-        "variant": "primary"
-      }
+      ]
     },
     "systemProps": {
       "services": [
@@ -367,9 +366,7 @@
       "expertName": "Talk to a Enterprise Technology Specialist",
       "cta": {
         "label": "Schedule a Call",
-        "action": "link",
-        "href": "#",
-        "variant": "primary"
+        "action": "contactModal"
       }
     },
     "systemProps": {
@@ -384,9 +381,8 @@
       "bodyMobile": "From secure foundations to connected experiences and smarter operations, we help organisations turn technology change into.",
       "bodyDesktop": "We help organisations make confident progress through technology securely, thoughtfully and with a focus on what will make a real difference.",
       "cta": {
-        "label": "Learn more",
-        "action": "link",
-        "href": "#",
+        "label": "Talk to Us",
+        "action": "contactModal",
         "variant": "primary"
       }
     },
@@ -786,8 +782,7 @@
       "cta": {
         "label": "Discuss your industry priorities",
         "href": "/contactus",
-        "action": "link",
-        "variant": "primary"
+        "action": "link"
       }
     },
     "systemProps": {
@@ -813,8 +808,7 @@
       "cta": {
         "label": "Book a call",
         "href": "/contactus",
-        "action": "link",
-        "variant": "primary"
+        "action": "link"
       }
     },
     "systemProps": {
@@ -835,8 +829,7 @@
         "cta": {
           "label": "Read article",
           "href": "#",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         }
       },
       "exploreByTopic": {
@@ -890,8 +883,7 @@
           "cta": {
             "label": "Read article",
             "href": "#",
-            "action": "link",
-            "variant": "primary"
+            "action": "link"
           }
         },
         {
@@ -907,8 +899,7 @@
           "cta": {
             "label": "Read article",
             "href": "#",
-            "action": "link",
-            "variant": "primary"
+            "action": "link"
           }
         },
         {
@@ -924,8 +915,7 @@
           "cta": {
             "label": "Read case study",
             "href": "#",
-            "action": "link",
-            "variant": "primary"
+            "action": "link"
           }
         },
         {
@@ -941,8 +931,7 @@
           "cta": {
             "label": "Read article",
             "href": "#",
-            "action": "link",
-            "variant": "primary"
+            "action": "link"
           }
         }
       ]
@@ -1038,8 +1027,8 @@
           "cta": {
             "label": "Explore",
             "action": "link",
-            "href": "#",
-            "variant": "primary"
+            "variant": "primary",
+            "href": "#"
           }
         },
         {
@@ -1049,8 +1038,8 @@
           "cta": {
             "label": "Explore",
             "action": "link",
-            "href": "#",
-            "variant": "primary"
+            "variant": "primary",
+            "href": "#"
           }
         },
         {
@@ -1060,8 +1049,8 @@
           "cta": {
             "label": "Explore",
             "action": "link",
-            "href": "#",
-            "variant": "primary"
+            "variant": "primary",
+            "href": "#"
           }
         },
         {
@@ -1071,8 +1060,8 @@
           "cta": {
             "label": "Explore",
             "action": "link",
-            "href": "#",
-            "variant": "primary"
+            "variant": "primary",
+            "href": "#"
           }
         },
         {
@@ -1082,8 +1071,8 @@
           "cta": {
             "label": "Explore",
             "action": "link",
-            "href": "#",
-            "variant": "primary"
+            "variant": "primary",
+            "href": "#"
           }
         },
         {
@@ -1093,8 +1082,8 @@
           "cta": {
             "label": "Explore",
             "action": "link",
-            "href": "#",
-            "variant": "primary"
+            "variant": "primary",
+            "href": "#"
           }
         }
       ]
@@ -1143,8 +1132,7 @@
         "cta": {
           "label": "Discuss your security priorities",
           "href": "/contactus",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         },
         "quoteOverlay": {
           "quote": "“Security should enable progress, not stand in its way.”",
@@ -1194,11 +1182,12 @@
             "category": "CLOUD",
             "title": "Cloud Security",
             "description": "Stronger controls, visibility and confidence across your cloud environment.",
+            "href": "/cybersecurity/cloud-security",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/cybersecurity/cloud-security",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1207,11 +1196,12 @@
             "category": "APPLICATION",
             "title": "Application Security",
             "description": "Build security into applications from design and development through to deployment.",
+            "href": "/cybersecurity/application-security",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/cybersecurity/application-security",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1220,11 +1210,12 @@
             "category": "IDENTITY",
             "title": "Identity Security",
             "description": "Give the right people the right access while maintaining control as needs change.",
+            "href": "/cybersecurity/identity-security",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/cybersecurity/identity-security",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1233,11 +1224,12 @@
             "category": "DATA",
             "title": "Data Security",
             "description": "Protect sensitive data wherever it is created, used and stored.",
+            "href": "/cybersecurity/data-security",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/cybersecurity/data-security",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1246,11 +1238,12 @@
             "category": "AI",
             "title": "AI Security",
             "description": "Adopt AI with practical guardrails for data, models, people and processes.",
+            "href": "/cybersecurity/ai-security",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/cybersecurity/ai-security",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1259,11 +1252,12 @@
             "category": "EXPOSURE",
             "title": "Exposure Management",
             "description": "Identify and prioritise the exposures creating the greatest business risk.",
+            "href": "/cybersecurity/exposure-management",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/cybersecurity/exposure-management",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1272,11 +1266,12 @@
             "category": "VULNERABILITY",
             "title": "Vulnerability Management",
             "description": "Discover, prioritise and reduce vulnerability risk with greater consistency.",
+            "href": "/cybersecurity/vulnerability-management",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/cybersecurity/vulnerability-management",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1285,11 +1280,12 @@
             "category": "OPERATIONS",
             "title": "Managed Security",
             "description": "Extend your security capacity with ongoing operations, governance and improvement.",
+            "href": "/cybersecurity/managed-security",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/cybersecurity/managed-security",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           }
         ]
@@ -1460,8 +1456,7 @@
         "cta": {
           "label": "Start a security conversation",
           "href": "/contactus",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         },
         "supportingText": "No obligation. Just a useful first conversation.",
         "listHeader": {
@@ -1596,8 +1591,7 @@
         "cta": {
           "label": "Discuss your salesforce roadmap",
           "href": "/contactus",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         },
         "quoteOverlay": {
           "quote": "“Technology creates value when it makes every interaction more useful.”",
@@ -1717,11 +1711,12 @@
             "category": "SALES",
             "title": "Sales",
             "description": "Help sellers focus on the right opportunities with clearer processes and better pipeline visibility.",
+            "href": "/salesforce/sales",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/salesforce/sales",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1730,11 +1725,12 @@
             "category": "SERVICE",
             "title": "Service",
             "description": "Equip service teams to resolve issues efficiently and create better customer experiences across every channel.",
+            "href": "/salesforce/service",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/salesforce/service",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1743,11 +1739,12 @@
             "category": "MARKETING",
             "title": "Marketing",
             "description": "Create relevant engagement through connected data and effective customer journeys.",
+            "href": "/salesforce/marketing",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/salesforce/marketing",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1756,11 +1753,12 @@
             "category": "COMMERCE",
             "title": "Commerce",
             "description": "Build digital commerce experiences that connect products, orders and customer relationships.",
+            "href": "/salesforce/commerce",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/salesforce/commerce",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1769,11 +1767,12 @@
             "category": "AI",
             "title": "AI",
             "description": "Apply AI to high-value customer and employee workflows with the right data, oversight and measurement.",
+            "href": "/salesforce/ai",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/salesforce/ai",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1782,11 +1781,12 @@
             "category": "integration",
             "title": "Integrations",
             "description": "Connect Salesforce to the systems, processes and information your teams rely on.",
+            "href": "/salesforce/integration",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/salesforce/integration",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           },
           {
@@ -1795,11 +1795,12 @@
             "category": "managed service",
             "title": "Managed Services",
             "description": "Keep your platform moving after go-live through support, releases, optimisation and governance.",
+            "href": "/salesforce/managed-services",
             "cta": {
               "label": "Explore",
               "action": "link",
-              "href": "/salesforce/managed-services",
-              "variant": "primary"
+              "variant": "primary",
+              "href": "#"
             }
           }
         ]
@@ -1896,8 +1897,7 @@
         "cta": {
           "label": "Start a salesforce conversation",
           "href": "/contactus",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         },
         "supportingText": "No obligation. Just a useful first conversation.",
         "listHeader": {
@@ -2032,8 +2032,7 @@
         "cta": {
           "label": "Explore your AI opportunity",
           "href": "/contactus",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         },
         "quoteOverlay": {
           "quote": "“AI create value when it improves the way people work.”",
@@ -2196,8 +2195,7 @@
         "cta": {
           "label": "Start a AI conversation",
           "href": "/contactus",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         },
         "supportingText": "No obligation. Just a useful first conversation.",
         "listHeader": {
@@ -2397,8 +2395,8 @@
       "cta": {
         "label": "Book a call",
         "action": "link",
-        "href": "#",
-        "variant": "primary"
+        "variant": "primary",
+        "href": "#"
       }
     },
     "systemProps": {
@@ -2602,8 +2600,7 @@
         "cta": {
           "label": "Discuss your cloud priorities",
           "href": "/contactus",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         }
       }
     },
@@ -2625,8 +2622,7 @@
         "cta": {
           "label": "Discuss your application challenge",
           "href": "/contactus",
-          "action": "link",
-          "variant": "primary"
+          "action": "link"
         }
       }
     },

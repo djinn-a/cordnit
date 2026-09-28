@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { SECTION_TYPES } from "@/lib/cms/types";
 import { ITEM_ID_KEY, isPlainObject, splitSectionProps } from "@/lib/cms/registry/props";
+import { sectionContentSchemas } from "@/lib/cms/registry/schemas.generated";
 
 type Snapshot = {
   pages: { sections: { type: string; props: Record<string, unknown> }[] }[];
@@ -134,6 +135,7 @@ function emit(shape: Shape, key: string, indent: string): string {
       return `z.array(z.unknown()).meta({ label: ${q(label)} })`;
     }
     case "object":
+      if (shape.fields.has("label") && shape.fields.has("action")) return `cta(${q(label)})`;
       return `group(${q(label)}, ${emitFields(shape, `${indent}  `)})`;
   }
 }
@@ -173,11 +175,11 @@ function main() {
     if (shape.count === 0) shape.count = 1;
     blocks.push(`  ${type}: section(${emitFields(shape, "    ")}),`);
     const sample = snapshot.samples[type] ?? samples[0] ?? {};
-    defaults[type] = splitSectionProps(sample);
+    defaults[type] = splitSectionProps(sample, sectionContentSchemas[type]);
   }
 
   const body = blocks.join("\n");
-  const builders = ["group", "link", "list", "num", "section", "stringList", "text", "textarea"].filter((b) =>
+  const builders = ["cta", "group", "link", "list", "num", "section", "stringList", "text", "textarea"].filter((b) =>
     new RegExp(`\\b${b}\\(`).test(body),
   );
 
