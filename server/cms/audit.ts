@@ -6,7 +6,7 @@ import { auditLog } from "@/server/db/schema";
 export type AuditEntry = {
   actorId: string | null;
   action: string;
-  entityType: "page" | "section" | "block" | "template" | "redirect" | "auth";
+  entityType: "page" | "section" | "block" | "template" | "redirect" | "auth" | "lead";
   entityId?: string | null;
   summary?: string;
   diff?: Record<string, unknown>;

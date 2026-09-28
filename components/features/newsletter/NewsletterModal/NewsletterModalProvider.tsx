@@ -1,15 +1,16 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, ReactNode } from 'react';
+import { useNewsletterSubscribe, type NewsletterSubscribe } from '@/hooks/useNewsletterSubscribe';
+import NewsletterModal from './NewsletterModal';
 
-export type NewsletterStatus = 'idle' | 'validating' | 'success';
+const CLOSE_MS = 300;
 
 interface NewsletterModalContextType {
   isOpen: boolean;
-  status: NewsletterStatus;
   openModal: () => void;
   closeModal: () => void;
-  submit: () => void;
+  subscription: NewsletterSubscribe;
 }
 
 const NewsletterModalContext = createContext<NewsletterModalContextType | undefined>(undefined);
@@ -22,47 +23,40 @@ export function useNewsletterModal() {
   return context;
 }
 
-import NewsletterModal from './NewsletterModal';
-
 export function NewsletterModalProvider({ children }: Readonly<{ children: ReactNode }>) {
   const [isOpen, setIsOpen] = useState(false);
-  const [status, setStatus] = useState<NewsletterStatus>('idle');
+  const subscription = useNewsletterSubscribe('Newsletter Modal');
+  const { reset } = subscription;
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const openModal = () => setIsOpen(true);
+  const openModal = useCallback(() => {
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+    setIsOpen(true);
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsOpen(false);
-    setTimeout(() => {
-      setStatus('idle');
-    }, 300);
-  };
-
-  const submit = () => {
-    setStatus('validating');
-  };
+    resetTimer.current = setTimeout(reset, CLOSE_MS);
+  }, [reset]);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
 
-  useEffect(() => {
-    if (status === 'validating') {
-      const timer = setTimeout(() => {
-        setStatus('success');
-      }, 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [status]);
+  useEffect(() => () => {
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+  }, []);
+
+  const value = useMemo(
+    () => ({ isOpen, openModal, closeModal, subscription }),
+    [isOpen, openModal, closeModal, subscription]
+  );
 
   return (
-    <NewsletterModalContext.Provider value={{ isOpen, status, openModal, closeModal, submit }}>
+    <NewsletterModalContext.Provider value={value}>
       {children}
       <NewsletterModal />
     </NewsletterModalContext.Provider>

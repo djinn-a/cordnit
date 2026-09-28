@@ -26,15 +26,6 @@ export interface NewsletterContent {
     button1: React.ReactNode;
     button2: React.ReactNode;
   };
-  comingSoon: {
-    eyebrow: string;
-    heading: React.ReactNode;
-    description: string;
-    primaryCta: string;
-    secondaryCta: string;
-    footerNote: string;
-    footerCta: string;
-  };
 }
 
 export const defaultNewsletterContent: NewsletterContent = {
@@ -50,27 +41,17 @@ export const defaultNewsletterContent: NewsletterContent = {
   validation: {
     eyebrow: "VALIDATION",
     heading: "Almost there...",
-    description: "We&apos;re just validating your details",
+    description: "We're just validating your details",
     emailFormatValid: "Email format looks good.",
     consentConfirmed: "Consent confirmed",
     waitMessage: <>This will only take a moment. Please don&apos;t<br className="hidden sm:block" />refresh or close this window</>,
   },
   success: {
     eyebrow: "SUBSCRIPTION SUCCESSFUL",
-    heading: "You&apos;re subscribed",
+    heading: "You're subscribed",
     description1: "Thank you for subscribing to Cordinit newsletter.",
     description2: <>You&apos;ll receive the latest insights and perspectives<br />straight to your inbox.</>,
     button1: <>Explore solution <span className="ml-1.5 font-bold">→</span></>,
     button2: <>View latest insights <span className="ml-1.5 font-bold">→</span></>,
-  },
-  comingSoon: {
-    eyebrow: "COMING SOON",
-    heading: <>Stay ahead of<br />what&apos;s next.</>,
-    description:
-      "Our insights newsletter isn't live yet. If you'd like updates or a conversation with our team, get in touch — we're collecting enquiries now.",
-    primaryCta: "Get in touch",
-    secondaryCta: "Back to home",
-    footerNote: "Newsletter signup is coming soon.",
-    footerCta: "Get in touch",
   },
 };

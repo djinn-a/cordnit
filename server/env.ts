@@ -12,6 +12,8 @@ const serverEnvSchema = z.object({
   CMS_ADMIN_EMAIL_DOMAIN: z.string().min(3).default("cms.cordinit.com"),
   CMS_REVALIDATE_SECRET: z.string().min(32).optional(),
   DB_POOL_MAX: z.coerce.number().int().positive().max(50).default(5),
+  /** HMAC key for hashing visitor IPs (rate limiting, abuse triage). Required in production. */
+  LEADS_IP_SALT: z.string().min(32).optional(),
 });
 
 export type ServerEnv = z.infer<typeof serverEnvSchema>;

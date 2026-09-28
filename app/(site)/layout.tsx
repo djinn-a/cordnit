@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer/Footer";
 import { ContactModalProvider } from "@/components/features/contact/ContactModal/ContactModalProvider";
 import { NewsletterModalProvider } from "@/components/features/newsletter/NewsletterModal/NewsletterModalProvider";
 import { CtaSection } from "@/components/layout/CtaSection";
+import { AttributionCapture } from "@/components/features/leads/AttributionCapture";
 import { ctaData } from "@/data/cta";
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME, SITE_URL } from "@/lib/seo/site";
 
@@ -30,6 +31,7 @@ export default function SiteRootLayout({ children }: Readonly<{ children: React.
       className={`${mulish.variable} font-sans h-full antialiased overflow-x-hidden`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
+        <AttributionCapture />
         <ContactModalProvider>
           <NewsletterModalProvider>
             <TopBar />

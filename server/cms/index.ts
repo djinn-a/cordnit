@@ -1,5 +1,6 @@
 import "server-only";
 import * as blocks from "./services/blocks.service";
+import * as leads from "./services/leads.service";
 import * as pages from "./services/pages.service";
 import * as publish from "./services/publish.service";
 import * as redirects from "./services/redirects.service";
@@ -20,6 +21,7 @@ export const cms = {
   blocks,
   templates,
   redirects,
+  leads,
   published,
   preview,
   audit: { list: listAudit },

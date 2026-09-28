@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { interestsList, inputClasses, textFields } from './contactFormConstants';
 import { FormInput } from './FormInput';
+import { HoneypotField } from '@/components/ui/HoneypotField';
 
 export interface LeadFormData {
   firstName: string;
@@ -24,6 +25,7 @@ interface ContactModalFormProps {
   toggleInterest: (interest: string) => void;
   isFormValid: boolean;
   handleContinue: (e: React.FormEvent<HTMLFormElement>) => void;
+  honeypotProps: React.ComponentProps<typeof HoneypotField>;
 }
 
 export function ContactModalForm({
@@ -34,10 +36,12 @@ export function ContactModalForm({
   selectedInterests,
   toggleInterest,
   isFormValid,
-  handleContinue
+  handleContinue,
+  honeypotProps
 }: Readonly<ContactModalFormProps>) {
   return (
-    <form className="space-y-8" onSubmit={handleContinue} noValidate>
+    <form className="relative space-y-8" onSubmit={handleContinue} noValidate>
+      <HoneypotField {...honeypotProps} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7">
         {textFields.map((field) => (
           <FormInput

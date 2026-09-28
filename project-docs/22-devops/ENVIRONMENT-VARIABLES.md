@@ -18,8 +18,9 @@ Approved. Template: `.env.example` (committed). Real values: `.env.local` (gitig
 | `SUPABASE_SECRET_KEY` | admin script, password change | server | Service-level key. Never expose. |
 | `CMS_ADMIN_EMAIL_DOMAIN` | no (`cms.cordinit.com`) | server | Username -> internal email mapping. |
 | `CMS_REVALIDATE_SECRET` | for `/api/revalidate` | server | Bearer token, min 32 chars. |
-| `GOOGLE_SHEET_ID`, `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` | lead mirror | server | Google Sheets sync for leads. |
-| `RESEND_API_KEY`, `NOTIFICATION_FROM_EMAIL`, `NOTIFICATION_TO_EMAIL` | lead emails | server | Lead notification emails. |
+| `LEADS_IP_SALT` | production | server | HMAC key (min 32 chars) for hashing visitor IPs used by lead rate limiting. `/api/leads` returns 500 in production without it. Generate: `openssl rand -hex 32`. |
+| `LEAD_NOTIFICATIONS_ENABLED` | no (`false`) | server | Set to `true` to send lead notification emails once the Resend domain is verified. |
+| `RESEND_API_KEY`, `NOTIFICATION_FROM_EMAIL`, `NOTIFICATION_TO_EMAIL` | lead emails | server | Lead notification emails (best-effort; leads are always stored in `cms.leads` first). |
 
 ## Rules
 - Server values are validated lazily by `server/env.ts` (Zod); a missing value fails with a clear message the first time it's needed.

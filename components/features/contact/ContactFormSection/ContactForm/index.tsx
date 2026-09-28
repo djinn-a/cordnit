@@ -29,11 +29,13 @@ export default function ContactFormWrapper({ cmsData }: Readonly<ContactFormWrap
     isSubmitting,
     submitError,
     isSuccess,
+    honeypotProps,
     handleInputChange,
+    handleBlur,
     toggleInterest,
     handleSubmit,
     setIsSuccess
-  } = useLeadForm({ ctaLocation: 'Contact Page' });
+  } = useLeadForm('contact', { ctaLocation: 'Contact Page' });
 
   return (
     <>
@@ -44,6 +46,8 @@ export default function ContactFormWrapper({ cmsData }: Readonly<ContactFormWrap
         isSubmitting={isSubmitting}
         submitError={submitError}
         handleInputChange={handleInputChange}
+        handleBlur={handleBlur}
+        honeypotProps={honeypotProps}
         toggleInterest={toggleInterest}
         handleSubmit={handleSubmit}
         openModal={openModal}

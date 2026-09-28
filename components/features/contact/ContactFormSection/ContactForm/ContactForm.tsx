@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FORM_FIELDS } from './formFields';
+import { HoneypotField } from '@/components/ui/HoneypotField';
 
 type ContactFormProps = {
   formData: {
@@ -21,6 +22,8 @@ type ContactFormProps = {
   isSubmitting: boolean;
   submitError: string | null;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  honeypotProps: React.ComponentProps<typeof HoneypotField>;
   toggleInterest: (interest: string) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   openModal: () => void;
@@ -46,6 +49,8 @@ export default function ContactForm({
   isSubmitting,
   submitError,
   handleInputChange,
+  handleBlur,
+  honeypotProps,
   toggleInterest,
   handleSubmit,
   openModal,
@@ -58,7 +63,8 @@ export default function ContactForm({
 
   return (
     <div className="w-full lg:w-5/12 rounded-card p-6 md:p-8 lg:p-10 bg-gradient-contact-soft shadow-sm">
-      <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+      <form className="relative space-y-6" onSubmit={handleSubmit} noValidate>
+        <HoneypotField {...honeypotProps} />
         {/* Input Fields */}
         <div className="space-y-5">
           {FORM_FIELDS.map((field) => (
@@ -73,9 +79,16 @@ export default function ContactForm({
                 name={field.name}
                 value={formData[field.name]}
                 onChange={handleInputChange}
+                onBlur={handleBlur}
                 placeholder={field.placeholder}
+                autoComplete={field.autoComplete}
+                aria-invalid={Boolean(errors[field.name])}
+                aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
                 className={inputClasses(field.name)}
               />
+              {errors[field.name] && (
+                <p id={`${field.name}-error`} className="mt-1 text-xs text-error">{errors[field.name]}</p>
+              )}
             </div>
           ))}
         </div>
@@ -111,7 +124,8 @@ export default function ContactForm({
         {/* Textarea */}
         <div className="pt-2">
           <label htmlFor="helpDetails" className="block text-[15px] md:text-sm font-medium text-gray-800 mb-1.5">{cmsData.requirementLabel} <span className="text-error">*</span></label>
-          <textarea id="helpDetails" name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} placeholder={cmsData.requirementPlaceholder} rows={4} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
+          <textarea id="helpDetails" name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} onBlur={handleBlur} placeholder={cmsData.requirementPlaceholder} rows={4} maxLength={5000} aria-invalid={Boolean(errors.helpDetails)} className={`${inputClasses('helpDetails')} resize-none`}></textarea>
+          {errors.helpDetails && <p className="mt-1 text-xs text-error">{errors.helpDetails}</p>}
         </div>
 
         {/* Checkboxes */}

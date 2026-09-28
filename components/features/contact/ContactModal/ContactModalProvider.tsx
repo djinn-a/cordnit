@@ -49,13 +49,14 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
     submitError,
     isSuccess,
     isFormValid,
+    honeypotProps,
     handleInputChange,
     handleBlur,
     toggleInterest,
     validateForm,
     handleSubmit,
     resetForm
-  } = useLeadForm(modalContext);
+  } = useLeadForm('lead_form', modalContext);
 
   const [step, setStep] = useState<1 | 2>(1);
 
@@ -189,6 +190,7 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
                         toggleInterest={toggleInterest}
                         isFormValid={isFormValid}
                         handleContinue={handleContinue}
+                        honeypotProps={honeypotProps}
                       />
                     );
                   }

@@ -5,6 +5,7 @@ import {
   BlockOutlined,
   FileTextOutlined,
   HistoryOutlined,
+  InboxOutlined,
   NodeIndexOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
@@ -19,6 +20,7 @@ const NAV = [
   { key: "/admin", icon: <FileTextOutlined />, label: "Pages" },
   { key: "/admin/blocks", icon: <BlockOutlined />, label: "Global Blocks" },
   { key: "/admin/layouts", icon: <AppstoreOutlined />, label: "Layouts" },
+  { key: "/admin/leads", icon: <InboxOutlined />, label: "Leads" },
   { key: "/admin/redirects", icon: <NodeIndexOutlined />, label: "Redirects" },
   { key: "/admin/activity", icon: <HistoryOutlined />, label: "Activity" },
   { key: "/admin/settings", icon: <SettingOutlined />, label: "Settings" },

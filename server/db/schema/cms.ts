@@ -7,6 +7,7 @@ import {
   integer,
   jsonb,
   pgSchema,
+  primaryKey,
   text,
   timestamp,
   uniqueIndex,
@@ -20,6 +21,7 @@ import type {
   PublishedPageDocument,
   SectionProps,
 } from "@/lib/cms/document";
+import type { LeadAttribution, LeadType } from "@/lib/leads/schema";
 
 export const cms = pgSchema("cms");
 
@@ -229,7 +231,57 @@ export const auditLog = cms
   )
   .enableRLS();
 
+/** Written only by the public lead endpoint; read only by super admins. */
+export const leads = cms
+  .table(
+    "leads",
+    {
+      id: uuid().primaryKey().defaultRandom(),
+      type: text().$type<LeadType>().notNull(),
+      email: text().notNull(),
+      firstName: text(),
+      lastName: text(),
+      company: text(),
+      jobTitle: text(),
+      phone: text(),
+      message: text(),
+      interests: text().array().notNull().default(sql`'{}'::text[]`),
+      introCall: boolean().notNull().default(false),
+      privacyConsent: boolean().notNull().default(false),
+      bookingAt: text(),
+      attribution: jsonb().$type<LeadAttribution>().notNull().default({}),
+      ipHash: text(),
+      userAgent: text(),
+      createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+    },
+    (t) => [
+      index("leads_created_idx").on(t.createdAt.desc()),
+      index("leads_type_created_idx").on(t.type, t.createdAt.desc()),
+      index("leads_email_idx").on(t.email),
+      uniqueIndex("leads_newsletter_email_unique")
+        .on(t.email)
+        .where(sql`${t.type} = 'newsletter'`),
+    ],
+  )
+  .enableRLS();
+
+export const leadRateLimits = cms
+  .table(
+    "lead_rate_limits",
+    {
+      key: text().notNull(),
+      windowStart: timestamp({ withTimezone: true }).notNull(),
+      count: integer().notNull().default(1),
+    },
+    (t) => [
+      primaryKey({ columns: [t.key, t.windowStart] }),
+      index("lead_rate_limits_window_idx").on(t.windowStart),
+    ],
+  )
+  .enableRLS();
+
 export type PageRow = typeof pages.$inferSelect;
+export type LeadRow = typeof leads.$inferSelect;
 export type PageSectionRow = typeof pageSections.$inferSelect;
 export type GlobalBlockRow = typeof globalBlocks.$inferSelect;
 export type TemplateRow = typeof templates.$inferSelect;

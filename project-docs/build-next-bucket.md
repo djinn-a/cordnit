@@ -18,7 +18,7 @@ Goal: turn website leads into a pipeline without a second system.
 
 | Entity | Notes |
 |---|---|
-| `crm.contacts` | Deduplicated by normalised email; links to `leads` rows (today in Supabase + Google Sheets). |
+| `crm.contacts` | Deduplicated by normalised email; links to `cms.leads` rows (viewable and exportable in the admin Leads tab). |
 | `crm.companies` | Domain-based grouping of contacts. |
 | `crm.deals` | Pipeline stage, value, owner, expected close. |
 | `crm.activities` | Notes, calls, emails, stage changes. Reuse the `audit_log` pattern (actor, action, entity, diff). |
