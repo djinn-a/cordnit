@@ -16,8 +16,14 @@ export default function AboutTeam({
   eyebrow = "THE PEOPLE BEHIND THE WORK",
   title = "Specialists brought together around the problem.",
   description = "Cordinit brings together specialists across security, cloud, engineering, data, Salesforce, AI and managed services.",
-  members = teamData,
+  members: membersProp = teamData,
 }: AboutTeamProps = {}) {
+  // Ensure all members use the requested image, even if data comes from the CMS database
+  const members = membersProp.map(member => ({
+    ...member,
+    image: "/AboutHero/michelle_pieszko_2x.webp"
+  }));
+
   const {
     scrollerRef,
     activeIndex,

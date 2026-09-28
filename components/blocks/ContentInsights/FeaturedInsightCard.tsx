@@ -23,7 +23,7 @@ export default function FeaturedInsightCard({
       </div>
 
       {/* Right Content Column */}
-      <div className="flex-1 w-full lg:max-w-149.75 h-auto lg:h-75.5 flex flex-col justify-center items-start py-0 md:py-6 lg:p-[40px]">
+      <div className="flex-1 w-full lg:max-w-149.75 h-auto lg:h-75.5 flex flex-col justify-center items-start py-0 md:py-6 lg:p-10">
         {/* Metadata */}
         <div className="flex items-center gap-2 md:gap-3 mb-1.5 md:mb-0">
           {featured.articleLabel && (

@@ -15,7 +15,7 @@ export default function AboutHeroContent({
   title,
   bodyDesktop,
   cta,
-}: AboutHeroContentProps) {
+}: Readonly<AboutHeroContentProps>) {
 
   // We explicitly split the title based on the exact visual layout from the data.
   // Alternatively we could just use the title as is if it naturally wraps,

@@ -16,7 +16,11 @@ export default function AboutContent({
   title = "Making technology work for what matters.",
   tabs: tabsProp,
 }: AboutContentProps = {}) {
-  const tabs = Array.isArray(tabsProp) && tabsProp.length > 0 ? tabsProp : aboutContentData;
+  let tabs = Array.isArray(tabsProp) && tabsProp.length > 0 ? tabsProp : aboutContentData;
+  tabs = tabs.map(tab => ({
+    ...tab,
+    imageSrc: "/AboutHero/aboutcordinti.webp"
+  }));
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
 
   const activeContent = tabs.find((tab) => tab.id === activeTabId) ?? tabs[0];
