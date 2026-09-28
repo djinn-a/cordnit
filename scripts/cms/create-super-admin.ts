@@ -32,7 +32,7 @@ async function main() {
   const secret = process.env.SUPABASE_SECRET_KEY;
   const domain = process.env.CMS_ADMIN_EMAIL_DOMAIN ?? "cms.cordinit.com";
   if (!url || !secret) {
-    throw new Error("NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SECRET_KEY must be set in .env.local");
+    throw new Error("NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SECRET_KEY must be set in your environment variables");
   }
 
   const username = usernameSchema.parse(arg("username") ?? "superadmin");
