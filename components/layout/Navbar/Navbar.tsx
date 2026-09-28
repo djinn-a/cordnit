@@ -8,22 +8,29 @@ import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { navbarContent } from './navbarContent';
 import MegaMenu from './MegaMenu';
 import { Button } from '@/components/ui';
+import { Suspense, useEffect, useCallback } from 'react';
+
+function RouteChangeDetector({ onChange }: { onChange: () => void }) {
+  const pathname = usePathname();
+  useEffect(() => {
+    onChange();
+  }, [pathname, onChange]);
+  return null;
+}
+
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [activeDesktopMenu, setActiveDesktopMenu] = useState<string | null>(null);
-  const [prevPathname, setPrevPathname] = useState(pathname);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { openModal } = useContactModal();
 
-  if (pathname !== prevPathname) {
-    setPrevPathname(pathname);
+  const handleRouteChange = useCallback(() => {
     setIsMobileMenuOpen(false);
     setIsMobileSolutionsOpen(false);
     setActiveDesktopMenu(null);
-  }
+  }, []);
 
   const handleMenuEnter = (menuName: string) => {
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
@@ -42,6 +49,9 @@ export default function Navbar() {
 
   return (
     <nav className="w-full sticky top-0 z-50 bg-linear-to-r from-primary to-surface-darker">
+      <Suspense fallback={null}>
+        <RouteChangeDetector onChange={handleRouteChange} />
+      </Suspense>
 
       {/* Mobile Navbar */}
       <div className="lg:hidden flex items-center justify-between px-4 sm:px-6 py-3">

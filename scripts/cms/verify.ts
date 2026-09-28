@@ -4,6 +4,8 @@
  *
  *   npm run cms:verify
  */
+import { config } from "dotenv";
+config({ path: ".env.local" });
 import { isDeepStrictEqual } from "node:util";
 import snapshot from "@/server/db/seed/snapshot.json";
 import { isBlockRef } from "@/lib/cms/document";

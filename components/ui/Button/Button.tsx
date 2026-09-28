@@ -1,4 +1,8 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
 import { buttonVariants, type ButtonVariantProps } from "./button.variants";
@@ -12,34 +16,55 @@ type CommonProps = ButtonVariantProps & {
 };
 
 export type ButtonAsButtonProps = CommonProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof CommonProps> & { href?: undefined };
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof CommonProps> & {
+    href?: undefined;
+  };
 
 export type ButtonAsLinkProps = CommonProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof CommonProps> & { href: string };
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof CommonProps> & {
+    href: string;
+  };
 
 export type ButtonProps = ButtonAsButtonProps | ButtonAsLinkProps;
 
-const isInternalPath = (href: string) => href.startsWith("/") && !href.startsWith("//");
+const isInternalPath = (href: string) =>
+  href.startsWith("/") && !href.startsWith("//");
 
 /** Renders a Next `Link` for internal paths, `<a>` for other hrefs, and `<button>` otherwise. */
 export default function Button(props: ButtonProps) {
-  const { variant, size, fullWidth, leftIcon, rightIcon, className, children, ...rest } = props;
+  const {
+    variant,
+    size,
+    fullWidth,
+    leftIcon,
+    rightIcon,
+    className,
+    children,
+    ...rest
+  } = props;
   const hasArrowAnim = !!rightIcon;
   const classes = cn(
     buttonVariants({ variant, size, fullWidth }),
     hasArrowAnim && cn(styles.group, "group overflow-hidden"),
-    className
+    className,
   );
   const body = (
     <>
       {leftIcon}
       {hasArrowAnim ? (
         <span className="flex items-center justify-center">
-          <span className={cn(styles.textAnim, "flex items-center whitespace-nowrap")}>
+          <span
+            className={cn(
+              styles.textAnim,
+              "flex items-center whitespace-nowrap",
+            )}
+          >
             <span className={styles.arrowLeft}>{rightIcon}</span>
             {children}
           </span>
-          <span className={cn(styles.arrowRight, "inline-flex ml-2")}>{rightIcon}</span>
+          <span className={cn(styles.arrowRight, "inline-flex ml-2")}>
+            {rightIcon}
+          </span>
         </span>
       ) : (
         <>
@@ -54,14 +79,12 @@ export default function Button(props: ButtonProps) {
     const { href, ...anchorProps } = rest as ButtonAsLinkProps;
     if (isInternalPath(href) && anchorProps.target !== "_blank") {
       return (
-        console.log("i come here "),
         <Link href={href} className={classes} {...anchorProps}>
           {body}
         </Link>
       );
     }
     return (
-      console.log("i come here 2 "),
       <a href={href} className={classes} {...anchorProps}>
         {body}
       </a>
@@ -70,7 +93,6 @@ export default function Button(props: ButtonProps) {
 
   const { type = "button", ...buttonProps } = rest as ButtonAsButtonProps;
   return (
-    console.log("i come here m 3"),
     <button type={type} className={classes} {...buttonProps}>
       {body}
     </button>

@@ -1,3 +1,5 @@
+import { config } from "dotenv";
+config({ path: ".env.local" });
 import { createClient } from "@supabase/supabase-js";
 import { SUPER_ADMIN_ROLE } from "@/server/auth/types";
 

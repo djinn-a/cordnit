@@ -8,6 +8,8 @@
  * Prints the generated password once. It is never stored anywhere else.
  */
 import { randomInt } from "node:crypto";
+import { config } from "dotenv";
+config({ path: ".env.local" });
 import { createClient } from "@supabase/supabase-js";
 import { usernameSchema, usernameToEmail } from "@/server/auth/username";
 import { SUPER_ADMIN_ROLE } from "@/server/auth/types";
