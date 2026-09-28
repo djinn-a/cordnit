@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button, Container, Section } from "@/components/ui";
-import { useContactModal } from "../../contact/ContactModal/ContactModalProvider";
+import { CtaButton, Container, Section } from "@/components/ui";
 import { defaultSolutionsHeroContent, type SolutionsHeroContent } from "./solutionsHeroData";
 import { ArrowRight } from "lucide-react";
 
@@ -10,7 +9,6 @@ export type SolutionsHeroProps = Partial<SolutionsHeroContent>;
 
 export default function SolutionsHero(props: SolutionsHeroProps = {}) {
   const content = { ...defaultSolutionsHeroContent, ...props };
-  const { openModal } = useContactModal();
 
   return (
     <Section spacing="none" background="white">
@@ -27,12 +25,14 @@ export default function SolutionsHero(props: SolutionsHeroProps = {}) {
           <p className="text-ink-muted text-section-subtitle-mobile sm:text-section-subtitle mb-8 lg:mb-10 max-w-lg">
             {content.body}
           </p>
-          <Button
-            onClick={() => openModal()}
-            className="bg-primary hover:bg-primary-hover text-white rounded-md px-6 py-3 flex items-center gap-2 transition-colors"
-          >
-            {content.ctaLabel} <ArrowRight className="w-4 h-4" />
-          </Button>
+          {content.cta && (
+            <CtaButton
+              cta={content.cta}
+              className="px-6 py-3"
+              rightIcon={<ArrowRight className="w-4 h-4" />}
+              analyticsContext="Solutions Hero"
+            />
+          )}
         </div>
 
         {/* Image Content */}

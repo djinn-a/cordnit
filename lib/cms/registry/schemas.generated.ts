@@ -6,7 +6,7 @@
  */
 import { z } from "zod";
 import type { SectionType } from "../types";
-import { group, link, list, section, stringList, text, textarea } from "./fields";
+import { cta, group, link, list, section, stringList, text, textarea } from "./fields";
 
 export const sectionContentSchemas = {
   hero: section({
@@ -15,12 +15,13 @@ export const sectionContentSchemas = {
     cardEyebrow: text("Card eyebrow", 300),
     cardTitle: text("Card title", 300),
     cardBody: textarea("Card body", 2000),
-    primaryCta: text("Primary CTA", 300),
-    secondaryCta: text("Secondary CTA", 300),
+    primaryCta: cta("Primary CTA"),
+    secondaryCta: cta("Secondary CTA"),
   }),
   help: section({
     title: text("Title", 300),
     description: textarea("Description", 2000),
+    cta: cta("CTA"),
     services: list("Services", "Service", {
       num: text("Number", 300),
       title: text("Title", 300),
@@ -72,12 +73,13 @@ export const sectionContentSchemas = {
     title: text("Title", 300),
     body: textarea("Body", 2000),
     expertName: text("Expert name", 300),
-    ctaLabel: text("CTA label", 300),
+    cta: cta("CTA"),
   }),
   aboutHero: section({
     title: text("Title", 300),
     bodyMobile: textarea("Body mobile", 2000),
     bodyDesktop: textarea("Body desktop", 2000),
+    cta: cta("CTA"),
   }),
   aboutContent: section({
     eyebrow: text("Eyebrow", 300),
@@ -156,10 +158,7 @@ export const sectionContentSchemas = {
     eyebrow: text("Eyebrow", 300),
     title: text("Title", 300),
     description: textarea("Description", 2000),
-    cta: group("CTA", {
-      label: text("Label", 300),
-      href: link("Link"),
-    }),
+    cta: cta("CTA"),
   }),
   contextApproach: section({
     eyebrow: text("Eyebrow", 300).optional(),
@@ -170,10 +169,7 @@ export const sectionContentSchemas = {
     eyebrow: text("Eyebrow", 300),
     title: text("Title", 300),
     description: textarea("Description", 2000),
-    cta: group("CTA", {
-      label: text("Label", 300),
-      href: link("Link"),
-    }).optional(),
+    cta: cta("CTA").optional(),
   }),
   contentInsights: section({
     eyebrow: text("Eyebrow", 300),
@@ -182,10 +178,7 @@ export const sectionContentSchemas = {
       category: text("Category", 300),
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
     }),
     exploreByTopic: group("Explore by topic", {
       eyebrow: text("Eyebrow", 300),
@@ -202,10 +195,7 @@ export const sectionContentSchemas = {
       title: text("Title", 300),
       description: textarea("Description", 2000),
       dateInfo: text("Date info", 300),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
     }),
   }),
   industryCards: section({
@@ -213,8 +203,7 @@ export const sectionContentSchemas = {
     cards: list("Cards", "Card", {
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      ctaLabel: text("CTA label", 300),
-      ctaLink: link("CTA link"),
+      cta: cta("CTA"),
     }),
     description: textarea("Description", 2000).optional(),
   }),
@@ -223,10 +212,7 @@ export const sectionContentSchemas = {
       eyebrow: text("Eyebrow", 300),
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
       quoteOverlay: group("Quote overlay", {
         quote: textarea("Quote", 2000),
         author: text("Author", 300),
@@ -250,8 +236,7 @@ export const sectionContentSchemas = {
         category: text("Category", 300),
         title: text("Title", 300),
         description: textarea("Description", 2000),
-        href: link("Link"),
-        ctaLabel: text("CTA label", 300),
+        cta: cta("CTA"),
       }),
     }),
   }),
@@ -282,10 +267,7 @@ export const sectionContentSchemas = {
       eyebrow: text("Eyebrow", 300),
       title: text("Title", 300),
       subtitle: textarea("Subtitle", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
       supportingText: textarea("Supporting text", 2000),
       listHeader: group("List header", {
         leftText: textarea("Left text", 2000),
@@ -315,10 +297,7 @@ export const sectionContentSchemas = {
       eyebrow: text("Eyebrow", 300),
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
       quoteOverlay: group("Quote overlay", {
         quote: textarea("Quote", 2000),
         author: text("Author", 300),
@@ -353,8 +332,7 @@ export const sectionContentSchemas = {
         category: text("Category", 300),
         title: text("Title", 300),
         description: textarea("Description", 2000),
-        href: link("Link"),
-        ctaLabel: text("CTA label", 300),
+        cta: cta("CTA"),
       }),
     }),
   }),
@@ -374,10 +352,7 @@ export const sectionContentSchemas = {
       eyebrow: text("Eyebrow", 300),
       title: text("Title", 300),
       subtitle: textarea("Subtitle", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
       supportingText: textarea("Supporting text", 2000),
       listHeader: group("List header", {
         leftText: textarea("Left text", 2000),
@@ -407,10 +382,7 @@ export const sectionContentSchemas = {
       eyebrow: text("Eyebrow", 300),
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
       quoteOverlay: group("Quote overlay", {
         quote: textarea("Quote", 2000),
         author: text("Author", 300),
@@ -451,10 +423,7 @@ export const sectionContentSchemas = {
       eyebrow: text("Eyebrow", 300),
       title: text("Title", 300),
       subtitle: textarea("Subtitle", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
       supportingText: textarea("Supporting text", 2000),
       listHeader: group("List header", {
         leftText: textarea("Left text", 2000),
@@ -498,7 +467,7 @@ export const sectionContentSchemas = {
     titleDesktop: text("Title desktop", 300),
     titleMobile: text("Title mobile", 300),
     body: textarea("Body", 2000),
-    ctaLabel: text("CTA label", 300),
+    cta: cta("CTA"),
   }),
   solutionsCapabilities: section({
     title: text("Title", 300),
@@ -535,10 +504,7 @@ export const sectionContentSchemas = {
       eyebrow: text("Eyebrow", 300),
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
     }),
   }),
   pageHero: section({
@@ -546,10 +512,7 @@ export const sectionContentSchemas = {
       eyebrow: text("Eyebrow", 300),
       title: text("Title", 300),
       description: textarea("Description", 2000),
-      cta: group("CTA", {
-        label: text("Label", 300),
-        href: link("Link"),
-      }),
+      cta: cta("CTA"),
     }),
   }),
   splitContent: section({

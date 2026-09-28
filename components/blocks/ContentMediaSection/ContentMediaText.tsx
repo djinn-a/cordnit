@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Button from "@/components/ui/Button/Button";
+import { CtaButton } from "@/components/ui";
 import { ArrowRight } from "lucide-react";
 import { ContentMediaSectionProps } from "./ContentMediaSection.types";
 
@@ -27,15 +26,12 @@ export default function ContentMediaText({
       
       {cta && (
         <div className="mt-space-12 md:mt-space-20">
-          <Link href={cta.href}>
-            <Button 
-              variant="primary" 
-              className="w-fit h-10.5 md:h-space-48 rounded-lg px-space-16 py-space-10 md:px-space-24 md:py-space-12 text-[14px] md:text-[16px] font-semibold leading-space-22 md:leading-space-24"
-              rightIcon={<ArrowRight size={16} />}
-            >
-              {cta.label}
-            </Button>
-          </Link>
+          <CtaButton 
+            cta={cta}
+            className="w-fit h-10.5 md:h-space-48 rounded-lg px-space-16 py-space-10 md:px-space-24 md:py-space-12 text-[14px] md:text-[16px] font-semibold leading-space-22 md:leading-space-24"
+            rightIcon={<ArrowRight size={16} />}
+            analyticsContext="Content Media"
+          />
         </div>
       )}
     </div>

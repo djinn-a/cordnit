@@ -149,6 +149,7 @@ function emitFields(shape: Extract<Shape, { kind: "object" }>, indent: string): 
 }
 
 function main() {
+  const defaultsOnly = process.argv.includes("--defaults-only");
   const snapshot = JSON.parse(readFileSync("server/db/seed/snapshot.json", "utf8")) as Snapshot;
   const byType = new Map<string, Record<string, unknown>[]>();
   for (const page of snapshot.pages) {
@@ -198,10 +199,16 @@ export type SectionContentMap = {
   [K in SectionType]: z.infer<(typeof sectionContentSchemas)[K]>;
 };
 `;
-  writeFileSync("lib/cms/registry/schemas.generated.ts", file);
+  
+  if (!defaultsOnly) {
+    writeFileSync("lib/cms/registry/schemas.generated.ts", file);
+    console.log(`Generated schemas for ${SECTION_TYPES.length} section types.`);
+  } else {
+    console.log(`Regenerated section-defaults.json for ${SECTION_TYPES.length} section types.`);
+  }
+
   mkdirSync("server/cms", { recursive: true });
   writeFileSync("server/cms/section-defaults.json", `${JSON.stringify(defaults, null, 2)}\n`);
-  console.log(`Generated schemas for ${SECTION_TYPES.length} section types.`);
 }
 
 main();

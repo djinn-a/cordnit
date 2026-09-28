@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { InsightCardData } from "./ContentInsights.types";
-import Link from "next/link";
+import { CtaButton } from "@/components/ui";
 
 export default function InsightCard({
   metadata,
@@ -58,13 +58,12 @@ export default function InsightCard({
           </span>
           
           {/* CTA Link */}
-          <Link
-            href={cta.href}
-            className="flex items-center gap-1 md:gap-1.5 text-link-mobile md:text-link-desktop text-primary hover:text-primary-hover transition-colors w-fit"
-          >
-            {cta.label}
-            <ArrowRight className="w-3 h-3 md:w-3.5 md:h-3.5" />
-          </Link>
+          <CtaButton
+            cta={{ ...cta, action: "link", variant: "ghost" }}
+            className="text-link-mobile md:text-link-desktop text-primary hover:text-primary-hover transition-colors w-fit p-0 hover:bg-transparent h-auto gap-1 md:gap-1.5"
+            rightIcon={<ArrowRight className="w-3 h-3 md:w-3.5 md:h-3.5" />}
+            analyticsContext="Insight Card"
+          />
         </div>
       </div>
     </div>

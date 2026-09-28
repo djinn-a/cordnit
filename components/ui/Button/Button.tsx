@@ -1,55 +1,63 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
+import { buttonVariants, type ButtonVariantProps } from "./button.variants";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
-type ButtonSize = "sm" | "md" | "lg";
-
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  fullWidth?: boolean;
+type BaseProps = {
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-};
+  href?: string;
+} & ButtonVariantProps;
 
-const variantClass: Record<ButtonVariant, string> = {
-  primary:
-    "bg-primary hover:bg-primary-hover text-white border border-transparent shadow-sm",
-  secondary:
-    "bg-transparent border border-primary text-primary hover:bg-white/10",
-  ghost: "bg-transparent text-primary hover:bg-primary-pale border border-transparent",
-  outline:
-    "bg-white border border-border-subtle text-ink hover:border-primary hover:text-primary",
-};
+type NativeButtonProps = BaseProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">;
+type NativeAnchorProps = BaseProps & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "color">;
 
-const sizeClass: Record<ButtonSize, string> = {
-  sm: "px-3 py-1.5 rounded-btn text-sm font-semibold",
-  md: "px-4 sm:px-6 py-2.5 sm:py-2.5 rounded-xl sm:rounded-btn text-[14px] font-semibold leading-[24px]",
-  lg: "px-6 py-3 rounded-xl text-lg font-semibold leading-[28px]",
-};
+export type PolymorphicButtonProps = NativeButtonProps | NativeAnchorProps;
 
-export default function Button({
-  variant = "primary",
-  size = "md",
-  fullWidth,
-  leftIcon,
-  rightIcon,
-  className,
-  children,
-  type = "button",
-  ...props
-}: ButtonProps) {
+export default function Button(props: PolymorphicButtonProps) {
+  const {
+    variant,
+    size,
+    fullWidth,
+    leftIcon,
+    rightIcon,
+    className,
+    children,
+    href,
+    ...rest
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } = props as any;
+
+  const classes = cn(buttonVariants({ variant, size, fullWidth, className }));
+
+  if (href) {
+    const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+    const isScrollTo = href.startsWith("#");
+    
+    if (isExternal || isScrollTo || rest.target === "_blank") {
+      return (
+        <a href={href} className={classes} {...rest}>
+          {leftIcon}
+          {children}
+          {rightIcon}
+        </a>
+      );
+    }
+    
+    return (
+      <Link href={href} className={classes} {...rest}>
+        {leftIcon}
+        {children}
+        {rightIcon}
+      </Link>
+    );
+  }
+
   return (
     <button
-      type={type}
-      className={cn(
-        "inline-flex items-center justify-center gap-1.5 sm:gap-2 font-medium transition-colors whitespace-nowrap disabled:opacity-50 disabled:pointer-events-none",
-        variantClass[variant],
-        sizeClass[size],
-        fullWidth && "w-full",
-        className
-      )}
-      {...props}
+      type={rest.type || "button"}
+      className={classes}
+      {...rest}
     >
       {leftIcon}
       {children}

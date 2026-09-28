@@ -2,10 +2,13 @@ import { Container, Section } from "@/components/ui";
 import { aboutHeroData } from "./aboutHeroData";
 import AboutHeroContent from "./AboutHeroContent";
 
+import type { Cta } from "@/lib/cta";
+
 export type AboutHeroProps = {
   title?: string;
   bodyMobile?: string;
   bodyDesktop?: string;
+  cta?: Cta;
   imageSrc?: string;
   imageAlt?: string;
 };
@@ -14,6 +17,7 @@ export default function AboutHero({
   title = aboutHeroData.title,
   bodyMobile = aboutHeroData.bodyMobile,
   bodyDesktop = aboutHeroData.bodyDesktop,
+  cta = aboutHeroData.cta as Cta,
   imageSrc = aboutHeroData.imageSrc,
   imageAlt = aboutHeroData.imageAlt,
 }: AboutHeroProps = {}) {
@@ -36,6 +40,7 @@ export default function AboutHero({
             title={title}
             bodyMobile={bodyMobile}
             bodyDesktop={bodyDesktop}
+            cta={cta}
           />
         </div>
       </Container>

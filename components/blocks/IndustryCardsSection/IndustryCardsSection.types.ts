@@ -1,10 +1,11 @@
+import type { Cta } from "@/lib/cta";
+
 export interface IndustryCardData {
   id: string;
   iconName: string;
   title: string;
   description: string;
-  ctaLabel: string;
-  ctaLink: string;
+  cta: Cta;
 }
 
 export interface IndustryCardsSectionProps {

@@ -1,10 +1,11 @@
-import ClientCtaButton from "./ClientCtaButton";
+import { CtaButton } from "@/components/ui";
+import type { Cta } from "@/lib/cta";
 
 export type CtaSectionProps = {
   title?: string;
   body?: string;
   expertName?: string;
-  ctaLabel?: string;
+  cta?: Cta;
   backgroundSrc?: string;
   backgroundSrcMobile?: string;
   portraitSrc?: string;
@@ -14,7 +15,7 @@ export default function CtaSection({
   title,
   body,
   expertName,
-  ctaLabel,
+  cta,
   backgroundSrc,
   backgroundSrcMobile,
   portraitSrc,
@@ -72,10 +73,13 @@ export default function CtaSection({
                 </p>
               </div>
             </div>
-            <ClientCtaButton
-              label={ctaLabel || ""}
-              className="w-full py-4.5 bg-surface text-ink hover:bg-primary-pale rounded-[8px] text-mobile-cta-1"
-            />
+            {cta && (
+              <CtaButton
+                cta={cta}
+                className="w-full py-4.5 bg-surface text-ink hover:bg-primary-pale rounded-[8px] text-mobile-cta-1"
+                analyticsContext="CTA Section Mobile"
+              />
+            )}
           </div>
 
           <div className="hidden md:flex flex-col justify-between gap-2 bg-white/20 backdrop-blur-md border border-white/20 rounded-xl p-4 w-[260px] h-[156px] shadow-lg shrink-0">
@@ -94,10 +98,13 @@ export default function CtaSection({
                 </p>
               </div>
             </div>
-            <ClientCtaButton
-              label={ctaLabel || ""}
-              className="w-full py-2.5 bg-surface text-ink hover:bg-primary-pale rounded-full mt-auto"
-            />
+            {cta && (
+              <CtaButton
+                cta={cta}
+                className="w-full py-2.5 bg-surface text-ink hover:bg-primary-pale rounded-full mt-auto"
+                analyticsContext="CTA Section Desktop"
+              />
+            )}
           </div>
         </div>
       </div>

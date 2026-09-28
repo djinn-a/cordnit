@@ -1,17 +1,19 @@
 import { z } from "zod";
+import { ctaSchema } from "@/lib/cta";
 import { ITEM_ID_KEY } from "./props";
 
 /**
  * Field builders for section content schemas. `.meta()` drives the admin form
  * generator (via z.toJSONSchema), so every field declares its label and widget.
  */
-export type FieldWidget = "text" | "textarea" | "url" | "number";
+export type FieldWidget = "text" | "textarea" | "url" | "number" | "select" | "checkbox" | "cta";
 
 export type FieldMeta = {
   label: string;
   widget?: FieldWidget;
   help?: string;
   itemLabel?: string;
+  options?: Array<{ value: string; label: string; help?: string }>;
 };
 
 const LINK_PATTERN = /^(\/|#|https?:\/\/|mailto:|tel:)/;
@@ -32,6 +34,13 @@ export const link = (label: string) =>
     .meta({ label, widget: "url" });
 
 export const num = (label: string) => z.number().finite().meta({ label, widget: "number" });
+
+export const select = (label: string, options: Array<{ value: string; label: string; help?: string }>) =>
+  z.enum(options.map((o) => o.value) as [string, ...string[]]).meta({ label, widget: "select", options });
+
+export const bool = (label: string) => z.boolean().meta({ label, widget: "checkbox" });
+
+export const cta = (label: string) => ctaSchema.meta({ label, widget: "cta" });
 
 export const itemId = () => z.string().min(1).max(100);
 

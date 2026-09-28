@@ -6,8 +6,18 @@
       "cardEyebrow": "SECURE DIGITAL TRANSFORMATION",
       "cardTitle": "Turning Technology Complexity Into Meaningful Progress",
       "cardBody": "With Cordinit as your partner, digital initiatives move faster, operations run smoother, and technology becomes an asset not a blocker to growth.",
-      "primaryCta": "Book a call",
-      "secondaryCta": "Explore Solution"
+      "primaryCta": {
+        "label": "Book a call",
+        "action": "link",
+        "href": "#",
+        "variant": "primary"
+      },
+      "secondaryCta": {
+        "label": "Explore Solution",
+        "action": "link",
+        "href": "#",
+        "variant": "primary"
+      }
     },
     "systemProps": {
       "imageSrc": "/hero-image.webp",
@@ -55,7 +65,13 @@
           "title": "Application Engineering",
           "desc": "We build modern, integrated applications and portals that fit your enterprise ecosystem—improving adoption, reducing manual work, and strengthening operations."
         }
-      ]
+      ],
+      "cta": {
+        "label": "Find out more",
+        "action": "link",
+        "href": "#",
+        "variant": "primary"
+      }
     },
     "systemProps": {
       "services": [
@@ -349,7 +365,12 @@
       "title": "Ready to Align Technology with Business Growth?",
       "body": "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution.",
       "expertName": "Talk to a Enterprise Technology Specialist",
-      "ctaLabel": "Schedule a Call"
+      "cta": {
+        "label": "Schedule a Call",
+        "action": "link",
+        "href": "#",
+        "variant": "primary"
+      }
     },
     "systemProps": {
       "backgroundSrc": "/cta-bg.webp",
@@ -361,7 +382,13 @@
     "content": {
       "title": "Technology change made more useful.",
       "bodyMobile": "From secure foundations to connected experiences and smarter operations, we help organisations turn technology change into.",
-      "bodyDesktop": "We help organisations make confident progress through technology securely, thoughtfully and with a focus on what will make a real difference."
+      "bodyDesktop": "We help organisations make confident progress through technology securely, thoughtfully and with a focus on what will make a real difference.",
+      "cta": {
+        "label": "Learn more",
+        "action": "link",
+        "href": "#",
+        "variant": "primary"
+      }
     },
     "systemProps": {
       "imageSrc": "/AboutHero/about-hero.webp",
@@ -758,7 +785,9 @@
       "description": "Every industry faces a different combination of customer expectations, operating pressures, regulation and technology change. Cordinit brings relevant capabilities together around the challenges that matter in your world.",
       "cta": {
         "label": "Discuss your industry priorities",
-        "href": "/contactus"
+        "href": "/contactus",
+        "action": "link",
+        "variant": "primary"
       }
     },
     "systemProps": {
@@ -783,7 +812,9 @@
       "description": "Improving a customer journey can require better data and integration. Modernising a service can call for cloud, application engineering and security. We help connect those disciplines so you can make progress without losing the wider context.",
       "cta": {
         "label": "Book a call",
-        "href": "/contactus"
+        "href": "/contactus",
+        "action": "link",
+        "variant": "primary"
       }
     },
     "systemProps": {
@@ -803,7 +834,9 @@
         "description": "A practical look at the threats organisations face today — and the actions that strengthen resilience.",
         "cta": {
           "label": "Read article",
-          "href": "#"
+          "href": "#",
+          "action": "link",
+          "variant": "primary"
         }
       },
       "exploreByTopic": {
@@ -856,7 +889,9 @@
           "dateInfo": "14 May 2025 · 6 min read",
           "cta": {
             "label": "Read article",
-            "href": "#"
+            "href": "#",
+            "action": "link",
+            "variant": "primary"
           }
         },
         {
@@ -871,7 +906,9 @@
           "dateInfo": "12 Apr 2025 · 5 min read",
           "cta": {
             "label": "Read article",
-            "href": "#"
+            "href": "#",
+            "action": "link",
+            "variant": "primary"
           }
         },
         {
@@ -886,7 +923,9 @@
           "dateInfo": "03 Mar 2025 · 8 min read",
           "cta": {
             "label": "Read case study",
-            "href": "#"
+            "href": "#",
+            "action": "link",
+            "variant": "primary"
           }
         },
         {
@@ -901,7 +940,9 @@
           "dateInfo": "21 Feb 2025 · 4 min read",
           "cta": {
             "label": "Read article",
-            "href": "#"
+            "href": "#",
+            "action": "link",
+            "variant": "primary"
           }
         }
       ]
@@ -994,43 +1035,67 @@
           "_id": "ind-finance",
           "title": "Financial Services",
           "description": "Strengthen trust, manage risk and deliver secure, modern experiences at scale.",
-          "ctaLabel": "Explore",
-          "ctaLink": "#"
+          "cta": {
+            "label": "Explore",
+            "action": "link",
+            "href": "#",
+            "variant": "primary"
+          }
         },
         {
           "_id": "ind-health",
           "title": "Healthcare",
           "description": "Improve outcomes and experiences while navigating regulation and operational complexity.",
-          "ctaLabel": "Explore",
-          "ctaLink": "#"
+          "cta": {
+            "label": "Explore",
+            "action": "link",
+            "href": "#",
+            "variant": "primary"
+          }
         },
         {
           "_id": "ind-retail",
           "title": "Retail & Consumer",
           "description": "Meet rising expectations with connected customer experiences and agile operations.",
-          "ctaLabel": "Explore",
-          "ctaLink": "#"
+          "cta": {
+            "label": "Explore",
+            "action": "link",
+            "href": "#",
+            "variant": "primary"
+          }
         },
         {
           "_id": "ind-manufacturing",
           "title": "Manufacturing",
           "description": "Modernise operations, strengthen resilience and build a smarter, more connected future.",
-          "ctaLabel": "Explore",
-          "ctaLink": "#"
+          "cta": {
+            "label": "Explore",
+            "action": "link",
+            "href": "#",
+            "variant": "primary"
+          }
         },
         {
           "_id": "ind-education",
           "title": "Education",
           "description": "Enable better learning and administrative experiences through smart technology.",
-          "ctaLabel": "Explore",
-          "ctaLink": "#"
+          "cta": {
+            "label": "Explore",
+            "action": "link",
+            "href": "#",
+            "variant": "primary"
+          }
         },
         {
           "_id": "ind-public",
           "title": "Public Sector",
           "description": "Deliver better citizen services with secure, efficient and transparent digital solutions.",
-          "ctaLabel": "Explore",
-          "ctaLink": "#"
+          "cta": {
+            "label": "Explore",
+            "action": "link",
+            "href": "#",
+            "variant": "primary"
+          }
         }
       ]
     },
@@ -1077,7 +1142,9 @@
         "description": "Security should help your organisation move with confidence. Cordinit helps you understand your exposure, protect critical assets and build the resilience to adapt in a changing threat landscape.",
         "cta": {
           "label": "Discuss your security priorities",
-          "href": "/contactus"
+          "href": "/contactus",
+          "action": "link",
+          "variant": "primary"
         },
         "quoteOverlay": {
           "quote": "“Security should enable progress, not stand in its way.”",
@@ -1127,8 +1194,12 @@
             "category": "CLOUD",
             "title": "Cloud Security",
             "description": "Stronger controls, visibility and confidence across your cloud environment.",
-            "href": "/cybersecurity/cloud-security",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/cybersecurity/cloud-security",
+              "variant": "primary"
+            }
           },
           {
             "_id": "cyb-02",
@@ -1136,8 +1207,12 @@
             "category": "APPLICATION",
             "title": "Application Security",
             "description": "Build security into applications from design and development through to deployment.",
-            "href": "/cybersecurity/application-security",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/cybersecurity/application-security",
+              "variant": "primary"
+            }
           },
           {
             "_id": "cyb-03",
@@ -1145,8 +1220,12 @@
             "category": "IDENTITY",
             "title": "Identity Security",
             "description": "Give the right people the right access while maintaining control as needs change.",
-            "href": "/cybersecurity/identity-security",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/cybersecurity/identity-security",
+              "variant": "primary"
+            }
           },
           {
             "_id": "cyb-04",
@@ -1154,8 +1233,12 @@
             "category": "DATA",
             "title": "Data Security",
             "description": "Protect sensitive data wherever it is created, used and stored.",
-            "href": "/cybersecurity/data-security",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/cybersecurity/data-security",
+              "variant": "primary"
+            }
           },
           {
             "_id": "cyb-05",
@@ -1163,8 +1246,12 @@
             "category": "AI",
             "title": "AI Security",
             "description": "Adopt AI with practical guardrails for data, models, people and processes.",
-            "href": "/cybersecurity/ai-security",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/cybersecurity/ai-security",
+              "variant": "primary"
+            }
           },
           {
             "_id": "cyb-06",
@@ -1172,8 +1259,12 @@
             "category": "EXPOSURE",
             "title": "Exposure Management",
             "description": "Identify and prioritise the exposures creating the greatest business risk.",
-            "href": "/cybersecurity/exposure-management",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/cybersecurity/exposure-management",
+              "variant": "primary"
+            }
           },
           {
             "_id": "cyb-07",
@@ -1181,8 +1272,12 @@
             "category": "VULNERABILITY",
             "title": "Vulnerability Management",
             "description": "Discover, prioritise and reduce vulnerability risk with greater consistency.",
-            "href": "/cybersecurity/vulnerability-management",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/cybersecurity/vulnerability-management",
+              "variant": "primary"
+            }
           },
           {
             "_id": "cyb-08",
@@ -1190,8 +1285,12 @@
             "category": "OPERATIONS",
             "title": "Managed Security",
             "description": "Extend your security capacity with ongoing operations, governance and improvement.",
-            "href": "/cybersecurity/managed-security",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/cybersecurity/managed-security",
+              "variant": "primary"
+            }
           }
         ]
       }
@@ -1360,7 +1459,9 @@
         "subtitle": "Tell us where you need to strengthen security. Our specialists can help you understand the challenge, identify priorities and define the most useful next step.",
         "cta": {
           "label": "Start a security conversation",
-          "href": "/contactus"
+          "href": "/contactus",
+          "action": "link",
+          "variant": "primary"
         },
         "supportingText": "No obligation. Just a useful first conversation.",
         "listHeader": {
@@ -1494,7 +1595,9 @@
         "description": "Create more useful, connected experiences for customers and the teams who serve them. Cordinit helps you turn Salesforce into a platform for better relationships, better decisions and measurable progress.",
         "cta": {
           "label": "Discuss your salesforce roadmap",
-          "href": "/contactus"
+          "href": "/contactus",
+          "action": "link",
+          "variant": "primary"
         },
         "quoteOverlay": {
           "quote": "“Technology creates value when it makes every interaction more useful.”",
@@ -1614,8 +1717,12 @@
             "category": "SALES",
             "title": "Sales",
             "description": "Help sellers focus on the right opportunities with clearer processes and better pipeline visibility.",
-            "href": "/salesforce/sales",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/salesforce/sales",
+              "variant": "primary"
+            }
           },
           {
             "_id": "sfdc-02",
@@ -1623,8 +1730,12 @@
             "category": "SERVICE",
             "title": "Service",
             "description": "Equip service teams to resolve issues efficiently and create better customer experiences across every channel.",
-            "href": "/salesforce/service",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/salesforce/service",
+              "variant": "primary"
+            }
           },
           {
             "_id": "sfdc-03",
@@ -1632,8 +1743,12 @@
             "category": "MARKETING",
             "title": "Marketing",
             "description": "Create relevant engagement through connected data and effective customer journeys.",
-            "href": "/salesforce/marketing",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/salesforce/marketing",
+              "variant": "primary"
+            }
           },
           {
             "_id": "sfdc-04",
@@ -1641,8 +1756,12 @@
             "category": "COMMERCE",
             "title": "Commerce",
             "description": "Build digital commerce experiences that connect products, orders and customer relationships.",
-            "href": "/salesforce/commerce",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/salesforce/commerce",
+              "variant": "primary"
+            }
           },
           {
             "_id": "sfdc-05",
@@ -1650,8 +1769,12 @@
             "category": "AI",
             "title": "AI",
             "description": "Apply AI to high-value customer and employee workflows with the right data, oversight and measurement.",
-            "href": "/salesforce/ai",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/salesforce/ai",
+              "variant": "primary"
+            }
           },
           {
             "_id": "sfdc-06",
@@ -1659,8 +1782,12 @@
             "category": "integration",
             "title": "Integrations",
             "description": "Connect Salesforce to the systems, processes and information your teams rely on.",
-            "href": "/salesforce/integration",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/salesforce/integration",
+              "variant": "primary"
+            }
           },
           {
             "_id": "sfdc-07",
@@ -1668,8 +1795,12 @@
             "category": "managed service",
             "title": "Managed Services",
             "description": "Keep your platform moving after go-live through support, releases, optimisation and governance.",
-            "href": "/salesforce/managed-services",
-            "ctaLabel": "Explore"
+            "cta": {
+              "label": "Explore",
+              "action": "link",
+              "href": "/salesforce/managed-services",
+              "variant": "primary"
+            }
           }
         ]
       }
@@ -1764,7 +1895,9 @@
         "subtitle": "Bring customer data, processes and teams together on Salesforce. We help you simplify complexity, improve adoption and build a platform that supports better experiences and sustainable growth.",
         "cta": {
           "label": "Start a salesforce conversation",
-          "href": "/contactus"
+          "href": "/contactus",
+          "action": "link",
+          "variant": "primary"
         },
         "supportingText": "No obligation. Just a useful first conversation.",
         "listHeader": {
@@ -1898,7 +2031,9 @@
         "description": "Make AI and automation useful where it matters most. Cordinit helps you identify the right opportunities, build them into real workflows and apply the governance needed to scale with confidence.",
         "cta": {
           "label": "Explore your AI opportunity",
-          "href": "/contactus"
+          "href": "/contactus",
+          "action": "link",
+          "variant": "primary"
         },
         "quoteOverlay": {
           "quote": "“AI create value when it improves the way people work.”",
@@ -2060,7 +2195,9 @@
         "subtitle": "Bring AI and automation into your everyday operations. We help you identify practical opportunities, streamline repetitive work and build intelligent solutions that create measurable business value.",
         "cta": {
           "label": "Start a AI conversation",
-          "href": "/contactus"
+          "href": "/contactus",
+          "action": "link",
+          "variant": "primary"
         },
         "supportingText": "No obligation. Just a useful first conversation.",
         "listHeader": {
@@ -2257,7 +2394,12 @@
       "titleDesktop": "Solutions for progress that lasts",
       "titleMobile": "Solutions for progress that lasts",
       "body": "From securing the foundations of your business to creating better customer experiences and running critical platforms with confidence, Cordinit brings the expertise to move complex technology initiatives forward.",
-      "ctaLabel": "Book a call"
+      "cta": {
+        "label": "Book a call",
+        "action": "link",
+        "href": "#",
+        "variant": "primary"
+      }
     },
     "systemProps": {
       "imageSrc": "/solutions/enterprise-technology.webp",
@@ -2459,7 +2601,9 @@
         "description": "Create a cloud foundation that helps you move faster without losing sight of security, resilience and cost.\nCordinit helps you modernise with a clear path from strategy to everyday operation.",
         "cta": {
           "label": "Discuss your cloud priorities",
-          "href": "/contactus"
+          "href": "/contactus",
+          "action": "link",
+          "variant": "primary"
         }
       }
     },
@@ -2480,7 +2624,9 @@
         "description": "Create digital products and applications that are useful for the people who rely on them, robust for the teams who run them and ready to evolve as needs change.",
         "cta": {
           "label": "Discuss your application challenge",
-          "href": "/contactus"
+          "href": "/contactus",
+          "action": "link",
+          "variant": "primary"
         }
       }
     },

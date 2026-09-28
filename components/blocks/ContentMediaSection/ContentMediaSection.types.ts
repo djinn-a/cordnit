@@ -1,11 +1,10 @@
+import type { Cta } from "@/lib/cta";
+
 export interface ContentMediaSectionProps {
   eyebrow?: string;
   title: string;
   description: string;
-  cta?: {
-    label: string;
-    href: string;
-  };
+  cta?: Cta;
   mainImage: {
     src: string;
     alt: string;

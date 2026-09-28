@@ -1,9 +1,5 @@
-/**
- * Splits section props into editable text (`content`) and hidden presentation
- * data (`systemProps`: images, icons, variants, ids), and merges them back for
- * rendering. Arrays of objects carry a stable `_id` on both sides so editors can
- * reorder, add or remove items without images drifting to the wrong card.
- */
+import type { ZodTypeAny } from "zod";
+
 export type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue };
 export type JsonObject = { [key: string]: JsonValue };
 
@@ -48,6 +44,32 @@ function isEmpty(value: unknown): boolean {
 
 type SplitResult = { content?: JsonValue; system?: JsonValue };
 
+function getShape(schema?: ZodTypeAny): Record<string, ZodTypeAny> | undefined {
+  if (!schema) return undefined;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let s: any = schema;
+  while (s && s._def && ["ZodOptional", "ZodNullable", "ZodDefault"].includes(s._def.typeName)) {
+    s = s._def.innerType;
+  }
+  if (s && s._def && s._def.typeName === "ZodObject") {
+    return s.shape;
+  }
+  return undefined;
+}
+
+function getArrayItemSchema(schema?: ZodTypeAny): ZodTypeAny | undefined {
+  if (!schema) return undefined;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let s: any = schema;
+  while (s && s._def && ["ZodOptional", "ZodNullable", "ZodDefault"].includes(s._def.typeName)) {
+    s = s._def.innerType;
+  }
+  if (s && s._def && s._def.typeName === "ZodArray") {
+    return s.element;
+  }
+  return undefined;
+}
+
 function itemId(item: Record<string, unknown>, index: number, used: Set<string>): string {
   const raw = item[ITEM_ID_KEY] ?? item.id;
   let candidate =
@@ -57,12 +79,17 @@ function itemId(item: Record<string, unknown>, index: number, used: Set<string>)
   return candidate;
 }
 
-function splitValue(value: unknown): SplitResult {
+function splitValue(value: unknown, schema?: ZodTypeAny): SplitResult {
   if (value === undefined) return {};
-  if (value === null || typeof value === "boolean") return { system: value };
+  if (value === null || typeof value === "boolean") {
+    // If the schema explicitly defines it (e.g., bool() widget), keep it as content
+    if (schema) return { content: value as JsonValue };
+    return { system: value as JsonValue };
+  }
   if (typeof value === "string" || typeof value === "number") return { content: value };
 
   if (Array.isArray(value)) {
+    const itemSchema = getArrayItemSchema(schema);
     if (!value.some(isPlainObject)) {
       const content: JsonValue[] = [];
       const system: JsonValue[] = [];
@@ -82,7 +109,7 @@ function splitValue(value: unknown): SplitResult {
     value.forEach((item, index) => {
       if (!isPlainObject(item)) return;
       const id = itemId(item, index, used);
-      const { content, system } = splitValue(item);
+      const { content, system } = splitValue(item, itemSchema);
       const c = (isPlainObject(content) ? content : {}) as JsonObject;
       const s = (isPlainObject(system) ? system : {}) as JsonObject;
       if (Object.keys(c).length > 0) anyContent = true;
@@ -97,17 +124,44 @@ function splitValue(value: unknown): SplitResult {
   }
 
   if (isPlainObject(value)) {
+    const shape = getShape(schema);
     const content: JsonObject = {};
     const system: JsonObject = {};
     for (const [key, v] of Object.entries(value)) {
       if (v === undefined || key === ITEM_ID_KEY) continue;
-      if (isSystemKey(key)) {
+      
+      const keySchema = shape?.[key];
+      const isContentByKey = keySchema !== undefined;
+      
+      if (!isContentByKey && isSystemKey(key)) {
         system[key] = v as JsonValue;
         continue;
       }
-      const part = splitValue(v);
-      if (part.content !== undefined) content[key] = part.content;
-      if (part.system !== undefined) system[key] = part.system;
+      
+      const part = splitValue(v, keySchema);
+      
+      let assigned = false;
+      if (part.content !== undefined) {
+        content[key] = part.content;
+        assigned = true;
+      }
+      if (part.system !== undefined) {
+        system[key] = part.system;
+        assigned = true;
+      }
+      
+      // If neither was explicitly returned (e.g. empty object), fallback based on heuristics
+      if (!assigned) {
+        if (isContentByKey && part.system === undefined) {
+          content[key] = v as JsonValue;
+        } else if (part.system !== undefined) {
+          // This case is impossible because assigned would be true, but kept for symmetry with old logic
+          system[key] = part.system;
+        } else {
+          // Fallback to content
+          content[key] = v as JsonValue;
+        }
+      }
     }
     return {
       ...(Object.keys(content).length > 0 ? { content } : {}),
@@ -117,11 +171,11 @@ function splitValue(value: unknown): SplitResult {
   return {};
 }
 
-export function splitSectionProps(props: Record<string, unknown>): {
+export function splitSectionProps(props: Record<string, unknown>, schema?: ZodTypeAny): {
   content: JsonObject;
   systemProps: JsonObject;
 } {
-  const { content, system } = splitValue(props);
+  const { content, system } = splitValue(props, schema);
   return {
     content: (isPlainObject(content) ? content : {}) as JsonObject,
     systemProps: (isPlainObject(system) ? system : {}) as JsonObject,

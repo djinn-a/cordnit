@@ -1,19 +1,22 @@
 import React from "react";
-import Link from "next/link";
-import { Container, Section, Button } from "@/components/ui";
+import { Container, Section } from "@/components/ui";
 import { HelpService, defaultHelpServices } from "./helpServices";
 import HelpServiceGrid from "./HelpServiceGrid";
 import { ArrowRight } from "lucide-react";
+import type { Cta } from "@/lib/cta";
+import CtaButton from "@/components/ui/Button/CtaButton";
 
 export type HelpSectionProps = {
   title?: string;
   description?: string;
+  cta?: Cta;
   services?: HelpService[];
 };
 
 export default function HelpSection({
   title = "Where we can help",
   description = "Structured methodologies applied to complex technological challenges. We architect solutions designed for scalability, security, and operational endurance.",
+  cta,
   services = defaultHelpServices,
 }: HelpSectionProps = {}) {
   // Ensure services is an array even if malformed data is passed
@@ -32,15 +35,14 @@ export default function HelpSection({
         )}
 
         <div className="mt-space-40 sm:mt-space-48 flex justify-center">
-          <Link href="/solutions">
-            <Button 
-              variant="primary" 
+          {cta && (
+            <CtaButton
+              cta={cta}
               className="md:text-link-desktop bg-primary"
               rightIcon={<ArrowRight className="h-space-16 w-space-16" />}
-            >
-              Explore all services
-            </Button>
-          </Link>
+              analyticsContext="Help Section"
+            />
+          )}
         </div>
       </Container>
     </Section>

@@ -8,7 +8,7 @@ import {
   LinkOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
-import { Button, Card, Collapse, Empty, Flex, Form, Input, InputNumber, Tooltip, Typography, type FormInstance, type FormRule } from "antd";
+import { Button, Card, Collapse, Empty, Flex, Form, Input, InputNumber, Tooltip, Typography, Select, Switch, type FormInstance, type FormRule } from "antd";
 import { useMemo, type ReactNode } from "react";
 
 /** The subset of JSON Schema (plus our field meta) emitted by z.toJSONSchema for section content. */
@@ -20,9 +20,10 @@ export type JsonSchemaNode = {
   maxLength?: number;
   maxItems?: number;
   label?: string;
-  widget?: "text" | "textarea" | "url" | "number";
+  widget?: "text" | "textarea" | "url" | "number" | "select" | "checkbox" | "cta";
   help?: string;
   itemLabel?: string;
+  options?: Array<{ value: string; label: string; help?: string }>;
 };
 
 const ITEM_ID = "_id";
@@ -43,6 +44,7 @@ function typeOf(node: JsonSchemaNode): string | undefined {
 
 /** Builds an empty value that satisfies the item schema (used by "Add item"). */
 export function emptyValue(node: JsonSchemaNode): unknown {
+  if (node.widget === "cta") return { label: "", action: "link", variant: "primary" };
   switch (typeOf(node)) {
     case "string":
       return "";
@@ -119,7 +121,20 @@ function ScalarField({ name, node, fieldKey }: Omit<FieldProps, "form" | "fullPa
       </Form.Item>
     );
   }
-  if (t === "boolean") return null;
+  if (t === "boolean" || node.widget === "checkbox") {
+    return (
+      <Form.Item name={name} tooltip={node.help} valuePropName="checked" style={{ marginBottom: 16 }}>
+        <Switch checkedChildren={label} unCheckedChildren={label} />
+      </Form.Item>
+    );
+  }
+  if (node.widget === "select") {
+    return (
+      <Form.Item label={label} name={name} tooltip={node.help}>
+        <Select options={node.options} style={{ width: '100%' }} />
+      </Form.Item>
+    );
+  }
   const rules = stringRules(node, label);
   const long = node.widget === "textarea" || (node.maxLength ?? 0) > 500;
   return (
@@ -254,7 +269,49 @@ function ObjectFields({ name, fullPath, node, form }: Omit<FieldProps, "fieldKey
   );
 }
 
+function CtaField({ name, fullPath, node, fieldKey, form }: FieldProps) {
+  const label = node.label ?? humanize(fieldKey);
+  
+  return (
+    <Card size="small" title={label} style={{ marginBottom: 16 }} styles={{ body: { paddingBottom: 0 } }}>
+       <Form.Item label="Label" name={[...name, "label"]} rules={[{ required: true, max: 100 }]}>
+         <Input />
+       </Form.Item>
+       <Flex gap={16}>
+         <Form.Item label="Action" name={[...name, "action"]} style={{ flex: 1 }}>
+           <Select options={[
+             { value: 'link', label: 'Go to URL' },
+             { value: 'contactModal', label: 'Open Contact Modal' }
+           ]} />
+         </Form.Item>
+         <Form.Item label="Variant" name={[...name, "variant"]} style={{ flex: 1 }}>
+           <Select options={[
+             { value: 'primary', label: 'Primary' },
+             { value: 'secondary', label: 'Secondary' },
+             { value: 'ghost', label: 'Ghost' },
+             { value: 'outline', label: 'Outline' }
+           ]} />
+         </Form.Item>
+       </Flex>
+       <Form.Item noStyle shouldUpdate>
+         {() => {
+           const action = form.getFieldValue([...fullPath, "action"]);
+           if (action === 'link') {
+             return (
+               <Form.Item label="URL" name={[...name, "href"]} rules={[{ required: true }, ...stringRules({ widget: "url" }, "URL")]}>
+                 <Input prefix={<LinkOutlined style={{ color: "rgba(0,0,0,0.35)" }} />} placeholder="/path, #anchor or https://" spellCheck={false} />
+               </Form.Item>
+             );
+           }
+           return null;
+         }}
+       </Form.Item>
+    </Card>
+  );
+}
+
 function SchemaField(props: FieldProps) {
+  if (props.node.widget === "cta") return <CtaField {...props} />;
   const t = typeOf(props.node);
   if (t === "array") return <ArrayField {...props} />;
   if (t === "object") {

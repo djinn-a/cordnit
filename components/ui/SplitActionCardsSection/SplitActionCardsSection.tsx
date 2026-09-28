@@ -1,15 +1,13 @@
-import Button from "@/components/ui/Button/Button";
+import { CtaButton } from "@/components/ui";
 import { ArrowRight, Check } from "lucide-react";
 import ActionCard, { type ActionCardData } from "./ActionCard";
+import type { Cta } from "@/lib/cta";
 
 export type SplitActionCardsSectionData = {
   eyebrow: string;
   title: string;
   subtitle: string;
-  cta: {
-    label: string;
-    href?: string;
-  };
+  cta: Cta;
   supportingText?: string;
   listHeader?: {
     leftText: string;
@@ -45,9 +43,7 @@ export default function SplitActionCardsSection({ data }: SplitActionCardsSectio
           <div className="flex flex-col gap-space-16 mt-space-8">
             <div className="w-fit">
               {/* Reuse existing Button */}
-              <Button variant="primary" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                {data.cta.label}
-              </Button>
+              <CtaButton cta={data.cta} rightIcon={<ArrowRight className="w-4 h-4" />} analyticsContext="Split Action Cards" />
             </div>
             
             {data.supportingText && (

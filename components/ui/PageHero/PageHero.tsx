@@ -1,14 +1,13 @@
 import PageHeroContent from "./PageHeroContent";
 import PageHeroImage from "./PageHeroImage";
 
+import type { Cta } from "@/lib/cta";
+
 export type PageHeroData = {
   eyebrow: string;
   title: string;
   description: string;
-  cta: {
-    label: string;
-    href?: string;
-  };
+  cta: Cta;
   image: {
     src: string;
     alt: string;

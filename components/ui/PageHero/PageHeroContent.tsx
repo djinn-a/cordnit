@@ -1,6 +1,5 @@
-import Button from "@/components/ui/Button/Button";
+import { CtaButton } from "@/components/ui";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import type { PageHeroData } from "./PageHero";
 
 type PageHeroContentProps = Omit<PageHeroData, "image">;
@@ -23,24 +22,13 @@ export default function PageHeroContent({
         {description}
       </p>
 
-      {cta.href ? (
-        <Link href={cta.href}>
-          <Button 
-            variant="primary" 
-            size="md" 
-            rightIcon={<ArrowRight className="w-4 h-4 ml-2" />}
-          >
-            {cta.label}
-          </Button>
-        </Link>
-      ) : (
-        <Button 
-          variant="primary" 
+      {cta && (
+        <CtaButton 
+          cta={cta}
           size="md" 
           rightIcon={<ArrowRight className="w-4 h-4 ml-2" />}
-        >
-          {cta.label}
-        </Button>
+          analyticsContext="Page Hero"
+        />
       )}
     </div>
   );

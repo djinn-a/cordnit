@@ -18,6 +18,7 @@ import {
   type PageSeo,
 } from "@/lib/cms/document";
 import { splitSectionProps } from "@/lib/cms/registry/props";
+import { getContentSchema } from "@/lib/cms/registry";
 import { isSectionType } from "@/lib/cms/types";
 import { recordAudit } from "@/server/cms/audit";
 import { publishPage } from "@/server/cms/services/publish.service";
@@ -43,7 +44,8 @@ const oneOf = <T extends string>(list: readonly T[], value: string, fallback: T)
 async function seedPage(page: SnapshotPage, actorId: string) {
   const prepared = page.sections.map((s, index) => {
     if (!isSectionType(s.type)) throw new Error(`/${page.slug}: unknown section type "${s.type}"`);
-    const { content, systemProps } = splitSectionProps(s.props);
+    const schema = getContentSchema(s.type);
+    const { content, systemProps } = splitSectionProps(s.props, schema);
     try {
       parseSectionContent(s.type, content);
     } catch (err) {

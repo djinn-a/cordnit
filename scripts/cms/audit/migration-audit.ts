@@ -153,6 +153,7 @@ function parseStaticPage(filepath: string, expectedSlug: string): StaticPageMeta
   // Count props-less vs props-carrying sections
   // A section block like { _type: "hero", _key: "home-hero" } with nothing else is props-less.
   // We detect this by looking at section blocks.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const sectionBlockRe = /\{\s*\n?\s*_type:\s*["'][^"']+["']\s*,\s*\n?\s*_key:\s*["'][^"']+["']\s*,?\s*\n?\s*(?:data:\s*\w+\s*,?\s*\n?\s*)?\}/g;
   const propsLessRe = /\{\s*\n?\s*_type:\s*["'][^"']+["']\s*,\s*\n?\s*_key:\s*["'][^"']+["']\s*,?\s*\n?\s*\}/g;
   const propsLessMatches = raw.match(propsLessRe) ?? [];

@@ -32,8 +32,7 @@ export default function IndustryCardsSection({
                 icon={React.createElement(getLucideIcon(card.iconName), { className: "w-space-16 h-space-16 md:w-10 md:h-10 text-primary" })}
                 title={card.title}
                 description={card.description}
-                ctaLabel={card.ctaLabel}
-                ctaLink={card.ctaLink}
+                cta={card.cta}
               />
             );
           })}

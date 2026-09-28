@@ -43,5 +43,8 @@ Every section's props are split into two JSON columns:
 ## Tests
 `tests/cms/registry.test.ts` proves every section of all 28 seeded pages passes its schema and that split -> parse -> merge reproduces the original props exactly.
 
+## Unified CTA Architecture
+All Call-to-Action (CTA) fields across CMS schemas use the shared `Cta` interface (`{ label, action, href, variant }`) and are rendered by the polymorphic `CtaButton` component. This architecture ensures scalable UI consistency, dynamic `variant` changing through the CMS, and centralized analytics tracking context.
+
 ## Last Updated
-2026-09-26
+2026-09-27

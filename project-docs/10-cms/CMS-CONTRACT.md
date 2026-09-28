@@ -59,4 +59,4 @@ Mutations on a page send the page's `lockVersion`; the response returns the new 
 Actions use `updateTag` (read-your-own-writes). External triggers use `POST /api/revalidate` (`Authorization: Bearer $CMS_REVALIDATE_SECRET`, body `{ "tags": [...] }`), which calls `revalidateTag(tag, "max")`.
 
 ## Last Updated
-2026-09-26
+2026-09-27
