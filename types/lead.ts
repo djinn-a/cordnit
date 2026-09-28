@@ -19,6 +19,12 @@ export interface WebsiteLead {
   source?: string | null;
   landingPage?: string | null;
   ctaLocation?: string | null;
+  solution?: string | null;
+  service?: string | null;
+  industry?: string | null;
+  accelerator?: string | null;
+  insight?: string | null;
+  content?: string | null;
   
   // UTM Parameters (Optional)
   utmSource?: string | null;
