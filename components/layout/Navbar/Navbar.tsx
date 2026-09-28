@@ -3,17 +3,27 @@
 import React, { useState, useRef } from 'react';
 import { useContactModal } from '../../features/contact/ContactModal/ContactModalProvider';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { navbarContent } from './navbarContent';
 import MegaMenu from './MegaMenu';
-
+import { Button } from '@/components/ui';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [activeDesktopMenu, setActiveDesktopMenu] = useState<string | null>(null);
+  const [prevPathname, setPrevPathname] = useState(pathname);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { openModal } = useContactModal();
+
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setIsMobileMenuOpen(false);
+    setIsMobileSolutionsOpen(false);
+    setActiveDesktopMenu(null);
+  }
 
   const handleMenuEnter = (menuName: string) => {
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
@@ -38,7 +48,7 @@ export default function Navbar() {
         {/* Mobile Logo */}
         <Link href="/" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.webp" alt={navbarContent.logoAltText} className="h-12 w-auto" />
+          <img src="/CordinitHorizontal%204.svg" alt={navbarContent.logoAltText} className="h-12 w-auto" />
         </Link>
 
         {/* Mobile Menu Button */}
@@ -61,7 +71,7 @@ export default function Navbar() {
             <div className="shrink-0 flex items-center">
               <Link href="/" className="flex items-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/logo.webp" alt={navbarContent.logoAltText} className="h-16 w-auto" />
+                <img src="/CordinitHorizontal%204.svg" alt={navbarContent.logoAltText} className="h-16 w-auto" />
               </Link>
             </div>
 
@@ -112,12 +122,14 @@ export default function Navbar() {
 
           {/* Right CTA Button */}
           <div className="flex items-center">
-            <button
+            <Button
+              variant="primary"
               onClick={() => openModal()}
-              className="flex items-center px-6 py-2 border border-white rounded-lg opacity-80 hover:opacity-100 hover:bg-white/10 text-white font-semibold text-sm transition-all cursor-pointer"
+              className="rounded-lg px-6 py-2 text-sm"
+              rightIcon={<ArrowRight className="h-4 w-4" />}
             >
-              {navbarContent.getInTouchLabel} <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
+              {navbarContent.getInTouchLabel}
+            </Button>
           </div>
 
         </div>
@@ -184,16 +196,18 @@ export default function Navbar() {
               );
             })}
 
-            <div className="pt-8">
-              <button
+            <div className="pt-8 flex justify-center">
+              <Button
+                variant="primary"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   openModal();
                 }}
-                className="inline-flex items-center justify-center px-6 py-3 border border-white/80 rounded-md text-white font-medium hover:bg-white/10 transition-colors cursor-pointer"
+                className="rounded-lg px-6 py-3"
+                rightIcon={<ArrowRight className="h-4 w-4" />}
               >
-                {navbarContent.getInTouchLabel} <ArrowRight className="ml-3 h-4 w-4" />
-              </button>
+                {navbarContent.getInTouchLabel}
+              </Button>
             </div>
           </div>
         </div>

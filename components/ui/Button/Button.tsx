@@ -2,6 +2,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "reac
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
 import { buttonVariants, type ButtonVariantProps } from "./button.variants";
+import styles from "./buttonanimation.module.css";
 
 type CommonProps = ButtonVariantProps & {
   leftIcon?: ReactNode;
@@ -23,12 +24,29 @@ const isInternalPath = (href: string) => href.startsWith("/") && !href.startsWit
 /** Renders a Next `Link` for internal paths, `<a>` for other hrefs, and `<button>` otherwise. */
 export default function Button(props: ButtonProps) {
   const { variant, size, fullWidth, leftIcon, rightIcon, className, children, ...rest } = props;
-  const classes = cn(buttonVariants({ variant, size, fullWidth }), className);
+  const hasArrowAnim = !!rightIcon;
+  const classes = cn(
+    buttonVariants({ variant, size, fullWidth }),
+    hasArrowAnim && cn(styles.group, "group overflow-hidden"),
+    className
+  );
   const body = (
     <>
       {leftIcon}
-      {children}
-      {rightIcon}
+      {hasArrowAnim ? (
+        <span className="flex items-center justify-center">
+          <span className={cn(styles.textAnim, "flex items-center whitespace-nowrap")}>
+            <span className={styles.arrowLeft}>{rightIcon}</span>
+            {children}
+          </span>
+          <span className={cn(styles.arrowRight, "inline-flex ml-2")}>{rightIcon}</span>
+        </span>
+      ) : (
+        <>
+          {children}
+          {rightIcon}
+        </>
+      )}
     </>
   );
 

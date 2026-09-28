@@ -101,7 +101,7 @@ export default function CtaSection({
             {cta && (
               <CtaButton
                 cta={cta}
-                className="w-full py-2.5 bg-surface text-ink hover:bg-primary-pale rounded-full mt-auto"
+                className="w-full py-2.5 bg-surface text-ink hover:bg-primary-pale rounded-full mt-auto text-[16px]"
                 ctaLocation="cta-band"
               />
             )}

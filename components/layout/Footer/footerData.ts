@@ -1,83 +1,3 @@
-// export const FOOTER_NAV_COLUMNS = [
-//   {
-//     id: "solution",
-//     title: "SOLUTION",
-//     orderClasses: "order-1 lg:order-1",
-//     links: [
-//       { label: "All Solution", href: "#" },
-//       { label: "Cybersecurity", href: "#" },
-//       { label: "Salesforce", href: "#" },
-//       { label: "AI & Automation", href: "#" },
-//       { label: "Cloud & Infrastructure", href: "#" },
-//       { label: "Application Engineering", href: "#" },
-//       { label: "Data & Integration", href: "#" },
-//       { label: "Managed Services", href: "#" }
-//     ]
-//   },
-//   {
-//     id: "cybersecurity",
-//     title: "CYBERSECURITY",
-//     orderClasses: "order-3 lg:order-2",
-//     links: [
-//       { label: "Cloud Security", href: "#" },
-//       { label: "Application Security", href: "#" },
-//       { label: "Identity Security", href: "#" },
-//       { label: "Data Security", href: "#" },
-//       { label: "Exposure Management", href: "#" },
-//       { label: "Vulnerability Management", href: "#" },
-//       { label: "Managed Security", href: "#" }
-//     ]
-//   },
-//   {
-//     id: "salesforce",
-//     title: "SALESFORCE",
-//     orderClasses: "order-2 lg:order-3",
-//     links: [
-//       { label: "Sales", href: "#" },
-//       { label: "Service", href: "#" },
-//       { label: "Marketing", href: "#" },
-//       { label: "Commerce", href: "#" },
-//       { label: "AI", href: "#" },
-//       { label: "Integrations", href: "#" },
-//       { label: "Managed Services", href: "#" }
-//     ]
-//   },
-//   {
-//     id: "explore",
-//     title: "EXPLORE",
-//     orderClasses: "order-4 lg:order-4",
-//     links: [
-//       { label: "Industries", href: "#" },
-//       { label: "Accelerators", href: "#" },
-//       { label: "Insights", href: "#" },
-//       { label: "About", href: "/aboutus" },
-//       { label: "Contact", href: "/contactus" }
-//     ]
-//   },
-//   {
-//     id: "legal",
-//     title: "LEGAL",
-//     orderClasses: "order-5 lg:order-5",
-//     links: [
-//       { label: "Privacy Policy", href: "#" },
-//       { label: "Terms of use", href: "#" },
-//       { label: "Sitemap", href: "#" },
-//       { label: "Responsible Disclosure", href: "#" },
-//       { label: "Cookies", href: "#" }
-//     ]
-//   }
-// ];
-
-// export const SOCIAL_LINKS = [
-//   { id: 'x', label: 'X (Twitter)', icon: '/icons/x.svg', href: '#' },
-//   { id: 'whatsapp', label: 'WhatsApp', icon: '/icons/whatsapp.svg', href: '#' },
-//   { id: 'youtube', label: 'YouTube', icon: '/icons/youtube.svg', href: '#' }
-// ];
-
-
-
-
-
 export const FOOTER_NAV_COLUMNS = [
   {
     id: "solution",
@@ -85,12 +5,14 @@ export const FOOTER_NAV_COLUMNS = [
     orderClasses: "order-1 lg:order-1",
     links: [
       { label: "All Solution", href: "/solutions" },
-      { label: "Cybersecurity", href: "/cybersecurity" },
-      { label: "Salesforce", href: "/salesforce" },
+      { label: "Digital Transformation", href: "/digital-transformation" },
       { label: "AI & Automation", href: "/ai-automation" },
-      { label: "Cloud & Infrastructure", href: "/cloud-infrastructure" },
+      { label: "Salesforce", href: "/salesforce" },
+      { label: "Data & Integration", href: "/data-integration" },
       { label: "Application Engineering", href: "/application-engineering" },
-      { label: "Data & Integration", href: "/data-integration" }
+      { label: "Cybersecurity", href: "/cybersecurity" },
+      { label: "Cloud & Infrastructure", href: "/cloud-infrastructure" },
+      { label: "Managed Services", href: "/managed-services" }
     ]
   },
   {
@@ -104,8 +26,7 @@ export const FOOTER_NAV_COLUMNS = [
       { label: "Data Security", href: "/cybersecurity/data-security" },
       { label: "Exposure Management", href: "/cybersecurity/exposure-management" },
       { label: "Vulnerability Management", href: "/cybersecurity/vulnerability-management" },
-      { label: "Managed Security", href: "/cybersecurity/managed-security" },
-      { label: "AI Security", href: "/cybersecurity/ai-security" }
+      { label: "Managed Security", href: "/cybersecurity/managed-security" }
     ]
   },
   {
@@ -113,12 +34,12 @@ export const FOOTER_NAV_COLUMNS = [
     title: "SALESFORCE",
     orderClasses: "order-2 lg:order-3",
     links: [
-      { label: "Sales", href: "/salesforce/sales" },
-      { label: "Service", href: "/salesforce/service" },
-      { label: "Marketing", href: "/salesforce/marketing" },
-      { label: "Commerce", href: "/salesforce/commerce" },
-      { label: "AI", href: "/salesforce/ai" },
-      { label: "Integrations", href: "/salesforce/integration" },
+      { label: "Sales Cloud", href: "/salesforce/sales-cloud" },
+      { label: "Service Cloud", href: "/salesforce/service-cloud" },
+      { label: "Marketing Cloud", href: "/salesforce/marketing-cloud" },
+      { label: "Commerce Cloud", href: "/salesforce/commerce-cloud" },
+      { label: "AI & Agentforce", href: "/salesforce/ai-agentforce" },
+      { label: "Flow Automation", href: "/salesforce/flow-automation" },
       { label: "Managed Services", href: "/salesforce/managed-services" }
     ]
   },
@@ -133,26 +54,16 @@ export const FOOTER_NAV_COLUMNS = [
       { label: "About", href: "/aboutus" },
       { label: "Contact", href: "/contactus" }
     ]
-  },
-  {
-    id: "legal",
-    title: "LEGAL",
-    orderClasses: "order-5 lg:order-5",
-    links: [
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of use", href: "#" },
-      { label: "Sitemap", href: "#" },
-      { label: "Responsible Disclosure", href: "#" },
-      { label: "Cookies", href: "#" }
-    ]
   }
 ];
 
 
 export const SOCIAL_LINKS = [
-  { id: 'x', label: 'X (Twitter)', icon: '/icons/x.svg', href: '#' },
   { id: 'whatsapp', label: 'WhatsApp', icon: '/icons/whatsapp.svg', href: '#' },
-  { id: 'youtube', label: 'YouTube', icon: '/icons/youtube.svg', href: '#' }
+  { id: 'instagram', label: 'Instagram', icon: '/icons/instagram.svg', href: '#' },
+  { id: 'x', label: 'X (Twitter)', icon: '/icons/x.svg', href: '#' },
+  { id: 'youtube', label: 'YouTube', icon: '/icons/youtube.svg', href: '#' },
+  { id: 'linkedin', label: 'LinkedIn', icon: '/icons/linkedin.svg', href: '#' }
 ];
 
 export const FOOTER_BRANDING = {
@@ -177,6 +88,16 @@ export const FOOTER_MEDIA_FEATURE = {
 };
 
 export const FOOTER_LEGAL = {
-  copyright: "© 2026 — Copyright",
-  privacy: "Privacy"
+  copyright: "Copyright © 2026 Cordinit Private Limited. All rights reserved",
+  links: [
+    { label: "Legal", href: "/legal" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Use", href: "/terms-of-use" },
+    { label: "Sitemap", href: "/sitemap" },
+    { label: "Responsible Disclosure", href: "/responsible-disclosure" },
+    { label: "CSR Policy", href: "/csr-policy" },
+    { label: "Certifications", href: "/certifications" },
+    { label: "Accessibility", href: "/accessibility" },
+    { label: "Cookie Preferences", href: "/cookie-preferences" }
+  ]
 };

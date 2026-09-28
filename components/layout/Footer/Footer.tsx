@@ -30,12 +30,11 @@ export default function Footer() {
           <div className="lg:w-1/4 shrink-0 mb-4 lg:mb-0">
             <div className="flex flex-col gap-1.25 lg:gap-2.25 mb-5 lg:mb-6">
               <Link href="/" className="shrink-0 w-max">
-                <Image
-                  src="/logo.webp"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/CordinitHorizontal%204.svg"
                   alt={FOOTER_BRANDING.logoAlt}
-                  width={73}
-                  height={60}
-                  className="h-15 w-[72.844px] brightness-0"
+                  className="h-12 lg:h-16 w-auto brightness-0"
                 />
               </Link>
               <p className="text-black text-caption max-lg:text-card-desc-mobile max-w-50">
@@ -54,7 +53,7 @@ export default function Footer() {
           </div>
 
           {/* Links Grid (Right Side) */}
-          <div className="lg:w-3/4 grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8 lg:gap-8">
+          <div className="lg:w-3/4 grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 lg:gap-8">
             {FOOTER_NAV_COLUMNS.map((col) => (
               <div key={col.id} className={col.orderClasses}>
                 <h4 className="text-ink text-eyebrow lg:text-footer-heading-desktop max-lg:text-card-detail-mobile max-lg:font-bold mb-4 lg:mb-5">{col.title}</h4>

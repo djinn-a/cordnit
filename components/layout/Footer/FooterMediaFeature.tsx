@@ -1,69 +1,7 @@
-// import React from 'react';
-// import Image from 'next/image';
-// import { ArrowRight, Play } from 'lucide-react';
-
-// export default function FooterMediaFeature() {
-//   return (
-//     <div className="relative z-10 max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide mx-auto mt-12 lg:mt-16 px-4 sm:px-6 lg:px-16 pb-6">
-
-//       <h4 className="text-white/90 text-eyebrow mb-6 lg:hidden">
-//         LATEST FROM CORDINIT
-//       </h4>
-
-//       <div className="flex flex-row lg:flex-row items-center lg:items-center gap-4 lg:gap-16 mb-12 lg:mb-16">
-
-//         {/* Video Column */}
-//         <div className="w-[45%] lg:w-[45%] flex flex-col gap-6 shrink-0">
-//           <h4 className="text-card-desc-mobile hidden lg:block text-white/90 text-eyebrow">
-//             LATEST FROM CORDINIT
-//           </h4>
-//           {/* Video Thumbnail Area */}
-//           <div className="relative rounded-xl overflow-hidden shadow-2xl border-2 lg:border-4 border-gray-900/10 aspect-video">
-//             <Image
-//               src="/images/footer/latest-video.webp"
-//               alt="Video Thumbnail"
-//               fill
-//               className="object-cover"
-//             />
-//             {/* Play Button Overlay */}
-//             <div className="absolute inset-0 flex items-center justify-center bg-black/20 group cursor-pointer transition-colors hover:bg-black/40">
-//               <div className="w-8 h-6 lg:w-16 lg:h-12 bg-white rounded-md lg:rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
-//                 <Play className="h-3 w-3 lg:h-5 lg:w-5 text-primary ml-0.5 lg:ml-1" fill="currentColor" />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Text Content Area */}
-//         <div className="w-[55%] lg:w-[55%] text-white flex flex-col justify-center">
-//           <h3 className="text-card-desc sm:text-h3 lg:text-footer-media-heading-desktop text-white mb-2 lg:mb-6 leading-snug">
-//             Technology, security & transformation — in conversation.
-//           </h3>
-//           <p className="text-white/80 text-mobile-body-4 sm:text-body lg:text-card-desc mb-3 lg:mb-8 lg:max-w-xl">
-//             Insights from Cordinit&apos;s technology and security experts on building secure, intelligent organisations.
-//           </p>
-//           <a href="#" className="inline-flex items-center text-white lg:text-primary text-button lg:text-footer-media-cta-desktop uppercase hover:text-white/80 lg:hover:text-primary-hover transition-colors">
-//             WATCH ON YOUTUBE <ArrowRight className="ml-1 h-3 w-3 lg:h-3.5 lg:w-3.5" />
-//           </a>
-//         </div>
-//       </div>
-
-//       {/* Very Bottom Footer Text */}
-//       <div className="flex justify-between items-center text-white text-caption border-t border-white/10 pt-5 lg:pt-6">
-//         <p>© 2026 — Copyright</p>
-//         <p className="cursor-pointer hover:text-white transition-colors">Privacy</p>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Play } from 'lucide-react';
+import { Play, ArrowUpRight } from 'lucide-react';
+import { Button } from '@/components/ui';
 import { FOOTER_MEDIA_FEATURE, FOOTER_LEGAL } from './footerData';
 
 export default function FooterMediaFeature() {
@@ -103,9 +41,17 @@ export default function FooterMediaFeature() {
             <p className="text-card-desc-mobile text-white">
               {FOOTER_MEDIA_FEATURE.description}
             </p>
-            <Link href={FOOTER_MEDIA_FEATURE.href} className="flex items-center gap-2 text-link-mobile text-primary hover:text-primary-hover transition-colors uppercase">
-              {FOOTER_MEDIA_FEATURE.ctaText} <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
+            <Button
+              variant="primary"
+              href={FOOTER_MEDIA_FEATURE.href}
+              className="w-fit bg-primary hover:bg-primary/90 px-4 py-3 text-[14px] font-semibold leading-[20px] uppercase mt-1 group flex items-center gap-2 border-0"
+              style={{ borderRadius: '24px' }}
+            >
+              {FOOTER_MEDIA_FEATURE.ctaText}
+              <span className="flex items-center justify-center bg-white text-primary rounded-full w-6 h-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:rotate-12">
+                <ArrowUpRight className="h-3.5 w-3.5 stroke-[2.5px]" />
+              </span>
+            </Button>
           </div>
         </div>
       </div>
@@ -143,16 +89,31 @@ export default function FooterMediaFeature() {
           <p className="text-white/80 text-card-desc mb-8 max-w-xl">
             {FOOTER_MEDIA_FEATURE.description}
           </p>
-          <Link href={FOOTER_MEDIA_FEATURE.href} className="inline-flex items-center text-primary text-footer-media-cta-desktop uppercase hover:text-primary-hover transition-colors">
-            {FOOTER_MEDIA_FEATURE.ctaText} <ArrowRight className="ml-1 h-3.5 w-3.5" />
-          </Link>
+          <Button
+            variant="primary"
+            href={FOOTER_MEDIA_FEATURE.href}
+            className="w-fit rounded-[24px] px-4 py-3 text-[14px] font-semibold leading-[20px] uppercase mt-2 group flex items-center gap-2"
+          >
+            {FOOTER_MEDIA_FEATURE.ctaText}
+            <span className="flex items-center justify-center bg-white text-primary rounded-full w-7 h-7 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:rotate-12">
+              <ArrowUpRight className="h-4 w-4 stroke-[2.5px]" />
+            </span>
+          </Button>
         </div>
       </div>
 
       {/* Very Bottom Footer Text */}
-      <div className="flex justify-between items-center text-white text-caption border-t border-white/10 pt-5 lg:pt-6">
-        <p>{FOOTER_LEGAL.copyright}</p>
-        <p className="cursor-pointer hover:text-white transition-colors">{FOOTER_LEGAL.privacy}</p>
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center text-white border-t border-white/10 pt-5 lg:pt-6 gap-6">
+        <p className="text-[10px] font-normal leading-[14px]">
+          {FOOTER_LEGAL.copyright}
+        </p>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] font-normal leading-[14px]">
+          {FOOTER_LEGAL.links.map(link => (
+            <Link key={link.label} href={link.href} className="hover:text-white/80 transition-colors">
+              {link.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

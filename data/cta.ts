@@ -2,7 +2,10 @@ export const ctaData = {
   title: "Ready to Align Technology with Business Growth?",
   body: "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution.",
   expertName: "Talk to a Enterprise Technology Specialist",
-  ctaLabel: "Schedule a Call",
+  cta: {
+    label: "Schedule a Call",
+    action: "contactModal",
+  } as const,
   backgroundSrc: "/cta-bg.webp",
   backgroundSrcMobile: "/cta-bg-mobile.webp",
   portraitSrc: "/expert-portrait.webp",
