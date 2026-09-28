@@ -40,7 +40,7 @@ export default function InsightCard({ item, className = "" }: InsightCardProps) 
           <span className="mx-2">•</span>
           <span>{item.date}</span>
         </div>
-        <h3 className="text-surface text-mobile-heading-2 sm:text-[18px] sm:font-medium mb-4 line-clamp-3">
+        <h3 className="text-surface text-mobile-heading-2 sm:text-[18px] sm:font-medium mb-4 line-clamp-3 min-h-[4.5em]">
           {item.title}
         </h3>
         <div className="flex items-center text-primary text-link-mobile sm:text-body-sm sm:font-medium">

@@ -12,9 +12,12 @@ export default function ContactHero({
   eyebrow = "LET'S TALK",
   title = "Tell us what you’re building.",
   description = "Whether you’re looking to modernise your technology, strengthen security, adopt AI orbuild a new digital solution, tell us what you’re working on. Our team will connect you with the right specialists.",
-  imageSrc = "/contact-hero-bg.webp",
+  imageSrc: imageSrcProp = "/contact-hero-bg.webp",
   imageAlt = "Cordinit Office Contact",
 }: ContactHeroProps = {}) {
+  // Force the new image requested by user, bypassing database values
+  const imageSrc = "/contact/chatgpt_image_sep_2_2026_10_35_42_am_1_1x.webp";
+
   return (
     <Section spacing="none" className="">
       <Container>

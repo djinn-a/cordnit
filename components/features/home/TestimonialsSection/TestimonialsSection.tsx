@@ -12,6 +12,30 @@ export default function TestimonialsSection({
   description = "Hear from enterprise executives on how Cordinit strengthens digital resilience and accelerates transformation.",
   items = defaultItems,
   }: TestimonialsSectionProps = {}) {
+  
+  const overriddenItems = items.map((item, index) => {
+    let newImage = "";
+    if (item.name.includes("Michelle")) {
+      newImage = "/AboutHero/michelle_pieszko_2x.webp";
+    } else if (item.name.includes("Nitin")) {
+      newImage = "/testimonial/nitin_raina_2x.webp";
+    } else if (item.name.includes("Rohit")) {
+      newImage = "/testimonial/rohit_kohli_3x.webp";
+    } else {
+      const fallbackImages = [
+        "/testimonial/nitin_raina_2x.webp",
+        "/testimonial/rohit_kohli_3x.webp",
+        "/AboutHero/michelle_pieszko_2x.webp"
+      ];
+      newImage = fallbackImages[index % 3];
+    }
+    
+    return {
+      ...item,
+      image: newImage
+    };
+  });
+
   const {
     scrollerRef,
     activeIndex,
@@ -23,7 +47,7 @@ export default function TestimonialsSection({
     canScrollNext,
     hasOverflow,
     onScrollerScroll,
-  } = useScrollSnapCarousel({ itemCount: items.length });
+  } = useScrollSnapCarousel({ itemCount: overriddenItems.length });
 
   return (
     <Section spacing="none" className="overflow-hidden">
@@ -44,7 +68,7 @@ export default function TestimonialsSection({
           onScroll={onScrollerScroll}
           className="flex gap-4 lg:gap-6 overflow-x-auto pb-4 sm:pb-6 snap-x snap-mandatory hide-scrollbar mb-4 sm:mb-6"
         >
-          {items.map((item) => (
+          {overriddenItems.map((item) => (
            <TestimonialCard key={item.id} item={item} />
           ))}
         </div>

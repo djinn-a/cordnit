@@ -17,7 +17,7 @@ export default function HeroOverlayCard({
   secondaryCta,
 }: Readonly<HeroOverlayCardProps>) {
   return (
-    <div className="absolute bottom-space-8 sm:bottom-space-32 lg:bottom-space-34 left-1/2 -translate-x-1/2 lg:left-space-30 lg:translate-x-0 max-w-105 sm:max-w-135 w-[94%] md:w-[90%] lg:w-full bg-white/30 backdrop-blur-xl border border-white/40 px-space-20 py-space-24 sm:px-space-32 rounded-lg shadow-card">
+    <div className="absolute bottom-space-8 sm:bottom-space-32 lg:bottom-space-34 left-1/2 -translate-x-1/2 lg:left-space-30 lg:translate-x-0 max-w-105 sm:max-w-135 w-[94%] md:w-[90%] lg:w-full bg-[#FFFFFF80] backdrop-blur-md border border-[#C4C7C7]/30 px-space-20 py-space-24 sm:px-space-32 rounded-lg shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]">
       <p className="text-white/90 text-caption max-sm:text-card-detail-mobile tracking-widest uppercase mb-space-24">
         {cardEyebrow}
       </p>

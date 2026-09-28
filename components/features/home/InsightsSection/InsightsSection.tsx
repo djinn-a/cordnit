@@ -15,8 +15,16 @@ export type InsightsSectionProps = {
 export default function InsightsSection({
   eyebrow = "INSIGHTS & PERSPECTIVE",
   title = "Ideas Built to Accelerate\nSustainable Growth",
-  insights = insightsData,
+  insights: insightsProp = insightsData,
 }: InsightsSectionProps = {}) {
+  const insights = insightsProp.map(item => {
+    let newImage = item.image;
+    if (item.tag.includes("CYBERSECURITY")) newImage = "/InsightsSection/cybersecurity_insight_2x.webp";
+    if (item.tag.includes("SALESFORCE")) newImage = "/InsightsSection/salesforce_insight_3x.webp";
+    if (item.tag.includes("CLOUD")) newImage = "/InsightsSection/cloud_infrastructure_insight_4x.webp";
+    if (item.tag.includes("AI")) newImage = "/InsightsSection/ai_automation_insight_3x.webp";
+    return { ...item, image: newImage };
+  });
   const {
     scrollerRef,
     activeIndex,
