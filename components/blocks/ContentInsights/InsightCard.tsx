@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from '@/components/ui/Image';
 import { ArrowRight } from "lucide-react";
 import type { InsightCardData } from "./ContentInsights.types";
 import { CtaButton } from "@/components/ui";
