@@ -1,3 +1,4 @@
+import { getImageUrl } from '@/lib/getImageUrl';
 import type { ReactNode } from "react";
 import type { HeroContent } from "./heroContent";
 
@@ -15,7 +16,7 @@ export default function HeroMedia({
       <div className="absolute inset-0 w-full h-full">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={imageSrc}
+          src={getImageUrl(imageSrc)}
           alt={imageAlt}
           className="w-full h-full object-cover"
         />

@@ -1,3 +1,4 @@
+import { getImageUrl } from '@/lib/getImageUrl';
 import { Container, Section } from "@/components/ui";
 import { aboutHeroData } from "./aboutHeroData";
 import AboutHeroContent from "./AboutHeroContent";
@@ -29,7 +30,7 @@ export default function AboutHero({
           <div className="absolute inset-0 w-full h-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={imageSrc}
+              src={getImageUrl(imageSrc)}
               alt={imageAlt}
               className="w-full h-full object-cover"
             />

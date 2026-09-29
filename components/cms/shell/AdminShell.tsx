@@ -10,7 +10,7 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, type MenuProps } from "antd";
-import Image from "next/image";
+import { Image } from '@/components/ui/Image';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";

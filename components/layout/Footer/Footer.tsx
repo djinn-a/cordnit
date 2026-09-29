@@ -1,7 +1,8 @@
 "use client";
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { Image } from '@/components/ui/Image';
+import { getImageUrl } from '@/lib/getImageUrl';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { useContactModal } from '@/components/features/contact/ContactModal/ContactModalProvider';
@@ -18,7 +19,7 @@ export default function Footer() {
       {/* Background Image */}
       <div
         className="absolute inset-0 w-full h-full z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/footer-bg.webp')" }}
+        style={{ backgroundImage: `url('${getImageUrl('/footer-bg.webp')}')` }}
       >
       </div>
 
@@ -32,7 +33,7 @@ export default function Footer() {
               <Link href="/" className="shrink-0 w-max">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/CordinitHorizontal%204.svg"
+                  src={getImageUrl("/CordinitHorizontal%204.svg")}
                   alt={FOOTER_BRANDING.logoAlt}
                   className="h-12 lg:h-16 w-auto brightness-0"
                 />

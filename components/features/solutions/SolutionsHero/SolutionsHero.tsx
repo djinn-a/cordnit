@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { Image } from '@/components/ui/Image';
 import { CtaButton, Container, Section } from "@/components/ui";
 import { defaultSolutionsHeroContent, type SolutionsHeroContent } from "./solutionsHeroData";
 import { ArrowRight } from "lucide-react";

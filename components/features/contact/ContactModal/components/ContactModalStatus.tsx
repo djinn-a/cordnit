@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { Image } from '@/components/ui/Image';
 import { CheckCircle2 } from 'lucide-react';
 import { contactStatusData } from './contactStatusData';
 

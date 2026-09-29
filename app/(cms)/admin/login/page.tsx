@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { Image } from '@/components/ui/Image';
 import { Suspense } from "react";
 import LoginForm from "@/components/cms/auth/LoginForm";
 import { BRAND } from "@/components/cms/theme";

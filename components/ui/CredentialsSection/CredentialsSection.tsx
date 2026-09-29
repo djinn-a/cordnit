@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from '@/components/ui/Image';
 import CredentialsSectionHeader from "./CredentialsSectionHeader";
 import CredentialsSectionLogos from "./CredentialsSectionLogos";
 import type { CertificationItem } from "./CredentialsSectionCertification";

@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
   // Server Function arguments include passwords; actions log their own argument-free lines.
   logging: { serverFunctions: false },
   serverExternalPackages: ["postgres"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'uwvlztbbhdtussvzqdtg.supabase.co',
+        port: '',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
+  },
   async redirects() {
     return [{ source: "/home", destination: "/", permanent: true }];
   },

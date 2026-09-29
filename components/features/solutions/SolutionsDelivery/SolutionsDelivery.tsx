@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Image from "next/image";
+import { Image } from '@/components/ui/Image';
 import Section from "@/components/ui/Section/Section";
 import Container from "@/components/ui/Container/Container";
 import { deliveryData as defaultDeliveryData, type SolutionsDeliveryData } from "./solutionsDeliveryData";

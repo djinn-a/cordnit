@@ -7,7 +7,9 @@ import NewsletterForm from './NewsletterForm';
 import NewsletterValidation from './NewsletterValidation';
 import NewsletterSuccess from './NewsletterSuccess';
 
-const POPUP_BG = '/popup-bg.webp';
+import { getImageUrl } from '@/lib/getImageUrl';
+
+const POPUP_BG = getImageUrl('/popup-bg.webp');
 const CLOSE_MS = 300;
 
 export default function NewsletterModal() {

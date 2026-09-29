@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { Image } from '@/components/ui/Image';
 import { cn } from "@/lib/utils/cn";
 import type { HelpService } from "./helpServices";
 

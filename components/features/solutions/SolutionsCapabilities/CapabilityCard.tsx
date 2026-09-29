@@ -2,7 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { Image } from '@/components/ui/Image';
 import { cn } from "@/lib/utils/cn";
 import type { CapabilityData } from "./solutionsCapabilitiesData";
 

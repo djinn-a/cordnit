@@ -1,3 +1,4 @@
+import { getImageUrl } from '@/lib/getImageUrl';
 import { Container, Section, SectionHeader } from "@/components/ui";
 
 export type ContactHeroProps = {
@@ -40,7 +41,7 @@ export default function ContactHero({
             <div className="relative w-full h-[238px] md:h-[500px] lg:h-[420px] xl:h-[460px] rounded-card-lg overflow-hidden shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={imageSrc}
+                src={getImageUrl(imageSrc)}
                 alt={imageAlt}
                 className="w-full h-full object-cover"
               />

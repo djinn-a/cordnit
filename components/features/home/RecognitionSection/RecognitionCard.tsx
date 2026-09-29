@@ -1,9 +1,10 @@
-"use client";
+import { getImageUrl } from "@/lib/getImageUrl";
+import { useState } from "react";
+import { RecognitionItem } from "./types";
 
-import { useState } from 'react';
-import { RecognitionItem } from './types';
-
-export default function RecognitionCard({ item }: Readonly<{ item: RecognitionItem }>) {
+export default function RecognitionCard({
+  item,
+}: Readonly<{ item: RecognitionItem }>) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -11,21 +12,25 @@ export default function RecognitionCard({ item }: Readonly<{ item: RecognitionIt
       <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-5 isolate">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={item.image}
+          src={getImageUrl(item.image)}
           alt={item.title}
           className="w-full h-full object-contain rounded-2xl"
         />
       </div>
       <div className="flex flex-col grow px-1 sm:px-2 pb-2">
-        <span className="text-card-desc-mobile leading-space-12 tracking-[1.2px] text-primary uppercase mb-2 align-middle">{item.category}</span>
-        <h3 
-          className={`text-card-title-mobile font-semibold sm:text-card-title sm:font-bold mb-3 cursor-pointer transition-all ${isExpanded ? '' : 'line-clamp-2'}`}
+        <span className="text-card-desc-mobile leading-space-12 tracking-[1.2px] text-primary uppercase mb-2 align-middle">
+          {item.category}
+        </span>
+        <h3
+          className={`text-card-title-mobile font-semibold sm:text-card-title sm:font-bold mb-3 cursor-pointer transition-all ${isExpanded ? "" : "line-clamp-2"}`}
           onClick={() => setIsExpanded(!isExpanded)}
           title={!isExpanded ? "Click to expand" : "Click to collapse"}
         >
           {item.title}
         </h3>
-        <p className="text-ink-muted text-card-desc-mobile sm:text-card-desc mb-6 grow">{item.desc}</p>
+        <p className="text-ink-muted text-card-desc-mobile sm:text-card-desc mb-6 grow">
+          {item.desc}
+        </p>
       </div>
     </div>
   );

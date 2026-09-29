@@ -1,5 +1,4 @@
-"use client";
-
+import { getImageUrl } from "@/lib/getImageUrl";
 import { useState } from "react";
 import { TeamMember } from "./teamData";
 
@@ -8,7 +7,10 @@ export type TeamMemberCardProps = {
   className?: string;
 };
 
-export default function TeamMemberCard({ member, className = "" }: TeamMemberCardProps) {
+export default function TeamMemberCard({
+  member,
+  className = "",
+}: TeamMemberCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -32,15 +34,19 @@ export default function TeamMemberCard({ member, className = "" }: TeamMemberCar
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={member.image}
+        src={getImageUrl(member.image)}
         alt={member.name}
         className={`w-full h-full object-cover transition-transform duration-700 ${
           isExpanded ? "scale-105" : "scale-100"
         }`}
       />
       <div className="absolute bottom-4 left-4 right-4 bg-surface/70 backdrop-blur-md rounded-2xl p-4 md:p-6 shadow-sm border border-surface/40">
-        <h3 className="text-mobile-heading-2 sm:text-section-title-head mb-1">{member.name}</h3>
-        <p className="text-eyebrow-mobile sm:text-about-eyebrow-desktop text-primary">{member.role}</p>
+        <h3 className="text-mobile-heading-2 sm:text-section-title-head mb-1">
+          {member.name}
+        </h3>
+        <p className="text-eyebrow-mobile sm:text-about-eyebrow-desktop text-primary">
+          {member.role}
+        </p>
         <div
           className={`grid transition-all duration-500 md:duration-700 ease-out ${
             isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"

@@ -1,3 +1,4 @@
+import { getImageUrl } from '@/lib/getImageUrl';
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { InsightItem } from "./insightsData";
@@ -20,7 +21,7 @@ export default function InsightCard({ item, className = "" }: InsightCardProps) 
       <div className="absolute inset-0 w-full h-full bg-surface-darker">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={item.image}
+          src={getImageUrl(item.image)}
           alt={item.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />

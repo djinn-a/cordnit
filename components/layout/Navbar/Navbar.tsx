@@ -1,14 +1,14 @@
-'use client';
-
-import React, { useState, useRef } from 'react';
-import { useContactModal } from '../../features/contact/ContactModal/ContactModalProvider';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
-import { navbarContent } from './navbarContent';
-import MegaMenu from './MegaMenu';
-import { Button } from '@/components/ui';
-import { Suspense, useEffect, useCallback } from 'react';
+"use client";
+import { getImageUrl } from "@/lib/getImageUrl";
+import { useState, useRef } from "react";
+import { useContactModal } from "../../features/contact/ContactModal/ContactModalProvider";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { navbarContent } from "./navbarContent";
+import MegaMenu from "./MegaMenu";
+import { Button } from "@/components/ui";
+import { Suspense, useEffect, useCallback } from "react";
 
 function RouteChangeDetector({ onChange }: { onChange: () => void }) {
   const pathname = usePathname();
@@ -18,11 +18,12 @@ function RouteChangeDetector({ onChange }: { onChange: () => void }) {
   return null;
 }
 
-
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
-  const [activeDesktopMenu, setActiveDesktopMenu] = useState<string | null>(null);
+  const [activeDesktopMenu, setActiveDesktopMenu] = useState<string | null>(
+    null,
+  );
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { openModal } = useContactModal();
 
@@ -58,7 +59,11 @@ export default function Navbar() {
         {/* Mobile Logo */}
         <Link href="/" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/CordinitHorizontal%204.svg" alt={navbarContent.logoAltText} className="h-12 w-auto" />
+          <img
+            src={getImageUrl("/CordinitHorizontal%204.svg")}
+            alt={navbarContent.logoAltText}
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Mobile Menu Button */}
@@ -67,34 +72,41 @@ export default function Navbar() {
           className="p-2 -mr-2 text-white transition-colors"
           aria-label={navbarContent.mobileMenuToggleAriaLabel}
         >
-          {isMobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7 stroke-2" />}
+          {isMobileMenuOpen ? (
+            <X className="h-7 w-7" />
+          ) : (
+            <Menu className="h-7 w-7 stroke-2" />
+          )}
         </button>
       </div>
 
       {/* Desktop Navbar */}
       <div className="hidden lg:block max-w-container 2xl:max-w-container-xl 3xl:max-w-container-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-
           {/* Left Group */}
           <div className="flex items-center gap-16">
             {/* Desktop Logo */}
             <div className="shrink-0 flex items-center">
               <Link href="/" className="flex items-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/CordinitHorizontal%204.svg" alt={navbarContent.logoAltText} className="h-16 w-auto" />
+                <img
+                  src={getImageUrl("/CordinitHorizontal%204.svg")}
+                  alt={navbarContent.logoAltText}
+                  className="h-16 w-auto"
+                />
               </Link>
             </div>
 
             {/* Desktop Navigation */}
             <div className="flex items-center gap-6">
               {navbarContent.navLinks.map((link) => {
-                if (link.label === 'Solutions') {
-                  const isOpen = activeDesktopMenu === 'Solutions';
+                if (link.label === "Solutions") {
+                  const isOpen = activeDesktopMenu === "Solutions";
                   return (
-                    <div 
-                      key={link.label} 
+                    <div
+                      key={link.label}
                       className="h-20 flex items-center"
-                      onMouseEnter={() => handleMenuEnter('Solutions')}
+                      onMouseEnter={() => handleMenuEnter("Solutions")}
                       onMouseLeave={handleMenuLeave}
                     >
                       <Link
@@ -103,7 +115,9 @@ export default function Navbar() {
                         onClick={handleLinkClick}
                       >
                         {link.label}
-                        <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                        />
                       </Link>
 
                       {/* Mega Menu Dropdown */}
@@ -141,7 +155,6 @@ export default function Navbar() {
               {navbarContent.getInTouchLabel}
             </Button>
           </div>
-
         </div>
       </div>
 
@@ -149,14 +162,20 @@ export default function Navbar() {
       <div className="lg:hidden absolute top-full left-0 right-0 overflow-hidden pointer-events-none">
         {/* Animated Drawer */}
         <div
-          className={`bg-gradient-mobile-nav shadow-2xl transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'
-            }`}
+          className={`bg-gradient-mobile-nav shadow-2xl transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen
+              ? "translate-y-0 opacity-100 pointer-events-auto"
+              : "-translate-y-full opacity-0 pointer-events-none"
+          }`}
         >
           <div className="px-6 py-6 pb-10 flex flex-col">
             {navbarContent.navLinks.map((link) => {
-              if (link.label === 'Solutions') {
+              if (link.label === "Solutions") {
                 return (
-                  <div key={link.label} className="border-b border-white/20 flex flex-col">
+                  <div
+                    key={link.label}
+                    className="border-b border-white/20 flex flex-col"
+                  >
                     <button
                       className="flex items-center justify-between py-4 text-white hover:text-white/80 font-medium text-lg transition-colors w-full text-left"
                       onClick={(e) => {
@@ -165,10 +184,14 @@ export default function Navbar() {
                       }}
                     >
                       {link.label}
-                      <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-200 ${isMobileSolutionsOpen ? "rotate-180" : ""}`}
+                      />
                     </button>
                     {/* Expandable sub-menu */}
-                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileSolutionsOpen ? 'max-h-125 opacity-100 mb-4' : 'max-h-0 opacity-0'}`}>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileSolutionsOpen ? "max-h-125 opacity-100 mb-4" : "max-h-0 opacity-0"}`}
+                    >
                       <div className="flex flex-col gap-4 pl-4 pt-2">
                         {navbarContent.solutionsDropdown.map((solution) => (
                           <Link
@@ -185,7 +208,8 @@ export default function Navbar() {
                           className="text-white font-bold text-base flex items-center mt-2 hover:opacity-80 transition-opacity"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          {navbarContent.megaMenu.exploreAllLabel} <ArrowRight className="ml-2 h-4 w-4" />
+                          {navbarContent.megaMenu.exploreAllLabel}{" "}
+                          <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </div>
                     </div>

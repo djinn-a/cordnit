@@ -1,3 +1,4 @@
+import { getImageUrl } from '@/lib/getImageUrl';
 import { CtaButton } from "@/components/ui";
 import type { Cta } from "@/lib/cta";
 
@@ -25,13 +26,13 @@ export default function CtaSection({
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={backgroundSrcMobile}
+          src={getImageUrl(backgroundSrcMobile)}
           alt=""
           className="md:hidden w-full h-full object-cover object-center"
         />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={backgroundSrc}
+          src={getImageUrl(backgroundSrc)}
           alt=""
           className="hidden md:block w-full h-full object-cover object-center"
         />
@@ -62,7 +63,7 @@ export default function CtaSection({
               <div className="w-[72px] h-[72px] rounded-2xl overflow-hidden mr-4 shadow-sm shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={portraitSrc}
+                  src={getImageUrl(portraitSrc)}
                   alt={expertName}
                   className="w-full h-full object-cover"
                 />
@@ -87,7 +88,7 @@ export default function CtaSection({
               <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={portraitSrc}
+                  src={getImageUrl(portraitSrc)}
                   alt={expertName}
                   className="w-full h-full object-cover"
                 />

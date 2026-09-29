@@ -1,5 +1,5 @@
 "use client";
-
+import { getImageUrl } from "@/lib/getImageUrl";
 import { useState } from "react";
 import { Container, Section, SectionHeader } from "@/components/ui";
 import { aboutContentData, type AboutTabContent } from "./aboutContentData";
@@ -16,10 +16,13 @@ export default function AboutContent({
   title = "Making technology work for what matters.",
   tabs: tabsProp,
 }: AboutContentProps = {}) {
-  let tabs = Array.isArray(tabsProp) && tabsProp.length > 0 ? tabsProp : aboutContentData;
-  tabs = tabs.map(tab => ({
+  let tabs =
+    Array.isArray(tabsProp) && tabsProp.length > 0
+      ? tabsProp
+      : aboutContentData;
+  tabs = tabs.map((tab) => ({
     ...tab,
-    imageSrc: "/AboutHero/aboutcordinti.webp"
+    imageSrc: "/AboutHero/aboutcordinti.webp",
   }));
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
 
@@ -30,11 +33,13 @@ export default function AboutContent({
       <Container>
         <div className="flex flex-col lg:flex-row gap-10 md:gap-16 lg:gap-24 items-center">
           <div className="w-full lg:w-1/2 flex flex-col items-start min-h-[350px]">
-            <SectionHeader eyebrow={eyebrow}
+            <SectionHeader
+              eyebrow={eyebrow}
               eyebrowClassName="text-mobile-subhead sm:text-eyebrow-desktop"
               title={title}
               titleClassName="text-mobile-heading-1-eb font-extrabold sm:text-section-title"
-              className="mb-5 md:mb-10" />
+              className="mb-5 md:mb-10"
+            />
 
             <AboutContentTabs
               tabs={tabs}
@@ -43,9 +48,14 @@ export default function AboutContent({
             />
 
             <div className="flex-1 w-full animate-in fade-in duration-500">
-              <h3 className="text-card-title-mobile md:text-card-title mb-4 md:mb-5">{activeContent.title}</h3>
+              <h3 className="text-card-title-mobile md:text-card-title mb-4 md:mb-5">
+                {activeContent.title}
+              </h3>
               {activeContent.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 24)} className="text-[14px] md:text-section-subtitle text-ink-muted mb-5 last:mb-0">
+                <p
+                  key={paragraph.slice(0, 24)}
+                  className="text-[14px] md:text-section-subtitle text-ink-muted mb-5 last:mb-0"
+                >
                   {paragraph}
                 </p>
               ))}
@@ -57,7 +67,7 @@ export default function AboutContent({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 key={activeContent.imageSrc}
-                src={activeContent.imageSrc}
+                src={getImageUrl(activeContent.imageSrc)}
                 alt={activeContent.imageAlt}
                 className="w-full h-full object-cover animate-in fade-in duration-500"
               />
