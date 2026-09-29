@@ -8,14 +8,13 @@ export type InsightCardProps = {
 };
 
 export default function InsightCard({ item, className = "" }: InsightCardProps) {
-  const isExternal = item.readMoreUrl.startsWith("http");
-  const CardWrapper = isExternal ? "a" : Link;
+  const url = item.readMoreUrl || "";
+  const isExternal = url.startsWith("http");
+  const LinkComponent = isExternal ? "a" : Link;
 
   return (
-    <CardWrapper
-      href={item.readMoreUrl}
-      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`group relative h-panel overflow-hidden flex flex-col justify-between  cursor-pointer ${className}`}
+    <div
+      className={`group relative h-panel overflow-hidden flex flex-col justify-between ${className}`}
     >
       <div className="absolute inset-0 w-full h-full bg-surface-darker">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -43,10 +42,16 @@ export default function InsightCard({ item, className = "" }: InsightCardProps) 
         <h3 className="text-surface text-mobile-heading-2 sm:text-[18px] sm:font-medium mb-4 line-clamp-3 min-h-[4.5em]">
           {item.title}
         </h3>
-        <div className="flex items-center text-primary text-link-mobile sm:text-body-sm sm:font-medium">
-          Read more <ArrowRight className="ml-1.5 h-4 w-4 text-primary" />
-        </div>
+        {url && (
+          <LinkComponent 
+            href={url}
+            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="inline-flex items-center text-primary text-link-mobile sm:text-body-sm sm:font-medium hover:underline"
+          >
+            Read more <ArrowRight className="ml-1.5 h-4 w-4 text-primary" />
+          </LinkComponent>
+        )}
       </div>
-    </CardWrapper>
+    </div>
   );
 }
