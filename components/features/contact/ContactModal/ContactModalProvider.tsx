@@ -10,7 +10,7 @@ import { ContactModalScheduler } from './components/ContactModalScheduler';
 
 import { getImageUrl } from '@/lib/getImageUrl';
 
-const POPUP_BG = getImageUrl('/popup-bg.webp');
+const POPUP_BG = '/Frame%202147237416.webp';
 const CLOSE_MS = 300;
 
 interface ModalContext {
@@ -156,8 +156,8 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
           {/* Modal Container */}
           <div
             role="presentation"
-            className={`relative w-full max-w-250 bg-surface-dark bg-cover bg-center rounded-[2rem] shadow-2xl flex flex-col items-center my-auto border border-white/5 max-h-[min(900px,calc(100dvh-2rem))] overflow-y-auto transition-[opacity,transform] duration-300 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'}`}
-            style={{ backgroundImage: `url(${POPUP_BG})` }}
+            className={`relative w-full max-w-250 bg-[length:150%_150%] bg-center rounded-[2rem] shadow-2xl flex flex-col items-center my-auto border border-white/5 max-h-[min(900px,calc(100dvh-2rem))] overflow-y-auto hide-scrollbar transition-[opacity,transform] duration-300 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'}`}
+            style={{ backgroundImage: `url('${POPUP_BG}')` }}
             onClick={(e) => e.stopPropagation()}
             onKeyDown={(e) => e.stopPropagation()}
           >
@@ -165,18 +165,21 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
             {/* Close button */}
             <button
               onClick={closeModal}
-              className="absolute top-6 right-6 z-50 p-2 text-white/50 hover:text-white bg-white/5 hover:bg-white/10 rounded-full backdrop-blur-md transition-colors"
+              className="absolute top-6 right-6 z-50 p-2 text-primary hover:text-white bg-[#2251FF]/10 hover:bg-primary rounded-full backdrop-blur-md transition-colors"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="w-full max-w-200 relative z-20 flex flex-col py-12 px-4 sm:px-6">
+            <div className="w-full max-w-200 relative z-20 flex flex-col py-8 md:py-12 px-3 md:px-6">
 
               <ContactModalProgress step={step} />
 
               {/* Form Card */}
-              <div className="bg-white/2 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+              <div 
+                className="rounded-[24px] border border-[#2251FF]/10 backdrop-blur-[10px] p-4 sm:p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+                style={{ background: 'linear-gradient(202deg, rgba(149, 171, 255, 0.12) 14.57%, rgba(136, 157, 235, 0.12) 50%, rgba(20, 49, 153, 0.00) 85.43%)' }}
+              >
                 {(() => {
                   if (isSuccess || isSubmitting) {
                     return <ContactModalStatus isSuccess={isSuccess} isSubmitting={isSubmitting} closeModal={closeModal} />;

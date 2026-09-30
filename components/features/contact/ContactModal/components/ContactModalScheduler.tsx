@@ -71,19 +71,19 @@ export function ContactModalScheduler({
 
   return (
     <div className="flex flex-col">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 mb-6">
         {/* Left: Calendar */}
-        <div className="bg-surface-dark/50 rounded-xl border border-gray-700/50 p-5">
-          <div className="flex justify-between items-center mb-6">
+        <div className="bg-transparent p-0 flex flex-col">
+          <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-2">
-              <button onClick={handlePrevMonth} className="text-gray-400 hover:text-white transition-colors">
-                <ChevronLeft className="w-4 h-4" />
+              <button onClick={handlePrevMonth} className="text-gray-500 hover:text-gray-900 transition-colors">
+                <ChevronLeft className="w-5 h-5" />
               </button>
-              <div className="text-sm text-gray-300 font-medium min-w-[100px] text-center">
+              <div className="text-base md:text-lg text-gray-900 font-medium min-w-[120px] text-center">
                 {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
               </div>
-              <button onClick={handleNextMonth} className="text-gray-400 hover:text-white transition-colors">
-                <ChevronRight className="w-4 h-4" />
+              <button onClick={handleNextMonth} className="text-gray-500 hover:text-gray-900 transition-colors">
+                <ChevronRight className="w-5 h-5" />
               </button>
             </div>
             <button
@@ -91,22 +91,24 @@ export function ContactModalScheduler({
                 setCurrentMonth(new Date(today.getFullYear(), today.getMonth(), 1));
                 setSelectedDate(today);
               }}
-              className="text-[10px] px-2 py-0.5 rounded border border-primary/50 text-primary hover:bg-primary-pale0/10 transition-colors"
+              className="text-[11px] px-3 py-1 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors"
             >
               Today
             </button>
           </div>
 
-          <div className="grid grid-cols-7 gap-y-4 mb-2 text-center text-[10px] text-gray-500 font-medium uppercase">
+          <div className="w-full h-px bg-gray-200 mb-4"></div>
+
+          <div className="grid grid-cols-7 gap-y-4 mb-2 text-center text-[11px] text-gray-500 font-medium uppercase">
             <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
           </div>
 
-          <div className="grid grid-cols-7 gap-y-2 text-center text-xs text-gray-300">
+          <div className="grid grid-cols-7 gap-y-2 text-center text-[13px] text-gray-700">
             {daysArray.map((item, idx) => {
               const isPast = item.date < today;
               const isSelected = selectedDate && item.date.getTime() === selectedDate.getTime();
               return (
-                <div key={idx} className={`py-1.5 relative ${!item.isCurrentMonth ? 'opacity-30' : ''}`}>
+                <div key={idx} className={`py-1.5 relative ${!item.isCurrentMonth ? 'opacity-40' : ''}`}>
                   <button
                     disabled={isPast}
                     onClick={() => {
@@ -117,11 +119,11 @@ export function ContactModalScheduler({
                         }
                       }
                     }}
-                    className={`w-7 h-7 mx-auto rounded-lg flex items-center justify-center transition-colors ${isSelected
-                      ? 'bg-primary text-white shadow-[0_0_10px_rgba(43,92,255,0.4)] opacity-100'
+                    className={`w-8 h-8 mx-auto rounded-lg flex items-center justify-center transition-colors ${isSelected
+                      ? 'bg-primary text-white shadow-glow-primary'
                       : isPast
-                        ? 'cursor-not-allowed text-gray-600'
-                        : 'hover:bg-white/5 cursor-pointer'
+                        ? 'cursor-not-allowed text-gray-400'
+                        : 'hover:bg-gray-200 cursor-pointer text-gray-900'
                       }`}
                   >
                     {item.day}
@@ -133,10 +135,13 @@ export function ContactModalScheduler({
           </div>
         </div>
 
+        {/* Vertical Divider */}
+        <div className="hidden md:block w-px bg-gray-200"></div>
+
         {/* Right: Available times */}
         <div className="flex flex-col">
-          <h4 className="text-gray-200 font-medium mb-1">Available times</h4>
-          <p className="text-gray-500 text-[11px] mb-4">
+          <h4 className="text-gray-900 text-lg md:text-xl font-medium mb-1">Available times</h4>
+          <p className="text-gray-600 text-sm mb-6">
             {selectedDate ? selectedDate.toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : 'Select a date'}
           </p>
 
@@ -145,9 +150,9 @@ export function ContactModalScheduler({
               <button
                 key={time}
                 onClick={() => setScheduledTime(time)}
-                className={`py-2 px-3 rounded-full text-[11px] font-medium border transition-colors ${scheduledTime === time
+                className={`py-2.5 px-3 rounded-full text-sm font-medium border transition-colors ${scheduledTime === time
                   ? 'bg-primary border-primary text-white shadow-glow-primary'
-                  : 'bg-transparent border-gray-700/80 text-gray-300 hover:border-gray-500'
+                  : 'bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                   }`}
               >
                 {time}
@@ -155,34 +160,36 @@ export function ContactModalScheduler({
             ))}
           </div>
 
-          <div className="text-gray-500 text-[10px] mt-4 flex items-center">
-            <svg className="w-3 h-3 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-            All times are in India Standard Time (IST) <ChevronDown className="w-3 h-3 ml-1" />
+          <div className="w-full h-px bg-gray-200 mt-6 mb-4"></div>
+
+          <div className="text-gray-500 text-[11px] flex items-center">
+            <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+            All times are in India Standard Time (IST) <ChevronDown className="w-3.5 h-3.5 ml-1" />
           </div>
         </div>
       </div>
 
       {/* Bottom section */}
-      <div className="bg-surface-dark/40 rounded-xl border border-gray-700/50 p-4 md:p-5 flex flex-col md:flex-row gap-6 mb-6">
-        <div className="flex-1 flex gap-4">
+      <div className="bg-transparent rounded-[24px] border border-gray-200 p-5 md:p-6 flex flex-col md:flex-row gap-6 mb-6">
+        <div className="flex-[1.5] flex gap-4">
           <div className="mt-0.5">
-            <Calendar className="w-5 h-5 text-gray-300" />
+            <Calendar className="w-6 h-6 text-gray-700" />
           </div>
           <div>
-            <h4 className="text-sm text-gray-200 font-medium mb-1">30-minute consultation</h4>
-            <p className="text-xs text-gray-400 leading-relaxed pr-4">A focused discussion with our experts to understand your goals and explore how Cordinit can help.</p>
+            <h4 className="text-base text-gray-900 font-medium mb-2">30-minute consultation</h4>
+            <p className="text-sm text-gray-600 leading-relaxed pr-4">A focused discussion with our experts to understand your goals and explore how Cordinit can help.</p>
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center gap-2 border-t md:border-t-0 md:border-l border-gray-700/50 pt-4 md:pt-0 md:pl-6">
-          <div className="flex items-center text-[11px] text-gray-400">
-            <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> Talk to a solution expert
+        <div className="flex-1 flex flex-col justify-center gap-3 border-t md:border-t-0 md:border-l border-gray-200 pt-4 md:pt-0 md:pl-8">
+          <div className="flex items-center text-sm text-gray-700">
+            <div className="bg-primary rounded-full p-0.5 mr-3 shrink-0"><CheckCircle2 className="w-3.5 h-3.5 text-white" /></div> Talk to a solution expert
           </div>
-          <div className="flex items-center text-[11px] text-gray-400">
-            <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> Get tailored recommendations
+          <div className="flex items-center text-sm text-gray-700">
+            <div className="bg-primary rounded-full p-0.5 mr-3 shrink-0"><CheckCircle2 className="w-3.5 h-3.5 text-white" /></div> Get tailored recommendations
           </div>
-          <div className="flex items-center text-[11px] text-gray-400">
-            <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-2 shrink-0" /> No obligation
+          <div className="flex items-center text-sm text-gray-700">
+            <div className="bg-primary rounded-full p-0.5 mr-3 shrink-0"><CheckCircle2 className="w-3.5 h-3.5 text-white" /></div> No obligation
           </div>
         </div>
       </div>
@@ -193,11 +200,11 @@ export function ContactModalScheduler({
         </div>
       )}
 
-      <div className="flex justify-between items-center">
-        <button onClick={handleBack} className="bg-transparent border border-gray-600 hover:bg-white/5 text-gray-300 py-2.5 px-6 rounded-lg text-[13px] font-medium transition-colors flex items-center">
+      <div className="flex justify-between items-center mt-4">
+        <button onClick={handleBack} className="bg-transparent border border-gray-300 hover:bg-gray-100 text-gray-700 hover:text-gray-900 py-2.5 px-8 rounded-lg text-sm font-medium transition-colors flex items-center">
           <ChevronLeft className="w-4 h-4 mr-1" /> Back
         </button>
-        <button onClick={handleBookCall} disabled={isSubmitting} className={`bg-primary hover:bg-primary text-white py-2.5 px-10 rounded-lg text-[13px] font-medium transition-colors shadow-[0_0_15px_rgba(43,92,255,0.4)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+        <button onClick={handleBookCall} disabled={isSubmitting} className={`bg-primary hover:bg-primary/90 text-white py-2.5 px-12 rounded-lg text-sm font-medium transition-colors shadow-glow-primary ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
           {isSubmitting ? 'Booking...' : 'Book a call'}
         </button>
       </div>

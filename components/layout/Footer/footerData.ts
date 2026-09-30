@@ -61,10 +61,11 @@ export const FOOTER_NAV_COLUMNS = [
 
 export const SOCIAL_LINKS = [
   { id: 'whatsapp', label: 'WhatsApp', icon: '/icons/whatsapp.svg', href: '#' },
-  { id: 'instagram', label: 'Instagram', icon: '/icons/instagram.svg', href: '#' },
+  { id: 'instagram', label: 'Instagram', icon: '/icons/instagram.svg', href: 'https://www.instagram.com/cordinit_/' },
+  { id: 'facebook', label: 'Facebook', icon: '/icons/facebook.svg', href: 'https://www.facebook.com/cordinit' },
   { id: 'x', label: 'X (Twitter)', icon: '/icons/x.svg', href: '#' },
-  { id: 'youtube', label: 'YouTube', icon: '/icons/youtube.svg', href: '#' },
-  { id: 'linkedin', label: 'LinkedIn', icon: '/icons/linkedin.svg', href: '#' }
+  { id: 'youtube', label: 'YouTube', icon: '/icons/youtube.svg', href: 'https://www.youtube.com/@Cordinit' },
+  { id: 'linkedin', label: 'LinkedIn', icon: '/icons/linkedin.svg', href: 'https://www.linkedin.com/company/143430041/' }
 ];
 
 export const FOOTER_BRANDING = {
@@ -74,7 +75,7 @@ export const FOOTER_BRANDING = {
 };
 
 export const FOOTER_NEWSLETTER = {
-  heading: "Stay Ahead/Newsletter",
+  heading: "Stay Ahead / Newsletter",
   description: "Receive occasional perspectives on the technology topics that matter to you.",
   placeholder: "Work email"
 };
@@ -85,7 +86,7 @@ export const FOOTER_MEDIA_FEATURE = {
   description: "Insights from Cordinit's technology and security experts on building secure, intelligent organisations.",
   ctaText: "WATCH ON YOUTUBE",
   thumbnail: "/Image-v2.webp",
-  href: "https://youtube.com"
+  href: "https://www.youtube.com/@Cordinit"
 };
 
 export const FOOTER_LEGAL = {
