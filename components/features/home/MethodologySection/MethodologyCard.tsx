@@ -21,7 +21,7 @@ export default function MethodologyCard({ step, className }: MethodologyCardProp
   return (
     <div
       className={cn(
-        "flex flex-col h-[264px] sm:h-panel p-4 sm:p-6 md:p-8 rounded-sm text-surface",
+        "flex flex-col h-full min-h-[264px] sm:min-h-0 sm:h-panel p-4 sm:p-6 md:p-8 rounded-sm text-surface",
         getBgClass(step.num),
         className
       )}
