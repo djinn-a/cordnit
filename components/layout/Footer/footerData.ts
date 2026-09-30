@@ -16,20 +16,6 @@ export const FOOTER_NAV_COLUMNS = [
     ]
   },
   {
-    id: "cybersecurity",
-    title: "CYBERSECURITY",
-    orderClasses: "order-3 lg:order-2",
-    links: [
-      { label: "Cloud Security", href: "/cybersecurity/cloud-security" },
-      { label: "Application Security", href: "/cybersecurity/application-security" },
-      { label: "Identity Security", href: "/cybersecurity/identity-security" },
-      { label: "Data Security", href: "/cybersecurity/data-security" },
-      { label: "Exposure Management", href: "/cybersecurity/exposure-management" },
-      { label: "Vulnerability Management", href: "/cybersecurity/vulnerability-management" },
-      { label: "Managed Security", href: "/cybersecurity/managed-security" }
-    ]
-  },
-  {
     id: "salesforce",
     title: "SALESFORCE",
     orderClasses: "order-2 lg:order-3",
@@ -54,7 +40,22 @@ export const FOOTER_NAV_COLUMNS = [
       { label: "About", href: "/aboutus" },
       { label: "Contact", href: "/contactus" }
     ]
-  }
+  },
+  {
+    id: "cybersecurity",
+    title: "CYBERSECURITY",
+    orderClasses: "order-3 lg:order-2",
+    links: [
+      { label: "Cloud Security", href: "/cybersecurity/cloud-security" },
+      { label: "Application Security", href: "/cybersecurity/application-security" },
+      { label: "Identity Security", href: "/cybersecurity/identity-security" },
+      { label: "Data Security", href: "/cybersecurity/data-security" },
+      { label: "Exposure Management", href: "/cybersecurity/exposure-management" },
+      { label: "Vulnerability Management", href: "/cybersecurity/vulnerability-management" },
+      { label: "Managed Security", href: "/cybersecurity/managed-security" }
+    ]
+  },
+  
 ];
 
 
@@ -68,12 +69,12 @@ export const SOCIAL_LINKS = [
 
 export const FOOTER_BRANDING = {
   logoAlt: "Cordinit Logo",
-  tagline: "Let's talk about your next milestone—and how to reach it",
+  tagline: "Cordinit partners with organisations to turn technology into meaningful, sustainable progress. By combining strategic insight, technical expertise and practical delivery, we help businesses navigate complexity, strengthen their digital foundations and build secure, resilient capabilities that support long-term growth",
   ctaText: "Book a call"
 };
 
 export const FOOTER_NEWSLETTER = {
-  heading: "Stay Ahead",
+  heading: "Stay Ahead/Newsletter",
   description: "Receive occasional perspectives on the technology topics that matter to you.",
   placeholder: "Work email"
 };
