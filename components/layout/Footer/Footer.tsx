@@ -38,7 +38,7 @@ export default function Footer() {
                   className="h-12 lg:h-16 w-auto brightness-0"
                 />
               </Link>
-              <p className="text-black text-caption max-lg:text-card-desc-mobile max-w-50">
+              <p className="text-black text-caption max-lg:text-card-desc-mobile max-w-50 md:max-w-[280px] lg:max-w-[300px]">
                 {FOOTER_BRANDING.tagline}
               </p>
             </div>

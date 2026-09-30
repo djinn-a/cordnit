@@ -74,7 +74,7 @@ export const FOOTER_BRANDING = {
 };
 
 export const FOOTER_NEWSLETTER = {
-  heading: "Stay Ahead/Newsletter",
+  heading: "Stay Ahead / Newsletter",
   description: "Receive occasional perspectives on the technology topics that matter to you.",
   placeholder: "Work email"
 };
