@@ -59,6 +59,11 @@ async function main() {
     }
   }
 
+  const withoutCta = rows.filter((r) => r.document.sections.at(-1)?._type !== "cta").map((r) => `/${r.slug}`);
+  if (withoutCta.length) {
+    console.log(`\n  WARN     last section is not a Call To Action on: ${withoutCta.join(", ")}`);
+  }
+
   console.log(failures ? `\n${failures} page(s) differ.` : `\nAll ${expected.length} pages match the static site.`);
   process.exit(failures ? 1 : 0);
 }

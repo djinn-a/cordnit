@@ -264,6 +264,22 @@
               }
             ]
           }
+        },
+        {
+          "key": "home-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -448,6 +464,22 @@
               }
             ]
           }
+        },
+        {
+          "key": "aboutus-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -579,6 +611,22 @@
                 }
               ]
             }
+          }
+        },
+        {
+          "key": "contactus-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -868,6 +916,22 @@
               }
             ]
           }
+        },
+        {
+          "key": "industries-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -1005,6 +1069,22 @@
               "src": "/InsightsSection/salesforce.webp",
               "alt": "Salesforce representation"
             }
+          }
+        },
+        {
+          "key": "accelerators-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -1203,6 +1283,22 @@
             "placeholder": "Work email",
             "buttonText": "Subscribe",
             "consentText": "I would like to receive Cordinit insights. I understand I can unsubscribe at any time. Read our Privacy Policy."
+          }
+        },
+        {
+          "key": "insights-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -1567,6 +1663,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "cybersecurity-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -1917,6 +2029,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "salesforce-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -2208,6 +2336,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "ai-automation-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -2362,6 +2506,22 @@
                 }
               ]
             }
+          }
+        },
+        {
+          "key": "solutions-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -2650,6 +2810,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "cloud-infrastructure-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -2892,6 +3068,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "application-engineering-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -3037,6 +3229,22 @@
                 }
               ]
             }
+          }
+        },
+        {
+          "key": "data-integration-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -3390,6 +3598,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "cybersecurity-data-security-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -3724,6 +3948,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "salesforce-sales-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -4033,6 +4273,22 @@
                 }
               ]
             }
+          }
+        },
+        {
+          "key": "salesforce-marketing-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -4368,6 +4624,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "salesforce-commerce-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -4701,6 +4973,22 @@
                 }
               ]
             }
+          }
+        },
+        {
+          "key": "salesforce-ai-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -5049,6 +5337,22 @@
                 }
               ]
             }
+          }
+        },
+        {
+          "key": "cybersecurity-application-security-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -5416,6 +5720,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "cybersecurity-cloud-security-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -5672,6 +5992,22 @@
                 ]
               }
             }
+          }
+        },
+        {
+          "key": "cybersecurity-identity-security-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -6032,6 +6368,22 @@
                 }
               ]
             }
+          }
+        },
+        {
+          "key": "cybersecurity-ai-security-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]
@@ -6489,6 +6841,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "cybersecurity-exposure-management-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -6914,6 +7282,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "cybersecurity-vulnerability-management-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -7335,6 +7719,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "cybersecurity-managed-security-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -7669,6 +8069,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "salesforce-managed-services-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -7960,6 +8376,22 @@
               ]
             }
           }
+        },
+        {
+          "key": "salesforce-service-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
+          }
         }
       ]
     },
@@ -8246,6 +8678,22 @@
                 }
               ]
             }
+          }
+        },
+        {
+          "key": "salesforce-integration-cta",
+          "type": "cta",
+          "props": {
+            "title": "Ready to Align Technology with Business Growth?",
+            "body": "Ready to transform your business into a secure high-performing growth engine?",
+            "expertName": "Talk to a Technology Specialist",
+            "cta": {
+              "label": "Book a call",
+              "action": "contactModal"
+            },
+            "backgroundSrc": "/cta-bg.webp",
+            "backgroundSrcMobile": "/cta-bg-mobile.webp",
+            "portraitSrc": "/expert-portrait.webp"
           }
         }
       ]

@@ -362,10 +362,10 @@
   "cta": {
     "content": {
       "title": "Ready to Align Technology with Business Growth?",
-      "body": "Speak directly with our solution architects to evaluate your ecosystem and accelerate execution.",
-      "expertName": "Talk to a Enterprise Technology Specialist",
+      "body": "Ready to transform your business into a secure high-performing growth engine?",
+      "expertName": "Talk to a Technology Specialist",
       "cta": {
-        "label": "Schedule a Call",
+        "label": "Book a call",
         "action": "contactModal"
       }
     },

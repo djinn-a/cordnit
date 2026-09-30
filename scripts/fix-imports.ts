@@ -10,7 +10,7 @@ const filesToUpdate = [
   "components/features/contact/ContactHero/ContactHero.tsx",
   "components/features/home/HeroSection/HeroMedia.tsx",
   "components/layout/Navbar/Navbar.tsx",
-  "components/layout/CtaSection/CtaSection.tsx",
+  "components/blocks/CtaSection/CtaSection.tsx",
   "components/layout/Footer/Footer.tsx"
 ];
 

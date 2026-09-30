@@ -78,7 +78,7 @@ export const SECTION_CATALOG: Record<SectionType, SectionCatalogEntry> = {
   salesforceSpecialists: { label: "Specialists (Salesforce)", category: "Social Proof", description: "Specialists CTA block." },
   aiAutomationSpecialists: { label: "Specialists (AI)", category: "Social Proof", description: "Specialists CTA block." },
 
-  cta: { label: "Call To Action", category: "Conversion", description: "Full-width CTA with expert portrait." },
+  cta: { label: "Call To Action", category: "Conversion", description: "Full-width CTA with expert portrait. Normally the last section, above the footer." },
   contactForm: { label: "Contact Form", category: "Conversion", description: "Lead form with process steps and contact cards." },
   newsletter: { label: "Newsletter", category: "Conversion", description: "Newsletter signup banner." },
 
