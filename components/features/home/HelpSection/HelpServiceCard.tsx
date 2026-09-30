@@ -20,7 +20,7 @@ export default function HelpServiceCard({
         // Base / Mobile wrapper
         "flex items-start py-space-16 border-b border-border-subtle group cursor-pointer hover:bg-primary-pale/50 transition-colors",
         // Desktop wrapper
-        "sm:block sm:relative sm:p-space-24 md:p-space-32 lg:p-space-48 sm:border-primary sm:border-b-2 sm:hover:bg-primary-pale sm:cursor-auto",
+        "sm:relative sm:p-space-32 sm:border-primary sm:border-b-2 sm:hover:bg-primary-pale sm:cursor-auto sm:flex sm:flex-col sm:items-start sm:gap-space-32",
         isLgRightBorder && "lg:border-r-2",
         !isLgBottomBorder && "lg:border-b-0"
       )}
@@ -31,7 +31,7 @@ export default function HelpServiceCard({
           // Mobile styling
           "mr-space-12 mt-space-2 shrink-0",
           // Desktop styling
-          "sm:mr-0 sm:mt-0 sm:shrink sm:w-full sm:flex sm:justify-between sm:items-start sm:mb-space-40 lg:mb-space-48"
+          "sm:mr-0 sm:mt-0 sm:shrink sm:w-full sm:flex sm:justify-between sm:items-start sm:mb-0 lg:mb-0"
         )}
       >
         <div className="hidden sm:block">

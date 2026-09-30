@@ -12,11 +12,13 @@ export default function HelpServiceGrid({ services }: Readonly<HelpServiceGridPr
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
       {services.map((service, index) => {
-        // 3-column desktop layout calculations
-        const isLgBottomBorder = index < 3;
-        const isLgRightBorder = (index + 1) % 3 !== 0;
+        // 4-column desktop layout calculations
+        // Bottom border for all rows EXCEPT the last row
+        const isLastRowStart = Math.floor((services.length - 1) / 4) * 4;
+        const isLgBottomBorder = index < isLastRowStart;
+        const isLgRightBorder = (index + 1) % 4 !== 0;
 
         return (
           <HelpServiceCard
