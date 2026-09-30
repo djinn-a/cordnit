@@ -5,14 +5,12 @@ import type { HelpService } from "./helpServices";
 
 type HelpServiceCardProps = {
   service: HelpService;
-  isLgRightBorder: boolean;
-  isLgBottomBorder: boolean;
+  borderClasses: string;
 };
 
 export default function HelpServiceCard({
   service,
-  isLgRightBorder,
-  isLgBottomBorder,
+  borderClasses,
 }: Readonly<HelpServiceCardProps>) {
   return (
     <div
@@ -20,9 +18,8 @@ export default function HelpServiceCard({
         // Base / Mobile wrapper
         "flex items-start py-space-16 border-b border-border-subtle group cursor-pointer hover:bg-primary-pale/50 transition-colors",
         // Desktop wrapper
-        "sm:relative sm:p-space-32 sm:border-primary sm:border-b-2 sm:hover:bg-primary-pale sm:cursor-auto sm:flex sm:flex-col sm:items-start sm:gap-space-32",
-        isLgRightBorder && "lg:border-r-2",
-        !isLgBottomBorder && "lg:border-b-0"
+        "md:relative md:p-space-32 md:border-primary md:hover:bg-primary-pale md:cursor-auto md:flex md:flex-col md:items-start md:gap-space-32",
+        borderClasses
       )}
     >
       {/* Icon & Number Area */}
@@ -31,10 +28,10 @@ export default function HelpServiceCard({
           // Mobile styling
           "mr-space-12 mt-space-2 shrink-0",
           // Desktop styling
-          "sm:mr-0 sm:mt-0 sm:shrink sm:w-full sm:flex sm:justify-between sm:items-start sm:mb-0 lg:mb-0"
+          "md:mr-0 md:mt-0 md:shrink md:w-full md:flex md:justify-between md:items-start md:mb-0 lg:mb-0"
         )}
       >
-        <div className="hidden sm:block">
+        <div className="hidden md:block">
           <Image
             src={service.iconPath}
             alt=""
@@ -46,31 +43,31 @@ export default function HelpServiceCard({
         <div
           className={cn(
             "text-link-mobile",
-            "sm:text-caption sm:font-semibold"
+            "md:text-caption md:font-semibold"
           )}
         >
-          <span className="text-primary sm:text-ink">{service.num}</span>
+          <span className="text-primary md:text-ink">{service.num}</span>
         </div>
       </div>
 
       {/* Title & Description Area */}
-      <div className={cn("flex-1 pr-space-12", "sm:pr-0 sm:w-full")}>
+      <div className={cn("flex-1 pr-space-12", "md:pr-0 md:w-full")}>
         <h3
           className={cn(
-            "text-link-desktop sm:text-[20px] sm:font-bold sm:leading-space-32 mb-space-4 transition-colors",
+            "text-link-desktop md:text-[20px] md:font-bold md:leading-space-32 mb-space-4 transition-colors",
             // Mobile specifics
             "group-hover:text-primary",
             // Desktop specifics
-            "sm:text-primary sm:mb-space-12 lg:mb-space-16"
+            "md:text-primary md:mb-space-12 lg:mb-space-16"
           )}
         >
           {service.title}
         </h3>
-        <p className="text-ink-muted text-section-subtitle-mobile sm:text-card-desc">{service.desc}</p>
+        <p className="text-ink-muted text-section-subtitle-mobile md:text-card-desc">{service.desc}</p>
       </div>
 
       {/* Mobile Arrow Area */}
-      <div className="mt-space-6 shrink-0 sm:hidden">
+      <div className="mt-space-6 shrink-0 md:hidden">
         <ArrowRight className="w-space-16 h-space-16 text-primary" />
       </div>
     </div>
