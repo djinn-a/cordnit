@@ -11,23 +11,23 @@ export function ContactModalProgress({ step }: Readonly<ContactModalProgressProp
 
         {/* Step 1 */}
         <div className="contact-step flex flex-col items-center z-10 w-24">
-          <div className={`step-circle step-active w-10 h-10 rounded-full flex items-center justify-center font-bold text-base shadow-glow-primary ${step === 1 ? 'bg-primary text-white' : 'bg-primary text-white'}`}>
+          <div className={`step-circle step-active w-10 h-10 rounded-full flex items-center justify-center font-bold text-base ${step === 1 ? 'bg-primary text-white shadow-glow-primary' : 'bg-[#2251FF]/10 text-primary'}`}>
             1
           </div>
-          <span className="text-gray-200 text-[12px] font-medium tracking-wide whitespace-nowrap mt-2.5 text-center">
+          <span className={`text-[12px] font-medium tracking-wide whitespace-nowrap mt-2.5 text-center ${step === 1 ? 'text-primary' : 'text-gray-500'}`}>
             Enter Details
           </span>
         </div>
 
         {/* Connector */}
-        <div className="step-connector flex-1 h-[2px] bg-white/20 mx-2 mt-5 z-0"></div>
+        <div className="step-connector flex-1 h-[2px] bg-[#2251FF]/10 mx-2 mt-5 z-0"></div>
 
         {/* Step 2 */}
         <div className="contact-step flex flex-col items-center z-10 w-24">
-          <div className={`step-circle step-inactive w-10 h-10 rounded-full flex items-center justify-center font-bold text-base ${step === 2 ? 'bg-primary text-white shadow-glow-primary' : 'bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.1)]'}`}>
+          <div className={`step-circle step-inactive w-10 h-10 rounded-full flex items-center justify-center font-bold text-base ${step === 2 ? 'bg-primary text-white shadow-glow-primary' : 'bg-[#2251FF]/10 text-primary'}`}>
             2
           </div>
-          <span className="text-gray-200 text-[12px] font-medium tracking-wide whitespace-nowrap mt-2.5 text-center">
+          <span className={`text-[12px] font-medium tracking-wide whitespace-nowrap mt-2.5 text-center ${step === 2 ? 'text-primary' : 'text-gray-500'}`}>
             Schedule a call
           </span>
         </div>

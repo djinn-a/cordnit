@@ -47,7 +47,7 @@ export default function AboutContent({
               onTabChange={setActiveTabId}
             />
 
-            <div className="flex-1 w-full animate-in fade-in duration-500">
+            <div className="flex-1 w-full animate-in fade-in duration-500 md:min-h-[160px] lg:min-h-[320px]">
               <h3 className="text-card-title-mobile md:text-card-title mb-4 md:mb-5">
                 {activeContent.title}
               </h3>
@@ -62,8 +62,8 @@ export default function AboutContent({
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 relative flex justify-end">
-            <div className="relative w-full max-w-[550px] h-[360px] xs:h-[400px] md:h-[500px] rounded-card-lg overflow-hidden">
+          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[550px] md:max-w-[768px] lg:max-w-[550px] h-[360px] xs:h-[400px] md:h-[500px] rounded-card-lg overflow-hidden">
               <video
                 src="/Logo_animation_on_white_background_20260930125952.mp4"
                 className="w-full h-full object-cover animate-in fade-in duration-500"

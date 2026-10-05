@@ -1,7 +1,7 @@
 export const INTERESTS_LIST = [
   'Cybersecurity', 'Managed Services', 'AI & Automation',
   'Application Engineering', 'Data & Integration',
-  'Salesforce', 'Cloud & Infrastructure', 'Something else'
+  'Salesforce', 'Cloud & Infrastructure', 'Digital Transformation', 'Something else'
 ];
 
 export const FORM_FIELDS = [

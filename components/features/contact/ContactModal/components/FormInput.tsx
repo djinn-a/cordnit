@@ -29,7 +29,7 @@ export function FormInput({
 
   return (
     <div>
-      <label className="block text-[13px] text-white/80 mb-2">
+      <label className="block text-[13px] text-gray-900 mb-2 font-medium">
         {label}
         {required && <span className="text-error ml-0.5">*</span>}
       </label>

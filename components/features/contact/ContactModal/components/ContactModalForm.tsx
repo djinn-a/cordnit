@@ -58,16 +58,16 @@ export function ContactModalForm({
           />
         ))}
         <div role="group" aria-labelledby="area-of-interest-label">
-          <div id="area-of-interest-label" className="block text-[13px] text-white/80 mb-2">Area of Interest<span className="text-error ml-0.5">*</span></div>
+          <div id="area-of-interest-label" className="block text-[13px] text-gray-900 mb-2 font-medium">Area of Interest<span className="text-error ml-0.5">*</span></div>
           <div className="flex flex-wrap gap-2.5">
             {interestsList.map((item) => {
               const isSelected = selectedInterests.includes(item);
 
-              let dynamicClasses = 'bg-transparent border-white/20 text-gray-400';
+              let dynamicClasses = 'bg-white border-[#DCE6F5] text-gray-900';
               if (isSelected) {
-                dynamicClasses = 'bg-primary border-0 text-white';
+                dynamicClasses = 'bg-primary border-primary text-white';
               } else if (errors.interests) {
-                dynamicClasses = 'bg-transparent border-error/50 text-gray-400';
+                dynamicClasses = 'bg-white border-error/80 text-gray-900';
               }
 
               return (
@@ -87,7 +87,7 @@ export function ContactModalForm({
       </div>
 
       <div>
-        <label htmlFor="helpDetails" className="block text-[13px] text-white/80 mb-2">Tell us about your requirement. <span className="text-error ml-0.5">*</span></label>
+        <label htmlFor="helpDetails" className="block text-[13px] text-gray-900 mb-2 font-medium">Tell us about your requirement. <span className="text-error ml-0.5">*</span></label>
         <textarea id="helpDetails" name="helpDetails" value={formData.helpDetails} onChange={handleInputChange} onBlur={handleBlur} placeholder="Enter details..." rows={4} className={`${inputClasses('helpDetails', errors)} resize-none`}></textarea>
         {errors.helpDetails && <p className="mt-1 text-[11px] text-error/90">{errors.helpDetails}</p>}
       </div>
@@ -95,9 +95,9 @@ export function ContactModalForm({
       <div className="pt-2">
         <div className="flex items-center gap-3">
           <div className="flex items-center justify-center">
-            <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="modal-intro-call" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
+            <input type="checkbox" name="introCall" checked={formData.introCall} onChange={handleInputChange} id="modal-intro-call" className="w-4 h-4 rounded-sm border-gray-300 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
           </div>
-          <label htmlFor="modal-intro-call" className="text-[12px] text-white/90 leading-snug cursor-pointer hover:text-white transition-colors">
+          <label htmlFor="modal-intro-call" className="text-[12px] text-gray-900 leading-snug cursor-pointer hover:text-black transition-colors">
             I would like to book a brief introductory call to discuss this.
           </label>
         </div>
@@ -106,9 +106,9 @@ export function ContactModalForm({
 
         <div className="flex items-center gap-3">
           <div className="flex items-center justify-center">
-            <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="modal-privacy" className="w-4 h-4 rounded-sm border-white/30 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
+            <input type="checkbox" name="privacy" checked={formData.privacy} onChange={handleInputChange} id="modal-privacy" className="w-4 h-4 rounded-sm border-gray-300 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" />
           </div>
-          <label htmlFor="modal-privacy" className="text-[12px] text-white/90 leading-snug cursor-pointer hover:text-white transition-colors">
+          <label htmlFor="modal-privacy" className="text-[12px] text-gray-900 leading-snug cursor-pointer hover:text-black transition-colors">
             I agree that Cordinit may use my details to process my enquiry in accordance with the <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
           </label>
         </div>
@@ -118,9 +118,9 @@ export function ContactModalForm({
         <button
           type="submit"
           disabled={!isFormValid}
-          className={`py-2.5 px-12 rounded-lg text-[13px] font-medium transition-all ${isFormValid
-            ? 'bg-primary text-white cursor-pointer'
-            : 'bg-surface-dark border border-white/20 text-white/40 cursor-not-allowed'
+          className={`py-2.5 px-12 rounded-[8px] text-[13px] font-medium transition-all ${isFormValid
+            ? 'bg-transparent border border-primary text-primary hover:bg-primary/5 cursor-pointer'
+            : 'bg-transparent border border-primary/30 text-primary/50 cursor-not-allowed'
             }`}
         >
           Continue
