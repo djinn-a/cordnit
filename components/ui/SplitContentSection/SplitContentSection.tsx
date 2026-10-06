@@ -22,7 +22,7 @@ export default function SplitContentSection({ data }: Readonly<SplitContentSecti
         <div className="w-full xl:w-5/12 order-2 md:order-1 xl:order-1">
           <div className="relative w-full aspect-media-wrap mx-auto md:mx-0 lg:mx-0 rounded-split-image overflow-hidden">
             <Image
-              src={data.image.src}
+              src={data.image.src === "/InsightsSection/dummy.webp" ? "/InsightsSection/cloud-infrastructure.webp" : data.image.src}
               alt={data.image.alt}
               fill
               className="object-cover"
