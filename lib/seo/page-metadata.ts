@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { slugToPath, type PublishedPageDocument } from "@/lib/cms/document";
-import { DEFAULT_DESCRIPTION, SITE_NAME, absoluteUrl } from "./site";
+import type { PublishedPageDocument } from "@/lib/cms/document";
+import { getPageCanonicalUrl } from "@/lib/seo/canonical-url";
+import { DEFAULT_DESCRIPTION, SITE_NAME } from "./site";
 
 export function buildPageMetadata(doc: PublishedPageDocument): Metadata {
   const seo = doc.seo ?? {};
-  const path = slugToPath(doc.slug);
   const title = seo.title?.trim() || `${doc.title} | ${SITE_NAME}`;
   const description = seo.description?.trim() || DEFAULT_DESCRIPTION;
-  const canonical = seo.canonical?.trim() || absoluteUrl(path);
+  // Share this exact URL with JSON-LD to keep canonical signals consistent.
+  const canonical = getPageCanonicalUrl(doc);
 
   return {
     title: { absolute: title },
@@ -19,7 +20,7 @@ export function buildPageMetadata(doc: PublishedPageDocument): Metadata {
       siteName: SITE_NAME,
       title,
       description,
-      url: absoluteUrl(path),
+      url: canonical,
     },
     twitter: { card: "summary_large_image", title, description },
   };

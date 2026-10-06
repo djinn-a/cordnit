@@ -5,6 +5,8 @@ import LayoutRenderer from "@/components/renderers/LayoutRenderer";
 import { HOME_SLUG, pathSegmentsToSlug, slugToPath, slugToSegments } from "@/lib/cms/document";
 import { RESERVED_SLUG_ROOTS } from "@/lib/cms/inputs";
 import { buildPageMetadata } from "@/lib/seo/page-metadata";
+import { getPageCanonicalUrl } from "@/lib/seo/canonical-url";
+import { buildPageJsonLd } from "@/lib/seo/structured-data";
 import { cms } from "@/server/cms";
 import { logger } from "@/server/logger";
 
@@ -55,13 +57,17 @@ async function CmsPage({ params }: { params: Params }) {
   }
 
   const sections = await cms.published.resolveSections(doc);
+  const jsonLd = JSON.stringify(buildPageJsonLd(doc, getPageCanonicalUrl(doc))).replace(/</g, "\\u003c");
   return (
-    <LayoutRenderer
-      shell={doc.shell}
-      spacing={doc.spacing}
-      breadcrumbs={doc.breadcrumbs}
-      sections={sections}
-    />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
+      <LayoutRenderer
+        shell={doc.shell}
+        spacing={doc.spacing}
+        breadcrumbs={doc.breadcrumbs}
+        sections={sections}
+      />
+    </>
   );
 }
 
