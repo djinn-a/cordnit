@@ -8,7 +8,8 @@ import { ContactModalStatus } from './components/ContactModalStatus';
 import { ContactModalForm } from './components/ContactModalForm';
 import { ContactModalScheduler } from './components/ContactModalScheduler';
 
-import { getImageUrl } from '@/lib/getImageUrl';
+import { pathSegmentsToSlug } from '@/lib/cms/document';
+import { trackEvent } from '@/lib/analytics';
 
 const POPUP_BG = '/Frame%202147237416.webp';
 const CLOSE_MS = 300;
@@ -73,11 +74,14 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
     } else {
       setModalContext({});
     }
+    const location = pathSegmentsToSlug(window.location.pathname.split('/').filter(Boolean)) ?? 'unknown';
+    trackEvent('book_call_click', { location });
+    if (!isOpen) trackEvent('contact_form_view', { location: 'contact-modal' });
     setIsOpen(true);
     requestAnimationFrame(() => {
       requestAnimationFrame(() => setIsEntered(true));
     });
-  }, []);
+  }, [isOpen]);
 
   const closeModal = React.useCallback(() => {
     setIsEntered(false);
@@ -156,7 +160,7 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
           {/* Modal Container */}
           <div
             role="presentation"
-            className={`relative w-full max-w-250 bg-[length:150%_150%] bg-center rounded-[2rem] shadow-2xl flex flex-col items-center my-auto border border-white/5 max-h-[min(900px,calc(100dvh-2rem))] overflow-y-auto hide-scrollbar transition-[opacity,transform] duration-300 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'}`}
+            className={`relative w-full max-w-250 bg-size-[150%_150%] bg-center rounded-[2rem] shadow-2xl flex flex-col items-center my-auto border border-white/5 max-h-[min(900px,calc(100dvh-2rem))] overflow-y-auto hide-scrollbar transition-[opacity,transform] duration-300 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.98]'}`}
             style={{ backgroundImage: `url('${POPUP_BG}')` }}
             onClick={(e) => e.stopPropagation()}
             onKeyDown={(e) => e.stopPropagation()}
@@ -177,7 +181,7 @@ export function ContactModalProvider({ children }: Readonly<{ children: React.Re
 
               {/* Form Card */}
               <div 
-                className="rounded-[24px] border border-[#2251FF]/10 backdrop-blur-[10px] p-4 sm:p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+                className="rounded-space-24 border border-[#2251FF]/10 backdrop-blur-[10px] p-4 sm:p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
                 style={{ background: 'linear-gradient(202deg, rgba(149, 171, 255, 0.12) 14.57%, rgba(136, 157, 235, 0.12) 50%, rgba(20, 49, 153, 0.00) 85.43%)' }}
               >
                 {(() => {

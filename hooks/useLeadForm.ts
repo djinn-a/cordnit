@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { submitLead } from '@/lib/leads/client';
 import {
   contactSubmissionSchema,
@@ -8,6 +8,7 @@ import {
   type EnquiryField,
 } from '@/lib/leads/schema';
 import { useBotSignals } from './useBotSignals';
+import { trackEvent } from '@/lib/analytics';
 
 export type EnquiryLeadType = 'lead_form' | 'contact';
 type LeadContext = Record<string, string | boolean | undefined>;
@@ -40,9 +41,17 @@ export function useLeadForm(type: EnquiryLeadType, context: LeadContext = {}) {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
   const { honeypotProps, getSignals, resetSignals } = useBotSignals();
+  const hasStartedRef = useRef(false);
 
   const schema = type === 'contact' ? contactSubmissionSchema : leadFormSubmissionSchema;
   const requiresPhone = type === 'contact';
+  const analyticsLocation = type === 'contact' ? 'contact-page' : 'contact-modal';
+
+  const trackStart = () => {
+    if (hasStartedRef.current) return;
+    hasStartedRef.current = true;
+    trackEvent('contact_form_start', { location: analyticsLocation });
+  };
 
   const buildCandidate = (data: FormData, interests: string[]) => ({
     type,
@@ -51,6 +60,7 @@ export function useLeadForm(type: EnquiryLeadType, context: LeadContext = {}) {
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    trackStart();
     const { name, value, type: inputType } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
 
@@ -73,6 +83,7 @@ export function useLeadForm(type: EnquiryLeadType, context: LeadContext = {}) {
   };
 
   const toggleInterest = (interest: string) => {
+    trackStart();
     setSelectedInterests((prev) => {
       const newInterests = prev.includes(interest)
         ? prev.filter((i) => i !== interest)
@@ -97,6 +108,7 @@ export function useLeadForm(type: EnquiryLeadType, context: LeadContext = {}) {
     setIsSubmitting(false);
     setSubmitError(null);
     setIsSuccess(false);
+    hasStartedRef.current = false;
     resetSignals();
   }, [resetSignals]);
 
@@ -150,6 +162,8 @@ export function useLeadForm(type: EnquiryLeadType, context: LeadContext = {}) {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    trackStart();
+    trackEvent('contact_form_submit', { location: analyticsLocation });
     try {
       const result = await submitLead(
         {
@@ -161,13 +175,19 @@ export function useLeadForm(type: EnquiryLeadType, context: LeadContext = {}) {
       );
 
       if (result.ok) {
+        trackEvent('contact_form_success', { location: analyticsLocation });
         setIsSuccess(true);
       } else if (result.code === 'VALIDATION') {
+        trackEvent('contact_form_error', { location: analyticsLocation });
         setErrors(result.fieldErrors);
         setSubmitError('Please check the highlighted fields and try again.');
       } else {
+        trackEvent('contact_form_error', { location: analyticsLocation });
         setSubmitError(result.message);
       }
+    } catch (error) {
+      trackEvent('contact_form_error', { location: analyticsLocation });
+      throw error;
     } finally {
       setIsSubmitting(false);
     }
