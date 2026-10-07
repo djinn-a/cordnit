@@ -6,6 +6,7 @@ import { getImageUrl } from '@/lib/getImageUrl';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { useContactModal } from '@/components/features/contact/ContactModal/ContactModalProvider';
+import { trackNavigationEvent } from '@/lib/analytics/navigation';
 
 import FooterNewsletter from './FooterNewsletter';
 import FooterMediaFeature from './FooterMediaFeature';
@@ -15,7 +16,21 @@ export default function Footer() {
   const { openModal } = useContactModal();
 
   return (
-    <footer className="w-full relative py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <footer
+      className="w-full relative py-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      onClickCapture={(event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        const link = target.closest<HTMLAnchorElement>("a[href]");
+        if (link) {
+          trackNavigationEvent(
+            link.href,
+            link.getAttribute("aria-label") || link.innerText.trim() || link.href,
+            "footer",
+          );
+        }
+      }}
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 w-full h-full z-0 bg-cover bg-center bg-no-repeat"
@@ -38,14 +53,14 @@ export default function Footer() {
                   className="h-12 lg:h-16 w-auto brightness-0"
                 />
               </Link>
-              <p className="text-black text-caption max-lg:text-card-desc-mobile max-w-50 md:max-w-[280px] lg:max-w-[300px]">
+              <p className="text-black text-caption max-lg:text-card-desc-mobile max-w-50 md:max-w-70 lg:max-w-75">
                 {FOOTER_BRANDING.tagline}
               </p>
             </div>
             <Button
               variant="primary"
               size="md"
-              onClick={() => openModal()}
+              onClick={() => openModal({ ctaLocation: 'footer' })}
               className="w-max max-lg:text-link-mobile"
               rightIcon={<ArrowRight className="h-4 w-4" />}
             >
@@ -61,7 +76,10 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href} className="text-black hover:text-ink text-card-desc max-lg:text-section-subtitle-mobile">
+                      <Link
+                        href={link.href}
+                        className="text-black hover:text-ink text-card-desc max-lg:text-section-subtitle-mobile"
+                      >
                         {link.label}
                       </Link>
                     </li>

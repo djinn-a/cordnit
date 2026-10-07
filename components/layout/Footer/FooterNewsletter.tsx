@@ -8,8 +8,10 @@ import { HoneypotField } from "@/components/ui/HoneypotField";
 import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
 import { FOOTER_NEWSLETTER } from "./footerData";
 import { defaultNewsletterContent } from "@/components/features/newsletter/NewsletterModal/newsletterContent";
+import { useAnalyticsVisibility } from "@/lib/analytics/useAnalyticsVisibility";
 
 export default function FooterNewsletter() {
+  const formRef = useAnalyticsVisibility('newsletter_view', { location: 'newsletter-footer' });
   const { form } = defaultNewsletterContent;
   const { email, consent, status, errors, submitError, honeypotProps, onEmailChange, onConsentChange, handleSubmit } =
     useNewsletterSubscribe("Footer Newsletter");
@@ -30,6 +32,7 @@ export default function FooterNewsletter() {
         </p>
       ) : (
         <form
+          ref={formRef}
           className="relative flex flex-col gap-2 w-full lg:w-auto"
           aria-label="Newsletter subscription form"
           onSubmit={handleSubmit}

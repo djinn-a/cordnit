@@ -9,6 +9,7 @@ import { navbarContent } from "./navbarContent";
 import MegaMenu from "./MegaMenu";
 import { Button } from "@/components/ui";
 import { Suspense, useEffect, useCallback } from "react";
+import { trackNavigationEvent } from "@/lib/analytics/navigation";
 
 function RouteChangeDetector({ onChange }: { onChange: () => void }) {
   const pathname = usePathname();
@@ -49,7 +50,21 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full sticky top-0 z-50 bg-linear-to-r from-primary to-surface-darker">
+    <nav
+      className="w-full sticky top-0 z-50 bg-linear-to-r from-primary to-surface-darker"
+      onClickCapture={(event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        const link = target.closest<HTMLAnchorElement>("a[href]");
+        if (link) {
+          trackNavigationEvent(
+            link.href,
+            link.getAttribute("aria-label") || link.innerText.trim() || link.href,
+            "navbar",
+          );
+        }
+      }}
+    >
       <Suspense fallback={null}>
         <RouteChangeDetector onChange={handleRouteChange} />
       </Suspense>
@@ -148,7 +163,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Button
               variant="primary"
-              onClick={() => openModal()}
+              onClick={() => openModal({ ctaLocation: 'navbar' })}
               className="rounded-lg px-6 py-2 text-sm"
               rightIcon={<ArrowRight className="h-4 w-4" />}
             >
@@ -222,7 +237,9 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className="flex items-center justify-between py-4 text-white hover:text-white/80 font-medium text-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                    }}
                   >
                     {link.label}
                   </Link>
@@ -235,7 +252,7 @@ export default function Navbar() {
                 variant="primary"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-                  openModal();
+                  openModal({ ctaLocation: 'navbar' });
                 }}
                 className="rounded-lg px-6 py-3"
                 rightIcon={<ArrowRight className="h-4 w-4" />}
