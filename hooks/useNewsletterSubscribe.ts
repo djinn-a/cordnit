@@ -1,7 +1,8 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { submitLead } from '@/lib/leads/client';
 import { leadFieldErrors, newsletterSubmissionSchema } from '@/lib/leads/schema';
 import { useBotSignals } from './useBotSignals';
+import { trackEvent } from '@/lib/analytics';
 
 export type NewsletterStatus = 'idle' | 'submitting' | 'success';
 
@@ -13,6 +14,18 @@ export function useNewsletterSubscribe(ctaLocation: string) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitError, setSubmitError] = useState<string | null>(null);
   const { honeypotProps, getSignals, resetSignals } = useBotSignals();
+  const hasStartedRef = useRef(false);
+  const analyticsLocation = ctaLocation === 'Newsletter Modal'
+    ? 'newsletter-modal'
+    : ctaLocation === 'Newsletter Section'
+      ? 'newsletter-section'
+      : 'newsletter-footer';
+
+  const trackStart = () => {
+    if (hasStartedRef.current) return;
+    hasStartedRef.current = true;
+    trackEvent('newsletter_start', { location: analyticsLocation });
+  };
 
   const clearError = (field: string) =>
     setErrors((prev) => {
@@ -22,11 +35,13 @@ export function useNewsletterSubscribe(ctaLocation: string) {
     });
 
   const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    trackStart();
     setEmail(e.target.value);
     if (errors.email) clearError('email');
   };
 
   const onConsentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    trackStart();
     setConsent(e.target.checked);
     if (errors.consent) clearError('consent');
   };
@@ -44,9 +59,12 @@ export function useNewsletterSubscribe(ctaLocation: string) {
     }
     setErrors({});
     setStatus('submitting');
+    trackStart();
+    trackEvent('newsletter_submit', { location: analyticsLocation });
 
     const result = await submitLead(candidate, { context: { ctaLocation }, signals: getSignals() });
     if (result.ok) {
+      trackEvent('newsletter_success', { location: analyticsLocation });
       setStatus('success');
       return;
     }
@@ -61,6 +79,7 @@ export function useNewsletterSubscribe(ctaLocation: string) {
     setStatus('idle');
     setErrors({});
     setSubmitError(null);
+    hasStartedRef.current = false;
     resetSignals();
   }, [resetSignals]);
 
