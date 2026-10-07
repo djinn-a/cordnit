@@ -23,9 +23,9 @@ export default function FeaturedInsightCard({
       </div>
 
       {/* Right Content Column */}
-      <div className="flex-1 w-full  lg:max-w-149.75 h-auto lg:h-75.5 flex flex-col justify-center items-start py-0 md:py-6 lg:p-10">
+      <div className="flex-1 w-full lg:max-w-149.75 h-auto lg:h-75.5 flex flex-col justify-center items-start gap-4 py-0 md:py-6 lg:p-10">
         {/* Metadata */}
-        <div className="flex items-center gap-2 md:gap-3 mb-[16px] md:mb-0">
+        <div className="flex items-center gap-2 md:gap-3">
           {featured.articleLabel && (
             <span className="uppercase tracking-[1px] text-link-card-mobile md:text-about-eyebrow-desktop text-primary">
               {featured.articleLabel}
@@ -39,18 +39,18 @@ export default function FeaturedInsightCard({
         </div>
 
         {/* Heading */}
-        <h3 className="text-featured-title-mobile md:text-featured-title-desktop text-ink mb-4 md:mb-0">
+        <h3 className="text-featured-title-mobile md:text-featured-title-desktop text-ink">
           {featured.title}
         </h3>
 
         {/* Abstract & CTA */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-start gap-4 w-full">
           <p className="text-featured-desc-mobile md:text-featured-desc-desktop text-ink-muted">
             {featured.description}
           </p>
 
           {featured.cta && (
-            <div className="flex items-center">
+            <div className="-ml-6 flex items-center">
               <CtaButton
                 cta={featured.cta}
                 variant="link"
