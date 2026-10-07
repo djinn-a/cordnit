@@ -7,7 +7,7 @@ export default function ContextApproachSection({
   description,
 }: Readonly<ContextApproachSectionProps>) {
   return (
-    <section className="w-full pt-6 md:pt-space-80">
+    <section className="w-full">
       <Container>
         <div className="w-full h-auto p-6 md:py-12 md:px-15 bg-grad-3 border border-border-card rounded-[17px] md:rounded-4xl">
           <div className="flex flex-col md:flex-row w-full md:w-305.75 max-w-full items-start md:items-center gap-3 md:gap-6 shrink-0 mx-auto">
@@ -18,7 +18,7 @@ export default function ContextApproachSection({
                   {eyebrow}
                 </span>
               )}
-              <h2 className="text-[20px] leading-7 md:text-section-title md:leading-[1.2] text-ink font-extrabold">{title}</h2>
+              <h2 className="text-[20px] leading-space-68 md:text-section-title md:leading-[1.2] text-ink font-extrabold">{title}</h2>
             </div>
 
             {/* Divider */}
@@ -26,7 +26,7 @@ export default function ContextApproachSection({
 
             {/* Right Content */}
             <div className="w-full md:flex-[0_1_634px]">
-              <p className="text-[14px] leading-[22px] md:text-section-subtitle text-ink-muted md:leading-7">
+              <p className="text-link-mobile leading-space-22 md:text-section-subtitle text-ink-muted md:leading-space-28">
                 {description}
               </p>
             </div>
