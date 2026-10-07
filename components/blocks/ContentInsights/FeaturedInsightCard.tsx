@@ -50,7 +50,7 @@ export default function FeaturedInsightCard({
           </p>
 
           {featured.cta && (
-            <div className="-ml-6 flex items-center">
+            <div className="md:-ml-6 flex items-center">
               <CtaButton
                 cta={featured.cta}
                 variant="link"

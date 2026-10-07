@@ -1,7 +1,5 @@
 import { Image } from '@/components/ui/Image';
-import { ArrowRight } from "lucide-react";
 import type { PerspectiveSectionProps } from "./PerspectiveSection.types";
-import { CtaButton } from "@/components/ui";
 
 import Container from "@/components/ui/Container/Container";
 
@@ -11,7 +9,6 @@ export default function PerspectiveSection({
   title,
   description,
   image,
-  cta,
 }: Readonly<PerspectiveSectionProps>) {
   return (
     <section className={`w-full ${className || ""}`}>
@@ -37,17 +34,6 @@ export default function PerspectiveSection({
               {description}
             </p>
 
-            {/* Mobile CTA */}
-            {cta && (
-              <div className="md:hidden mt-4">
-                <CtaButton
-                  cta={cta}
-                  className="justify-between min-w-33 h-11 rounded-btn px-5 text-link-mobile"
-                  rightIcon={<ArrowRight size={12} strokeWidth={3} />}
-                  ctaLocation="perspective"
-                />
-              </div>
-            )}
           </div>
           
           {/* Right Media */}
