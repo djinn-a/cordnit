@@ -1,11 +1,12 @@
-import type { PublishedPageDocument } from "@/lib/cms/document";
+import type { BreadcrumbItem, PublishedPageDocument } from "@/lib/cms/document";
 import { getPageCanonicalUrl } from "@/lib/seo/canonical-url";
 import { PRODUCTION_SITE_URL, SITE_NAME } from "@/lib/seo/site";
 
-type JsonLd = Record<string, unknown>;
+type JsonLdValue = string | number | boolean | null | JsonLdValue[] | { [key: string]: JsonLdValue };
+type JsonLd = { [key: string]: JsonLdValue };
 
-function productionUrl(value: unknown, forceProductionOrigin = false): string | undefined {
-  if (typeof value !== "string" || !value.trim()) return;
+function productionUrl(value: string | undefined, forceProductionOrigin = false): string | undefined {
+  if (!value?.trim()) return;
   try {
     const url = new URL(value, PRODUCTION_SITE_URL);
     if (url.protocol !== "https:" && url.protocol !== "http:") return;
@@ -16,14 +17,12 @@ function productionUrl(value: unknown, forceProductionOrigin = false): string | 
   }
 }
 
-function breadcrumbList(items: unknown, pageUrl: string): JsonLd | undefined {
-  if (!Array.isArray(items) || !items.length) return;
+function breadcrumbList(items: readonly BreadcrumbItem[] | undefined, pageUrl: string): JsonLd | undefined {
+  if (!items?.length) return;
   const itemListElement: JsonLd[] = [];
 
-  for (const [index, item] of (items as unknown[]).entries()) {
-    if (!item || typeof item !== "object") return;
-    const crumb = item as Record<string, unknown>;
-    const name = typeof crumb.label === "string" ? crumb.label.trim() : "";
+  for (const [index, crumb] of items.entries()) {
+    const name = crumb.label.trim();
     if (!name) return;
     const isCurrent = crumb.isCurrent === true || index === items.length - 1;
     const destination = isCurrent ? pageUrl : crumb.href;
@@ -60,17 +59,17 @@ export function buildPageJsonLd(
     },
   ];
 
-  const title = typeof doc?.title === "string" ? doc.title.trim() : "";
+  const title = doc?.title.trim() ?? "";
   if (doc && title) {
     graph.push({
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       url: pageUrl,
       name: title,
-      ...(typeof seo.description === "string" && seo.description.trim()
+      ...(seo.description?.trim()
         ? { description: seo.description.trim() }
         : {}),
-      ...(typeof doc.publishedAt === "string" && Number.isFinite(Date.parse(doc.publishedAt))
+      ...(Number.isFinite(Date.parse(doc.publishedAt))
         ? { datePublished: new Date(doc.publishedAt).toISOString() }
         : {}),
       isPartOf: { "@id": `${PRODUCTION_SITE_URL}/#website` },
