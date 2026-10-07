@@ -1,7 +1,8 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import { useCtaAction } from "@/hooks/useCtaAction";
+import { hasTrackedCtaEvent, trackCtaEvent } from "@/lib/analytics/cta";
 import type { Cta } from "@/lib/cta";
 import Button from "./Button";
 import type { ButtonVariant, ButtonVariantProps } from "./button.variants";
@@ -20,16 +21,21 @@ export type CtaButtonProps = Omit<ButtonVariantProps, "variant"> & {
 export default function CtaButton({ cta, ctaLocation, variant, ...buttonProps }: Readonly<CtaButtonProps>) {
   const { href, target, rel, onClick } = useCtaAction(cta, ctaLocation);
   const look = variant ?? cta.variant ?? "primary";
+  const hasAnalyticsEvent = hasTrackedCtaEvent(cta, ctaLocation);
+  const handleClick = (hasAnalyticsEvent || onClick) ? (event: MouseEvent<HTMLElement>) => {
+    if (hasAnalyticsEvent) trackCtaEvent(ctaLocation);
+    onClick?.(event);
+  } : undefined;
 
   if (href !== undefined) {
     return (
-      <Button {...buttonProps} variant={look} href={href} target={target} rel={rel} onClick={onClick}>
+      <Button {...buttonProps} variant={look} href={href} target={target} rel={rel} onClick={handleClick}>
         {cta.label}
       </Button>
     );
   }
   return (
-    <Button {...buttonProps} variant={look} onClick={onClick} aria-haspopup={onClick ? "dialog" : undefined}>
+    <Button {...buttonProps} variant={look} onClick={handleClick} aria-haspopup={onClick ? "dialog" : undefined}>
       {cta.label}
     </Button>
   );

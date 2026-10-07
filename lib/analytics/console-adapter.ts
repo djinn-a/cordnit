@@ -1,10 +1,11 @@
 import type { AnalyticsEventMap, AnalyticsEventName } from "./events";
 
-// Development visibility only; production analytics providers belong behind this adapter.
+// Keep event logging muted until a production analytics provider is connected.
 export function logAnalyticsEvent<E extends AnalyticsEventName>(
-  eventName: E,
-  payload: AnalyticsEventMap[E],
+  _eventName: E,
+  _payload: AnalyticsEventMap[E],
 ) {
-  if (process.env.NODE_ENV !== "development") return;
-  console.info(`[Analytics] ${eventName}`, payload);
+  void _eventName;
+  void _payload;
+  // console.info(`[Analytics] ${_eventName}`, _payload);
 }

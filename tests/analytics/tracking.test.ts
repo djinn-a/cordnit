@@ -45,13 +45,12 @@ describe("analytics tracking", () => {
     ]);
   });
 
-  it("logs a structured event only in development", () => {
+  it("does not log analytics events to the console", () => {
     const info = vi.spyOn(console, "info").mockImplementation(() => {});
     vi.stubEnv("NODE_ENV", "development");
     trackEvent("book_call_click", { location: "solutions" });
-    expect(info).toHaveBeenCalledWith("[Analytics] book_call_click", { location: "solutions" });
+    expect(info).not.toHaveBeenCalled();
 
-    info.mockClear();
     vi.stubEnv("NODE_ENV", "production");
     logAnalyticsEvent("newsletter_success", { location: "newsletter-footer" });
     expect(info).not.toHaveBeenCalled();
