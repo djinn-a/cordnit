@@ -16,11 +16,11 @@ export default function ContentMediaText({
         </span>
       )}
       
-      <h2 className="text-section-title-mobile md:text-hero-header-eb text-ink mb-space-8 md:mb-space-20 whitespace-pre-line">
+      <h2 className="text-section-title-mobile md:text-hero-header-eb text-ink mb-space-12 md:mb-space-20 whitespace-pre-line">
         {title}
       </h2>
       
-      <p className="text-section-subtitle-mobile leading-space-28 md:text-section-subtitle text-ink-muted mb-0 md:mb-space-20">
+      <p className="text-section-subtitle-mobile leading-space-28 md:text-section-subtitle text-ink-muted mb-space-12 md:mb-space-20">
         {description}
       </p>
       

@@ -18,11 +18,11 @@ export default function ContextApproachSection({
                   {eyebrow}
                 </span>
               )}
-              <h2 className="text-[20px] leading-space-68 md:text-section-title md:leading-[1.2] text-ink font-extrabold">{title}</h2>
+              <h2 className="text-[20px] leading-6 md:text-section-title md:leading-[1.2] text-ink font-extrabold">{title}</h2>
             </div>
 
             {/* Divider */}
-            <div className="w-35 h-px md:h-30 md:w-px bg-border-card shrink-0"></div>
+            <div className="w-35 h-px md:h-30 md:w-px bg-brand-primary/30 md:bg-border-card shrink-0"></div>
 
             {/* Right Content */}
             <div className="w-full md:flex-[0_1_634px]">
