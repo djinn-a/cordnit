@@ -3,6 +3,7 @@ import { useLeadForm } from '../../../../../hooks/useLeadForm';
 import { useContactModal } from '../../ContactModal/ContactModalProvider';
 import ContactForm from './ContactForm';
 import SuccessModal from '../SuccessModal';
+import { useAnalyticsVisibility } from '@/lib/analytics/useAnalyticsVisibility';
 
 type ContactFormWrapperProps = { 
   cmsData: {
@@ -22,6 +23,7 @@ type ContactFormWrapperProps = {
 
 export default function ContactFormWrapper({ cmsData }: Readonly<ContactFormWrapperProps>) {
   const { openModal } = useContactModal();
+  const formRef = useAnalyticsVisibility('contact_form_view', { location: 'contact-page' });
   const {
     formData,
     selectedInterests,
@@ -50,8 +52,9 @@ export default function ContactFormWrapper({ cmsData }: Readonly<ContactFormWrap
         honeypotProps={honeypotProps}
         toggleInterest={toggleInterest}
         handleSubmit={handleSubmit}
-        openModal={openModal}
+        openModal={() => openModal({ ctaLocation: 'contact-page' })}
         cmsData={cmsData}
+        formRef={formRef}
       />
       <SuccessModal isSuccess={isSuccess} setIsSuccess={setIsSuccess} />
     </>

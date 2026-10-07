@@ -64,6 +64,7 @@ async function CmsPage({ params }: { params: Params }) {
       <LayoutRenderer
         shell={doc.shell}
         spacing={doc.spacing}
+        pageSlug={slug}
         breadcrumbs={doc.breadcrumbs}
         sections={sections}
       />
