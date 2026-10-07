@@ -61,7 +61,7 @@ export default function InsightCard({
           <CtaButton
             cta={cta}
             variant="link"
-            className="text-link-mobile md:text-link-desktop w-fit gap-1 md:gap-1.5"
+            className="text-link-mobile md:text-link-desktop w-fit gap-1 md:gap-1.5 text-primary hover:text-primary"
             rightIcon={<ArrowRight className="w-3 h-3 md:w-3.5 md:h-3.5" />}
             ctaLocation="insight-card"
           />

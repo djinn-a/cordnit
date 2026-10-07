@@ -23,9 +23,9 @@ export default function FeaturedInsightCard({
       </div>
 
       {/* Right Content Column */}
-      <div className="flex-1 w-full lg:max-w-149.75 h-auto lg:h-75.5 flex flex-col justify-center items-start py-0 md:py-6 lg:p-10">
+      <div className="flex-1 w-full  lg:max-w-149.75 h-auto lg:h-75.5 flex flex-col justify-center items-start py-0 md:py-6 lg:p-10">
         {/* Metadata */}
-        <div className="flex items-center gap-2 md:gap-3 mb-1.5 md:mb-0">
+        <div className="flex items-center gap-2 md:gap-3 mb-[16px] md:mb-0">
           {featured.articleLabel && (
             <span className="uppercase tracking-[1px] text-link-card-mobile md:text-about-eyebrow-desktop text-primary">
               {featured.articleLabel}
@@ -54,7 +54,7 @@ export default function FeaturedInsightCard({
               <CtaButton
                 cta={featured.cta}
                 variant="link"
-                className="gap-1 md:gap-2 text-link-card-mobile md:text-link-desktop"
+                className="gap-1 md:gap-2 text-link-card-mobile md:text-link-desktop text-primary hover:text-primary"
                 rightIcon={<ArrowRight className="w-3 h-3 md:w-4 md:h-4" />}
                 ctaLocation="featured-insight"
               />
