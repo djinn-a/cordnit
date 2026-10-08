@@ -46,7 +46,7 @@ export default function CardGridCard({ card }: Readonly<CardGridCardProps>) {
           cta={card.cta}
           variant="link"
           ctaLocation="card-grid"
-          className="mt-auto !px-0 gap-space-8 font-normal text-card-desc-mobile lg:text-link-mobile text-brand-primary group-hover:text-primary-hover after:absolute after:inset-0 after:rounded-card-grid after:content-['']"
+          className="mt-auto px-0! gap-space-8 font-normal text-card-desc-mobile lg:text-link-mobile text-brand-primary group-hover:text-primary-hover after:absolute after:inset-0 after:rounded-card-grid after:content-['']"
           rightIcon={<ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />}
         />
       </div>
