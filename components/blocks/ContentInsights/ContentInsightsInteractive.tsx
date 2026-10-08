@@ -60,7 +60,7 @@ export default function ContentInsightsInteractive({
       <div className="relative w-full">
         <div 
           ref={scrollRef}
-          className="w-83 md:w-auto flex md:grid overflow-x-auto md:overflow-x-visible snap-x snap-mandatory hide-scrollbar md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 pb-4 md:pb-0"
+          className="w-full md:w-auto flex md:grid overflow-x-auto md:overflow-x-visible snap-x snap-mandatory hide-scrollbar md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 pb-4 md:pb-0"
         >
           {orderedCards.map((card) => (
             <div key={card.id} className="w-40.5 md:w-auto shrink-0 snap-start">
