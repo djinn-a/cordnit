@@ -19,7 +19,7 @@ export const fontSize: FontSizeConfig = {
   "card-title-mobile": ["20px", { fontWeight: "800", lineHeight: "1.2" }],
   "card-desc": ["16px", { fontWeight: "400", lineHeight: "1.5" }],
   "card-desc-mobile": ["12px", { fontWeight: "400", lineHeight: "1.5" }],
-  "eyebrow-mobile": ["10px", { fontWeight: "800", lineHeight: "1.5" }],
+  "eyebrow-mobile": ["10px", { fontWeight: "600", lineHeight: "1.5" }],
   "eyebrow-desktop": ["16px", { fontWeight: "600", lineHeight: "1", letterSpacing: "1px" }],
   "link-mobile": ["14px", { fontWeight: "600", lineHeight: "1.5" }],
   "link-desktop": ["16px", { fontWeight: "600", lineHeight: "1.5" }],
