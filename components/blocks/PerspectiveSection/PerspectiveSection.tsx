@@ -4,14 +4,13 @@ import type { PerspectiveSectionProps } from "./PerspectiveSection.types";
 import Container from "@/components/ui/Container/Container";
 
 export default function PerspectiveSection({
-  className,
   eyebrow,
   title,
   description,
   image,
 }: Readonly<PerspectiveSectionProps>) {
   return (
-    <section className={`w-full ${className || ""}`}>
+    <section className={`w-full`}>
       <Container>
         <div className="w-full h-auto p-6 md:p-12 lg:h-83.25 bg-grad-3 border border-border-card rounded-[20px] md:rounded-4xl shadow-sm md:shadow-none">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-0 h-auto lg:h-full">
