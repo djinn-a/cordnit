@@ -1,6 +1,6 @@
 "use server";
 
-import { blockRefSchema, convertToBlockSchema, updateBlockSchema } from "@/lib/cms/inputs";
+import { blockRefSchema, convertToBlockSchema, restoreBlockVersionSchema, updateBlockSchema } from "@/lib/cms/inputs";
 import { cms } from "@/server/cms";
 import { invalidateBlock } from "./invalidate";
 import { withAction } from "./with-action";
@@ -18,8 +18,18 @@ export const updateBlockAction = withAction("blocks.update", updateBlockSchema, 
 /** One publish updates every page that references the block (render-time resolution). */
 export const publishBlockAction = withAction("blocks.publish", blockRefSchema, async (input, { session }) => {
   const block = await cms.blocks.publishBlock(input, session.userId);
-  invalidateBlock(block.id);
+  invalidateBlock(block.id, block.key);
   return { lockVersion: block.lockVersion, publishedVersion: block.publishedVersion };
+});
+
+export const restoreBlockVersionAction = withAction("blocks.restore", restoreBlockVersionSchema, async (input, { session }) => {
+  const block = await cms.blocks.restoreBlockVersion(input, session.userId);
+  invalidateBlock(block.id, block.key);
+  return {
+    lockVersion: block.lockVersion,
+    publishedVersion: block.publishedVersion,
+    content: block.content,
+  };
 });
 
 export const deleteBlockAction = withAction(
