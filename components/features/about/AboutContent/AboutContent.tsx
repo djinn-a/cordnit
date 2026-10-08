@@ -1,5 +1,4 @@
 "use client";
-import { getImageUrl } from "@/lib/getImageUrl";
 import { useState } from "react";
 import { Container, Section, SectionHeader } from "@/components/ui";
 import { aboutContentData, type AboutTabContent } from "./aboutContentData";

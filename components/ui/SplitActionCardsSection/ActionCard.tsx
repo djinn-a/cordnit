@@ -33,7 +33,7 @@ export default function ActionCard({ card }: Readonly<ActionCardProps>) {
         <div className="flex flex-col gap-space-4 sm:gap-space-8 w-full">
           {/* Header Row */}
           <div className="flex flex-row items-center justify-between w-full">
-            <p className="text-card-detail-mobile sm:text-about-eyebrow-desktop text-brand-primary uppercase leading-tight">
+            <p className="text-card-detail-mobile sm:text-about-eyebrow-desktop text-brand-primary uppercase leading-space-14">
               {card.category}
             </p>
             {card.label && (
@@ -56,7 +56,7 @@ export default function ActionCard({ card }: Readonly<ActionCardProps>) {
 
         {/* Metadata */}
         {card.metadata && (
-          <div className="mt-2.75 sm:mt-auto sm:pt-space-8">
+          <div className="mt-space-40 sm:mt-auto sm:pt-space-8">
             <p className="text-[8px] sm:text-card-desc-mobile text-ink-muted leading-tight">
               {card.metadata}
             </p>

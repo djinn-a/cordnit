@@ -13,7 +13,6 @@ export default function ContactHero({
   eyebrow = "LET'S TALK",
   title = "Tell us what you’re building.",
   description = "Whether you’re looking to modernise your technology, strengthen security, adopt AI orbuild a new digital solution, tell us what you’re working on. Our team will connect you with the right specialists.",
-  imageSrc: imageSrcProp = "/contact-hero-bg.webp",
   imageAlt = "Cordinit Office Contact",
 }: ContactHeroProps = {}) {
   // Force the new image requested by user, bypassing database values

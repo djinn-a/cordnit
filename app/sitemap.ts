@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { unstable_rethrow } from "next/navigation";
-import { HOME_SLUG, slugToPath } from "@/lib/cms/document";
+import { HOME_SLUG } from "@/lib/cms/document";
+import { getPageCanonicalUrl } from "@/lib/seo/canonical-url";
 import { absoluteUrl } from "@/lib/seo/site";
 import { cms } from "@/server/cms";
 import { logger } from "@/server/logger";
@@ -15,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .map((r) => {
         const depth = r.slug === HOME_SLUG ? 0 : r.slug.split("/").length;
         return {
-          url: absoluteUrl(slugToPath(r.slug)),
+          url: getPageCanonicalUrl({ slug: r.slug, seo: { canonical: r.canonical } }),
           lastModified: new Date(r.publishedAt),
           changeFrequency: depth === 0 ? "weekly" : "monthly",
           priority: depth === 0 ? 1 : depth === 1 ? 0.8 : 0.6,

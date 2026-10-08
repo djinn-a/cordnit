@@ -18,6 +18,7 @@ export const spacing: SpacingConfig = {
   "space-22": "22px",
   "space-24": "24px",
   "space-26" : "26px",
+  "space-28": "28px",
   "space-30": "30px",
   "space-32": "32px",
   "space-34": "34px",
@@ -30,6 +31,7 @@ export const spacing: SpacingConfig = {
   "space-59": "236px",
   "space-60": "60px",
   "space-64": "64px",
+  "space-68":"68px",
   "space-80": "80px",
   "space-100": "100px",
 };

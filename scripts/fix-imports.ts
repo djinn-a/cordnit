@@ -18,7 +18,7 @@ for (const relPath of filesToUpdate) {
   const fullPath = path.join(process.cwd(), relPath);
   if (!fs.existsSync(fullPath)) continue;
 
-  let content = fs.readFileSync(fullPath, 'utf-8');
+  const content = fs.readFileSync(fullPath, 'utf-8');
   
   if (content.includes("getImageUrl") && !content.includes("import { getImageUrl }")) {
     const finalContent = `import { getImageUrl } from '@/lib/getImageUrl';\n` + content;

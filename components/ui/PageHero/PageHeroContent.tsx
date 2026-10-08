@@ -18,7 +18,7 @@ export default function PageHeroContent({
         {title}
       </h1>
 
-      <p className="text-section-subtitle-mobile md:text-page-hero-subtitle max-w-[1024px] text-ink-muted mb-space-24">
+      <p className="text-section-subtitle-mobile md:text-page-hero-subtitle max-w-5xl text-ink-muted mb-space-20">
         {description}
       </p>
 

@@ -1,7 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import fs from 'fs';
 import path from 'path';
-// @ts-ignore
 // Let's use simple extension based mime-type instead of installing mime-types
 const mimeTypes: Record<string, string> = {
   '.png': 'image/png',

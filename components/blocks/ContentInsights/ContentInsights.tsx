@@ -14,7 +14,7 @@ export default function ContentInsights({
       <Container>
         {/* Section Eyebrow */}
         {eyebrow && (
-          <h2 className="text-eyebrow-mobile leading-4 md:text-eyebrow-desktop uppercase tracking-[1px] text-primary mb-4 md:mb-6">
+          <h2 className="text-eyebrow-mobile leading-4 md:text-eyebrow-desktop uppercase tracking-[1px] text-primary mb-4">
             {eyebrow}
           </h2>
         )}

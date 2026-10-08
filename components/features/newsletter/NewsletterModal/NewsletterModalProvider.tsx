@@ -3,6 +3,7 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, ReactNode } from 'react';
 import { useNewsletterSubscribe, type NewsletterSubscribe } from '@/hooks/useNewsletterSubscribe';
 import NewsletterModal from './NewsletterModal';
+import { trackEvent } from '@/lib/analytics';
 
 const CLOSE_MS = 300;
 
@@ -31,8 +32,9 @@ export function NewsletterModalProvider({ children }: Readonly<{ children: React
 
   const openModal = useCallback(() => {
     if (resetTimer.current) clearTimeout(resetTimer.current);
+    if (!isOpen) trackEvent('newsletter_view', { location: 'newsletter-modal' });
     setIsOpen(true);
-  }, []);
+  }, [isOpen]);
 
   const closeModal = useCallback(() => {
     setIsOpen(false);

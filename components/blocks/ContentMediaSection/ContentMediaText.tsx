@@ -16,16 +16,16 @@ export default function ContentMediaText({
         </span>
       )}
       
-      <h2 className="text-section-title-mobile md:text-hero-header-eb text-ink mb-space-8 md:mb-space-20 whitespace-pre-line">
+      <h2 className="text-section-title-mobile md:text-hero-header-eb text-ink mb-space-12 md:mb-space-20 whitespace-pre-line">
         {title}
       </h2>
       
-      <p className="text-section-subtitle-mobile leading-space-22 md:text-section-subtitle text-ink-muted mb-0 md:mb-space-20">
+      <p className="text-section-subtitle-mobile leading-space-28 md:text-section-subtitle text-ink-muted mb-space-12 md:mb-space-20">
         {description}
       </p>
       
       {cta && (
-        <div className="mt-space-12 md:mt-space-20">
+        <div>
           <CtaButton 
             cta={cta}
             className="w-fit h-10.5 md:h-space-48 rounded-lg px-space-16 py-space-10 md:px-space-24 md:py-space-12 text-[14px] md:text-[16px] font-semibold leading-space-22 md:leading-space-24"

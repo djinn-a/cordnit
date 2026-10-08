@@ -15,11 +15,11 @@ export type WhyChooseCardProps = {
 export default function WhyChooseCard({ card }: WhyChooseCardProps) {
   return (
     <div className="relative flex flex-col items-center bg-surface w-full sm:w-[172px] lg:w-full lg:max-w-[380px] h-[217px] lg:h-[422px] overflow-hidden rounded-[16px] lg:rounded-[20px] shadow-sm hover:shadow-md transition-shadow duration-300 mx-auto">
-      <div className="flex flex-col items-center px-[8px] py-[12px] sm:p-[12px] lg:p-0 lg:pt-[24px] lg:px-[24px] gap-[8px] lg:gap-[24px] w-full relative z-10 h-full">
-        <h3 className="text-base tracking-tight sm:tracking-normal font-semibold lg:text-[32px] lg:leading-[40px] lg:font-bold text-ink text-center w-full max-w-[280px] lg:max-w-none">
+      <div className="flex flex-col items-center px-space-8 py-space-12 sm:p-space-12 lg:p-0 lg:pt-space-24 lg:px-space-24 gap-space-8 lg:gap-space-24 w-full relative z-10 h-full">
+        <h3 className="text-base tracking-tight sm:tracking-normal font-semibold lg:text-[32px] lg:leading-space-40 lg:font-bold text-ink text-center w-full max-w-[280px] lg:max-w-none">
           {card.title}
         </h3>
-        <p className="text-card-desc-mobile lg:text-[20px] lg:leading-[28px] text-[#555555] text-center w-full">
+        <p className="text-card-desc-mobile lg:text-[20px] lg:leading-space-28 text-[#555555] text-center w-full">
           {card.description}
         </p>
       </div>

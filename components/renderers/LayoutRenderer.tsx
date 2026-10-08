@@ -8,6 +8,7 @@ import type {
 } from "@/lib/cms/document";
 import { cn } from "@/lib/utils/cn";
 import SectionRenderer from "./SectionRenderer";
+import PageAnalyticsBoundary from "./PageAnalyticsBoundary";
 
 const COMPACT =
   "[&>main]:gap-space-56! md:[&>main]:gap-space-80! [&>main]:pb-space-56! md:[&>main]:pb-space-80!";
@@ -23,6 +24,7 @@ type LayoutRendererProps = {
   spacing?: PageSpacing;
   breadcrumbs?: readonly BreadcrumbItem[];
   sections: readonly InlineSectionNode[];
+  pageSlug?: string;
   className?: string;
 };
 
@@ -32,6 +34,7 @@ export default function LayoutRenderer({
   spacing = "default",
   breadcrumbs,
   sections,
+  pageSlug,
   className,
 }: Readonly<LayoutRendererProps>) {
   return (
@@ -39,7 +42,13 @@ export default function LayoutRenderer({
       className={cn(shell === "contact" && "[&>main]:pt-[72px]", SPACING_CLASSES[spacing], className)}
     >
       {breadcrumbs && breadcrumbs.length > 0 && <Breadcrumb items={[...breadcrumbs]} />}
-      <SectionRenderer sections={sections} />
+      {pageSlug ? (
+        <PageAnalyticsBoundary pageSlug={pageSlug}>
+          <SectionRenderer sections={sections} />
+        </PageAnalyticsBoundary>
+      ) : (
+        <SectionRenderer sections={sections} />
+      )}
     </PageLayout>
   );
 }

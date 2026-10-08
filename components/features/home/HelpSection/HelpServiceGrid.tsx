@@ -2,6 +2,11 @@ import React from "react";
 import type { HelpService } from "./helpServices";
 import HelpServiceCard from "./HelpServiceCard";
 
+const ICON_OVERRIDES: Record<string, string> = {
+  "07": "/cloudinfraIcon.svg",
+  "08": "/ic_round-manage-accounts.svg",
+};
+
 export type HelpServiceGridProps = {
   services: HelpService[];
 };
@@ -35,7 +40,7 @@ export default function HelpServiceGrid({ services }: Readonly<HelpServiceGridPr
       {services.map((service, index) => (
         <HelpServiceCard
           key={service.num}
-          service={service}
+          service={{ ...service, iconPath: ICON_OVERRIDES[service.num] ?? service.iconPath }}
           borderClasses={getGridBorderClasses(index, services.length)}
         />
       ))}

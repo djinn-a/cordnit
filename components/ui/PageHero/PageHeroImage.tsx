@@ -15,7 +15,7 @@ export default function PageHeroImage({
   quoteOverlay,
 }: PageHeroImageProps) {
   return (
-    <div className="relative w-full h-[300px] md:h-[393px] mb-[60px] md:mb-0">
+    <div className="relative w-full h-75 md:h-98.25 mb-space-60 md:mb-0">
       <div className="relative w-[90%] md:w-full h-full rounded-page-hero overflow-hidden shadow-lg">
         <Image
           src={src}
@@ -27,7 +27,7 @@ export default function PageHeroImage({
         />
       </div>
       {quoteOverlay && (
-        <div className="absolute -bottom-[50px] right-0 z-10 md:hidden inline-flex flex-col items-start gap-space-12 p-space-16 rounded-[24px] border border-white/20 bg-gradient-to-b from-white/40 to-black/20 backdrop-blur-[10px] w-[230px] shadow-lg">
+        <div className="absolute -bottom-space-50 right-0 z-10 md:hidden inline-flex flex-col items-start gap-space-12 p-space-16 rounded-[24px] border border-white/20 bg-gradient-to-b from-white/40 to-black/20 backdrop-blur-[10px] w-[230px] shadow-lg">
           <p className="text-white text-eyebrow-desktop">
             {quoteOverlay.quote}
           </p>

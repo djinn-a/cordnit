@@ -12,7 +12,7 @@ export default function CredentialsSectionLogos({
   certifications,
 }: CredentialsSectionLogosProps) {
   return (
-    <div className="flex flex-col items-center w-full gap-space-32 lg:gap-space-64 mt-space-40 lg:mt-space-64">
+    <div className="flex flex-col items-center w-full gap-space-32  mt-space-40 lg:mt-space-64">
       <h3 className="text-base font-semibold lg:text-card-title lg:font-bold text-ink text-center">
         {certificationHeading}
       </h3>

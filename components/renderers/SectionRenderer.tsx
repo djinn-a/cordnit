@@ -19,7 +19,15 @@ export default function SectionRenderer({ sections }: Readonly<SectionRendererPr
           return null;
         }
         const props = section.props && typeof section.props === "object" ? section.props : {};
-        return <Component key={section._key || section._type} {...props} />;
+        return (
+          <div
+            key={section._key || section._type}
+            className="contents"
+            data-analytics-section={section._type}
+          >
+            <Component {...props} />
+          </div>
+        );
       })}
     </>
   );

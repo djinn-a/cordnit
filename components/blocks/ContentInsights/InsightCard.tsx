@@ -11,6 +11,11 @@ export default function InsightCard({
   image,
   cta,
 }: Readonly<InsightCardData>) {
+  const cardCta =
+    metadata.label.trim().toLowerCase() === "case study"
+      ? { ...cta, label: "Read article" }
+      : cta;
+
   return (
     <div className="flex flex-col self-stretch bg-surface border border-border-card rounded-xl overflow-hidden transition-shadow hover:shadow-card group h-auto">
       {/* Image */}
@@ -59,9 +64,9 @@ export default function InsightCard({
           
           {/* CTA Link */}
           <CtaButton
-            cta={cta}
+            cta={cardCta}
             variant="link"
-            className="text-link-mobile md:text-link-desktop w-fit gap-1 md:gap-1.5"
+            className="lg:-ml-7 text-link-mobile md:text-link-desktop w-fit gap-1 md:gap-1.5 text-primary hover:text-primary"
             rightIcon={<ArrowRight className="w-3 h-3 md:w-3.5 md:h-3.5" />}
             ctaLocation="insight-card"
           />

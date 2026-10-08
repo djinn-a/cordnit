@@ -1,5 +1,5 @@
 import "server-only";
-import { eq, inArray } from "drizzle-orm";
+import { eq, inArray, sql } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 import {
   PAGES_LIST_TAG,
@@ -47,16 +47,26 @@ export async function getPublishedBlock(blockId: string): Promise<PublishedBlock
   return { blockId: row.id, type: row.type, props: row.props, version: row.version };
 }
 
-export type PublishedRoute = { slug: string; publishedAt: string; noindex: boolean };
+export type PublishedRoute = { slug: string; publishedAt: string; noindex: boolean; canonical?: string };
 
 export async function listPublishedRoutes(): Promise<PublishedRoute[]> {
   "use cache";
   cacheLife("max");
   cacheTag(PAGES_LIST_TAG);
   const rows = await db()
-    .select({ slug: publishedPages.slug, publishedAt: publishedPages.publishedAt, noindex: publishedPages.noindex })
+    .select({
+      slug: publishedPages.slug,
+      publishedAt: publishedPages.publishedAt,
+      noindex: publishedPages.noindex,
+      canonical: sql<string | null>`${publishedPages.document}->'seo'->>'canonical'`,
+    })
     .from(publishedPages);
-  return rows.map((r) => ({ slug: r.slug, publishedAt: r.publishedAt.toISOString(), noindex: r.noindex }));
+  return rows.map((r) => ({
+    slug: r.slug,
+    publishedAt: r.publishedAt.toISOString(),
+    noindex: r.noindex,
+    canonical: r.canonical ?? undefined,
+  }));
 }
 
 export type RedirectTarget = { toPath: string; statusCode: number };

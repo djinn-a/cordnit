@@ -26,6 +26,7 @@ type ContactFormProps = {
   honeypotProps: React.ComponentProps<typeof HoneypotField>;
   toggleInterest: (interest: string) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  formRef: React.Ref<HTMLFormElement>;
   openModal: () => void;
   cmsData: {
     interestTitle: string;
@@ -53,6 +54,7 @@ export default function ContactForm({
   honeypotProps,
   toggleInterest,
   handleSubmit,
+  formRef,
   openModal,
   cmsData
 }: Readonly<ContactFormProps>) {
@@ -63,7 +65,7 @@ export default function ContactForm({
 
   return (
     <div className="w-full lg:w-5/12 rounded-card p-6 md:p-8 lg:p-10 bg-gradient-contact-soft shadow-sm">
-      <form className="relative space-y-6" onSubmit={handleSubmit} noValidate>
+      <form ref={formRef} className="relative space-y-6" onSubmit={handleSubmit} noValidate>
         <HoneypotField {...honeypotProps} />
         {/* Input Fields */}
         <div className="space-y-5">

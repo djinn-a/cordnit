@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button/Button";
 import { HoneypotField } from "@/components/ui/HoneypotField";
 import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
 import type { NewsletterSectionProps } from "./NewsletterSection.types";
+import { useAnalyticsVisibility } from "@/lib/analytics/useAnalyticsVisibility";
 
 export default function NewsletterForm({
   placeholder = "Work email",
@@ -13,6 +14,7 @@ export default function NewsletterForm({
   consentText = "I would like to receive Cordinit insights. I understand I can unsubscribe at any time. Read our Privacy Policy.",
 }: Readonly<Pick<NewsletterSectionProps, "placeholder" | "buttonText" | "consentText">>) {
   const id = useId();
+  const formRef = useAnalyticsVisibility('newsletter_view', { location: 'newsletter-section' });
   const { email, consent, status, errors, submitError, honeypotProps, onEmailChange, onConsentChange, handleSubmit } =
     useNewsletterSubscribe("Newsletter Section");
 
@@ -29,7 +31,7 @@ export default function NewsletterForm({
   const isSubmitting = status === "submitting";
 
   return (
-    <form className="relative w-full md:w-1/2 max-w-[512px] flex flex-col gap-3" onSubmit={handleSubmit} noValidate>
+    <form ref={formRef} className="relative w-full md:w-1/2 max-w-[512px] flex flex-col gap-3" onSubmit={handleSubmit} noValidate>
       <HoneypotField {...honeypotProps} />
       <div className="flex gap-2 w-full">
         <input
