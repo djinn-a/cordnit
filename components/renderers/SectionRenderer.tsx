@@ -1,5 +1,6 @@
 import { componentMap } from "@/lib/cms/component-map";
 import type { InlineSectionNode } from "@/lib/cms/document";
+import { isPageSectionType } from "@/lib/cms/types";
 
 type SectionRendererProps = {
   sections: readonly InlineSectionNode[];
@@ -11,7 +12,7 @@ export default function SectionRenderer({ sections }: Readonly<SectionRendererPr
   return (
     <>
       {sections.map((section) => {
-        const Component = section?._type ? componentMap[section._type] : undefined;
+        const Component = isPageSectionType(section?._type) ? componentMap[section._type] : undefined;
         if (!Component) {
           if (process.env.NODE_ENV === "development") {
             console.warn(`[SectionRenderer] Unknown section type: ${String(section?._type)}`);

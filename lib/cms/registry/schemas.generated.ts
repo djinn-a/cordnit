@@ -6,7 +6,29 @@
  */
 import { z } from "zod";
 import type { SectionType } from "../types";
-import { cta, group, link, list, section, stringList, text, textarea } from "./fields";
+import { cta, group, link, list, section, stringList, text, textarea, select } from "./fields";
+
+// Site chrome edits copy and destinations only; visual assets stay in code.
+const siteChromeLink = (label: string) => z.string().trim().max(2048).refine((value) => {
+  if (value === "") return true;
+  if (value.startsWith("/") && !value.startsWith("//") && !value.includes("\\")) return true;
+  if (value.startsWith("#")) return true;
+  if (/^https:\/\//i.test(value)) {
+    try {
+      const url = new URL(value);
+      return url.protocol === "https:" && Boolean(url.hostname);
+    } catch {
+      return false;
+    }
+  }
+  return /^(mailto|tel):[^\s]+$/i.test(value);
+}, "Use a same-site path, anchor, https://, mailto: or tel: link.").meta({ label, widget: "url" });
+
+const navbarLinkKind = select("Menu behavior", [
+  { value: "link", label: "Link" },
+  { value: "solutions", label: "Solutions dropdown" },
+]);
+const FOOTER_SOCIAL_IDS = ["whatsapp", "instagram", "facebook", "x", "youtube", "linkedin"] as const;
 
 export const sectionContentSchemas = {
   hero: section({
@@ -691,6 +713,71 @@ export const sectionContentSchemas = {
     placeholder: text("Placeholder", 300),
     buttonText: textarea("Button text", 2000),
     consentText: textarea("Consent text", 2000),
+  }),
+  navbar: section({
+    logoHref: siteChromeLink("Logo destination").optional(),
+    topBarBreachLabel: text("Breach link label", 120),
+    topBarBreachHref: siteChromeLink("Breach link destination"),
+    topBarNewsletterLabel: text("Newsletter link label", 120),
+    navLinks: list("Main links", "Link", {
+      label: text("Label", 120),
+      href: siteChromeLink("Destination"),
+      kind: navbarLinkKind,
+    }).min(1).max(12).refine((items) => new Set(items.map((item) => item._id)).size === items.length, "Navigation item IDs must be unique.").refine((items) => items.filter((item) => item.kind === "solutions").length === 1, "Keep exactly one Solutions dropdown."),
+    solutionsDropdown: list("Solutions dropdown", "Solution", {
+      title: text("Title", 160),
+      description: textarea("Description", 1000),
+      slug: z.string().trim().max(2048).refine((value) => value === "" || /^[a-z0-9]+(?:-[a-z0-9]+)*(?:\/[a-z0-9]+(?:-[a-z0-9]+)*)*$/.test(value), "Use a published page path or leave the destination blank."),
+    }).min(1).max(30).refine((items) => new Set(items.map((item) => item._id)).size === items.length, "Solution IDs must be unique."),
+    megaMenu: group("Solutions menu", {
+      leftPanelTitle: text("Panel title", 200),
+      leftPanelDescription: textarea("Panel description", 1000),
+      exploreAllLabel: text("Explore link label", 120),
+      exploreAllHref: siteChromeLink("Explore destination"),
+    }),
+    getInTouchLabel: text("Contact button label", 120),
+    logoAltText: text("Logo alt text", 200),
+    mobileMenuToggleAriaLabel: text("Mobile menu button label", 200),
+  }),
+  footer: section({
+    logoHref: siteChromeLink("Logo destination").optional(),
+    branding: group("Branding", {
+      logoAlt: text("Logo alt text", 200),
+      tagline: textarea("Tagline", 3000),
+      ctaText: text("Contact button label", 120),
+    }),
+    navColumns: list("Footer link columns", "Column", {
+      title: text("Column heading", 160),
+      links: list("Links", "Link", { label: text("Label", 160), href: siteChromeLink("Destination") }).min(1).max(40),
+    }).min(1).max(8).refine((items) => new Set(items.map((item) => item._id)).size === items.length, "Footer column IDs must be unique."),
+    socialLinks: list("Social links", "Link", {
+      label: text("Accessible label", 120),
+      href: siteChromeLink("Destination"),
+    }).length(6)
+      .refine((items) => new Set(items.map((item) => item._id)).size === items.length, "Social icon IDs must be unique.")
+      .refine((items) => items.every((item) => (FOOTER_SOCIAL_IDS as readonly string[]).includes(item._id)), "Only code-supported social icons can be used."),
+    newsletter: group("Newsletter", {
+      heading: text("Heading", 200),
+      description: textarea("Description", 1000),
+      placeholder: text("Email placeholder", 160),
+      emailLabel: text("Email accessible label", 160),
+      formLabel: text("Form accessible label", 160),
+      consentText: text("Consent copy before privacy link", 500),
+      privacyLinkLabel: text("Privacy link label", 120),
+      privacyLinkHref: siteChromeLink("Privacy link destination"),
+      buttonText: text("Subscribe button label", 120),
+      submittingText: text("Submitting button label", 120),
+      successText: text("Success message", 300),
+    }),
+    media: group("Media feature", {
+      eyebrow: text("Eyebrow", 200),
+      heading: text("Heading", 300),
+      description: textarea("Description", 1000),
+      ctaText: text("Button label", 120),
+      href: siteChromeLink("Destination"),
+    }),
+    copyright: text("Copyright text", 300),
+    legalLinks: list("Legal links", "Link", { label: text("Label", 160), href: siteChromeLink("Destination") }).min(1).max(30),
   }),
 } satisfies Record<SectionType, z.ZodObject>;
 

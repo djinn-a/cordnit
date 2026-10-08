@@ -19,6 +19,7 @@ import { recordAudit } from "../audit";
 import { touchPage } from "../locking";
 import { pagesRepo } from "../repositories/pages.repo";
 import { sectionsRepo } from "../repositories/sections.repo";
+import { isPageSectionType } from "@/lib/cms/types";
 
 export async function listPages(filter: { search?: string; status?: PageStatus }) {
   return pagesRepo.list(db(), filter);
@@ -56,7 +57,7 @@ export async function getPageEditorData(pageId: string) {
       .from(publishedPages)
       .where(eq(publishedPages.pageId, pageId)),
   ]);
-  return { page, sections, versions, blocks, liveSlug: live[0]?.slug ?? null };
+  return { page, sections, versions, blocks: blocks.filter((block) => isPageSectionType(block.type)), liveSlug: live[0]?.slug ?? null };
 }
 
 async function sourceSections(
@@ -72,7 +73,7 @@ async function sourceSections(
   const original = await pagesRepo.getById(conn, source.pageId);
   const rows = await sectionsRepo.listByPage(conn, original.id);
   return {
-    sections: rows.map((s) => ({
+    sections: rows.filter((s) => isPageSectionType(s.type)).map((s) => ({
       type: s.type,
       label: s.label,
       content: s.content,
