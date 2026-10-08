@@ -23,7 +23,7 @@ export default function ProcessSectionHeader({
           </h2>
         </div>
         <div className="w-full lg:w-auto lg:flex-1 lg:max-w-[500px] lg:mt-space-48">
-          <p className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted">
+          <p className="text-section-subtitle-mobile md:text-page-hero-subtitle  lg:text-section-subtitle text-ink-muted">
             {subtitle}
           </p>
         </div>

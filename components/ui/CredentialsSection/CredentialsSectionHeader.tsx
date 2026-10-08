@@ -17,9 +17,10 @@ export default function CredentialsSectionHeader({
       <h2 className="text-section-title-mobile lg:text-section-title text-ink w-full">
         {title}
       </h2>
-      <p className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted w-full">
+      <p className="text-section-subtitle-mobile md:text-page-hero-subtitle  lg:text-section-subtitle text-ink-muted w-full">
         {subtitle}
       </p>
     </div>
   );
 }
+//md:text-page-hero-subtitle  lg:text-section-subtitle

@@ -27,7 +27,7 @@ export default function ProcessStepCard({ step }: ProcessStepCardProps) {
         <h4 className="text-help-card-title-mobile lg:text-card-title-desktop lg:font-semibold text-ink">
           {step.title}
         </h4>
-        <p className="text-help-card-desc-mobile lg:text-section-title-h text-ink-muted">
+        <p className="text-help-card-desc-mobile md:text-page-hero-subtitle  lg:text-section-title-h text-ink-muted">
           {step.description}
         </p>
       </div>

@@ -36,7 +36,7 @@ export default function SplitActionCardsSection({ data }: SplitActionCardsSectio
             </h2>
           </div>
           
-          <p className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted">
+          <p className="text-section-subtitle-mobile md:text-page-hero-subtitle  lg:text-section-subtitle text-ink-muted">
             {data.subtitle}
           </p>
 
