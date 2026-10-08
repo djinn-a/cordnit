@@ -64,7 +64,7 @@ export function DataSecurityProcessCard({
       </p>
       
       <div className="bg-white rounded-[4.58px] py-space-8 px-space-12 w-full mt-auto">
-        <p className="text-ink-muted md:text-ink text-stat-desc-mobile md:text-card-desc-mobile md:font-normal tracking-widest md:tracking-normal font-mulish">
+        <p className="text-ink-muted leading-space-16 md:text-ink text-stat-desc-mobile md:text-card-desc-mobile md:font-normal tracking-widest md:tracking-normal font-mulish">
           {subDescription}
         </p>
       </div>

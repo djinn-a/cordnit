@@ -173,14 +173,14 @@ export function SplitFeatureMedia({
                   )}
                   <div className="flex flex-col gap-space-2 md:gap-space-4 w-full pt-space-2 md:pt-0.5">
                     {(mediaStyle === "numbered-steps" && card.stepNumber && card.stepNumber.length > 3) && (
-                      <span className="text-help-card-prefix text-ink-muted md:text-link-desktop md:font-normal font-mulish mb-space-4 md:mb-space-8 uppercase">
+                      <span className="text-help-card-prefix text-primary md:help-card-prefix  md:help-card-prefix font-mulish mb-space-4 md:mb-space-8 uppercase">
                         {card.stepNumber}
                       </span>
                     )}
-                    <h3 className="text-section-title-head-mobile text-ink md:text-footer-heading-desktop md:font-bold md:leading-normal uppercase font-mulish">
+                    <h3 className="text-text-card-desc text-ink md:link-desktop md:font-bold md:leading-normal uppercase font-mulish">
                       {card.title}
                     </h3>
-                    <p className="text-stat-desc-mobile md:text-card-desc-mobile lg:text-card-desc text-ink-muted md:font-normal font-mulish">
+                    <p className="text-stat-desc-mobile md:text-card-desc-mobile lg:help-card-prefix text-ink-muted md:font-normal font-mulish">
                       {card.description}
                     </p>
                   </div>
