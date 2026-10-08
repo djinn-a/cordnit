@@ -34,6 +34,7 @@ async function BlockData({ params }: { params: Params }) {
     <BlockEditor
       data={{
         id: block.id,
+        key: block.key,
         name: block.name,
         typeLabel: SECTION_CATALOG[block.type].label,
         content: block.content,

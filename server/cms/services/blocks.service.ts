@@ -1,8 +1,8 @@
 import "server-only";
 import { and, count, desc, eq, sql } from "drizzle-orm";
 import type { z } from "zod";
-import { slugToPath } from "@/lib/cms/document";
-import type { blockRefSchema, convertToBlockSchema, updateBlockSchema } from "@/lib/cms/inputs";
+import { SITE_FOOTER_BLOCK_KEY, SITE_NAVBAR_BLOCK_KEY, slugToPath } from "@/lib/cms/document";
+import type { blockRefSchema, convertToBlockSchema, restoreBlockVersionSchema, updateBlockSchema } from "@/lib/cms/inputs";
 import { mergeSectionProps } from "@/lib/cms/registry/props";
 import { db, type Transaction } from "@/server/db/client";
 import { globalBlockVersions, globalBlocks, pageSections, pages, type GlobalBlockRow } from "@/server/db/schema";
@@ -11,6 +11,7 @@ import { recordAudit } from "../audit";
 import { touchPage } from "../locking";
 import { sectionsRepo } from "../repositories/sections.repo";
 import { parseSectionContent } from "../validation";
+import { isPageSectionType } from "@/lib/cms/types";
 
 export async function listBlocks() {
   const usage = db()
@@ -87,6 +88,7 @@ export async function convertSectionToBlock(input: z.output<typeof convertToBloc
   return db().transaction(async (tx) => {
     const page = await touchPage(tx, input.pageId, input.lockVersion, actorId);
     const section = await sectionsRepo.findInPage(tx, page.id, input.sectionId);
+    if (!isPageSectionType(section.type)) throw errors.validation("Site Navbar and Site Footer are managed by the site layout.");
     if (section.globalBlockId) throw errors.validation("This section is already a Global Block.");
     const [created] = await tx
       .insert(globalBlocks)
@@ -162,9 +164,45 @@ export async function publishBlock(input: z.output<typeof blockRefSchema>, actor
   });
 }
 
+/** Restores only site chrome blocks, then uses the normal publish path to create a new version. */
+export async function restoreBlockVersion(input: z.output<typeof restoreBlockVersionSchema>, actorId: string) {
+  return db().transaction(async (tx) => {
+    const current = await touchBlock(tx, input.blockId, input.lockVersion);
+    const isNavbar = current.key === SITE_NAVBAR_BLOCK_KEY && current.type === "navbar";
+    const isFooter = current.key === SITE_FOOTER_BLOCK_KEY && current.type === "footer";
+    if (!isNavbar && !isFooter) throw errors.validation("Version restore is available only for the site Navbar and Footer.");
+
+    const [target] = await tx
+      .select({ content: globalBlockVersions.content, systemProps: globalBlockVersions.systemProps })
+      .from(globalBlockVersions)
+      .where(and(eq(globalBlockVersions.blockId, current.id), eq(globalBlockVersions.version, input.version)));
+    if (!target) throw errors.notFound(`Global Block version ${input.version}`);
+
+    // Re-validate historical content against today's schema before publishing it.
+    const content = parseSectionContent(current.type, target.content);
+    const [draft] = await tx
+      .update(globalBlocks)
+      .set({ content, systemProps: target.systemProps, hasUnpublishedChanges: true, updatedBy: actorId })
+      .where(eq(globalBlocks.id, current.id))
+      .returning();
+    const block = await publishBlockTx(tx, draft, actorId, `Restored from v${input.version}`);
+    await recordAudit(tx, {
+      actorId,
+      action: "block.restore",
+      entityType: "block",
+      entityId: block.id,
+      summary: `Restored Global Block "${block.name}" from v${input.version} as v${block.publishedVersion}`,
+    });
+    return block;
+  });
+}
+
 export async function deleteBlock(input: z.output<typeof blockRefSchema>, actorId: string) {
   return db().transaction(async (tx) => {
     const current = await touchBlock(tx, input.blockId, input.lockVersion);
+    if (current.key === SITE_NAVBAR_BLOCK_KEY || current.key === SITE_FOOTER_BLOCK_KEY) {
+      throw errors.validation("Site Navbar and Site Footer blocks are managed by the site layout and cannot be deleted.");
+    }
     const used = await tx
       .selectDistinct({ slug: pages.slug })
       .from(pageSections)

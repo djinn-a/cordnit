@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { SECTION_TYPES, isSectionType, type SectionType } from "../types";
+import { SECTION_TYPES, isPageSectionType, isSectionType, type SectionType } from "../types";
 import { SECTION_CATALOG, SECTION_CATEGORIES, type SectionCatalogEntry } from "./catalog";
 import { sectionContentSchemas, type SectionContentMap } from "./schemas.generated";
 
-export { SECTION_CATALOG, SECTION_CATEGORIES, SECTION_TYPES, isSectionType, sectionContentSchemas };
+export { SECTION_CATALOG, SECTION_CATEGORIES, SECTION_TYPES, isPageSectionType, isSectionType, sectionContentSchemas };
 export type { SectionCatalogEntry, SectionContentMap, SectionType };
 export { mergeSectionProps, splitSectionProps, stripItemIds, ITEM_ID_KEY } from "./props";
 
@@ -30,5 +30,6 @@ export function getContentJsonSchema(type: SectionType): ContentJsonSchema {
 export type SectionTypeOption = SectionCatalogEntry & { type: SectionType };
 
 export function listSectionTypeOptions(): SectionTypeOption[] {
-  return SECTION_TYPES.map((type) => ({ type, ...SECTION_CATALOG[type] }));
+  // These use the Global Blocks editor, not the page section picker.
+  return SECTION_TYPES.filter(isPageSectionType).map((type) => ({ type, ...SECTION_CATALOG[type] }));
 }

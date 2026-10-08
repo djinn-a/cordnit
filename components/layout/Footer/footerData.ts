@@ -1,3 +1,8 @@
+import type { SectionContentMap } from "@/lib/cms/registry";
+
+// CMS-editable copy/link shape comes from the same schema used by the admin form.
+export type FooterCmsContent = SectionContentMap["footer"];
+
 export const FOOTER_NAV_COLUMNS = [
   {
     id: "solution",

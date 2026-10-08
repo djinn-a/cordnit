@@ -1,7 +1,5 @@
 "use client";
 
-import { Tooltip } from "antd";
-
 const UNITS: [Intl.RelativeTimeFormatUnit, number][] = [
   ["year", 31_536_000],
   ["month", 2_592_000],
@@ -27,10 +25,8 @@ export default function RelativeTime({ value }: Readonly<{ value: Date | string 
   const date = value instanceof Date ? value : new Date(value);
   if (Number.isNaN(date.getTime())) return <span>—</span>;
   return (
-    <Tooltip title={full.format(date)}>
-      <time dateTime={date.toISOString()} suppressHydrationWarning>
-        {formatRelative(date)}
-      </time>
-    </Tooltip>
+    <time dateTime={date.toISOString()} title={full.format(date)} suppressHydrationWarning>
+      {formatRelative(date)}
+    </time>
   );
 }

@@ -6,7 +6,7 @@ import type {
   SectionProps,
 } from "@/lib/cms/document";
 import { mergeSectionProps } from "@/lib/cms/registry/props";
-import { isSectionType } from "@/lib/cms/types";
+import { isPageSectionType } from "@/lib/cms/types";
 import type { PageRow, PageSectionRow, SectionSource } from "@/server/db/schema";
 
 type BlockPropsLookup = (blockId: string) => SectionProps | null | undefined;
@@ -24,7 +24,7 @@ export function buildDocument(
 ): PublishedPageDocument {
   const nodes: SectionNode[] = [];
   for (const s of sections) {
-    if (s.isHidden || !isSectionType(s.type)) continue;
+    if (s.isHidden || !isPageSectionType(s.type)) continue;
     if (s.globalBlockId) {
       if (resolveBlock) {
         const props = resolveBlock(s.globalBlockId);
