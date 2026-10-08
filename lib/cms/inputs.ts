@@ -11,6 +11,7 @@ export const RESERVED_SLUG_ROOTS = [
   "_next",
   "breach",
   "privacy",
+  "privacy-policy",
   "cms-404",
   "sitemap.xml",
   "robots.txt",
@@ -150,6 +151,10 @@ export const updateBlockSchema = z.object({
 });
 
 export const blockRefSchema = z.object({ blockId: uuidSchema, lockVersion: lockVersionSchema });
+
+export const restoreBlockVersionSchema = blockRefSchema.extend({
+  version: z.number().int().positive(),
+});
 
 export const saveTemplateSchema = z.object({
   pageId: uuidSchema,

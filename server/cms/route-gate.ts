@@ -23,7 +23,7 @@ const MAX_SLUG_LENGTH = 200;
 /** Roots served by their own handlers; the gate never decides for them. */
 const BYPASS_ROOTS = new Set(["_next", "api", "admin", "preview"]);
 /** Code-owned pages under reserved roots. Any other path under a reserved root is a 404. */
-const APP_PAGES = new Set(["/breach", "/privacy", "/cms-404"]);
+const APP_PAGES = new Set(["/breach", "/privacy", "/privacy-policy", "/cms-404"]);
 const REDIRECT_STATUSES = new Set<number>([301, 302, 307, 308]);
 
 const BYPASS: RouteDecision = { kind: "bypass" };

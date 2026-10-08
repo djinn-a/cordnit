@@ -88,5 +88,9 @@ export function slugToSegments(slug: string): string[] {
 
 export const pageTag = (slug: string) => `cms:page:${slug}`;
 export const blockTag = (blockId: string) => `cms:block:${blockId}`;
+export const blockKeyTag = (key: string) => `cms:block-key:${key}`;
+// Stable keys connect existing Global Blocks to the site shell without creating a parallel CMS.
+export const SITE_NAVBAR_BLOCK_KEY = "site-navbar";
+export const SITE_FOOTER_BLOCK_KEY = "site-footer";
 export const PAGES_LIST_TAG = "cms:pages";
 export const REDIRECTS_TAG = "cms:redirects";
