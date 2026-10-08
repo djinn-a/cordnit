@@ -5,7 +5,7 @@ import { useContactModal } from "../../features/contact/ContactModal/ContactModa
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
-import { navbarContent } from "./navbarContent";
+import { navbarContent, type NavbarCmsContent } from "./navbarContent";
 import MegaMenu from "./MegaMenu";
 import { Button } from "@/components/ui";
 import { Suspense, useEffect, useCallback } from "react";
@@ -19,7 +19,16 @@ function RouteChangeDetector({ onChange }: { onChange: () => void }) {
   return null;
 }
 
-export default function Navbar() {
+function BrandMark({ href, alt, className }: { href: string; alt: string; className: string }) {
+  const image = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={getImageUrl("/CordinitHorizontal%204.svg")} alt={alt} className={className} />
+  );
+  // A missing CMS destination must not fall back to a hardcoded home redirect.
+  return href ? <Link href={href} className="flex items-center">{image}</Link> : <span className="flex items-center">{image}</span>;
+}
+
+export default function Navbar({ content }: Readonly<{ content?: NavbarCmsContent }>) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [activeDesktopMenu, setActiveDesktopMenu] = useState<string | null>(
@@ -27,6 +36,29 @@ export default function Navbar() {
   );
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { openModal } = useContactModal();
+  const navLinks: NavbarCmsContent["navLinks"] = content?.navLinks ?? navbarContent.navLinks.map((link, index) => ({
+    _id: `fallback-${index}`,
+    label: link.label,
+    href: "",
+    kind: link.label === "Solutions" ? "solutions" : "link",
+  }));
+  const solutions = content
+    ? content.solutionsDropdown.map((item) => {
+        // Match only to code-owned visual assets; CMS values never choose an icon.
+        const visual = navbarContent.solutionsDropdown.find((candidate) => candidate.slug === item.slug);
+        return {
+          ...item,
+          icon: visual?.icon,
+          iconColor: visual?.iconColor ?? "",
+          iconBg: visual?.iconBg ?? "",
+        };
+      })
+    : navbarContent.solutionsDropdown.map((item, index) => ({ ...item, _id: `fallback-${index}`, slug: "" }));
+  const megaMenu = content?.megaMenu ?? { ...navbarContent.megaMenu, exploreAllHref: "" };
+  const logoHref = content?.logoHref ?? "";
+  const getInTouchLabel = content?.getInTouchLabel ?? navbarContent.getInTouchLabel;
+  const logoAltText = content?.logoAltText ?? navbarContent.logoAltText;
+  const mobileMenuToggleAriaLabel = content?.mobileMenuToggleAriaLabel ?? navbarContent.mobileMenuToggleAriaLabel;
 
   const handleRouteChange = useCallback(() => {
     setIsMobileMenuOpen(false);
@@ -72,20 +104,13 @@ export default function Navbar() {
       {/* Mobile Navbar */}
       <div className="lg:hidden flex items-center justify-between px-4 sm:px-6 py-3">
         {/* Mobile Logo */}
-        <Link href="/" className="flex items-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={getImageUrl("/CordinitHorizontal%204.svg")}
-            alt={navbarContent.logoAltText}
-            className="h-12 w-auto"
-          />
-        </Link>
+        <BrandMark href={logoHref} alt={logoAltText} className="h-12 w-auto" />
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 -mr-2 text-white transition-colors"
-          aria-label={navbarContent.mobileMenuToggleAriaLabel}
+          aria-label={mobileMenuToggleAriaLabel}
         >
           {isMobileMenuOpen ? (
             <X className="h-7 w-7" />
@@ -102,43 +127,35 @@ export default function Navbar() {
           <div className="flex items-center gap-16">
             {/* Desktop Logo */}
             <div className="shrink-0 flex items-center">
-              <Link href="/" className="flex items-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={getImageUrl("/CordinitHorizontal%204.svg")}
-                  alt={navbarContent.logoAltText}
-                  className="h-16 w-auto"
-                />
-              </Link>
+              <BrandMark href={logoHref} alt={logoAltText} className="h-16 w-auto" />
             </div>
 
             {/* Desktop Navigation */}
             <div className="flex items-center gap-6">
-              {navbarContent.navLinks.map((link) => {
-                if (link.label === "Solutions") {
+              {navLinks.map((link) => {
+                if (link.kind === "solutions") {
                   const isOpen = activeDesktopMenu === "Solutions";
                   return (
                     <div
-                      key={link.label}
+                      key={link._id}
                       className="h-20 flex items-center"
                       onMouseEnter={() => handleMenuEnter("Solutions")}
                       onMouseLeave={handleMenuLeave}
                     >
-                      <Link
-                        href={link.href}
-                        className="text-white hover:text-white/80 font-semibold text-base transition-colors flex items-center gap-1.5 py-6"
-                        onClick={handleLinkClick}
-                      >
-                        {link.label}
-                        <ChevronDown
-                          className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                        />
-                      </Link>
+                      {link.href ? (
+                        <Link href={link.href} className="text-white hover:text-white/80 font-semibold text-base transition-colors flex items-center gap-1.5 py-6" onClick={handleLinkClick}>
+                          {link.label}<ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                        </Link>
+                      ) : (
+                        <button type="button" className="text-white hover:text-white/80 font-semibold text-base transition-colors flex items-center gap-1.5 py-6" onClick={() => setActiveDesktopMenu(isOpen ? null : "Solutions")}>
+                          {link.label}<ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                        </button>
+                      )}
 
                       {/* Mega Menu Dropdown */}
                       <MegaMenu
-                        content={navbarContent.megaMenu}
-                        solutions={navbarContent.solutionsDropdown}
+                        content={megaMenu}
+                        solutions={solutions}
                         isOpen={isOpen}
                         onLinkClick={handleLinkClick}
                       />
@@ -146,14 +163,10 @@ export default function Navbar() {
                   );
                 }
 
-                return (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="text-white hover:text-white/80 font-semibold text-base transition-colors py-6 flex items-center"
-                  >
-                    {link.label}
-                  </Link>
+                return link.href ? (
+                  <Link key={link._id} href={link.href} className="text-white hover:text-white/80 font-semibold text-base transition-colors py-6 flex items-center">{link.label}</Link>
+                ) : (
+                  <span key={link._id} className="text-white/70 font-semibold text-base py-6 flex items-center">{link.label}</span>
                 );
               })}
             </div>
@@ -167,7 +180,7 @@ export default function Navbar() {
               className="rounded-lg px-6 py-2 text-sm"
               rightIcon={<ArrowRight className="h-4 w-4" />}
             >
-              {navbarContent.getInTouchLabel}
+              {getInTouchLabel}
             </Button>
           </div>
         </div>
@@ -184,11 +197,11 @@ export default function Navbar() {
           }`}
         >
           <div className="px-6 py-6 pb-10 flex flex-col">
-            {navbarContent.navLinks.map((link) => {
-              if (link.label === "Solutions") {
+            {navLinks.map((link) => {
+              if (link.kind === "solutions") {
                 return (
                   <div
-                    key={link.label}
+                    key={link._id}
                     className="border-b border-white/20 flex flex-col"
                   >
                     <button
@@ -208,24 +221,11 @@ export default function Navbar() {
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileSolutionsOpen ? "max-h-125 opacity-100 mb-4" : "max-h-0 opacity-0"}`}
                     >
                       <div className="flex flex-col gap-4 pl-4 pt-2">
-                        {navbarContent.solutionsDropdown.map((solution) => (
-                          <Link
-                            key={solution.slug}
-                            href={`/${solution.slug}`}
-                            className="text-white/90 hover:text-white font-medium text-base transition-colors"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {solution.title}
-                          </Link>
+                        {solutions.map((solution) => (
+                          solution.slug ? <Link key={solution._id} href={`/${solution.slug}`} className="text-white/90 hover:text-white font-medium text-base transition-colors" onClick={() => setIsMobileMenuOpen(false)}>{solution.title}</Link>
+                            : <span key={solution._id} className="text-white/60 font-medium text-base">{solution.title}</span>
                         ))}
-                        <Link
-                          href={navbarContent.megaMenu.exploreAllHref}
-                          className="text-white font-bold text-base flex items-center mt-2 hover:opacity-80 transition-opacity"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {navbarContent.megaMenu.exploreAllLabel}{" "}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
+                        {megaMenu.exploreAllHref ? <Link href={megaMenu.exploreAllHref} className="text-white font-bold text-base flex items-center mt-2 hover:opacity-80 transition-opacity" onClick={() => setIsMobileMenuOpen(false)}>{megaMenu.exploreAllLabel}<ArrowRight className="ml-2 h-4 w-4" /></Link> : <span className="text-white/60 font-bold text-base mt-2">{megaMenu.exploreAllLabel}</span>}
                       </div>
                     </div>
                   </div>
@@ -233,8 +233,8 @@ export default function Navbar() {
               }
 
               return (
-                <div key={link.label} className="border-b border-white/20">
-                  <Link
+                <div key={link._id} className="border-b border-white/20">
+                  {link.href ? <Link
                     href={link.href}
                     className="flex items-center justify-between py-4 text-white hover:text-white/80 font-medium text-lg transition-colors"
                     onClick={() => {
@@ -242,7 +242,7 @@ export default function Navbar() {
                     }}
                   >
                     {link.label}
-                  </Link>
+                  </Link> : <span className="flex items-center justify-between py-4 text-white/60 font-medium text-lg">{link.label}</span>}
                 </div>
               );
             })}
@@ -257,7 +257,7 @@ export default function Navbar() {
                 className="rounded-lg px-6 py-3"
                 rightIcon={<ArrowRight className="h-4 w-4" />}
               >
-                {navbarContent.getInTouchLabel}
+                {getInTouchLabel}
               </Button>
             </div>
           </div>

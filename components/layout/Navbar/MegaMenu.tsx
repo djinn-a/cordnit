@@ -22,24 +22,28 @@ export default function MegaMenu({ content, solutions, isOpen, onLinkClick }: Re
           <p className={`text-white font-medium leading-relaxed mb-8 opacity-90 ${styles.text15}`}>
             {content.leftPanelDescription}
           </p>
-          <Link href={content.exploreAllHref} onClick={onLinkClick} className={`flex items-center text-white font-bold uppercase tracking-widest hover:opacity-80 transition-opacity mt-auto ${styles.text11}`}>
-            {content.exploreAllLabel} <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+          {content.exploreAllHref ? (
+            <Link href={content.exploreAllHref} onClick={onLinkClick} className={`flex items-center text-white font-bold uppercase tracking-widest hover:opacity-80 transition-opacity mt-auto ${styles.text11}`}>
+              {content.exploreAllLabel} <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          ) : <span className={`flex items-center text-white/60 font-bold uppercase tracking-widest mt-auto ${styles.text11}`}>{content.exploreAllLabel}</span>}
         </div>
 
         {/* Right Panel */}
         <div className={`py-12 pl-12 grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 ${styles.megaMenuRightPanel}`}>
-          {solutions.map((item, idx) => (
-            <Link href={`/${item.slug}`} key={idx} onClick={onLinkClick} className="group/item flex flex-col items-start hover:opacity-80 transition-opacity">
-              <div className={`w-10 h-10 rounded flex items-center justify-center mb-4 ${item.iconBg}`}>
-                <item.icon className={`h-5 w-5 ${item.iconColor}`} />
-              </div>
-              <h4 className={`text-white font-semibold mb-2 ${styles.text15}`}>{item.title}</h4>
-              <p className={`text-white/70 leading-relaxed ${styles.text13}`}>
-                {item.description}
-              </p>
-            </Link>
-          ))}
+          {solutions.map((item) => {
+            const key = item._id ?? item.slug ?? item.title;
+            const card = (
+              <>
+                {item.icon && <div className={`w-10 h-10 rounded flex items-center justify-center mb-4 ${item.iconBg}`}><item.icon className={`h-5 w-5 ${item.iconColor}`} /></div>}
+                <h4 className={`text-white font-semibold mb-2 ${styles.text15}`}>{item.title}</h4>
+                <p className={`text-white/70 leading-relaxed ${styles.text13}`}>{item.description}</p>
+              </>
+            );
+            return item.slug
+              ? <Link href={`/${item.slug}`} key={key} onClick={onLinkClick} className="group/item flex flex-col items-start hover:opacity-80 transition-opacity">{card}</Link>
+              : <div key={key} className="group/item flex flex-col items-start opacity-70">{card}</div>;
+          })}
         </div>
 
       </div>
