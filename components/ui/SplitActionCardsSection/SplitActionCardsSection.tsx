@@ -26,7 +26,7 @@ export default function SplitActionCardsSection({ data }: SplitActionCardsSectio
       <div className="mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row items-start justify-between gap-space-40 lg:gap-space-56">
         
         {/* Left Content Block */}
-        <div className="flex flex-col gap-space-20 w-full lg:max-w-[480px] xl:max-w-[540px] flex-shrink-0">
+        <div className="flex flex-col gap-space-20 w-full lg:max-w-[480px] xl:max-w-[540px] shrink-0">
           <div className="flex flex-col gap-space-16">
             <p className="text-eyebrow-mobile lg:text-page-hero-eyebrow text-brand-primary uppercase tracking-wider">
               {data.eyebrow}
@@ -48,7 +48,7 @@ export default function SplitActionCardsSection({ data }: SplitActionCardsSectio
             
             {data.supportingText && (
               <div className="flex items-center gap-space-8">
-                <Check className="w-4 h-4 text-brand-primary flex-shrink-0" />
+                <Check className="w-4 h-4 text-brand-primary shrink-0" />
                 <p className="text-[12px] font-semibold text-ink-subtle">
                   {data.supportingText}
                 </p>
