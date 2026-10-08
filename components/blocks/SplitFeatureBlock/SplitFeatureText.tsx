@@ -58,8 +58,8 @@ export function SplitFeatureText({
                 <span
                   className={
                     textFeatureStyle === "cards"
-                      ? "text-stat-desc-mobile md:text-help-card-desc-mobile md:font-normal text-ink-muted font-mulish"
-                      : "text-card-desc-mobile md:text-help-card-desc-mobile md:font-normal text-ink font-mulish"
+                      ? "text-stat-desc-mobile md:text-[16px] md:text-help-card-desc-mobile md:font-normal text-ink-muted font-mulish"
+                      : "text-card-desc-mobile md:text-[16px] md:text-help-card-desc-mobile md:font-normal text-ink font-mulish"
                   }
                 >
                   {feature.text}
