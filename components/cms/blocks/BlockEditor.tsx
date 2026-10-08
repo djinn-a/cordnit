@@ -1,11 +1,11 @@
 "use client";
 
-import { ArrowLeftOutlined, CloudUploadOutlined, DeleteOutlined, UndoOutlined } from "@ant-design/icons";
+import { ArrowLeftOutlined, CloudUploadOutlined, DeleteOutlined, RollbackOutlined, UndoOutlined } from "@ant-design/icons";
 import { Alert, App, Button, Card, Empty, Flex, Form, Input, Space, Tag, Typography } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 import { slugToPath } from "@/lib/cms/document";
-import { deleteBlockAction, publishBlockAction, updateBlockAction } from "@/server/actions/blocks";
+import { deleteBlockAction, publishBlockAction, restoreBlockVersionAction, updateBlockAction } from "@/server/actions/blocks";
 import SchemaForm, { type JsonSchemaNode } from "../form/SchemaForm";
 import { useCmsAction } from "../hooks/useCmsAction";
 import { applyFieldErrors } from "../shared/form-errors";
@@ -15,6 +15,7 @@ import RelativeTime from "../shared/RelativeTime";
 
 export type BlockEditorData = {
   id: string;
+  key: string;
   name: string;
   typeLabel: string;
   content: Record<string, unknown>;
@@ -51,7 +52,7 @@ export default function BlockEditor({ data }: Readonly<{ data: BlockEditorData }
     const r = await run(
       updateBlockAction,
       { blockId: data.id, lockVersion, name: name.trim() || data.name, content: form.getFieldsValue(true) },
-      { success: "Saved. Publish to update every page.", silentValidation: true },
+      { success: data.key === "site-navbar" || data.key === "site-footer" ? "Saved. Publish to update the site." : "Saved. Publish to update every page.", silentValidation: true },
     );
     if (r.ok) {
       setLockVersion(r.data.lockVersion);
@@ -63,12 +64,36 @@ export default function BlockEditor({ data }: Readonly<{ data: BlockEditorData }
   }
 
   async function publish() {
-    const r = await run(publishBlockAction, { blockId: data.id, lockVersion }, { success: `Published. ${data.usages.length} page(s) updated.` });
+    const siteWide = data.key === "site-navbar" || data.key === "site-footer";
+    const r = await run(publishBlockAction, { blockId: data.id, lockVersion }, { success: siteWide ? "Published site-wide." : `Published. ${data.usages.length} page(s) updated.` });
     if (r.ok) {
       setLockVersion(r.data.lockVersion);
       setUnpublished(false);
     }
   }
+
+  function confirmRestore(version: number) {
+    modal.confirm({
+      title: `Restore version ${version}?`,
+      content: "This immediately publishes that snapshot as a new version and replaces the current draft. Existing history is kept.",
+      okText: "Restore and publish",
+      onOk: async () => {
+        const result = await run(
+          restoreBlockVersionAction,
+          { blockId: data.id, lockVersion, version },
+          { success: `Restored v${version} as v${(data.publishedVersion ?? 0) + 1}.` },
+        );
+        if (result.ok) {
+          setLockVersion(result.data.lockVersion);
+          form.setFieldsValue(result.data.content);
+          setDirty(false);
+          setUnpublished(false);
+        }
+      },
+    });
+  }
+
+  const isSiteChrome = data.key === "site-navbar" || data.key === "site-footer";
 
   return (
     <>
@@ -86,8 +111,8 @@ export default function BlockEditor({ data }: Readonly<{ data: BlockEditorData }
             <Button
               danger
               icon={<DeleteOutlined />}
-              disabled={data.usages.length > 0}
-              title={data.usages.length ? "Remove or detach it from every page first" : undefined}
+              disabled={data.usages.length > 0 || isSiteChrome}
+              title={isSiteChrome ? "Site chrome is managed by the site layout" : data.usages.length ? "Remove or detach it from every page first" : undefined}
               onClick={() =>
                 modal.confirm({
                   title: `Delete “${data.name}”?`,
@@ -100,7 +125,7 @@ export default function BlockEditor({ data }: Readonly<{ data: BlockEditorData }
               Delete
             </Button>
             <Button type="primary" icon={<CloudUploadOutlined />} onClick={publish} disabled={isDirty || !unpublished} loading={pending}>
-              Publish to all pages
+              {isSiteChrome ? "Publish site-wide" : "Publish to all pages"}
             </Button>
           </>
         }
@@ -149,8 +174,22 @@ export default function BlockEditor({ data }: Readonly<{ data: BlockEditorData }
                 rowKey={(v) => v.version}
                 renderItem={(v) => (
                   <>
-                    <span>v{v.version}</span>
-                    <RelativeTime value={v.createdAt} />
+                    <div style={{ minWidth: 0 }}>
+                      <Typography.Text strong style={{ display: "block" }}>Version {v.version}</Typography.Text>
+                      <Typography.Text type="secondary" style={{ display: "block", fontSize: 12 }}>
+                        <RelativeTime value={v.createdAt} />
+                      </Typography.Text>
+                    </div>
+                    {isSiteChrome && (v.version !== data.publishedVersion || unpublished) ? (
+                      <Button
+                        size="small"
+                        icon={<RollbackOutlined />}
+                        disabled={isDirty || pending}
+                        onClick={() => confirmRestore(v.version)}
+                      >
+                        Restore
+                      </Button>
+                    ) : v.version === data.publishedVersion ? <Tag color="green">Live</Tag> : null}
                   </>
                 )}
               />

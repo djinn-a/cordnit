@@ -6,13 +6,11 @@ import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui";
 import { HoneypotField } from "@/components/ui/HoneypotField";
 import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
-import { FOOTER_NEWSLETTER } from "./footerData";
-import { defaultNewsletterContent } from "@/components/features/newsletter/NewsletterModal/newsletterContent";
+import type { FooterCmsContent } from "./footerData";
 import { useAnalyticsVisibility } from "@/lib/analytics/useAnalyticsVisibility";
 
-export default function FooterNewsletter() {
+export default function FooterNewsletter({ content }: Readonly<{ content: FooterCmsContent["newsletter"] }>) {
   const formRef = useAnalyticsVisibility('newsletter_view', { location: 'newsletter-footer' });
-  const { form } = defaultNewsletterContent;
   const { email, consent, status, errors, submitError, honeypotProps, onEmailChange, onConsentChange, handleSubmit } =
     useNewsletterSubscribe("Footer Newsletter");
   const isSubmitting = status === "submitting";
@@ -20,21 +18,21 @@ export default function FooterNewsletter() {
   return (
     <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10 w-full lg:w-auto mx-auto lg:ml-auto lg:mr-0 max-w-3xl">
       <div className="flex flex-col max-w-70">
-        <h4 className="text-ink text-h4 mb-1 max-lg:text-link-mobile">{FOOTER_NEWSLETTER.heading}</h4>
+        <h4 className="text-ink text-h4 mb-1 max-lg:text-link-mobile">{content.heading}</h4>
         <p className="text-ink-muted text-card-desc max-lg:text-section-subtitle-mobile">
-          {FOOTER_NEWSLETTER.description}
+          {content.description}
         </p>
       </div>
       {status === "success" ? (
         <p role="status" className="flex items-center gap-2 text-body-sm text-ink">
           <CheckCircle2 className="w-5 h-5 text-success shrink-0" aria-hidden="true" />
-          Thanks for subscribing.
+          {content.successText}
         </p>
       ) : (
         <form
           ref={formRef}
           className="relative flex flex-col gap-2 w-full lg:w-auto"
-          aria-label="Newsletter subscription form"
+          aria-label={content.formLabel}
           onSubmit={handleSubmit}
           noValidate
         >
@@ -47,15 +45,15 @@ export default function FooterNewsletter() {
               maxLength={254}
               value={email}
               onChange={onEmailChange}
-              placeholder={FOOTER_NEWSLETTER.placeholder}
-              aria-label="Work email address"
+              placeholder={content.placeholder}
+              aria-label={content.emailLabel}
               aria-invalid={Boolean(errors.email)}
               aria-describedby={errors.email ? "footer-newsletter-email-error" : undefined}
               required
               className={`border rounded-btn px-3 lg:px-4 py-2.5 text-body-sm max-lg:text-card-detail-mobile flex-1 lg:flex-none lg:w-60 focus:outline-none focus:ring-1 focus:ring-primary shadow-sm min-w-0 ${errors.email ? "border-error" : "border-border-subtle"}`}
             />
             <Button type="submit" variant="primary" size="md" disabled={isSubmitting} className="max-lg:text-link-card-mobile">
-              {isSubmitting ? "Subscribing..." : form.buttonText}
+              {isSubmitting ? content.submittingText : content.buttonText}
             </Button>
           </div>
           {errors.email && (
@@ -72,7 +70,8 @@ export default function FooterNewsletter() {
               className="mt-0.5 w-3.5 h-3.5 rounded border-gray-300 text-primary focus:ring-primary shrink-0"
             />
             <span>
-              {form.consentText} See our <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
+              {content.consentText}{" "}
+              {content.privacyLinkHref ? <Link href={content.privacyLinkHref} className="text-primary hover:underline">{content.privacyLinkLabel}</Link> : <span>{content.privacyLinkLabel}</span>}.
             </span>
           </label>
           {errors.consent && <p className="text-[12px] text-error">{errors.consent}</p>}
