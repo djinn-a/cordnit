@@ -24,7 +24,7 @@ export type PageHeroProps = {
 
 export default function PageHero({ data }: PageHeroProps) {
   return (
-    <section className="w-full flex flex-col gap-space-24 md:gap-space-80">
+    <section className="w-full flex flex-col gap-space-24 md:gap-space-40">
       {/* Content Section */}
       <div className="w-full">
         <PageHeroContent
