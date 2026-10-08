@@ -83,4 +83,6 @@ export const SECTION_CATALOG: Record<SectionType, SectionCatalogEntry> = {
   newsletter: { label: "Newsletter", category: "Conversion", description: "Newsletter signup banner." },
 
   breadcrumb: { label: "Breadcrumb", category: "Navigation", description: "Breadcrumb trail." },
+  navbar: { label: "Site Navbar", category: "Navigation", description: "Site-wide navigation content." },
+  footer: { label: "Site Footer", category: "Navigation", description: "Site-wide footer content." },
 };

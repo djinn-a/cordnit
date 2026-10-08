@@ -59,14 +59,22 @@ export const SECTION_TYPES = [
   "journeyStepsBlock",
   "leadQualificationBlock",
   "newsletter",
+  "navbar",
+  "footer",
 ] as const;
 
 export type SectionType = (typeof SECTION_TYPES)[number];
+export type PageSectionType = Exclude<SectionType, "navbar" | "footer">;
 
 const SECTION_TYPE_SET: ReadonlySet<string> = new Set(SECTION_TYPES);
 
-export function isSectionType(value: unknown): value is SectionType {
-  return typeof value === "string" && SECTION_TYPE_SET.has(value);
+export function isSectionType(value: string): value is SectionType {
+  return SECTION_TYPE_SET.has(value);
 }
 
-export type SectionComponent = ComponentType<Record<string, unknown>>;
+/** Site chrome uses Global Blocks but must never be inserted into page content. */
+export function isPageSectionType(value: string): value is PageSectionType {
+  return isSectionType(value) && value !== "navbar" && value !== "footer";
+}
+
+export type SectionComponent = ComponentType<object>;

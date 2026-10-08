@@ -1,4 +1,4 @@
-import type { SectionComponent, SectionType } from "./types";
+import type { PageSectionType, SectionComponent } from "./types";
 import { WhyChooseSection } from "@/components/ui/WhyChooseSection";
 
 import HeroSection from "@/components/features/home/HeroSection/HeroSection";
@@ -39,7 +39,7 @@ import NewsletterSection from "@/components/ui/NewsletterSection/NewsletterSecti
 
 /** Section type -> component. Adding a type: extend SECTION_TYPES, this map and the catalog. */
 
-export const componentMap: Record<SectionType, SectionComponent> = {
+export const componentMap: Record<PageSectionType, SectionComponent> = {
   hero: HeroSection as SectionComponent,
   help: HelpSection as SectionComponent,
   insights: InsightsSection as SectionComponent,
