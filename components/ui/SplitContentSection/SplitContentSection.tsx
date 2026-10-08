@@ -37,7 +37,7 @@ export default function SplitContentSection({ data }: Readonly<SplitContentSecti
             <p className="text-eyebrow-mobile lg:text-page-hero-eyebrow uppercase text-brand-primary tracking-wider">
               {data.eyebrow}
             </p>
-            <h2 className="text-section-title-mobile md:text-card-title lg:text-split-section-title text-ink font-mulish">
+            <h2 className="text-section-title-mobile md:text-card-title lg:text-split-section-title text-ink leading-space-68 font-mulish">
               {data.title}
             </h2>
             <div className="flex flex-col gap-space-24">
