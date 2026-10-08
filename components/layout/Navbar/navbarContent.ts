@@ -1,4 +1,5 @@
-import { Shield, Cloud, Brain, Code, Database, Briefcase, LucideIcon } from 'lucide-react';
+import { Shield, Cloud, Brain, Code, Database, Briefcase, type LucideIcon } from 'lucide-react';
+import type { SectionContentMap } from '@/lib/cms/registry';
 
 export type NavLink = {
   label: string;
@@ -6,9 +7,10 @@ export type NavLink = {
 };
 
 export type SolutionItem = {
+  _id?: string;
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
   iconColor: string;
   iconBg: string;
   slug: string;
@@ -29,6 +31,9 @@ export type NavbarContent = {
   logoAltText: string;
   mobileMenuToggleAriaLabel: string;
 };
+
+// Keep the CMS contract derived from the editor schema to prevent type drift.
+export type NavbarCmsContent = SectionContentMap["navbar"];
 
 export const navbarContent: NavbarContent = {
   navLinks: [
