@@ -10,7 +10,7 @@ export default function CredentialsSectionHeader({
   subtitle,
 }: CredentialsSectionHeaderProps) {
   return (
-    <div className="flex flex-col gap-space-16 lg:gap-space-24 w-full">
+    <div className="flex flex-col gap-space-16 lg:gap-space-16 w-full">
       <p className="text-eyebrow-mobile lg:text-page-hero-eyebrow text-brand-primary uppercase tracking-wider">
         {eyebrow}
       </p>

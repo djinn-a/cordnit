@@ -21,12 +21,12 @@ export default function CardGridSection({ data }: Readonly<CardGridSectionProps>
             <p className="text-eyebrow-mobile lg:text-page-hero-eyebrow text-brand-primary uppercase tracking-wider">
               {data.eyebrow}
             </p>
-            <h2 className="text-section-title-mobile lg:text-section-title text-ink">
+            <h2 className="text-section-title-mobile lg:text-section-title text-ink leading-space-32 lg:leading-space-68">
               {data.title}
             </h2>
           </div>
           <div className="w-full lg:max-w-125 lg:mt-auto flex flex-col justify-end">
-            <p className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted">
+            <p className="text-section-subtitle-mobile lg:text-section-subtitle text-ink-muted leading-space-28">
               {data.subtitle}
             </p>
           </div>

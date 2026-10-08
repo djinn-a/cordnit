@@ -21,7 +21,7 @@ export default function CardGridCard({ card }: Readonly<CardGridCardProps>) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col min-h-47.5 h-full w-full max-w-71.5 rounded-card-grid border p-space-12 lg:p-space-16 transition-all duration-300 mx-auto",
+        "group relative flex flex-col min-h-47.5 h-full w-full max-w-71.5 rounded-card-grid border p-space-12 lg:p-[30.597px_24px] transition-all duration-300 mx-auto",
         "bg-surface border-border-card",
         "hover:bg-primary-pale hover:border-transparent hover:shadow-card-active focus-within:shadow-card-active"
       )}
@@ -46,7 +46,7 @@ export default function CardGridCard({ card }: Readonly<CardGridCardProps>) {
           cta={card.cta}
           variant="link"
           ctaLocation="card-grid"
-          className="mt-auto gap-space-8 font-normal text-card-desc-mobile lg:text-link-mobile text-brand-primary group-hover:text-primary-hover after:absolute after:inset-0 after:rounded-card-grid after:content-['']"
+          className="mt-auto !px-0 gap-space-8 font-normal text-card-desc-mobile lg:text-link-mobile text-brand-primary group-hover:text-primary-hover after:absolute after:inset-0 after:rounded-card-grid after:content-['']"
           rightIcon={<ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />}
         />
       </div>
