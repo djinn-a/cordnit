@@ -56,7 +56,7 @@ export default function FooterMediaFeature({ media, copyright, legalLinks }: Rea
             <Button
               variant="primary"
               {...ctaProps}
-              className="w-fit bg-primary hover:bg-primary/90 rounded-[24px] sm:rounded-[24px] px-4 py-3 text-[14px] font-semibold leading-5 uppercase mt-1 group flex items-center gap-2 border-0"
+              className="w-fit bg-primary hover:bg-primary/90 rounded-space-24 sm:rounded-space-24 px-4 py-3 text-[14px] font-semibold leading-5 uppercase mt-1 group flex items-center gap-2 border-0"
             >
               {media.ctaText}
               <span className="flex items-center justify-center bg-white text-primary rounded-full w-6 h-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:rotate-12">
@@ -103,7 +103,7 @@ export default function FooterMediaFeature({ media, copyright, legalLinks }: Rea
           <Button
             variant="primary"
             {...ctaProps}
-            className="w-fit rounded-[24px] sm:rounded-[24px] px-4 py-3 text-[14px] font-semibold leading-5 uppercase mt-2 group flex items-center gap-2"
+            className="w-fit rounded-spoace-24 sm:rounded-space-24 px-4 py-3 text-[14px] font-semibold leading-5 uppercase mt-2 group flex items-center gap-2"
           >
             {media.ctaText}
             <span className="flex items-center justify-center bg-white text-primary rounded-full w-7 h-7 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:rotate-12">
