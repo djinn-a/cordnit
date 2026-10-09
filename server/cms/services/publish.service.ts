@@ -23,6 +23,7 @@ import { buildDocument, toSectionSource } from "../document-builder";
 import { touchPage } from "../locking";
 import { sectionsRepo } from "../repositories/sections.repo";
 import { checkSectionContent } from "../validation";
+import { chromeBlocksLinkingTo } from "./site-chrome.service";
 
 export type PublishOutcome = {
   slug: string;
@@ -185,7 +186,8 @@ export async function unpublishPage(input: z.output<typeof pageRefSchema>, actor
       entityId: page.id,
       summary: `Unpublished ${slugToPath(live.slug)}`,
     });
-    return { slug: live.slug, lockVersion: page.lockVersion };
+    const linkedFrom = await chromeBlocksLinkingTo(tx, slugToPath(live.slug));
+    return { slug: live.slug, lockVersion: page.lockVersion, linkedFrom };
   });
 }
 

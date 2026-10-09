@@ -274,6 +274,12 @@ export default function PageEditor({ data }: Readonly<{ data: EditorData }>) {
                 const r = await run(unpublishPageAction, ref, { success: "Page unpublished" });
                 if (r.ok) {
                   setPage((p) => ({ ...p, lockVersion: r.data.lockVersion, liveSlug: null }));
+                  if (r.data.linkedFrom.length > 0) {
+                    modal.warning({
+                      title: "This page is still linked from the site header or footer",
+                      content: `${r.data.linkedFrom.join(" and ")} link to ${slugToPath(r.data.slug)}, which now returns 404 on every page. Open Global Blocks to remove or change that link, then publish.`,
+                    });
+                  }
                 }
               },
             }),
