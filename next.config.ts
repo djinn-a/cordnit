@@ -8,6 +8,8 @@ if (nodeMajor < MIN_NODE_MAJOR) {
   );
 }
 
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+
 const nextConfig: NextConfig = {
   // Allow phone / LAN access to Next.js dev assets (JS chunks, HMR, images).
   // Without this, physical devices on the LAN IP get HTML but blocked /_next resources.
@@ -20,14 +22,8 @@ const nextConfig: NextConfig = {
   logging: { serverFunctions: false },
   serverExternalPackages: ["postgres"],
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'uwvlztbbhdtussvzqdtg.supabase.co',
-        port: '',
-        pathname: '/storage/v1/object/public/**',
-      },
-    ],
+    // Must track the active Supabase project, or /_next/image returns 400 for every asset.
+    remotePatterns: supabaseUrl ? [new URL("/storage/v1/object/public/**", supabaseUrl)] : [],
   },
   async redirects() {
     return [
