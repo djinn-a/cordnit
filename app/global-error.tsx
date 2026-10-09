@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect } from "react";
 import "./globals.css";
 
@@ -22,11 +23,15 @@ export default function GlobalError({
     <html lang="en">
       <body className="min-h-screen flex items-center justify-center bg-surface px-space-24 py-space-80 text-center font-sans antialiased">
         <main className="w-full max-w-media-wrap flex flex-col items-center gap-space-24">
-          <p className="text-eyebrow-mobile md:text-eyebrow-desktop uppercase tracking-wider text-primary">500</p>
-          <h1 className="text-cta-title-mobile md:text-cta-title-desktop text-ink">Something went wrong</h1>
-          <p className="text-section-subtitle-mobile md:text-section-subtitle text-ink-muted">
-            We couldn&apos;t load this page right now. Please try again or return to the homepage.
-          </p>
+          <h1 className="text-cta-title-mobile md:text-split-section-title text-primary">Server Error</h1>
+          <Image
+            src="/error/error_500.svg"
+            alt="An illustration of a server error"
+            width={578}
+            height={135}
+            className="h-auto w-full max-w-media-wrap"
+            priority
+          />
           <div className="flex flex-col sm:flex-row items-center gap-space-12">
             <button
               type="button"
