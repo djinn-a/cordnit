@@ -8,6 +8,7 @@ import { buildPageMetadata } from "@/lib/seo/page-metadata";
 import { getPageCanonicalUrl } from "@/lib/seo/canonical-url";
 import { buildPageJsonLd } from "@/lib/seo/structured-data";
 import { cms } from "@/server/cms";
+import { getSiteChrome, organizationExtras } from "@/server/cms/queries/site-chrome";
 import { logger } from "@/server/logger";
 
 type Params = Promise<{ slug?: string[] }>;
@@ -56,8 +57,14 @@ async function CmsPage({ params }: { params: Params }) {
     notFound();
   }
 
-  const [sections, site] = await Promise.all([cms.published.resolveSections(doc), cms.published.getSiteSeo()]);
-  const jsonLd = JSON.stringify(buildPageJsonLd(doc, site, getPageCanonicalUrl(doc))).replace(/</g, "\\u003c");
+  const [sections, site, chrome] = await Promise.all([
+    cms.published.resolveSections(doc),
+    cms.published.getSiteSeo(),
+    getSiteChrome(),
+  ]);
+  const jsonLd = JSON.stringify(
+    buildPageJsonLd(doc, site, getPageCanonicalUrl(doc), organizationExtras(chrome)),
+  ).replace(/</g, "\\u003c");
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />

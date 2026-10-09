@@ -2,8 +2,8 @@ import { Image } from '@/components/ui/Image';
 import Link from 'next/link';
 import { Play, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui';
-import { FOOTER_MEDIA_FEATURE } from './footerData';
-import type { FooterCmsContent } from './footerData';
+import { isExternalHref } from '@/lib/cms/site-chrome';
+import { FOOTER_ASSETS, type FooterCmsContent } from './footerData';
 
 type MediaFeatureProps = {
   media: FooterCmsContent["media"];
@@ -12,21 +12,26 @@ type MediaFeatureProps = {
 };
 
 export default function FooterMediaFeature({ media, copyright, legalLinks }: Readonly<MediaFeatureProps>) {
+  const thumbnail = media.thumbnail?.url || FOOTER_ASSETS.mediaThumbnail;
+  const thumbnailAlt = media.thumbnail?.alt || media.heading;
+  const ctaProps = media.href
+    ? { href: media.href, ...(isExternalHref(media.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {}) }
+    : { disabled: true };
   return (
     <div className="relative z-10 max-w-container-xl 2xl:max-w-container-2xl 3xl:max-w-container-wide mx-auto mt-12 lg:mt-16 px-4 sm:px-6 lg:px-16 pb-6">
 
       {/* Mobile Design (Figma 760:1298) */}
       <div className="lg:hidden mb-12">
-        <h4 className="text-white text-card-desc-mobile uppercase tracking-wider mb-6">
+        <p className="text-white text-card-desc-mobile uppercase tracking-wider mb-6">
           {media.eyebrow}
-        </h4>
+        </p>
         <div className="flex w-full items-start gap-3">
 
           {/* Media Area */}
           <div className="relative w-28 shrink-0 mt-1">
             <Image
-              src={FOOTER_MEDIA_FEATURE.thumbnail}
-              alt="Video Thumbnail"
+              src={thumbnail}
+              alt={thumbnailAlt}
               width={112}
               height={91}
               className="w-full h-auto object-cover rounded-sm"
@@ -50,9 +55,7 @@ export default function FooterMediaFeature({ media, copyright, legalLinks }: Rea
             </p>
             <Button
               variant="primary"
-              {...(media.href ? { href: media.href } : {})}
-              aria-disabled={!media.href}
-              tabIndex={media.href ? 0 : -1}
+              {...ctaProps}
               className="w-fit bg-primary hover:bg-primary/90 rounded-[24px] sm:rounded-[24px] px-4 py-3 text-[14px] font-semibold leading-5 uppercase mt-1 group flex items-center gap-2 border-0"
             >
               {media.ctaText}
@@ -68,14 +71,14 @@ export default function FooterMediaFeature({ media, copyright, legalLinks }: Rea
       <div className="hidden lg:flex flex-row items-center gap-16 mb-16">
         {/* Video Column */}
         <div className="w-[45%] flex flex-col gap-6 shrink-0">
-          <h4 className="text-white text-about-eyebrow-desktop tracking-[1px] uppercase">
+          <p className="text-white text-about-eyebrow-desktop tracking-[1px] uppercase">
             {media.eyebrow}
-          </h4>
+          </p>
           {/* Video Thumbnail Area */}
           <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-gray-900/10 aspect-video">
             <Image
-              src={FOOTER_MEDIA_FEATURE.thumbnail}
-              alt="Video Thumbnail"
+              src={thumbnail}
+              alt={thumbnailAlt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -99,9 +102,7 @@ export default function FooterMediaFeature({ media, copyright, legalLinks }: Rea
           </p>
           <Button
             variant="primary"
-            {...(media.href ? { href: media.href } : {})}
-            aria-disabled={!media.href}
-            tabIndex={media.href ? 0 : -1}
+            {...ctaProps}
             className="w-fit rounded-[24px] sm:rounded-[24px] px-4 py-3 text-[14px] font-semibold leading-5 uppercase mt-2 group flex items-center gap-2"
           >
             {media.ctaText}
@@ -120,7 +121,7 @@ export default function FooterMediaFeature({ media, copyright, legalLinks }: Rea
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] font-normal leading-3.5">
           {legalLinks.map(link => (
             link.href ? <Link key={link._id} href={link.href} className="hover:text-white/80 transition-colors">{link.label}</Link>
-              : <span key={link._id} className="text-white/70">{link.label}</span>
+              : <span key={link._id}>{link.label}</span>
           ))}
         </div>
       </div>

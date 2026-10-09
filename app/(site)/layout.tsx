@@ -9,9 +9,8 @@ import { NewsletterModalProvider } from "@/components/features/newsletter/Newsle
 import { AttributionCapture } from "@/components/features/leads/AttributionCapture";
 import { buildSiteMetadata } from "@/lib/seo/page-metadata";
 import { SITE_URL } from "@/lib/seo/site";
-import { SITE_FOOTER_BLOCK_KEY, SITE_NAVBAR_BLOCK_KEY } from "@/lib/cms/document";
 import { cms } from "@/server/cms";
-import { getPublishedBlockByKey } from "@/server/cms/queries/published";
+import { getSiteChrome } from "@/server/cms/queries/site-chrome";
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -28,16 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteRootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const [navbar, footer] = await Promise.all([
-    getPublishedBlockByKey(SITE_NAVBAR_BLOCK_KEY, "navbar").catch((error: unknown) => {
-      console.error("[SiteRootLayout] Failed to load the published navbar Global Block.", error);
-      return null;
-    }),
-    getPublishedBlockByKey(SITE_FOOTER_BLOCK_KEY, "footer").catch((error: unknown) => {
-      console.error("[SiteRootLayout] Failed to load the published footer Global Block.", error);
-      return null;
-    }),
-  ]);
+  const { navbar, footer } = await getSiteChrome();
   return (
     <html
       lang="en"
@@ -47,10 +37,10 @@ export default async function SiteRootLayout({ children }: Readonly<{ children: 
         <AttributionCapture />
         <ContactModalProvider>
           <NewsletterModalProvider>
-            <TopBar content={navbar?.type === "navbar" ? navbar.props : undefined} />
-            <Navbar content={navbar?.type === "navbar" ? navbar.props : undefined} />
+            <TopBar content={navbar} />
+            <Navbar content={navbar} />
             {children}
-            <Footer content={footer?.type === "footer" ? footer.props : undefined} />
+            <Footer content={footer} />
           </NewsletterModalProvider>
         </ContactModalProvider>
       </body>
