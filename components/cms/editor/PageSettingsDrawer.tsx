@@ -2,10 +2,11 @@
 
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { Alert, Button, Card, Divider, Drawer, Flex, Form, Input, Select, Switch, Typography } from "antd";
-import { HOME_SLUG, PAGE_SHELLS, PAGE_SPACINGS, slugToPath, type BreadcrumbItem, type PageSeo, type PageShell, type PageSpacing } from "@/lib/cms/document";
+import { HOME_SLUG, PAGE_SHELLS, PAGE_SPACINGS, slugToPath, type BreadcrumbItem, type PageSeo, type PageShell, type PageSpacing, type SeoImage } from "@/lib/cms/document";
 import { updatePageMetaAction } from "@/server/actions/pages";
 import { useCmsAction } from "../hooks/useCmsAction";
 import { applyFieldErrors } from "../shared/form-errors";
+import SeoImageField from "../shared/SeoImageField";
 import type { EditorPage } from "./types";
 
 type Values = {
@@ -38,6 +39,48 @@ function SerpPreview({ title, description, path }: { title: string; description:
   );
 }
 
+function SharePreview({ title, description, image }: { title: string; description: string; image?: SeoImage }) {
+  return (
+    <Card size="small" aria-label="Social share preview" styles={{ body: { padding: 0 } }} style={{ overflow: "hidden" }}>
+      <div
+        style={{
+          aspectRatio: "1.91 / 1",
+          background: image?.url ? `center / cover no-repeat url("${image.url}")` : "#eef1f5",
+          display: "grid",
+          placeItems: "center",
+          color: "rgba(0,0,0,0.35)",
+          fontSize: 12,
+        }}
+      >
+        {image?.url ? null : "Site default image"}
+      </div>
+      <div style={{ padding: "8px 12px", background: "#fafbfc" }}>
+        <Typography.Text type="secondary" style={{ fontSize: 11, textTransform: "uppercase" }}>
+          cordinit.com
+        </Typography.Text>
+        <div style={{ fontWeight: 600, lineHeight: 1.3 }}>{title || "Untitled"}</div>
+        <Typography.Paragraph type="secondary" style={{ margin: 0, fontSize: 12 }} ellipsis={{ rows: 2 }}>
+          {description}
+        </Typography.Paragraph>
+      </div>
+    </Card>
+  );
+}
+
+function trimOrUndefined(value: string | undefined): string | undefined {
+  return value?.trim() || undefined;
+}
+
+function cleanKeywords(keywords: string[] | undefined): string[] | undefined {
+  const unique = [...new Set((keywords ?? []).map((k) => k.trim()).filter(Boolean))];
+  return unique.length ? unique : undefined;
+}
+
+function cleanImage(image: SeoImage | undefined): SeoImage | undefined {
+  if (!image?.url) return undefined;
+  return { url: image.url, width: image.width, height: image.height, alt: trimOrUndefined(image.alt) };
+}
+
 export default function PageSettingsDrawer({
   open,
   onClose,
@@ -50,6 +93,9 @@ export default function PageSettingsDrawer({
   const slug = Form.useWatch("slug", form) ?? page.slug;
   const seoTitle = Form.useWatch(["seo", "title"], form);
   const seoDescription = Form.useWatch(["seo", "description"], form);
+  const ogTitle = Form.useWatch(["seo", "ogTitle"], form);
+  const ogDescription = Form.useWatch(["seo", "ogDescription"], form);
+  const ogImage = Form.useWatch(["seo", "ogImage"], form);
   const isHome = page.slug === HOME_SLUG;
 
   async function save() {
@@ -61,10 +107,14 @@ export default function PageSettingsDrawer({
         lockVersion: page.lockVersion,
         ...values,
         seo: {
-          title: values.seo?.title?.trim() || undefined,
-          description: values.seo?.description?.trim() || undefined,
-          canonical: values.seo?.canonical?.trim() || undefined,
+          title: trimOrUndefined(values.seo?.title),
+          description: trimOrUndefined(values.seo?.description),
+          canonical: trimOrUndefined(values.seo?.canonical),
           noindex: values.seo?.noindex || undefined,
+          ogTitle: trimOrUndefined(values.seo?.ogTitle),
+          ogDescription: trimOrUndefined(values.seo?.ogDescription),
+          ogImage: cleanImage(values.seo?.ogImage),
+          keywords: cleanKeywords(values.seo?.keywords),
         },
         breadcrumbs: (values.breadcrumbs ?? []).filter((b) => b?.label?.trim()),
       },
@@ -133,6 +183,32 @@ export default function PageSettingsDrawer({
         </Form.Item>
         <Form.Item label="Hide from search engines" name={["seo", "noindex"]} valuePropName="checked">
           <Switch />
+        </Form.Item>
+        <Form.Item
+          label="Keywords"
+          name={["seo", "keywords"]}
+          extra="Optional. Up to 10 short phrases. Press Enter after each."
+          rules={[{ type: "array", max: 10, message: "Use at most 10 keywords." }]}
+        >
+          <Select mode="tags" tokenSeparators={[","]} open={false} suffixIcon={null} placeholder="e.g. data security" maxCount={10} />
+        </Form.Item>
+
+        <Divider titlePlacement="start" plain>
+          Social sharing
+        </Divider>
+        <SharePreview
+          title={ogTitle || seoTitle || `${title} | Cordinit`}
+          description={ogDescription || seoDescription || ""}
+          image={ogImage}
+        />
+        <Form.Item label="Share image" name={["seo", "ogImage"]} extra="Shown on LinkedIn, X, Slack and others. Falls back to the site default." style={{ marginTop: 16 }}>
+          <SeoImageField />
+        </Form.Item>
+        <Form.Item label="Share title" name={["seo", "ogTitle"]} rules={[{ max: 95, message: "Keep social titles under 95 characters." }]}>
+          <Input showCount maxLength={95} placeholder="Defaults to the SEO title" />
+        </Form.Item>
+        <Form.Item label="Share description" name={["seo", "ogDescription"]} rules={[{ max: 200, message: "Keep social descriptions under 200 characters." }]}>
+          <Input.TextArea showCount maxLength={200} autoSize={{ minRows: 2, maxRows: 4 }} placeholder="Defaults to the meta description" />
         </Form.Item>
 
         <Divider titlePlacement="start" plain>

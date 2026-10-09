@@ -14,11 +14,30 @@ export type PageSpacing = (typeof PAGE_SPACINGS)[number];
 export const PAGE_STATUSES = ["draft", "published", "archived"] as const;
 export type PageStatus = (typeof PAGE_STATUSES)[number];
 
+export type SeoImage = { url: string; width?: number; height?: number; alt?: string };
+
 export type PageSeo = {
   title?: string;
   description?: string;
   canonical?: string;
   noindex?: boolean;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: SeoImage;
+  keywords?: string[];
+};
+
+/** Site-wide SEO defaults. Edited in /admin/seo and live on save. */
+export type SiteSeo = {
+  siteName: string;
+  /** Must contain `%s`, replaced by the page title. */
+  titleTemplate: string;
+  defaultTitle: string;
+  defaultDescription: string;
+  defaultOgImage?: SeoImage;
+  twitterHandle?: string;
+  organization: { legalName?: string; logo?: SeoImage; sameAs: string[] };
+  robots: { discourageAll: boolean; extraDisallow: string[] };
 };
 
 export type BreadcrumbItem = { label: string; href?: string; isCurrent?: boolean };
@@ -90,3 +109,4 @@ export const pageTag = (slug: string) => `cms:page:${slug}`;
 export const blockTag = (blockId: string) => `cms:block:${blockId}`;
 export const PAGES_LIST_TAG = "cms:pages";
 export const REDIRECTS_TAG = "cms:redirects";
+export const SITE_SETTINGS_TAG = "cms:site";

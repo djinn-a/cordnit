@@ -7,20 +7,23 @@ import Footer from "@/components/layout/Footer/Footer";
 import { ContactModalProvider } from "@/components/features/contact/ContactModal/ContactModalProvider";
 import { NewsletterModalProvider } from "@/components/features/newsletter/NewsletterModal/NewsletterModalProvider";
 import { AttributionCapture } from "@/components/features/leads/AttributionCapture";
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME, SITE_URL } from "@/lib/seo/site";
+import { buildSiteMetadata } from "@/lib/seo/page-metadata";
+import { SITE_URL } from "@/lib/seo/site";
+import { cms } from "@/server/cms";
 
 const mulish = Mulish({
   subsets: ["latin"],
   variable: "--font-mulish",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: { default: DEFAULT_TITLE, template: `%s | ${SITE_NAME}` },
-  description: DEFAULT_DESCRIPTION,
-  applicationName: SITE_NAME,
-  icons: { icon: "/fev.svg" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const site = await cms.published.getSiteSeo();
+  return {
+    metadataBase: new URL(SITE_URL),
+    ...buildSiteMetadata(site),
+    icons: { icon: "/fev.svg" },
+  };
+}
 
 export default function SiteRootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

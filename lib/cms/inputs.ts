@@ -38,6 +38,24 @@ export const slugSchema = z
 export const uuidSchema = z.uuid("Invalid id.");
 export const lockVersionSchema = z.number().int().positive();
 
+/** Uploaded Supabase Storage objects, or files served from /public. */
+export function isAllowedSeoImageUrl(value: string): boolean {
+  if (/^\/(?!\/)/.test(value)) return true;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" && url.hostname.endsWith(".supabase.co") && url.pathname.startsWith("/storage/v1/object/public/");
+  } catch {
+    return false;
+  }
+}
+
+export const seoImageSchema = z.object({
+  url: z.string().trim().max(2048).refine(isAllowedSeoImageUrl, "Upload an image or use a /path."),
+  width: z.number().int().positive().max(10000).optional(),
+  height: z.number().int().positive().max(10000).optional(),
+  alt: z.string().trim().max(200, "Keep alt text under 200 characters.").optional(),
+});
+
 export const seoSchema = z.object({
   title: z.string().trim().max(70, "Keep SEO titles under 70 characters.").optional(),
   description: z.string().trim().max(170, "Keep meta descriptions under 170 characters.").optional(),
@@ -48,6 +66,60 @@ export const seoSchema = z.object({
     .refine((v) => v === "" || /^(https?:\/\/|\/)/.test(v), "Use an absolute URL or a /path.")
     .optional(),
   noindex: z.boolean().optional(),
+  ogTitle: z.string().trim().max(95, "Keep social titles under 95 characters.").optional(),
+  ogDescription: z.string().trim().max(200, "Keep social descriptions under 200 characters.").optional(),
+  ogImage: seoImageSchema.optional(),
+  keywords: z.array(z.string().trim().min(1).max(60)).max(10, "Use at most 10 keywords.").optional(),
+});
+
+const httpsUrl = z
+  .string()
+  .trim()
+  .max(2048)
+  .refine((v) => /^https:\/\/[^\s]+$/.test(v), "Use a full https:// URL.");
+
+export const siteSeoSchema = z.object({
+  siteName: z.string().trim().min(1, "Site name is required.").max(60),
+  titleTemplate: z
+    .string()
+    .trim()
+    .max(80)
+    .refine((v) => v.includes("%s"), "Include %s where the page title goes."),
+  defaultTitle: z.string().trim().min(1, "Default title is required.").max(70, "Keep titles under 70 characters."),
+  defaultDescription: z
+    .string()
+    .trim()
+    .min(1, "Default description is required.")
+    .max(170, "Keep meta descriptions under 170 characters."),
+  defaultOgImage: seoImageSchema.optional(),
+  twitterHandle: z
+    .string()
+    .trim()
+    .regex(/^@?[A-Za-z0-9_]{1,15}$/, "Use a handle like @cordinit.")
+    .transform((v) => (v.startsWith("@") ? v : `@${v}`))
+    .optional(),
+  organization: z.object({
+    legalName: z.string().trim().max(120).optional(),
+    logo: seoImageSchema.optional(),
+    sameAs: z.array(httpsUrl).max(10, "Add at most 10 profiles."),
+  }),
+  robots: z.object({
+    discourageAll: z.boolean(),
+    extraDisallow: z
+      .array(
+        z
+          .string()
+          .trim()
+          .max(200)
+          .regex(/^\/[^\s]*$/, "Paths must start with / and contain no spaces."),
+      )
+      .max(30, "Add at most 30 paths."),
+  }),
+});
+
+export const saveSiteSeoSchema = z.object({
+  lockVersion: lockVersionSchema,
+  seo: siteSeoSchema,
 });
 
 export const breadcrumbsSchema = z

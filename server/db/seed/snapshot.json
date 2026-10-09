@@ -7,7 +7,7 @@
       "spacing": "default",
       "seo": {
         "title": "Cordinit | Secure Digital Transformation",
-        "description": "Simplifying complexity and enabling meaningful digital transformation."
+        "description": "Cordinit helps enterprises modernise securely across cybersecurity, Salesforce, AI automation, cloud, data and application engineering."
       },
       "breadcrumbs": [],
       "sections": [
@@ -289,8 +289,8 @@
       "shell": "default",
       "spacing": "default",
       "seo": {
-        "title": "About Cordinit",
-        "description": "Technology change made more useful."
+        "title": "About Cordinit | Our Story, Principles and Team",
+        "description": "Meet Cordinit: a technology partner making change more useful through security-first delivery, practical expertise and long-term partnership."
       },
       "breadcrumbs": [],
       "sections": [
@@ -489,8 +489,8 @@
       "shell": "contact",
       "spacing": "default",
       "seo": {
-        "title": "Contact Cordinit",
-        "description": "Let's talk about what's next."
+        "title": "Contact Cordinit | Talk to Our Experts",
+        "description": "Talk to Cordinit about cybersecurity, Salesforce, AI, cloud or data. Tell us what you are working on and book a call with our team."
       },
       "breadcrumbs": [],
       "sections": [
@@ -638,7 +638,7 @@
       "spacing": "default",
       "seo": {
         "title": "Industries | Cordinit",
-        "description": "Explore Cordinit's industry-specific capabilities."
+        "description": "See how Cordinit applies security, Salesforce, AI, cloud and data expertise to the challenges and regulations of your industry."
       },
       "breadcrumbs": [],
       "sections": [
@@ -942,7 +942,7 @@
       "spacing": "default",
       "seo": {
         "title": "Accelerators | Cordinit",
-        "description": "Cordinit accelerators are repeatable, outcome-focused offers designed to help you make progress faster without starting every initiative from a blank page."
+        "description": "Cordinit accelerators are repeatable, outcome-focused offers that help you make progress faster without starting every initiative from scratch."
       },
       "breadcrumbs": [],
       "sections": [
@@ -1096,7 +1096,7 @@
       "spacing": "default",
       "seo": {
         "title": "Insights | Cordinit",
-        "description": "Explore practical perspectives on cybersecurity, Salesforce, cloud, AI, data and the challenges shaping technology change."
+        "description": "Practical perspectives from Cordinit on cybersecurity, Salesforce, cloud, AI, data and the challenges shaping technology change."
       },
       "breadcrumbs": [],
       "sections": [
@@ -1309,8 +1309,8 @@
       "shell": "default",
       "spacing": "default",
       "seo": {
-        "title": "Cybersecurity | Cordinit",
-        "description": "Cybersecurity that enables confident change."
+        "title": "Cybersecurity Services | Cordinit",
+        "description": "Cybersecurity that enables confident change: data, identity, cloud, application and AI security, plus exposure and managed security services."
       },
       "breadcrumbs": [
         {
@@ -1688,8 +1688,8 @@
       "shell": "default",
       "spacing": "default",
       "seo": {
-        "title": "Salesforce | Cordinit",
-        "description": "Salesforce experience that connects your business."
+        "title": "Salesforce Services | Cordinit",
+        "description": "Salesforce consulting that connects your business, from Sales, Service and Marketing Cloud to Commerce, AI, integration and managed services."
       },
       "breadcrumbs": [
         {
@@ -2055,7 +2055,7 @@
       "spacing": "default",
       "seo": {
         "title": "AI & Automation | Cordinit",
-        "description": "Make AI and automation useful where it matters most."
+        "description": "Make AI and automation useful where it matters most, with secure, governed use cases that remove manual work and improve decisions."
       },
       "breadcrumbs": [
         {
@@ -2362,7 +2362,7 @@
       "spacing": "default",
       "seo": {
         "title": "Solutions | Cordinit",
-        "description": "Solutions for progress that lasts."
+        "description": "Explore Cordinit solutions across cybersecurity, Salesforce, AI and automation, cloud, data integration and application engineering."
       },
       "breadcrumbs": [],
       "sections": [
@@ -2533,7 +2533,7 @@
       "spacing": "default",
       "seo": {
         "title": "Cloud Infrastructure | Cordinit",
-        "description": "Cloud and infrastructure built for change."
+        "description": "Cloud and infrastructure built for change: secure migration, modern platforms and resilient operations that keep pace with your business."
       },
       "breadcrumbs": [
         {
@@ -2836,7 +2836,7 @@
       "spacing": "default",
       "seo": {
         "title": "Application Engineering | Cordinit",
-        "description": "Create digital products and applications that are useful for the people who rely on them, robust for the teams who run them and ready to evolve as needs change."
+        "description": "Build digital products that are useful for the people who rely on them, robust for the teams who run them and ready to evolve as needs change."
       },
       "breadcrumbs": [
         {
@@ -3094,7 +3094,7 @@
       "spacing": "default",
       "seo": {
         "title": "Data Integration | Cordinit",
-        "description": "Connected data. Better decisions. Stronger operations."
+        "description": "Connected data, better decisions, stronger operations. Cordinit integrates systems and data so teams can trust and act on what they see."
       },
       "breadcrumbs": [
         {
@@ -3256,7 +3256,7 @@
       "spacing": "compact-top",
       "seo": {
         "title": "Data Security | Cordinit",
-        "description": "Protect sensitive data wherever it is created, used and stored."
+        "description": "Protect sensitive data wherever it is created, used and stored, with discovery, classification, governance and secure data operations."
       },
       "breadcrumbs": [],
       "sections": [
@@ -3623,8 +3623,8 @@
       "shell": "default",
       "spacing": "compact",
       "seo": {
-        "title": "Salesforce Sales | Cordinit",
-        "description": "Make selling more focused and predictable."
+        "title": "Salesforce Sales Cloud | Cordinit",
+        "description": "Make selling more focused and predictable with Salesforce Sales Cloud: cleaner pipelines, guided selling and forecasts your leaders trust."
       },
       "breadcrumbs": [],
       "sections": [
@@ -3973,8 +3973,8 @@
       "shell": "default",
       "spacing": "compact",
       "seo": {
-        "title": "Salesforce Marketing | Cordinit",
-        "description": "Create relevant, connected customer engagement."
+        "title": "Salesforce Marketing Cloud | Cordinit",
+        "description": "Create relevant, connected customer engagement with Salesforce Marketing Cloud journeys, segmentation and measurable campaigns."
       },
       "breadcrumbs": [],
       "sections": [
@@ -4300,7 +4300,7 @@
       "spacing": "compact",
       "seo": {
         "title": "Salesforce Commerce Cloud | Cordinit",
-        "description": "Drive sales and improve efficiency with Salesforce Commerce Cloud."
+        "description": "Drive sales and improve efficiency with Salesforce Commerce Cloud: connected storefronts built, integrated and optimised by Cordinit."
       },
       "breadcrumbs": [],
       "sections": [
@@ -4650,7 +4650,7 @@
       "spacing": "compact",
       "seo": {
         "title": "Salesforce AI | Cordinit",
-        "description": "Make selling more focused and predictable."
+        "description": "Put Salesforce AI to work safely, with trusted data, clear use cases and governance that turn AI into measurable business outcomes."
       },
       "breadcrumbs": [],
       "sections": [
@@ -5000,7 +5000,7 @@
       "spacing": "compact-top",
       "seo": {
         "title": "Application Security | Cordinit",
-        "description": "Security at every stage of your application lifecycle."
+        "description": "Build security into every stage of your application lifecycle, from design and code review to testing, release and runtime protection."
       },
       "breadcrumbs": [],
       "sections": [
@@ -5364,7 +5364,7 @@
       "spacing": "compact-top",
       "seo": {
         "title": "Cloud Security | Cordinit",
-        "description": "Secure cloud adoption and operation."
+        "description": "Secure cloud adoption and operation with posture management, guardrails and monitoring that keep AWS, Azure and Google Cloud under control."
       },
       "breadcrumbs": [],
       "sections": [
@@ -5746,7 +5746,7 @@
       "spacing": "compact-top",
       "seo": {
         "title": "Identity Security | Cordinit",
-        "description": "Control who can access what."
+        "description": "Control who can access what, with identity governance, strong authentication and privileged access management that reduce risk."
       },
       "breadcrumbs": [],
       "sections": [
@@ -6019,7 +6019,7 @@
       "spacing": "default",
       "seo": {
         "title": "AI Security | Cordinit",
-        "description": "Adopt AI with confidence and control."
+        "description": "Adopt AI with confidence and control. Cordinit secures models, data and AI usage with governance, testing and practical guardrails."
       },
       "breadcrumbs": [],
       "sections": [
@@ -6395,7 +6395,7 @@
       "spacing": "default",
       "seo": {
         "title": "Exposure Management | Cordinit",
-        "description": "Prioritise the exposures that matter most."
+        "description": "Prioritise the exposures that matter most with continuous visibility of your attack surface and remediation focused on real business risk."
       },
       "breadcrumbs": [],
       "sections": [
@@ -6867,7 +6867,7 @@
       "spacing": "default",
       "seo": {
         "title": "Vulnerability Management | Cordinit",
-        "description": "Reduce vulnerability risk predictably."
+        "description": "Reduce vulnerability risk predictably with scanning, risk-based prioritisation and remediation tracking across infrastructure and applications."
       },
       "breadcrumbs": [],
       "sections": [
@@ -7307,8 +7307,8 @@
       "shell": "default",
       "spacing": "default",
       "seo": {
-        "title": "Managed Security | Cordinit",
-        "description": "Extend your security operations capacity."
+        "title": "Managed Security Services | Cordinit",
+        "description": "Extend your security operations capacity with 24/7 monitoring, detection and response from Cordinit security specialists."
       },
       "breadcrumbs": [],
       "sections": [
@@ -7745,7 +7745,7 @@
       "spacing": "compact",
       "seo": {
         "title": "Salesforce Managed Services | Cordinit",
-        "description": "Keep Salesforce improving after go-live."
+        "description": "Keep Salesforce improving after go-live with managed services covering support, releases, admin and continuous optimisation."
       },
       "breadcrumbs": [],
       "sections": [
@@ -8094,8 +8094,8 @@
       "shell": "default",
       "spacing": "compact",
       "seo": {
-        "title": "Salesforce Service | Cordinit",
-        "description": "Deliver connected, efficient customer service."
+        "title": "Salesforce Service Cloud | Cordinit",
+        "description": "Deliver connected, efficient customer service with Salesforce Service Cloud, from case management and self-service to connected agent workflows."
       },
       "breadcrumbs": [],
       "sections": [
@@ -8402,7 +8402,7 @@
       "spacing": "compact",
       "seo": {
         "title": "Salesforce Integration | Cordinit",
-        "description": "Connect Salesforce to the business ecosystem."
+        "description": "Connect Salesforce to the rest of your business with reliable integrations that keep data accurate and processes connected across every system."
       },
       "breadcrumbs": [],
       "sections": [

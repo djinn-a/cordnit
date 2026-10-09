@@ -1,6 +1,6 @@
-import type { BreadcrumbItem, PublishedPageDocument } from "@/lib/cms/document";
+import type { BreadcrumbItem, PublishedPageDocument, SiteSeo } from "@/lib/cms/document";
 import { getPageCanonicalUrl } from "@/lib/seo/canonical-url";
-import { PRODUCTION_SITE_URL, SITE_NAME } from "@/lib/seo/site";
+import { DEFAULT_SITE_SEO, PRODUCTION_SITE_URL } from "@/lib/seo/site";
 
 type JsonLdValue = string | number | boolean | null | JsonLdValue[] | { [key: string]: JsonLdValue };
 type JsonLd = { [key: string]: JsonLdValue };
@@ -35,29 +35,47 @@ function breadcrumbList(items: readonly BreadcrumbItem[] | undefined, pageUrl: s
   return { "@type": "BreadcrumbList", "@id": `${pageUrl}#breadcrumb`, itemListElement };
 }
 
+/** Uploaded images live on Supabase; /paths resolve against production. */
+function imageUrl(value: string | undefined): string | undefined {
+  if (!value?.trim()) return;
+  try {
+    const url = new URL(value, PRODUCTION_SITE_URL);
+    return url.protocol === "https:" ? url.toString() : undefined;
+  } catch {
+    return;
+  }
+}
+
 export function buildPageJsonLd(
   doc: PublishedPageDocument | null | undefined,
+  site: SiteSeo = DEFAULT_SITE_SEO,
   canonicalUrl?: string,
 ): JsonLd {
   const seo = doc?.seo ?? {};
   const pageUrl =
     productionUrl(canonicalUrl, true) ??
     (doc ? getPageCanonicalUrl(doc) : `${PRODUCTION_SITE_URL}/`);
+  const logo = imageUrl(site.organization.logo?.url);
+  const sameAs = site.organization.sameAs.filter((u) => /^https:\/\//.test(u));
   const graph: JsonLd[] = [
     {
       "@type": "Organization",
       "@id": `${PRODUCTION_SITE_URL}/#organization`,
-      name: SITE_NAME,
+      name: site.siteName,
       url: PRODUCTION_SITE_URL,
+      ...(site.organization.legalName ? { legalName: site.organization.legalName } : {}),
+      ...(logo ? { logo: { "@type": "ImageObject", url: logo } } : {}),
+      ...(sameAs.length ? { sameAs } : {}),
     },
     {
       "@type": "WebSite",
       "@id": `${PRODUCTION_SITE_URL}/#website`,
       url: PRODUCTION_SITE_URL,
-      name: SITE_NAME,
+      name: site.siteName,
       publisher: { "@id": `${PRODUCTION_SITE_URL}/#organization` },
     },
   ];
+  const primaryImage = imageUrl(seo.ogImage?.url);
 
   const title = doc?.title.trim() ?? "";
   if (doc && title) {
@@ -72,6 +90,7 @@ export function buildPageJsonLd(
       ...(Number.isFinite(Date.parse(doc.publishedAt))
         ? { datePublished: new Date(doc.publishedAt).toISOString() }
         : {}),
+      ...(primaryImage ? { primaryImageOfPage: { "@type": "ImageObject", url: primaryImage } } : {}),
       isPartOf: { "@id": `${PRODUCTION_SITE_URL}/#website` },
     });
   }

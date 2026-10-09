@@ -1,19 +1,24 @@
 import "server-only";
 import { eq, inArray, sql } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
+import { unstable_rethrow } from "next/navigation";
 import {
   PAGES_LIST_TAG,
   REDIRECTS_TAG,
+  SITE_SETTINGS_TAG,
   blockTag,
   isBlockRef,
   pageTag,
   type InlineSectionNode,
   type PublishedBlock,
   type PublishedPageDocument,
+  type SiteSeo,
 } from "@/lib/cms/document";
 import { isSectionType } from "@/lib/cms/types";
+import { mergeSiteSeo } from "@/lib/seo/site";
 import { db } from "@/server/db/client";
-import { globalBlocks, publishedPages, redirects } from "@/server/db/schema";
+import { globalBlocks, publishedPages, redirects, siteSettings } from "@/server/db/schema";
+import { logger } from "@/server/logger";
 
 /**
  * Public read path. Every function is cached indefinitely and invalidated only
@@ -67,6 +72,22 @@ export async function listPublishedRoutes(): Promise<PublishedRoute[]> {
     noindex: r.noindex,
     canonical: r.canonical ?? undefined,
   }));
+}
+
+/** Site-wide SEO for every public page. A failed read serves code defaults and retries within minutes. */
+export async function getSiteSeo(): Promise<SiteSeo> {
+  "use cache";
+  cacheTag(SITE_SETTINGS_TAG);
+  try {
+    const [row] = await db().select({ seo: siteSettings.seo }).from(siteSettings).where(eq(siteSettings.id, "global"));
+    cacheLife("max");
+    return mergeSiteSeo(row?.seo);
+  } catch (err) {
+    unstable_rethrow(err);
+    cacheLife("minutes");
+    logger.error("getSiteSeo failed; using defaults", { err });
+    return mergeSiteSeo(null);
+  }
 }
 
 export type RedirectTarget = { toPath: string; statusCode: number };

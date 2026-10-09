@@ -9,7 +9,8 @@ import { logger } from "@/server/logger";
 /** Published, indexable CMS pages only. Invalidated with the page-list cache tag on publish. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
-    const routes = await cms.published.listPublishedRoutes();
+    const [routes, site] = await Promise.all([cms.published.listPublishedRoutes(), cms.published.getSiteSeo()]);
+    if (site.robots.discourageAll) return [];
     return routes
       .filter((r) => !r.noindex)
       .sort((a, b) => (a.slug === HOME_SLUG ? -1 : b.slug === HOME_SLUG ? 1 : a.slug.localeCompare(b.slug)))

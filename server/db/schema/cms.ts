@@ -20,6 +20,7 @@ import type {
   PageSpacing,
   PublishedPageDocument,
   SectionProps,
+  SiteSeo,
 } from "@/lib/cms/document";
 import type { LeadAttribution, LeadType } from "@/lib/leads/schema";
 
@@ -202,6 +203,17 @@ export const publishedPages = cms
   )
   .enableRLS();
 
+/** Singleton row (id = 'global'). Read on the public path through `getSiteSeo`. */
+export const siteSettings = cms
+  .table("site_settings", {
+    id: text().primaryKey().default("global"),
+    seo: jsonb().$type<Partial<SiteSeo>>().notNull().default({}),
+    lockVersion: integer().notNull().default(1),
+    updatedBy: uuid(),
+    ...timestamps,
+  })
+  .enableRLS();
+
 export const redirects = cms
   .table("redirects", {
     fromPath: text().primaryKey(),
@@ -287,3 +299,4 @@ export type GlobalBlockRow = typeof globalBlocks.$inferSelect;
 export type TemplateRow = typeof templates.$inferSelect;
 export type PageVersionRow = typeof pageVersions.$inferSelect;
 export type AuditLogRow = typeof auditLog.$inferSelect;
+export type SiteSettingsRow = typeof siteSettings.$inferSelect;

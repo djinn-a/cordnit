@@ -5,6 +5,7 @@ import * as pages from "./services/pages.service";
 import * as publish from "./services/publish.service";
 import * as redirects from "./services/redirects.service";
 import * as sections from "./services/sections.service";
+import * as siteSettings from "./services/site-settings.service";
 import * as templates from "./services/templates.service";
 import * as published from "./queries/published";
 import * as preview from "./queries/preview";
@@ -22,6 +23,7 @@ export const cms = {
   templates,
   redirects,
   leads,
+  siteSettings,
   published,
   preview,
   audit: { list: listAudit },

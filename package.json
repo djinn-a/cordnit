@@ -24,6 +24,8 @@
     "cms:verify:prod": "tsx --conditions=react-server scripts/cms/verify.ts",
     "cms:migrate-cta": "tsx --conditions=react-server --env-file=.env.local scripts/cms/migrate-cta.ts",
     "cms:migrate-cta:prod": "tsx --conditions=react-server scripts/cms/migrate-cta.ts",
+    "cms:backfill-seo": "tsx --conditions=react-server --env-file=.env.local scripts/cms/backfill-seo.ts",
+    "cms:backfill-seo:prod": "tsx --conditions=react-server scripts/cms/backfill-seo.ts",
     "build:cms": "npm run cms:admin:prod && npm run cms:seed:prod",
     "deploy": "vercel --prod"
   },

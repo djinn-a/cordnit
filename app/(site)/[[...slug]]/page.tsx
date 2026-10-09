@@ -36,8 +36,8 @@ function toLookupSlug(segments: string[] | undefined): string | null {
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const slug = toLookupSlug((await params).slug);
   if (!slug) return {};
-  const doc = await cms.published.getPublishedPage(slug);
-  return doc ? buildPageMetadata(doc) : { robots: { index: false, follow: false } };
+  const [doc, site] = await Promise.all([cms.published.getPublishedPage(slug), cms.published.getSiteSeo()]);
+  return doc ? buildPageMetadata(doc, site) : { robots: { index: false, follow: false } };
 }
 
 async function CmsPage({ params }: { params: Params }) {
@@ -56,8 +56,8 @@ async function CmsPage({ params }: { params: Params }) {
     notFound();
   }
 
-  const sections = await cms.published.resolveSections(doc);
-  const jsonLd = JSON.stringify(buildPageJsonLd(doc, getPageCanonicalUrl(doc))).replace(/</g, "\\u003c");
+  const [sections, site] = await Promise.all([cms.published.resolveSections(doc), cms.published.getSiteSeo()]);
+  const jsonLd = JSON.stringify(buildPageJsonLd(doc, site, getPageCanonicalUrl(doc))).replace(/</g, "\\u003c");
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
