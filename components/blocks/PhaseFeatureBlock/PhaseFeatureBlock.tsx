@@ -12,14 +12,14 @@ export default function PhaseFeatureBlock({ header, cards, className, headerLayo
         <div className={cn(
           "flex w-full mb-space-24 md:mb-space-64",
           isStacked 
-            ? "flex-col gap-space-16 md:gap-space-24 max-w-200" 
+            ? "flex-col gap-space-16 md:gap-space-24 max-w-900" 
             : "flex-col lg:flex-row justify-between gap-space-8 md:gap-space-24 lg:gap-space-32"
         )}>
           <div className={cn("flex flex-col w-full gap-space-8 md:gap-space-16", !isStacked && "lg:w-3/5 xl:w-2/3")}>
             <p className="text-eyebrow-mobile md:text-page-hero-eyebrow text-brand-primary uppercase tracking-widest md:tracking-wider font-mulish">
               {header.eyebrow}
             </p>
-            <h2 className="text-section-title-mobile md:text-split-section-title text-ink font-mulish whitespace-pre-wrap">
+            <h2 className="text-section-title-mobile md:text-split-section-title text-ink font-mulish ">
               {header.title}
             </h2>
           </div>

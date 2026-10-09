@@ -97,7 +97,7 @@ export default function PhaseFeatureCard({ card, cardStyle = "default" }: Readon
     >
       {/* Top Row: Number & Phase */}
       <div className="flex justify-between items-baseline w-full">
-        <span className="text-link-mobile md:text-section-title-head text-brand-primary font-semibold font-mulish">
+        <span className="flex w-space-40 h-space-40 py-space-7 pb-space-8 justify-center items-center rounded-full bg-white text-link-mobile md:text-section-title-head text-brand-primary font-semibold font-mulish">
           {card.numberStr}
         </span>
         <span className="text-stat-desc-mobile md:text-help-card-prefix uppercase text-ink-muted tracking-wider md:tracking-widest font-normal md:font-semibold font-mulish">
