@@ -1,18 +1,38 @@
 "use server";
 
 import { z } from "zod";
-import { SEO_IMAGE_MAX_BYTES, SEO_IMAGE_TYPES, createSignedImageUpload, type SeoImageType } from "@/server/storage/supabase-storage";
+import { MEDIA_PATH_PATTERN, MEDIA_RULES, MEDIA_TYPES, type MediaPurpose, type MediaType } from "@/lib/cms/media";
+import { createSignedImageUpload, verifyUploadedImage } from "@/server/storage/supabase-storage";
 import { withAction } from "./with-action";
 
-const seoImageUploadSchema = z.object({
-  fileName: z.string().trim().min(1).max(255),
-  contentType: z.enum(Object.keys(SEO_IMAGE_TYPES) as [SeoImageType, ...SeoImageType[]], "Use a JPG, PNG or WebP image."),
-  size: z.number().int().positive().max(SEO_IMAGE_MAX_BYTES, "Images must be 5 MB or smaller."),
-});
+const purposeSchema = z.enum(Object.keys(MEDIA_RULES) as [MediaPurpose, ...MediaPurpose[]]);
 
-export const createSeoImageUploadAction = withAction(
-  "media.createSeoImageUpload",
-  seoImageUploadSchema,
-  async (input) => createSignedImageUpload("seo", input.contentType),
+const mediaUploadSchema = z
+  .object({
+    purpose: purposeSchema,
+    fileName: z.string().trim().min(1).max(255),
+    contentType: z.enum(Object.keys(MEDIA_TYPES) as [MediaType, ...MediaType[]], "Use a JPG, PNG, WebP or SVG image."),
+    size: z.number().int().positive(),
+  })
+  .superRefine((input, ctx) => {
+    const rule = MEDIA_RULES[input.purpose];
+    if (!rule.types.includes(input.contentType)) ctx.addIssue({ code: "custom", path: ["contentType"], message: "This file type is not allowed here." });
+    if (input.size > rule.maxBytes) ctx.addIssue({ code: "custom", path: ["size"], message: "This file is too large." });
+  });
+
+export const createMediaUploadAction = withAction(
+  "media.createUpload",
+  mediaUploadSchema,
+  async (input) => createSignedImageUpload(input.purpose, input.contentType),
+  { refresh: false },
+);
+
+export const verifyMediaUploadAction = withAction(
+  "media.verifyUpload",
+  z.object({ purpose: purposeSchema, path: z.string().regex(MEDIA_PATH_PATTERN, "Unknown upload path.") }),
+  async (input) => {
+    await verifyUploadedImage(input.path, input.purpose);
+    return { ok: true as const };
+  },
   { refresh: false },
 );

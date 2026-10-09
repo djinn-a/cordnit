@@ -1,6 +1,6 @@
 import "server-only";
 import { updateTag } from "next/cache";
-import { PAGES_LIST_TAG, REDIRECTS_TAG, SITE_SETTINGS_TAG, blockTag, pageTag } from "@/lib/cms/document";
+import { PAGES_LIST_TAG, REDIRECTS_TAG, SITE_SETTINGS_TAG, blockKeyTag, blockTag, pageTag } from "@/lib/cms/document";
 
 /** Public-cache invalidation after a live change. Draft edits never touch visitor caches. */
 export function invalidateLivePage(slugs: readonly (string | null | undefined)[]): void {
@@ -10,8 +10,9 @@ export function invalidateLivePage(slugs: readonly (string | null | undefined)[]
   updateTag(REDIRECTS_TAG);
 }
 
-export function invalidateBlock(blockId: string): void {
+export function invalidateBlock(blockId: string, key?: string): void {
   updateTag(blockTag(blockId));
+  if (key) updateTag(blockKeyTag(key));
 }
 
 export function invalidateRedirects(): void {

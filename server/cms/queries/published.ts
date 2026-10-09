@@ -1,5 +1,5 @@
 import "server-only";
-import { eq, inArray, sql } from "drizzle-orm";
+import { and, eq, inArray, sql } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 import { unstable_rethrow } from "next/navigation";
 import {
@@ -7,6 +7,7 @@ import {
   REDIRECTS_TAG,
   SITE_SETTINGS_TAG,
   blockTag,
+  blockKeyTag,
   isBlockRef,
   pageTag,
   type InlineSectionNode,
@@ -14,11 +15,15 @@ import {
   type PublishedPageDocument,
   type SiteSeo,
 } from "@/lib/cms/document";
-import { isSectionType } from "@/lib/cms/types";
+import { isSectionType, type SectionType } from "@/lib/cms/types";
+import { sectionContentSchemas, type SectionContentMap } from "@/lib/cms/registry";
 import { mergeSiteSeo } from "@/lib/seo/site";
 import { db } from "@/server/db/client";
-import { globalBlocks, publishedPages, redirects, siteSettings } from "@/server/db/schema";
+import { globalBlockVersions, globalBlocks, publishedPages, redirects, siteSettings } from "@/server/db/schema";
 import { logger } from "@/server/logger";
+
+type SiteChromeType = Extract<SectionType, "navbar" | "footer">;
+export type SiteChromeBlock<T extends SiteChromeType> = { blockId: string; type: T; props: SectionContentMap[T]; version: number };
 
 /**
  * Public read path. Every function is cached indefinitely and invalidated only
@@ -74,6 +79,24 @@ export async function listPublishedRoutes(): Promise<PublishedRoute[]> {
   }));
 }
 
+export type PublishedPageSummary = { slug: string; title: string; description?: string; noindex: boolean };
+
+/** Titles and meta descriptions of every live page, for llms.txt. */
+export async function listPublishedPageSummaries(): Promise<PublishedPageSummary[]> {
+  "use cache";
+  cacheLife("max");
+  cacheTag(PAGES_LIST_TAG);
+  const rows = await db()
+    .select({
+      slug: publishedPages.slug,
+      noindex: publishedPages.noindex,
+      title: sql<string>`coalesce(nullif(${publishedPages.document}->'seo'->>'title', ''), ${publishedPages.document}->>'title')`,
+      description: sql<string | null>`${publishedPages.document}->'seo'->>'description'`,
+    })
+    .from(publishedPages);
+  return rows.map((r) => ({ slug: r.slug, title: r.title, description: r.description?.trim() || undefined, noindex: r.noindex }));
+}
+
 /** Site-wide SEO for every public page. A failed read serves code defaults and retries within minutes. */
 export async function getSiteSeo(): Promise<SiteSeo> {
   "use cache";
@@ -88,6 +111,47 @@ export async function getSiteSeo(): Promise<SiteSeo> {
     logger.error("getSiteSeo failed; using defaults", { err });
     return mergeSiteSeo(null);
   }
+}
+
+/**
+ * The site Navbar or Footer, read from the block's currently published version.
+ * Returns null (logged) when the block is missing, unpublished or fails today's
+ * schema; database errors throw so a build never bakes fallback chrome.
+ * Links are validated at publish time, so page publishes never expire this entry.
+ */
+export async function getPublishedBlockByKey<T extends SiteChromeType>(key: string, type: T): Promise<SiteChromeBlock<T> | null> {
+  "use cache";
+  cacheLife("max");
+  cacheTag(blockKeyTag(key));
+  const [row] = await db()
+    .select({
+      id: globalBlocks.id,
+      type: globalBlocks.type,
+      version: globalBlocks.publishedVersion,
+      content: globalBlockVersions.content,
+    })
+    .from(globalBlocks)
+    .leftJoin(
+      globalBlockVersions,
+      and(eq(globalBlockVersions.blockId, globalBlocks.id), eq(globalBlockVersions.version, globalBlocks.publishedVersion)),
+    )
+    .where(eq(globalBlocks.key, key));
+  if (!row || row.version === null || !row.content) {
+    logger.error(`[CMS] Site ${type} block "${key}" is missing or unpublished; rendering code defaults.`);
+    return null;
+  }
+  if (row.type !== type) {
+    logger.error(`[CMS] Site block "${key}" has type "${row.type}", expected "${type}"; rendering code defaults.`);
+    return null;
+  }
+  const parsed = sectionContentSchemas[type].safeParse(row.content);
+  if (!parsed.success) {
+    logger.error(`[CMS] Published ${type} block "${key}" v${row.version} fails its schema; rendering code defaults.`, {
+      issues: parsed.error.issues.slice(0, 5),
+    });
+    return null;
+  }
+  return { blockId: row.id, type, props: parsed.data as SectionContentMap[T], version: row.version };
 }
 
 export type RedirectTarget = { toPath: string; statusCode: number };

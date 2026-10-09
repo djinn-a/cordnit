@@ -46,17 +46,30 @@ function imageUrl(value: string | undefined): string | undefined {
   }
 }
 
+/** Organization facts managed in the site Footer; Site SEO settings win where both are set. */
+export type OrganizationExtras = { sameAs?: string[]; logo?: string; email?: string; telephone?: string };
+
 export function buildPageJsonLd(
   doc: PublishedPageDocument | null | undefined,
   site: SiteSeo = DEFAULT_SITE_SEO,
   canonicalUrl?: string,
+  extras: OrganizationExtras = {},
 ): JsonLd {
   const seo = doc?.seo ?? {};
   const pageUrl =
     productionUrl(canonicalUrl, true) ??
     (doc ? getPageCanonicalUrl(doc) : `${PRODUCTION_SITE_URL}/`);
-  const logo = imageUrl(site.organization.logo?.url);
-  const sameAs = site.organization.sameAs.filter((u) => /^https:\/\//.test(u));
+  const logo = imageUrl(site.organization.logo?.url) ?? imageUrl(extras.logo);
+  const sameAs = [...new Set([...site.organization.sameAs, ...(extras.sameAs ?? [])])].filter((u) => /^https:\/\//.test(u));
+  const contactPoint =
+    extras.email || extras.telephone
+      ? {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          ...(extras.email ? { email: extras.email } : {}),
+          ...(extras.telephone ? { telephone: extras.telephone } : {}),
+        }
+      : undefined;
   const graph: JsonLd[] = [
     {
       "@type": "Organization",
@@ -66,6 +79,7 @@ export function buildPageJsonLd(
       ...(site.organization.legalName ? { legalName: site.organization.legalName } : {}),
       ...(logo ? { logo: { "@type": "ImageObject", url: logo } } : {}),
       ...(sameAs.length ? { sameAs } : {}),
+      ...(contactPoint ? { contactPoint } : {}),
     },
     {
       "@type": "WebSite",

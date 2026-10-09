@@ -18,6 +18,8 @@ import {
   CTA_VARIANT_OPTIONS,
   type CtaAction,
 } from "@/lib/cta/types";
+import type { MediaPurpose } from "@/lib/cms/media";
+import MediaField from "../shared/MediaField";
 
 /** The subset of JSON Schema (plus our field meta) emitted by z.toJSONSchema for section content. */
 export type JsonSchemaNode = {
@@ -28,7 +30,8 @@ export type JsonSchemaNode = {
   maxLength?: number;
   maxItems?: number;
   label?: string;
-  widget?: "text" | "textarea" | "url" | "number" | "select" | "checkbox" | "cta";
+  widget?: "text" | "textarea" | "url" | "number" | "select" | "checkbox" | "cta" | "image";
+  purpose?: MediaPurpose;
   help?: string;
   itemLabel?: string;
   options?: Array<{ value: string; label: string; help?: string }>;
@@ -38,6 +41,8 @@ export type JsonSchemaNode = {
 const ITEM_ID = "_id";
 /** Programmatic value changes (setFieldValue) skip onValuesChange, so they report dirtiness here. */
 const DirtyContext = createContext<() => void>(() => {});
+/** Returns a non-blocking warning for a link value (e.g. it points to an unpublished page). */
+const LinkWarningContext = createContext<((href: string) => string | undefined) | null>(null);
 const LINK_RE = /^(\/|#|https?:\/\/|mailto:|tel:)/;
 
 export function newItemId(): string {
@@ -56,6 +61,7 @@ function typeOf(node: JsonSchemaNode): string | undefined {
 /** Builds an empty value that satisfies the item schema (used by "Add item"). */
 export function emptyValue(node: JsonSchemaNode): unknown {
   if (node.widget === "cta") return { label: "", action: "link", href: "" };
+  if (node.widget === "image") return undefined;
   switch (typeOf(node)) {
     case "string":
       return "";
@@ -125,6 +131,7 @@ function stringRules(node: JsonSchemaNode, label: string): FormRule[] {
 
 function ScalarField({ name, node, fieldKey }: Omit<FieldProps, "form" | "fullPath">) {
   const label = node.label ?? humanize(fieldKey);
+  const linkWarning = useContext(LinkWarningContext);
   const t = typeOf(node);
   if (t === "number" || t === "integer") {
     return (
@@ -148,6 +155,15 @@ function ScalarField({ name, node, fieldKey }: Omit<FieldProps, "form" | "fullPa
     );
   }
   const rules = stringRules(node, label);
+  if (node.widget === "url" && linkWarning) {
+    rules.push({
+      warningOnly: true,
+      validator: (_, v: unknown) => {
+        const warning = typeof v === "string" ? linkWarning(v.trim()) : undefined;
+        return warning ? Promise.reject(new Error(warning)) : Promise.resolve();
+      },
+    });
+  }
   const long = node.widget === "textarea" || (node.maxLength ?? 0) > 500;
   return (
     <Form.Item label={label} name={name} tooltip={node.help} rules={rules}>
@@ -363,8 +379,26 @@ function CtaField({ name, fullPath, node, fieldKey, form, optional }: FieldProps
   );
 }
 
+function ImageField({ name, node, fieldKey, optional }: FieldProps) {
+  const label = node.label ?? humanize(fieldKey);
+  const rules: FormRule[] = [
+    {
+      validator: (_, v: { url?: string; alt?: string } | undefined) => {
+        if (!v?.url) return optional ? Promise.resolve() : Promise.reject(new Error(`${label} is required.`));
+        return v.alt?.trim() ? Promise.resolve() : Promise.reject(new Error("Add alt text describing the image."));
+      },
+    },
+  ];
+  return (
+    <Form.Item label={label} name={name} tooltip={node.help} rules={rules}>
+      <MediaField purpose={node.purpose ?? "media"} />
+    </Form.Item>
+  );
+}
+
 function SchemaField(props: FieldProps) {
   if (props.node.widget === "cta") return <CtaField {...props} />;
+  if (props.node.widget === "image") return <ImageField {...props} />;
   const t = typeOf(props.node);
   if (t === "array") return <ArrayField {...props} />;
   if (t === "object") {
@@ -392,6 +426,7 @@ type SchemaFormProps<T extends Record<string, unknown>> = {
   disabled?: boolean;
   onDirtyChange?: (dirty: boolean) => void;
   header?: ReactNode;
+  linkWarning?: (href: string) => string | undefined;
 };
 
 /** Renders an editable form for any section content schema. Structure and system props are never exposed. */
@@ -402,6 +437,7 @@ export default function SchemaForm<T extends Record<string, unknown>>({
   disabled,
   onDirtyChange,
   header,
+  linkWarning,
 }: Readonly<SchemaFormProps<T>>) {
   const hasFields = useMemo(() => Object.keys(schema?.properties ?? {}).some((k) => k !== ITEM_ID), [schema]);
   const markDirty = useCallback(() => onDirtyChange?.(true), [onDirtyChange]);
@@ -423,7 +459,9 @@ export default function SchemaForm<T extends Record<string, unknown>>({
     >
       {header}
       <DirtyContext.Provider value={markDirty}>
-        <ObjectFields name={[]} fullPath={[]} node={schema} form={form as FormInstance} />
+        <LinkWarningContext.Provider value={linkWarning ?? null}>
+          <ObjectFields name={[]} fullPath={[]} node={schema} form={form as FormInstance} />
+        </LinkWarningContext.Provider>
       </DirtyContext.Provider>
     </Form>
   );

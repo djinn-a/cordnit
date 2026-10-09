@@ -10,7 +10,7 @@ import type {
 } from "@/lib/cms/inputs";
 import { slugToPath } from "@/lib/cms/document";
 import { SECTION_CATALOG } from "@/lib/cms/registry";
-import { isSectionType } from "@/lib/cms/types";
+import { isPageSectionType, isSectionType } from "@/lib/cms/types";
 import { db, type Transaction } from "@/server/db/client";
 import { globalBlocks, pageSections, type PageSectionRow } from "@/server/db/schema";
 import { errors } from "@/server/errors";
@@ -44,6 +44,7 @@ export async function addSection(
 
     let values: typeof pageSections.$inferInsert;
     if (input.source.kind === "type") {
+      if (!isPageSectionType(input.source.type)) throw errors.validation("Site Navbar and Site Footer are edited from Global Blocks.");
       const defaults = getSectionDefaults(input.source.type);
       values = {
         pageId: page.id,
@@ -55,10 +56,12 @@ export async function addSection(
     } else if (input.source.kind === "block") {
       const [block] = await tx.select().from(globalBlocks).where(eq(globalBlocks.id, input.source.blockId));
       if (!block) throw errors.notFound("Global block");
+      if (!isPageSectionType(block.type)) throw errors.validation("Site Navbar and Site Footer cannot be added as page sections.");
       values = { pageId: page.id, type: block.type, position, globalBlockId: block.id, label: block.name };
     } else {
       const original = await sectionsRepo.findById(tx, input.source.sectionId);
       if (!original) throw errors.notFound("Section to copy");
+      if (!isPageSectionType(original.type)) throw errors.validation("Site Navbar and Site Footer cannot be copied into page sections.");
       values = {
         pageId: page.id,
         type: original.type,

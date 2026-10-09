@@ -10,6 +10,7 @@ import { AttributionCapture } from "@/components/features/leads/AttributionCaptu
 import { buildSiteMetadata } from "@/lib/seo/page-metadata";
 import { SITE_URL } from "@/lib/seo/site";
 import { cms } from "@/server/cms";
+import { getSiteChrome } from "@/server/cms/queries/site-chrome";
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -25,7 +26,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function SiteRootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function SiteRootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const { navbar, footer } = await getSiteChrome();
   return (
     <html
       lang="en"
@@ -35,10 +37,10 @@ export default function SiteRootLayout({ children }: Readonly<{ children: React.
         <AttributionCapture />
         <ContactModalProvider>
           <NewsletterModalProvider>
-            <TopBar />
-            <Navbar />
+            <TopBar content={navbar} />
+            <Navbar content={navbar} />
             {children}
-            <Footer />
+            <Footer content={footer} />
           </NewsletterModalProvider>
         </ContactModalProvider>
       </body>

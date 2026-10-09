@@ -22,11 +22,15 @@
     "cms:admin:prod": "tsx --conditions=react-server scripts/cms/create-super-admin.ts",
     "cms:seed:prod": "tsx --conditions=react-server scripts/cms/seed.ts",
     "cms:verify:prod": "tsx --conditions=react-server scripts/cms/verify.ts",
+    "cms:seed-chrome": "tsx --conditions=react-server --env-file=.env.local scripts/cms/seed-site-chrome.ts",
+    "cms:seed-chrome:prod": "tsx --conditions=react-server scripts/cms/seed-site-chrome.ts",
+    "cms:verify-chrome": "tsx --conditions=react-server --env-file=.env.local scripts/cms/verify-site-chrome.ts",
+    "cms:verify-chrome:prod": "tsx --conditions=react-server scripts/cms/verify-site-chrome.ts",
     "cms:migrate-cta": "tsx --conditions=react-server --env-file=.env.local scripts/cms/migrate-cta.ts",
     "cms:migrate-cta:prod": "tsx --conditions=react-server scripts/cms/migrate-cta.ts",
     "cms:backfill-seo": "tsx --conditions=react-server --env-file=.env.local scripts/cms/backfill-seo.ts",
     "cms:backfill-seo:prod": "tsx --conditions=react-server scripts/cms/backfill-seo.ts",
-    "build:cms": "npm run cms:admin:prod && npm run cms:seed:prod",
+    "build:cms": "npm run cms:admin:prod && npm run cms:seed:prod && npm run cms:seed-chrome:prod && npm run cms:verify-chrome:prod",
     "deploy": "vercel --prod"
   },
   "dependencies": {

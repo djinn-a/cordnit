@@ -29,11 +29,14 @@ async function BlockData({ params }: { params: Params }) {
   }
   const { block, usages, versions } = raw;
   if (!isSectionType(block.type)) notFound();
+  const livePaths = cms.siteChrome.isSiteChromeKey(block.key) ? [...(await cms.siteChrome.loadLivePaths())] : undefined;
 
   return (
     <BlockEditor
       data={{
         id: block.id,
+        key: block.key,
+        type: block.type,
         name: block.name,
         typeLabel: SECTION_CATALOG[block.type].label,
         content: block.content,
@@ -43,6 +46,7 @@ async function BlockData({ params }: { params: Params }) {
         schema: getContentJsonSchema(block.type) as JsonSchemaNode,
         usages,
         versions,
+        livePaths,
       }}
     />
   );

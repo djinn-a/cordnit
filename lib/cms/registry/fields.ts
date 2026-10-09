@@ -1,12 +1,16 @@
 import { z } from "zod";
 import { LINK_PATTERN, ctaSchema } from "@/lib/cta";
+import { isAllowedSeoImageUrl } from "@/lib/cms/inputs";
 import { ITEM_ID_KEY } from "./props";
 
 /**
  * Field builders for section content schemas. `.meta()` drives the admin form
  * generator (via z.toJSONSchema), so every field declares its label and widget.
  */
-export type FieldWidget = "text" | "textarea" | "url" | "number" | "select" | "checkbox" | "cta";
+export type FieldWidget = "text" | "textarea" | "url" | "number" | "select" | "checkbox" | "cta" | "image";
+
+/** Upload purposes; each maps to its own size limit in storage. */
+export type ImagePurpose = "logo" | "icon" | "media";
 
 export type FieldMeta = {
   label: string;
@@ -16,6 +20,8 @@ export type FieldMeta = {
   options?: Array<{ value: string; label: string; help?: string }>;
   /** `cta` widget only: false when the placement's design fixes the button style. */
   ctaVariant?: boolean;
+  /** `image` widget only. */
+  purpose?: ImagePurpose;
 };
 
 export const text = (label: string, max = 500) =>
@@ -42,6 +48,17 @@ export const bool = (label: string) => z.boolean().meta({ label, widget: "checkb
 
 export const cta = (label: string, options: { variant?: boolean } = {}) =>
   ctaSchema.meta({ label, widget: "cta", ctaVariant: options.variant ?? true } satisfies FieldMeta);
+
+/** An uploaded image with required alt text. Rendered only through <img>, never inlined, so SVG scripts cannot run. */
+export const image = (label: string, purpose: ImagePurpose) =>
+  z
+    .object({
+      url: z.string().trim().max(2048).refine(isAllowedSeoImageUrl, "Upload an image or use a /path."),
+      alt: z.string().trim().min(1, `${label}: describe the image in the alt text.`).max(200),
+      width: z.number().int().positive().max(10000).optional(),
+      height: z.number().int().positive().max(10000).optional(),
+    })
+    .meta({ label, widget: "image", purpose } satisfies FieldMeta);
 
 export const itemId = () => z.string().min(1).max(100);
 

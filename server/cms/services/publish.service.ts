@@ -6,7 +6,7 @@ import type { PublishedPageDocument, SectionProps } from "@/lib/cms/document";
 import { HOME_SLUG, slugToPath } from "@/lib/cms/document";
 import type { pageRefSchema, publishPageSchema, rollbackSchema } from "@/lib/cms/inputs";
 import { SECTION_CATALOG } from "@/lib/cms/registry";
-import { isSectionType } from "@/lib/cms/types";
+import { isPageSectionType, isSectionType } from "@/lib/cms/types";
 import { db, type Transaction } from "@/server/db/client";
 import {
   globalBlocks,
@@ -23,6 +23,7 @@ import { buildDocument, toSectionSource } from "../document-builder";
 import { touchPage } from "../locking";
 import { sectionsRepo } from "../repositories/sections.repo";
 import { checkSectionContent } from "../validation";
+import { chromeBlocksLinkingTo } from "./site-chrome.service";
 
 export type PublishOutcome = {
   slug: string;
@@ -111,6 +112,10 @@ export async function publishPage(
 
     const fieldErrors: Record<string, string[]> = {};
     for (const s of sections) {
+      if (!isPageSectionType(s.type)) {
+        fieldErrors[`section:${s.id}`] = ["Site Navbar and Site Footer are managed by the site layout and cannot be published as page sections."];
+        continue;
+      }
       if (s.isHidden || s.globalBlockId) continue;
       const check = checkSectionContent(s.type, s.content);
       if (!check.ok) {
@@ -181,7 +186,8 @@ export async function unpublishPage(input: z.output<typeof pageRefSchema>, actor
       entityId: page.id,
       summary: `Unpublished ${slugToPath(live.slug)}`,
     });
-    return { slug: live.slug, lockVersion: page.lockVersion };
+    const linkedFrom = await chromeBlocksLinkingTo(tx, slugToPath(live.slug));
+    return { slug: live.slug, lockVersion: page.lockVersion, linkedFrom };
   });
 }
 

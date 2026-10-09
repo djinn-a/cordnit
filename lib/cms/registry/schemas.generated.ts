@@ -6,7 +6,19 @@
  */
 import { z } from "zod";
 import type { SectionType } from "../types";
-import { cta, group, link, list, section, stringList, text, textarea } from "./fields";
+import { cta, group, image, link, list, section, stringList, text, textarea, select } from "./fields";
+import { SOCIAL_PLATFORMS, isSafeChromeHref } from "../site-chrome";
+
+const siteChromeLink = (label: string) =>
+  z
+    .string()
+    .trim()
+    .max(2048)
+    .refine(isSafeChromeHref, "Use a same-site path (/about), anchor (#id), https://, mailto: or tel: link.")
+    .meta({ label, widget: "url", help: "Leave blank to show the text without a link." });
+
+const uniqueIds = <T extends { _id: string }>(items: T[]) => new Set(items.map((item) => item._id)).size === items.length;
+const chromeLink = { label: text("Label", 120).min(1, "Label is required."), href: siteChromeLink("Destination") };
 
 export const sectionContentSchemas = {
   hero: section({
@@ -691,6 +703,90 @@ export const sectionContentSchemas = {
     placeholder: text("Placeholder", 300),
     buttonText: textarea("Button text", 2000),
     consentText: textarea("Consent text", 2000),
+  }),
+  navbar: section({
+    logo: image("Logo", "logo").optional(),
+    logoAltText: text("Logo alt text (used when no logo is uploaded)", 200),
+    logoHref: siteChromeLink("Logo destination"),
+    topBarBreachLabel: text("Top bar: breach link label", 120),
+    topBarBreachHref: siteChromeLink("Top bar: breach link destination"),
+    topBarNewsletterLabel: text("Top bar: newsletter button label", 120),
+    solutionsMenu: group("Solutions menu (always first in the navigation)", {
+      label: text("Menu label", 120).min(1, "Menu label is required."),
+      href: siteChromeLink("Menu label destination"),
+      panelTitle: text("Panel title", 200),
+      panelDescription: textarea("Panel description", 1000),
+      exploreAllLabel: text("Explore link label", 120),
+      exploreAllHref: siteChromeLink("Explore link destination"),
+      items: list("Solutions", "Solution", {
+        title: text("Title", 160).min(1, "Title is required."),
+        description: textarea("Description", 1000),
+        href: siteChromeLink("Destination"),
+        icon: image("Icon", "icon").optional(),
+      }).min(1, "Add at least one solution.").max(30).refine(uniqueIds, "Each solution needs its own ID."),
+    }),
+    navLinks: list("Other navigation links", "Link", chromeLink).max(12).refine(uniqueIds, "Each link needs its own ID."),
+    getInTouchLabel: text("Contact button label", 120),
+    mobileMenuToggleAriaLabel: text("Mobile menu button label (for screen readers)", 200),
+  }),
+  footer: section({
+    logo: image("Logo", "logo").optional(),
+    logoHref: siteChromeLink("Logo destination"),
+    branding: group("Branding", {
+      logoAlt: text("Logo alt text (used when no logo is uploaded)", 200),
+      tagline: textarea("Tagline", 3000),
+      ctaText: text("Contact button label", 120),
+    }),
+    contact: group("Contact details (also used in search-engine structured data)", {
+      email: z
+        .string()
+        .trim()
+        .max(254)
+        .refine((v) => v === "" || z.email().safeParse(v).success, "Enter a valid email address.")
+        .meta({ label: "Email", widget: "text" }),
+      phone: z
+        .string()
+        .trim()
+        .max(40)
+        .regex(/^$|^\+?[0-9 ()-]{6,}$/, "Use digits, spaces, dashes and an optional leading +.")
+        .meta({ label: "Phone (international format, e.g. +91 98765 43210)", widget: "text" }),
+    }),
+    navColumns: list("Link columns", "Column", {
+      title: text("Column heading", 160),
+      links: list("Links", "Link", chromeLink).min(1, "Add at least one link.").max(40),
+    }).min(1).max(8).refine(uniqueIds, "Each column needs its own ID."),
+    socialLinks: list("Social profiles", "Profile", {
+      platform: select(
+        "Platform",
+        SOCIAL_PLATFORMS.map((p) => ({ value: p.id, label: p.label })),
+      ),
+      href: siteChromeLink("Profile URL"),
+    })
+      .max(SOCIAL_PLATFORMS.length)
+      .refine((items) => new Set(items.map((item) => item.platform)).size === items.length, "Each platform can be added only once."),
+    newsletter: group("Newsletter", {
+      heading: text("Heading", 200),
+      description: textarea("Description", 1000),
+      placeholder: text("Email placeholder", 160),
+      emailLabel: text("Email accessible label", 160),
+      formLabel: text("Form accessible label", 160),
+      consentText: text("Consent copy before privacy link", 500),
+      privacyLinkLabel: text("Privacy link label", 120),
+      privacyLinkHref: siteChromeLink("Privacy link destination"),
+      buttonText: text("Subscribe button label", 120),
+      submittingText: text("Submitting button label", 120),
+      successText: text("Success message", 300),
+    }),
+    media: group("Media feature", {
+      eyebrow: text("Eyebrow", 200),
+      heading: text("Heading", 300),
+      description: textarea("Description", 1000),
+      ctaText: text("Button label", 120),
+      href: siteChromeLink("Destination"),
+      thumbnail: image("Thumbnail", "media").optional(),
+    }),
+    copyright: text("Copyright text", 300),
+    legalLinks: list("Legal links", "Link", chromeLink).max(30),
   }),
 } satisfies Record<SectionType, z.ZodObject>;
 
