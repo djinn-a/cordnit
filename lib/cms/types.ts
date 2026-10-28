@@ -59,6 +59,7 @@ export const SECTION_TYPES = [
   "journeyStepsBlock",
   "leadQualificationBlock",
   "newsletter",
+  "blogArticle",
   "navbar",
   "footer",
 ] as const;

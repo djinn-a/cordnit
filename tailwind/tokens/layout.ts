@@ -34,6 +34,7 @@ export const width: WidthConfig = {
 
 export const height: HeightConfig = {
   panel: "400px",
+  "blog-banner": "497px",
 };
 
 export const inset: InsetConfig = {

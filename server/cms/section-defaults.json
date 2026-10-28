@@ -3261,5 +3261,224 @@
       "consentText": "I would like to receive Cordinit insights. I understand I can unsubscribe at any time. Read our Privacy Policy."
     },
     "systemProps": {}
+  },
+  "blogArticle": {
+    "content": {
+      "category": "Cybersecurity",
+      "publishDate": "2 May 2025",
+      "articleTitle": "Why security architecture must precede digital: A futuristic approach for building resilient systems",
+      "introText": "Imagine a brick and mortar house under construction, the sewer lines, sub-slab plumbing, and main electrical conduits follow the Structural Foundation & Framing stage. The external beautification, functions and displays like interiors, Smart home automation, high-end lighting fixtures and furniture follow later. Ever seen a house where this workflow order is not followed? If yes, then the house has a design flaw and beckons huge repair costs not to mention functional glitches.\nThe same applies to building security right from the scratch of a system architecture.",
+      "lastUpdatedLabel": "Last Updated",
+      "lastUpdatedDate": "April 30, 2026",
+      "tocTitle": "Table of Contents",
+      "blocks": [
+        {
+          "_id": "sec-1",
+          "heading": "Security creates the most positive impact when embedded at the earliest stages of architecture planning preceding digital architecture.",
+          "paragraphs": [
+            "In this article we discuss this need for a resilient layout and structure and the cons of not adapting a structured security strategy. Let us dive in."
+          ]
+        },
+        {
+          "_id": "sec-2",
+          "heading": "The building blocks of Security Architecture",
+          "paragraphs": [
+            "Security Architecture is a multi-layered network of tools and functions that make a system resilient and comply with IT governance and compliance."
+          ]
+        },
+        {
+          "_id": "sec-3",
+          "heading": "A robust security architecture comprises these checkpoints as the layers.",
+          "labeledItems": [
+            {
+              "_id": "layer-1",
+              "label": "Network Layer :",
+              "description": "Firewalls, Virtual Private Networks (VPNs), and network segmentation"
+            },
+            {
+              "_id": "layer-2",
+              "label": "Endpoint / Host Layer:",
+              "description": "Laptops, smartphones, and cloud servers. Protected by antivirus, patching, and device management tools."
+            },
+            {
+              "_id": "layer-3",
+              "label": "Application Layer :",
+              "description": "Web apps, mobile apps, and APIs"
+            },
+            {
+              "_id": "layer-4",
+              "label": "Data Layer :",
+              "description": "Encrypted databases, secure backups, and data classification rules."
+            }
+          ]
+        },
+        {
+          "_id": "sec-4",
+          "heading": "The recipe for building a vulnerable system",
+          "paragraphs": [
+            "The recipe for building an exposed system is investing zero to minimum attention towards the security aspect."
+          ],
+          "bulletItems": [
+            "No encryption (no HTTPS) or open firewalls in the Network layer",
+            "Outdated server software or loose permissions in the Server layer",
+            "Badly written code with unvalidated input fields in the Application layer",
+            "Unencrypted databases or weak passwords in the Data layer"
+          ],
+          "table": {
+            "layerHeader": "ARCHITECTURE LAYER",
+            "focusHeader": "PRIMARY FOCUS",
+            "benefitHeader": "BUSINESS BENEFIT",
+            "rows": [
+              {
+                "_id": "row-1",
+                "layer": "Network Layer",
+                "focus": "Firewalls, segmentation and secure\nconnectivity",
+                "benefit": "Reduces unauthorized access"
+              },
+              {
+                "_id": "row-2",
+                "layer": "Endpoint Layer",
+                "focus": "Device and server protection",
+                "benefit": "Limits device-level threats"
+              },
+              {
+                "_id": "row-3",
+                "layer": "Application Layer",
+                "focus": "Secure coding, testing and access controls",
+                "benefit": "Protects applications and users"
+              },
+              {
+                "_id": "row-4",
+                "layer": "Data Layer",
+                "focus": "Encryption, backups and permissions",
+                "benefit": "Protects sensitive business data"
+              }
+            ]
+          }
+        },
+        {
+          "_id": "sec-5",
+          "heading": "Function",
+          "paragraphs": [
+            "Core security functions of the system, performed by the above security layers include:"
+          ],
+          "labeledItems": [
+            {
+              "_id": "fn-1",
+              "label": "Identity & Access Management (IAM):",
+              "description": "Multi-factor authentication (MFA), role-based permissions"
+            },
+            {
+              "_id": "fn-2",
+              "label": "Monitoring & Incident Response:",
+              "description": "Security Information and Event Management (SIEM) tools, automated alerts, and playbooks"
+            },
+            {
+              "_id": "fn-3",
+              "label": "Governance, Risk & Compliance:",
+              "description": "Audits, privacy regulations (like GDPR) and risk assessments"
+            }
+          ],
+          "closingParagraphs": [
+            "The Digital architecture spanning websites, user workflows, servers, and databases, fully relies on a secure-by-design foundation to deliver a truly resilient system. Without an embedded security system from the inception stage, it becomes a Herculean task to detect threats, address concerns and rebuild the code for secure systems.\nWe will discuss the practical challenges about this in the subsequent sections of this write up."
+          ],
+          "newsletterCallout": {
+            "title": "Stay Ahead of Digital Transformation",
+            "description": "Get practical insights on cybersecurity, Salesforce, cloud infrastructure and emerging technology trends delivered to your inbox.",
+            "placeholder": "Work email",
+            "buttonText": "Subscribe",
+            "consentText": "By subscribing, you agree to receive Cordinit updates. You can unsubscribe at any time."
+          }
+        },
+        {
+          "_id": "sec-6",
+          "heading": "The price that the business pays?",
+          "paragraphs": [
+            "Building the Digital Architecture simply without building resilience leads to a heavy price for the business.\nTheft can happen across layers like data theft between user and server, hacking the environment through a vulnerable OS, Malicious SQL code injection to manipulate and retrieve data, stealing raw database files."
+          ]
+        },
+        {
+          "_id": "sec-7",
+          "heading": "The Fixing stage",
+          "leadBoldText": "A fully painted house, with world class light fixtures and furniture that suddenly recognizes a leakage in the plumbing lines and an unearthed electrical system. Fixing this means scrapping that expensive putty wall, removing the paint and disrupting a beautifully done interior design.\nNo house deserves this. The system architecture definitely doesn’t want this.",
+          "paragraphs": [
+            "To fix a system built without a security foundation, you have to work backward like an emergency plumber. First, isolate the system by patching critical entry points and locking down open database doors to stop active bleeding. Next, audit and rewrite the core authentication and configuration files to enforce strict access rules. Finally, rebuild the middleware and infrastructure blueprints around the existing app so that security wraps over the code like an external framework, avoiding a total teardown while still establishing a safe perimeter.",
+            "In short, incorporating security architecture later onto the system means walking on eggshells, and that becomes more complex, expensive and prone to structural failure.",
+            "Digital platforms and systems are becoming more complex by the day, so any glitches in the security foundation leads to expensive fixes that may not be too effective."
+          ],
+          "mediaCallout": {
+            "title": "Technology, security & transformation in conversation.",
+            "description": "Insights from Cordinit’s technology and security experts on building secure, intelligent organisations.",
+            "ctaText": "WATCH ON YOUTUBE",
+            "ctaHref": "https://www.youtube.com"
+          }
+        },
+        {
+          "_id": "sec-8",
+          "heading": "The optimal strategy: A harmonious culmination",
+          "leadBoldText": "The optimal way to go about this is:",
+          "bulletItems": [
+            "Predictive Analysis of Potential risks",
+            "Incorporating security directly across every layer of the IT architecture as we discussed before"
+          ],
+          "closingBoldText": "This approach is required to prevent exponentially inflated fixing costs and system downtime.",
+          "subSections": [
+            {
+              "_id": "sub-1",
+              "subHeading": "From the perspective of a thriving Business",
+              "paragraphs": [
+                "A business lives and breathes Data. At the end of the day, no business wants data theft or loss due to an oversight during the building stage. This is the stage where mistakes can happen and can be corrected at a minimal cost and impact. Often businesses have dual requirements of growing digitally through a robust website and design, and security measures that make their websites, apps and APIs resilient to threats. Finding a partner that deeply understands this can be challenging. So before investing in just the Digital Architecture and online presence, make sure your security foundation is rock-solid with no glitches and leakages or find a partner who can handle both right from the scratch."
+              ]
+            },
+            {
+              "_id": "sub-2",
+              "subHeading": "An Afterword",
+              "paragraphs": [
+                "Building Security Architecture at the first stage of IT architecture is no more a choice. It is a necessity. If a business owner wants a seamless digital footprint, a system that is resilient, sound and functional from the start, improving the functions or other interfaces becomes much simpler. The order should not change- Security Architecture and then the Digital Architecture and never the other way around for reasons discussed above.",
+                "Getting the sequence right saves your team from costly rewrites down the road. It ensures your technology scales as fast as your ambition."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "systemProps": {
+      "bannerImage": {
+        "url": "/solutions/secure.webp",
+        "alt": "Security Architecture Foundation"
+      },
+      "blocks": [
+        {
+          "_id": "sec-1"
+        },
+        {
+          "_id": "sec-2"
+        },
+        {
+          "_id": "sec-3"
+        },
+        {
+          "_id": "sec-4"
+        },
+        {
+          "_id": "sec-5"
+        },
+        {
+          "_id": "sec-6"
+        },
+        {
+          "_id": "sec-7",
+          "mediaCallout": {
+            "thumbnail": {
+              "url": "/InsightsSection/cybersecurity_insight_2x.webp",
+              "alt": "Technology, security & transformation in conversation"
+            }
+          }
+        },
+        {
+          "_id": "sec-8"
+        }
+      ]
+    }
   }
 }
