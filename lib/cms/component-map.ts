@@ -36,6 +36,7 @@ import SecureDataOperations from "@/components/features/cybersecurity/shared/Sec
 import { JourneyStepsBlock } from "@/components/blocks/JourneyStepsBlock";
 import LeadQualificationBlock from "@/components/blocks/LeadQualificationBlock/LeadQualificationBlock";
 import NewsletterSection from "@/components/ui/NewsletterSection/NewsletterSection";
+import { BlogArticleSection } from "@/components/blocks/BlogArticleSection";
 
 /** Section type -> component. Adding a type: extend SECTION_TYPES, this map and the catalog. */
 
@@ -97,4 +98,5 @@ export const componentMap: Record<PageSectionType, SectionComponent> = {
   journeyStepsBlock: JourneyStepsBlock as SectionComponent,
   leadQualificationBlock: LeadQualificationBlock as unknown as SectionComponent,
   newsletter: NewsletterSection as SectionComponent,
+  blogArticle: BlogArticleSection,
 };

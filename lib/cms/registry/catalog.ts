@@ -62,6 +62,7 @@ export const SECTION_CATALOG: Record<SectionType, SectionCatalogEntry> = {
   splitContentSection: { label: "Split Content Section", category: "Content", description: "Two-column content section variant." },
   solutionsDelivery: { label: "Solutions Delivery", category: "Content", description: "Delivery story with stats." },
   dataDiscovery: { label: "Discovery Block", category: "Content", description: "Discovery steps with variants." },
+  blogArticle: { label: "Blog Article", category: "Content", description: "Full blog article with banner, sticky table of contents, structured sections, tables and inline callouts." },
 
   methodology: { label: "Methodology", category: "Process & Steps", description: "Five-step methodology cards." },
   processSection: { label: "Process", category: "Process & Steps", description: "Process steps with header." },
